@@ -1,0 +1,22 @@
+<button class="action action--open" aria-label="{% t content.menu.open %}">
+  <span class="icon icon--menu"></span>
+</button>
+<nav id="ml-menu" class="menu">
+  <button class="action action--close" aria-label="{% t content.menu.close %}">
+    <span class="icon icon--cross"></span>
+  </button>
+  <div class="menu__wrap">
+    <ul data-menu="main" class="menu__level">
+      {% for menu in site.translations[site.lang]['content']['sidebar'] %}
+        {% capture link %}
+          {% if site.lang == 'en' %}
+            {{ site.baseurl_root }}{{ menu[0] }}
+          {% else %}
+            {{ site.baseurl_root }}{{ site.lang}}/{{ menu[0] }}
+          {% endif %}
+        {% endcapture %}
+        <li class="menu__item"><a class="menu__link" href="{{ link }}">{{ menu[1] }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

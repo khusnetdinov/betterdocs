@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'bpicons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/bpicons/bpicons.eot');
+  src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  min-width: 20em;
+  overflow: hidden;
+  margin: 0;
+  color: #cecece;
+  background: #2a2b30;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: #ddd;
+  }
+}
+
+.container {
+  overflow-y: auto;
+  height: 100vh;
+}
+

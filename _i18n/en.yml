@@ -1,0 +1,39 @@
+head:
+  title: Ruby Fundamental
+  metatags:
+    description: >-
+      Fundamental programming with ruby examples and references. It covers
+      threads, SOLID principles, design patterns, data structures, algorithms.
+    keywords: >-
+      Ruby, Fundamental, Ruby programming fundamental. Ruby gotchas, Functional
+      programming, Metaprogramming, Threads, Ruby solid princinle with examples,
+      Ruby design patterns with examples, Ruby algorithms with examples, Ruby
+      data structures with examples.
+
+content:
+  menu:
+    open: "Open Menu"
+    close: "Close Menu"
+  sidebar:
+    gotchas: "Gotchas"
+    meta_programming: "Meta Programming"
+    functional_programming: "Functional Programming"
+    threads: "Threads"
+    solid_principles: "Solid Pronciples"
+    design_patterns: "Design Patterns"
+    data_structures: "Data Structures"
+    algorithms: "Algorithms"
+    interview_questions: "Interview Questions"
+  footer:
+
+pages:
+    gotchas:
+    meta_programming:
+    functional_programming:
+    threads:
+    solid_principles:
+    design_patterns:
+    data_structures:
+    algorithms:
+    interview_questions:
+  

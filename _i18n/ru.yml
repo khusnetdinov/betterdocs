@@ -1,0 +1,38 @@
+head:
+  title: Ruby Fundamental
+  metatags:
+    description: >-
+      Основы Ruby с примерами и полезными ссылками. Вы прочтете про потоки,
+      принцип SOLID, паттерны проектирования, структуры данных, алгоритмы.
+    keywords: >-
+      Ruby, Fundamental, Ruby programming fundamental. Ruby gotchas, Functional
+      programming, Metaprogramming, Threads, Ruby solid princinle with examples,
+      Ruby design patterns with examples, Ruby algorithms with examples, Ruby
+      data structures with examples.
+
+content:
+  menu:
+    open: "Открыть меню"
+    close: "Закрыть меню"
+  sidebar:
+    gotchas: "Готчи"
+    meta_programming: "Мета программирование"
+    functional_programming: "Функциональное программирование"
+    threads: "Потоки"
+    solid_principles: "COЛИД"
+    design_patterns: "Паттерны проектирование"
+    data_structures: "Структуры данных"
+    algorithms: "Алгоритмы"
+    interview_questions: "Вопросы на интервью"
+  footer:
+
+pages:
+    gotchas:
+    meta_programming:
+    functional_programming:
+    threads:
+    solid_principles:
+    design_patterns:
+    data_structures:
+    algorithms:
+    interview_questions:

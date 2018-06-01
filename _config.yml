@@ -1,0 +1,29 @@
+encoding: utf-8
+
+# Url settings
+baseurl: "/"
+url: "https://betterdocs.org"
+
+# Locales settings
+languages: ["en", "ru"]
+timezone: Europe/Moscow
+exclude_from_localizations: ["javascript", "images", "css"]
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-multiple-languages-plugin
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
