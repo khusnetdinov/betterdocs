@@ -5,7 +5,1020 @@ layout: default
 {% include sidebar.html %}
 
 <div class="content">
-  {{ site.lang }}
-  {{ site.translations }}
-  Gotchas
-</div>
+  <article>
+    <h1><b>Gotchas</b></h1>
+    <p>Most Ruby on Rails beginners get excited by the framework and start crafting applications without any knowledge of the language. And that’s the magic of RoR.</p>
+    <p>At some point things start to get serious. Some take time and effort to explore dirty secrets of Ruby on Rails, while others gloss over and become senior developers with almost zero knowledge of the language.</p>
+    <p>Anyway, sooner or later, beginners or experienced programmers, we all run into so - called Ruby Gotchas — those small language subtleties that hide from our sight for hours of hardcore debugging</p>
+    <p>Here is a list of popular Ruby gotchas and curiosities that developers should be aware of. For each case, there’s an example of confusing and/or error-prone code.</p>
+    <p>They come together with good practices, that will prevent you from making simple (but difficult to find) mistakes and simplify your (and your code maintainer’s) life.</p>
+  </article>
+
+  <article>
+    <h1><a name="describe">Ruby can be surprising</a></h1>
+    <p>
+      Though "engineered to maximize programmer happiness", with the "principle of least surprise", Ruby still has gotchas. This presentation will proceed from newbie trivial gotchas, to more advanced and confusing gotchas.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  We = 2
+
+  class Fixnum
+    def rb
+      self
+    end
+  end
+
+  We <3 .rb
+  # => true
+{% endhighlight %}
+    </div>
+
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  But = 3
+  still = 1
+  perfect = 4
+
+  But - still .rb < perfect
+  # => true
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Don't quote me on this, but...</a></h1>
+    <p>
+      String interpolation (including special chars like \n) fails with 'single' quotes - it requires "double" quotes. Just like in most languages with string interpolation. To avoid it use doubles whenever practical.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  x = 3
+
+  puts 'x = #{x}\nx'
+  # => x = #{x}\nx
+  # => nil
+
+  puts "x = #{x}\nx"
+  # => x = 3
+  # => x
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">It's twue! It's twue!</a></h1>
+    <p>
+      Only two things are false (falsey): false, and nil. Everything else is true (truthy), even 0 (false in C), "" (false in JS), [], etc. (Trips up people from C, JS, etc. where some of these are false.)
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  true    ? "true" : "false"
+  # => "true"
+  false   ? "true" : "false"
+  # => "false"
+  nil     ? "true" : "false"
+  # => "false"
+  1       ? "true" : "false"
+  # => "true"
+  0       ? "true" : "false"
+  # => "true"
+  "false" ? "true" : "false"
+  # => "true"
+  ""      ? "true" : "false"
+  # => "true"
+  []      ? "true" : "false"
+  # => "true"
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Hang him in effigy or String him up, symbolically.</a></h1>
+    <p>
+      Symbols != strings. Even if the same when printed. Remember which one to use for what (args). Ideally, take either, and use what a method expects: "Be liberal in what you accept, and conservative in what you send." (Postel's Law)
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  str = "string"
+  sym = :string
+
+  puts str
+  # => string
+
+  puts sym
+  # => string
+
+  str == sym
+  # => false
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">String... or nothing!</a></h1>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  # bash> irb-1.8
+
+  str = "string"
+  # => "string"
+
+  str[2]
+  # => 114
+  # ??? ascii code!
+
+  str[2..2]
+  # => "r"
+  # that's better!
+
+  str[2,1]
+  => "r"
+  # works too....
+{% endhighlight %}
+    </div>
+
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  # bash> irb-1.9
+
+  str = "string"
+  # => "string"
+
+  str[2]
+  # => "r"
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Constants Aren't</a></h1>
+    <p>
+      Initial uppercase means constant, in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowingly.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  FOO = 5
+  # => 5
+
+  FOO = 7
+  # (irb):3: warning: already initialized constant FOO
+  # => 7
+
+  FOO
+  # => 7
+
+  FOO.freeze
+  # => 7
+
+  FOO += 2
+  # (irb):5: warning: already initialized constant FOO
+  # => 9
+
+  FOO
+  # => 9
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Some are more equal than others</a></h1>
+    <p>
+      == is the usual same value, .eql? is value and class (1 is Fixnum, 1.0 is Float), .equal? is same object. It's actually much hairier.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  1 == 1.0
+  # => true
+
+  1.eql? 1.0
+  # => false
+
+  a = "foo"
+  b = "foo"
+  a == b
+  # => true
+
+  a.eql? b
+  # => true
+
+  a.equal? b
+  # => false
+
+  a.equal? a
+  # => true
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">=== != ==!</a></h1>
+    <p>
+      === is "case equality", as in case statements. A better name might be ".describes?", or overload ".includes?"! Again, it's actually much hairier; see the docs on class Object. Gets people from languages where === is either object identity or same value and class.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  1 === 1
+  # => true
+
+  Fixnum === 1
+  # => true
+
+  1 === Fixnum
+  # => false
+
+  Class  === Class
+  Object === Object
+  Class  === Object
+  Object === Class
+  # => all true
+
+  Fixnum === Fixnum
+  # => false
+
+  (1..3) === 2
+  # => true
+
+  2 === (1..3)
+  # => false
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">and != &&</a></h1>
+    <p>
+      && has higher precedence than =, so x = true  && false means x = (true  && false) and has lower precedence, so x = true and false means (x = true) and false Ruby Style Guide: Use && / || for boolean expressions, [use] and / or for control flow.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  x = true && false
+  # => false
+
+  x
+  # => false
+
+  # OK so far, but:
+  x = true and false
+  # => false
+
+  x
+  # => true
+  # Return value is false but variable is true! Why the mismatch?!
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">or != ||</a></h1>
+    <p>
+      || has higher precedence than =, so x = false || true means x = (false || true) or has lower precedence, so  x = false  or true means (x = false) or true. Also, && is higher than ||, but and and or are equal, so they are evaluated left-to-right!
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  x = false || true
+  # => true
+
+  x
+  # => true
+
+  # OK so far, but:
+  x = false or true
+  # => true
+
+  x
+  # => false
+  # Return value is true but variable is false! Why the mismatch?!
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Don't be so sensitive!</a></h1>
+    <p>
+      Whitespace insensitive? NOT ALWAYS! Parser thinks it's an expression, as one arg, but (1, 2) is not a valid Ruby expression! (All work fine w/ 1 arg.).
+    </p>
+    <p class="info">
+      With multiple args:
+      <br/>
+      - No parens, no problem.
+      <br/>
+      - Parens w/o space, OK.
+      <br/>
+      - Parens and space, NO!
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  def method(arg1, arg2); end
+
+  method 1, 2
+  # => nil
+
+  method(1, 2)
+  # => nil
+
+  method (1, 2)
+  # => syntax error, unexpected ',', expecting ')'
+  # => method (1, 2)
+{% endhighlight %}
+    </div>
+    <p>
+      method /num is an unended regex or string! Ruby thinks you are giving an argument to method. General principle: use BALANCED whitespace; both sides or neither.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  def method; 42; end
+
+  num = 21
+  method/num
+  # => 2
+
+  method / num
+  # => 2
+
+  method/ num
+  # => 2
+
+  method /num
+  # => SyntaxError: unterminated regexp
+{% endhighlight %}
+    </div>
+    <p>
+      one -2 makes Ruby think you are giving an argument (of -2) to method one. (Same for +2 ... or even *2!) Again: use BALANCED whitespace; both sides or neither.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  def one
+    1
+  end
+
+  one - 2
+  # => -1
+
+  one-2
+  # => -1
+
+  one- 2
+  # => -1
+
+  one -2
+  # => ArgumentError: wrong number of arguments (1 for 0)
+{% endhighlight %}
+      </p>
+    </div>
+    <p>
+      "Stabby" lambdas (1.9+) Parentheses optional Space before after args without parens, OK. Space after parens, OK. Again, space before parens, NO! UPDATE: Fixed in 2.0!
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  dbl = ->(x) { x * 2 }
+  # => #<Proc:... (lambda)>
+
+  dbl = ->x{ x * 2 }
+  # => #<Proc:... (lambda)>
+
+  dbl = -> x { x * 2 }
+  # => #<Proc:... (lambda)>
+
+  two = -> { 2 }
+  # => #<Proc:... (lambda)>
+
+  dbl = -> (x) { x * 2 }
+  # => Syntax error, unexpected tLPAREN_ARG, expecting keyword_do_LAMBDA or tLAMBEG
+
+  two = -> () { 2 }
+  # => Same syntax error
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Ang onto yer @!</a></h1>
+    <p>
+      Naked value becomes a temporary local variable! Solution: remember the @! (Or "self.". Or use attr_writer too, or an attr_accessor.) Gets people from Java/C++, not so much Python (which needs "self." too). "You keep on using that variable. I don't think it means what you think it means.". Not Inigo Montoya.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Foo
+    attr_reader :value
+
+    def initialize(v)
+    value = v
+    end
+
+    def set_val(v)
+    @value = v
+    end
+  end
+
+  f = Foo.new(3)
+  f.value
+  # => nil
+  # not 3?!
+
+  f.set_val 5
+  # => 5
+
+  f.value
+  # => 5
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Look out, it’s an @@!</a></h1>
+    <p>
+      What the fillintheblank?  We didn't change Parent’s @@value before checking it, nor Child’s at all! Or did we? @@variables are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s @@value changed Parent’s, and inc’ing Parent’s changed Child’s.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Parent
+    @@value = 6
+
+    def self.value
+      @@value
+    end
+
+    def self.inc_value
+      @@value += 1
+    end
+  end
+
+  class Child < Parent
+    @@value = 42
+  end
+
+  Parent.value
+  # => 42
+  # => wtf?
+
+  Parent.inc_value
+  Child.value
+  # => 43
+  # => wtf?!
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">With init(ialize) or without it</a></h1>
+    <p>
+      Parent's initialize runs automagically only if child has none. Else, parent's must be called to run.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Parent
+    def initialize
+      puts "Parent init"
+    end
+  end
+
+  class NoInitChild < Parent; end
+
+  NoInitChild.new
+  # => Parent init
+
+  class NormalChild < Parent
+    def initialize
+      puts "NormalChild init"
+    end
+  end
+
+  NormalChild.new
+  # => "NormalChild init"
+
+  class SuperChild < Parent
+    def initialize
+      puts "SuperChild"
+      super
+      puts "init"
+    end
+  end
+
+  SuperChild.new
+  # => SuperChild
+  # => Parent init
+  # => init
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Superman vs. the Invisible Man</a></h1>
+    <p>
+      super with no arg list sends what caller got super with explicit args sends those args to send NO args, use empty parens: super()
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Parent
+    def add(*args)
+      args.inject :+
+    end
+  end
+
+  class Child2 < Parent
+    def add(arg1, arg2)
+      super(arg1, arg2)
+    end
+  end
+
+  class Child4 < Parent
+    def add(a1, a2, a3, a4)
+      super
+      # => no args!
+    end
+  end
+
+  Child2.new.add(1, 2, 3, 5)
+  # => ArgumentError: wrong number of arguments (4 for 2)
+
+  Child2.new.add(1, 2)
+  # => 3
+
+  Child4.new.add(1, 2, 3, 5)
+  # => 11
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">When will it end?  (Or start?)</a></h1>
+    <p>
+      In "standard" regexps: ^ is start and $ is end... of the whole string. Ruby’s regexes default to multiline, so: ^ is start and $ is end... of any line! \A is start and \Z is end of the whole string.  (Or \z to include any newline… which is another gotcha!)
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  str = "One\nTwo\nThree"
+
+  str =~ /^Two$/
+  # => 4
+
+  str =~ /\ATwo\Z/
+  # => nil
+
+  str =~ /\AOne/
+  # => 0
+
+  str =~ /Three\Z/
+  # => 8
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe"getting .any?></a></h1>
+    <p>
+      .any? does not mean “any elements?”! With block: “do any make the block true?”. Without: “are any truthy?” Has implicit block: { |element| element }.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  [].any?
+  # => false
+
+  [1].any?
+  # => true
+
+  [:foo, :bar].any?
+  # => true
+
+  # ok so far, BUT:
+
+  [nil].any?
+  # => false
+
+  [false].any?
+  # => false
+
+  [false, nil].any?
+  # => false
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">(Un)Def Leppard</a></h1>
+    <p>
+      Variables declared in blocks passed to iterators (e.g., times or each) are undefined at the top of each iteration! Iterators call the block repeatedly, so vars are out of scope again after each call. Built-in looping constructs (e.g., while or for) are OK. (Or declare vars before block.)
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  3.times do |loop_num|
+    sum ||= 0
+    sum += 1
+    puts sum
+  end
+  # => 1
+  # => 1
+  # => 1
+
+  for loop_num in 1..3
+    sum ||= 0
+    sum += 1
+    puts sum
+  end
+  # => 1
+  # => 2
+  # => 3
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Freeze (Ar)ray</a></h1>
+    <p>
+      Freezing an array (or a hash) freezes it, not the items it contains. Strings can be modified in place. This way, you can modify a given slot in a frozen Array of Strings.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  arr = ["one", "two", "three"]
+  arr.freeze
+  arr << "four"
+  # => RuntimeError: can't modify frozen Array
+
+  arr[0] = "eno"
+  # => RuntimeError: can't modify frozen Array
+
+  arr[0].object_id
+  # => 1234567890
+
+  arr[0].reverse!
+  arr
+  # => ["eno", "two", "three"]
+
+  arr[0].object_id
+  # => 1234567890
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">1 is 1 … and ever more shall be so!</a></h1>
+    <p>
+      Changing Fixnum to new value means new object. They can't be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum's object_id is value * 2 + 1
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  arr = [1, 2, 3, 4]
+  arr.freeze
+  # => [1, 2, 3, 4]
+
+  arr << 5
+  # => RuntimeError: can't modify frozen Array
+
+  arr[0] += 2
+  # => RuntimeError: can't modify frozen Array
+
+  1.object_id
+  # => 3
+
+  3.object_id
+  # => 7
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">(to! || ! to!) == ?</a></h1>
+    <p>
+      Bang marks method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  str = "foo"
+  str.upcase
+  # => ”FOO”
+
+  str
+  # => ”foo”
+
+  str.upcase!
+  # => ”FOO”
+
+  str
+  # => ”FOO”
+  # => Now that it’s already FOO:
+
+  str.upcase!
+  # => nil
+  # => ?!
+
+  str
+  # => ”FOO”
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">An Array of New Gotchas</a></h1>
+    <p>
+      Default value given as object is same object for each slot! Mutating one mutates default for all. Initial value given as block gets evaluated separately for each slot. Use this to create new vars for each.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Person
+    attr_accessor :name
+  end
+
+  people = Array.new(3, Person.new)
+  people[0].name = "Alice"
+  people[1].name = "Bob"
+  people[0].name
+  # => "Bob"
+  # => should have been "Alice"!
+
+  people = Array.new(3) { Person.new }
+  people[0].name = "Alice"
+  people[1].name = "Bob"
+  people[0].name
+  # => "Alice"
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Making a Hash of it</a></h1>
+    <p>
+      Mostly same problem (and solution) as Arrays. MORE GOTCHAS: creates new object on any access to empty slot! May create excessive number of new objects; ruins checking “real” contents or count (nil-checking, .size, etc.).
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  langs = Hash.new []
+  langs[:jane] << "Java"
+  langs[:rachel] << "Ruby"
+
+  langs[:jane]
+  # => ["Java", "Ruby"]
+
+  langs[:rachel]
+  # => ["Java", "Ruby"]
+
+  langs = Hash.new { |h, k| h[k] = [] }
+  langs[:jane] << "Java"
+  langs[:rachel] << "Ruby"
+
+  langs[:jane]
+  # => ["Java"]
+
+  langs[:rachel]
+  # => ["Ruby"]
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Rescue Me, Throw a Line, I'll Try to Catch It!</a></h1>
+    <p>
+      In Ruby, throw and catch are NOT for exceptions! They are advanced flow control, to exit deep nesting. Ruby uses raise and rescue for exceptions.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  # JAVA:
+  try {
+    throw new MyException("blah");
+  } catch(MyException e) {
+    fix_it();
+  }
+
+  # RUBY:
+  index = catch(:idx) {
+    arr.each_with_index do |v, i|
+      throw :idx, i if v == target
+    end
+    -1
+  }
+
+  begin
+    raise MyException.new "blah"
+  rescue MyException => e
+    fix_it
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">to_s VS to_str</a></h1>
+    <p>
+      `to_s` is defined on every object and will always return something. `to_str` is only defined on objects that are string-like. For example, `Symbol` has `to_str` but `Array` does not. Thus, you can use `obj.respond_to?(:to_str)` instead of something like `obj.is_a?(String)` if you want to take advantage of duck typing without worrying about whether the class you're working with is a subclass of `String` or not.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  string = "string"
+
+  string.to_s
+  # => "string"
+
+  string.to_str
+  # => "string"
+
+  array = ['string']
+
+  array.to_s
+  # => "[\"string\"]"
+
+  array.to_str
+  # => NoMethodError: undefined method `to_str'
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Need to coordinate method_missing and respond_to_missing?</a></h1>
+    <p>
+      When overriding #method_missing, remember to override #respond_to_missing? as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing?. If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Dog
+    def method_missing(method_name, *args, &block)
+      if method_name == :bark
+        'woof!'
+      else
+        super
+      end
+    end
+  end
+
+  Dog.new.bark
+  # => "woof!"
+
+  Dog.new.respond_to? :bark
+  # => false
+{% endhighlight %}
+    </div>
+
+    <p>
+      Lots of code (gems or your own) relies on respond_to? (for a good reason). You need to patch respond_to_missing? as well:
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Dog
+    def method_missing(method_name, *args, &block)
+      if method_name == :bark
+        'woof!'
+      else
+        super
+      end
+    end
+
+    def respond_to_missing?(method_name, *args)
+      method_name == :bark or super
+    end
+  end
+
+  Dog.new.bark
+  # => "woof!"
+
+  Dog.new.respond_to? :bark
+  # => true
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">rescue from a StandardError, not an Exception</a></h1>
+    <p>
+      Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  begin
+    foo
+  rescue StandardError => e
+    logger.warn "Unable to foo, will ignore: #{e}"
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">private data isn’t really, and not at all w/ class methods</a></h1>
+    <p>
+      There’s a way to make class methods private in Ruby, you just gotta jump through some hoops. Err, I mean use the `class << self` syntax. This oddity pushes an instance singleton onto the class effectively creating class methods.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  class Orange
+  def self.latin_name
+  binomial_name
+  end
+
+  private
+
+  def self.binomial_name
+  'Malus domestica'
+  end
+
+  class << self
+  private
+
+  def private_binomial_name
+  'Citrus × sinensis'
+  end
+  end
+  end
+
+  Orange.latin_name
+  # => It works
+
+  Orange.binomial_name
+  # => It works?!
+  # => wtf?!
+
+  Orange.private_binomial_name
+  # => ERROR! you can't call a private method.
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">Braces vs. do-end</a></h1>
+    <p>
+      The general convention is to use do..end for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that {} has a higher precedence than do .. end, so keep that in mind when deciding what you want to use.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  puts [1, 2, 3].map { |k| k + 1 }
+  # => 2
+  # => 3
+  # => 4
+  # => nil
+
+  puts [1, 2, 3].map do |k| k + 1; end
+  # <Enumerator:0x0000010a06d140>
+  # => nil
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1><a name="describe">class Foo::Bar, defined outside Module Foo, won’t see inside Foo</a></h1>
+    <p>
+      You can think of each appearance of `module Something`, `class Something` or `def something` as a “gateway” into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found there it will go back through each containing “gateway” and search the scope there. In your example the method `baz` is defined as
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Gotcha!</p>
+{% highlight ruby %}
+  FOO = 123
+
+  module Foo
+    FOO = 555
+  end
+
+  module Foo
+    class Bar
+      def baz
+        puts FOO
+      end
+    end
+  end
+
+  class Foo::Bar
+    def glorf
+      puts FOO
+    end
+  end
+
+  Foo::Bar.new.baz
+  # => 555
+
+  Foo::Bar.new.glorf
+  # => 123
+{% endhighlight %}
+    </div>
+  </article>

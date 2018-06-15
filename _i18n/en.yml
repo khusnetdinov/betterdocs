@@ -28,6 +28,7 @@ content:
 
 pages:
     gotchas:
+      title: "Gotchas"
     meta_programming:
     functional_programming:
     threads:
