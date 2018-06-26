@@ -5,5 +5,497 @@ layout: default
 {% include sidebar.html %}
 
 <div class="content">
-  Meta programming
+  <article>
+    <h1><b>Meta programming</b></h1>
+    <p>Metaprogramming is the writing of computer programs that write or manipulate other programs (or themselves) as their </p>
+    <p>data, or that do part of the work at compile time that would otherwise be done at runtime. In many cases, this allows </p>
+    <p>programmers to get more done in the same amount of time as they would take to write all the code manually, or it gives </p>
+    <p>programs greater flexibility to efficiently handle new situations without recompilation. Or, more simply put: </p>
+    <p>Metaprogramming is writing code that writes code during runtime to make your life easier.</p>
+  </article>
 </div>
+
+<article>
+    <h1><a name="describe">Dynamic Dispatch</a></h1>
+    <p>
+        Allows us to send messages object.public_send(message, *arguments)
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+1.public_send(:+, 2) 
+# => 3
+
+# Even private methods
+# object.send(message, *arguments)
+
+1.send(:+, 2) 
+# => 3
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Dynamic Method</a></h1>
+    <p>
+        Allows us to dynamically create methods define_method :method_name { block that becomes method body }
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class Foo
+  define_method :bar do
+    puts 'This is a dynamic method'
+  end
+end
+Foo.new.bar # => "This is a dynamic method"
+
+# Dynamic Method
+# Alternative example
+class Bar
+  # we have to define this method on `self` (see below comment)
+  def self.create_method(method)
+    define_method "my_#{method}" do
+      puts "Dynamic method called 'my_#{method}'"
+    end
+  end
+
+  # these methods are executed within the definition of the Bar class
+  create_method :foo
+  create_method :bar
+  create_method :baz
+end
+Bar.new.my_foo 
+# => "Dynamic method called 'my_foo'"
+Bar.new.my_bar 
+# => "Dynamic method called 'my_bar'"
+Bar.new.my_baz 
+# => "Dynamic method called 'my_baz'"
+
+# Dynamic Method
+# Parse another class for data
+class AnotherClass
+  def get_foo_stuff; end
+
+  def get_bar_stuff; end
+
+  def get_baz_stuff; end
+end
+class Baz
+  def initialize(a_class)
+    a_class.methods.grep(/^get_(.*)_stuff$/) { Baz.create_method Regexp.last_match(1) }
+  end
+
+  def self.create_method(method)
+    define_method "my_#{method}" do
+      puts "Dynamic method called 'my_#{method}'"
+    end
+  end
+end
+another_class = AnotherClass.new
+Baz.new(another_class).my_foo # => "Dynamic method called 'my_foo'"
+Baz.new(another_class).my_bar # => "Dynamic method called 'my_bar'"
+Baz.new(another_class).my_baz # => "Dynamic method called 'my_baz'"
+
+class Foo
+  def initialize(bar)
+    self.class.send(:define_method, bar) { p "hello #{bar}!" }
+  end
+end
+foo = Foo.new('world')
+foo.world # => "hello world!"
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Ghost Methods</a></h1>
+    <p>
+        Utilises `method_missing`
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class Hai
+  def method_missing(method, *args)
+    puts "You called: #{method}(#{args.join(', ')})"
+    puts 'You also passed a block' if block_given?
+  end
+end
+Hai.new.yolo # => You called: yolo()
+Hai.new.yolo 'a', 123, :c # => You called: yolo(a, 123, c)
+Hai.new.yolo(:a, :b, :c) { puts 'a block' } # => You called: yolo(a, b, c)
+# => You also passed a block
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Dynamic Proxies</a></h1>
+    <p>
+        Catching "Ghost Methods" and forwarding them onto another method Whilst possibly adding logic around the call.
+    </p>
+    <p>
+        For example, You can provide imaginary methods by utilising `method_missing` to parse the incoming message (e.g. `get_name`, `get_age`) and to delegate off to another method such as `get(:data_type)` where `:data_type` is `:name` or `:age`.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+def method_missing(message, *args, &block)
+  return get(Regexp.last_match(1).to_sym, *args, &block) if message.to_s.match?(/^get_(.*)/)
+  super # if we don't find a match then we'll call the top level `BasicObject#method_missing`
+end
+
+# If (after analysis) you discover a performance issue with using `method_missing`
+# you can utilise the "Dynamic Method" technique to create a real method after
+# the message has been received by `method_missing` the first time.
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Blank Slate</a></h1>
+    <p>
+        CPrevents issues when using "Dynamic Proxies"
+    </p>
+    <p>
+        e.g. user calls a method that exists higher up the inheritance chain so your `method_missing` doesn't fire because the method does exist.
+    </p>
+    <p>
+        To work around this issue, make sure your class starts with a "Blank Slate" So you remove any methods you don't want to appear at all in the inheritance chain by using `undef_method` (there is also `remove_method` which doesn't remove the named method from the inheritance chain but just the current class, but that doesn't help us fix the "Dynamic Proxy" scenario so we use `undef_method` instead).
+    </p>
+    <p>
+        For "Dynamic Proxy" we use the parent `method_missing` so we keep that, we also might use `respond_to?` so we keep that (although you can remove it if you don't). Also the `__` in the below regex pattern is to prevent Ruby from displaying a warning about removing 'reserved' methods such as `__id__` and `__send__
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class ImBlank
+  instance_methods.each do |m|
+    undef_method m unless m.to_s.match?(/^__|method_missing|respond_to?/)
+  end
+
+  # rest of your code (such as your "Dynamic Proxy" implementation)
+end
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Kernel Method</a></h1>
+    <p>
+        Add a method that gives the illusion it's a language keyword But really it's just added to the `Kernel` module which all other objects inherit from. At the top level of a Ruby program `self` is == `main`.
+    </p>
+    <p>
+        `self.class` == `Object` and the `Kernel` sits above it in the hierarchy. You can see this by running the following code:
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class Foo; end
+Foo.ancestors # => [Foo, Object, Kernel, BasicObject]
+
+# So we can see we can add what looks to be a language provided feature like so:
+module Kernel
+  def foobar
+    puts "I'm not a language keyword, I'm just a fake"
+  end
+end
+
+# Now from any where in our program we can call
+foobar # => I'm not a language keyword, I'm just a fake
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Flattening the Scope (aka Nested Lexical Scopes)</a></h1>
+    <p>
+        Where you change the code in such a way that it's easier for you to pass variables through "Scope Gates". A scope gate is any block, where normally when you enter its scope the variables outside of it become unreachable. This happens in: Class definitions, Module definitions, Method definitions I'm not sure what the real life examples are of this, but if you ever wonder why some code does the following, then maybe it was that they wanted to flatten the scope so they could more easily pass around variables. I guess it's better to do it this way than to define a global variable?
+    </p>
+    <p>
+        In the following code we want to access `my_var` from inside the method (inner scope gate) that's inside the class (outer scope gate).
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+my_var = 'abc'
+class OuterScopeGate
+  puts my_var
+
+  def inner_scope_gate
+    puts my_var
+  end
+end
+
+# We fix this by flattening the code into method calls (method *calls* aren't scope gates)
+# So we turn the class keyword into a method call using `Class.new`
+# We also turn the method inside the class from a keyword into a method call using `define_method`
+my_var = 'abc'
+MyClass = Class.new do
+  puts "Here is 'my_var' inside my class definition: #{my_var}"
+
+  define_method :my_method do
+    puts "Here is 'my_var' inside my class instance method: #{my_var}"
+  end
+end # => Here is 'my_var' inside my class definition: abc
+MyClass.new.my_method # => Here is 'my_var' inside my class instance method: abc
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Context Probe</a></h1>
+    <p>
+        Execute a code block in the context of another object using `instance_eval`
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class Foo
+  def initialize
+    @z = 1
+  end
+end
+foo = Foo.new
+foo.instance_eval do
+  puts self # => #<Foo:0x7d15e891>
+  puts @z # => 1
+end
+new_value = 2
+foo.instance_eval { @z = new_value }
+foo.instance_eval { puts @z } # => 2
+
+# There is also `instance_exec` which works the same way but allows passing arguments to the block
+class Foo
+  def initialize
+    @x = 1
+    @y = 2
+  end
+end
+Foo.new.instance_exec(3) { |arg| (@x + @y) * arg } # => 9
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Evaluate a block in the context of a class</a></h1>
+    <p>
+        Similar to re-opening a class but more flexible in that it works on any variable that references a class, where as re-opening a class requires defining a constant.
+    </p>
+    <p>
+        Classic class re-opening style
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class String
+  def m
+    puts 'hello!'
+  end
+end
+
+# Class eval style
+# The extra code is used to make the example a bit more re-usable/abstracted
+def add_method_to_class(the_class)
+  the_class.class_eval do
+    def m
+      puts 'hello!'
+    end
+  end
+end
+
+add_method_to_class String
+'abc'.m # => hello!
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Class Macros</a></h1>
+    <p>
+        Class Macros are just regular class methods that are only used in a class definition e.g. not used from a new instance of the class (only at the time the class is defined)
+    </p>
+    <p>
+        Below is an example of a Class Macro that alerts users of a publically available class that the methods they've been using are now deprecated and they should use the renamed version.
+    </p>
+    <p>
+        It uses "Dynamic Method" to help performance by creating the old methods again and delegating off to the new methods (rather than using `method_missing` which can be quite slow as it has to spend time looking up the inheritance chain)
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class Foo
+  def get_a
+    puts "I'm an A"
+  end
+
+  def get_b
+    puts "I'm an B"
+  end
+
+  def get_c
+    puts "I'm an C"
+  end
+
+  # Defining our Class Macro
+  def self.deprecate(old_method, new_method)
+    define_method(old_method) do |*args, &block|
+      puts "Warning: #{old_method} is deprecated! Use #{new_method} instead"
+      send(new_method, *args, &block) # `self` is assumed when calling `send`
+    end
+  end
+
+  # Using our Class Macro
+  deprecate :a, :get_a
+  deprecate :b, :get_b
+  deprecate :c, :get_c
+end
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Around Alia</a></h1>
+    <p>
+        Around Alias uses the `alias` keyword to store a copy of the original method under a new name, allowing you to redefine the original method name and to delegate off to the previous method implementation
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class String
+  alias orig_length length
+
+  def length
+    "Length of string '#{self}' is: #{orig_length}"
+  end
+end
+
+'abc'.length
+#=> "Length of string 'abc' is: 3"
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Hook Methods</a></h1>
+    <p>
+        Hook Methods are provided by the Ruby language and let you know about certain events such as when a class inherits from another class or when a method has been added to an object.  
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+class String
+  def self.inherited(subclass)
+    puts "#{self} was inherited by #{subclass}"
+  end
+end
+class MyString < String; end # => String was inherited by MyString
+
+# ## Method-related hooks
+#
+# method_missing
+# method_added
+# singleton_method_added
+# method_removed
+# singleton_method_removed
+# method_undefined
+# singleton_method_undefined
+#
+# ## Class & Module Hooks
+#
+# inherited
+# append_features
+# included
+# extend_object
+# extended
+# initialize_copy
+# const_missing
+#
+# ## Marshalling Hooks
+#
+# marshal_dump
+# marshal_load
+#
+# ## Coercion Hooks
+#
+# coerce
+# induced_from
+# to_xxx
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Class Extension Mixin</a></h1>
+    <p>
+        Class Extension Mixin allows you to both `include` and `extend` a class   
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+module MyMixin
+  def self.included(base) # Hook Method
+    base.extend(ClassMethods)
+  end
+
+  def a
+    puts "I'm A (an instance method)"
+  end
+
+  module ClassMethods # "ClassMethods" is a recognised naming pattern
+    def x
+      puts "I'm X (a class method)"
+    end
+  end
+end
+
+class Foo
+  include MyMixin
+end
+
+Foo.x # => I'm X (a class method)
+Foo.new.a # => I'm A (an instance method)
+
+{% endhighlight %}
+    </div>
+</article>
+
+<article>
+    <h1><a name="describe">Module namespace interpolation</a></h1>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Meta</p>
+{% highlight ruby %}
+
+type = 'baz'
+Foo::Bar.const_get(type.capitalize).new
+# => new instance of Foo::Bar::Baz
+
+{% endhighlight %}
+    </div>
+</article>
