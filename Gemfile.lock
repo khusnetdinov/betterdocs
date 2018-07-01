@@ -258,5 +258,8 @@ DEPENDENCIES
   rack-jekyll
   rake
 
+RUBY VERSION
+   ruby 2.4.4p296
+
 BUNDLED WITH
-   1.14.3
+   1.16.2
