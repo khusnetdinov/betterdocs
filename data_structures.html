@@ -5,5 +5,1529 @@ layout: default
 {% include sidebar.html %}
 
 <div class="content">
-  Data Structures
+  <article>
+    <h1>Data structures</h1>
+    <p>In computer science, big O notation is used to classify algorithms by how they respond to changes in input
+      size, such as how the processing time of an algorithm changes as the problem size becomes extremely large.
+      In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size
+      of an arithmetical function by the value it takes at a large finite argument. A famous example is the
+      problem of estimating the remainder term in the prime number theorem.</p>
+  </article>
+
+  <article>
+    <h1>Basic axioms of data structures</h1>
+    <p>The running time performance of the common language runtime is given by a set of axioms which we shall now
+      postulate.</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See description with examples</p>
+{% highlight ruby %}
+  # 1 - The time required to fetch a reference to an object from memory is a constant,
+  # T_fetch, and the time required to store a reference to an object in memory is
+  # a constant, T_store
+
+  y = x
+
+  # According to Axiom, the assignment statement has running time T_fetch + T_store.
+  # That is, the time taken to fetch the object reference from variable x is
+  # T_fetch and the time taken to store that object reference in the variable y is
+  # T_store.
+
+  y = 1
+
+  # Also has running time T_fetch + T_store. To see why this should be the case,
+  # consider that the constant '1' names a Fixnum object with value one. Therefore,
+  # we can expect the cost of fetching the reference to the object named 1 is the
+  # same as that of fetching a reference to any other object.
+
+  # 2 - The times required to perform elementary arithmetic operations, such as
+  # addition, subtraction, multiplication, division, and comparison, are all
+  # constants. These times are denoted by T_+, T_-, T_/, T_*, and T_<, respectively.
+
+  y += 1
+
+  # We can determine time of a statement like is 2 * T_fetch + T_+ + T_store. This
+  # is because we need to fetch two object references from the variables y and 1;
+  # perform the addition giving a new object whose value is the sum; and, store
+  # a reference to the new object in the variable y.
+  # Ruby syntax provides an alternative way to express the same computation:
+
+  y += 1
+
+  # We shall assume that the alternative requires exactly the same running time as
+  # the original statement.
+
+  # 3 - The time required to call a method is a constant, T_call, and the time
+  # required to return from a method is a constant, T_return
+  # The rationale for making the overhead associated with parameter passing the
+  # same as the time to store an object reference is that the passing of an
+  # argument is conceptually the same as assignment of the actual parameter value
+  # to the formal parameter of the method.
+
+  y = f(x)
+
+  # According to Axiom, the running time of the statement would be
+  # T_fetch + 2 * T_store + T_call + T_f(x), where T_f(x) is the running time of
+  # method f for input x. The first of the two stores is due to the passing of the
+  # parameter x to the method f; the second arises from the assignment to the variable y.
+
+  # 4 - The time required for the address calculation implied by an array
+  # subscripting operation, e.g., a[i], is a constant, T_[]. This time does not
+  # include the time to compute the subscript expression, nor does it include the
+  # time to access the array element.
+
+  y = a[i]
+
+  # This is 3 * T_fetch Three operand fetches are required: the first to fetch a
+  # reference to the array object a; the second to fetch a reference to the index
+  # object i; and, the third to fetch a reference to the array element a[i].
+
+  # 5 - The time required to create a new object instance of a class is a constant,
+  # T_new. This time does not include any time taken to initialize the object.
+  # By applying Axioms we can determine that the running time of the statement
+
+  i = Integer.new(0)
+
+  # is  T_new + T_fetch + 2 * T_store + T_call + T_fixnum_init, where T_fixnum_init
+  # is the running time of the initialize method of the class Fixnum.
+
+  # Example - In this section we apply Axioms, the analysis of the running time of a
+  # program to compute the following simple arithmetic series summation
+
+  def sum(n)
+    result = 0      # T_fetch + T_store
+    i = 1           # T_fetch + T_store
+    while i <= n    # (2 * T_fetch + T_<) * (n - 1)
+      result += i   # (2 * T_fetch + T_+ + T_store) * n
+      i += 1        # (2 * T_fetch + T_+ + T_store) * n
+    end
+    result # T_return + T_fetch
+  end
+
+  # Total: (6 * T_fetch + 2 * T_store + T_< + 2 * T_+) * n + (5 * T_fetch + 2 * T_store + T_< + T_return)
+  # T(n) = t1 * n + t2
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Big O notation</h1>
+  </article>
+
+  <article>
+    <h1>Implementation</h1>
+  </article>
+
+  <article>
+    <h1>Stack</h1>
+    <p>The stack is the sibling of the queue. It mimicks a real-life stack (e.g. of paper). It is FILO (first-in-last-out), so that when items are retrieved from the stack, they are returned in the reverse of the order in which they were added. Again, Ruby Arrays provide a perfect container. As with the Queue, it could also be implemented using a linked list.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack</a></td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See stack as array example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class StackAsArray < Stack
+    def initialize(size = 0)
+      super()
+      @array = Array.new(size)
+    end
+
+    def purge
+      while @count > 0
+        @count -= 1
+        @array[@count] = nil
+      end
+    end
+
+    def push(obj)
+      raise ContainerFull if @count == @array.length
+      @array[@count] = obj
+      @count += 1
+    end
+
+    def pop
+      raise ContainerEmpty if @count == 0
+      @count -= 1
+      result = @array[@count]
+      @array[@count] = nil
+      result
+    end
+
+    def top
+      raise ContainerEmpty if @count == 0
+      @array[@count - 1]
+    end
+
+    def each
+      for i in 0...@count
+        yield @array[i]
+      end
+    end
+
+    attr_reader :array
+
+    class Iterator < Opus8::Iterator
+      def initialize(stack)
+        @stack = stack
+        @position = 0
+      end
+
+      def more?
+        @position < @stack.count
+      end
+
+      def succ
+        if more?
+          assert { more? }
+          result = @stack.array[@position]
+          @position += 1
+        else
+          result = nil
+        end
+        result
+      end
+    end
+
+    def iter
+      Iterator.new(self)
+    end
+  end
+{% endhighlight %}
+    </div>
+
+    <div class="code-block">
+      <p class="spec-title spec-correct">See stack as linked list example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class StackAsLinkedList < Stack
+    def initialize
+      super
+      @list = SinglyLinkedList.new
+    end
+
+    def purge
+      @list.purge
+      super
+    end
+
+    def push(obj)
+      @list.prepend(obj)
+      @count += 1
+    end
+
+    def pop
+      raise ContainerEmpty if @count == 0
+      result = @list.first
+      @list.extract(result)
+      @count -= 1
+      result
+    end
+
+    def top
+      raise ContainerEmpty if @count == 0
+      @list.first
+    end
+
+    def each(&block)
+      @list.each(&block)
+    end
+
+    attr_reader :list
+
+    class Iterator < Opus8::Iterator
+      def initialize(stack)
+        @position = stack.list.head
+      end
+
+      def more?
+        !@position.nil?
+      end
+
+      def succ
+        if more?
+          result = @position.datum
+          @position = @position.succ
+        else
+          result = nil
+        end
+        result
+      end
+    end
+
+    def iter
+      Iterator.new(self)
+    end
+  end
+{% endhighlight %}
+    </div>
+
+  </article>
+
+  <article>
+    <h1>Queue</h1>
+    <p>A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class is worth it to see how they are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue</a></td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See queue as array example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class QueueAsArray < Queue
+    def initialize(size = 0)
+      super()
+      @array = Array.new(size)
+      @head = 0
+      @tail = size - 1
+    end
+
+    def purge
+      while @count > 0
+        @array[@head] = nil
+        @head += 1
+        @head = 0 if @head == @array.length
+        @count -= 1
+      end
+    end
+
+    def head
+      raise ContainerEmpty if @count == 0
+      @array[@head]
+    end
+
+    def enqueue(obj)
+      raise ContainerFull if @count == @array.length
+      @tail += 1
+      @tail = 0 if @tail == @array.length
+      @array[@tail] = obj
+      @count += 1
+    end
+
+    def dequeue
+      raise ContainerEmpty if @count == 0
+      result = @array[@head]
+      @array[@head] = nil
+      @head += 1
+      @head = 0 if @head == @array.length
+      @count -= 1
+      result
+    end
+  end
+{% endhighlight %}
+    </div>
+
+    <div class="code-block">
+      <p class="spec-title spec-correct">See queue as linked list example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class QueueAsLinkedList < Queue
+    def initialize
+      super
+      @list = SinglyLinkedList.new
+    end
+
+    def purge
+      @list.purge
+      super
+    end
+
+    def head
+      raise ContainerEmpty if @count == 0
+      @list.first
+    end
+
+    def enqueue(obj)
+      @list.append(obj)
+      @count += 1
+    end
+
+    def dequeue
+      raise ContainerEmpty if @count == 0
+      result = @list.first
+      @list.extract(result)
+      @count -= 1
+      result
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Deque</h1>
+    <p>A Deque is a queue which allows adding and removing items at both ends.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Double-ended_queue">Deque</a></td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See deque as array example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class DequeAsArray < QueueAsArray
+    alias queueHead head
+
+    include DequeMethods
+
+    def initialize(size = 0)
+      super(size)
+    end
+
+    alias head queueHead
+
+    def enqueueHead(obj)
+      raise ContainerFull if @count == @array.length
+      @head = if @head == 0
+        @array.length - 1
+      else
+        @head - 1
+      end
+      @array[@head] = obj
+      @count += 1
+    end
+
+    alias dequeueHead dequeue
+
+    def tail
+      raise ContainerEmpty if @count == 0
+      @array[@tail]
+    end
+
+    alias enqueueTail enqueue
+
+    def dequeueTail
+      raise ContainerEmpty if @count == 0
+      result = @array[@tail]
+      @array[@tail] = nil
+      @tail = if @tail == 0
+        @array.length - 1
+      else
+        @tail - 1
+      end
+      @count -= 1
+      result
+    end
+  end
+{% endhighlight %}
+    </div>
+
+    <div class="code-block">
+      <p class="spec-title spec-correct">See deque as linked list example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class DequeAsLinkedList < QueueAsLinkedList
+    alias queueHead head
+
+    include DequeMethods
+
+    def initialize
+      super
+    end
+
+    alias head queueHead
+
+    def enqueueHead(obj)
+      @list.prepend(obj)
+      @count += 1
+    end
+
+    alias dequeueHead dequeue
+
+    def tail
+      raise ContainerEmpty if @count == 0
+      @list.last
+    end
+
+    alias enqueueTail enqueue
+
+    def dequeueTail
+      raise ContainerEmpty if @count == 0
+      result = @list.last
+      @list.extract(result)
+      @count -= 1
+      result
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Singly Linked List</h1>
+    <p>Singly linked lists contain nodes which have a data field as well as a 'next' field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="http://en.wikipedia.org/wiki/Singly_linked_list#Singly_linked_lists">Singly-Linked List</a></td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class SinglyLinkedList
+    class Element
+      attr_accessor :data, :succ
+
+      def initialize(list, data, succ)
+        @list = list
+        @data = data
+        @succ = succ
+      end
+
+      def insert_after(item)
+        @succ = Element.new(@list, item, @succ)
+
+        @list.tail = @succ if @list.tail.equal?(self)
+      end
+
+      def insert_before(item)
+        tmp = Element.new(@list, item, self)
+
+        if @list.head.equal?(self)
+          @list.head = tmp
+        else
+          prevElem = @list.head
+          while !prevElem.nil? && !prevElem.succ.equal?(self)
+            prevElem = prevElem.succ
+          end
+          prevElem.succ = tmp
+        end
+      end
+    end
+
+    attr_accessor :head, :tail
+
+    def initialize
+      @head = nil
+      @tail = nil
+    end
+
+    def purge
+      @head = nil
+      @tail = nil
+    end
+
+    def empty?
+      @head.nil?
+    end
+
+    def first
+      if @head.nil?
+        raise Error
+      else
+        @head.data
+      end
+    end
+
+    def last
+      if @tail.nil?
+        raise Error
+      else
+        @tail.data
+      end
+    end
+
+    def prepend(elem)
+      temp = Element.new(self, elem, @head)
+
+      @tail = temp if @head.nil?
+      @head = temp
+    end
+
+    def append(elem)
+      temp = Element.new(self, elem, nil)
+
+      if @head.nil?
+        @head = temp
+      else
+        @tail.succ = temp
+      end
+
+      @tail = temp
+    end
+
+    def clone
+      linked_list = SinglyLinkedList.new
+
+      elem = @head
+      until elem.nil?
+        linked_list.append elem.data
+        elem = @head.succ
+      end
+
+      linked_list
+    end
+
+    def extract
+      elem = @head
+
+      prevElem = nil
+      while !elem.nil? && !elem.data.equal?(item)
+        prevElem = elem
+        elem = elem.succ
+      end
+
+      raise ArgumentError if elem.nil?
+
+      if elem == @head
+        @head = elem.succ
+      else
+        prevElem.succ = elem.succ
+      end
+
+      @tail = prevElem if elem == @tail
+    end
+
+    def each
+      elem = @head
+      until elem.nil?
+        yield ptr.data
+        elem = elem.succ
+      end
+    end
+  end
+{% endhighlight %}
+    </div>
+    
+    <p><a href="https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list">Read wiki</a></p>
+
+  </article>
+
+  <article>
+    <h1>Double linked list</h1>
+    <p>In a doubly-linked list , each list element contains two references--one to its successor and one to its predecessor.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly-Linked List</a></td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class DoubleLinkedList < SinglyLinkedList
+    class Element < SinglyLinkedList < Element
+      attr_accessor :prev
+
+      def initialize(list, data, succ, prev)
+        super(list, data, succ)
+        @prev = prev
+      end
+
+      def insert_after(item)
+        # Todo
+      end
+
+      def insert_before(item)
+        # Todo
+      end
+    end
+
+    attr_accessor :head, :tail
+
+    def initialize
+      @head = nil
+      @tail = nil
+    end
+
+    def purge
+      @head = nil
+      @tail = nil
+    end
+
+    def empty?
+      @head.nil?
+    end
+
+    def first
+      if @head.nil?
+        raise Error
+      else
+        @head.data
+      end
+    end
+
+    def last
+      if @tail.nil?
+        raise Error
+      else
+        @tail.data
+      end
+    end
+
+    def prepend(elem)
+      # Todo
+    end
+
+    def append(elem)
+      # Todo
+    end
+
+    def clone
+      # Todo
+    end
+
+    def extract
+      # Todo
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Ordered list</h1>
+    <p>An ordered list is a list in which the order of the items is significant. However, the items in an ordered lists are not necessarily sorted. Consequently, it is possible to change the order of items and still have a valid ordered list.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>OrderedListAsArray</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(1)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+      <tr>
+        <td>OrderedListAsLinkedList</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See ordered list as array example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class OrderedListAsArray < OrderedList
+    def initialize(size = 0)
+      super()
+      @array = Array.new(size)
+    end
+
+    attr_reader :array
+
+    attr_accessor :count
+
+    def insert(obj)
+      raise ContainerFull if @count == @array.length
+      @array[@count] = obj
+      @count += 1
+    end
+
+    def member?(obj)
+      for i in 0...@count
+        return true if @array[i].equal?(obj)
+      end
+      false
+    end
+
+    def find(obj)
+      for i in 0...@count
+        return @array[i] if @array[i] == obj
+      end
+      nil
+    end
+
+    def withdraw(obj)
+      raise ContainerEmpty if @count == 0
+      i = 0
+      i += 1 while (i < @count) && !@array[i].equal?(obj)
+      raise ArgumentError if i == @count
+      while i < @count - 1
+        @array[i] = @array[i + 1]
+        i += 1
+      end
+      @array[i] = nil
+      @count -= 1
+    end
+
+    class Cursor
+      def initialize(list, offset)
+        super()
+        @list = list
+        @offset = offset
+      end
+
+      def datum
+        raise IndexError unless (0...@list.count) === offset
+        @list[@offset]
+      end
+    end
+
+    def findPosition(obj)
+      i = 0
+      i += 1 while (i < @count) && (@array[i] != obj)
+      Cursor.new(self, i)
+    end
+
+    def [](offset)
+      raise IndexError unless (0...@count) === offset
+      @array[offset]
+    end
+
+    class Cursor < Cursor
+      def insertAfter(obj)
+        raise IndexError unless (0...@list.count) === @offset
+        raise ContainerFull if	@list.count == @list.array.length
+        insertPosition = @offset + 1
+        i = @list.count
+        while i > insertPosition
+          @list.array[i] = @list.array[i - 1]
+          i -= 1
+        end
+        @list.array[insertPosition] = obj
+        @list.count += 1
+      end
+
+      def withdraw
+        raise IndexError unless (0...@list.count) === @offset
+        raise ContainerEmpty if @list.count == 0
+        i = @offset
+        while i < @list.count - 1
+          @list.array[i] = @list.array[i + 1]
+          i += 1
+        end
+        @list.array[i] = nil
+        @list.count -= 1
+      end
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Hash Table</h1>
+    <p>A hash table is a searchable container. As such, it provides methods for putting an object into the container, finding an object in the container, and removing an object from the container.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a></td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>&Theta;(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class HashTable < SearchableContainer
+    def initialize
+      super
+    end
+
+    abstractmethod :length
+
+    def loadFactor
+      count / length
+    end
+
+    def f(obj)
+      obj.hash
+    end
+
+    def g(x)
+      x.abs % length
+    end
+
+    def h(obj)
+      g(f(obj))
+    end
+  end
+
+  class ChainedHashTable < HashTable
+    def initialize(length)
+      super()
+      @array = Array.new(length)
+      for i in 0...length
+        @array[i] = SinglyLinkedList.new
+      end
+    end
+
+    def length
+      @array.length
+    end
+
+    def purge
+      for i in 0...length
+        @array[i].purge
+      end
+      @count = 0
+    end
+
+    def insert(obj)
+      @array[h(obj)].append(obj)
+      @count += 1
+    end
+
+    def withdraw(obj)
+      @array[h(obj)].extract(obj)
+      @count -= 1
+    end
+
+    def find(obj)
+      ptr = @array[h(obj)].head
+      until ptr.nil?
+        return ptr.datum if ptr.datum == obj
+        ptr = ptr.succ
+      end
+      nil
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Binary Tree</h1>
+    <p>A binary tree is a tree in which each node can have a maximum of two children. The children are designated left and right.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Binary_tree">Binary Tree</a></td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class BinaryTree < Tree
+    def initialize(*args)
+      super()
+      case args.length
+      when 0
+        @key = nil
+        @left = nil
+        @right = nil
+      when 1
+        @key = args[0]
+        @left = BinaryTree.new
+        @right = BinaryTree.new
+      when 3
+        @key = args[0]
+        @left = args[1]
+        @right = args[2]
+      else
+        raise ArgumentError
+      end
+    end
+
+    def purge
+      @key = nil
+      @left = nil
+      @right = nil
+    end
+
+    def left
+      raise StateError if empty?
+      @left
+    end
+
+    def right
+      raise StateError if empty?
+      @right
+    end
+
+    def left
+      raise StateError if empty?
+      @left
+    end
+
+    def right
+      raise StateError if empty?
+      @right
+    end
+
+    def compareTo(bt)
+      assert { is_a?(obj.type) }
+      if empty?
+        if bt.empty?
+          return 0
+        else
+          return -1
+        end
+      elsif bt.empty?
+        return 1
+      else
+        result = @key <=> bt._key
+        result = @left <=> bt._left if result == 0
+        result = @right <=> bt._right if result == 0
+        return result
+      end
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Binary Search Tree</h1>
+    <p>In computer science, binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of containers: data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name)</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a></td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class BinarySearchTree < BinaryTree
+    include SearchTreeMethods
+
+    def initialize(*args)
+      super
+    end
+
+    def find(obj)
+      return nil if empty?
+      diff = obj <=> @key
+      if diff == 0
+        return @key
+      elsif diff < 0
+        return @left.find(obj)
+      elsif diff > 0
+        return @right.find(obj)
+      end
+    end
+
+    def min
+      if empty?
+        nil
+      elsif @left.empty?
+        @key
+      else
+        @left.min
+      end
+    end
+
+    def insert(obj)
+      if empty?
+        attachKey(obj)
+      else
+        diff = obj <=> @key
+        if diff == 0
+          raise ArgumentError
+        elsif diff < 0
+          @left.insert(obj)
+        elsif diff > 0
+          @right.insert(obj)
+        end
+      end
+      balance
+    end
+
+    def attachKey(obj)
+      raise StateError unless empty?
+      @key = obj
+      @left = BinarySearchTree.new
+      @right = BinarySearchTree.new
+    end
+
+    def balance; end
+
+    def withdraw(obj)
+      raise ArgumentError if empty?
+      diff = obj <=> @key
+      if diff == 0
+        if !@left.empty?
+          max = @left.max
+          @key = max
+          @left.withdraw(max)
+        elsif !@right.empty?
+          min = @right.min
+          @key = min
+          @right.withdraw(min)
+        else
+          detachKey
+        end
+      elsif diff < 0
+        @left.withdraw(obj)
+      elsif diff > 0
+        @right.withdraw(obj)
+      end
+      balance
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>B Tree</h1>
+    <p>In computer science, a B-tree is a self-balancing tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree is a generalization of a binary search tree in that a node can have more than two children (Comer . Unlike self-balancing binary search trees, the B-tree is optimized for systems that read and write large blocks of data. B-trees are a good example of a data structure for external memory. It is commonly used in databases and filesystems.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="http://en.wikipedia.org/wiki/B_tree">B-Tree</a></td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>&Theta;(log(n))</td>
+        <td>O(log(n))</td>
+        <td>O(log(n))</td>
+        <td>O(log(n))</td>
+        <td>O(log(n))</td>
+        <td>O(log(n))</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class BTree < MWayTree
+    def initialize(m)
+      super
+      @parent = nil
+    end
+
+    def attachSubtree(i, t)
+      @subtree[i] = t
+      t.parent = self
+    end
+
+    attr_accessor :parent
+
+    def insert(obj)
+      if empty?
+        if @parent.nil?
+          attachSubtree(0, BTree.new(m))
+          @key[1] = obj
+          attachSubtree(1, BTree.new(m))
+          @count = 1
+        else
+          @parent.insertUp(obj, BTree.new(m))
+        end
+      else
+        index = findIndex(obj)
+        raise ArgumentError if (index != 0) && (@key == obj)
+        @subtree[index].insert(obj)
+      end
+    end
+
+    def insertUp(obj, child)
+      index = findIndex(obj)
+      if !full?
+        insertPair(index + 1, obj, child)
+        @count += 1
+      else
+        extraKey, extraTree = insertPair(index + 1, obj, child)
+        if @parent.nil?
+          left = BTree.new(m)
+          right = BTree.new(m)
+          left.attachLeftHalfOf(self)
+          right.attachRightHalfOf(self)
+          right.insertUp(extraKey, extraTree)
+          attachSubtree(0, left)
+          @key[1] = @key[(m + 1) / 2]
+          attachSubtree(1, right)
+          @count = 1
+        else
+          @count = (m + 1) / 2 - 1
+          right = BTree.new(m)
+          right.attachRightHalfOf(self)
+          right.insertUp(extraKey, extraTree)
+          @parent.insertUp(@key[(m + 1) / 2], right)
+        end
+      end
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+  <article>
+    <h1>Binary Heap</h1>
+    <p>A binary heap is a heap-ordered complete binary tree which is implemented using an array. In a heap the smallest key is found at the root and since the root is always found in the first position of the array, finding the smallest key is a trivial operation in a binary heap.</p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Structure</td>
+        <td>Average Access</td>
+        <td>Average Search</td>
+        <td>Average Insertion</td>
+        <td>Average Deletion</td>
+        <td>Worst Access</td>
+        <td>Worst Search</td>
+        <td>Worst Insertion</td>
+        <td>Worst Deletion</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Binary_heap">Binary Heap</a></td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(n)</td>
+        <td>&Theta;(1)</td>
+        <td>O(log(n))</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(log(n))</td>
+        <td>O(log(n))</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">See example</p>
+{% highlight ruby %}
+  # This file contains the Ruby code from book of
+  # "Data Structures and Algorithms
+  # with Object-Oriented Design Patterns in Ruby"
+  # by Bruno R. Preiss.
+  #
+  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
+
+  class BinaryHeap < PriorityQueue
+    def enqueue(obj)
+      raise ContainerFull if @count == @array.length
+      @count += 1
+      i = @count
+      while (i > 1) && (@array[i / 2] > obj)
+        @array[i] = @array[i / 2]
+        i /= 2
+      end
+      @array[i] = obj
+    end
+
+    def min
+      raise ContainerEmpty if @count == 0
+      @array[1]
+    end
+
+    def dequeueMin
+      raise ContainerEmpty if @count == 0
+      result = @array[1]
+      last = @array[@count]
+      @count -= 1
+      i = 1
+      while 2 * i < @count + 1
+        child = 2 * i
+        if (child + 1 < @count + 1) && (@array[child + 1] < @array[child])
+          child += 1
+        end
+        break if last <= @array[child]
+        @array[i] = @array[child]
+        i = child
+      end
+      @array[i] = last
+      result
+    end
+  end
+{% endhighlight %}
+    </div>
+  </article>
+
+  <article>
+    <h1>Code and articles were taken from resources:</h1>
+    <div>
+      <ul>
+        <li><a href="https://github.com/blahah/datastructures">https://github.com/blahah/datastructures</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/List_of_data_structures">https://en.wikipedia.org/wiki/List_of_data_structures</a></li>
+        <li><a href="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html">https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html</a></li>
+        <li><a href="http://bigocheatsheet.com/">http://bigocheatsheet.com/</a></li>
+        <li><a href="https://gist.github.com/TSiege/cbb0507082bb18ff7e4b">https://gist.github.com/TSiege/cbb0507082bb18ff7e4b</a></li>
+      </ul>
+    </div>
+
+  </article>
+
 </div>
