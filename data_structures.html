@@ -6,7 +6,7 @@ layout: default
 
 <div class="content">
   <article>
-    <h1>Data structures</h1>
+    <h1><b>Data structures</b></h1>
     <p>In computer science, big O notation is used to classify algorithms by how they respond to changes in input
       size, such as how the processing time of an algorithm changes as the problem size becomes extremely large.
       In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size
@@ -15,15 +15,15 @@ layout: default
   </article>
 
   <article>
-    <h1>Basic axioms of data structures</h1>
+    <h1><a name="describe">Basic axioms of data structures</a></h1>
     <p>The running time performance of the common language runtime is given by a set of axioms which we shall now
       postulate.</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">See description with examples</p>
+      <p class="spec-title spec-correct">Description with examples</p>
 {% highlight ruby %}
-  # 1 - The time required to fetch a reference to an object from memory is a constant,
+  # 1 - The time required to fetch a reference to an object from memory is aconstant,
   # T_fetch, and the time required to store a reference to an object in memory is
-  # a constant, T_store
+  # a cnstant, T_store
 
   y = x
 
@@ -110,11 +110,8 @@ layout: default
   </article>
 
   <article>
-    <h1>Big O notation</h1>
-  </article>
+    <h1><a name="describe">Implementation</a></h1>
 
-  <article>
-    <h1>Implementation</h1>
   </article>
 
   <article>
@@ -149,7 +146,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See stack as array example</p>
+      <p class="spec-title spec-correct">Stack as array</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -224,7 +221,7 @@ layout: default
     </div>
 
     <div class="code-block">
-      <p class="spec-title spec-correct">See stack as linked list example</p>
+      <p class="spec-title spec-correct">Stack as linked list</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -295,7 +292,7 @@ layout: default
 
   <article>
     <h1>Queue</h1>
-    <p>A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class is worth it to see how they are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list.</p>
+    <p>A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class is worth it to seeethey are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list.</p>
     <table style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
@@ -325,7 +322,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See queue as array example</p>
+      <p class="spec-title spec-correct">Queue as array</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -374,7 +371,7 @@ layout: default
     </div>
 
     <div class="code-block">
-      <p class="spec-title spec-correct">See queue as linked list example</p>
+      <p class="spec-title spec-correct">Queue as linked list</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -444,7 +441,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See deque as array example</p>
+      <p class="spec-title spec-correct">Deque as array</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -497,7 +494,7 @@ layout: default
     </div>
 
     <div class="code-block">
-      <p class="spec-title spec-correct">See deque as linked list example</p>
+      <p class="spec-title spec-correct">Deque as linked list</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -571,7 +568,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">Singly Linked List</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -724,7 +721,7 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly-Linked List</a></td>
+        <td><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly Linked List</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -737,7 +734,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">Doubly Linked List</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -831,7 +828,7 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td>OrderedListAsArray</td>
+        <td>OrderedList AsArray</td>
         <td>&Theta;(1)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -842,7 +839,7 @@ layout: default
         <td>O(1)</td>
       </tr>
       <tr>
-        <td>OrderedListAsLinkedList</td>
+        <td>OrderedList AsLinkedList</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -855,7 +852,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See ordered list as array example</p>
+      <p class="spec-title spec-correct">Ordered list as array example</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -990,7 +987,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">Hash Table</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -1094,7 +1091,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">Binary Tree</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -1200,7 +1197,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">Binary Search Tree</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -1318,7 +1315,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">B Tree</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
@@ -1415,7 +1412,7 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">See example</p>
+      <p class="spec-title spec-correct">Benary Heap</p>
 {% highlight ruby %}
   # This file contains the Ruby code from book of "Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
   # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
