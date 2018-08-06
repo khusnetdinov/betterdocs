@@ -1661,8 +1661,12 @@ layout: default
   <article>
     <h1><b>Strategy pattern</b></h1>
     <p>In computer programming, the strategy pattern (also known as the policy pattern) is a software design pattern
-      that enables an algorithm's behavior to be selected at runtime. The strategy pattern defines a family of
-      algorithms, encapsulates each algorithm, and makes the algorithms interchangeable within that family.
+      that enables an algorithm's behavior to be selected at runtime. The strategy pattern
+      <ul>
+        <li>defines a family of algorithms,</li>
+        <li>encapsulates each algorithm, and</li>
+        <li>makes the algorithms interchangeable within that family.</li>
+      </ul>
       Strategy lets the algorithm vary independently from clients that use it. Strategy is one of the patterns
       included in the influential book Design Patterns by Gamma et al. that popularized the concept of using
       patterns to describe software design.
@@ -1743,7 +1747,7 @@ layout: default
       styles += "font-size:#{font_size};" if respond_to? :font_size
       styles += "background-color:#{background_color};" if respond_to? :background_color
       string += " style='#{styles}'" unless styles.empty?
-      string += ">#{content}&lt;/#{tagname}>"
+      string += ">#{content}</#{tagname}>"
       end
   end
 
