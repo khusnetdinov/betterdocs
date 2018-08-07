@@ -5,5 +5,1876 @@ layout: default
 {% include sidebar.html %}
 
 <div class="content">
-  Design Patterns
+  <article>
+    <h1><b>Design patterns</b></h1>
+  </article>
+
+  <article>
+    <h1><a name="describe">Creational pattern</a></h1>
+    <p>In software engineering, creational design patterns are design patterns that deal with object creation
+      mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object
+      creation could result in design problems or in added complexity to the design. Creational design patterns
+      solve this problem by somehow controlling this object creation. Creational design patterns are composed of
+      two dominant ideas. One is encapsulating knowledge about which concrete classes the system uses. Another is
+      hiding how instances of these concrete classes are created and combined.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Creational_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Abstract factory pattern</b></h1>
+    <p>The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common
+      theme without specifying their concrete classes. In normal usage, the client software creates a concrete
+      implementation of the abstract factory and then uses the generic interface of the factory to create the
+      concrete objects that are part of the theme. The client doesn't know (or care) which concrete objects it
+      gets from each of these internal factories, since it uses only the generic interfaces of their products.
+      This pattern separates the details of implementation of a set of objects from their general usage and relies
+      on object composition, as object creation is implemented in methods exposed in the factory interface.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Abstract factory pattern</p>
+{% highlight ruby %}
+  # Abstract Factory patterns work around a super-factory which creates other factories. This factory is also
+  called as factory of factories. This type of design pattern comes under creational pattern as this pattern
+  provides one of the best ways to create an object.
+
+  # In Abstract Factory pattern an interface is responsible for creating a factory of related objects without
+  explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.
+
+  # Classes witch is used in abstract factories
+
+  class Frog
+    # Implementation
+  end
+
+  class Algae
+    # Implementation
+  end
+
+  class Tiger
+    # Implementation
+  end
+
+  class Tree
+    # Implementation
+  end
+
+  # Abstract factory with realization pond environment
+  class PondFactory
+    def new_animal
+      Frog.new
+    end
+
+    def new_plant
+      Algae.new
+    end
+  end
+
+  # Abstract factory with realization jungle environment
+  class JungleFactory
+    def new_animal
+    Tiger.new
+    end
+
+    def new_plant
+      Tree.new
+    end
+  end
+
+  # Factory of factories
+  class EnvironmentFactory
+    attr_reader :factories
+
+    def initialize
+      @factories = %w[PondFactory JungleFactory]
+    end
+
+    def get_factory(method)
+      factory_class = get_factory_class method
+
+      if factories.include? factory_class
+        self.class.const_get(factory_class).new
+      else
+        super
+      end
+    end
+
+    private
+
+    def get_factory_class(method)
+      "#{method.to_s.capitalize}Factory"
+    end
+  end
+
+  # Usage
+  environment = EnvironmentFactory.new
+  jungle = environment.get_factory(:jungle)
+  jungle.new_animal
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Builder pattern</b></h1>
+    <p>The builder pattern is an object creation software design pattern. Unlike the abstract factory pattern and
+      the factory method pattern whose intention is to enable polymorphism, the intention of the builder pattern
+      is to find a solution to the telescoping constructor anti-pattern[citation needed]. The telescoping
+      constructor anti-pattern occurs when the increase of object constructor parameter combination leads to an
+      exponential list of constructors. Instead of using numerous constructors, the builder pattern uses another
+      object, a builder, that receives each initialization parameter step by step and then returns the resulting
+      constructed object at once.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Builder pattern</p>
+{% highlight ruby %}
+  # The very simple idea behind the Builder pattern is that you encapsulate object construction logic behind a
+  class of its own. The builder class takes charge of assembling all the components of a complex object. Each
+  builder has an interface that lets you specify the configuration of your new object step by step. In a
+  sense, a builder is a sort of like a multipart new method, where objects are created in an extended process
+  instead of all in one shot.
+
+  # Classes witch are used in builder
+  class Computer
+    # Implementation
+  end
+
+  class TurboCPU
+    # Implementation
+  end
+
+  class Drive
+    # Implementation
+  end
+
+  # Builder
+  class ComputerBuilder
+    attr_reader :computer
+
+    def initialize
+      @computer = Computer.new
+    end
+
+    def turbo(_has_turbo_cpu = true)
+      computer.cpu = TurboCPU.new
+    end
+
+    def display=(display)
+      computer.display = display
+    end
+
+    def memory_size=(size_in_mb)
+      computer.memory_size = size_in_mb
+    end
+
+    def add_cd(writer = false)
+      computer.drives << Drive.new(:cd, 760, writer)
+    end
+
+    def add_dvd(writer = false)
+    computer.drives << Drive.new(:dvd, 4000, writer)
+    end
+
+    def add_hard_disk(size_in_mb)
+      computer.drives << Drive.new(:hard_disk, size_in_mb, true)
+    end
+  end
+
+  # Usage
+
+  computer_builder = ComputerBuilder.new
+
+  computer_builder.turbo false
+  computer_builder.display = 'Monitor'
+  computer_builder.add_dvd false
+  computer_builder.add_cd = false
+  computer_builder.memory_size = '12mb'
+
+  computer = computer_builder.computer
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Builder_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Factory pattern</b></h1>
+    <p>In class-based programming, the factory method pattern is a creational pattern that uses factory methods to
+      deal with the problem of creating objects without having to specify the exact class of the object that will
+      be created. This is done by creating objects by calling a factory method—either specified in an interface
+      and implemented by child classes, or implemented in a base class and optionally overridden by derived
+      classes—rather than by calling a constructor.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Factory pattern</p>
+{% highlight ruby %}
+  # Factory pattern is one of most used design pattern in Object oriented design. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object. In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+
+  # Classes witch are used in factory
+  class Rectangle
+    # Implementation
+  end
+
+  class Square
+    # Implementation
+  end
+
+  class Circle
+    # Implementation
+  end
+
+  # Factory
+  class ShapeFactory
+    def get_shape(type)
+      case type
+      when :rectangle then Rectangle.new
+      when :square then Square.new
+      when :circle then Circle.new
+      end
+    end
+  end
+
+  # Usage
+
+  shape_factory = ShapeFactory.new
+  square = shape_factory.get_shape :square
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Prototype pattern</b></h1>
+    <p>The prototype pattern is a creational design pattern in software development. It is used when the type of
+      objects to create is determined by a prototypical instance, which is cloned to produce new objects. This
+      pattern is used to:
+    </p>
+    <ul>
+      <li>avoid subclasses of an object creator in the client application, like the abstract factory pattern does.
+      </li>
+      <li>avoid the inherent cost of creating a new object in the standard way (e.g., using the 'new' keyword)
+        when it is prohibitively expensive for a given application.
+      </li>
+    </ul>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Prototype pattern</p>
+{% highlight ruby %}
+  # The prototype pattern is a creational pattern along the lines of the factory. The trick with the prototype is that you create new objects by copying a master object. Change that master object and all subsequent objects that you create will go off into life with a copy of the change.
+
+  # Prototypes witch are used for prototyping
+  class Note
+    attr_accessor :duration
+
+    def initialize(duration)
+      @duration = duration
+    end
+
+    def deep_copy
+      Marshal.load(Marshal.dump(self))
+    end
+  end
+
+  class Clef
+    # Implementation
+  end
+
+  class PrototypeManager
+    def initialize
+      @prototypes = {}
+    end
+
+    def set(key, prototype)
+      if @prototypes.include? key
+        raise IndexError, "A prototype is already assigned to this key: #{key}"
+      else
+        @prototypes[key] = prototype
+      end
+    end
+
+    def unset(key)
+      if !@prototypes.include? key
+        raise IndexError, "This key doesn't exist in prototype: #{key}"
+      else
+        @prototypes.delete key
+      end
+    end
+
+    def get(key)
+      @prototypes[key].deep_copy
+    end
+  end
+
+  # Usage
+
+  prototype = PrototypeManager.new
+  prototype.set :half_note, Note.new(0.5)
+  prototype.set :full_note, Note.new(1)
+
+  note = prototype.get(:full_note)
+  note.duration
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Prototype_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Singleton pattern</b></h1>
+    <p>Ensure a class only has one instance, and provide a global point of access to it. This is useful when exactly
+      one object is needed to coordinate actions across the system. The concept is sometimes generalized to
+      systems that operate more efficiently when only one object exists, or that restrict the instantiation to a
+      certain number of objects.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Singleton pattern</p>
+{% highlight ruby %}
+  # The singleton pattern is used to ensure that there is only one instance of a class and provides global access to that instance. This pattern is useful when you want one instance of a class and many different objects need to access it, rather than pass the object around, we can make the object global.
+
+  class Singleton
+    def self.new
+      @instance ||= super
+    end
+  end
+
+  # Other example
+  require 'singleton'
+
+  class OtherSingleton
+    include Singleton
+
+    # OtherSingleton.new is not allowed
+  end
+
+  # Usage
+  s1 = Singleton.new
+  s2 = OtherSingleton.instance
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Singleton_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Not covered patterns:</b></h1>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Lazy_initialization">Lazy initialization</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Multiton_pattern">Multiton</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Object_pool_pattern">Object pool</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">Resource acquisition is
+        initialization</a></li>
+    </ul>
+  </article>
+
+  <article>
+    <h1><b>Structural pattern</b></h1>
+    <p>In software engineering, structural design patterns are design patterns that ease the design by identifying a
+      simple way to realize relationships between entities.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Structural_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Adapter pattern</b></h1>
+    <p>In software engineering, the adapter pattern is a software design pattern that allows the interface of an
+      existing class to be used as another interface. It is often used to make existing classes work with others
+      without modifying their source code.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Adapter pattern</p>
+{% highlight ruby %}
+  # An adapter helps two incompatible interfaces to work together. This is the real world definition for an adapter. Interfaces may be incompatible but the inner functionality should suit the need. The Adapter design pattern allows otherwise incompatible classes to work together by converting the interface of one class into an interface expected by the clients.
+
+  class Adaptee
+    def walk
+      'walk_as_adaptee'
+    end
+  end
+
+  class Adaptor
+    attr_reader :adaptee
+
+    def initialize
+      @adaptee = Adaptee.new
+    end
+
+    def walk
+      adaptee.walk + ' and_sing_song_as_adaptor'
+    end
+  end
+
+  # Usage
+
+  adaptor = Adaptor.new
+  adaptor.walk # => walk_as_adaptor and_sing_song_as_adaptor
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Adapter_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Composite pattern</b></h1>
+    <p>The composite design pattern is a structural pattern used to represent objects that have a hierarchical tree
+      structure. It allows for the uniform treatment of both individual leaf nodes and of branches composed of
+      many nodes.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Composite pattern</p>
+{% highlight ruby %}
+  # In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes that a group of objects is to be treated in the same way as a single instance of an object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly
+
+  # Tasks witch are used in composition
+  class MonsterTask
+    attr_reader :reward
+
+    def initialize
+      @reward = 100
+    end
+  end
+
+  class PuzzleTask
+    attr_reader :reward
+
+    def initialize
+      @reward = 200
+    end
+  end
+
+  # Composer
+  class Quest
+    def initialize
+      # Here we use Array as example of data structure for composition. Always is used Tree
+      @tasks = []
+    end
+
+    def <<(task)
+      @tasks << task
+    end
+
+    def reward
+      @tasks.inject(0) { |sum, task| sum += task.reward }
+    end
+  end
+
+  # Usage
+  quest = Quest.new
+  quest << MonsterTask.new
+  quest << PuzzleTask.new
+  puts quest.reward # => 300
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Composite_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Decorator pattern</b></h1>
+    <p>In object-oriented programming, the decorator pattern (also known as Wrapper, an alternative naming shared
+      with the Adapter pattern) is a design pattern that allows behavior to be added to an individual object,
+      either statically or dynamically, without affecting the behavior of other objects from the same class. The
+      decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows
+      functionality to be divided between classes with unique areas of concern.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Decorator pattern</p>
+{% highlight ruby %}
+  # The decorator design pattern allows for features to be added dynamically to an existing object.
+
+  class Decorator
+    def initialize(item)
+      @item = item
+    end
+
+    def use
+      item.use
+    end
+
+    # Dynamic method that added in decorator
+    def another_use
+      item.use + 'another way'
+    end
+  end
+
+  class MagicDecorator < Decorator
+    def description
+      @item.description + 'Magic'
+    end
+  end
+
+  class MasterpieceDecorator < Decorator
+    def description
+      @item.description + 'Masterpiece'
+    end
+  end
+
+  # Class what should be decorated
+  class Item
+    attr_reader :description
+
+    def initialize
+      @description = 'Item '
+    end
+
+    def use
+      'use it'
+    end
+  end
+
+  # Usage
+  item = Item.new
+  puts item.description # => Item
+
+  magic_item = MagicDecorator.new(item)
+  puts magic_item.description # => Item Magic
+
+  masterpiece_item = MasterpieceDecorator.new(item)
+  puts masterpiece_item.description # => Item Masterpiece
+
+  # All next lines puts "use it"
+  item.use
+  magic_item.use
+  masterpiece_item.use
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Decorator_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Facade pattern</b></h1>
+    <p>The Facade design pattern is often used when a system is very complex or difficult to understand because the
+      system has a large number of interdependent classes or its source code is unavailable. This pattern hides
+      the complexities of the larger system and provides a simpler interface to the client. It typically involves
+      a single wrapper class which contains a set of members required by client. These members access the system
+      on behalf of the facade client and hide the implementation details.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Facade pattern</p>
+{% highlight ruby %}
+  # The goal of the Facade Pattern is to provide a unified interface to a set of interfaces in a subsystem. This means you'd just have some object that can send back other objects.
+
+  # Complex Parts
+  class CPU
+    def freeze
+      # Implementation
+    end
+
+    def jump(position)
+      # Implementation
+    end
+
+    def execute
+      # Implementation
+    end
+  end
+
+  class Memory
+    def load(position, data)
+      # Implementation
+    end
+  end
+
+  class HardDrive
+    def read(lba, size)
+      # Implementation
+    end
+  end
+
+  # Facade
+  class ComputerFacade
+    attr_reader :processor, :ram, :hd
+
+    def initialize
+      @processor = CPU.new
+      @ram = Memory.new
+      @hd = HardDrive.new
+    end
+
+    def start
+      processor.freeze
+      processor.jump(BOOT_ADDRESS)
+      processor.execute
+      ram.load(BOOT_ADDRESS, hd.read(BOOT_SECTOR, SECTOR_SIZE))
+    end
+  end
+
+  # Usage
+  computer_facade = ComputerFacade.new
+  computer_facade.start
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Facade_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Flyweight pattern</b></h1>
+    <p>In computer programming, flyweight is a software design pattern. A flyweight is an object that minimizes
+      memory use by sharing as much data as possible with other similar objects; it is a way to use objects in
+      large numbers when a simple repeated representation would use an unacceptable amount of memory. Often some
+      parts of the object state can be shared, and it is common practice to hold them in external data structures
+      and pass them to the flyweight objects temporarily when they are used.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Flyweight pattern</p>
+{% highlight ruby %}
+  # The Flyweight pattern describes how to share objects to allow their use at fine granularity without prohibitive cost.
+
+  # Flyweight Object
+  class Lamp
+    attr_reader :color
+
+    def initialize(color)
+      @color = color
+    end
+  end
+
+  class TreeBranch
+    attr_reader :branch_number
+
+    def initialize(branch_number)
+      @branch_number = branch_number
+    end
+
+    def hang(lamp)
+      puts "Hang #{lamp.color} lamp on branch #{branch_number}"
+    end
+  end
+
+  # Flyweight Factory
+  class LampFactory
+    attr_reader :lamps
+
+    def initialize
+      @lamps = {}
+    end
+
+    def find_lamp(color)
+      if lamps.key?(color)
+        lamp = lamps[color]
+      else
+        lamp = Lamp.new(color)
+        lamps[color] = lamp
+      end
+      lamp
+    end
+
+    def total_number_of_lamps_made
+      lamps.size
+    end
+  end
+
+  class ChristmasTree
+    attr_reader :lamp_factory, :lamps_hung
+
+    def initialize(lamp_factory = LampFactory.new)
+      @lamp_factory = lamp_factory
+      @lamps_hung = 0
+
+      dress_up_the_tree
+    end
+
+    def hang_lamp(color, branch_number)
+      TreeBranch.new(branch_number).hang(lamp_factory.find_lamp(color))
+      lamps_hung += 1
+    end
+
+    def dress_up_the_tree
+      yield self if block_given?
+    end
+  end
+
+  # Usage
+  christmas_tree = ChristmasTree.new
+  christmas_tree.dress_up_the_tree do
+    hang_lamp('red', 1)
+    hang_lamp('blue', 1)
+    hang_lamp('yellow', 1)
+    hang_lamp('red', 2)
+    hang_lamp('blue', 2)
+    hang_lamp('yellow', 2)
+    hang_lamp('red', 3)
+    hang_lamp('blue', 3)
+    hang_lamp('yellow', 3)
+    hang_lamp('red', 4)
+    hang_lamp('blue', 4)
+    hang_lamp('yellow', 4)
+    hang_lamp('red', 5)
+    hang_lamp('blue', 5)
+    hang_lamp('yellow', 5)
+    hang_lamp('red', 6)
+    hang_lamp('blue', 6)
+    hang_lamp('yellow', 6)
+    hang_lamp('red', 7)
+    hang_lamp('blue', 7)
+    hang_lamp('yellow', 7)
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Flyweight_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Proxy pattern</b></h1>
+    <p>A proxy, in its most general form, is a class functioning as an interface to something else. The proxy could
+      interface to anything: a network connection, a large object in memory, a file, or some other resource that
+      is expensive or impossible to duplicate. In short, a proxy is a wrapper or agent object that is being called
+      by the client to access the real serving object behind the scenes. Use of the proxy can simply be forwarding
+      to the real object, or can provide additional logic. In the proxy extra functionality can be provided, for
+      example caching when operations on the real object are resource intensive, or checking preconditions before
+      operations on the real object are invoked. For the client, usage of a proxy object is similar to using the
+      real object, because both implement the same interface.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Proxy pattern</p>
+{% highlight ruby %}
+  # When building a proxy, we could implement a method for each method in the underlying object. However, this leads to a lot of repeated code and tightly couples the proxy with the underlying object. A better alternative is to pass method calls direcly to the underlying object. Ruby includes a method that is perfect for this situation called method_missing.
+
+  # Object witch is decorated
+  class BankAccount
+    attr_reader :balance
+
+    def initialize(balance = 0)
+      @balance = balance
+    end
+
+    def deposit(amount)
+      balance += amount
+    end
+
+    def withdraw(amount)
+      balance -= amount
+    end
+  end
+
+  # Proxy
+  # Do not use attr_reader for accessing to proxy object
+  class BankAccountProxy
+    def initialize(real_object)
+      @real_object = real_object
+    end
+
+    def balance
+      @real_object.balance
+    end
+
+    def deposit(amount)
+      @real_object.deposit(amount)
+    end
+
+    def withdraw(amount)
+      @real_object.withdraw(amount)
+    end
+  end
+
+  # Protection proxy
+  # Are you working on an MNC? If so, we might be well aware of the proxy server that provides us internet by restricting access to some sort of websites like public e-mail, social networking, data storage etc. The management feels that, it is better to block some content and provide only work related web pages. Proxy server does that job. This is a type of proxy design pattern
+  class BankAccountProtectionProxy
+    def initialize(real_account, owner_name)
+      @subject = real_account
+      @owner_name = owner_name
+    end
+
+    def deposit(amount)
+      check_access
+      @subject.deposit(amount)
+    end
+
+    def withdraw(amount)
+      check_access
+      @subject.withdraw(amount)
+    end
+
+    def balance
+      check_access
+      @subject.balance
+    end
+
+    def check_access
+      # Implementation
+    end
+  end
+
+  # Virtual proxy
+  # In place of a complex or heavy object, use a skeleton representation. When an underlying image is huge in size, just represent it using a virtual proxy object and on demand load the real object. You know that the real object is expensive in terms of instantiation and so without the real need we are not going to use the real object. Until the need arises we will use the virtual proxy.
+  class BankAccountVirtualProxy
+    def initialize(&creation_block)
+      @creation_block = creation_block
+    end
+
+    def deposit(amount)
+      subject.deposit(amount)
+    end
+
+    def withdraw(amount)
+      subject.withdraw(amount)
+    end
+
+    def balance
+      subject.balance
+    end
+
+    def subject
+      @subject ||= @creation_block.call
+    end
+  end
+
+  # Remote proxy
+  # In distributed object communication, a local object represents a remote object (one that belongs to a different address space). The local object is a proxy for the remote object, and method invocation on the local object results in remote method invocation on the remote object. Think of an ATM implementation, it will hold proxy objects for bank information that exists in the remote server.
+
+  # Server part
+  class BankAccountRemoteProxy
+    # implementation
+  end
+
+  URI = 'druby://path_to_domain:port'
+  DRb.start_service(URI, BankAccountRemoteProxy.new)
+  DRb.thread.join
+
+  # Client part
+  URI = 'druby://path_to_domain:port'
+  proxy = DRbObject.new_with_uri(URI)
+  proxy.balance
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Proxy_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Not covered patterns:</b></h1>
+    <ul>
+      <li><a href="http://c2.com/cgi/wiki?AnnotatedCallback">Annotated Callback</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Bridge_pattern">Bridge</a></li>
+      <li><a href="http://c2.com/cgi/wiki?DataBusPattern">Data Bus</a></li>
+      <li><a href="http://c2.com/cgi/wiki?RoleObjectPattern">Role Object</a></li>
+    </ul>
+  </article>
+
+  <article>
+    <h1><b>Behavioral pattern</b></h1>
+    <p>In software engineering, behavioral design patterns are design patterns that identify common communication
+      patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in
+      carrying out this communication.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Behavioral_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Chain of responsibility pattern</b></h1>
+    <p>In object-oriented design, the chain-of-responsibility pattern is a design pattern consisting of a source of
+      command objects and a series of processing objects. Each processing object contains logic that defines the
+      types of command objects that it can handle; the rest are passed to the next processing object in the chain.
+      A mechanism also exists for adding new processing objects to the end of this chain.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Chain of responsibility pattern</p>
+{% highlight ruby %}
+  # Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+
+  # Implements the chain of responsibility pattern. Does not know anything Sabout the approval process, merely whether the current handler can approve the request, or must pass it to a successor.
+  class PurchaseApprover
+    attr_reader :successor
+
+    def initialize(successor)
+      @successor = successor
+    end
+
+    def process_request(request)
+      if approve_request request
+        nil
+      elsif successor
+        successor.process_request request
+      else
+        deny_request request
+      end
+    end
+
+    # This may be overridden by a handler if it wants to provide a custom action
+    # when it is the last member of the chain
+    def deny_request(request)
+      # Implementation
+    end
+  end
+
+  # Parts of approving chain
+  # Base class for approvers who only consider whether the request amount is allowable
+  class AmountApprover < PurchaseApprover
+    BASE = 500
+
+    def approve_request(request)
+      if request.amount < self.class::ALLOWABLE
+        print_approval request
+        true
+      else
+        false
+      end
+    end
+  end
+
+  class Manager < AmountApprover
+    ALLOWABLE = 10 * BASE
+
+    def print_approval(request)
+      puts "Manager will approve $#{request.amount}"
+    end
+  end
+
+  class Director < AmountApprover
+    ALLOWABLE = 20 * BASE
+
+    def print_approval(request)
+      puts "Director will approve $#{request.amount}"
+    end
+  end
+
+  class VicePresident < AmountApprover
+    ALLOWABLE = 40 * BASE
+
+    def print_approval(request)
+      puts "VicePresident will approve $#{request.amount}"
+    end
+  end
+
+  class President < AmountApprover
+    ALLOWABLE = 60 * BASE
+
+    def print_approval(request)
+      puts "President will approve $#{request.amount}"
+    end
+  end
+
+  class ChiefFinancialOperations < PurchaseApprover
+    # An example of a handler that does not inherit from AmountApprover
+    def approve_request(request)
+      if within_annual_budget? request
+         puts "CFO will approve $#{request.amount}"
+        true
+      else
+        false
+      end
+    end
+
+    def within_annual_budget?(request)
+      # Implementation
+    end
+  end
+
+  class PurchaseRequest
+    attr_reader :amount, :amount, :purpose
+
+    def initialize(number, amount, purpose)
+      @number = number
+      @amount = amount
+      @purpose = purpose
+    end
+  end
+
+  # Realization of pattern class
+  class CLP
+    def initialize(*approvers)
+      @authority = build_approvers(approvers).first
+    end
+
+    def process_request(request)
+      @authority.process_request request
+    end
+
+    private
+
+    def build_approvers(approver_classes)
+      [].tap do |approvers|
+        approver_classes.reverse.inject(nil) do |successor, approver|
+          approver.new(successor).tap { |approver| approvers.unshift approver }
+        end
+      end
+    end
+  end
+
+  # Usage
+  approvers = CLP.new(Manager, Director, VicePresident, President)
+  approvers.process_request PurchaseRequest.new(0, amount, 'General')
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Command pattern</b></h1>
+    <p>Encapsulate a request as an object, thereby allowing for the parameterization of clients with different
+      requests, and the queuing or logging of requests. It also allows for the support of undoable operations.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Command pattern</p>
+{% highlight ruby %}
+  # The command pattern is a behavior design pattern used to store the information necessary to call methods at a future time.
+
+  # The command is merely a set of actions wrapped in an object. With ruby, we can use Procs to do the same thing without the need to create a separate object. This is a good option when the action is simple and doesn't require saving state information, otherwise, a command class is the better option.
+
+  # Invoker
+  class Switch
+    attr_reader :history
+
+    def execute(cmd)
+      @history ||= []
+      @history << cmd.execute
+    end
+  end
+
+  # Command Interface
+  class Command
+    attr_reader :obj
+
+    def initialize(obj)
+      @obj = obj
+    end
+
+    def execute
+      raise NotImplementedError
+    end
+  end
+
+  # Command for turning on
+    class TurnOnCommand < Command
+    def execute
+      obj.turn_on
+    end
+  end
+
+  # Command for turning off
+  class TurnOffCommand < Command
+    def execute
+      obj.turn_off
+    end
+  end
+
+  # Receiver
+  class Light
+    def turn_on
+      'the light is on'
+    end
+
+    def turn_off
+      'the light is off'
+    end
+  end
+
+  # Client
+  class LightSwitchClient
+    attr_reader :switch
+
+    def initialize
+      @lamp = Light.new
+      @switch = Switch.new
+    end
+
+    def switch_for(cmd)
+      case cmd
+      when 'on' then @switch.execute(TurnOnCommand.new(@lamp))
+      when 'off' then @switch.execute(TurnOffCommand.new(@lamp))
+      else puts 'Sorry, I so sorry'
+      end
+    end
+  end
+
+  client = LightSwitchClient.new
+  client.switch_for('on')
+  client.switch_for('off')
+  client.switch.history #=> ['the light is on', 'the light is off']
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Command_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Interpreter pattern</b></h1>
+    <p>In computer programming, the interpreter pattern is a design pattern that specifies how to evaluate sentences
+      in a language. The basic idea is to have a class for each symbol (terminal or nonterminal) in a specialized
+      computer language. The syntax tree of a sentence in the language is an instance of the composite pattern and
+      is used to evaluate (interpret) the sentence for a client.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Interpreter pattern</p>
+{% highlight ruby %}
+  # This pattern provides an interpreter to deal with an abstract language. Using classes we can understand the inputs for parse them
+
+  # Parsing entity
+  class Number
+  attr_reader :value
+
+    def initialize(value)
+      @value = value
+    end
+
+    def execute
+      value
+    end
+  end
+
+  # Operation interface
+  class Operation
+    attr_reader :left, :right
+
+    def initialize(left, right)
+      @left = left
+      @right = right
+    end
+
+    def execute
+      raise NotImplementedError
+    end
+  end
+
+  # Operations
+  class Plus < Operation
+    def execute
+      left.execute + right.execute
+    end
+  end
+
+  class Minus < Operation
+    def execute
+      left.execute - right.execute
+    end
+  end
+
+  class Multiply < Operation
+    def execute
+      left.execute * right.execute
+    end
+  end
+
+  class Devide < Operation
+    def execute
+      left.execute / right.execute
+    end
+  end
+
+  # Interpreter class
+  class Interpreter
+    def self.parse(input)
+      stack = []
+
+      input.lstrip!
+      until input.empty?
+        case input
+        when /\A-?\d+(\.\d+)?/
+          stack << Number.new($&.to_i)
+        else
+          second = stack.pop
+          first = stack.pop
+
+          case input
+          when /\A\+/
+            stack << Plus.new(first, second)
+          when /\A\-/
+            stack << Minus.new(first, second)
+          when /\A\*/
+            stack << Multiply.new(first, second)
+          else
+            raise SyntaxError
+          end
+        end
+
+        input = $'
+        input.lstrip!
+      end
+
+      raise SyntaxError unless stack.size == 1
+
+      stack.first.execute
+    end
+  end
+
+  # Usage
+  puts Interpreter.parse('1 + 1 + 2 - 1') # => 3
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Interpreter_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Iterator pattern</b></h1>
+    <p>The iterator design pattern provides sequential access to elements within a container without exposing how
+      the container actually represents the elements. The iterator can be thought of as a moveable pointer that
+      allows access to elements encapsulated within a container.
+    </p>
+    <ul>
+      <li>External iterator: The iteration logic is contained in a separate class. The iteration class can be
+        generalized to handle multiple object types as long as they allow indexing. It require the additional
+        class to do the actual iterating, but they do allow for greater flexibility because you can control the
+        iteration, which elements are iterated over and in what order.
+      </li>
+      <li>Internal iterator: all the iterating logic occurs inside the aggregate object. Use a code block to pass
+        your logic into the aggregate which then calls the block for each of it's elements.
+      </li>
+    </ul>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Iterator pattern</p>
+{% highlight ruby %}
+  # Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+
+  # Iteration entity
+  class Account
+    attr_reader :balance
+
+    def initialize(balance)
+      @balance = balance
+    end
+  end
+
+  # Collection class
+  class Bank
+    include Enumerable
+
+    def initialize
+      @accounts = []
+    end
+
+    def each(&block)
+      @accounts.each(&block)
+    end
+
+    def add(account)
+      @accounts << account
+    end
+  end
+
+  # Usage
+  bank = Bank.new
+  bank.add Account.new(100)
+  bank.add Account.new(150)
+  bank.add Account.new(175)
+
+  puts bank.map(&:balance)
+
+  # Internal iterator
+  class Collection
+    def initialize(array)
+      @array = array
+      @index = 0
+    end
+
+    def next?
+      @index < @array.length
+    end
+
+    def next_item
+      value = @array[@index]
+      @index += 1
+      value
+    end
+
+    def iterate
+      yield(next_item) if block_given? while next?
+    end
+  end
+
+  # Usage
+  collection = Collection.new([1, 2, 3, 4, 5])
+  collection.iterate { |elem| puts elem }
+
+  # External iterator
+  class Collection
+    def initialize(array)
+      @array = array
+      @index = 0
+    end
+
+    def next?
+      @index < @array.length
+    end
+
+    def next_item
+      value = @array[@index]
+      @index += 1
+      value
+    end
+  end
+
+  # Usage
+  collection = Collection.new([1, 2, 3, 4, 5])
+  puts "Item: #{collection.next_item}" while collection.next?
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Iterator_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Mediator pattern</b></h1>
+    <p>Usually a program is made up of a large number of classes. So the logic and computation is distributed among
+      these classes. However, as more classes are developed in a program, especially during maintenance and/or
+      refactoring, the problem of communication between these classes may become more complex. This makes the
+      program harder to read and maintain. Furthermore, it can become difficult to change the program, since any
+      change may affect code in several other classes. With the mediator pattern, communication between objects is
+      encapsulated with a mediator object. Objects no longer communicate directly with each other, but instead
+      communicate through the mediator. This reduces the dependencies between communicating objects, thereby
+      lowering the coupling.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Mediator pattern</p>
+{% highlight ruby %}
+  # The essence of the Mediator Pattern is to "define an object that encapsulates how a set of objects interact". It promotes loose coupling by keeping objects from referring to each other explicitly, and it allows their interaction to be varied independently. Client classes can use the mediator to send messages to other clients, and can receive messages from other clients via an event on the mediator class.
+
+  # Classes witch interact with mediator
+  class Buyer
+    attr_accessor :balance
+
+    def initialize(balance)
+      @balance = balance
+    end
+
+    def use_agency_for_buying_house(agency)
+      @agency = agency
+    end
+
+    def buy(house)
+      @agency.purchase(house, self)
+    end
+  end
+
+  class Seller
+    attr_accessor :balance
+
+    def initialize(balance = 0)
+      @balance = balance
+    end
+
+    def use_agency_for_selling_house(agency, house)
+      agency.register house
+    end
+  end
+
+  class House
+    attr_reader :price, :owner
+
+    def initialize(price, owner)
+      @price = price
+      @owner = owner
+    end
+
+    def new_owner(buyer)
+      @owner = buyer
+    end
+  end
+
+  # Mediator class
+  class Agency
+    def initialize
+      @houses = []
+    end
+
+    def register(house)
+      @houses << house
+    end
+
+    def purchase(house, buyer)
+      if can_make_deal? house, buyer
+        make_payment house, buyer
+        change_owner house, buyer
+      end
+    end
+
+    private
+
+    def can_make_deal?(house, buyer)
+      @houses.include?(house) && buyer.balance >= house.price
+    end
+
+    def make_payment(house, buyer)
+      house.owner.balance += house.price
+      buyer.balance -= house.price
+    end
+
+    def change_owner(house, buyer)
+      house.new_owner buyer
+    end
+  end
+
+  # Usage
+  buyer = Buyer.new(1000)
+
+  seller = Seller.new(0)
+  house = House.new(100, seller)
+
+  agency = Agency.new
+  buyer.use_agency_for_buying_house agency
+  seller.use_agency_for_selling_house agency, house
+
+  buyer.buy house
+
+  puts house.inspect
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Mediator_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Memento pattern</b></h1>
+    <p>The memento pattern is implemented with three objects: the originator, a caretaker and a memento. The
+      originator is some object that has an internal state. The caretaker is going to do something to the
+      originator, but wants to be able to undo the change. The caretaker first asks the originator for a memento
+      object. Then it does whatever operation (or sequence of operations) it was going to do. To roll back to the
+      state before the operations, it returns the memento object to the originator. The memento object itself is
+      an opaque object (one which the caretaker cannot, or should not, change). When using this pattern, care
+      should be taken if the originator may change other objects or resources - the memento pattern operates on a
+      single object.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Memento pattern</p>
+{% highlight ruby %}
+  # Without violating encapsulation, capture and externalize an object's internal state allowing the object to be restored to this state later.
+
+  # The Originator can save and load itself. The Caretaker (the main function in this case) never has to touch the memento objects.
+
+  # This implementation is a bit naive:
+  # - saves should be kept in files
+  # - Marshal will not always work (singleton methods, bindings, etc..)
+
+  module Originator
+    def saves
+      @saves ||= {}
+    end
+
+    def save(key)
+      puts "saving key: #{key}"
+      @saves[key] = Marshal.dump self
+    end
+
+    def restore(key)
+      puts "restoring key: #{key}"
+      include_state Marshal.load(@saves[key])
+    end
+
+    private
+
+    def include_state(other)
+      other.instance_variables.each { |v| instance_variable_set(v, other.instance_variable_get(v)) unless v == '@saves' }
+    end
+  end
+
+  class Example
+    include Originator
+
+    attr_accessor :name, :color
+
+    def initialize(name, color)
+      @name = name
+      @color = color
+    end
+  end
+
+  # Usage
+  example = Example.new('Dave', 'blue')
+  example.save :now # => saving key now
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Memento_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Observer pattern</b></h1>
+    <p>The observer pattern is a software design pattern in which an object, called the subject, maintains a list of
+      its dependents, called observers, and notifies them automatically of any state changes, usually by calling
+      one of their methods. It is mainly used to implement distributed event handling systems. The Observer
+      pattern is also a key part in the familiar model–view–controller (MVC) architectural pattern. The observer
+      pattern is implemented in numerous programming libraries and systems, including almost all GUI toolkits.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Observer pattern</p>
+{% highlight ruby %}
+  # An object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+
+  module Observable
+    def initialize
+      @observers = []
+    end
+
+    def add_observer(observer)
+      @observers << observer unless @observers.include?(observer)
+    end
+
+    def delete_observer(observer)
+      @observers.delete(observer)
+    end
+
+    def notify_observers
+      @observers.each { |x| x.update(self) }
+    end
+  end
+
+  class Employee
+    include Observable
+
+    attr_reader :name
+    attr_accessor :title, :salary
+
+    def initialize(name, title, salary)
+      super()
+      @name = name
+      @title = title
+      @salary = salary
+    end
+  end
+
+  class BaseObserver
+    def update
+      raise 'Must be implement "update" function'
+    end
+  end
+
+  class Payroll < BaseObserver
+    def update(employee)
+      p("Cut a new check for #{employee.name}!")
+      p("His salary is now #{employee.salary}!")
+    end
+  end
+
+  class TaxMan < BaseObserver
+    def update(employee)
+      p("Send #{employee.name} a new tax bill!")
+    end
+  end
+
+  # Usage
+  mike = Employee.new('Mike', 'project manger', 25_000)
+
+  mike.add_observer(Payroll.new)
+  mike.add_observer(TaxMan.new)
+
+  mike.salary = 35_000
+  mike.title = 'senior project manger'
+  mike.notify_observers
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Observer_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>State pattern</b></h1>
+    <p>The state pattern is a behavioral software design pattern that implements a state machine in an
+      object-oriented way. With the state pattern, a state machine is implemented by implementing each individual
+      state as a derived class of the state pattern interface, and implementing state transitions by invoking
+      methods defined by the pattern's superclass.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">State pattern</p>
+{% highlight ruby %}
+  # Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+  # Each call to state defines a new subclass of Connection that is stored in a hash. Then, a call to transition_to instantiates one of these subclasses and sets it to the be the active state. Method calls to Connection are delegated to the active state object via method_missing
+
+  module StatePattern
+    class UnknownStateException < RuntimeError
+    end
+
+    def self.included(base)
+      base.extend StatePattern::ClassMethods
+    end
+
+    module ClassMethods
+      attr_reader :state_classes
+
+      def state(state_name, &block)
+        @state_classes ||= {}
+
+        new_klass = Class.new(self, &block)
+        new_klass.class_eval do
+          alias_method :__old_init, :initialize
+
+          def initialize(context, *args, &block)
+            @context = context
+            __old_init(*args, &block)
+          end
+        end
+
+        @state_classes[state_name] = new_klass
+      end
+    end
+
+    attr_accessor :current_state, :current_state_obj
+
+    def transition_to(state_name, *args, &block)
+      new_context = @context || self
+      klass = new_context.class.state_classes[state_name]
+      if klass
+        new_context.current_state = state_name
+        new_context.current_state_obj = klass.new(new_context, *args, &block)
+      else
+        raise UnknownStateException, "tried to transition to unknown state,#{state_name}"
+      end
+    end
+
+    def method_missing(method, *args, &block)
+      transition_to :initial unless @current_state_obj
+
+      if @current_state_obj
+        @current_state_obj.send(method, *args, &block)
+      else
+        super
+      end
+    end
+  end
+
+  class Connection
+    include StatePattern
+
+    # you always need a state named initial
+    state :initial do
+      def connect
+        # move to state :connected. all other args to transition_to# are passed to the new state's constructor transition_to:connected, "hello from initial state"
+        puts 'connected'
+      end
+
+      def disconnect
+        puts 'not connected yet'
+        end
+    end
+
+    state :connected do
+      def initialize(msg)
+        puts "initialize got msg:#{msg}"
+      end
+
+      def connect
+        puts 'already connected'
+      end
+
+      def disconnect
+        puts 'disconnecting'
+        transition_to :initial
+      end
+    end
+
+    def reset
+      # you can also change the state from outside of the state objects transition_to:initial
+      puts 'resetting outside a state'
+    end
+  end
+
+  # Usage
+  c = Connection.new
+  c.disconnect # => not connected yet
+  c.connect # => connected, initialize got msg: hello from initial state
+  c.connect # => already connected
+  c.disconnect # => disconnecting
+  c.connect # => connected, initialize got msg: hello from initial state
+  c.reset # => reseting outside a state
+  c.disconnect # => not connected yet
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/State_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Strategy pattern</b></h1>
+    <p>In computer programming, the strategy pattern (also known as the policy pattern) is a software design pattern
+      that enables an algorithm's behavior to be selected at runtime. The strategy pattern
+      <ul>
+        <li>defines a family of algorithms,</li>
+        <li>encapsulates each algorithm, and</li>
+        <li>makes the algorithms interchangeable within that family.</li>
+      </ul>
+      Strategy lets the algorithm vary independently from clients that use it. Strategy is one of the patterns
+      included in the influential book Design Patterns by Gamma et al. that popularized the concept of using
+      patterns to describe software design.
+      For instance, a class that performs validation on incoming data may use a strategy pattern to select a
+      validation algorithm based on the type of data, the source of the data, user choice, or other discriminating
+      factors. These factors are not known for each case until run-time, and may require radically different
+      validation to be performed. The validation strategies, encapsulated separately from the validating object,
+      may be used by other validating objects in different areas of the system (or even different systems) without
+      code duplication.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Strategy pattern</p>
+{% highlight ruby %}
+  # Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+  # Strategies
+  class StrategyOne
+    def use
+      puts 'Strategy one'
+    end
+  end
+
+  class StrategyTwo
+    def use
+      puts 'Strategy two'
+    end
+  end
+
+  class StrategyThree
+    def use
+      puts 'Strategy three'
+    end
+  end
+
+  # Client
+  class Context
+    @@default_strategy = StrategyOne.new
+
+    def set_strategy(strategy)
+      @strategy = strategy
+    end
+
+    def use
+      @strategy.use
+    end
+  end
+
+  # Usage
+  context = Context.new
+  context.use # => "Strategy one"
+
+  context.set_strategy StrategyTwo.new
+  context.use # => "Strategy two"
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Strategy_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Template method pattern</b></h1>
+    <p>In object-oriented programming, first a class is created that provides the basic steps of an algorithm
+      design. These steps are implemented using abstract methods. Later on, subclasses change the abstract methods
+      to implement real actions. Thus the general algorithm is saved in one place but the concrete steps may be
+      changed by the subclasses.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Template method pattern</p>
+{% highlight ruby %}
+  # Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+  module Template
+    # mandatory_methods = ["tagname", "content"]
+    # optional_methods = ["font_size", "background_color"]
+
+    def generate
+      string = "<#{tagname}"
+      styles = ''
+      styles += "font-size:#{font_size};" if respond_to? :font_size
+      styles += "background-color:#{background_color};" if respond_to? :background_color
+      string += " style='#{styles}'" unless styles.empty?
+      string += ">#{content}</#{tagname}>"
+      end
+  end
+
+  class Body
+    def tagname
+      'body'
+    end
+
+    def content
+      'hello'
+    end
+
+    def font_size
+      '18pt'
+    end
+
+    include Template
+  end
+
+  # Usage
+  body = Body.new
+  body.generate
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Template_method_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Visitor pattern</b></h1>
+    <p>In object-oriented programming and software engineering, the visitor design pattern is a way of separating an
+      algorithm from an object structure on which it operates. A practical result of this separation is the
+      ability to add new operations to existing object structures without modifying those structures. It is one
+      way to follow the open/closed principle.
+
+      In essence, the visitor allows one to add new virtual functions to a family of classes without modifying the
+      classes themselves; instead, one creates a visitor class that implements all of the appropriate
+      specializations of the virtual function. The visitor takes the instance reference as input, and implements
+      the goal through double dispatch.
+    </p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Visitor pattern</p>
+{% highlight ruby %}
+  # Represent an operation to be performed on the elements of an object structure. Visitor lets a new operation be defined without changing the classes of the elements on which it operates.
+
+  module Node
+    def accept(visitor)
+      if is_a? StringNode
+        visitor.visit_string self if visitor.respond_to? :visit_string
+      elsif is_a? IntegerNode
+        visitor.visit_int self if visitor.respond_to? :visit_int
+      end
+    end
+  end
+
+  class StringNode
+    include Node
+    attr_accessor :string
+
+    def initialize(val)
+      @string = val
+    end
+  end
+
+  class IntegerNode
+    include Node
+    attr_accessor :int
+
+    def initialize(val)
+      @int = val
+    end
+  end
+
+  class PrintingVisitor
+    def visit_string(node)
+      puts node.string
+    end
+
+    def visit_int(node)
+      puts node.int
+    end
+  end
+
+  class RevertingVisitor
+    def visit_string(node)
+      puts node.string.reverse!
+    end
+  end
+
+  # Usage
+  myTreeRoot = Tree::TreeNode.new('ROOT', StringNode.new('this is the root node'))
+
+  myTreeRoot << Tree::TreeNode.new('child1', StringNode.new('madam im adam')) << Tree::TreeNode.new('grandchild1', IntegerNode.new(3)) << Tree::TreeNode.new('grandchild2', IntegerNode.new(2))
+  myTreeRoot << Tree::TreeNode.new('child2', StringNode.new('race car')) << Tree::TreeNode.new('grandchild3', StringNode.new('damn, i agassi miss again. mad'))
+
+  puts 'PRINTING visitor...'
+  @pvisitor = PrintingVisitor.new
+  myTreeRoot.each { |node| node.content.accept @pvisitor }
+  puts "\nREVERTING visitor..."
+
+  @rvisitor = RevertingVisitor.new
+  myTreeRoot.each { |node| node.content.accept @rvisitor }
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Visitor_pattern">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Not covered patterns:</b></h1>
+    <ul>
+      <li><a href="http://c2.com/cgi/wiki?HierarchicalVisitorPattern">Hierarchical visitor</a></li>
+    </ul>
+  </article>
+
+  <article>
+    <h1><b>Code and articles were taken from resources:</b></h1>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Software_design_pattern">https://en.wikipedia.org/wiki/Software_design_pattern</a>
+      </li>
+      <li><a href="https://en.wikipedia.org/wiki/Creational_pattern">https://en.wikipedia.org/wiki/Creational_pattern</a>
+      </li>
+      <li><a href="https://en.wikipedia.org/wiki/Structural_pattern">https://en.wikipedia.org/wiki/Structural_pattern</a>
+      </li>
+      <li><a href="https://en.wikipedia.org/wiki/Behavioral_pattern">https://en.wikipedia.org/wiki/Behavioral_pattern</a>
+      </li>
+      <li><a href="http://c2.com/cgi/wiki?CategoryPattern">http://c2.com/cgi/wiki?CategoryPattern</a></li>
+      <li><a href="https://gist.github.com/martindemello/7231bf0f407ca428b509">https://gist.github.com/martindemello/7231bf0f407ca428b509</a>
+      </li>
+    </ul>
+  </article>
 </div>
