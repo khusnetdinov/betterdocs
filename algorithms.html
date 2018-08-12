@@ -5,5 +5,561 @@ layout: default
 {% include sidebar.html %}
 
 <div class="content">
-  Algorithms
+
+  <article>
+    <h1><b>Algorithms</b></h1>
+  </article>
+
+  <article>
+    <h1><b>Sorting</b></h1>
+    <p>A sorting algorithm is an algorithm that puts elements of a list in a certain order. The most-used orders are
+      numerical order and lexicographical order. Efficient sorting is important for optimizing the use of other
+      algorithms (such as search and merge algorithms) which require input data to be in sorted lists; it is also
+      often useful for canonicalizing data and for producing human-readable output.
+    </p>
+  </article>
+
+  <article>
+    <h1><b>Bubble sort</b></h1>
+    <p>Bubble sort has many of the same properties as insertion sort, but has slightly higher overhead. In the case
+      of nearly sorted data, bubble sort takes O(n) time, but requires at least 2 passes through the data (whereas
+      insertion sort requires something more like 1 pass).
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n)</td>
+        <td>&theta;(n^2)</td>
+        <td>O(n^2)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Bubble sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Bubble sort: A very naive sort that keeps swapping elements until the container is sorted. Requirements: Needs to be able to compare elements with <=>, and the [] []= methods should be implemented for the container. Time Complexity: О(n^2). Space Complexity: О(n) total, O(1) auxiliary. Stable: Yes.
+
+  # [5, 4, 3, 1, 2].bubble_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def swap(first, second)
+      self[first], self[second] = self[second], self[first]
+      self
+    end
+
+    def bubble_sort!
+      loop do
+        swapped = false
+        (self.size - 1).times do |index|
+          if self[index] > self[index + 1]
+            swap index, index + 1
+            swapped = true
+          end
+        end
+        break unless swapped
+      end
+
+      self
+    end
+
+    # def bubble_sort!
+    #  length.times do |j|
+    #    for i in 1...(length - j)
+    #      swap i - 1, i if self[i - 1] < self[i]
+    #    end
+    #  end
+    #
+    #  self
+    # end
+    #
+    # def bubble_sort!
+    #  each_index do |index|
+    #    (length - 1).downto( index ) do |i|
+    #      swap i - 1, i if self[i - 1] < self[i]
+    #    end
+    #  end
+    #
+    #  self
+    # end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Bubble_sort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Insertion sort</b></h1>
+    <p>Although it is one of the elementary sorting algorithms with O(n2) worst-case time, insertion sort is the
+      algorithm of choice either when the data is nearly sorted (because it is adaptive) or when the problem size
+      is small (because it has low overhead). For these reasons, and because it is also stable, insertion sort is
+      often used as the recursive base case (when the problem size is small) for higher overhead
+      divide-and-conquer sorting algorithms, such as merge sort or quick sort
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n)</td>
+        <td>&theta;(n^2)</td>
+        <td>O(n^2)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Insertion sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Insertion sort: Elements are inserted sequentially into the right position. Requirements: Needs to be able to compare elements with <=>, and the [] []= methods should be implemented for the container. Time Complexity: О(n^2)
+  # Space Complexity: О(n) total, O(1) auxiliary
+  # Stable: Yes
+
+  # [5, 4, 3, 1, 2].insertion_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def insertion_sort!
+      return self if length < 2
+
+      1.upto(length - 1) do |i|
+        value = self[i]
+        j = i - 1
+        while j >= 0 && self[j] > value
+          self[j + 1] = self[j]
+          j -= 1
+        end
+        self[j + 1] = value
+      end
+
+      self
+    end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Insertion_sort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Selection sort</b></h1>
+    <p>From the comparions presented here, one might conclude that selection sort should never be used. It does not
+      adapt to the data in any way (notice that the four animations above run in lock step), so its runtime is
+      always quadratic. However, selection sort has the property of minimizing the number of swaps. In
+      applications where the cost of swapping items is high, selection sort very well may be the algorithm of
+      choice.
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n^2)</td>
+        <td>&theta;(n^2)</td>
+        <td>O(n^2)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Selection sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Selection sort: A naive sort that goes through the container and selects the smallest element, putting it at the beginning. Repeat until the end is reached.
+  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods should be implemented for the container.
+  # Time Complexity: О(n^2)
+  # Space Complexity: О(n) total, O(1) auxiliary
+  # Stable: Yes
+
+  # [5, 4, 3, 1, 2].selection_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def swap(first, second)
+      self[first], self[second] = self[second], self[first]
+      self
+    end
+
+    def selection_sort!
+      0.upto(length - 1) do |i|
+        min = i
+        (i + 1).upto(length - 1) do |j|
+          min = j if (self[j] <=> self[min]) == -1
+        end
+        swap min, i
+      end
+
+      self
+    end
+
+    # def selection_sort!
+    #  for i in 0..length - 2
+    #    min = i
+    #    for j in (i + 1)...length
+    #      min = j if self[j] < self[min]
+    #    end
+    #    swap min, i
+    #  end
+    #
+    #  self
+    # end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Selection_sort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Shell sort</b></h1>
+    <p>The worse-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40
+      121…, which is what is used here, the time complexity is O(n3/2). For other increments, time complexity is
+      known to be O(n4/3) and even O(n·lg2(n)). Neither tight upper bounds on time complexity nor the best
+      increment sequence are known. Because shell sort is based on insertion sort, shell sort inherits insertion
+      sort’s adaptive properties. The adapation is not as dramatic because shell sort requires one pass through
+      the data for each increment, but it is significant. For the increment sequence shown above, there are
+      log3(n) increments, so the time complexity for nearly sorted data is O(n·log3(n)). Because of its low
+      overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell
+      sort may be a viable alternative to the O(n·lg(n)) sorting algorithms for some applications when the data to
+      be sorted is not very large.
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n log(n))</td>
+        <td>&theta;(n(log(n))^2)</td>
+        <td>O(n(log(n))^2)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Shell sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Shell sort: Similar approach as insertion sort but slightly better.
+  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods should be implemented for the container.
+  # Time Complexity: О(n^2)
+  # Space Complexity: О(n) total, O(1) auxiliary
+  # Stable: Yes
+
+  # [5, 4, 3, 1, 2].shell_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def shell_sort!
+      inc = length / 2
+
+      while inc != 0
+        inc.step(length - 1) do |i|
+          el = self[i]
+          while i >= inc && self[i - inc] > el
+            self[i] = self[i - inc]
+            i -= inc
+          end
+          self[i] = el
+        end
+        inc = (inc == 2 ? 1 : (inc * 5.0 / 11).to_i)
+      end
+
+      self
+    end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Shellsort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Heap sort</b></h1>
+    <p>Heap sort is simple to implement, performs an O(n·lg(n)) in-place sort, but is not stable. The first loop,
+      the Θ(n) “heapify” phase, puts the array into heap order. The second loop, the O(n·lg(n)) “sortdown” phase,
+      repeatedly extracts the maximum and restores heap order. The sink function is written recursively for
+      clarity. Thus, as shown, the code requires Θ(lg(n)) space for the recursive call stack. However, the tail
+      recursion in sink() is easily converted to iteration, which yields the O(1) space bound. Both phases are
+      slightly adaptive, though not in any particularly useful manner. In the nearly sorted case, the heapify
+      phase destroys the original order. In the reversed case, the heapify phase is as fast as possible since the
+      array starts in heap order, but then the sortdown phase is typical. In the few unique keys case, there is
+      some speedup but not as much as in shell sort or 3-way quicksort.
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n log(n))</td>
+        <td>&theta;(n log(n))</td>
+        <td>O(n log(n))</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Heap sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Heap sort: Uses a heap (implemented by the Containers module) to sort the collection. Requirements: Needs to be able to compare elements with <=>
+  # Time Complexity: О(n^2)
+  # Space Complexity: О(n) total, O(1) auxiliary
+  # Stable: Yes
+
+  # [5, 4, 3, 1, 2].heap_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def swap(first, second)
+      self[first], self[second] = self[second], self[first]
+      self
+    end
+
+    def heap_sort!
+      self.dup.heap_sort
+    end
+
+    def heap_sort
+      ((length - 2) / 2).downto(0) { |start| sift_down(start, length - 1) }
+
+      (length - 1).downto(1) do |end_|
+        swap 0, end_
+        sift_down(0, end_ - 1)
+      end
+      self
+    end
+
+    def sift_down(start, end_)
+      root = start
+      loop do
+        child = root * 2 + 1
+        break if child > end_
+        child += 1 if child + 1 <= end_ && self[child] < self[child + 1]
+        if self[root] < self[child]
+          swap child, root
+          root = child
+        else
+          break
+        end
+      end
+    end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Heapsort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Merge sort</b></h1>
+    <p>Merge sort is very predictable. It makes between 0.5lg(n) and lg(n) comparisons per element, and between
+      lg(n) and 1.5lg(n) swaps per element. The minima are achieved for already sorted data; the maxima are
+      achieved, on average, for random data. If using Θ(n) extra space is of no concern, then merge sort is an
+      excellent choice: It is simple to implement, and it is the only stable O(n·lg(n)) sorting algorithm. Note
+      that when sorting linked lists, merge sort requires only Θ(lg(n)) extra space (for recursion). Merge sort is
+      the algorithm of choice for a variety of situations: when stability is required, when sorting linked lists,
+      and when random access is much more expensive than sequential access (for example, external sorting on
+      tape). There do exist linear time in-place merge algorithms for the last step of the algorithm, but they are
+      both expensive and complex. The complexity is justified for applications such as external sorting when Θ(n)
+      extra space is not available.
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n log(n))</td>
+        <td>&theta;(n log(n))</td>
+        <td>O(n log(n))</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Merge sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Mergesort: A stable divide-and-conquer sort that sorts small chunks of the container and then merges them together. Returns an array of the sorted elements. Requirements: Container should implement []
+  # Time Complexity: О(n log n) average and worst-case
+  # Space Complexity: О(n) auxiliary
+  # Stable: Yes
+
+  # [5, 4, 3, 1, 2].merge_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def merge_sort!
+      return self if self.size <= 1
+      mid = self.size / 2
+      left = self[0...mid]
+      right = self[mid...self.size]
+      merge(left.merge_sort!, right.merge_sort!)
+    end
+
+    def merge(left, right)
+      sorted = []
+      until left.empty? || right.empty?
+        sorted << (left.first <= right.first ? left.shift : right.shift)
+      end
+      sorted + left + right
+    end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Merge_sort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Quick sort</b></h1>
+    <p>When carefully implemented, quick sort is robust and has low overhead. When a stable sort is not needed,
+      quick sort is an excellent general-purpose sort – although the 3-way partitioning version should always be
+      used instead. The 2-way partitioning code shown above is written for clarity rather than optimal
+      performance; it exhibits poor locality, and, critically, exhibits O(n2) time when there are few unique keys.
+      A more efficient and robust 2-way partitioning method is given in Quicksort is Optimal by Robert Sedgewick
+      and Jon Bentley. The robust partitioning produces balanced recursion when there are many values equal to the
+      pivot, yielding probabilistic guarantees of O(n·lg(n)) time and O(lg(n)) space for all inputs. With both
+      sub-sorts performed recursively, quick sort requires O(n) extra space for the recursion stack in the worst
+      case when recursion is not balanced. This is exceedingly unlikely to occur, but it can be avoided by sorting
+      the smaller sub-array recursively first; the second sub-array sort is a tail recursive call, which may be
+      done with iteration instead. With this optimization, the algorithm uses O(lg(n)) extra space in the worst
+      case.
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(n log(n))</td>
+        <td>&theta;(n log(n))</td>
+        <td>O(n^2)</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Quick sort</p>
+{% highlight ruby %}
+  # coding: utf-8
+  # Shell sort: Similar approach as insertion sort but slightly better.
+  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods should be implemented for the container.
+  # Time Complexity: О(n^2)
+  # Space Complexity: О(n) total, O(1) auxiliary
+  # Stable: Yes
+
+  # [5, 4, 3, 1, 2].quick_sort! => [1, 2, 3, 4, 5]
+
+  class Array
+    def swap(first, second)
+      self[first], self[second] = self[second], self[first]
+      self
+    end
+
+    def quick_sort!
+      h, *t = self
+      h ? t.partition { |e| e < h }.inject { |l, r| l.quick_sort! + [h] + r.quick_sort! } : []
+    end
+  end
+{% endhighlight %}
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Quicksort">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Other sorting algorithms</b></h1>
+    <ul>
+      <li><a href="http://rosettacode.org/wiki/Category:Sorting_Algorithms">http://rosettacode.org/wiki/Category:Sorting_Algorithms</a>
+      </li>
+      <li><a href="https://www.toptal.com/developers/sorting-algorithms">https://www.toptal.com/developers/sorting-algorithms</a>
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h1><b>Additional reading</b></h1>
+    <ul>
+      <li><a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/</a>
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h1><b>Searching</b></h1>
+  </article>
+
+  <article>
+    <h1><b>Binary search</b></h1>
+    <p>In computer science, binary search, also known as half-interval search or logarithmic search, is a search
+      algorithm that finds the position of a target value within a sorted array. It compares the target value to
+      the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated
+      and the search continues on the remaining half until it is successful.
+    </p>
+    <table style="text-align: center">
+      <thead style="font-weight: bold; text-align: center">
+      <tr>
+        <td>Best</td>
+        <td>Average</td>
+        <td>Worst</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>&Omega;(1)</td>
+        <td>&theta;(n log(n))</td>
+        <td>O(log(n)))</td>
+      </tr>
+      </tbody>
+    </table>
+    <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Knuth-Morris-Pratt search</b></h1>
+    <p>In computer science, the Knuth–Morris–Pratt string searching algorithm (or KMP algorithm) searches for
+      occurrences of a "word" W within a main "text string" S by employing the observation that when a mismatch
+      occurs, the word itself embodies sufficient information to determine where the next match could begin, thus
+      bypassing re-examination of previously matched characters.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Read wiki</a>
+  </article>
+
+  <article>
+    <h1><b>Other search algorithms</b></h1>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence">Longest increasing subsequence</a></li>
+      <li><a href="http://www.mobilefish.com/services/phonenumber_words/phonenumber_words.php">Telephone number to words</a></li>
+    </ul>
+  </article>
+
+  <article>
+    <h1><b>Code and articles were taken from resources:</b></h1>
+    <ul>
+      <li><a href="https://github.com/sagivo/algorithms">https://github.com/sagivo/algorithms</a></li>
+      <li><a href="https://github.com/kanwei/algorithms">https://github.com/kanwei/algorithms</a></li>
+    </ul>
+  </article>
 </div>
