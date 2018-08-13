@@ -34,12 +34,14 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Abstract factory pattern</p>
 {% highlight ruby %}
-  # Abstract Factory patterns work around a super-factory which creates other factories. This factory is also
-  called as factory of factories. This type of design pattern comes under creational pattern as this pattern
-  provides one of the best ways to create an object.
+  # Abstract Factory patterns work around a super-factory which creates other
+  # factories. This factory is also called as factory of factories. This type
+  # of design pattern comes under creational pattern as this pattern provides
+  # one of the best ways to create an object.
 
-  # In Abstract Factory pattern an interface is responsible for creating a factory of related objects without
-  explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.
+  # In Abstract Factory pattern an interface is responsible for creating a factory
+  # of related objects without explicitly specifying their classes. Each generated
+  # factory can give the objects as per the Factory pattern.
 
   # Classes witch is used in abstract factories
 
@@ -128,11 +130,12 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Builder pattern</p>
 {% highlight ruby %}
-  # The very simple idea behind the Builder pattern is that you encapsulate object construction logic behind a
-  class of its own. The builder class takes charge of assembling all the components of a complex object. Each
-  builder has an interface that lets you specify the configuration of your new object step by step. In a
-  sense, a builder is a sort of like a multipart new method, where objects are created in an extended process
-  instead of all in one shot.
+  # The very simple idea behind the Builder pattern is that you encapsulate object
+  # construction logic behind a class of its own. The builder class takes charge
+  # of assembling all the components of a complex object. Each builder has an interface
+  # that lets you specify the configuration of your new object step by step. In a sense,
+  # a builder is a sort of like a multipart new method, where objects are created in an
+  # extended process instead of all in one shot.
 
   # Classes witch are used in builder
   class Computer
@@ -207,7 +210,11 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Factory pattern</p>
 {% highlight ruby %}
-  # Factory pattern is one of most used design pattern in Object oriented design. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object. In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+  # Factory pattern is one of most used design pattern in Object oriented design.
+  # This type of design pattern comes under creational pattern as this pattern
+  # provides one of the best ways to create an object. In Factory pattern, we
+  # create object without exposing the creation logic to the client and refer
+  # to newly created object using a common interface.
 
   # Classes witch are used in factory
   class Rectangle
@@ -258,7 +265,10 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Prototype pattern</p>
 {% highlight ruby %}
-  # The prototype pattern is a creational pattern along the lines of the factory. The trick with the prototype is that you create new objects by copying a master object. Change that master object and all subsequent objects that you create will go off into life with a copy of the change.
+  # The prototype pattern is a creational pattern along the lines of the factory.
+  # The trick with the prototype is that you create new objects by copying a
+  # master object. Change that master object and all subsequent objects that
+  # you create will go off into life with a copy of the change.
 
   # Prototypes witch are used for prototyping
   class Note
@@ -326,7 +336,10 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Singleton pattern</p>
 {% highlight ruby %}
-  # The singleton pattern is used to ensure that there is only one instance of a class and provides global access to that instance. This pattern is useful when you want one instance of a class and many different objects need to access it, rather than pass the object around, we can make the object global.
+  # The singleton pattern is used to ensure that there is only one instance of a
+  # class and provides global access to that instance. This pattern is useful
+  # when you want one instance of a class and many different objects need to
+  # access it, rather than pass the object around, we can make the object global.
 
   class Singleton
     def self.new
@@ -379,7 +392,11 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Adapter pattern</p>
 {% highlight ruby %}
-  # An adapter helps two incompatible interfaces to work together. This is the real world definition for an adapter. Interfaces may be incompatible but the inner functionality should suit the need. The Adapter design pattern allows otherwise incompatible classes to work together by converting the interface of one class into an interface expected by the clients.
+  # An adapter helps two incompatible interfaces to work together. This is the real
+  # world definition for an adapter. Interfaces may be incompatible but the inner
+  # functionality should suit the need. The Adapter design pattern allows otherwise
+  # incompatible classes to work together by converting the interface of one class
+  # into an interface expected by the clients.
 
   class Adaptee
     def walk
@@ -417,7 +434,12 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Composite pattern</p>
 {% highlight ruby %}
-  # In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes that a group of objects is to be treated in the same way as a single instance of an object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly
+  # In software engineering, the composite pattern is a partitioning design pattern.
+  # The composite pattern describes that a group of objects is to be treated in the
+  # same way as a single instance of an object. The intent of a composite is to
+  # "compose" objects into tree structures to represent part-whole hierarchies.
+  # Implementing the composite pattern lets clients treat individual objects and
+  # compositions uniformly
 
   # Tasks witch are used in composition
   class MonsterTask
@@ -439,7 +461,8 @@ layout: default
   # Composer
   class Quest
     def initialize
-      # Here we use Array as example of data structure for composition. Always is used Tree
+      # Here we use Array as example of data structure for composition.
+      # Always is used Tree
       @tasks = []
     end
 
@@ -473,7 +496,8 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Decorator pattern</p>
 {% highlight ruby %}
-  # The decorator design pattern allows for features to be added dynamically to an existing object.
+  # The decorator design pattern allows for features to be added dynamically to
+  # an existing object.
 
   class Decorator
     def initialize(item)
@@ -545,7 +569,9 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Facade pattern</p>
 {% highlight ruby %}
-  # The goal of the Facade Pattern is to provide a unified interface to a set of interfaces in a subsystem. This means you'd just have some object that can send back other objects.
+  # The goal of the Facade Pattern is to provide a unified interface to a set of
+  # interfaces in a subsystem. This means you'd just have some object that can
+  # send back other objects.
 
   # Complex Parts
   class CPU
@@ -611,7 +637,8 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Flyweight pattern</p>
 {% highlight ruby %}
-  # The Flyweight pattern describes how to share objects to allow their use at fine granularity without prohibitive cost.
+  # The Flyweight pattern describes how to share objects to allow their use at fine
+  # granularity without prohibitive cost.
 
   # Flyweight Object
   class Lamp
@@ -721,7 +748,11 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Proxy pattern</p>
 {% highlight ruby %}
-  # When building a proxy, we could implement a method for each method in the underlying object. However, this leads to a lot of repeated code and tightly couples the proxy with the underlying object. A better alternative is to pass method calls direcly to the underlying object. Ruby includes a method that is perfect for this situation called method_missing.
+  # When building a proxy, we could implement a method for each method in the underlying
+  # object. However, this leads to a lot of repeated code and tightly couples the proxy
+  # with the underlying object. A better alternative is to pass method calls direcly
+  # to the underlying object. Ruby includes a method that is perfect for this situation
+  # called method_missing.
 
   # Object witch is decorated
   class BankAccount
@@ -761,7 +792,12 @@ layout: default
   end
 
   # Protection proxy
-  # Are you working on an MNC? If so, we might be well aware of the proxy server that provides us internet by restricting access to some sort of websites like public e-mail, social networking, data storage etc. The management feels that, it is better to block some content and provide only work related web pages. Proxy server does that job. This is a type of proxy design pattern
+  # Are you working on an MNC? If so, we might be well aware of the proxy server that
+  # provides us internet by restricting access to some sort of websites like public
+  # e-mail, social networking, data storage etc. The management feels that, it is
+  # better to block some content and provide only work related web pages. Proxy
+  # server does that job. This is a type of proxy design pattern
+
   class BankAccountProtectionProxy
     def initialize(real_account, owner_name)
       @subject = real_account
@@ -789,7 +825,12 @@ layout: default
   end
 
   # Virtual proxy
-  # In place of a complex or heavy object, use a skeleton representation. When an underlying image is huge in size, just represent it using a virtual proxy object and on demand load the real object. You know that the real object is expensive in terms of instantiation and so without the real need we are not going to use the real object. Until the need arises we will use the virtual proxy.
+  # In place of a complex or heavy object, use a skeleton representation. When an
+  # underlying image is huge in size, just represent it using a virtual proxy
+  # object and on demand load the real object. You know that the real object is
+  # expensive in terms of instantiation and so without the real need we are not
+  # going to use the real object. Until the need arises we will use the virtual proxy.
+
   class BankAccountVirtualProxy
     def initialize(&creation_block)
       @creation_block = creation_block
@@ -813,7 +854,11 @@ layout: default
   end
 
   # Remote proxy
-  # In distributed object communication, a local object represents a remote object (one that belongs to a different address space). The local object is a proxy for the remote object, and method invocation on the local object results in remote method invocation on the remote object. Think of an ATM implementation, it will hold proxy objects for bank information that exists in the remote server.
+  # In distributed object communication, a local object represents a remote object
+  # (one that belongs to a different address space). The local object is a proxy
+  # for the remote object, and method invocation on the local object results in
+  # remote method invocation on the remote object. Think of an ATM implementation,
+  # it will hold proxy objects for bank information that exists in the remote server.
 
   # Server part
   class BankAccountRemoteProxy
@@ -862,9 +907,14 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Chain of responsibility pattern</p>
 {% highlight ruby %}
-  # Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+  # Avoid coupling the sender of a request to its receiver by giving more than
+  # one object a chance to handle the request. Chain the receiving objects and
+  # pass the request along the chain until an object handles it.
 
-  # Implements the chain of responsibility pattern. Does not know anything Sabout the approval process, merely whether the current handler can approve the request, or must pass it to a successor.
+  # Implements the chain of responsibility pattern. Does not know anything Sabout
+  # the approval process, merely whether the current handler can approve the
+  # request, or must pass it to a successor.
+
   class PurchaseApprover
     attr_reader :successor
 
@@ -999,9 +1049,13 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Command pattern</p>
 {% highlight ruby %}
-  # The command pattern is a behavior design pattern used to store the information necessary to call methods at a future time.
+  # The command pattern is a behavior design pattern used to store the information
+  # necessary to call methods at a future time.
 
-  # The command is merely a set of actions wrapped in an object. With ruby, we can use Procs to do the same thing without the need to create a separate object. This is a good option when the action is simple and doesn't require saving state information, otherwise, a command class is the better option.
+  # The command is merely a set of actions wrapped in an object. With ruby, we can
+  # use Procs to do the same thing without the need to create a separate object.
+  # This is a good option when the action is simple and doesn't require saving
+  # state information, otherwise, a command class is the better option.
 
   # Invoker
   class Switch
@@ -1088,7 +1142,8 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Interpreter pattern</p>
 {% highlight ruby %}
-  # This pattern provides an interpreter to deal with an abstract language. Using classes we can understand the inputs for parse them
+  # This pattern provides an interpreter to deal with an abstract language. Using
+  # classes we can understand the inputs for parse them
 
   # Parsing entity
   class Number
@@ -1204,7 +1259,8 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Iterator pattern</p>
 {% highlight ruby %}
-  # Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+  # Provide a way to access the elements of an aggregate object sequentially without
+  # exposing its underlying representation.
 
   # Iteration entity
   class Account
@@ -1306,7 +1362,12 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Mediator pattern</p>
 {% highlight ruby %}
-  # The essence of the Mediator Pattern is to "define an object that encapsulates how a set of objects interact". It promotes loose coupling by keeping objects from referring to each other explicitly, and it allows their interaction to be varied independently. Client classes can use the mediator to send messages to other clients, and can receive messages from other clients via an event on the mediator class.
+  # The essence of the Mediator Pattern is to "define an object that encapsulates
+  # how a set of objects interact". It promotes loose coupling by keeping objects
+  # from referring to each other explicitly, and it allows their interaction to
+  # be varied independently. Client classes can use the mediator to send messages
+  # to other clients, and can receive messages from other clients via an event on
+  # the mediator class.
 
   # Classes witch interact with mediator
   class Buyer
@@ -1415,9 +1476,11 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Memento pattern</p>
 {% highlight ruby %}
-  # Without violating encapsulation, capture and externalize an object's internal state allowing the object to be restored to this state later.
+  # Without violating encapsulation, capture and externalize an object's internal
+  # state allowing the object to be restored to this state later.
 
-  # The Originator can save and load itself. The Caretaker (the main function in this case) never has to touch the memento objects.
+  # The Originator can save and load itself. The Caretaker (the main function in
+  # this case) never has to touch the memento objects.
 
   # This implementation is a bit naive:
   # - saves should be kept in files
@@ -1475,7 +1538,9 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Observer pattern</p>
 {% highlight ruby %}
-  # An object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+  # An object, called the subject, maintains a list of its dependents, called observers,
+  # and notifies them automatically of any state changes, usually by calling one of
+  # their methods.
 
   module Observable
     def initialize
@@ -1552,9 +1617,13 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">State pattern</p>
 {% highlight ruby %}
-  # Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+  # Allow an object to alter its behavior when its internal state changes. The object
+  # will appear to change its class.
 
-  # Each call to state defines a new subclass of Connection that is stored in a hash. Then, a call to transition_to instantiates one of these subclasses and sets it to the be the active state. Method calls to Connection are delegated to the active state object via method_missing
+  # Each call to state defines a new subclass of Connection that is stored in a hash.
+  # Then, a call to transition_to instantiates one of these subclasses and sets it to
+  # the be the active state. Method calls to Connection are delegated to the active
+  # state object via method_missing
 
   module StatePattern
     class UnknownStateException < RuntimeError
@@ -1614,7 +1683,9 @@ layout: default
     # you always need a state named initial
     state :initial do
       def connect
-        # move to state :connected. all other args to transition_to# are passed to the new state's constructor transition_to:connected, "hello from initial state"
+        # move to state :connected. all other args to transition_to# are passed
+        # to the new state's constructor transition_to:connected,
+        # "hello from initial state"
         puts 'connected'
       end
 
@@ -1639,7 +1710,8 @@ layout: default
     end
 
     def reset
-      # you can also change the state from outside of the state objects transition_to:initial
+      # you can also change the state from outside of the state objects
+      # transition_to:initial
       puts 'resetting outside a state'
     end
   end
@@ -1680,7 +1752,8 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Strategy pattern</p>
 {% highlight ruby %}
-  # Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+  # Define a family of algorithms, encapsulate each one, and make them interchangeable.
+  # Strategy lets the algorithm vary independently from clients that use it.
 
   # Strategies
   class StrategyOne
@@ -1735,7 +1808,9 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Template method pattern</p>
 {% highlight ruby %}
-  # Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+  # Define the skeleton of an algorithm in an operation, deferring some steps to
+  # subclasses. Template method lets subclasses redefine certain steps of an
+  # algorithm without changing the algorithm's structure.
 
   module Template
     # mandatory_methods = ["tagname", "content"]
@@ -1790,7 +1865,9 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Visitor pattern</p>
 {% highlight ruby %}
-  # Represent an operation to be performed on the elements of an object structure. Visitor lets a new operation be defined without changing the classes of the elements on which it operates.
+  # Represent an operation to be performed on the elements of an object structure.
+  # Visitor lets a new operation be defined without changing the classes of the
+  # elements on which it operates.
 
   module Node
     def accept(visitor)

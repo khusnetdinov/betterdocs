@@ -22,8 +22,8 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Dynamic Dispatch</p>
 {% highlight ruby %}
-  1.public_send(:+, 2)
-  # => 3
+  1.public_send(:+, 2)FLATTENING
+      # => 3
 
   # Even private methods
   1.send(:+, 2)
@@ -261,9 +261,11 @@ layout: default
     end
   end
 
-  # We fix this by flattening the code into method calls (method *calls* aren't scope gates)
+  # We fix this by flattening the code into method calls (method *calls* aren't
+  # scope gates)
   # So we turn the class keyword into a method call using `Class.new`
-  # We also turn the method inside the class from a keyword into a method call using `define_method`
+  # We also turn the method inside the class from a keyword into a method call
+  # using `define_method`
 
   my_var = 'abc'
 
@@ -310,7 +312,8 @@ layout: default
   foo.instance_eval { puts @z }
   # => 2
 
-  # There is also `instance_exec` which works the same way but allows passing arguments to the block
+  # There is also `instance_exec` which works the same way but allows passing
+  # arguments to the block
   class Foo
     def initialize
       @x = 1
