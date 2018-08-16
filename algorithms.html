@@ -44,14 +44,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Bubble sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Bubble sort: A very naive sort that keeps swapping elements until the container is
-  # sorted. Requirements: Needs to be able to compare elements with <=>, and
-  # the [] []= methods should be implemented for the container. Time Complexity: О(n^2).
-  # Space Complexity: О(n) total, O(1) auxiliary. Stable: Yes.
-
-  # [5, 4, 3, 1, 2].bubble_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def swap(first, second)
       self[first], self[second] = self[second], self[first]
@@ -72,26 +64,36 @@ layout: default
 
       self
     end
+  end
 
-    # def bubble_sort!
-    #  length.times do |j|
-    #    for i in 1...(length - j)
-    #      swap i - 1, i if self[i - 1] < self[i]
-    #    end
-    #  end
-    #
-    #  self
-    # end
-    #
-    # def bubble_sort!
-    #  each_index do |index|
-    #    (length - 1).downto( index ) do |i|
-    #      swap i - 1, i if self[i - 1] < self[i]
-    #    end
-    #  end
-    #
-    #  self
-    # end
+  # [5, 4, 3, 1, 2].bubble_sort! => [1, 2, 3, 4, 5]
+{% endhighlight %}
+    </div>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Bubble sort</p>
+{% highlight ruby %}
+  def bubble_sort!
+    length.times do |j|
+      for i in 1...(length - j)
+        swap i - 1, i if self[i - 1] < self[i]
+      end
+    end
+
+    self
+  end
+{% endhighlight %}
+    </div>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Bubble sort</p>
+{% highlight ruby %}
+  def bubble_sort!
+    each_index do |index|
+      (length - 1).downto( index ) do |i|
+        swap i - 1, i if self[i - 1] < self[i]
+      end
+    end
+
+    self
   end
 {% endhighlight %}
     </div>
@@ -125,15 +127,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Insertion sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Insertion sort: Elements are inserted sequentially into the right position.
-  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods
-  # should be implemented for the container. Time Complexity: О(n^2)
-  # Space Complexity: О(n) total, O(1) auxiliary
-  # Stable: Yes
-
-  # [5, 4, 3, 1, 2].insertion_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def insertion_sort!
       return self if length < 2
@@ -151,6 +144,8 @@ layout: default
       self
     end
   end
+
+  # [5, 4, 3, 1, 2].insertion_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
     <a href="https://en.wikipedia.org/wiki/Insertion_sort">Read wiki</a>
@@ -183,17 +178,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Selection sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Selection sort: A naive sort that goes through the container and selects the
-  # smallest element, putting it at the beginning. Repeat until the end is reached.
-  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods
-  # should be implemented for the container.
-  # Time Complexity: О(n^2)
-  # Space Complexity: О(n) total, O(1) auxiliary
-  # Stable: Yes
-
-  # [5, 4, 3, 1, 2].selection_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def swap(first, second)
       self[first], self[second] = self[second], self[first]
@@ -211,18 +195,24 @@ layout: default
 
       self
     end
+  end
 
-    # def selection_sort!
-    #  for i in 0..length - 2
-    #    min = i
-    #    for j in (i + 1)...length
-    #      min = j if self[j] < self[min]
-    #    end
-    #    swap min, i
-    #  end
-    #
-    #  self
-    # end
+  # [5, 4, 3, 1, 2].selection_sort! => [1, 2, 3, 4, 5]
+{% endhighlight %}
+    </div>
+    <div class="code-block">
+      <p class="spec-title spec-correct">Selection sort</p>
+{% highlight ruby %}
+  def selection_sort!
+    for i in 0..length - 2
+      min = i
+      for j in (i + 1)...length
+        min = j if self[j] < self[min]
+      end
+      swap min, i
+    end
+
+    self
   end
 {% endhighlight %}
     </div>
@@ -261,16 +251,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Shell sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Shell sort: Similar approach as insertion sort but slightly better.
-  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods
-  # should be implemented for the container.
-  # Time Complexity: О(n^2)
-  # Space Complexity: О(n) total, O(1) auxiliary
-  # Stable: Yes
-
-  # [5, 4, 3, 1, 2].shell_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def shell_sort!
       inc = length / 2
@@ -290,6 +270,8 @@ layout: default
       self
     end
   end
+
+  # [5, 4, 3, 1, 2].shell_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
     <a href="https://en.wikipedia.org/wiki/Shellsort">Read wiki</a>
@@ -326,15 +308,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Heap sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Heap sort: Uses a heap (implemented by the Containers module) to sort the collection.
-  # Requirements: Needs to be able to compare elements with <=>
-  # Time Complexity: О(n^2)
-  # Space Complexity: О(n) total, O(1) auxiliary
-  # Stable: Yes
-
-  # [5, 4, 3, 1, 2].heap_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def swap(first, second)
       self[first], self[second] = self[second], self[first]
@@ -370,6 +343,8 @@ layout: default
       end
     end
   end
+
+  # [5, 4, 3, 1, 2].heap_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
     <a href="https://en.wikipedia.org/wiki/Heapsort">Read wiki</a>
@@ -407,16 +382,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Merge sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Mergesort: A stable divide-and-conquer sort that sorts small chunks of the
-  # container and then merges them together. Returns an array of the sorted elements.
-  # Requirements: Container should implement []
-  # Time Complexity: О(n log n) average and worst-case
-  # Space Complexity: О(n) auxiliary
-  # Stable: Yes
-
-  # [5, 4, 3, 1, 2].merge_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def merge_sort!
       return self if self.size <= 1
@@ -434,6 +399,8 @@ layout: default
       sorted + left + right
     end
   end
+
+  # [5, 4, 3, 1, 2].merge_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
     <a href="https://en.wikipedia.org/wiki/Merge_sort">Read wiki</a>
@@ -473,16 +440,6 @@ layout: default
     <div class="code-block">
       <p class="spec-title spec-correct">Quick sort</p>
 {% highlight ruby %}
-  # coding: utf-8
-  # Shell sort: Similar approach as insertion sort but slightly better.
-  # Requirements: Needs to be able to compare elements with <=>, and the [] []= methods
-  # should be implemented for the container.
-  # Time Complexity: О(n^2)
-  # Space Complexity: О(n) total, O(1) auxiliary
-  # Stable: Yes
-
-  # [5, 4, 3, 1, 2].quick_sort! => [1, 2, 3, 4, 5]
-
   class Array
     def swap(first, second)
       self[first], self[second] = self[second], self[first]
@@ -494,6 +451,8 @@ layout: default
       h ? t.partition { |e| e < h }.inject { |l, r| l.quick_sort! + [h] + r.quick_sort! } : []
     end
   end
+
+  # [5, 4, 3, 1, 2].quick_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
     <a href="https://en.wikipedia.org/wiki/Quicksort">Read wiki</a>
