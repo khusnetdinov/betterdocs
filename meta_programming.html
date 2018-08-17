@@ -15,7 +15,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Dynamic Dispatch</a></h1>
+    <h3><a name="describe">Dynamic Dispatch</a></h3>
     <p>
       Allows us to send messages object.public_send(message, *arguments)
     </p>
@@ -33,7 +33,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Dynamic Method</a></h1>
+    <h3><a name="describe">Dynamic Method</a></h3>
     <p>
       Allows us to dynamically create methods define_method :method_name { block that becomes method body }
     </p>
@@ -128,7 +128,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Ghost Methods</a></h1>
+    <h3><a name="describe">Ghost Methods</a></h3>
     <p>
       Utilises `method_missing`
     </p>
@@ -155,7 +155,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Dynamic Proxies</a></h1>
+    <h3><a name="describe">Dynamic Proxies</a></h3>
     <p>
       Catching "Ghost Methods" and forwarding them onto another method Whilst possibly adding logic around the call.
     </p>
@@ -181,7 +181,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Blank Slate</a></h1>
+    <h3><a name="describe">Blank Slate</a></h3>
     <p>
       CPrevents issues when using "Dynamic Proxies"
     </p>
@@ -209,7 +209,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Kernel Method</a></h1>
+    <h3><a name="describe">Kernel Method</a></h3>
     <p>
       Add a method that gives the illusion it's a language keyword But really it's just added to the `Kernel` module which all other objects inherit from. At the top level of a Ruby program `self` is == `main`.
     </p>
@@ -241,7 +241,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Flattening the Scope (aka Nested Lexical Scopes)</a></h1>
+    <h3><a name="describe">Flattening the Scope (aka Nested Lexical Scopes)</a></h3>
     <p>
       Where you change the code in such a way that it's easier for you to pass variables through "Scope Gates". A scope gate is any block, where normally when you enter its scope the variables outside of it become unreachable. This happens in: Class definitions, Module definitions, Method definitions I'm not sure what the real life examples are of this, but if you ever wonder why some code does the following, then maybe it was that they wanted to flatten the scope so they could more easily pass around variables. I guess it's better to do it this way than to define a global variable?
     </p>
@@ -284,7 +284,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Context Probe</a></h1>
+    <h3><a name="describe">Context Probe</a></h3>
     <p>
       Execute a code block in the context of another object using `instance_eval`
     </p>
@@ -328,7 +328,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Evaluate a block in the context of a class</a></h1>
+    <h3><a name="describe">Evaluate a block in the context of a class</a></h3>
     <p>
       Similar to re-opening a class but more flexible in that it works on any variable that references a class, where as re-opening a class requires defining a constant.
     </p>
@@ -362,7 +362,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Class Macros</a></h1>
+    <h3><a name="describe">Class Macros</a></h3>
     <p>
       Class Macros are just regular class methods that are only used in a class definition e.g. not used from a new instance of the class (only at the time the class is defined)
     </p>
@@ -406,7 +406,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Around Alias</a></h1>
+    <h3><a name="describe">Around Alias</a></h3>
     <p>
       Around Alias uses the `alias` keyword to store a copy of the original method under a new name, allowing you to redefine the original method name and to delegate off to the previous method implementation
     </p>
@@ -428,7 +428,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Hook Methods</a></h1>
+    <h3><a name="describe">Hook Methods</a></h3>
     <p>
       Hook Methods are provided by the Ruby language and let you know about certain events such as when a class inherits from another class or when a method has been added to an object.
     </p>
@@ -480,7 +480,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Class Extension Mixin</a></h1>
+    <h3><a name="describe">Class Extension Mixin</a></h3>
     <p>
       Class Extension Mixin allows you to both `include` and `extend` a class
     </p>
@@ -517,7 +517,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Module namespace interpolation</a></h1>
+    <h3><a name="describe">Module namespace interpolation</a></h3>
     <div class="code-block">
       <p class="spec-title spec-correct">Module namespace interpolation</p>
 {% highlight ruby %}

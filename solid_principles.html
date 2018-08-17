@@ -11,7 +11,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Single Responsibility Principle</a></h1>
+    <h3><a name="describe">Single Responsibility Principle</a></h3>
     <p>The Single Responsibility Principle is the most abstract of the bunch. It helps keep classes and methods small and maintainable. In addition to keeping classes small and focused it also makes them easier to understand.</p>
 
     <p>While we all agree that focusing on a single responsibility is important, it’s difficult to determine what a class’s responsibility is. Generally, it is said that anything that gives a class a reason to change can be viewed as a responsibility. By change I am talking about structural changes to the class itself (as in modifying the code in the class’s file, not the object’s in-memory state).</p>
@@ -93,7 +93,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Open/Closed Principle</a></h1>
+    <h3><a name="describe">Open/Closed Principle</a></h3>
     <p>The Open/Closed Principle states that classes or methods should be open for extension, but closed for modification. This tells us we should strive for modular designs that make it possible for us to change the behavior of the system without making modifications to the classes themselves. This is generally achieved through the use of patterns such as the strategy pattern.
     </p>
 
@@ -152,7 +152,6 @@ layout: default
     end
   end
 
-
   class XmlParser
     def self.parse(_file)
       # Implementation
@@ -176,7 +175,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Liskov’s Substitution Principle</a></h1>
+    <h3><a name="describe">Liskov’s Substitution Principle</a></h3>
     <p>Liskov’s principle tends to be the most difficult to understand. The principle states that you should be able to replace any instances of a parent class with an instance of one of its children without creating any unexpected or incorrect behaviors.</p>
     <div class="code-block">
       <p class="spec-title spec-wrong">Bad!</p>
@@ -229,7 +228,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Interface Segregation Principle</a></h1>
+    <h3><a name="describe">Interface Segregation Principle</a></h3>
     <p>The principle states that a client should not be forced to depend on methods
       that it does not use.</p>
 
@@ -324,7 +323,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe"></a></h1>
+    <h3><a name="describe">Dependency Inversion Principle</a></h3>
     <p>
       The Dependency Inversion Principle has to do with high-level (think business logic) objects not depending on low-level (think database querying and IO) implementation details. This can be achieved with duck typing and the Dependency Inversion Principle. Often this pattern is used to achieve the Open/Closed Principle that we discussed above. In fact, we can even reuse that same example as a demonstration of this principle.</p>
 
