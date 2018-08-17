@@ -11,7 +11,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Sorting</b></h1>
+    <h2>Sorting</h2>
     <p>A sorting algorithm is an algorithm that puts elements of a list in a certain order. The most-used orders are
       numerical order and lexicographical order. Efficient sorting is important for optimizing the use of other
       algorithms (such as search and merge algorithms) which require input data to be in sorted lists; it is also
@@ -20,7 +20,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Bubble sort</b></h1>
+    <h3><a name="describe">Bubble sort</a></h3>
     <p>Bubble sort has many of the same properties as insertion sort, but has slightly higher overhead. In the case
       of nearly sorted data, bubble sort takes O(n) time, but requires at least 2 passes through the data (whereas
       insertion sort requires something more like 1 pass).
@@ -101,7 +101,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Insertion sort</b></h1>
+    <h3><a name="describe">Insertion sort</a></h3>
     <p>Although it is one of the elementary sorting algorithms with O(n2) worst-case time, insertion sort is the
       algorithm of choice either when the data is nearly sorted (because it is adaptive) or when the problem size
       is small (because it has low overhead). For these reasons, and because it is also stable, insertion sort is
@@ -152,7 +152,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Selection sort</b></h1>
+    <h3><a name="describe">Selection sort</a></h3>
     <p>From the comparions presented here, one might conclude that selection sort should never be used. It does not
       adapt to the data in any way (notice that the four animations above run in lock step), so its runtime is
       always quadratic. However, selection sort has the property of minimizing the number of swaps. In
@@ -220,7 +220,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Shell sort</b></h1>
+    <h3><a name="describe">Shell sort</a></h3>
     <p>The worse-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40
       121…, which is what is used here, the time complexity is O(n3/2). For other increments, time complexity is
       known to be O(n4/3) and even O(n·lg2(n)). Neither tight upper bounds on time complexity nor the best
@@ -278,7 +278,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Heap sort</b></h1>
+    <h3><a name="describe">Heap sort</a></h3>
     <p>Heap sort is simple to implement, performs an O(n·lg(n)) in-place sort, but is not stable. The first loop,
       the Θ(n) “heapify” phase, puts the array into heap order. The second loop, the O(n·lg(n)) “sortdown” phase,
       repeatedly extracts the maximum and restores heap order. The sink function is written recursively for
@@ -351,7 +351,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Merge sort</b></h1>
+    <h3><a name="describe">Merge sort</a></h3>
     <p>Merge sort is very predictable. It makes between 0.5lg(n) and lg(n) comparisons per element, and between
       lg(n) and 1.5lg(n) swaps per element. The minima are achieved for already sorted data; the maxima are
       achieved, on average, for random data. If using Θ(n) extra space is of no concern, then merge sort is an
@@ -407,7 +407,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Quick sort</b></h1>
+    <h3><a name="describe">Quick sort</a></h3>
     <p>When carefully implemented, quick sort is robust and has low overhead. When a stable sort is not needed,
       quick sort is an excellent general-purpose sort – although the 3-way partitioning version should always be
       used instead. The 2-way partitioning code shown above is written for clarity rather than optimal
@@ -459,7 +459,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Other sorting algorithms</b></h1>
+    <h3>Other sorting algorithms</h3>
     <ul>
       <li><a href="http://rosettacode.org/wiki/Category:Sorting_Algorithms">http://rosettacode.org/wiki/Category:Sorting_Algorithms</a>
       </li>
@@ -469,7 +469,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Additional reading</b></h1>
+    <h3>Additional reading</h3>
     <ul>
       <li><a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/</a>
       </li>
@@ -477,11 +477,11 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Searching</b></h1>
+    <h2>Searching</h2>
   </article>
 
   <article>
-    <h1><b>Binary search</b></h1>
+    <h3><a name="describe">Binary search</a></h3>
     <p>In computer science, binary search, also known as half-interval search or logarithmic search, is a search
       algorithm that finds the position of a target value within a sorted array. It compares the target value to
       the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated
@@ -503,11 +503,42 @@ layout: default
       </tr>
       </tbody>
     </table>
+
+    <div class="code-block">
+      <p class="spec-title spec-correct">Quick sort</p>
+{% highlight ruby %}
+  class Array
+    def binary_search(item)
+      return nil if item.nil?
+      low = 0
+      high = self.size - 1
+
+      while low <= high
+        mid = (low + high) / 2
+        val = self[mid]
+
+        if val > item
+          high = mid - 1
+        elsif val < item
+          low = mid + 1
+        else
+          return val
+        end
+      end
+
+      nil
+    end
+  end
+
+  # [1, 2, 3].binary_search(1) # => 1
+  # [1, 2, 3].binary_search(4) # => nil
+{% endhighlight %}
+    </div>
     <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Read wiki</a>
   </article>
 
   <article>
-    <h1><b>Knuth-Morris-Pratt search</b></h1>
+    <h3><a name="describe">Knuth-Morris-Pratt search</a></h3>
     <p>In computer science, the Knuth–Morris–Pratt string searching algorithm (or KMP algorithm) searches for
       occurrences of a "word" W within a main "text string" S by employing the observation that when a mismatch
       occurs, the word itself embodies sufficient information to determine where the next match could begin, thus
@@ -517,7 +548,7 @@ layout: default
   </article>
 
   <article>
-    <h1><b>Other search algorithms</b></h1>
+    <h3>Other search algorithms</h3>
     <ul>
       <li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a></li>
       <li><a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm</a></li>

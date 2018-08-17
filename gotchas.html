@@ -15,7 +15,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Ruby can be surprising</a></h1>
+    <h3><a name="describe">Ruby can be surprising</a></h3>
     <p>
       Though "engineered to maximize programmer happiness", with the "principle of least surprise", Ruby still has gotchas. This presentation will proceed from newbie trivial gotchas, to more advanced and confusing gotchas.
     </p>
@@ -49,7 +49,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Don't quote me on this, but...</a></h1>
+    <h3><a name="describe">Don't quote me on this, but...</a></h3>
     <p>
       String interpolation (including special chars like \n) fails with 'single' quotes - it requires "double" quotes. Just like in most languages with string interpolation. To avoid it use doubles whenever practical.
     </p>
@@ -70,7 +70,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">It's twue! It's twue!</a></h1>
+    <h3><a name="describe">It's twue! It's twue!</a></h3>
     <p>
       Only two things are false (falsey): false, and nil. Everything else is true (truthy), even 0 (false in C), "" (false in JS), [], etc. (Trips up people from C, JS, etc. where some of these are false.)
     </p>
@@ -98,7 +98,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Hang him in effigy or String him up, symbolically.</a></h1>
+    <h3><a name="describe">Hang him in effigy or String him up, symbolically.</a></h3>
     <p>
       Symbols != strings. Even if the same when printed. Remember which one to use for what (args). Ideally, take either, and use what a method expects: "Be liberal in what you accept, and conservative in what you send." (Postel's Law)
     </p>
@@ -121,7 +121,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">String... or nothing!</a></h1>
+    <h3><a name="describe">String... or nothing!</a></h3>
     <div class="code-block">
       <p class="spec-title spec-correct">Gotcha!</p>
 {% highlight ruby %}
@@ -159,7 +159,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Constants Aren't</a></h1>
+    <h3><a name="describe">Constants Aren't</a></h3>
     <p>
       Initial uppercase means constant, in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowingly.
     </p>
@@ -190,7 +190,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Some are more equal than others</a></h1>
+    <h3><a name="describe">Some are more equal than others</a></h3>
     <p>
       == is the usual same value, .eql? is value and class (1 is Fixnum, 1.0 is Float), .equal? is same object. It's actually much hairier.
     </p>
@@ -221,7 +221,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">=== != ==!</a></h1>
+    <h3><a name="describe">=== != ==!</a></h3>
     <p>
       === is "case equality", as in case statements. A better name might be ".describes?", or overload ".includes?"! Again, it's actually much hairier; see the docs on class Object. Gets people from languages where === is either object identity or same value and class.
     </p>
@@ -256,7 +256,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">and != &&</a></h1>
+    <h3><a name="describe">and != &&</a></h3>
     <p>
       && has higher precedence than =, so x = true  && false means x = (true  && false) and has lower precedence, so x = true and false means (x = true) and false Ruby Style Guide: Use && / || for boolean expressions, [use] and / or for control flow.
     </p>
@@ -281,7 +281,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">or != ||</a></h1>
+    <h3><a name="describe">or != ||</a></h3>
     <p>
       || has higher precedence than =, so x = false || true means x = (false || true) or has lower precedence, so  x = false  or true means (x = false) or true. Also, && is higher than ||, but and and or are equal, so they are evaluated left-to-right!
     </p>
@@ -306,7 +306,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Don't be so sensitive!</a></h1>
+    <h3><a name="describe">Don't be so sensitive!</a></h3>
     <p>
       Whitespace insensitive? NOT ALWAYS! Parser thinks it's an expression, as one arg, but (1, 2) is not a valid Ruby expression! (All work fine w/ 1 arg.).
     </p>
@@ -409,7 +409,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Ang onto yer @!</a></h1>
+    <h3><a name="describe">Ang onto yer @!</a></h3>
     <p>
       Naked value becomes a temporary local variable! Solution: remember the @! (Or "self.". Or use attr_writer too, or an attr_accessor.) Gets people from Java/C++, not so much Python (which needs "self." too). "You keep on using that variable. I don't think it means what you think it means.". Not Inigo Montoya.
     </p>
@@ -443,7 +443,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Look out, it’s an @@!</a></h1>
+    <h3><a name="describe">Look out, it’s an @@!</a></h3>
     <p>
       What the fillintheblank?  We didn't change Parent’s @@value before checking it, nor Child’s at all! Or did we? @@variables are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s @@value changed Parent’s, and inc’ing Parent’s changed Child’s.
     </p>
@@ -479,7 +479,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">With init(ialize) or without it</a></h1>
+    <h3><a name="describe">With init(ialize) or without it</a></h3>
     <p>
       Parent's initialize runs automagically only if child has none. Else, parent's must be called to run.
     </p>
@@ -523,7 +523,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Superman vs. the Invisible Man</a></h1>
+    <h3><a name="describe">Superman vs. the Invisible Man</a></h3>
     <p>
       super with no arg list sends what caller got super with explicit args sends those args to send NO args, use empty parens: super()
     </p>
@@ -562,7 +562,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">When will it end?  (Or start?)</a></h1>
+    <h3><a name="describe">When will it end?  (Or start?)</a></h3>
     <p>
       In "standard" regexps: ^ is start and $ is end... of the whole string. Ruby’s regexes default to multiline, so: ^ is start and $ is end... of any line! \A is start and \Z is end of the whole string.  (Or \z to include any newline… which is another gotcha!)
     </p>
@@ -587,7 +587,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe"getting .any?></a></h1>
+    <h3><a name="describe"getting .any?></a></h3>
     <p>
       .any? does not mean “any elements?”! With block: “do any make the block true?”. Without: “are any truthy?” Has implicit block: { |element| element }.
     </p>
@@ -618,7 +618,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">(Un)Def Leppard</a></h1>
+    <h3><a name="describe">(Un)Def Leppard</a></h3>
     <p>
       Variables declared in blocks passed to iterators (e.g., times or each) are undefined at the top of each iteration! Iterators call the block repeatedly, so vars are out of scope again after each call. Built-in looping constructs (e.g., while or for) are OK. (Or declare vars before block.)
     </p>
@@ -647,7 +647,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Freeze (Ar)ray</a></h1>
+    <h3><a name="describe">Freeze (Ar)ray</a></h3>
     <p>
       Freezing an array (or a hash) freezes it, not the items it contains. Strings can be modified in place. This way, you can modify a given slot in a frozen Array of Strings.
     </p>
@@ -676,7 +676,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">1 is 1 … and ever more shall be so!</a></h1>
+    <h3><a name="describe">1 is 1 … and ever more shall be so!</a></h3>
     <p>
       Changing Fixnum to new value means new object. They can't be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum's object_id is value * 2 + 1
     </p>
@@ -703,7 +703,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">(to! || ! to!) == ?</a></h1>
+    <h3><a name="describe">(to! || ! to!) == ?</a></h3>
     <p>
       Bang marks method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!
     </p>
@@ -735,7 +735,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">An Array of New Gotchas</a></h1>
+    <h3><a name="describe">An Array of New Gotchas</a></h3>
     <p>
       Default value given as object is same object for each slot! Mutating one mutates default for all. Initial value given as block gets evaluated separately for each slot. Use this to create new vars for each.
     </p>
@@ -763,7 +763,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Making a Hash of it</a></h1>
+    <h3><a name="describe">Making a Hash of it</a></h3>
     <p>
       Mostly same problem (and solution) as Arrays. MORE GOTCHAS: creates new object on any access to empty slot! May create excessive number of new objects; ruins checking “real” contents or count (nil-checking, .size, etc.).
     </p>
@@ -794,7 +794,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Rescue Me, Throw a Line, I'll Try to Catch It!</a></h1>
+    <h3><a name="describe">Rescue Me, Throw a Line, I'll Try to Catch It!</a></h3>
     <p>
       In Ruby, throw and catch are NOT for exceptions! They are advanced flow control, to exit deep nesting. Ruby uses raise and rescue for exceptions.
     </p>
@@ -826,7 +826,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">to_s VS to_str</a></h1>
+    <h3><a name="describe">to_s VS to_str</a></h3>
     <p>
       `to_s` is defined on every object and will always return something. `to_str` is only defined on objects that are string-like. For example, `Symbol` has `to_str` but `Array` does not. Thus, you can use `obj.respond_to?(:to_str)` instead of something like `obj.is_a?(String)` if you want to take advantage of duck typing without worrying about whether the class you're working with is a subclass of `String` or not.
     </p>
@@ -853,7 +853,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Need to coordinate method_missing and respond_to_missing?</a></h1>
+    <h3><a name="describe">Need to coordinate method_missing and respond_to_missing?</a></h3>
     <p>
       When overriding #method_missing, remember to override #respond_to_missing? as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing?. If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:
     </p>
@@ -908,7 +908,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">rescue from a StandardError, not an Exception</a></h1>
+    <h3><a name="describe">rescue from a StandardError, not an Exception</a></h3>
     <p>
       Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:
     </p>
@@ -925,7 +925,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">private data isn’t really, and not at all w/ class methods</a></h1>
+    <h3><a name="describe">private data isn’t really, and not at all w/ class methods</a></h3>
     <p>
       There’s a way to make class methods private in Ruby, you just gotta jump through some hoops. Err, I mean use the `class << self` syntax. This oddity pushes an instance singleton onto the class effectively creating class methods.
     </p>
@@ -933,23 +933,23 @@ layout: default
       <p class="spec-title spec-correct">Gotcha!</p>
 {% highlight ruby %}
   class Orange
-  def self.latin_name
-  binomial_name
-  end
+    def self.latin_name
+      binomial_name
+    end
 
-  private
+    private
 
-  def self.binomial_name
-  'Malus domestica'
-  end
+    def self.binomial_name
+      'Malus domestica'
+    end
 
-  class << self
-  private
+    class << self
+      private
 
-  def private_binomial_name
-  'Citrus × sinensis'
-  end
-  end
+      def private_binomial_name
+        'Citrus × sinensis'
+      end
+    end
   end
 
   Orange.latin_name
@@ -966,7 +966,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">Braces vs. do-end</a></h1>
+    <h3><a name="describe">Braces vs. do-end</a></h3>
     <p>
       The general convention is to use do..end for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that {} has a higher precedence than do .. end, so keep that in mind when deciding what you want to use.
     </p>
@@ -987,7 +987,7 @@ layout: default
   </article>
 
   <article>
-    <h1><a name="describe">class Foo::Bar, defined outside Module Foo, won’t see inside Foo</a></h1>
+    <h3><a name="describe">class Foo::Bar, defined outside Module Foo, won’t see inside Foo</a></h3>
     <p>
       You can think of each appearance of `module Something`, `class Something` or `def something` as a “gateway” into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found there it will go back through each containing “gateway” and search the scope there. In your example the method `baz` is defined as
     </p>
