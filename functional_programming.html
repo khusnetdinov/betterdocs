@@ -91,9 +91,7 @@ layout: default
 
   <article>
     <h3><a name="describe">Partial applying and curryng</a></h3>
-    <p>
-      Let’s first understand what these two different applications of functions are. Partial function aplication is calling a function with some number of arguments, in order to get a function back that will take that many less arguments. Currying is taking a function that takes n arguments, and splitting it into n functions that take one argument.
-    </p>
+    <p>Let’s first understand what these two different applications of functions are. Partial function aplication is calling a function with some number of arguments, in order to get a function back that will take that many less arguments. Currying is taking a function that takes n arguments, and splitting it into n functions that take one argument.</p>
     <div class="code-block">
       <p class="spec-title spec-correct">Partial applying and curryng</p>
 {% highlight ruby %}
@@ -110,9 +108,7 @@ layout: default
   proc { |x| proc { |y| proc { |z| x + y + z } } }
 {% endhighlight %}
     </div>
-
-    <p>
-      .curry returns a curried proc. If the optional arity argument is given, it determines the number of arguments. A curried proc receives some arguments. If a sufficient number of arguments are supplied, it passes the supplied arguments to the original proc and returns the result. Otherwise, returns another curried proc that takes the rest of arguments.
+    <p><span class="code-inline">.curry</span> returns a curried proc. If the optional arity argument is given, it determines the number of arguments. A curried proc receives some arguments. If a sufficient number of arguments are supplied, it passes the supplied arguments to the original proc and returns the result. Otherwise, returns another curried proc that takes the rest of arguments.
     </p>
     <div class="code-block">
       <p class="spec-title spec-correct">Partial applying and curryng</p>
