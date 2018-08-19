@@ -36,19 +36,15 @@ layout: default
   end.each(&:join)
 {% endhighlight %}
     </div>
-
-    <p>Here you can see that we have 10 * 10000 elements in array</p>
-
+    <p>Here you can see that we have <span class="code-inline">10 * 10000</span> elements in array</p>
     <div class="code-block">
       <p class="spec-title spec-correct">Example</p>
 {% highlight ruby %}
   puts shared_array.size
 {% endhighlight %}
     </div>
-
     <p>Note that different ruby can show different result</p>
     <p>GIL exist only in MRI ruby</p>
-
     <div class="code-block">
       <p class="spec-title spec-correct">Example</p>
 {% highlight ruby %}
@@ -91,9 +87,7 @@ layout: default
   end.each(&:join)
 {% endhighlight %}
     </div>
-
-    <p>Here you can see that we have 10 * 10000 elements in array</p>
-
+    <p>Here you can see that we have <span class="code-inline">10 * 10000</span> elements in array</p>
     <div class="code-block">
       <p class="spec-title spec-correct">Example</p>
 {% highlight ruby %}
@@ -157,7 +151,6 @@ layout: default
     <p>Make sure memoization makes sense and a difference in your case. In many cases Rails actually caches the result anyway, so that you are not saving a whole lot if any resources with your memoization method. Don’t memoize to class variables or class instance variables. If you need to memoize something on the class level, use thread local variables (Thread.current[:baz]) instead. Be aware, though, that it is still kind of a global variable. So while it’s thread-safe, it still might not be good coding practice.</p>
     <p>config.threadsafe!: what does it do?</p>
     <p>Let’s take a look at the threadsafe! method:</p>
-
     <div class="code-block">
       <p class="spec-title spec-correct">Example</p>
 {% highlight ruby %}
@@ -170,9 +163,7 @@ layout: default
   end
 {% endhighlight %}
     </div>
-
     <p>Calling this method sets four options in our app configuration. Let’s walk through each option and talk about what it does.</p>
-
     <p>Preloading Frameworks</p>
     <p>The first option @preload_frameworks does pretty much what it says, it forces the Rails framework to be eagerly loaded on boot. When this option is not enabled, framework classes are loaded lazily via autoload. In multi-threaded environments, the framework needs to be eagerly loaded before any threads are created because of thread safety issues with autoload. We know that loading the framework isn’t threadsafe, so the strategy is to load it all up before any threads are ready to handle requests.</p>
     <p>Caching classes</p>

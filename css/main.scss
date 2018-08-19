@@ -4,8 +4,6 @@
 
 @charset "utf-8";
 
-
-
 // VARIABLES
 
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -34,8 +32,6 @@ $on-laptop:        800px;
 
 $spacing-unit:     30px;
 
-
-
 // SELECTORS
 
 %clearfix {
@@ -50,15 +46,7 @@ $spacing-unit:     30px;
   margin-bottom: $spacing-unit / 2;
 }
 
-
-
 // MIXINS
-
-//  Use media queries like this:
-//  
-//  @include media-query($on-palm) {
-//    .wrapper { padding-right: $spacing-unit / 2; }
-//  }
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {

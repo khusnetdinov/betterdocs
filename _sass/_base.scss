@@ -293,6 +293,15 @@ body {
     padding: .5em 0;
   }
 
+  .code-inline {
+    border-radius: 2px;
+    padding-left: .5em;
+    padding-right: .5em;
+    background: #cecece;
+    color: #2a2b30;
+    white-space: nowrap;
+  }
+
   .spec-wrong {
     color: #CE0000;
   }
