@@ -1,0 +1,15 @@
+table.complexity {
+  border: 1px solid gray;
+  border-spacing: 0;
+
+  > thead,
+  > tbody {
+    > tr {
+      > td,
+      > th {
+        padding: .25em;
+        border: 1px solid gray;
+      }
+    }
+  }
+}

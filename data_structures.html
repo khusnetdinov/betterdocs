@@ -111,10 +111,9 @@ layout: default
   <article>
     <h3><a name="describe">Stack</a></h3>
     <p>The stack is the sibling of the queue. It mimicks a real-life stack (e.g. of paper). It is FILO (first-in-last-out), so that when items are retrieved from the stack, they are returned in the reverse of the order in which they were added. Again, Ruby Arrays provide a perfect container. As with the Queue, it could also be implemented using a linked list.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -127,7 +126,6 @@ layout: default
       </thead>
       <tbody>
         <tr>
-          <td><a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack</a></td>
           <td>&Theta;(n)</td>
           <td>&Theta;(n)</td>
           <td>&Theta;(1)</td>
@@ -287,10 +285,9 @@ layout: default
   <article>
     <h3><a name="describe">Queue</a></h3>
     <p>A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class is worth it to seeethey are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -303,7 +300,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -407,10 +403,9 @@ layout: default
   <article>
     <h3><a name="describe">Deque</a></h3>
     <p>A Deque is a queue which allows adding and removing items at both ends.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -423,7 +418,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="https://en.wikipedia.org/wiki/Double-ended_queue">Deque</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -534,11 +528,10 @@ layout: default
 
   <article>
     <h3><a name="describe">Singly Linked List</a></h3>
-    <p>Singly linked lists contain nodes which have a data field as well as a <span class="code-inline">next</span> field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal.</p>
-    <table style="text-align: center">
+    <p>Singly linked lists contain nodes which have a data field as well as a 'next' field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal.</p>
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -551,7 +544,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Singly_linked_list#Singly_linked_lists">Singly-Linked List</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -699,11 +691,10 @@ layout: default
 
   <article>
     <h3><a name="describe">Double linked list</a></h3>
-    <p>In a doubly-linked list, each list element contains two references--one to its successor and one to its predecessor.</p>
-    <table style="text-align: center">
+    <p>In a doubly-linked list , each list element contains two references--one to its successor and one to its predecessor.</p>
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -716,7 +707,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly Linked List</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
@@ -808,7 +798,7 @@ layout: default
   <article>
     <h3><a name="describe">Ordered list</a></h3>
     <p>An ordered list is a list in which the order of the items is significant. However, the items in an ordered lists are not necessarily sorted. Consequently, it is possible to change the order of items and still have a valid ordered list.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
         <td>Structure</td>
@@ -955,10 +945,9 @@ layout: default
   <article>
     <h3><a name="describe">Hash Table</a></h3>
     <p>A hash table is a searchable container. As such, it provides methods for putting an object into the container, finding an object in the container, and removing an object from the container.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -971,7 +960,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
         <td>&Theta;(1)</td>
@@ -1060,10 +1048,9 @@ layout: default
   <article>
     <h3><a name="describe">Binary Tree</a></h3>
     <p>A binary tree is a tree in which each node can have a maximum of two children. The children are designated left and right.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -1076,7 +1063,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="https://en.wikipedia.org/wiki/Binary_tree">Binary Tree</a></td>
         <td>&Theta;(log(n))</td>
         <td>&Theta;(log(n))</td>
         <td>&Theta;(log(n))</td>
@@ -1167,10 +1153,9 @@ layout: default
   <article>
     <h3><a name="describe">Binary Search Tree</a></h3>
     <p>In computer science, binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of containers: data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name)</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -1183,7 +1168,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a></td>
         <td>&Theta;(log(n))</td>
         <td>&Theta;(log(n))</td>
         <td>&Theta;(log(n))</td>
@@ -1286,10 +1270,9 @@ layout: default
   <article>
     <h3><a name="describe">B Tree</a></h3>
     <p>In computer science, a B-tree is a self-balancing tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree is a generalization of a binary search tree in that a node can have more than two children (Unlike self-balancing binary search trees, the B-tree is optimized for systems that read and write large blocks of data. B-trees are a good example of a data structure for external memory. It is commonly used in databases and filesystems.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -1302,7 +1285,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="http://en.wikipedia.org/wiki/B_tree">B-Tree</a></td>
         <td>&Theta;(log(n))</td>
         <td>&Theta;(log(n))</td>
         <td>&Theta;(log(n))</td>
@@ -1384,10 +1366,9 @@ layout: default
   <article>
     <h3><a name="describe">Binary Heap</a></h3>
     <p>A binary heap is a heap-ordered complete binary tree which is implemented using an array. In a heap the smallest key is found at the root and since the root is always found in the first position of the array, finding the smallest key is a trivial operation in a binary heap.</p>
-    <table style="text-align: center">
+    <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
       <tr>
-        <td>Structure</td>
         <td>Average Access</td>
         <td>Average Search</td>
         <td>Average Insertion</td>
@@ -1400,7 +1381,6 @@ layout: default
       </thead>
       <tbody>
       <tr>
-        <td><a href="https://en.wikipedia.org/wiki/Binary_heap">Binary Heap</a></td>
         <td>&Theta;(n)</td>
         <td>&Theta;(n)</td>
         <td>&Theta;(1)</td>
