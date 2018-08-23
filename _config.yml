@@ -4,6 +4,11 @@ encoding: utf-8
 baseurl: "/"
 url: "https://betterdocs.org"
 
+collections:
+  pages:
+    output: true
+    permalink: /:path
+
 # Locales settings
 languages: ["en", "ru"]
 timezone: Europe/Moscow
