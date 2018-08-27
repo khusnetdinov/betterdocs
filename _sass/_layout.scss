@@ -1,40 +1,47 @@
+// Variables
+
+$body-color: #cecece;
+$body-bg: #2a2b30;
+$a-color: #ffffff;
+$a-hover-color: #dddddd;
+
 @font-face {
-  font-family: 'bpicons';
+  font-family: "bpicons";
   font-weight: normal;
   font-style: normal;
-  src: url('../fonts/bpicons/bpicons.eot');
-  src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+  src: url("../fonts/bpicons/bpicons.eot");
+  src: url("../fonts/bpicons/bpicons.eot?#iefix") format("embedded-opentype"), url("../fonts/bpicons/bpicons.woff") format("woff"), url("../fonts/bpicons/bpicons.ttf") format("truetype"), url("../fonts/bpicons/bpicons.svg#bpicons") format("svg");
 }
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
-  min-width: 20em;
-  overflow: hidden;
   margin: 0;
-  color: #cecece;
-  background: #2a2b30;
-  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", "Lato", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: $body-color;
+  background: $body-bg;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 20em;
 }
 
 a {
+  color: $a-color;
   outline: none;
   text-decoration: none;
-  color: #fff;
 
   &:hover {
-    color: #ddd;
+    color: $a-hover-color;
   }
 }
 
 .container {
-  overflow-y: auto;
   height: 100vh;
+  overflow-y: auto;
 }
 

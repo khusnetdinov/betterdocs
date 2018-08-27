@@ -27,12 +27,21 @@ content:
   footer:
 
 pages:
-    gotchas:
-    meta_programming:
-    functional_programming:
-    threads:
-    solid_principles:
-    design_patterns:
-    data_structures:
-    algorithms:
-    interview_questions:
+  - title: Готчи
+    url: gotchas.html
+  - title: Мета программирование
+    url: meta_programming.html
+  - title: Функциональное программирование
+    url: functional_programming.html
+  - title: Потоки
+    url: threads.html
+  - title: COЛИД
+    url: solid_principles.html
+  - title: Паттерны проектирование
+    url: design_patterns.html
+  - title: Структуры данных
+    url: data_structures.html
+  - title: Алгоритмы
+    url: algorithms.html
+  - title: Вопросы на интервью
+    url: interview_questions.html

@@ -1,7 +1,7 @@
 encoding: utf-8
 
 # Url settings
-baseurl: "/"
+baseurl: ""
 url: "https://betterdocs.org"
 
 collections:

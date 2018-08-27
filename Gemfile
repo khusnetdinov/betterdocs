@@ -1,12 +1,15 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-ruby '2.4.4'
-gem 'github-pages'
-gem "rake"
+source 'https://rubygems.org'
+
+ruby '2.5.1'
 gem 'jekyll'
 gem 'rack-jekyll'
+gem 'rake'
+gem 'minima'
+gem 'html-proofer'
+gem 'scss_lint', require: false
 
 group :jekyll_plugins do
-  gem "jekyll-multiple-languages-plugin"
+  gem 'jekyll-multiple-languages-plugin'
 end
-

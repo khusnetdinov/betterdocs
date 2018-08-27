@@ -12,29 +12,36 @@ head:
 
 content:
   menu:
-    open: "Open Menu"
-    close: "Close Menu"
+    open: Open Menu
+    close: Close Menu
   sidebar:
-    gotchas: "Gotchas"
-    meta_programming: "Meta Programming"
-    functional_programming: "Functional Programming"
-    threads: "Threads"
-    solid_principles: "Solid Pronciples"
-    design_patterns: "Design Patterns"
-    data_structures: "Data Structures"
-    algorithms: "Algorithms"
-    interview_questions: "Interview Questions"
+    gotchas: Gotchas
+    meta_programming: Meta Programming
+    functional_programming: Functional Programming
+    threads: Threads
+    solid_principles: Solid Pronciples
+    design_patterns: Design Patterns
+    data_structures: Data Structures
+    algorithms: Algorithms
+    interview_questions: Interview Questions
   footer:
 
 pages:
-    gotchas:
-      title: "Gotchas"
-    meta_programming:
-    functional_programming:
-    threads:
-    solid_principles:
-    design_patterns:
-    data_structures:
-    algorithms:
-    interview_questions:
-  
+  - title: Gotchas
+    url: gotchas.html
+  - title: Meta Programming
+    url: meta_programming.html
+  - title: Functional Programming
+    url: functional_programming.html
+  - title: Threads
+    url: threads.html
+  - title: Solid Pronciples
+    url: solid_principles.html
+  - title: Design Patterns
+    url: design_patterns.html
+  - title: Data Structures
+    url: data_structures.html
+  - title: Algorithms
+    url: algorithms.html
+  - title: Interview Questions
+    url: interview_questions.html

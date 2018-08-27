@@ -1,5 +1,10 @@
-table.complexity {
-  border: 1px solid gray;
+// Variables
+
+$complexity-border: #808080;
+$th-border: #808080;
+
+.complexity {
+  border: 1px solid $complexity-border;
   border-spacing: 0;
 
   > thead,
@@ -8,7 +13,7 @@ table.complexity {
       > td,
       > th {
         padding: .25em;
-        border: 1px solid gray;
+        border: 1px solid $th-border;
       }
     }
   }
