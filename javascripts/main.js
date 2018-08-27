@@ -74,7 +74,7 @@
 		this.menusArr = [];
 		var self = this;
 		this.menus.forEach(function(menuEl, pos) {
-			var menu = {menuEl : menuEl, menuItems : [].slice.call(menuEl.querySelectorAll('.menu__item'))};
+			var menu = {menuEl : menuEl, menuItems : [].slice.call(menuEl.querySelectorAll('.menu-item'))};
 			self.menusArr.push(menu);
 
 			// set current menu class
@@ -190,10 +190,10 @@
 		});
 		// animation class
 		if( this.options.direction === 'r2l' ) {
-			classie.add(currentMenu, !isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
+			classie.add(currentMenu, !isBackNavigation ? 'animate-out-to-left' : 'animate-out-to-right');
 		}
 		else {
-			classie.add(currentMenu, isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
+			classie.add(currentMenu, isBackNavigation ? 'animate-out-to-left' : 'animate-out-to-right');
 		}
 	};
 
@@ -221,12 +221,12 @@
 				onEndAnimation(item, function() {
 					// reset classes
 					if( self.options.direction === 'r2l' ) {
-						classie.remove(currentMenu, !isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
-						classie.remove(nextMenuEl, !isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+						classie.remove(currentMenu, !isBackNavigation ? 'animate-out-to-left' : 'animate-out-to-right');
+						classie.remove(nextMenuEl, !isBackNavigation ? 'animate-in-from-right' : 'animate-in-from-left');
 					}
 					else {
-						classie.remove(currentMenu, isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
-						classie.remove(nextMenuEl, isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+						classie.remove(currentMenu, isBackNavigation ? 'animate-out-to-left' : 'animate-out-to-right');
+						classie.remove(nextMenuEl, isBackNavigation ? 'animate-in-from-right' : 'animate-in-from-left');
 					}
 					classie.remove(currentMenu, 'menu__level--current');
 					classie.add(nextMenuEl, 'menu__level--current');
@@ -257,10 +257,10 @@
 
 		// animation class
 		if( this.options.direction === 'r2l' ) {
-			classie.add(nextMenuEl, !isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+			classie.add(nextMenuEl, !isBackNavigation ? 'animate-in-from-right' : 'animate-in-from-left');
 		}
 		else {
-			classie.add(nextMenuEl, isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+			classie.add(nextMenuEl, isBackNavigation ? 'animate-in-from-right' : 'animate-in-from-left');
 		}
 	};
 
