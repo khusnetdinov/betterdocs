@@ -3,7 +3,7 @@
 ---
 
 // VARIABLES
-//
+
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -15,11 +15,45 @@ $base-line-height: 1.5;
 $text-color:       #111111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
+$product-bg: #1c1d22;
+$fodicon-color: #3b3d4a;
+$l-header-color: #d73333;
+$heading-span-color: #ffffff;
+
+$action-open-color: #ffffff;
+$action-close-color: #45464e;
+
+$breadcrumbs-a-color: #bdbdbd;
+$breadcrumbs-a-hover: #8182e0;
+$breadcrumbs-a-hover-after: #33353e;
+$breadcrumbs-back-color: #2a2b30;
+$breadcrumbs-focus-color: #ffffff;
+
+$body-spec-title-bg: #eeeeee;
+$body-spec-title-border: rgb(70, 70, 70);
+$body-code-inline-bg: #cecece;
+$body-code-inline-color: #2a2b30;
+$body-spec-wrong-color: #ce0000;
+$body-spec-correct-color: #008000;
+$body-cdawrap-bg: rgba(0, 0, 0, .1);
+$body-cdawrap-ct-color: #505158;
+$body-cdawrap-a-cp-color:  #7883c4;
+$body-cdawrap-a-hover-cp-color: #ffffff;
+
+$content-article-color: #bbbbbb;
+$content-article-info-bg: rgba(49, 50, 56, .97);
+$content-article-inf0-border: rgb(70, 70, 70);
+$content-article-h1-color: #ffffff;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$menu-bg: #1c1d22;
+$menu-link-color: #bdbdbd;
+$menu-link-after-color: #2a2b30;
+$menu-link-hover-after: #5c5edc;
+$menu-link-current-before: #5c5edc;
 // Media
 
 $content-width:    800px;
@@ -51,10 +85,4 @@ $spacing-unit:     30px;
     @content;
   }
 }
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-  "base",
-  "layout",
-  "component",
-  "syntax-highlighting";
+@import "main";

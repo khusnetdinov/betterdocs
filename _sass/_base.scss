@@ -1,36 +1,3 @@
-// Variables
-
-$fodicon-color: #3b3d4a;
-$l-header-color: #d73333;
-$heading-span-color: #ffffff;
-$menu-bg: #1c1d22;
-$menu-link-color: #bdbdbd;
-$menu-link-after-color: #2a2b30;
-$menu-link-hover-after: #5c5edc;
-$menu-link-current-before: #5c5edc;
-$breadcrumbs-a-color: #bdbdbd;
-$breadcrumbs-a-hover: #8182e0;
-$breadcrumbs-a-hover-after: #33353e;
-$breadcrumbs-back-color: #2a2b30;
-$breadcrumbs-focus-color: #ffffff;
-$action-open-color: #ffffff;
-$action-close-color: #45464e;
-$content-article-color: #bbbbbb;
-$content-article-info-bg: rgba(49, 50, 56, .97);
-$content-article-inf0-border: rgb(70, 70, 70);
-$body-spec-title-bg: #eeeeee;
-$body-spec-title-border: rgb(70, 70, 70);
-$body-code-inline-bg: #cecece;
-$body-code-inline-color: #2a2b30;
-$body-spec-wrong-color: #ce0000;
-$body-spec-correct-color: #008000;
-$body-cdawrap-bg: rgba(0, 0, 0, .1);
-$body-cdawrap-ct-color: #505158;
-$body-cdawrap-a-cp-color:  #7883c4;
-$body-cdawrap-a-hover-cp-color: #ffffff;
-$product-bg: #1c1d22;
-$content-article-h1-color: #ffffff;
-
 // Header
 .l-header {
   height: 70px;
@@ -344,6 +311,7 @@ body {
     color: $body-spec-correct-color;
   }
 
+  // scss-lint:disable IdSelector
   #cdawrap {
     background: $body-cdawrap-bg;
     bottom: 15px;
@@ -652,21 +620,25 @@ body {
   float: left;
 }
 
+// scss-lint:disable DuplicateProperty
 .footer-col-1 {
   width: -webkit-calc(35% - (#{$spacing-unit} / 2));
   width: calc(35% - (#{$spacing-unit} / 2));
 }
 
+// scss-lint:disable DuplicateProperty
 .footer-col-2 {
   width: -webkit-calc(20% - (#{$spacing-unit} / 2));
   width: calc(20% - (#{$spacing-unit} / 2));
 }
 
+// scss-lint:disable DuplicateProperty
 .footer-col-3 {
   width: -webkit-calc(45% - (#{$spacing-unit} / 2));
   width: calc(45% - (#{$spacing-unit} / 2));
 }
 
+// scss-lint:disable DuplicateProperty
 @include media-query($on-laptop) {
   .footer-col-1,
   .footer-col-2 {
@@ -680,11 +652,12 @@ body {
   }
 }
 
+// scss-lint:disable DuplicateProperty
 @include media-query($on-palm) {
   .footer-col {
-    float: none;
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width: calc(100% - (#{$spacing-unit} / 2));
+    float: none;
   }
 }
 

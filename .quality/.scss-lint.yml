@@ -1,4 +1,4 @@
-scss_files: ['_sass/*.scss', 'css/*.scss']
+scss_files: ['_sass/*.scss']
 plugin_directories: ['.scss-linters']
 plugin_gems: []
 severity: warning
@@ -40,7 +40,7 @@ linters:
     enabled: false
 
   DuplicateProperty:
-    enabled: true
+    enabled: 
 
   ElsePlacement:
     enabled: true
@@ -283,7 +283,7 @@ linters:
     properties: []
 
   VendorPrefix:
-    enabled: true
+    enabled: false
     identifier_list: base
     additional_identifiers: []
     excluded_identifiers: []
