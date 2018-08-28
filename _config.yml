@@ -10,7 +10,9 @@ collections:
     permalink: /:path
 
 # Locales settings
-languages: ["en", "ru"]
+languages:
+  - en
+  # - ru
 timezone: Europe/Moscow
 exclude_from_localizations: ["javascript", "images", "css"]
 
