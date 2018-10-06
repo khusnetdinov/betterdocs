@@ -6,88 +6,89 @@ layout: default
 
 <div class="content">
   <article>
-    <h1><b>Data structures</b></h1>
-    <p>In computer science, big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large. In analytic number theory it is used to estimate the "error committed" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. A famous example is the problem of estimating the remainder term in the prime number theorem.</p>
+    <h1>{% t pages.data_structures.title %}</h1>
+    <p>{% t pages.data_structures.description %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Basic axioms of data structures</a></h3>
-    <p>The running time performance of the common language runtime is given by a set of axioms which we shall now  postulate.</p>
+    <h2>{% t pages.data_structures.axioms.title %}</h2>
+    <p><{% t pages.data_structures.axioms.description %}/p>
+  </article>
+
+  <article>
+    <h3>{% t pages.data_structures.axioms.fetch_store.title %}</h3>
+    <p>{% t pages.data_structures.axioms.fetch_store.description1 %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Description with examples</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.fetch_store.title %}</p>
 {% highlight ruby %}
-  # 1 - The time required to fetch a reference to an object from memory is aconstant,
-  # T_fetch, and the time required to store a reference to an object in memory is
-  # a cnstant, T_store
-
   y = x
-
-  # According to Axiom, the assignment statement has running time T_fetch + T_store.
-  # That is, the time taken to fetch the object reference from variable x is
-  # T_fetch and the time taken to store that object reference in the variable y is
-  # T_store.
-
+{% endhighlight %}
+    </div>
+    <p>{% t pages.data_structures.axioms.fetch_store.description2 %}</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.fetch_store.title %}</p>
+{% highlight ruby %}
   y = 1
+{% endhighlight %}
+    </div>
+    <p>{% t pages.data_structures.axioms.fetch_store.description3 %}</p>
+  </article>
 
-  # Also has running time T_fetch + T_store. To see why this should be the case,
-  # consider that the constant '1' names a Fixnum object with value one. Therefore,
-  # we can expect the cost of fetching the reference to the object named 1 is the
-  # same as that of fetching a reference to any other object.
-
-  # 2 - The times required to perform elementary arithmetic operations, such as
-  # addition, subtraction, multiplication, division, and comparison, are all
-  # constants. These times are denoted by T_+, T_-, T_/, T_*, and T_<, respectively.
-
+  <article>
+    <h3>{% t pages.data_structures.axioms.elementary_operations.title %}</h3>
+    <p>{% t pages.data_structures.axioms.elementary_operations.description1 %}</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.elementary_operations.title %}</p>
+{% highlight ruby %}
   y += 1
+{% endhighlight %}
+    </div>
+    <p>{% t pages.data_structures.axioms.elementary_operations.description2 %}</p>
+    <p>{% t pages.data_structures.axioms.elementary_operations.description3 %}</p>
+  </article>
 
-  # We can determine time of a statement like is 2 * T_fetch + T_+ + T_store. This
-  # is because we need to fetch two object references from the variables y and 1;
-  # perform the addition giving a new object whose value is the sum; and, store
-  # a reference to the new object in the variable y.
-  # Ruby syntax provides an alternative way to express the same computation:
-
-  y += 1
-
-  # We shall assume that the alternative requires exactly the same running time as
-  # the original statement.
-
-  # 3 - The time required to call a method is a constant, T_call, and the time
-  # required to return from a method is a constant, T_return
-  # The rationale for making the overhead associated with parameter passing the
-  # same as the time to store an object reference is that the passing of an
-  # argument is conceptually the same as assignment of the actual parameter value
-  # to the formal parameter of the method.
-
+  <article>
+    <h3>{% t pages.data_structures.axioms.call_method.title %}</h3>
+    <p>{% t pages.data_structures.axioms.call_method.description1 %}</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.call_method.title %}</p>
+{% highlight ruby %}
   y = f(x)
+{% endhighlight %}
+    </div>
+    <p>{% t pages.data_structures.axioms.call_method.description2 %}</p>
+  </article>
 
-  # According to Axiom, the running time of the statement would be
-  # T_fetch + 2 * T_store + T_call + T_f(x), where T_f(x) is the running time of
-  # method f for input x. The first of the two stores is due to the passing of the
-  # parameter x to the method f; the second arises from the assignment to the variable y.
-
-  # 4 - The time required for the address calculation implied by an array
-  # subscripting operation, e.g., a[i], is a constant, T_[]. This time does not
-  # include the time to compute the subscript expression, nor does it include the
-  # time to access the array element.
-
+  <article>
+    <h3>{% t pages.data_structures.axioms.calculating.title %}</h3>
+    <p>{% t pages.data_structures.axioms.calculating.description1 %}</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.calculating.title %}</p>
+{% highlight ruby %}
   y = a[i]
+{% endhighlight %}
+    </div>
+    <p>{% t pages.data_structures.axioms.calculating.description2 %}</p>
+  </article>
 
-  # This is 3 * T_fetch Three operand fetches are required: the first to fetch a
-  # reference to the array object a; the second to fetch a reference to the index
-  # object i; and, the third to fetch a reference to the array element a[i].
-
-  # 5 - The time required to create a new object instance of a class is a constant,
-  # T_new. This time does not include any time taken to initialize the object.
-  # By applying Axioms we can determine that the running time of the statement
-
+  <article>
+    <h3>{% t pages.data_structures.axioms.object.title %}</h3>
+    <p>{% t pages.data_structures.axioms.object.description1 %}</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.object.title %}</p>
+{% highlight ruby %}
   i = Integer.new(0)
+{% endhighlight %}
+      </div>
+      <p>{% t pages.data_structures.axioms.object.description2 %}</p>
+  </article>
 
-  # is  T_new + T_fetch + 2 * T_store + T_call + T_fixnum_init, where T_fixnum_init
-  # is the running time of the initialize method of the class Fixnum.
-
-  # Example - In this section we apply Axioms, the analysis of the running time of a
-  # program to compute the following simple arithmetic series summation
-
+  <article>
+    <h3>{% t pages.data_structures.axioms.example.title %}</h3>
+    <p>{% t pages.data_structures.axioms.example.description %}</p>
+    <div class="code-block">
+      <p class="spec-title spec-correct">{% t pages.data_structures.axioms.example.title %}</p>
+{% highlight ruby %}
   def sum(n)
     result = 0      # T_fetch + T_store
     i = 1           # T_fetch + T_store
@@ -105,25 +106,14 @@ layout: default
   </article>
 
   <article>
-    <h2>Implementation</h2>
+    <h2>{% t pages.data_structures.implementations.title %}</h2>
   </article>
 
   <article>
-    <h3><a name="describe">Stack</a></h3>
-    <p>The stack is the sibling of the queue. It mimicks a real-life stack (e.g. of paper). It is FILO (first-in-last-out), so that when items are retrieved from the stack, they are returned in the reverse of the order in which they were added. Again, Ruby Arrays provide a perfect container. As with the Queue, it could also be implemented using a linked list.</p>
+    <h3>{% t pages.data_structures.implementations.stack.title %}</h3>
+    <p>{% t pages.data_structures.implementations.stack.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
         <tr>
           <td>&Theta;(n)</td>
@@ -138,12 +128,8 @@ layout: default
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Stack as array</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.stack.as_array %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class StackAsArray < Stack
     def initialize(size = 0)
       super()
@@ -213,12 +199,8 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Stack as linked list</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.stack.as_linked_list %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class StackAsLinkedList < Stack
     def initialize
       super
@@ -283,41 +265,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Queue</a></h3>
-    <p>A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class is worth it to seeethey are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list.</p>
+    <h3>{% t pages.data_structures.implementations.queue.title %}</h3>
+    <p>{% t pages.data_structures.implementations.queue.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(1)</td>
-        <td>O(1)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Queue as array</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.queue.as_array %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class QueueAsArray < Queue
     def initialize(size = 0)
       super()
@@ -361,12 +328,8 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Queue as linked list</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.queue.as_linked_list %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class QueueAsLinkedList < Queue
     def initialize
       super
@@ -401,41 +364,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Deque</a></h3>
-    <p>A Deque is a queue which allows adding and removing items at both ends.</p>
+    <h3>{% t pages.data_structures.implementations.deque.title %}</h3>
+    <p>{% t pages.data_structures.implementations.deque.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(1)</td>
-        <td>O(1)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Deque as array</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.deque.as_array %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class DequeAsArray < QueueAsArray
     alias queueHead head
 
@@ -483,12 +431,8 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Deque as linked list</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.deque.as_linked_list %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class DequeAsLinkedList < QueueAsLinkedList
     alias queueHead head
 
@@ -527,41 +471,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Singly Linked List</a></h3>
-    <p>Singly linked lists contain nodes which have a data field as well as a 'next' field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal.</p>
+    <h3>{% t pages.data_structures.implementations.singly_linked_list.title %}</h3>
+    <p>{% t pages.data_structures.implementations.singly_linked_list.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(1)</td>
-        <td>O(1)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Singly Linked List</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.singly_linked_list.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class SinglyLinkedList
     class Element
       attr_accessor :data, :succ
@@ -686,45 +615,30 @@ layout: default
   end
 {% endhighlight %}
     </div>
-    <p><a href="https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list">Read wiki</a></p>
+    <p><a href="https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list">{% t pages.wiki %}</a></p>
   </article>
 
   <article>
-    <h3><a name="describe">Double linked list</a></h3>
-    <p>In a doubly-linked list , each list element contains two references--one to its successor and one to its predecessor.</p>
+    <h3>{% t pages.data_structures.implementations.doubly_linked_list.title %}</h3>
+    <p>{% t pages.data_structures.implementations.doubly_linked_list.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(1)</td>
-        <td>O(1)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Doubly Linked List</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.doubly_linked_list.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class DoubleLinkedList < SinglyLinkedList
     class Element < SinglyLinkedList < Element
       attr_accessor :prev
@@ -796,54 +710,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Ordered list</a></h3>
-    <p>An ordered list is a list in which the order of the items is significant. However, the items in an ordered lists are not necessarily sorted. Consequently, it is possible to change the order of items and still have a valid ordered list.</p>
+    <h3>{% t pages.data_structures.implementations.ordered_list.title %}</h3>
+    <p>{% t pages.data_structures.implementations.ordered_list.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Structure</td>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+     {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>OrderedList AsArray</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(1)</td>
-        <td>O(n)</td>
-        <td>O(1)</td>
-        <td>O(1)</td>
-      </tr>
-      <tr>
-        <td>OrderedList AsLinkedList</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(1)</td>
-        <td>O(1)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(1)</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Ordered list as array example</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.ordered_list.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class OrderedListAsArray < OrderedList
     def initialize(size = 0)
       super()
@@ -943,41 +829,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Hash Table</a></h3>
-    <p>A hash table is a searchable container. As such, it provides methods for putting an object into the container, finding an object in the container, and removing an object from the container.</p>
+    <h3>{% t pages.data_structures.implementations.hash_table.title %}</h3>
+    <p>{% t pages.data_structures.implementations.hash_table.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>&Theta;(1)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>&Theta;(1)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Hash Table</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.hash_table.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class HashTable < SearchableContainer
     def initialize
       super
@@ -1046,41 +917,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Binary Tree</a></h3>
-    <p>A binary tree is a tree in which each node can have a maximum of two children. The children are designated left and right.</p>
+    <h3>{% t pages.data_structures.implementations.binary_tree.title %}</h3>
+    <p>{% t pages.data_structures.implementations.binary_tree.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Binary Tree</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.binary_tree.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class BinaryTree < Tree
     def initialize(*args)
       super()
@@ -1151,41 +1007,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Binary Search Tree</a></h3>
-    <p>In computer science, binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of containers: data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name)</p>
+    <h3>{% t pages.data_structures.implementations.binary_search_tree.title %}</h3>
+    <p>{% t pages.data_structures.implementations.binary_search_tree.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-      </tr>
+        <tr>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Binary Search Tree</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.binary_search_tree.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class BinarySearchTree < BinaryTree
     include SearchTreeMethods
 
@@ -1268,41 +1109,26 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">B Tree</a></h3>
-    <p>In computer science, a B-tree is a self-balancing tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree is a generalization of a binary search tree in that a node can have more than two children (Unlike self-balancing binary search trees, the B-tree is optimized for systems that read and write large blocks of data. B-trees are a good example of a data structure for external memory. It is commonly used in databases and filesystems.</p>
+    <h3>{% t pages.data_structures.implementations.b_tree.title %}</h3>
+    <p>{% t pages.data_structures.implementations.b_tree.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>&Theta;(log(n))</td>
-        <td>O(log(n))</td>
-        <td>O(log(n))</td>
-        <td>O(log(n))</td>
-        <td>O(log(n))</td>
-        <td>O(log(n))</td>
-      </tr>
+        <tr>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>&Theta;(log(n))</td>
+          <td>O(log(n))</td>
+          <td>O(log(n))</td>
+          <td>O(log(n))</td>
+          <td>O(log(n))</td>
+          <td>O(log(n))</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">B Tree</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.b_tree.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class BTree < MWayTree
     def initialize(m)
       super
@@ -1364,41 +1190,26 @@ layout: default
     </div>
   </article>
   <article>
-    <h3><a name="describe">Binary Heap</a></h3>
-    <p>A binary heap is a heap-ordered complete binary tree which is implemented using an array. In a heap the smallest key is found at the root and since the root is always found in the first position of the array, finding the smallest key is a trivial operation in a binary heap.</p>
+    <h3>{% t pages.data_structures.implementations.binary_heap.title %}</h3>
+    <p>{% t pages.data_structures.implementations.binary_heap.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Average Access</td>
-        <td>Average Search</td>
-        <td>Average Insertion</td>
-        <td>Average Deletion</td>
-        <td>Worst Access</td>
-        <td>Worst Search</td>
-        <td>Worst Insertion</td>
-        <td>Worst Deletion</td>
-      </tr>
-      </thead>
+      {% include data_structure_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(n)</td>
-        <td>&Theta;(1)</td>
-        <td>O(log(n))</td>
-        <td>O(n)</td>
-        <td>O(n)</td>
-        <td>O(log(n))</td>
-        <td>O(log(n))</td>
-      </tr>
+        <tr>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(n)</td>
+          <td>&Theta;(1)</td>
+          <td>O(log(n))</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+          <td>O(log(n))</td>
+          <td>O(log(n))</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Benary Heap</p>
+      <p class="spec-title spec-correct">{% t pages.data_structures.implementations.binary_heap.title %}</p>
 {% highlight ruby %}
-  # This file contains the Ruby code from book of "Data Structures and Algorithms with
-  # Object-Oriented Design Patterns in Ruby" by Bruno R. Preiss.
-  # Copyright (c) 2004 by Bruno R. Preiss, P.Eng.  All rights reserved.
-
   class BinaryHeap < PriorityQueue
     def enqueue(obj)
       raise ContainerFull if @count == @array.length
@@ -1440,7 +1251,10 @@ layout: default
   </article>
 
   <article>
-    <h3>Code and articles were taken from resources:</h3>
+    <h3>{% t pages.credits %}</h3>
+    <div>{% t pages.data_structures.implementations.source %}</div>
+
+    <h3>{% t pages.data_structures.implementations.credits %}</h3>
     <div>
       <ul>
         <li><a href="https://github.com/blahah/datastructures">https://github.com/blahah/datastructures</a></li>

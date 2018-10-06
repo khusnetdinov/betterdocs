@@ -7,7 +7,7 @@
   </button>
   <div class='menu__wrap'>
     <ul data-menu='main' class='menu__level'>
-      {%- for menu in site.translations[site.lang].pages -%}
+      {%- for menu in site.translations[site.lang].sidebar -%}
         {%- capture link -%}
           {%- if site.lang == 'en' -%}
             {{ site.baseurl_root }}{{ menu.url }}

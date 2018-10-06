@@ -5,37 +5,30 @@ layout: default
 {% include sidebar.html %}
 
 <div class="content">
-
   <article>
-    <h1><b>Algorithms</b></h1>
+    <h1>{% t pages.algorithms.title %}</h1>
   </article>
 
   <article>
-    <h2>Sorting</h2>
-    <p>A sorting algorithm is an algorithm that puts elements of a list in a certain order. The most-used orders are numerical order and lexicographical order. Efficient sorting is important for optimizing the use of other algorithms (such as search and merge algorithms) which require input data to be in sorted lists; it is also often useful for canonicalizing data and for producing human-readable output.</p>
+    <h2>{% t pages.algorithms.sorting.title %}</h2>
+    <p>{% t pages.algorithms.sorting.description %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Bubble sort</a></h3>
-    <p>Bubble sort has many of the same properties as insertion sort, but has slightly higher overhead. In the case of nearly sorted data, bubble sort takes O(n) time, but requires at least 2 passes through the data (whereas insertion sort requires something more like 1 pass).</p>
+    <h3>{% t pages.algorithms.sorting.bubble_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.bubble_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n)</td>
-        <td>&theta;(n^2)</td>
-        <td>O(n^2)</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n)</td>
+          <td>&theta;(n^2)</td>
+          <td>O(n^2)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Bubble sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.bubble_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def swap(first, second)
@@ -63,7 +56,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Bubble sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.bubble_sort.title %}</p>
 {% highlight ruby %}
   def bubble_sort!
     length.times do |j|
@@ -77,11 +70,11 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Bubble sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.bubble_sort.title %}</p>
 {% highlight ruby %}
   def bubble_sort!
     each_index do |index|
-      (length - 1).downto( index ) do |i|
+      (length - 1).downto(index) do |i|
         swap i - 1, i if self[i - 1] < self[i]
       end
     end
@@ -90,30 +83,24 @@ layout: default
   end
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Bubble_sort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Bubble_sort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Insertion sort</a></h3>
-    <p>Although it is one of the elementary sorting algorithms with O(n2) worst-case time, insertion sort is the algorithm of choice either when the data is nearly sorted (because it is adaptive) or when the problem size is small (because it has low overhead). For these reasons, and because it is also stable, insertion sort is often used as the recursive base case (when the problem size is small) for higher overhead divide-and-conquer sorting algorithms, such as merge sort or quick sort.</p>
+    <h3>{% t pages.algorithms.sorting.insertion_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.insertion_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n)</td>
-        <td>&theta;(n^2)</td>
-        <td>O(n^2)</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n)</td>
+          <td>&theta;(n^2)</td>
+          <td>O(n^2)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Insertion sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.insertion_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def insertion_sort!
@@ -136,30 +123,24 @@ layout: default
   # [5, 4, 3, 1, 2].insertion_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Insertion_sort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Insertion_sort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Selection sort</a></h3>
-    <p>From the comparions presented here, one might conclude that selection sort should never be used. It does not adapt to the data in any way (notice that the four animations above run in lock step), so its runtime is always quadratic. However, selection sort has the property of minimizing the number of swaps. In applications where the cost of swapping items is high, selection sort very well may be the algorithm of choice.</p>
+    <h3>{% t pages.algorithms.sorting.selection_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.selection_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n^2)</td>
-        <td>&theta;(n^2)</td>
-        <td>O(n^2)</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n^2)</td>
+          <td>&theta;(n^2)</td>
+          <td>O(n^2)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Selection sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.selection_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def swap(first, second)
@@ -184,7 +165,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Selection sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.selection_sort.title %}</p>
 {% highlight ruby %}
   def selection_sort!
     for i in 0..length - 2
@@ -199,30 +180,24 @@ layout: default
   end
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Selection_sort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Selection_sort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Shell sort</a></h3>
-    <p>The worse-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ..., which is what is used here, the time complexity is O(n3/2). For other increments, time complexity is known to be O(n4/3) and even O(n·lg2(n)). Neither tight upper bounds on time complexity nor the best increment sequence are known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adapation is not as dramatic because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are log3(n) increments, so the time complexity for nearly sorted data is O(n·log3(n)). Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the O(n·lg(n)) sorting algorithms for some applications when the data to be sorted is not very large.</p>
+    <h3>{% t pages.algorithms.sorting.shell_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.shell_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n log(n))</td>
-        <td>&theta;(n(log(n))^2)</td>
-        <td>O(n(log(n))^2)</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n log(n))</td>
+          <td>&theta;(n(log(n))^2)</td>
+          <td>O(n(log(n))^2)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Shell sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.shell_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def shell_sort!
@@ -247,30 +222,24 @@ layout: default
   # [5, 4, 3, 1, 2].shell_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Shellsort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Shellsort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Heap sort</a></h3>
-    <p>Heap sort is simple to implement, performs an O(n·lg(n)) in-place sort, but is not stable. The first loop, the Θ(n) “heapify” phase, puts the array into heap order. The second loop, the O(n·lg(n)) “sortdown” phase, repeatedly extracts the maximum and restores heap order. The sink function is written recursively for clarity. Thus, as shown, the code requires Θ(lg(n)) space for the recursive call stack. However, the tail recursion in sink() is easily converted to iteration, which yields the O(1) space bound. Both phases are slightly adaptive, though not in any particularly useful manner. In the nearly sorted case, the heapify phase destroys the original order. In the reversed case, the heapify phase is as fast as possible since the array starts in heap order, but then the sortdown phase is typical. In the few unique keys case, there is some speedup but not as much as in shell sort or 3-way quicksort.</p>
+    <h3>{% t pages.algorithms.sorting.heap_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.heap_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n log(n))</td>
-        <td>&theta;(n log(n))</td>
-        <td>O(n log(n))</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n log(n))</td>
+          <td>&theta;(n log(n))</td>
+          <td>O(n log(n))</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Heap sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.heap_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def swap(first, second)
@@ -311,30 +280,24 @@ layout: default
   # [5, 4, 3, 1, 2].heap_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Heapsort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Heapsort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Merge sort</a></h3>
-    <p>Merge sort is very predictable. It makes between 0.5lg(n) and lg(n) comparisons per element, and between lg(n) and 1.5lg(n) swaps per element. The minima are achieved for already sorted data; the maxima are achieved, on average, for random data. If using Θ(n) extra space is of no concern, then merge sort is an excellent choice: It is simple to implement, and it is the only stable O(n·lg(n)) sorting algorithm. Note that when sorting linked lists, merge sort requires only Θ(lg(n)) extra space (for recursion). Merge sort is the algorithm of choice for a variety of situations: when stability is required, when sorting linked lists, and when random access is much more expensive than sequential access (for example, external sorting on tape). There do exist linear time in-place merge algorithms for the last step of the algorithm, but they are both expensive and complex. The complexity is justified for applications such as external sorting when Θ(n) extra space is not available.</p>
+    <h3>{% t pages.algorithms.sorting.merge_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.merge_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n log(n))</td>
-        <td>&theta;(n log(n))</td>
-        <td>O(n log(n))</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n log(n))</td>
+          <td>&theta;(n log(n))</td>
+          <td>O(n log(n))</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Merge sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.merge_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def merge_sort!
@@ -357,30 +320,24 @@ layout: default
   # [5, 4, 3, 1, 2].merge_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Merge_sort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Merge_sort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Quick sort</a></h3>
-    <p>When carefully implemented, quick sort is robust and has low overhead. When a stable sort is not needed, quick sort is an excellent general-purpose sort – although the 3-way partitioning version should always be used instead. The 2-way partitioning code shown above is written for clarity rather than optimal performance; it exhibits poor locality, and, critically, exhibits O(n2) time when there are few unique keys. A more efficient and robust 2-way partitioning method is given in Quicksort is Optimal by Robert Sedgewick and Jon Bentley. The robust partitioning produces balanced recursion when there are many values equal to the pivot, yielding probabilistic guarantees of O(n·lg(n)) time and O(lg(n)) space for all inputs. With both sub-sorts performed recursively, quick sort requires O(n) extra space for the recursion stack in the worst case when recursion is not balanced. This is exceedingly unlikely to occur, but it can be avoided by sorting the smaller sub-array recursively first; the second sub-array sort is a tail recursive call, which may be done with iteration instead. With this optimization, the algorithm uses O(lg(n)) extra space in the worst case.</p>
+    <h3>{% t pages.algorithms.sorting.quick_sort.title %}</h3>
+    <p>{% t pages.algorithms.sorting.quick_sort.description %}</p>
     <table class="complexity" style="text-align: center">
-      <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
-      </thead>
+      {% include algorithm_complexity_header.html %}
       <tbody>
-      <tr>
-        <td>&Omega;(n log(n))</td>
-        <td>&theta;(n log(n))</td>
-        <td>O(n^2)</td>
-      </tr>
+        <tr>
+          <td>&Omega;(n log(n))</td>
+          <td>&theta;(n log(n))</td>
+          <td>O(n^2)</td>
+        </tr>
       </tbody>
     </table>
     <div class="code-block">
-      <p class="spec-title spec-correct">Quick sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.sorting.quick_sort.title %}</p>
 {% highlight ruby %}
   class Array
     def swap(first, second)
@@ -397,53 +354,50 @@ layout: default
   # [5, 4, 3, 1, 2].quick_sort! => [1, 2, 3, 4, 5]
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Quicksort">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Quicksort">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3>Other sorting algorithms</h3>
+    <h3>{% t pages.algorithms.sorting.other %}</h3>
     <ul>
-      <li><a href="http://rosettacode.org/wiki/Category:Sorting_Algorithms">http://rosettacode.org/wiki/Category:Sorting_Algorithms</a>
-      </li>
-      <li><a href="https://www.toptal.com/developers/sorting-algorithms">https://www.toptal.com/developers/sorting-algorithms</a>
-      </li>
+      <li><a href="http://rosettacode.org/wiki/Category:Sorting_Algorithms">http://rosettacode.org/wiki/Category:Sorting_Algorithms</a></li>
+      <li><a href="https://www.toptal.com/developers/sorting-algorithms">https://www.toptal.com/developers/sorting-algorithms</a></li>
     </ul>
   </article>
 
   <article>
-    <h3>Additional reading</h3>
+    <h3>{% t pages.algorithms.sorting.additional %}</h3>
     <ul>
-      <li><a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/</a>
-      </li>
+      <li><a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/</a></li>
     </ul>
   </article>
 
   <article>
-    <h2>Searching</h2>
+    <h2>{% t pages.algorithms.searching.title %}</h2>
   </article>
 
   <article>
-    <h3><a name="describe">Binary search</a></h3>
-    <p>In computer science, binary search, also known as half-interval search or logarithmic search, is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful.</p>
+    <h3>{% t pages.algorithms.searching.binary_search.title %}</h3>
+    <p>{% t pages.algorithms.searching.binary_search.description %}</p>
     <table class="complexity" style="text-align: center">
       <thead style="font-weight: bold; text-align: center">
-      <tr>
-        <td>Best</td>
-        <td>Average</td>
-        <td>Worst</td>
-      </tr>
+        <tr>
+          <td>{% t pages.algorithms.complexity.best %}</td>
+          <td>{% t pages.algorithms.complexity.average %}</td>
+          <td>{% t pages.algorithms.complexity.worst %}</td>
+        </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>&Omega;(1)</td>
-        <td>&theta;(n log(n))</td>
-        <td>O(log(n)))</td>
-      </tr>
+        <tr>
+          <td>&Omega;(1)</td>
+          <td>&theta;(n log(n))</td>
+          <td>O(log(n)))</td>
+        </tr>
       </tbody>
     </table>
 
     <div class="code-block">
-      <p class="spec-title spec-correct">Quick sort</p>
+      <p class="spec-title spec-correct">{% t pages.algorithms.searching.binary_search.title %}</p>
 {% highlight ruby %}
   class Array
     def binary_search(item)
@@ -472,27 +426,27 @@ layout: default
   # [1, 2, 3].binary_search(4) # => nil
 {% endhighlight %}
     </div>
-    <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Read wiki</a>
+    <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3><a name="describe">Knuth-Morris-Pratt search</a></h3>
-    <p>In computer science, the Knuth–Morris–Pratt string searching algorithm (or KMP algorithm) searches for occurrences of a "word" W within a main "text string" S by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters.</p>
-    <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Read wiki</a>
+    <h3>{% t pages.algorithms.searching.knuth_moriss_pratt_search.title %}</h3>
+    <p>{% t pages.algorithms.searching.knuth_moriss_pratt_search.description %}</p>
+    <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">{% t pages.wiki %}</a>
   </article>
 
   <article>
-    <h3>Other search algorithms</h3>
+    <h3>{% t pages.algorithms.searching.other.title %}</h3>
     <ul>
-      <li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence">Longest increasing subsequence</a></li>
-      <li><a href="http://www.mobilefish.com/services/phonenumber_words/phonenumber_words.php">Telephone number to words</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">{% t pages.algorithms.searching.other.dijkstra %}</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">{% t pages.algorithms.searching.other.kruskal %}</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence">{% t pages.algorithms.searching.other.longest %}</a></li>
+      <li><a href="http://www.mobilefish.com/services/phonenumber_words/phonenumber_words.php">{% t pages.algorithms.searching.other.telephone_number %}</a></li>
     </ul>
   </article>
 
   <article>
-    <h1><b>Code and articles were taken from resources:</b></h1>
+    <h3>{% t pages.algorithms.credits %}</h3>
     <ul>
       <li><a href="https://github.com/sagivo/algorithms">https://github.com/sagivo/algorithms</a></li>
       <li><a href="https://github.com/kanwei/algorithms">https://github.com/kanwei/algorithms</a></li>

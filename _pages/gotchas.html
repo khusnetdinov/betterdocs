@@ -6,19 +6,19 @@ layout: default
 
 <div class="content">
   <article>
-    <h1><b>Gotchas</b></h1>
-    <p>Most Ruby on Rails beginners get excited by the framework and start crafting applications without any knowledge of the language. And that’s the magic of RoR.</p>
-    <p>At some point things start to get serious. Some take time and effort to explore dirty secrets of Ruby on Rails, while others gloss over and become senior developers with almost zero knowledge of the language.</p>
-    <p>Anyway, sooner or later, beginners or experienced programmers, we all run into so - called Ruby Gotchas — those small language subtleties that hide from our sight for hours of hardcore debugging</p>
-    <p>Here is a list of popular Ruby gotchas and curiosities that developers should be aware of. For each case, there’s an example of confusing and/or error-prone code.</p>
-    <p>They come together with good practices, that will prevent you from making simple (but difficult to find) mistakes and simplify your (and your code maintainer’s) life.</p>
+    <h1>{% t pages.gotchas.title %}</h1>
+    <p>{% t pages.gotchas.description1 %}</p>
+    <p>{% t pages.gotchas.description2 %}</p>
+    <p>{% t pages.gotchas.description3 %}</p>
+    <p>{% t pages.gotchas.description4 %}</p>
+    <p>{% t pages.gotchas.description5 %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Ruby can be surprising</a></h3>
-    <p>Though "engineered to maximize programmer happiness", with the "principle of least surprise", Ruby still has gotchas. This presentation will proceed from newbie trivial gotchas, to more advanced and confusing gotchas.</p>
+    <h3>{% t pages.gotchas.surprising.title %}</h3>
+    <p>{% t pages.gotchas.surprising.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.surprising.title %}</p>
 {% highlight ruby %}
   We = 2
 
@@ -33,7 +33,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.surprising.title %}</p>
 {% highlight ruby %}
   But = 3
   still = 1
@@ -46,10 +46,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Don't quote me on this, but...</a></h3>
-    <p>String interpolation (including special chars like <span class="code-inline">\n</span>) fails with <span class="code-inline">'single'</span> quotes - it requires <span class="code-inline">"double"</span> quotes. Just like in most languages with string interpolation. To avoid it use doubles whenever practical.</p>
+    <h3>{% t pages.gotchas.quotes.title %}</h3>
+    <p>{% t pages.gotchas.quotes.description  %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.quotes.title %}</p>
 {% highlight ruby %}
   x = 3
 
@@ -65,10 +65,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">It's twue! It's twue!</a></h3>
-    <p> Only two things are falsey: <span class="code-inline">false</span> and <span class="code-inline">nil</span>. Everything else is truthy, even <span class="code-inline">0</span> (false in C), <span class="code-inline">""</span> (false in JS), <span class="code-inline">[]</span>, etc. Trips up people from C, JS, etc. where some of these are false.</p>
+    <h3>{% t pages.gotchas.twue.title %}</h3>
+    <p>{% t pages.gotchas.twue.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.twue.title %}</p>
 {% highlight ruby %}
   true    ? "true" : "false"
   # => "true"
@@ -91,10 +91,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Hang him in effigy or String him up, symbolically.</a></h3>
-    <p><span class="code-inline">Symbol != String</span>. Even if the same when printed. Remember which one to use for args. Ideally, take either, and use what a method expects: "Be liberal in what you accept, and conservative in what you send." Postel's Law.</p>
+    <h3>{% t pages.gotchas.symbols_and_strings.title %}</h3>
+    <p>{% t pages.gotchas.symbols_and_strings.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.symbols_and_strings.title %}</p>
 {% highlight ruby %}
   str = "string"
   sym = :string
@@ -112,9 +112,9 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">String... or nothing!</a></h3>
+    <h3>{% t pages.gotchas.string_or_nothing.title %}</h3>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.string_or_nothing.title %}</p>
 {% highlight ruby %}
   # bash> irb-1.8
 
@@ -135,7 +135,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.string_or_nothing.title %}</p>
 {% highlight ruby %}
   # bash> irb-1.9
 
@@ -149,10 +149,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Constants Aren't</a></h3>
-    <p>Initial uppercase means constant, in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowingly.</p>
+    <h3>{% t pages.gotchas.constants.title %}</h3>
+    <p>{% t pages.gotchas.constants.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.constants.title %}</p>
 {% highlight ruby %}
   FOO = 5
   # => 5
@@ -178,10 +178,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Some are more equal than others</a></h3>
-    <p><span class="code-inline">==</span> is the usual same value, <span class="code-inline">.eql?</span> is value and class (1 is Fixnum, 1.0 is Float), <span class="code-inline">.equal?</span> is same object. It's actually much hairier.</p>
+    <h3>{% t pages.gotchas.equals.title %}</h3>
+    <p>{% t pages.gotchas.equals.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.equals.title %}</p>
 {% highlight ruby %}
   1 == 1.0
   # => true
@@ -207,10 +207,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">=== != ==!</a></h3>
-    <p><span class="code-inline">===</span> is "case equality", as in case statements. A better name might be <span class="code-inline">.describes?</span>, or overload <span class="code-inline">.includes?</span>. Again, it's actually much hairier; see the docs on class Object. Gets people from languages where <span class="code-inline">===</span> is either object identity or same value and class.</p>
+    <h3>{% t pages.gotchas.operations.title %}</h3>
+    <p>{% t pages.gotchas.operations.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.operations.title %}</p>
 {% highlight ruby %}
   1 === 1
   # => true
@@ -240,61 +240,44 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">and != &&, or != ||</a></h3>
-    <p><span class="code-inline">&&</span> has higher precedence than <span class="code-inline">=</span>, so <span class="code-inline">x = true && false</span> means <span class="code-inline">x = (true && false)</span> and has lower precedence, so <span class="code-inline">x = true and false</span> means <span class="code-inline">(x = true) and false</span>. Ruby Style Guide: Use <span class="code-inline">&&, ||</span> for boolean expressions, <span class="code-inline">and, or</span> for control flow.
-    </p>
+    <h3>{% t pages.gotchas.priority.title %}</h3>
+    <p>{% t pages.gotchas.priority.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.priority.title %}</p>
 {% highlight ruby %}
   x = true && false
   # => false
-
   x
   # => false
 
-  # OK so far, but:
   x = true and false
   # => false
-
   x
   # => true
-  # Return value is false but variable is true! Why the mismatch?!
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.priority.title %}</p>
 {% highlight ruby %}
   x = false || true
   # => true
-
   x
   # => true
 
-  # OK so far, but:
   x = false or true
   # => true
-
   x
   # => false
-  # Return value is true but variable is false! Why the mismatch?!
 {% endhighlight %}
     </div>
   </article>
 
   <article>
-    <h3><a name="describe">Don't be so sensitive!</a></h3>
-    <p>Whitespace insensitive? NOT ALWAYS! Parser thinks it's an expression, as one arg, but <span class="code-inline">(1, 2)</span> is not a valid Ruby expression! (All work fine with 1 argument).</p>
-    <p class="info">
-      With multiple args:
-      <br/>
-      - No parens, no problem.
-      <br/>
-      - Parens w/o space, OK.
-      <br/>
-      - Parens and space, NO!
-    </p>
+    <h3>{% t pages.gotchas.sensitive.title %}</h3>
+    <p>{% t pages.gotchas.sensitive.description %}</p>
+    <p class="info">{% t pages.gotchas.sensitive.usage %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.sensitive.title %}</p>
 {% highlight ruby %}
   def method(arg1, arg2); end
 
@@ -309,9 +292,9 @@ layout: default
   # => method (1, 2)
 {% endhighlight %}
     </div>
-    <p><span class="code-inline">method /num</span> is an unended regex or string! Ruby thinks you are giving an argument to method. General principle: use BALANCED whitespace; both sides or neither.</p>
+    <p>{% t pages.gotchas.sensitive.methods %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.sensitive.title %}</p>
 {% highlight ruby %}
   def method; 42; end
 
@@ -329,9 +312,9 @@ layout: default
   # => SyntaxError: unterminated regexp
 {% endhighlight %}
     </div>
-    <p><span class="code-inline">one -2</span> makes Ruby think you are giving an argument <span class="code-inline">-2</span> to method one. Same for <span class="code-inline">+2</span> or even <span class="code-inline">*2</span>. Again: use BALANCED whitespace, both sides or neither.</p>
+    <p>{% t pages.gotchas.sensitive.arguments %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.sensitive.title %}</p>
 {% highlight ruby %}
   def one
     1
@@ -351,9 +334,9 @@ layout: default
 {% endhighlight %}
       </p>
     </div>
-    <p>"Stabby" lambdas (1.9+) Parentheses optional Space before after args without parens, OK. Space after parens, OK. Again, space before parens, NO! UPDATE: Fixed in 2.0!</p>
+    <p>{% t pages.gotchas.sensitive.stubby %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.sensitive.title %}</p>
 {% highlight ruby %}
   dbl = ->(x) { x * 2 }
   # => #<Proc:... (lambda)>
@@ -377,10 +360,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Ang onto yer @!</a></h3>
-    <p>Naked value becomes a temporary local variable! Solution: remember the <span class="code-inline">@!</span> (Or "self.". Or use <span class="code-inline">attr_writer,  attr_accessor</span>.) Gets people from Java / C++, not so much Python (which needs "self." too). "You keep on using that variable. I don't think it means what you think it means.". Not Inigo Montoya.</p>
+    <h3>{% t pages.gotchas.onto.title %}</h3>
+    <p>{% t pages.gotchas.onto.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.onto.title %}</p>
 {% highlight ruby %}
   class Foo
     attr_reader :value
@@ -409,10 +392,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Look out, it’s an @@!</a></h3>
-    <p>What the fillinig the blank? We didn't change Parent’s <span class="code-inline">@@value</span> before checking it, nor Child’s at all! Or did we? <span class="code-inline">@@variables</span> are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s <span class="code-inline">@@value</span> changed Parent’s, and inc’ing Parent’s changed Child’s.</p>
+    <h3>{% t pages.gotchas.variables.title %}</h3>
+    <p>{% t pages.gotchas.variables.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.variables.title %}</p>
 {% highlight ruby %}
   class Parent
     @@value = 6
@@ -443,10 +426,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">With init(ialize) or without it</a></h3>
-    <p>Parent's initialize runs automagically only if child has none. Else, parent's must be called to run.</p>
+    <h3>{% t pages.gotchas.initialize.title %}</h3>
+    <p>{% t pages.gotchas.initialize.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.initialize.title %}</p>
 {% highlight ruby %}
   class Parent
     def initialize
@@ -485,10 +468,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Superman vs. the Invisible Man</a></h3>
-    <p><span class="code-inline">super</span> with no arg list sends what caller got <span class="code-inline">super</span> with explicit args sends those args to send NO args, use empty parens: <span class="code-inline">super()</span>.</p>
+    <h3>{% t pages.gotchas.superman.title %}</h3>
+    <p>{% t pages.gotchas.superman.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.superman.title %}</p>
 {% highlight ruby %}
   class Parent
     def add(*args)
@@ -522,10 +505,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">When will it end? (Or start?)</a></h3>
-    <p>In "standard" regexps: <span class="code-inlne">^</span> is start and <span class="code-inline">$</span> is end of the whole string. Ruby’s regexes default to multiline, so: <span class="code-inline">^</span> is start and <span class="code-inline">$</span> is end of any line! <span class="code-inline">\A</span> is start and <span class="code-inline">\Z</span> is end of the whole string. (Or \z to include any newline… which is another gotcha!)</p>
+    <h3>{% t pages.gotchas.regexp.title %}</h3>
+    <p>{% t pages.gotchas.regexp.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.regexp.title %}</p>
 {% highlight ruby %}
   str = "One\nTwo\nThree"
 
@@ -545,10 +528,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe"getting .any?></a></h3>
-    <p><span class="code-inline">.any?</span> does not mean "any elements?"! With block: "do any make the block true?". Without: "are any truthy?" Has implicit block: <span class="code-inline">{ |element| element }</span>.</p>
+    <h3>{% t pages.gotchas.any.title %}</h3>
+    <p>{% t pages.gotchas.any.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.any.title %}</p>
 {% highlight ruby %}
   [].any?
   # => false
@@ -574,10 +557,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">(Un)Def Leppard</a></h3>
-    <p>Variables declared in blocks passed to iterators (e.g., times or each) are undefined at the top of each iteration! Iterators call the block repeatedly, so vars are out of scope again after each call. Built-in looping constructs (e.g., while or for) are OK. (Or declare vars before block.)</p>
+    <h3>{% t pages.gotchas.undef.title %}</h3>
+    <p>{% t pages.gotchas.undef.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.undef.title %}</p>
 {% highlight ruby %}
   3.times do |loop_num|
     sum ||= 0
@@ -601,10 +584,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Freeze (Ar)ray</a></h3>
-    <p> Freezing an array (or a hash) freezes it, not the items it contains. Strings can be modified in place. This way, you can modify a given slot in a frozen Array of Strings.</p>
+    <h3>{% t pages.gotchas.freeze.title %}</h3>
+    <p>{% t pages.gotchas.freeze.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.freeze.title %}</p>
 {% highlight ruby %}
   arr = ["one", "two", "three"]
   arr.freeze
@@ -628,10 +611,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">1 is 1 … and ever more shall be so!</a></h3>
-    <p>Changing Fixnum to new value means new object. They can't be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum's <span class="code-inline">object_id</span> is <span class="code-inline">value * 2 + 1</span></p>
+    <h3>{% t pages.gotchas.one_is_one.title %}</h3>
+    <p>{% t pages.gotchas.one_is_one.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.one_is_one.title %}</p>
 {% highlight ruby %}
   arr = [1, 2, 3, 4]
   arr.freeze
@@ -653,10 +636,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">(to! || ! to!) == ?</a></h3>
-    <p>Bang marks method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!</p>
+    <h3>{% t pages.gotchas.bang.title %}</h3>
+    <p>{% t pages.gotchas.bang.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.bang.title %}</p>
 {% highlight ruby %}
   str = "foo"
   str.upcase
@@ -683,10 +666,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">An Array of New Gotchas</a></h3>
-    <p>Default value given as object is same object for each slot! Mutating one mutates default for all. Initial value given as block gets evaluated separately for each slot. Use this to create new vars for each.</p>
+    <h3>{% t pages.gotchas.array.title %}</h3>
+    <p>{% t pages.gotchas.array.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.array.title %}</p>
 {% highlight ruby %}
   class Person
     attr_accessor :name
@@ -709,10 +692,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Making a Hash of it</a></h3>
-    <p>Mostly same problem (and solution) as Arrays. MORE GOTCHAS: creates new object on any access to empty slot! May create excessive number of new objects; ruins checking "real" contents or count (nil-checking, .size, etc.).</p>
+    <h3>{% t pages.gotchas.hash.title %}</h3>
+    <p>{% t pages.gotchas.hash.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.hash.title %}</p>
 {% highlight ruby %}
   langs = Hash.new []
   langs[:jane] << "Java"
@@ -738,10 +721,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Rescue Me, Throw a Line, I'll Try to Catch It!</a></h3>
-    <p>In Ruby, throw and catch are NOT for exceptions! They are advanced flow control, to exit deep nesting. Ruby uses raise and rescue for exceptions.</p>
+    <h3>{% t pages.gotchas.rescue.title %}</h3>
+    <p>{% t pages.gotchas.rescue.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.rescue.title %}</p>
 {% highlight ruby %}
   # JAVA:
   try {
@@ -768,10 +751,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">to_s VS to_str</a></h3>
-    <p><span class="code-inline">to_s</span> is defined on every object and will always return something. <span class="code-inline">to_str</span> is only defined on objects that are string-like. For example, <span class="code-inline">Symbol</span> has <span class="code-inline">to_str</span> but <span class="code-inline">Array</span> does not. Thus, you can use <span class="code-inline">obj.respond_to?(:to_str)</span> instead of something like <span class="code-inline">obj.is_a?(String)</span> if you want to take advantage of duck typing without worrying about whether the class you're working with is a subclass of <span class="code-inline">String</span> or not.</p>
+    <h3>{% t pages.gotchas.to_str.title %}</h3>
+    <p>{% t pages.gotchas.to_str.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.to_str.title %}</p>
 {% highlight ruby %}
   string = "string"
 
@@ -793,10 +776,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Need to coordinate method_missing and respond_to_missing?</a></h3>
-    <p>When overriding <span class="code-inline">method_missing</span>, remember to override <span class="code-inline">respond_to_missing?</span> as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing?. If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:</p>
+    <h3>{% t pages.gotchas.missing.title %}</h3>
+    <p>{% t pages.gotchas.missing.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.missing.title %}</p>
 {% highlight ruby %}
   class Dog
     def method_missing(method_name, *args, &block)
@@ -815,9 +798,9 @@ layout: default
   # => false
 {% endhighlight %}
     </div>
-    <p>Lots of code (gems or your own) relies on respond_to? (for a good reason). You need to patch respond_to_missing? as well:</p>
+    <p>{% t pages.gotchas.missing.respond_to %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.missing.title %}</p>
 {% highlight ruby %}
   class Dog
     def method_missing(method_name, *args, &block)
@@ -843,10 +826,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">rescue from a StandardError, not an Exception</a></h3>
-    <p>Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:</p>
+    <h3>{% t pages.gotchas.exception.title %}</h3>
+    <p>{% t pages.gotchas.exception.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.exception.title %}</p>
 {% highlight ruby %}
   begin
     foo
@@ -858,10 +841,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">private data isn’t really, and not at all w/ class methods</a></h3>
-    <p>There’s a way to make class methods private in Ruby, you just gotta jump through some hoops. Err, I mean use the <span class="code-inline">class << self</span> syntax. This oddity pushes an instance singleton onto the class effectively creating class methods.</p>
+    <h3>{% t pages.gotchas.private.title %}</h3>
+    <p>{% t pages.gotchas.private.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.private.title %}</p>
 {% highlight ruby %}
   class Orange
     def self.latin_name
@@ -884,10 +867,10 @@ layout: default
   end
 
   Orange.latin_name
-  # => It works
+  # => 'Malus domestica'
 
   Orange.binomial_name
-  # => It works?!
+  # => 'Malus domestica'
   # => wtf?!
 
   Orange.private_binomial_name
@@ -897,10 +880,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Braces vs. do-end</a></h3>
-    <p>The general convention is to use <span class="code-inline">do .. end</span> for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that <span class="code-inline">{}</span> has a higher precedence than <span class="code-inline">do .. end</span>, so keep that in mind when deciding what you want to use.</p>
+    <h3>{% t pages.gotchas.braces.title %}</h3>
+    <p>{% t pages.gotchas.braces.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.braces.title %}</p>
 {% highlight ruby %}
   puts [1, 2, 3].map { |k| k + 1 }
   # => 2
@@ -916,10 +899,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">class Foo::Bar, defined outside Module Foo, won’t see inside Foo</a></h3>
-    <p>You can think of each appearance of <span class="code-inline">module Something</span>, <span class="code-inline">class Something</span> or <span class="code-inline">def something</span> as a "gateway" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found there it will go back through each containing "gateway" and search the scope there.</p>
+    <h3>{% t pages.gotchas.module.title %}</h3>
+    <p>{% t pages.gotchas.module.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Gotcha!</p>
+      <p class="spec-title spec-correct">{% t pages.gotchas.module.title %}</p>
 {% highlight ruby %}
   FOO = 123
 
@@ -949,3 +932,12 @@ layout: default
 {% endhighlight %}
     </div>
   </article>
+
+  <article>
+    <h3>{% t pages.gotchas.credits %}</h3>
+    <ul>
+      <li><a href="https://docs.google.com/presentation/d/1cqdp89_kolr4q1YAQaB-6i5GXip8MHyve8MvQ_1r6_s/edit#slide=id.gd9ccd329_00">{% t pages.gotchas.title %}</a>
+      </li>
+    </ul>
+  </article>
+</div>

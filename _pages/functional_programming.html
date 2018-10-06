@@ -6,21 +6,23 @@ layout: default
 
 <div class="content">
   <article>
-    <h1><b>Functional programming</b></h1>
-    <p>Using a language in a functional style implies you have access to a few key features that listed below.</p>
-    <p>Immutable values: once a “variable” is set, it cannot be changed. In Ruby, this means you effectively have to treat variables like constants.</p>
-    <p>No side-effects: when passed a given value, a function must always return the same result. This goes hand in hand with having immutable values; a function can never take a value and change it, as this would be causing a side-effect that is tangential to returning a result.</p>
-    <p>Higher-order functions: these are functions that allow functions as arguments, or use functions as the return value. This is, arguably, one of the most critical features of any functional language.</p>
-    <p>Currying: enabled by higher-order functions, currying is transforming a function that takes multiple arguments into a function that takes one argument. This goes hand in hand with partial function application, which is transforming a multi-argument function into a function that takes less arguments then it did originally.</p>
-    <p>Recursion: looping by calling a function from within itself. When you don’t have access to mutable data, recursion is used to build up and chain data construction. This is because looping is not a functional concept, as it requires variables to be passed around to store the state of the loop at a given time.</p>
-    <p>Lazy-evaluation, or delayed-evaluation: delaying processing of values until the moment when it is actually needed. If, as an example, you have some code that generated list of Fibonacci numbers with lazy-evaluation enabled, this would not actually be processed and calculated until one of the values in the result was required by another function, such as puts.</p>
+    <h1>{% t pages.functional_programming.title %}</h1>
+    <p>{% t pages.functional_programming.description %}</p>
+    <ul>
+      <li>{% t pages.functional_programming.axioms.immutable %}</li>
+      <li>{% t pages.functional_programming.axioms.side_effects %}</li>
+      <li>{% t pages.functional_programming.axioms.pure_functions %}</li>
+      <li>{% t pages.functional_programming.axioms.applying %}</li>
+      <li>{% t pages.functional_programming.axioms.recursion %}</li>
+      <li>{% t pages.functional_programming.axioms.lazy %}</li>
+    </ul>
   </article>
 
   <article>
-    <h3><a name="describe">Pure funtions</a></h3>
-    <p>You can see that this function computes the result only using its arguments.</p>
+    <h3>{% t pages.functional_programming.pure_functions.title %}</h3>
+    <p>{% t pages.functional_programming.pure_functions.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Pure functions</p>
+      <p class="spec-title spec-correct">{% t pages.functional_programming.pure_functions.title %}</p>
 {% highlight ruby %}
   def sum_two_numbers(a, b)
     a + b
@@ -30,10 +32,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Closures</a></h3>
-    <p>Lambda's also enforce a closure and so are able to keep their context across objects.</p>
+    <h3>{% t pages.functional_programming.closures.title %}</h3>
+    <p>{% t pages.functional_programming.closures.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Closures</p>
+      <p class="spec-title spec-correct">{% t pages.functional_programming.closures.title %}</p>
 {% highlight ruby %}
   class Bar
     def initialize(hash = {})
@@ -70,7 +72,6 @@ layout: default
   def foo_test
     p "I'm internal to Foo class"
     raise ::JSON::ParserError
-    # never reached next line due to above line triggering an error
     true
   rescue ::JSON::ParserError
     p "caught an error"
@@ -90,28 +91,21 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Partial applying and curryng</a></h3>
-    <p>Let’s first understand what these two different applications of functions are. Partial function aplication is calling a function with some number of arguments, in order to get a function back that will take that many less arguments. Currying is taking a function that takes n arguments, and splitting it into n functions that take one argument.</p>
+    <h3>{% t pages.functional_programming.applying.title %}</h3>
+    <p>{% t pages.functional_programming.applying.description %}</p>
+    <p>{% t pages.functional_programming.applying.proc %}</p>
+    <p>{% t pages.functional_programming.applying.partial %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Partial applying and curryng</p>
+      <p class="spec-title spec-correct">{% t pages.functional_programming.applying.title %}</p>
 {% highlight ruby %}
-  # In order to give you a clearer idea of what each of these two things will
-  # do a function, let’s take an example Proc:
   proc { |x, y, z| x + y + z }
-
-  # Partial application of this function would return, if we passed in the first
-  # two arguments, the following nested Procs:
   proc { |x, y| proc { |z| x + y + z } }
-
-  # On the other hand, currying this function would return the following nested
-  # Procs:
   proc { |x| proc { |y| proc { |z| x + y + z } } }
 {% endhighlight %}
     </div>
-    <p><span class="code-inline">.curry</span> returns a curried proc. If the optional arity argument is given, it determines the number of arguments. A curried proc receives some arguments. If a sufficient number of arguments are supplied, it passes the supplied arguments to the original proc and returns the result. Otherwise, returns another curried proc that takes the rest of arguments.
-    </p>
+     <p>{% t pages.functional_programming.applying.curry %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Partial applying and curryng</p>
+      <p class="spec-title spec-correct">{% t pages.functional_programming.applying.title %}</p>
 {% highlight ruby %}
   l = ->(x, y, z) { x + y + z }
   l.curry[1][2][3]
