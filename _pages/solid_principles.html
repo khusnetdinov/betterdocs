@@ -6,17 +6,15 @@ layout: default
 
 <div class="content">
   <article>
-    <h1><b>Solid principles</b></h1>
-    <p>In computer programming, SOLID (single responsibility, open-closed, Liskov substitution, interface segregation and dependency inversion) is a mnemonic acronym introduced by Michael Feathers for the "first five principles" named by Robert C. Martin in the early 2000s that stands for five basic principles of object-oriented programming and design. The intention is that these principles, when applied together, will make it more likely that a programmer will create a system that is easy to maintain and extend over time. The principles of SOLID are guidelines that can be applied while working on software to remove code smells by causing the programmer to refactor the software's source code until it is both legible and extensible. It is part of an overall strategy of agile and Adaptive Software Development.</p>
+    <h1>{% t pages.solid_principles.title %}</h1>
+    <p>{% t pages.solid_principles.description %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Single Responsibility Principle</a></h3>
-    <p>The Single Responsibility Principle is the most abstract of the bunch. It helps keep classes and methods small and maintainable. In addition to keeping classes small and focused it also makes them easier to understand.</p>
-    <p>While we all agree that focusing on a single responsibility is important, it’s difficult to determine what a class’s responsibility is. Generally, it is said that anything that gives a class a reason to change can be viewed as a responsibility. By change I am talking about structural changes to the class itself (as in modifying the code in the class’s file, not the object’s in-memory state).</p>
-    <p>In the below class we have a single command interface that processes commission payments for deals. At first glance the class seems simple enough, but let’s look at reasons we might want to change this class. Any change in how we calculate commissions would require a change to this class. We could introduce new commission rules or strategies that would cause our calculate_commission method to change. For instance, we might want to vary the percentage based on deal amount. Any change in the steps required to mark a deal as processed in the mark_deal_processed method would result in a change in the file as well. An example of this might be adding support for sending an email summary of a specific person’s commissions after marking a deal processed. The fact that we can identify multiple reasons to change signals a violation of the Single Responsibility Principle.</p>
+    <h3>{% t pages.solid_principles.single.title %}</h3>
+    <p>{% t pages.solid_principles.single.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-wrong">Bad!</p>
+      <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
 {% highlight ruby %}
   class DealProcessor
     def initialize(deals)
@@ -25,7 +23,6 @@ layout: default
 
     def process
       @deals.each do |deal|
-        # Here we calculate commission and create instance of Commission
         Commission.create(deal: deal, amount: calculate_commission(deal))
         mark_deal_processed
       end
@@ -34,7 +31,6 @@ layout: default
     private
 
     def mark_deal_processed
-      # Implementation
     end
 
     def calculate_commission(deal)
@@ -43,12 +39,11 @@ layout: default
   end
 
   class Commission
-    # Implementation
   end
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Good!</p>
+      <p class="spec-title spec-correct">{% t pages.solid_principles.good %}</p>
 {% highlight ruby %}
   class DealProcessor
 
@@ -58,7 +53,6 @@ layout: default
 
     def process
       deals.each do |deal|
-        # Now we call calculator in one operation, all logic now in it
         CommissionCalculator.create_commission(deal) if mark_deal_processed
       end
     end
@@ -66,7 +60,6 @@ layout: default
     private
 
     def mark_deal_processed
-      # Implementation
     end
   end
 
@@ -83,19 +76,16 @@ layout: default
   end
 
   class Commission
-    # Implementation
   end
 {% endhighlight %}
     </div>
   </article>
 
   <article>
-    <h3><a name="describe">Open/Closed Principle</a></h3>
-    <p>The Open / Closed Principle states that classes or methods should be open for extension, but closed for modification. This tells us we should strive for modular designs that make it possible for us to change the behavior of the system without making modifications to the classes themselves. This is generally achieved through the use of patterns such as the strategy pattern.
-    </p>
-    <p>In the below example we can see that we’ll have to modify our file parser anytime we add a client that reports usage information to us in a different file format. This violates the Open / Closed Principle.</p>
+    <h3>{% t pages.solid_principles.open_close.title %}</h3>
+    <p>{% t pages.solid_principles.open_close.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-wrong">Bad!</p>
+      <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
 {% highlight ruby %}
   class FileParser
     def initialize(file)
@@ -103,7 +93,6 @@ layout: default
     end
 
     def parse
-      # If we want add new parser we must to edit this method and in private method
       case @file.format
       when :xm
         parse_xml
@@ -117,23 +106,19 @@ layout: default
     private
 
     def parse_xml
-      # Implementation
     end
 
     def parse_cvs
-      # Implementation
     end
 
-    # New parse method
     # def parse_json
-    #  # Implementation
     # end
   end
 {% endhighlight %}
     </div>
-    <p>With this refactor we’ve made it possible to add new parsers without changing any code. Any additional behavior will only require the addition of a new handler. This makes our FileParser reusable and in many cases will keep us in compliance with the Single Responsibility Principle as well by encouraging us to create smaller more focused classes.</p>
+    <p>{% t pages.solid_principles.open_close.after %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Good!</p>
+      <p class="spec-title spec-correct">{% t pages.solid_principles.good %}</p>
 {% highlight ruby %}
   class FileParser
     def initialize(parser)
@@ -141,27 +126,22 @@ layout: default
     end
 
     def parse(file)
-      # Now if we want new parser just write new Class and pass it to method
       Data.new(@parser.parse(file))
     end
   end
 
   class XmlParser
     def self.parse(_file)
-      # Implementation
     end
   end
 
   class CvsParser
     def self.parse(_file)
-      # Implementation
     end
   end
 
   class JsonParser
-    # We write new class for extension solution.
     def self.parse(_file)
-      # Implementation
     end
   end
 {% endhighlight %}
@@ -169,10 +149,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Liskov’s Substitution Principle</a></h3>
-    <p>Liskov’s principle tends to be the most difficult to understand. The principle states that you should be able to replace any instances of a parent class with an instance of one of its children without creating any unexpected or incorrect behaviors.</p>
+    <h3>{% t pages.solid_principles.liskov.title %}</h3>
+    <p>{% t pages.solid_principles.liskov.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-wrong">Bad!</p>
+      <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
 {% highlight ruby %}
   class Rectangle
     def initialize(height, width)
@@ -195,7 +175,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Good!</p>
+      <p class="spec-title spec-correct">{% t pages.solid_principles.good %}</p>
 {% highlight ruby %}
   class Square < Rectangle
     def initialize(side)
@@ -213,31 +193,25 @@ layout: default
     end
   end
 
-  # LSP says is if we know the interface of Rectangle, We need to be able to guess
-  # the interface of subtype class Square
   # Square.new(3).square => 9
 {% endhighlight %}
     </div>
   </article>
 
   <article>
-    <h3><a name="describe">Interface Segregation Principle</a></h3>
-    <p>The principle states that a client should not be forced to depend on methods that it does not use.</p>
-    <p>In this example, there are Computer, Programmer and Technician classes. Both, Programmer and Technician use the Computer in a different way. The programmer uses the computer for typing, but the technician knows how to change the computer hard drive. What Interface Segregation Principle (ISP) enforces is that one class should not depend on methods it does not use. In our case, Programmer is unnecessarily coupled to the Computer#change_hard_drive method because it does not use it, but the state changes that this method enforces can affect the Programmer. Let's refactor the code to obey the LSP.</p>
+    <h3>{% t pages.solid_principles.segregation.title %}</h3>
+    <p>{% t pages.solid_principles.segregation.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-wrong">Bad!</p>
+      <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
 {% highlight ruby %}
   class Computer
     def turn_on
-      # Implementation
     end
 
     def type
-      # Implementation
     end
 
     def change_hard_drive
-      # Implementation
     end
   end
 
@@ -263,23 +237,20 @@ layout: default
   end
 {% endhighlight %}
     </div>
-    <p>After this refactor the Technician uses a different object from the type ComputerInternals which is isolated from the state of the Computer. The state of the Computer object can be influenced by the Programmer but the changes wont affect the Technician in any way. </p>
+    <p>{% t pages.solid_principles.segregation.after %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Good!</p>
+      <p class="spec-title spec-correct">{% t pages.solid_principles.good %}</p>
 {% highlight ruby %}
   class Computer
     def turn_on
-      # Implementation
     end
 
     def type
-      # Implementation
     end
   end
 
   class ComputerInternals
     def change_hard_drive
-      # Implementation
     end
   end
 
@@ -312,15 +283,13 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Dependency Inversion Principle</a></h3>
-    <p>The Dependency Inversion Principle has to do with high-level (think business logic) objects not depending on low-level (think database querying and IO) implementation details. This can be achieved with duck typing and the Dependency Inversion Principle. Often this pattern is used to achieve the Open/Closed Principle that we discussed above. In fact, we can even reuse that same example as a demonstration of this principle.</p>
-    <p> Now there is a formatter class, but I've hardcoded it on the Report class, thus creating a dependency from the Report to the JSONFormatter. Since the Report is a more abstract (high-level) concept than the JSONFormatter, we're effectively breaking the DIP.</p>
+    <h3>{% t pages.solid_principles.di.title %}</h3>
+    <p>{% t pages.solid_principles.di.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-wrong">Bad!</p>
+      <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
 {% highlight ruby %}
   class Report
     def body
-      # Implementation
     end
 
     def print
@@ -330,19 +299,17 @@ layout: default
 
   class JSONFormatter
     def format(body)
-      # Implementation
     end
   end
 
 {% endhighlight %}
     </div>
-    <p>This way the Report does not depend on the JSONFormatter and can use any type of formatter that has a method called format (this is known as duck typing). Another thing of note is that we've used, once again, dependency injection to solve a problem. This technique is a very powerful one when our goal is decoupling objects, and even though it has the same initials as the dependency inversion principle (vs dependency injection pattern), they are completely different concepts.</p>
+    <p>{% t pages.solid_principles.di.after %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Good!</p>
+      <p class="spec-title spec-correct">{% t pages.solid_principles.good %}</p>
 {% highlight ruby %}
   class Report
     def body
-      # Implementation
     end
 
     def print(formatter: JSONFormatter.new)

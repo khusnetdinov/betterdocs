@@ -7,23 +7,21 @@ layout: default
 <div class="content">
 
   <article>
-    <h1><b>Threads</b></h1>
-    <p>Note about parallelism and concurrency: The primary difference between using processes versus threads is the way that memory is handled. At a high level, processes copy memory, while threads share memory. This makes process spawning slower than thread spawning, and leads to processes consuming more resources once running. Overall, threads incur less overhead than processes. This Thread API is a Ruby API. I've hinted that the different Ruby implementations have different underlying threading behaviours.</p>
+    <h1>{% t pages.threads.title %}</h1>
+    <p>{% t pages.threads.description %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Green Threads</a></h3>
-    <p>Ruby 1.9 replaced green threads with native threads. However, the GIL is still preventing parallelism. That being said, concurrency has been improved through better scheduling. The new scheduler makes context-switch decisions more efficient, by essentially moving them to a separate native thread, known as the timer thread.</p>
+    <h3>{% t pages.threads.green.title %}</h3>
+    <p>{% t pages.threads.green.description %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">GIL - Global Interpreter Lock</a></h3>
-    <p>MRI has a global interpreter lock (GIL). It's a lock around the execution of Ruby code. This means that in a multi-threaded context, only one thread can execute Ruby code at any one time.</p>
-    <p>So if you have 8 threads busily working on a 8-core machine, only one thread and one core will be busy at any given time. The GIL exists to protect Ruby internals from race conditions that could corrupt data. There are caveats and optimizations, but this is the gist.</p>
-    <p>This has some very important implications for MRI. The biggest implication is that Ruby code will never run in parallel on MRI. The GIL prevents it.</p>
-    <p>This simple fact is what makes threads so powerful, and also what makes them difficult to work with. I've already given you an idea of why threads are good; here's a simple program to illustrate their difficulty.</p>
+    <h3>{% t pages.threads.gil.title %}</h3>
+    <p>{% t pages.threads.gil.description %}</p>
+    <p>{% t pages.threads.gil.example %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
+      <p class="spec-title spec-correct">{% t pages.threads.example %}</p>
 {% highlight ruby %}
   shared_array = []
 
@@ -34,20 +32,9 @@ layout: default
       end
     end
   end.each(&:join)
-{% endhighlight %}
-    </div>
-    <p>Here you can see that we have <span class="code-inline">10 * 10000</span> elements in array</p>
-    <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
-{% highlight ruby %}
+
   puts shared_array.size
-{% endhighlight %}
-    </div>
-    <p>Note that different ruby can show different result</p>
-    <p>GIL exist only in MRI ruby</p>
-    <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
-{% highlight ruby %}
+
   # $ ruby  => 10000
   # $ jruby => 7521
   # $ rbx => 8541
@@ -56,49 +43,31 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe"> Mutex - Mutual Execution</a></h3>
-    <p>Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. In other words, they help bring some order, and some guarantees, to the world of multi-threaded chaos.</p>
-    <p>The name 'mutex' is shorthand for 'mutual exclusion.' If you wrap some section of your code with a mutex, you guarantee that no two threads can enter that section at the same time.</p>
-    <p>Mutexes provide a mechanism for multiply threads to synchronize access to a critical portion of code. It helps bring some order and some guaranty to the world of multi-threaded chaos.</p>
-    <p>In this program, since any thread has to lock the mutex before it can push to the Array, there's a guarantee that no two threads will be performing this operation at the same time. In other words, this operation can no longer be interrupted before it's completed. Once one thread begins pushing to the Array, no other threads will be able to enter that portion of code until the first thread is finished. This operation is now thread-safe.</p>
+    <h3>{% t pages.threads.mutex.title %}</h3>
+    <p>{% t pages.threads.mutex.description %}</p>
+    <p>{% t pages.threads.mutex.example %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
+      <p class="spec-title spec-correct">{% t pages.threads.example %}</p>
 {% highlight ruby %}
   shared_array = []
-  # Notice that the mutex is shared among all the threads. The guarantee only
-  # works if the threads are sharing the same Mutex instance. In this way, when
-  # one thread locks a mutex, others have to wait for it to be unlocked.
   mutex = Mutex.new
 
   10.times.map do
     Thread.new do
       1000.times do
-        # Thread lock mutex and become owner, could be one one owner
-        # Now only one thread can run wrapper code and update
         mutex.lock
         shared_array << nil
         mutex.unlock
-        # After unlock mutex other threads can lock mutex
-
-        # Other convenience method to do same
-        # mutex.synchronize { shared_array << nil }
       end
+
+      # 1000.times do
+      #   mutex.synchronize { shared_array << nil }
+      # end
     end
   end.each(&:join)
-{% endhighlight %}
-    </div>
-    <p>Here you can see that we have <span class="code-inline">10 * 10000</span> elements in array</p>
-    <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
-{% highlight ruby %}
+
   puts shared_array.size
-{% endhighlight %}
-    </div>
-    <p>Now all are same, because of mutex/</p>
-    <p>The mutex sets up same boundaries for the thread. The first thread that hits this bit of code will lock the mutex. it then becomes the owner of that mutex. Until the owning thread unlocks the mutex, no other thread can lock it.</p>
-    <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
-{% highlight ruby %}
+
   # $ ruby  => 10000
   # $ jruby => 10000
   # $ rbx => 1000
@@ -107,10 +76,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Fibers</a></h3>
-    <p>Fibers are primitives for implementing light weight cooperative concurrency in Ruby. Basically they are a means of creating code blocks that can be paused and resumed, much like threads. The main difference is that they are never preempted and that the scheduling must be done by the programmer and not the VM. As opposed to other stackless light weight concurrency models, each fiber comes with a small 4KB stack. This enables the fiber to be paused from deeply nested function calls within the fiber block.</p>
+    <h3>{% t pages.threads.fibers.title %}</h3>
+    <p>{% t pages.threads.fibers.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
+      <p class="spec-title spec-correct">{% t pages.threads.example %}</p>
 {% highlight ruby %}
   require 'fiber'
 
@@ -127,32 +96,24 @@ layout: default
   f.resume('First argument')
   f.resume('Second argument')
   f.resume
-  # f.resume call error if try call one more time fiber is dead
 {% endhighlight %}
     </div>
   </article>
 
   <article>
-    <h3><a name="describe">Rails - Thread-safety in the framework</a></h3>
-    <p>The problem with this is that there is no simple way to say with absolute certainty whether an app as a whole is thread-safe.</p>
-    <ul>
-      <li><p>Global variables are global. This means that they are shared between threads. If you weren’t convinced about not using global variables by now, here’s another reason to never touch them. If you really want to share something globally across an app, you are more than likely better served by a constant (but see below), anyway.</p></li>
-      <li><p>Class variables. For the purpose of a discussion about threads, class variables are not much different from global variables. They are shared across threads just the same way.The problem isn’t so much about using class variables, but about mutating them. And if you are not going to mutate a class variable, in many cases a constant is again a better choice.</p></li>
-      <li><p>Class instance variables. But maybe you’ve read that you should always use class instance variables instead of class variables in Ruby. Well, maybe you should, but they are just as problematic for threaded programs as class variables.</p></li>
-      <li><p>Memoization by itself is not a thread safety issue. However, it can easily become one for a couple of reasons:</p>
-        <ul>
-          <li><p>It is often used to store data in class variables or class instance variables (see the previous points).</p></li>
-          <li><p>The ||= operator is in fact two operations, so there is a potential context switch happening in the middle of it, causing a race condition between threads.</p></li>
-          <li><p>It would be easy to dismiss memoization as the cause of the problem, and tell people just to avoid class variables and class instance variables. However, the issue is more complex than that.</p></li>
-          <li><p>In this issue, Evan Phoenix squashes a really tricky race condition bug in the Rails codebase caused by calling super in a memoization function. So even though you would only be using instance variables, you might end up with race conditions with memoization.</p></li>
-        </ul>
-      </li>
-    </ul>
-    <p>Make sure memoization makes sense and a difference in your case. In many cases Rails actually caches the result anyway, so that you are not saving a whole lot if any resources with your memoization method. Don’t memoize to class variables or class instance variables. If you need to memoize something on the class level, use thread local variables (Thread.current[:baz]) instead. Be aware, though, that it is still kind of a global variable. So while it’s thread-safe, it still might not be good coding practice.</p>
-    <p>config.threadsafe!: what does it do?</p>
-    <p>Let’s take a look at the threadsafe! method:</p>
+    <h3>{% t pages.threads.rails.title %}</h3>
+    <p>{% t pages.threads.rails.description %}</p>
+    <p>{% t pages.threads.rails.global_variables %}</p>
+    <p>{% t pages.threads.rails.class_variables %}</p>
+    <p>{% t pages.threads.rails.instance_variables %}</p>
+    <p>{% t pages.threads.rails.memoization %}</p>
+  </article>
+
+  <article> 
+    <h3>{% t pages.threads.config.title %}</h3>     
+    <p>{% t pages.threads.config.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Example</p>
+      <p class="spec-title spec-correct">{% t pages.threads.example %}</p>
 {% highlight ruby %}
   def threadsafe!
     @preload_frameworks = true
@@ -163,23 +124,18 @@ layout: default
   end
 {% endhighlight %}
     </div>
-    <p>Calling this method sets four options in our app configuration. Let’s walk through each option and talk about what it does.</p>
-    <p>Preloading Frameworks</p>
-    <p>The first option @preload_frameworks does pretty much what it says, it forces the Rails framework to be eagerly loaded on boot. When this option is not enabled, framework classes are loaded lazily via autoload. In multi-threaded environments, the framework needs to be eagerly loaded before any threads are created because of thread safety issues with autoload. We know that loading the framework isn’t threadsafe, so the strategy is to load it all up before any threads are ready to handle requests.</p>
-    <p>Caching classes</p>
-    <p>The @cache_classes option controls whether or not classes get reloaded. Remember when you’re doing “TDD” in your application? You modify a controller, then reload the page to “test” it and see that things changed? Ya, that’s what this option controls. When this option is false, as in development, your classes will be reloaded when they are modified. Without this option, we wouldn’t be able to do our “F5DD” (yes, that’s F5 Driven Development). In production, we know that classes aren’t going to be modified on the fly, so doing the work to figure out whether or not to reload classes is just wasting resources, so it makes sense to never reload class definitions.</p>
-    <p>Dependency loading</p>
-    <p>This option, @dependency_loading controls code loading when missing constants are encountered. For example, a controller references the User model, but the User constant isn’t defined. In that case, if @dependency_loading is true, Rails will find the file that contains the User constant, and load that file. We already talked about how code loading is not thread safe, so the idea here is that we should load the framework, then load all user code, then disable dependency loading. Once dependency loading is disabled, framework code and app code should be loaded, and any missing constants will just raise an exception rather than attempt to load code. We justify disabling this option in production because (as was mentioned earlier) code loading is not threadsafe, and we expect to have all code loaded before any threads can handle requests.</p>
-    <p>Allowing concurrency</p>
-    <p>@allow_concurrency option controls whether or not the Rack::Lock middleware is used in your stack. Rack::Lock wraps a mutex around your request. The idea being that if you have code that is not threadsafe, this mutex will prevent multiple threads from executing your controller code at the same time. When threadsafe! is set, this middleware is removed, and controller code can be executed in parallel.</p>
+    <p>{% t pages.threads.config.frameworks %}</p>
+    <p>{% t pages.threads.config.cache %}</p>
+    <p>{% t pages.threads.config.di %}</p>
+    <p>{% t pages.threads.config.concurrency %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Code and articles were taken from resources:</a></h3>
+    <h3>{% t pages.threads.credits %}</h3>
     <ul>
-      <li><p><a href="http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil">http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil</a></p></li>
-      <li><p><a href="https://en.wikipedia.org/wiki/Global_interpreter_lock">https://en.wikipedia.org/wiki/Global_interpreter_lock</a></p></li>
-      <li><p><a href="https://csinaction.com/2014/10/10/multithreading-in-the-mri-ruby-interpreter/">https://csinaction.com/2014/10/10/multithreading-in-the-mri-ruby-interpreter/</a></p></li>
+      <li><a href="http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil">http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Global_interpreter_lock">https://en.wikipedia.org/wiki/Global_interpreter_lock</a></li>
+      <li><a href="https://csinaction.com/2014/10/10/multithreading-in-the-mri-ruby-interpreter/">https://csinaction.com/2014/10/10/multithreading-in-the-mri-ruby-interpreter/</a></li>
     </ul>
   </article>
 </div>

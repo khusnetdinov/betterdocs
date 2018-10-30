@@ -6,22 +6,18 @@ layout: default
 
 <div class="content">
   <article>
-    <h1><b>Meta programming</b></h1>
-    <p>Metaprogramming is the writing of computer programs that write or manipulate other programs (or themselves) as their </p>
-    <p>data, or that do part of the work at compile time that would otherwise be done at runtime. In many cases, this allows </p>
-    <p>programmers to get more done in the same amount of time as they would take to write all the code manually, or it gives </p>
-    <p>programs greater flexibility to efficiently handle new situations without recompilation. Or, more simply put: </p>
-    <p>Metaprogramming is writing code that writes code during runtime to make your life easier.</p>
+    <h1>{% t pages.meta_programming.title %}</h1>
+    <p>{% t pages.meta_programming.description %}</p>
   </article>
 
   <article>
-    <h3><a name="describe">Dynamic Dispatch</a></h3>
-    <p>Allows us to send messages <span class="code-inline">subject.public_send(message, *arguments)</span></p>
+    <h3>{% t pages.meta_programming.dynamic_dispatch.title %}</h3>
+    <p>{% t pages.meta_programming.dynamic_dispatch.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Dynamic Dispatch</p>
+      <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_dispatch.title %}</p>
 {% highlight ruby %}
   1.public_send(:+, 2)
-      # => 3
+  # => 3
 
   # Even private methods
   1.send(:+, 2)
@@ -31,10 +27,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Dynamic Method</a></h3>
-    <p>Allows us to dynamically create methods <span class="code-inline">define_method :method_name { block that becomes method body }</span></p>
+    <h3>{% t pages.meta_programming.dynamic_method.title %}</h3>
+    <p>{% t pages.meta_programming.dynamic_method.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Dynamic Method</p>
+      <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_method.title %}</p>
 {% highlight ruby %}
   class Foo
     define_method :bar do
@@ -72,7 +68,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Dynamic Method</p>
+      <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_method.title %}</p>
 {% highlight ruby %}
   class AnotherClass
     def get_foo_stuff; end
@@ -107,7 +103,7 @@ layout: default
 {% endhighlight %}
     </div>
     <div class="code-block">
-      <p class="spec-title spec-correct">Dynamic Method</p>
+      <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_method.title %}</p>
 {% highlight ruby %}
   class Foo
     def initialize(bar)
@@ -122,10 +118,10 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Ghost Methods</a></h3>
-    <p>Utilises <span class="code-inline">method_missing</span></p>
+    <h3></h3>
+    <p></p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Ghost Methods</p>
+      <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_method.title %}</p>
 {% highlight ruby %}
   class Hai
     def method_missing(method, *args)
@@ -147,25 +143,20 @@ layout: default
   </article>
 
   <article>
-    <h3><a name="describe">Dynamic Proxies</a></h3>
-    <p>Catching "Ghost Methods" and forwarding them onto another method Whilst possibly adding logic around the call.</p>
-    <p>For example, You can provide imaginary methods by utilising <span class="code-inline">method_missing</span> to parse the incoming message (e.g. <span class="code-inline">get_name</span>, <span class="code-inline">get_age</span>) and to delegate off to another method such as <span class="code-inline">get(:data_type)</span> where <span class="code-inline">:data_type</span> is <span class="code-inline">:name</span> or <span class="code-inline">:age</span>.</p>
+    <h3>{% t pages.meta_programming.dynamic_proxies.title %}</h3>
+    <p>{% t pages.meta_programming.dynamic_proxies.description %}</p>
     <div class="code-block">
-      <p class="spec-title spec-correct">Dynamic Proxies</p>
+      <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_proxies.title %}</p>
 {% highlight ruby %}
   def method_missing(message, *args, &block)
     if message.to_s.match?(/^get_(.*)/)
       return get(Regexp.last_match(1).to_sym, *args, &block)
     end
     super
-    # if we don't find a match then we'll call the top level `BasicObject#method_missing`
   end
 
-  # If (after analysis) you discover a performance issue with using `method_missing`
-  # you can utilise the "Dynamic Method" technique to create a real method after
-  # the message has been received by `method_missing` the first time.
 {% endhighlight %}
+    <p>{% t pages.meta_programming.dynamic_proxies.more %}</p>
     </div>
   </article>
-
-  <article>>
+</div>

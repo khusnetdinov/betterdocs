@@ -26,22 +26,22 @@ content:
     interview_questions: "Вопросы на интервью"
   footer:
 
-pages:
+sidebar:
   - title: Готчи
-    url: gotchas.html
+    url: gotchas
   - title: Мета программирование
-    url: meta_programming.html
+    url: meta_programming
   - title: Функциональное программирование
-    url: functional_programming.html
+    url: functional_programming
   - title: Потоки
-    url: threads.html
+    url: threads
   - title: COЛИД
-    url: solid_principles.html
+    url: solid_principles
   - title: Паттерны проектирование
-    url: design_patterns.html
+    url: design_patterns
   - title: Структуры данных
-    url: data_structures.html
+    url: data_structures
   - title: Алгоритмы
-    url: algorithms.html
+    url: algorithms
   - title: Вопросы на интервью
-    url: interview_questions.html
+    url: interview_questions
