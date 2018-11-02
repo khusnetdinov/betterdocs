@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 ruby '2.5.1'
-gem 'jekyll'
+gem 'jekyll', '>= 3.7.4'
 gem 'rack-jekyll'
 gem 'rake'
 gem 'minima'
