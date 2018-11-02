@@ -2,7 +2,9 @@ encoding: utf-8
 
 # Url settings
 baseurl: ""
-url: "https://betterdocs.org"
+# url: "https://betterdocs.org"
+url: "https://betterdocs.herokuapp.com/"
+
 
 collections:
   pages:
@@ -22,6 +24,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-multiple-languages-plugin
+  - jekyll-sitemap
 
 # Yandex, Google
 counters:

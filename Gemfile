@@ -13,4 +13,5 @@ gem 'scss_lint'
 
 group :jekyll_plugins do
   gem 'jekyll-multiple-languages-plugin'
+  gem 'jekyll-sitemap'
 end

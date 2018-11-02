@@ -52,6 +52,8 @@ GEM
       sass (~> 3.4)
     jekyll-seo-tag (2.5.0)
       jekyll (~> 3.3)
+    jekyll-sitemap (1.2.0)
+      jekyll (~> 3.3)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -107,6 +109,7 @@ DEPENDENCIES
   html-proofer
   jekyll
   jekyll-multiple-languages-plugin
+  jekyll-sitemap
   minima
   rack-jekyll
   rake
