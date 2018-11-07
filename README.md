@@ -16,6 +16,10 @@
 - Algorithms
 - Interview Questions
 
+## Contributong
+
+Before open issue or PR, please check [contributing guide](CONTRIBUTING.md) for guidelines about how to proceed. Every contributor is expected to follow [code of conduct](CODE_OF_CONDUCT.md).
+
 ## License
 
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
