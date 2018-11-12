@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% include sidebar.html %}
+{% include sponsors/300x600.html %}
 
 <div class="content">
 
@@ -100,6 +101,8 @@ layout: default
     </div>
   </article>
 
+  {% include sponsors/728x90.html %}
+
   <article>
     <h3>{% t pages.threads.rails.title %}</h3>
     <p>{% t pages.threads.rails.description %}</p>
@@ -109,8 +112,8 @@ layout: default
     <p>{% t pages.threads.rails.memoization %}</p>
   </article>
 
-  <article> 
-    <h3>{% t pages.threads.config.title %}</h3>     
+  <article>
+    <h3>{% t pages.threads.config.title %}</h3>
     <p>{% t pages.threads.config.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.threads.example %}</p>

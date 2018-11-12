@@ -1,0 +1,83 @@
+// Variables
+
+$c-red: #ff0000;
+
+
+@mixin sponsor-block($width, $height) {
+  display: none;
+  width: $width;
+  height: $height;
+
+  border: 1px solid $c-red;
+}
+
+.sponsor-block {
+  &.with-size-234x60 {
+    @include sponsor-block(234px, 60px);
+
+    @media screen and (min-width: $on-laptop) {
+      display: block;
+    }
+
+    margin: 8px auto 0;
+  }
+
+  &.with-size-300x600 {
+    @include sponsor-block(300px, 600px);
+
+    @media screen and (min-width: $on-desktop) {
+      display: block;
+    }
+
+    position: fixed;
+    margin-top: 3.5em;
+    top: 70px;
+    left: 1000px;
+  }
+
+  $adv-1000: 1000px;
+  $adv-800:  800px;
+  $adv-750:  750px;
+  $adv-500:  500px;
+
+  &.with-size-728x90 {
+    @include sponsor-block(728px, 90px);
+
+    @media screen and (min-width: $adv-1000) {
+      display: block;
+    }
+
+    @media screen and (max-width: $adv-800) {
+      display: block;
+    }
+
+    @media screen and (max-width: $adv-750) {
+      display: none;
+    }
+
+    margin: 30px auto 0;
+  }
+
+  &.with-size-468x60 {
+    @include sponsor-block(468px, 60px);
+
+    @media screen and (max-width: $adv-1000 - 1px) {
+      display: block;
+    }
+
+    @media screen and (max-width: $adv-800 - 1px) {
+      display: none;
+    }
+
+    @media screen and (max-width: $adv-750) {
+      display: block;
+    }
+
+    @media screen and (max-width: $adv-500) {
+      display: none;
+    }
+
+    margin: 30px auto 0;
+  }
+}
+
