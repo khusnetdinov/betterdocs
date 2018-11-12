@@ -59,6 +59,7 @@ $menu-link-current-before: #5c5edc;
 $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
+$on-desktop:       1300px;
 
 // Generic
 
@@ -85,4 +86,5 @@ $spacing-unit:     30px;
     @content;
   }
 }
+
 @import "main";
