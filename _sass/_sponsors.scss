@@ -4,12 +4,8 @@ $c-red: #ff0000;
 
 
 @mixin sponsor-block($width, $height) {
-  // Remove important on integration ADV
-  display: none !important;
   width: $width;
   height: $height;
-
-  border: 1px solid $c-red;
 }
 
 .sponsor-block {
