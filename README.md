@@ -20,6 +20,14 @@
 
 Before open issue or PR, please check [contributing guide](CONTRIBUTING.md) for guidelines about how to proceed. Every contributor is expected to follow [code of conduct](CODE_OF_CONDUCT.md).
 
+## About
+
+Betterdocs is created and maintained by GeveMePOC team.
+
+![image](https://res.cloudinary.com/dtoqqxqjv/image/upload/v1542140314/poc_kdjm9g.png)
+
+We love open source software!.
+
 ## License
 
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
