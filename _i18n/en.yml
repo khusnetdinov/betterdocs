@@ -43,6 +43,8 @@ sidebar:
     url: data_structures
   - title: Algorithms
     url: algorithms
+  - title: Become Ruby Meister
+    url: ruby_meister
   - title: Interview Questions
     url: interview_questions
 
@@ -500,5 +502,74 @@ pages:
       cache: "Caching classes: The @cache_classes option controls whether or not classes get reloaded. Remember when you’re doing “TDD” in your application? You modify a controller, then reload the page to “test” it and see that things changed? Ya, that’s what this option controls. When this option is false, as in development, your classes will be reloaded when they are modified. Without this option, we wouldn’t be able to do our “F5DD” (yes, that’s F5 Driven Development). In production, we know that classes aren’t going to be modified on the fly, so doing the work to figure out whether or not to reload classes is just wasting resources, so it makes sense to never reload class definitions."
       di: "Dependency loading: This option, @dependency_loading controls code loading when missing constants are encountered. For example, a controller references the User model, but the User constant isn’t defined. In that case, if @dependency_loading is true, Rails will find the file that contains the User constant, and load that file. We already talked about how code loading is not thread safe, so the idea here is that we should load the framework, then load all user code, then disable dependency loading. Once dependency loading is disabled, framework code and app code should be loaded, and any missing constants will just raise an exception rather than attempt to load code. We justify disabling this option in production because (as was mentioned earlier) code loading is not threadsafe, and we expect to have all code loaded before any threads can handle requests."
       concurrency: "Allowing concurrency: @allow_concurrency option controls whether or not the Rack::Lock middleware is used in your stack. Rack::Lock wraps a mutex around your request. The idea being that if you have code that is not threadsafe, this mutex will prevent multiple threads from executing your controller code at the same time. When threadsafe! is set, this middleware is removed, and controller code can be executed in parallel."
-
     credits: "Code and articles were taken from resources:"
+
+  ruby_meister:
+    title: "Become Ruby Meister"
+    description: "In this talk we'll examine the long journey from being a Ruby novice to achieving true Ruby mastery and will try to shorten it a bit for you by sharing some important insight. A Master Rubyist has a great theoretical foundation, relies on an extensive toolbox, has deep understanding of the core values and principles of Ruby and is always honing their skills. Perhaps you're telling yourself \"Wow, this is pretty vague!\", but if you attend this session I promise that you'll be enlightened, amused and you'll totally enjoy it! Sounds good? The great books will be part of the resources I'd suggest to people to level-up their skills."
+    video: "The Long Journey to Ruby Mastery by Bozhidar Batsov."
+    computer_science_fundamentals:
+      title: "Computer Science Fundamentals"
+      articles:
+        - name: 'inside_machine'
+          title: "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture"
+          description: "Computers perform countless tasks ranging from the business critical to the recreational, but regardless of how differently they may look and behave, they're all amazingly similar in basic function. Once you understand how the microprocessor—or central processing unit (CPU)—works, you'll have a firm grasp of the fundamental concepts at the heart of all modern computing."
+          link: "https://www.amazon.com/Inside-Machine-Introduction-Microprocessors-Architecture-ebook/dp/B004OEJO0A"
+        - name: "code"
+          title: "Code: The Hidden Language of Computer Hardware and Software"
+          description: "What do flashlights, the British invasion, black cats, and seesaws have to do with computers? In CODE, they show us the ingenious ways we manipulate language and invent new means of communicating with each other. And through CODE, we see how this ingenuity and our very human compulsion to communicate have driven the technological innovations of the past two centuries."
+          link: "https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319"
+        - name: "concrete_math"
+          title: "Concrete Mathematics: A Foundation for Computer Science"
+          description: "This book introduces the mathematics that supports advanced computer programming and the analysis of algorithms. The primary aim of its well-known authors is to provide a solid and relevant base of mathematical skills - the skills needed to solve complex problems, to evaluate horrendous sums, and to discover subtle patterns in data. It is an indispensable text and reference not only for computer scientists - the authors themselves rely heavily on it! - but for serious users of mathematics in virtually every discipline."
+          link: "https://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"
+        - name: "sicp"
+          title: "Structure and Interpretation of Computer Programs"
+          description: "Structure and Interpretation of Computer Programs has had a dramatic impact on computer science curricula over the past decade. This long-awaited revision contains changes throughout the text. There are new implementations of most of the major programming systems in the book, including the interpreters and compilers, and the authors have incorporated many small changes that reflect their experience teaching the course at MIT since the first edition was published. A new theme has been introduced that emphasizes the central role played by different approaches to dealing with time in computational models: objects with state, concurrent programming, functional programming and lazy evaluation, and nondeterministic programming."
+          link: "https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871"
+        - name: "design_programms"
+          title: "How to Design Programs: An Introduction to Programming and Computing"
+          description: "This introduction to programming places computer science in the core of a liberal arts education. Unlike other introductory books, it focuses on the program design process. This approach fosters a variety of skills―critical reading, analytical thinking, creative synthesis, and attention to detail―that are important for everyone, not just future computer programmers. The book exposes readers to two fundamentally new ideas. First, it presents program design guidelines that show the reader how to analyze a problem statement; how to formulate concise goals; how to make up examples; how to develop an outline of the solution, based on the analysis; how to finish the program; and how to test."
+          link: "https://www.amazon.com/How-Design-Programs-Introduction-Programming/dp/0262062186"
+        - name: "algorithm_manual"
+          title: "The Algorithm Design Manual"
+          description: "This newly expanded and updated second edition of the best-selling classic continues to take the \"mystery\" out of designing algorithms, and analyzing their efficacy and efficiency. Expanding on the first edition, the book now serves as the primary textbook of choice for algorithm design courses while maintaining its status as the premier practical reference guide to algorithms for programmers, researchers, and students."
+          link: "https://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202"
+        - name: "cormen"
+          title: "Introduction to Algorithms, 3rd Edition (The MIT Press)"
+          description: "Some books on algorithms are rigorous but incomplete; others cover masses of material but lack rigor. Introduction to Algorithms uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in a pseudocode designed to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor."
+          link: "https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"
+        - name: "compilers"
+          title: "Compilers: Principles, Techniques, and Tools (2nd Edition)"
+          description: "Compilers: Principles, Techniques and Tools, known to professors, students, and developers worldwide as the \"Dragon Book,\" is available in a new edition.  Every chapter has been completely revised to reflect developments in software engineering, programming languages, and computer architecture that have occurred since 1986, when the last edition published.  The authors, recognizing that few readers will ever go on to construct a compiler, retain their focus on the broader set of problems faced in software design and software development."
+          link: "https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811"
+        - name: "c_lang"
+          title: "C Programming Language, 2nd Edition"
+          description: "The authors present the complete guide to ANSI standard C language programming. Written by the developers of C, this new version helps readers keep up with the finalized ANSI standard for C while showing how to take advantage of C's rich set of operators, economy of expression, improved control flow, and data structures. The 2/E has been completely rewritten with additional examples and problem sets to clarify the implementation of difficult language constructs. For years, C programmers have let K&R guide them to building well-structured and efficient programs. Now this same help is available to those working with ANSI compilers. Includes detailed coverage of the C language plus the official C language reference manual for at-a-glance help with syntax notation, declarations, ANSI changes, scope rules, and the list goes on and on."
+          link: "https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628"
+    oop:
+      title: "Object-oriented programming"
+      articles:
+        - name: "growing"
+          title: "Growing Object-Oriented Software, Guided by Tests"
+          description: "Test-Driven Development (TDD) is now an established technique for delivering better software faster. TDD is based on a simple idea: Write tests for your code before you write the code itself. However, this \"simple\" idea takes skill and judgment to do well. Now there's a practical guide to TDD that takes you beyond the basic concepts. Drawing on a decade of experience building real-world systems, two TDD pioneers show how to let tests guide your development and “grow” software that is coherent, reliable, and maintainable."
+          link: "https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627"
+        - name: "domain_driven"
+          title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+          description: "This is serious book about domain modeling in software design. Software development society lives from one hype wave to another. OOP, patterns, XP, TDD, CI/CD, BigData, DevOps - this is just to name few. This book is originated from golden age of OOP. The author admits that object oriented paradigm is not the only one available but the bias toward OOP/OOD is obvious (and justifiable). This book tells about how to do the modeling of core software components “the right way”."
+          link: "https://www.amazon.com/Domain-Driven-Tacking-Complexity-Software/dp/8131724468/ref=sr_1_fkmr1_2?s=books&ie=UTF8&qid=1542577469&sr=1-2-fkmr1&keywords=Domain-Driven+Design%3A+Tackling+Complexity+in+the+Heart+of+Software"
+    ruby:
+      title: "Know you lang"
+      articles:
+        - name: "well_grounded"
+          title: "The Well-Grounded Rubyist"
+          description: "The Well-Grounded Rubyist, Second Edition addresses both newcomers to Ruby as well as Ruby programmers who want to deepen their understanding of the language. This beautifully written and totally revised second edition includes coverage of features that are new in Ruby 2.1, as well as expanded and updated coverage of aspects of the language that have changed."
+          link: "https://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617291692"
+        - name: "programming_ruby"
+          title: "Programming Ruby: The Pragmatic Programmers' Guide, Second Edition"
+          description: "Ruby is an increasingly popular, fully object-oriented dynamic programming language, hailed by many practitioners as the finest and most useful language available today. When Ruby first burst onto the scene in the Western world, the Pragmatic Programmers were there with the definitive reference manual, Programming Ruby: The Pragmatic Programmer's Guide."
+          link: "https://www.amazon.com/Programming-Ruby-Pragmatic-Programmers-Second/dp/0974514055"
+        - name: "ruby_programming"
+          title: "The Ruby Programming Language: Everything You Need to Know"
+          description: "This book begins with a quick-start tutorial to the language, and then explains the language in detail from the bottom up: from lexical and syntactic structure to datatypes to expressions and statements and on through methods, blocks, lambdas, closures, classes and modules. The book also includes a long and thorough introduction to the rich API of the Ruby platform, demonstrating -- with heavily-commented example code -- Ruby's facilities for text processing, numeric manipulation, collections, input/output, networking, and concurrency. An entire chapter is devoted to Ruby's metaprogramming capabilities."
+          link: "https://www.amazon.com/Ruby-Programming-Language-Everything-Need/dp/0596516177"

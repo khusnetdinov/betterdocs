@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+{% include sidebar.html %}
+{% include sponsors/300x600.html %}
+
+<div class="content">
+  <article>
+    <h1>{% t pages.ruby_meister.title %}</h1>
+    <p>{% t pages.ruby_meister.description %}</p>
+  </article>
+
+  <article>
+    <h3>{% t pages.ruby_meister.video %}</h3>
+    <div>
+      <iframe width="650" height="315" src="https://www.youtube.com/embed/zqq6_zu8x6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </article>
+
+  {% assign computer_science_fundamentals = site.translations[site.lang].pages.ruby_meister.computer_science_fundamentals %}
+
+  <article>
+    <h2>{{ computer_science_fundamentals.title }}</h2>
+  </article>
+
+  {%- for book in computer_science_fundamentals.articles %}
+    <article>
+      <h3>{{ book.title }}</h3>
+      <div class="book">
+        <div class="description">{{ book.description }}</div>
+        <a href="{{ book.link }}">
+          <img class="image" alt="{{ book.description }}" src="images/{{ site.lang }}/books/{{ book.name }}.jpg"/>
+        </a>
+      </div>
+    </article>
+  {%- endfor%}
+
+  {% assign oop = site.translations[site.lang].pages.ruby_meister.oop %}
+
+  <article>
+    <h2>{{ oop.title }}</h2>
+  </article>
+
+  {%- for book in oop.articles %}
+    <article>
+      <h3>{{ book.title }}</h3>
+      <div class="book">
+        <div class="description">{{ book.description }}</div>
+        <a href="{{ book.link }}">
+          <img class="image" alt="{{ book.description }}" src="images/{{ site.lang }}/books/{{ book.name }}.jpg"/>
+        </a>
+      </div>
+    </article>
+  {%- endfor%}
+
+  {% assign ruby = site.translations[site.lang].pages.ruby_meister.ruby %}
+
+  <article>
+    <h2>{{ ruby.title }}</h2>
+  </article>
+
+  {%- for book in ruby.articles %}
+    <article>
+      <h3>{{ book.title }}</h3>
+      <div class="book">
+        <div class="description">{{ book.description }}</div>
+        <a href="{{ book.link }}">
+          <img class="image" alt="{{ book.description }}" src="images/{{ site.lang }}/books/{{ book.name }}.jpg"/>
+        </a>
+      </div>
+    </article>
+  {%- endfor%}
+</div>

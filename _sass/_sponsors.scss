@@ -40,6 +40,8 @@ $c-red: #ff0000;
   &.with-size-728x90 {
     @include sponsor-block(728px, 90px);
 
+    display: none !important;
+
     @media screen and (min-width: $adv-1000) {
       display: block;
     }
@@ -57,6 +59,8 @@ $c-red: #ff0000;
 
   &.with-size-468x60 {
     @include sponsor-block(468px, 60px);
+
+    display: none !important;
 
     @media screen and (max-width: $adv-1000 - 1px) {
       display: block;
