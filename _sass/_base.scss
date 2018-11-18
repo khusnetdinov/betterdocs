@@ -730,3 +730,17 @@ body {
     }
   }
 }
+
+.book {
+  position: relative;
+  overflow: hidden;
+
+  .image {
+    width: 20%;
+  }
+
+  .description {
+    width: 75%;
+    float: right;
+  }
+}
