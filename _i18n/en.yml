@@ -178,7 +178,6 @@ pages:
       source: "This page contains the Ruby code from book of \"Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby\" by Bruno R. Preiss. Copyright (c) 2004 by Bruno R. Preiss, P.Eng. All rights reserved."
   design_patterns:
     title: "Design patterns"
-
     creational:
       title: "Creational patterns"
       description: "In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation. Creational design patterns are composed of two dominant ideas. One is encapsulating knowledge about which concrete classes the system uses. Another is hiding how instances of these concrete classes are created and combined."
@@ -239,7 +238,6 @@ pages:
         bridge: "Bridge"
         data_bus: "Data Bus"
         role: "Role Object"
-
     behavioral:
       title: "Behavioral patterns"
       description: "In software engineering, behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication."
@@ -286,7 +284,6 @@ pages:
         title: "Not covered patterns:"
         hierarchical: "Hierarchical visitor"
       credits: "Code and articles were taken from resources:"
-
   functional_programming:
     title: "Functional programming"
     description: "Using a language in a functional style implies you have access to a few key features that listed below:"
@@ -309,7 +306,6 @@ pages:
       proc: "In order to give you a clearer idea of what each of these two things will do a function, let’s take an example Proc."
       partial: "Partial application of this function would return, if we passed in the first two arguments, the following nested Procs."
       curry: "<span class=\"code-inline\">.curry</span> returns a curried proc. If the optional arity argument is given, it determines the number of arguments. A curried proc receives some arguments. If a sufficient number of arguments are supplied, it passes the supplied arguments to the original proc and returns the result. Otherwise, returns another curried proc that takes the rest of arguments."
-
   gotchas:
     title: "Gotchas"
     description1: "Most Ruby on Rails beginners get excited by the framework and start crafting applications without any knowledge of the language. And that’s the magic of RoR."
@@ -416,19 +412,6 @@ pages:
       title: "class Foo::Bar, defined outside Module Foo, won’t see inside Foo"
       description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found there it will go back through each containing \"gateway\" and search the scope there."
     credits: "Code and articles were taken from resources:"
-
-  index:
-    title: "What is Better Docs"
-    description: "This website is web adoptation github repository ruby.fundamental which collected a lot of stars and was translated to chanise language. Better Docs allow you to quickly find a lot best practice that were collected in one repository. Just you this repos like reference or interview preparation resource."
-
-  interview_questions:
-    title: "Interview quesions"
-    description: "This section keeps resources links for reading and interview preparation"
-    list:
-      toptal: "https://www.toptal.com/ruby/interview-questions"
-      hookops: "https://lab.hookops.com/ruby-interview-prep.html"
-      github: "https://gist.github.com/ryansobol/5252653"
-
   meta_programming:
     title: "Meta programming"
     description: "Metaprogramming is the writing of computer programs that write or manipulate other programs (or themselves) as their data, or that do part of the work at compile time that would otherwise be done at runtime. In many cases, this allows programmers to get more done in the same amount of time as they would take to write all the code manually, or it gives programs greater flexibility to efficiently handle new situations without recompilation. Metaprogramming is writing code that writes code during runtime to make your life easier."
@@ -445,7 +428,6 @@ pages:
       title: "Dynamic Proxies"
       description: "For example, You can provide imaginary methods by utilising <span class=\"code-inline\">method_missing</span> to parse the incoming message (e.g. <span class=\"code-inline\">get_name</span>, <span class=\"code-inline\">get_age</span>) and to delegate off to another method such as <span class=\"code-inline\">get(:data_type)</span> where <span class=\"code-inline\">:data_type</span> is <span class=\"code-inline\">:name</span> or <span class=\"code-inline\">:age</span>."
       more: "If (after analysis) you discover a performance issue with using <span class=\"code-inline\">method_missing</span> you can utilise the \"Dynamic Method\" technique to create a real method after the message has been received by `method_missing` the first time."
-
   solid_principles:
     good: "Good!"
     bad: "Bad!"
@@ -469,7 +451,6 @@ pages:
       title: "Dependency Inversion Principle"
       description: "The Dependency Inversion Principle has to do with high-level (think business logic) objects not depending on low-level (think database querying and IO) implementation details. This can be achieved with duck typing and the Dependency Inversion Principle. Often this pattern is used to achieve the Open/Closed Principle that we discussed above. In fact, we can even reuse that same example as a demonstration of this principle. Now there is a formatter class, but I've hardcoded it on the Report class, thus creating a dependency from the Report to the JSONFormatter. Since the Report is a more abstract (high-level) concept than the JSONFormatter, we're effectively breaking the DIP."
       after: "This way the Report does not depend on the JSONFormatter and can use any type of formatter that has a method called format (this is known as duck typing). Another thing of note is that we've used, once again, dependency injection to solve a problem. This technique is a very powerful one when our goal is decoupling objects, and even though it has the same initials as the dependency inversion principle (vs dependency injection pattern), they are completely different concepts."
-
   threads:
     example: "Example"
     title: "Threads"
@@ -503,7 +484,6 @@ pages:
       di: "Dependency loading: This option, @dependency_loading controls code loading when missing constants are encountered. For example, a controller references the User model, but the User constant isn’t defined. In that case, if @dependency_loading is true, Rails will find the file that contains the User constant, and load that file. We already talked about how code loading is not thread safe, so the idea here is that we should load the framework, then load all user code, then disable dependency loading. Once dependency loading is disabled, framework code and app code should be loaded, and any missing constants will just raise an exception rather than attempt to load code. We justify disabling this option in production because (as was mentioned earlier) code loading is not threadsafe, and we expect to have all code loaded before any threads can handle requests."
       concurrency: "Allowing concurrency: @allow_concurrency option controls whether or not the Rack::Lock middleware is used in your stack. Rack::Lock wraps a mutex around your request. The idea being that if you have code that is not threadsafe, this mutex will prevent multiple threads from executing your controller code at the same time. When threadsafe! is set, this middleware is removed, and controller code can be executed in parallel."
     credits: "Code and articles were taken from resources:"
-
   ruby_meister:
     title: "Become Ruby Meister"
     description: "In this talk we'll examine the long journey from being a Ruby novice to achieving true Ruby mastery and will try to shorten it a bit for you by sharing some important insight. A Master Rubyist has a great theoretical foundation, relies on an extensive toolbox, has deep understanding of the core values and principles of Ruby and is always honing their skills. Perhaps you're telling yourself \"Wow, this is pretty vague!\", but if you attend this session I promise that you'll be enlightened, amused and you'll totally enjoy it! Sounds good? The great books will be part of the resources I'd suggest to people to level-up their skills."
@@ -573,3 +553,25 @@ pages:
           title: "The Ruby Programming Language: Everything You Need to Know"
           description: "This book begins with a quick-start tutorial to the language, and then explains the language in detail from the bottom up: from lexical and syntactic structure to datatypes to expressions and statements and on through methods, blocks, lambdas, closures, classes and modules. The book also includes a long and thorough introduction to the rich API of the Ruby platform, demonstrating -- with heavily-commented example code -- Ruby's facilities for text processing, numeric manipulation, collections, input/output, networking, and concurrency. An entire chapter is devoted to Ruby's metaprogramming capabilities."
           link: "https://www.amazon.com/Ruby-Programming-Language-Everything-Need/dp/0596516177"
+  interview_questions:
+    title: "Interview quesions"
+    description: "This section keeps resources links for reading and interview preparation"
+    list:
+      - name: "Toptal: How to Hire a Great Ruby Developer"
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: "Toptal: 21 Essential Ruby Interview Questions"
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: "Hookops: 35+ Ruby and Rails Interview Questions and Answers"
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+
+      - name: "Educba: 15 Most Important Ruby Interview Questions And Answer"
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: "Ruby Garage: How to Interview Your Ruby on Rails Developer"
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: "RyanSobol: 15 Questions to Ask During a Ruby Interview"
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: "Toptal: 9 Essential Ruby on Rails Interview Questions"
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: "What is Better Docs"
+    description: "This website is web adoptation github repository ruby.fundamental which collected a lot of stars and was translated to chanise language. Better Docs allow you to quickly find a lot best practice that were collected in one repository. Just you this repos like reference or interview preparation resource."

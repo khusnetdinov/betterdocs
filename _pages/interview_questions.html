@@ -9,11 +9,14 @@ layout: default
   <article>
     <h1>{% t pages.interview_questions.title %}</h1>
     <p>{% t pages.interview_questions.description %}</p>
+  </article>
 
+  <article>
+    <h3>Ruby links for preparation:</h3>
     <ul>
-      <li>{% t pages.interview_questions.list.toptal %}</li>
-      <li>{% t pages.interview_questions.list.hookops %}</li>
-      <li>{% t pages.interview_questions.list.github %}</li>
+      {%- for web in site.translations[site.lang].pages.interview_questions.list -%}
+        <li><a href="{{ web.link }}"/>{{ web.name }}</a></li>
+      {%- endfor -%}
     </ul>
   </article>
 </div>
