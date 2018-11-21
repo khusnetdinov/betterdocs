@@ -574,4 +574,8 @@ pages:
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: "What is Better Docs"
-    description: "This website is web adoptation github repository ruby.fundamental which collected a lot of stars and was translated to chanise language. Better Docs allow you to quickly find a lot best practice that were collected in one repository. Just you this repos like reference or interview preparation resource."
+    description: "This website is web adoptation github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated to chanise language. Better Docs allow you to quickly find a lot best practice that were collected in one repository. Just you this repos like reference or interview preparation resource."
+    oss:
+      title: "Thanks to Open Source"
+      description: "Better Docs woke up while working and finding out about bestpractices and knowlage about ruby, an open source engineering for the web development aplications written in Ruby. In spite of the fact that the source code is somewhat obsolete, you may discover helpful to checkout the current test suites."
+      thanks: "If Better Docs helped you in any way, think about giving us a Star on <a href=\"https://github.com/howtohireme/ruby.fundamental\">Github</a> (it helps us to reach more developers) or contributing to our projects."

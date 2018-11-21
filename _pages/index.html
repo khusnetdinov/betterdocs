@@ -6,8 +6,16 @@ layout: default
 {% include sponsors/300x600.html %}
 
 <div class="content">
+  {% include github.html %}
+
   <article>
     <h1>{% t pages.index.title %}</h1>
     <p>{% t pages.index.description %}</p>
+  </article>
+
+  <article>
+    <h3>{% t pages.index.oss.title %}</h3>
+    <p>{% t pages.index.oss.description %}</p>
+    <p>{% t pages.index.oss.thanks %}</p>
   </article>
 </div>
