@@ -1,14 +1,8 @@
 head:
-  title: Ruby Fundamental
+  title: "Ruby Fundamental"
   metatags:
-    description: >-
-      Fundamental programming with ruby examples and references. It covers
-      threads, SOLID principles, design patterns, data structures, algorithms.
-    keywords: >-
-      Ruby, Fundamental, Ruby programming fundamental. Ruby gotchas, Functional
-      programming, Metaprogramming, Threads, Ruby solid princinle with examples,
-      Ruby design patterns with examples, Ruby algorithms with examples, Ruby
-      data structures with examples.
+    description: "Fundamental programming with ruby examples and references. It covers threads, SOLID principles, design patterns, data structures, algorithms."
+    keywords: "Ruby, Fundamental, Ruby programming fundamental. Ruby gotchas, Functional programming, Metaprogramming, Threads, Ruby solid principles with examples, Ruby design patterns with examples, Ruby algorithms with examples, Ruby data structures with examples."
 
 content:
   menu:
@@ -35,7 +29,7 @@ sidebar:
     url: functional_programming
   - title: Threads
     url: threads
-  - title: Solid Pronciples
+  - title: Solid Principles
     url: solid_principles
   - title: Design Patterns
     url: design_patterns
@@ -70,29 +64,29 @@ pages:
         title: "Insertion sort"
         description: "Although it is one of the elementary sorting algorithms with <span class=\"code-inline\">O(n<sup>2</sup>)</span> worst-case time, insertion sort is the algorithm of choice either when the data is nearly sorted (because it is adaptive) or when the problem size is small (because it has low overhead). For these reasons, and because it is also stable, insertion sort is often used as the recursive base case (when the problem size is small) for higher overhead divide-and-conquer sorting algorithms, such as merge sort or quick sort."
       selection_sort:
-        title: "Selection sort"
-        description: "From the comparions presented here, one might conclude that selection sort should never be used. It does not adapt to the data in any way (notice that the four animations above run in lock step), so its runtime is always quadratic. However, selection sort has the property of minimizing the number of swaps. In applications where the cost of swapping items is high, selection sort very well may be the algorithm of choice."
+        title: "Selection Sort"
+        description: "From the comparison presented here, one might conclude that selection sort should never be used. It does not adapt to the data in any way (notice that the four animations above run in lockstep), so its runtime is always quadratic. However, selection sort has the property of minimizing the number of swaps. In applications where the cost of swapping items is high, selection sort very well may be the algorithm of choice."
       shell_sort:
         title: "Shell sort"
-        description: "The worse-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ..., which is what is used here, the time complexity is <span class=\"code-inline\">O(n<sup><sup>3</sup>&frasl;<sub>2</sub></sup>)</span>. For other increments, time complexity is known to be <span class=\"code-inline\">O(n<sup><sup>4</sup>&frasl;<sub>3</sub></sup>)</span> and even <span class=\"code-inline\">O(n·lg<sub>2</sub>(n))</span>. Neither tight upper bounds on time complexity nor the best increment sequence are known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adapation is not as dramatic because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are <span class=\"code-inline\">log<sub>3</sub>(n)</span> increments, so the time complexity for nearly sorted data is <span class=\"code-inline\">O(n·log<sub>3</sub>(n))</span>. Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithms for some applications when the data to be sorted is not very large."
+        description: "The worst-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ..., which is what is used here, the time complexity is <span class=\"code-inline\">O(n<sup><sup>3</sup>&frasl;<sub>2</sub></sup>)</span>. For other increments, time complexity is known to be <span class=\"code-inline\">O(n<sup><sup>4</sup>&frasl;<sub>3</sub></sup>)</span> and even <span class=\"code-inline\">O(n·lg<sub>2</sub>(n))</span>. Neither tight upper bounds on time complexity nor the best increment sequence is known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adaptation is not as dramatic because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are <span class=\"code-inline\">log<sub>3</sub>(n)</span> increments, so the time complexity for nearly sorted data is <span class=\"code-inline\">O(n·log<sub>3</sub>(n))</span>. Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithms for some applications when the data to be sorted is not very large."
       heap_sort:
-        title: "Heap sort"
-        description: "Heap sort is simple to implement, performs an <span class=\"code-inline\">O(n·lg(n))</span> in-place sort, but is not stable. The first loop, the <span class=\"code-inline\">Θ(n)</span> “heapify” phase, puts the array into heap order. The second loop, the <span class=\"code-inline\">O(n·lg(n))</span> “sortdown” phase, repeatedly extracts the maximum and restores heap order. The sink function is written recursively for clarity. Thus, as shown, the code requires <span class=\"code-inline\">Θ(lg(n))</span> space for the recursive call stack. However, the tail recursion in sink() is easily converted to iteration, which yields the <span class=\"code-inline\">O(1)</span> space bound. Both phases are slightly adaptive, though not in any particularly useful manner. In the nearly sorted case, the heapify phase destroys the original order. In the reversed case, the heapify phase is as fast as possible since the array starts in heap order, but then the sortdown phase is typical. In the few unique keys case, there is some speedup but not as much as in shell sort or 3-way quicksort."
+        title: "Heapsort"
+        description: "Heapsort is simple to implement, performs an <span class=\"code-inline\">O(n·lg(n))</span> in-place sort, but is not stable. The first loop, the <span class=\"code-inline\">Θ(n)</span> “heapify” phase, puts the array into heap order. The second loop, the <span class=\"code-inline\">O(n·lg(n))</span> “sort down” phase, repeatedly extracts the maximum and restores heap order. The sink function is written recursively for clarity. Thus, as shown, the code requires <span class=\"code-inline\">Θ(lg(n))</span> space for the recursive call stack. However, the tail recursion in sink() is easily converted to iteration, which yields the <span class=\"code-inline\">O(1)</span> space bound. Both phases are slightly adaptive, though not in any particularly useful manner. In the nearly sorted case, the heapify phase destroys the original order. In the reversed case, the heapify phase is as fast as possible since the array starts in heap order, but then the sort down phase is typical. In the few unique keys case, there is some speedup but not as much as in shell sort or 3-way quicksort."
       merge_sort:
-        title: "Merge sort"
+        title: "Mergesort"
         description: "Merge sort is very predictable. It makes between <span class=\"code-inline\">0.5lg(n)</span> and <span class=\"code-inline\">lg(n)</span> comparisons per element, and between <span class=\"code-inline\">lg(n)</span> and <span class=\"code-inline\">1.5lg(n)</span> swaps per element. The minima are achieved for already sorted data; the maxima are achieved, on average, for random data. If using <span class=\"code-inline\">Θ(n)</span> extra space is of no concern, then merge sort is an excellent choice: It is simple to implement, and it is the only stable <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithm. Note that when sorting linked lists, merge sort requires only <span class=\"code-inline\">Θ(lg(n)</span> extra space (for recursion). Merge sort is the algorithm of choice for a variety of situations: when stability is required, when sorting linked lists, and when random access is much more expensive than sequential access (for example, external sorting on tape). There do exist linear time in-place merge algorithms for the last step of the algorithm, but they are both expensive and complex. The complexity is justified for applications such as external sorting when <span class=\"code-inline\">Θ(n)</span> extra space is not available."
       quick_sort:
-        title: "Quick sort"
-        description: "When carefully implemented, quick sort is robust and has low overhead. When a stable sort is not needed, quick sort is an excellent general-purpose sort – although the 3-way partitioning version should always be used instead. The 2-way partitioning code shown above is written for clarity rather than optimal performance; it exhibits poor locality, and, critically, exhibits <span class=\"code-inline\">O(n<sup>2</sup>)</span> time when there are few unique keys. A more efficient and robust 2-way partitioning method is given in Quicksort is Optimal by Robert Sedgewick and Jon Bentley. The robust partitioning produces balanced recursion when there are many values equal to the pivot, yielding probabilistic guarantees of <span class=\"code-inline\">O(n·lg(n))</span> time and <span class=\"code-inline\">O(lg(n))</span> space for all inputs. With both sub-sorts performed recursively, quick sort requires <span class=\"code-inline\">O(n)</span> extra space for the recursion stack in the worst case when recursion is not balanced. This is exceedingly unlikely to occur, but it can be avoided by sorting the smaller sub-array recursively first; the second sub-array sort is a tail recursive call, which may be done with iteration instead. With this optimization, the algorithm uses <span class=\"code-inline\">O(lg(n))</span> extra space in the worst case."
+        title: "Quicksort"
+        description: "When carefully implemented, quicksort is robust and has low overhead. When a stable sort is not needed, quicksort is an excellent general-purpose sort – although the 3-way partitioning version should always be used instead. The 2-way partitioning code shown above is written for clarity rather than optimal performance; it exhibits poor locality, and, critically, exhibits <span class=\"code-inline\">O(n<sup>2</sup>)</span> time when there are few unique keys. A more efficient and robust 2-way partitioning method is given in Quicksort is Optimal by Robert Sedgewick and Jon Bentley. The robust partitioning produces balanced recursion when there are many values equal to the pivot, yielding probabilistic guarantees of <span class=\"code-inline\">O(n·lg(n))</span> time and <span class=\"code-inline\">O(lg(n))</span> space for all inputs. With both sub-sorts performed recursively, quick sort requires <span class=\"code-inline\">O(n)</span> extra space for the recursion stack in the worst case when recursion is not balanced. This is exceedingly unlikely to occur, but it can be avoided by sorting the smaller sub-array recursively first; the second sub-array sort is a tail recursive call, which may be done with iteration instead. With this optimization, the algorithm uses <span class=\"code-inline\">O(lg(n))</span> extra space in the worst case."
       other: "Other sorting algorithms"
-      additional: "Additonal reading"
+      additional: "Additional reading"
     searching:
       title: "Searching"
       binary_search:
         title: "Binary search"
         description: "In computer science, binary search, also known as half-interval search or logarithmic search, is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful."
       knuth_moriss_pratt_search:
-        title: "Knuth-Moriss-Pratt search"
+        title: "Knuth-Morris-Pratt search"
         description: "In computer science, the Knuth–Morris–Pratt string searching algorithm (or KMP algorithm) searches for occurrences of a \"word\" W within a main \"text string\" S by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters."
       other:
         title: "Other search algorithms"
@@ -109,7 +103,7 @@ pages:
       description: "The running time performance of the common language runtime is given by a set of axioms which we shall now postulate."
       fetch_store:
         title: "Fetch and store time"
-        description1: "The time required to fetch a reference to an object from memory is aconstant, <span class=\"code-inline\">T_fetch</span>, and the time required to store a reference to an object in memory is a constant, <span class=\"code-inline\">T_store</span"
+        description1: "The time required to fetch a reference to an object from memory is a constant, <span class=\"code-inline\">T_fetch</span>, and the time required to store a reference to an object in memory is a constant, <span class=\"code-inline\">T_store</span"
         description2: "According to Axiom, the assignment statement has running time <span class=\"code-inline\">T_fetch + T_store</span>. That is, the time taken to fetch the object reference from variable x is <span class=\"code-inline\">T_fetch</span> and the time taken to store that object reference in the variable y is <span class=\"code-inline\">T_store</span>."
         description3: "Also has running time <span class=\"code-inline\">T_fetch + T_store</span>. To see why this should be the case, consider that the constant <span class=\"code-inline\">1</span> names a Fixnum object with value one. Therefore, we can expect the cost of fetching the reference to the object named 1 is the same as that of fetching a reference to any other object."
       elementary_operations:
@@ -123,7 +117,7 @@ pages:
         description2: "According to Axiom, the running time of the statement would be <span class=\"code-inline\">T_fetch + 2 * T_store + T_call + T_f(x)</span>, where <span class=\"code-inline\">T_f(x)</span> is the running time of method f for input x. The first of the two stores is due to the passing of the parameter x to the method f; the second arises from the assignment to the variable y."
       calculating:
         title: "Calculation time"
-        description1: "The time required for the address calculation implied by an array subscripting operation, e.g., <span class=\"code-inline\">a[i]</span>, is a constant, <span class=\"code-inline\">T_[]</span>. This time does not include the time to compute the subscript expression, nor does it include the time to access the array element."
+        description1: "The time required for the address calculation implied by an array subscription operation, e.g., <span class=\"code-inline\">a[i]</span>, is a constant, <span class=\"code-inline\">T_[]</span>. This time does not include the time to compute the subscript expression, nor does it include the time to access the array element."
         description2: "This is <span class=\"code-inline\">3 * T_fetch</span>. Three operand fetches are required: the first to fetch a reference to the array object a; the second to fetch a reference to the index object i; and, the third to fetch a reference to the array element <span class=\"code-inline\">a[i]</span>."
       object:
         title: "Object creation time"
@@ -136,12 +130,12 @@ pages:
       title: "Implementation"
       stack:
         title: "Stack"
-        description: "The stack is the sibling of the queue. It mimicks a real-life stack (e.g. of paper). It is FILO (first-in-last-out), so that when items are retrieved from the stack, they are returned in the reverse of the order in which they were added. Again, Ruby Arrays provide a perfect container. As with the Queue, it could also be implemented using a linked list."
+        description: "The stack is the sibling of the queue. It mimics a real-life stack (e.g. of paper). It is FILO (first-in-last-out), so that when items are retrieved from the stack, they are returned in the reverse of the order in which they were added. Again, Ruby Arrays provide a perfect container. As with the Queue, it could also be implemented using a linked list."
         as_array: "Stack as array"
         as_linked_list: "Stack as linked list"
       queue:
         title: "Queue"
-        description: "A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class is worth it to seeethey are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list."
+        description: "A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy but having them named appropriately and contained in a convenience class is worth it to see they are implemented, and because other structures will inherit from this one. An alternate implementation could be done using a linked list."
         as_array: "Queue as array"
         as_linked_list: "Queue as linked list"
       deque:
@@ -199,7 +193,7 @@ pages:
       not_covered:
         title: "Not covered patterns:"
         lazy: "Lazy initialization"
-        multition: "Multiton"
+        multiton: "Multiton"
         pool: "Object pool"
         resource: "Resource acquisition is initialization"   
     structural:
@@ -228,7 +222,7 @@ pages:
         description: "Protection proxy. Are you working on an MNC? If so, we might be well aware of the proxy server that provides us internet by restricting access to some sort of websites like public e-mail, social networking, data storage etc. The management feels that, it is better to block some content and provide only work related web pages. Proxy server does that job. This is a type of proxy design pattern"
       virtual_proxy:
         title: "Virtual proxy"
-        description: "Virtual proxy. In place of a complex or heavy object, use a skeleton representation. When an underlying image is huge in size, just represent it using a virtual proxy object and on demand load the real object. You know that the real object is expensive in terms of instantiation and so without the real need we are not going to use the real object. Until the need arises we will use the virtual proxy."
+        description: "Virtual proxy. In place of a complex or heavy object, use a skeleton representation. When an underlying image is huge in size, just represent it using a virtual proxy object and on-demand load the real object. You know that the real object is expensive in terms of instantiation and so without the real need we are not going to use the real object. Until the need arises we will use the virtual proxy."
       remote_proxy:
         title: "Remote proxy"
         description: "Remote proxy. In distributed object communication, a local object represents a remote object (one that belongs to a different address space). The local object is a proxy for the remote object, and method invocation on the local object results in remote method invocation on the remote object. Think of an ATM implementation, it will hold proxy objects for bank information that exists in the remote server."
@@ -252,7 +246,7 @@ pages:
         description: "In computer programming, the interpreter pattern is a design pattern that specifies how to evaluate sentences in a language. The basic idea is to have a class for each symbol (terminal or nonterminal) in a specialized computer language. The syntax tree of a sentence in the language is an instance of the composite pattern and is used to evaluate (interpret) the sentence for a client."
       iterator:
         title: "Iterator pattern"
-        description: "The iterator design pattern provides sequential access to elements within a container without exposing how the container actually represents the elements. The iterator can be thought of as a moveable pointer that allows access to elements encapsulated within a container."
+        description: "The iterator design pattern provides sequential access to elements within a container without exposing how the container actually represents the elements. The iterator can be thought of as a movable pointer that allows access to elements encapsulated within a container."
       external_iterator:
         title: "External iterator pattern"
         description: "External iterator: The iteration logic is contained in a separate class. The iteration class can be generalized to handle multiple object types as long as they allow indexing. It require the additional class to do the actual iterating, but they do allow for greater flexibility because you can control the iteration, which elements are iterated over and in what order."
@@ -263,8 +257,8 @@ pages:
         title: "Mediator pattern"
         description: "Usually a program is made up of a large number of classes. So the logic and computation is distributed among these classes. However, as more classes are developed in a program, especially during maintenance and / or refactoring, the problem of communication between these classes may become more complex. This makes the program harder to read and maintain. Furthermore, it can become difficult to change the program, since any change may affect code in several other classes. With the mediator pattern, communication between objects is encapsulated with a mediator object. Objects no longer communicate directly with each other, but instead communicate through the mediator. This reduces the dependencies between communicating objects, thereby lowering the coupling."
       momento:
-        title: "Memento pattern"
-        description: "The memento pattern is implemented with three objects: the originator, a caretaker and a memento. The originator is some object that has an internal state. The caretaker is going to do something to the originator, but wants to be able to undo the change. The caretaker first asks the originator for a memento object. Then it does whatever operation (or sequence of operations) it was going to do. To roll back to the state before the operations, it returns the memento object to the originator. The memento object itself is an opaque object (one which the caretaker cannot, or should not, change). When using this pattern, care should be taken if the originator may change other objects or resources - the memento pattern operates on a single object."
+        title: "Momento pattern"
+        description: "The momento pattern is implemented with three objects: the originator, a caretaker and a momento. The originator is some object that has an internal state. The caretaker is going to do something to the originator, but wants to be able to undo the change. The caretaker first asks the originator for a momento object. Then it does whatever operation (or sequence of operations) it was going to do. To roll back to the state before the operations, it returns the momento object to the originator. The momento object itself is an opaque object (one which the caretaker cannot, or should not, change). When using this pattern, care should be taken if the originator may change other objects or resources - the momento pattern operates on a single object."
       observer:
         title: "Observer pattern"
         description: "The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods. It is mainly used to implement distributed event handling systems. The Observer pattern is also a key part in the familiar model–view–controller (MVC) architectural pattern. The observer pattern is implemented in numerous programming libraries and systems, including almost all GUI toolkits."
@@ -295,14 +289,14 @@ pages:
       recursion: "Recursion: looping by calling a function from within itself. When you don’t have access to mutable data, recursion is used to build up and chain data construction. This is because looping is not a functional concept, as it requires variables to be passed around to store the state of the loop at a given time."
       lazy: "Lazy-evaluation, or delayed-evaluation: delaying processing of values until the moment when it is actually needed. If, as an example, you have some code that generated list of Fibonacci numbers with lazy-evaluation enabled, this would not actually be processed and calculated until one of the values in the result was required by another function, such as puts."
     pure_functions:
-      title: "Pure funtions"
+      title: "Pure functions"
       description: "You can see that this function computes the result only using its arguments."
     closures:
       title: "Closures"
       description: "Lambda's also enforce a closure and so are able to keep their context across objects."
     applying:
-      title: "Partial applying and curryng"
-      description: "Let’s first understand what these two different applications of functions are. Partial function aplication is calling a function with some number of arguments, in order to get a function back that will take that many less arguments. Currying is taking a function that takes n arguments, and splitting it into n functions that take one argument."
+      title: "Partial applying and carrying"
+      description: "Let’s first understand what these two different applications of functions are. Partial function application is calling a function with some number of arguments, in order to get a function back that will take that many fewer arguments. Currying is taking a function that takes n arguments, and splitting it into n functions that take one argument."
       proc: "In order to give you a clearer idea of what each of these two things will do a function, let’s take an example Proc."
       partial: "Partial application of this function would return, if we passed in the first two arguments, the following nested Procs."
       curry: "<span class=\"code-inline\">.curry</span> returns a curried proc. If the optional arity argument is given, it determines the number of arguments. A curried proc receives some arguments. If a sufficient number of arguments are supplied, it passes the supplied arguments to the original proc and returns the result. Otherwise, returns another curried proc that takes the rest of arguments."
@@ -310,7 +304,7 @@ pages:
     title: "Gotchas"
     description1: "Most Ruby on Rails beginners get excited by the framework and start crafting applications without any knowledge of the language. And that’s the magic of RoR."
     description2: "At some point things start to get serious. Some take time and effort to explore dirty secrets of Ruby on Rails, while others gloss over and become senior developers with almost zero knowledge of the language."
-    description3: "Anyway, sooner or later, beginners or experienced programmers, we all run into so - called Ruby Gotchas — those small language subtleties that hide from our sight for hours of hardcore debugging."
+    description3: "Anyway, sooner or later, beginners or experienced programmers, we all run into so-called Ruby Gotchas — those small language subtleties that hide from our site for hours of hardcore debugging."
     description4: "Here is a list of popular Ruby gotchas and curiosities that developers should be aware of. For each case, there’s an example of confusing and/or error-prone code."
     description5: "They come together with good practices, that will prevent you from making simple (but difficult to find) mistakes and simplify your (and your code maintainer’s) life."
     surprising:
@@ -321,7 +315,7 @@ pages:
       description: "String interpolation (including special chars like <span class=\"code-inline\">\\n</span>) fails with <span class=\"code-inline\">'single'</span> quotes - it requires <span class=\"code-inline\">\"double\"</span> quotes. Just like in most languages with string interpolation. To avoid it use doubles whenever practical."
     twue:
       title: "It's twue! It's twue!"
-      description: "Only two things are falsey: <span class=\"code-inline\">false</span> and <span class=\"code-inline\">nil</span>. Everything else is truthy, even <span class=\"code-inline\">0</span> (false in C), <span class=\"code-inline\">\"\"</span> (false in JS), <span class=\"code-inline\">[]</span>, etc. Trips up people from C, JS, etc. where some of these are false."
+      description: "Only two things are false: <span class=\"code-inline\">false</span> and <span class=\"code-inline\">nil</span>. Everything else is truthy, even <span class=\"code-inline\">0</span> (false in C), <span class=\"code-inline\">\"\"</span> (false in JS), <span class=\"code-inline\">[]</span>, etc. Trips up people from C, JS, etc. where some of these are false."
     symbols_and_strings:
       title: "Hang him in effigy or String him up, symbolically."
       description: "<span class=\"code-inline\">Symbol != String</span>. Even if the same when printed. Remember which one to use for args. Ideally, take either, and use what a method expects: \"Be liberal in what you accept, and conservative in what you send.\" Postel's Law."
@@ -329,7 +323,7 @@ pages:
       title: "String... or nothing!"
     constants:
       title: "Constants Aren't"
-      description: "Initial uppercase means constant, in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowingly."
+      description: "Initial uppercase means constant, in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowing."
     equals:
       title: "Some are more equal than others"
       description: "<span class=\"code-inline\">==</span> is the usual same value, <span class=\"code-inline\">.eql?</span> is value and class (1 is Fixnum, 1.0 is Float), <span class=\"code-inline\">.equal?</span> is same object. It's actually much hairier." 
@@ -347,48 +341,48 @@ pages:
         <br/>
         - No parens, no problem.
         <br/>
-        - Parens w/o space, OK.
+        - Parents w/o space, OK.
         <br/>
         - Parens and space, NO!
-      methods: "<span class=\"code-inline\">method /num</span> is an unended regex or string! Ruby thinks you are giving an argument to method. General principle: use BALANCED whitespace; both sides or neither."
+      methods: "<span class=\"code-inline\">method /num</span> is an unended regex or string! Ruby thinks you are giving an argument to the method. General principle: use BALANCED whitespace; both sides or neither."
       arguments: "<span class=\"code-inline\">one -2</span> makes Ruby think you are giving an argument <span class=\"code-inline\">-2</span> to method one. Same for <span class=\"code-inline\">+2</span> or even <span class=\"code-inline\">*2</span>. Again: use BALANCED whitespace, both sides or neither."
-      stubby: "\"Stabby\" lambdas (1.9+) Parentheses optional Space before after args without parens, OK. Space after parens, OK. Again, space before parens, NO! UPDATE: Fixed in 2.0!"
+      stubby: "\" Stabby\" lambdas (1.9+) Parentheses optional Space before after args without parents, OK. Space after parents, OK. Again, space before parents, NO! UPDATE: Fixed in 2.0!"
     onto:
       title: "Ang onto yer @!"
       description: "Naked value becomes a temporary local variable! Solution: remember the <span class=\"code-inline\">@!</span> (Or \"self.\". Or use <span class=\"code-inline\">attr_writer,  attr_accessor</span>.) Gets people from Java / C++, not so much Python (which needs \"self.\" too). \"You keep on using that variable. I don't think it means what you think it means.\". Not Inigo Montoya."
     variables:
       title: "Look out, it’s an @@!"
-      description: "Look oWhat the fillinig the blank? We didn't change Parent’s <span class=\"code-inline\">@@value</span> before checking it, nor Child’s at all! Or did we? <span class=\"code-inline\">@@variables</span> are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s <span class=\"code-inline\">@@value</span> changed Parent’s, and inc’ing Parent’s changed Child’s.ut, it’s an @@!" 
+      description: "Look what the filling the blank? We didn't change Parent’s <span class=\"code-inline\">@@value</span> before checking it, nor Child’s at all! Or did we? <span class=\"code-inline\">@@variables</span> are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s <span class=\"code-inline\">@@value</span> changed Parent’s, and including Parent’s changed Child’s.ut, it’s an @@!" 
     initialize:
       title: "With init(ialize) or without it"
-      description: "Parent's initialize runs automagically only if child has none. Else, parent's must be called to run."
+      description: "Parent's initialize runs automagically only if a child has none. Else, parent's must be called to run."
     superman:
       title: "Superman vs. the Invisible Man"
-      description: "<span class=\"code-inline\">super</span> with no arg list sends what caller got <span class=\"code-inline\">super</span> with explicit args sends those args to send NO args, use empty parens: <span class=\"code-inline\">super()</span>."
+      description: "<span class=\"code-inline\">super</span> with no-arg list sends what caller got <span class=\"code-inline\">super</span> with explicit args sends those args to send NO args, use empty parens: <span class=\"code-inline\">super()</span>."
     regexp:
       title: "When will it end? (Or start?)"
       description: "In standard regexps: <span class=\"code-inlne\">^</span> is start and <span class=\"code-inline\">$</span> is end of the whole string. Ruby’s regexes default to multiline, so: <span class=\"code-inline\">^</span> is start and <span class=\"code-inline\">$</span> is end of any line! <span class=\"code-inline\">\\A</span> is start and <span class=\"code-inline\">\\Z</span> is end of the whole string. (Or \\z to include any newline… which is another gotcha!)"
     any:
       title: "getting .any?"
-      description: "<span class=\"code-inline\">.any?</span> does not mean \"any elements?\"! With block: \"do any make the block true?\". Without: \"are any truthy?\" Has implicit block: <span class=\"code-inline\">{ |element| element }</span>."
+      description: "<span class=\"code-inline\">.any?</span> does not mean \"any elements?\"! With block: \"do any make the block true?\". Without: \" are any truthy?\" Has implicit block: <span class=\"code-inline\">{ |element| element }</span>."
     undef:
       title: "(Un)Def Leppard"
-      description: "Variables declared in blocks passed to iterators (e.g., times or each) are undefined at the top of each iteration! Iterators call the block repeatedly, so vars are out of scope again after each call. Built-in looping constructs (e.g., while or for) are OK. (Or declare vars before block.)"
+      description: "Variables declared in blocks passed to iterators (e.g., times or each) are undefined at the top of each iteration! Iterators call the block repeatedly, so vars are out of scope again after each call. Built-in looping constructs (e.g., while or for) are OK. (Or declare vars before the block.)"
     freeze:
       title: "Freeze (Ar)ray"
       description: "Freezing an array (or a hash) freezes it, not the items it contains. Strings can be modified in place. This way, you can modify a given slot in a frozen Array of Strings."
     one_is_one:
       title: "1 is 1 … and ever more shall be so!"
-      description: "Changing Fixnum to new value means new object. They can't be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum's <span class=\"code-inline\">object_id</span> is <span class=\"code-inline\">value * 2 + 1</span>"
+      description: "Changing Fixnum to new value means a new object. They can't be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum's <span class=\"code-inline\">object_id</span> is <span class=\"code-inline\">value * 2 + 1</span>"
     bang:
       title: "(to! || ! to!) == ?"
-      description: "Bang marks method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!"
+      description: "Bang marks the method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!"
     array:
       title: "An Array of New Gotchas"
-      description: "Default value given as object is same object for each slot! Mutating one mutates default for all. Initial value given as block gets evaluated separately for each slot. Use this to create new vars for each."
+      description: "Default value given as object is the same object for each slot! Mutating one mutates default for all. Initial value given as block gets evaluated separately for each slot. Use this to create new vars for each."
     hash:
       title: "Making a Hash of it"
-      description: "Mostly same problem (and solution) as Arrays. MORE GOTCHAS: creates new object on any access to empty slot! May create excessive number of new objects; ruins checking \"real\" contents or count (nil-checking, .size, etc.)."
+      description: "Mostly the same problem (and solution) as Arrays. MORE GOTCHAS: creates a new object on any access to empty slot! May create an excessive number of new objects; ruins checking \"real\" contents or count (nil-checking, .size, etc.)."
     rescue:
       title: "Rescue Me, Throw a Line, I'll Try to Catch It!"
       description: "In Ruby, throw and catch are NOT for exceptions! They are advanced flow control, to exit deep nesting. Ruby uses raise and rescue for exceptions."
@@ -398,7 +392,7 @@ pages:
     missing:
       title: "Need to coordinate method_missing and respond_to_missing?"
       description: "When overriding <span class=\"code-inline\">method_missing</span>, remember to override <span class=\"code-inline\">respond_to_missing?</span> as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing?. If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:"
-      respond_to: "Lots of code (gems or your own) relies on respond_to? (for a good reason). You need to patch respond_to_missing? as well:"
+      respond_to: "Lots of code (gems or your own) relies on respond_to? (for a good reason). Do you need to patch respond_to_missing? as well:"
     exception:
       title: "rescue from a StandardError, not an Exception"
       description: "Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:"
@@ -410,10 +404,10 @@ pages:
       description: "The general convention is to use <span class=\"code-inline\">do .. end</span> for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that <span class=\"code-inline\">{}</span> has a higher precedence than <span class=\"code-inline\">do .. end</span>, so keep that in mind when deciding what you want to use."
     module:
       title: "class Foo::Bar, defined outside Module Foo, won’t see inside Foo"
-      description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found there it will go back through each containing \"gateway\" and search the scope there."
+      description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found where it will go back through each containing \"gateway\" and search the scope there."
     credits: "Code and articles were taken from resources:"
   meta_programming:
-    title: "Meta programming"
+    title: "Metaprogramming"
     description: "Metaprogramming is the writing of computer programs that write or manipulate other programs (or themselves) as their data, or that do part of the work at compile time that would otherwise be done at runtime. In many cases, this allows programmers to get more done in the same amount of time as they would take to write all the code manually, or it gives programs greater flexibility to efficiently handle new situations without recompilation. Metaprogramming is writing code that writes code during runtime to make your life easier."
     dynamic_dispatch:
       title: "Dynamic Dispatch"
@@ -427,26 +421,26 @@ pages:
     dynamic_proxies:
       title: "Dynamic Proxies"
       description: "For example, You can provide imaginary methods by utilising <span class=\"code-inline\">method_missing</span> to parse the incoming message (e.g. <span class=\"code-inline\">get_name</span>, <span class=\"code-inline\">get_age</span>) and to delegate off to another method such as <span class=\"code-inline\">get(:data_type)</span> where <span class=\"code-inline\">:data_type</span> is <span class=\"code-inline\">:name</span> or <span class=\"code-inline\">:age</span>."
-      more: "If (after analysis) you discover a performance issue with using <span class=\"code-inline\">method_missing</span> you can utilise the \"Dynamic Method\" technique to create a real method after the message has been received by `method_missing` the first time."
+      more: "If (after analysis) you discover a performance issue with using <span class=\"code-inline\">method_missing</span> you can utilize the \"Dynamic Method\" technique to create a real method after the message has been received by `method_missing` the first time."
   solid_principles:
     good: "Good!"
     bad: "Bad!"
     title: "Solid principles"
-    description: "In computer programming, SOLID (single responsibility, open-closed, Liskov substitution, interface segregation and dependency inversion) is a mnemonic acronym introduced by Michael Feathers for the \"First Five Principles\" named by Robert C. Martin in the early 2000s that stands for five basic principles of object-oriented programming and design. The intention is that these principles, when applied together, will make it more likely that a programmer will create a system that is easy to maintain and extend over time. The principles of SOLID are guidelines that can be applied while working on software to remove code smells by causing the programmer to refactor the software's source code until it is both legible and extensible. It is part of an overall strategy of agile and Adaptive Software Development."
+    description: "In computer programming, SOLID (single responsibility, Open-closed, Liskov substitution, interface segregation, and dependency inversion) is a mnemonic acronym introduced by Michael Feathers for the \"First Five Principles\" named by Robert C. Martin in the early 2000s that stands for five basic principles of object-oriented programming and design. The intention is that these principles, when applied together, will make it more likely that a programmer will create a system that is easy to maintain and extend over time. The principles of SOLID are guidelines that can be applied while working on software to remove code smells by causing the programmer to refactor the software's source code until it is both legible and extensible. It is part of an overall strategy of agile and Adaptive Software Development."
     single:
       title: "Single Responsibility Principle"
       description: "The Single Responsibility Principle is the most abstract of the bunch. It helps keep classes and methods small and maintainable. In addition to keeping classes small and focused it also makes them easier to understand.An example of this might be adding support for sending an email summary of a specific person’s commissions after marking a deal processed. The fact that we can identify multiple reasons to change signals a violation of the Single Responsibility Principle."
     open_close:
       title: "Open / Closed Principle"
       description: "The Open / Closed Principle states that classes or methods should be open for extension, but closed for modification. This tells us we should strive for modular designs that make it possible for us to change the behavior of the system without making modifications to the classes themselves. This is generally achieved through the use of patterns such as the strategy pattern."
-      after: "With this refactor we’ve made it possible to add new parsers without changing any code. Any additional behavior will only require the addition of a new handler. This makes our FileParser reusable and in many cases will keep us in compliance with the Single Responsibility Principle as well by encouraging us to create smaller more focused classes."
+      after: "With this refactoring we’ve made it possible to add new parsers without changing any code. Any additional behavior will only require the addition of a new handler. This makes our FileParser reusable and in many cases will keep us in compliance with the Single Responsibility Principle as well by encouraging us to create smaller more focused classes."
     liskov:
       title: "Liskov’s Substitution Principle"
       description: "Liskov’s principle tends to be the most difficult to understand. The principle states that you should be able to replace any instances of a parent class with an instance of one of its children without creating any unexpected or incorrect behaviors."
     segregation:
       title: "Dependency Inversion Principle"
-      description: "The principle states that a client should not be forced to depend on methods that it does not use. In this example, there are Computer, Programmer and Technician classes. Both, Programmer and Technician use the Computer in a different way. The programmer uses the computer for typing, but the technician knows how to change the computer hard drive. What Interface Segregation Principle (ISP) enforces is that one class should not depend on methods it does not use. In our case, Programmer is unnecessarily coupled to the Computer#change_hard_drive method because it does not use it, but the state changes that this method enforces can affect the Programmer. Let's refactor the code to obey the LSP."
-      after: "After this refactor the Technician uses a different object from the type ComputerInternals which is isolated from the state of the Computer. The state of the Computer object can be influenced by the Programmer but the changes wont affect the Technician in any way. "
+      description: "The principle states that a client should not be forced to depend on methods that it does not use. In this example, there are Computer, Programmer and Technician classes. Both Programmer and Technician use the Computer in a different way. The programmer uses the computer for typing, but the technician knows how to change the computer hard drive. What Interface Segregation Principle (ISP) enforces is that one class should not depend on methods it does not use. In our case, the Programmer is unnecessarily coupled to the Computer#change_hard_drive method because it does not use it, but the state changes that this method enforces can affect the Programmer. Let's refactor the code to obey the LSP."
+      after: "After this refactor the Technician uses a different object from the type ComputerInternals which is isolated from the state of the Computer. The state of the Computer object can be influenced by the Programmer but the changes won't affect the Technician in any way. "
     di:
       title: "Dependency Inversion Principle"
       description: "The Dependency Inversion Principle has to do with high-level (think business logic) objects not depending on low-level (think database querying and IO) implementation details. This can be achieved with duck typing and the Dependency Inversion Principle. Often this pattern is used to achieve the Open/Closed Principle that we discussed above. In fact, we can even reuse that same example as a demonstration of this principle. Now there is a formatter class, but I've hardcoded it on the Report class, thus creating a dependency from the Report to the JSONFormatter. Since the Report is a more abstract (high-level) concept than the JSONFormatter, we're effectively breaking the DIP."
@@ -454,39 +448,39 @@ pages:
   threads:
     example: "Example"
     title: "Threads"
-    description: "Note about parallelism and concurrency: The primary difference between using processes versus threads is the way that memory is handled. At a high level, processes copy memory, while threads share memory. This makes process spawning slower than thread spawning, and leads to processes consuming more resources once running. Overall, threads incur less overhead than processes. This Thread API is a Ruby API. I've hinted that the different Ruby implementations have different underlying threading behaviours."
+    description: "Note about parallelism and concurrency: The primary difference between using processes versus threads is the way that memory is handled. At a high level, processes copy memory, while threads share memory. This makes the process spawning slower than thread spawning and leads to processes consuming more resources once running. Overall, threads incur less overhead than processes. This Thread API is a Ruby API. I've hinted that the different Ruby implementations have different underlying threading behaviors."
     green:
       title: "Green Threads"
-      description: "Ruby 1.9 replaced green threads with native threads. However, the GIL is still preventing parallelism. That being said, concurrency has been improved through better scheduling. The new scheduler makes context-switch decisions more efficient, by essentially moving them to a separate native thread, known as the timer thread."
+      description: "Ruby 1.9 replaced green threads with native threads. However, the GIL is still preventing parallelism. That being said, concurrency has been improved through better scheduling. The new schedule makes context-switch decisions more efficient, by essentially moving them to a separate native thread, known as the timer thread."
     gil:
       title: "GIL - Global Interpreter Lock"
-      description: "MRI has a global interpreter lock (GIL). It's a lock around the execution of Ruby code. This means that in a multi-threaded context, only one thread can execute Ruby code at any one time.So if you have 8 threads busily working on a 8-core machine, only one thread and one core will be busy at any given time. The GIL exists to protect Ruby internals from race conditions that could corrupt data. There are caveats and optimizations, but this is the gist."
-      example: "This simple fact is what makes threads so powerful, and also what makes them difficult to work with. I've already given you an idea of why threads are good; here's a simple program to illustrate their difficulty. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in array. Note that different ruby can show different result. GIL exist only in MRI ruby."
+      description: "MRI has a global interpreter lock (GIL). It's a lock around the execution of Ruby code. This means that in a multi-threaded context, only one thread can execute Ruby code at any one time.So if you have 8 threads busily working on an 8-core machine, only one thread and one core will be busy at any given time. The GIL exists to protect Ruby internals from race conditions that could corrupt data. There are caveats and optimizations, but this is the gist."
+      example: "This simple fact is what makes threads so powerful, and also what makes them difficult to work with. I've already given you an idea of why threads are good; here's a simple program to illustrate their difficulty. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in array. Note that different ruby can show a different result. GIL exist only in MRI ruby."
     mutex:
       title: "Mutex - Mutual Execution"
-      description: "Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. In other words, they help bring some order, and some guarantees, to the world of multi-threaded chaos.The name 'mutex' is shorthand for 'mutual exclusion.' If you wrap some section of your code with a mutex, you guarantee that no two threads can enter that section at the same time. Mutexes provide a mechanism for multiply threads to synchronize access to a critical portion of code. It helps bring some order and some guaranty to the world of multi-threaded chaos."
-      example: "In this program, since any thread has to lock the mutex before it can push to the Array, there's a guarantee that no two threads will be performing this operation at the same time. In other words, this operation can no longer be interrupted before it's completed. Once one thread begins pushing to the Array, no other threads will be able to enter that portion of code until the first thread is finished. This operation is now thread-safe. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in array. Now all are same, because of mutex. The mutex sets up same boundaries for the thread. The first thread that hits this bit of code will lock the mutex. it then becomes the owner of that mutex. Until the owning thread unlocks the mutex, no other thread can lock it."
+      description: "Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. In other words, they help bring some order, and some guarantees, to the world of multi-threaded chaos.The name 'mutex' is shorthand for 'mutual exclusion.' If you wrap some section of your code with a mutex, you guarantee that no two threads can enter that section at the same time. Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. It helps bring some order and some guaranty to the world of multi-threaded chaos."
+      example: "In this program, since any thread has to lock the mutex before it can push to the Array, there's a guarantee that no two threads will be performing this operation at the same time. In other words, this operation can no longer be interrupted before it's completed. Once one thread begins pushing to the Array, no other threads will be able to enter that portion of code until the first thread is finished. This operation is now thread-safe. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in array. Now all are same, because of the mutex. The mutex sets up the same boundaries for the thread. The first thread that hits this bit of code will lock the mutex. it then becomes the owner of that mutex. Until the owning thread unlocks the mutex, no other thread can lock it."
     fibers:
       title: "Fibers"
-      description: "Fibers are primitives for implementing light weight cooperative concurrency in Ruby. Basically they are a means of creating code blocks that can be paused and resumed, much like threads. The main difference is that they are never preempted and that the scheduling must be done by the programmer and not the VM. As opposed to other stackless light weight concurrency models, each fiber comes with a small 4KB stack. This enables the fiber to be paused from deeply nested function calls within the fiber block."
+      description: "Fibers are primitives for implementing light weight cooperative concurrency in Ruby. Basically, they are a means of creating code blocks that can be paused and resumed, much like threads. The main difference is that they are never preempted and that the scheduling must be done by the programmer and not the VM. As opposed to other stackless lightweight concurrency models, each fiber comes with a small 4KB stack. This enables the fiber to be paused from deeply nested function calls within the fiber block."
     rails:
       title: "Rails - Thread-safety in the framework."
       description: "The problem with this is that there is no simple way to say with absolute certainty whether an app as a whole is thread-safe. "
       global_variables: "Global variables are global. This means that they are shared between threads. If you weren’t convinced about not using global variables by now, here’s another reason to never touch them. If you really want to share something globally across an app, you are more than likely better served by a constant (but see below), anyway."
       class_variables: "Class variables. For the purpose of a discussion about threads, class variables are not much different from global variables. They are shared across threads just the same way.The problem isn’t so much about using class variables, but about mutating them. And if you are not going to mutate a class variable, in many cases a constant is again a better choice."
       instance_variables: "Class instance variables. But maybe you’ve read that you should always use class instance variables instead of class variables in Ruby. Well, maybe you should, but they are just as problematic for threaded programs as class variables."
-      memoization: "Memoization by itself is not a thread safety issue. It is often used to store data in class variables or class instance variables (see the previous points). The <span class=\"code-inline\">||=</span> operator is in fact two operations, so there is a potential context switch happening in the middle of it, causing a race condition between threads. So even though you would only be using instance variables, you might end up with race conditions with memoization. Don’t memoize to class variables or class instance variables. If you need to memoize something on the class level, use thread local variables (<span class=\"code-inline\">Thread.current[:baz]</span>) instead. Be aware, though, that it is still kind of a global variable."
+      memoization: "Memoization by itself is not a thread safety issue. It is often used to store data in class variables or class instance variables (see the previous points). The <span class=\"code-inline\">||=</span> operator is, in fact, two operations, so there is a potential context switch happening in the middle of it, causing a race condition between threads. So even though you would only be using instance variables, you might end up with race conditions with memoization. Don’t memoize to class variables or class instance variables. If you need to memoize something on the class level, use thread local variables (<span class=\"code-inline\">Thread.current[:baz]</span>) instead. Be aware, though, that it is still kind of a global variable."
     config:
       title: "config.threadsafe!: what does it do?"
       description: "Calling this method sets four options in our app configuration. Let’s walk through each option and talk about what it does."
       frameworks: "Preloading Frameworks: The first option @preload_frameworks does pretty much what it says, it forces the Rails framework to be eagerly loaded on boot. When this option is not enabled, framework classes are loaded lazily via autoload. In multi-threaded environments, the framework needs to be eagerly loaded before any threads are created because of thread safety issues with autoload. We know that loading the framework isn’t threadsafe, so the strategy is to load it all up before any threads are ready to handle requests."
       cache: "Caching classes: The @cache_classes option controls whether or not classes get reloaded. Remember when you’re doing “TDD” in your application? You modify a controller, then reload the page to “test” it and see that things changed? Ya, that’s what this option controls. When this option is false, as in development, your classes will be reloaded when they are modified. Without this option, we wouldn’t be able to do our “F5DD” (yes, that’s F5 Driven Development). In production, we know that classes aren’t going to be modified on the fly, so doing the work to figure out whether or not to reload classes is just wasting resources, so it makes sense to never reload class definitions."
-      di: "Dependency loading: This option, @dependency_loading controls code loading when missing constants are encountered. For example, a controller references the User model, but the User constant isn’t defined. In that case, if @dependency_loading is true, Rails will find the file that contains the User constant, and load that file. We already talked about how code loading is not thread safe, so the idea here is that we should load the framework, then load all user code, then disable dependency loading. Once dependency loading is disabled, framework code and app code should be loaded, and any missing constants will just raise an exception rather than attempt to load code. We justify disabling this option in production because (as was mentioned earlier) code loading is not threadsafe, and we expect to have all code loaded before any threads can handle requests."
+      di: "Dependency loading: This option, @dependency_loading controls code loading when missing constants are encountered. For example, a controller references the User model, but the User constant isn’t defined. In that case, if @dependency_loading is true, Rails will find the file that contains the User constant and load that file. We already talked about how code loading is not thread safe, so the idea here is that we should load the framework, then load all user code, then disable dependency loading. Once dependency loading is disabled, framework code and app code should be loaded, and any missing constants will just raise an exception rather than attempt to load code. We justify disabling this option in production because (as was mentioned earlier) code loading is not threadsafe, and we expect to have all code loaded before any threads can handle requests."
       concurrency: "Allowing concurrency: @allow_concurrency option controls whether or not the Rack::Lock middleware is used in your stack. Rack::Lock wraps a mutex around your request. The idea being that if you have code that is not threadsafe, this mutex will prevent multiple threads from executing your controller code at the same time. When threadsafe! is set, this middleware is removed, and controller code can be executed in parallel."
     credits: "Code and articles were taken from resources:"
   ruby_meister:
     title: "Become Ruby Meister"
-    description: "In this talk we'll examine the long journey from being a Ruby novice to achieving true Ruby mastery and will try to shorten it a bit for you by sharing some important insight. A Master Rubyist has a great theoretical foundation, relies on an extensive toolbox, has deep understanding of the core values and principles of Ruby and is always honing their skills. Perhaps you're telling yourself \"Wow, this is pretty vague!\", but if you attend this session I promise that you'll be enlightened, amused and you'll totally enjoy it! Sounds good? The great books will be part of the resources I'd suggest to people to level-up their skills."
+    description: "In this talk, we'll examine the long journey from being a Ruby novice to achieving true Ruby mastery and will try to shorten it a bit for you by sharing some important insight. A Master Rubyist has a great theoretical foundation, relies on an extensive toolbox, has a deep understanding of the core values and principles of Ruby and is always honing their skills. Perhaps you're telling yourself \" Wow, this is pretty vague!\", but if you attend this session I promise that you'll be enlightened, amused and you'll totally enjoy it! Sounds good? The great books will be part of the resources I'd suggest to people to level-up their skills."
     video: "The Long Journey to Ruby Mastery by Bozhidar Batsov."
     computer_science_fundamentals:
       title: "Computer Science Fundamentals"
@@ -505,7 +499,7 @@ pages:
           link: "https://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"
         - name: "sicp"
           title: "Structure and Interpretation of Computer Programs"
-          description: "Structure and Interpretation of Computer Programs has had a dramatic impact on computer science curricula over the past decade. This long-awaited revision contains changes throughout the text. There are new implementations of most of the major programming systems in the book, including the interpreters and compilers, and the authors have incorporated many small changes that reflect their experience teaching the course at MIT since the first edition was published. A new theme has been introduced that emphasizes the central role played by different approaches to dealing with time in computational models: objects with state, concurrent programming, functional programming and lazy evaluation, and nondeterministic programming."
+          description: "Structure and Interpretation of Computer Programs have had a dramatic impact on computer science curricula over the past decade. This long-awaited revision contains changes throughout the text. There are new implementations of most of the major programming systems in the book, including the interpreters and compilers, and the authors have incorporated many small changes that reflect their experience teaching the course at MIT since the first edition was published. A new theme has been introduced that emphasizes the central role played by different approaches to dealing with time in computational models: objects with state, concurrent programming, functional programming, and lazy evaluation, and nondeterministic programming."
           link: "https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871"
         - name: "design_programms"
           title: "How to Design Programs: An Introduction to Programming and Computing"
@@ -521,11 +515,11 @@ pages:
           link: "https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"
         - name: "compilers"
           title: "Compilers: Principles, Techniques, and Tools (2nd Edition)"
-          description: "Compilers: Principles, Techniques and Tools, known to professors, students, and developers worldwide as the \"Dragon Book,\" is available in a new edition.  Every chapter has been completely revised to reflect developments in software engineering, programming languages, and computer architecture that have occurred since 1986, when the last edition published.  The authors, recognizing that few readers will ever go on to construct a compiler, retain their focus on the broader set of problems faced in software design and software development."
+          description: "Compilers: Principles, Techniques, and Tools, known to professors, students, and developers worldwide as the \"Dragon Book,\" is available in a new edition.  Every chapter has been completely revised to reflect developments in software engineering, programming languages, and computer architecture that have occurred since 1986 when the last edition published.  The authors, recognizing that few readers will ever go on to construct a compiler, retain their focus on the broader set of problems faced in software design and software development."
           link: "https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811"
         - name: "c_lang"
           title: "C Programming Language, 2nd Edition"
-          description: "The authors present the complete guide to ANSI standard C language programming. Written by the developers of C, this new version helps readers keep up with the finalized ANSI standard for C while showing how to take advantage of C's rich set of operators, economy of expression, improved control flow, and data structures. The 2/E has been completely rewritten with additional examples and problem sets to clarify the implementation of difficult language constructs. For years, C programmers have let K&R guide them to building well-structured and efficient programs. Now this same help is available to those working with ANSI compilers. Includes detailed coverage of the C language plus the official C language reference manual for at-a-glance help with syntax notation, declarations, ANSI changes, scope rules, and the list goes on and on."
+          description: "The authors present the complete guide to ANSI standard C language programming. Written by the developers of C, this new version helps readers keep up with the finalized ANSI standard for C while showing how to take advantage of C's rich set of operators, the economy of expression, improved control flow, and data structures. The 2/E has been completely rewritten with additional examples and problem sets to clarify the implementation of difficult language constructs. For years, C programmers have let K&R guide them to building well-structured and efficient programs. Now, this same help is available to those working with ANSI compilers. Includes detailed coverage of the C language plus the official C language reference manual for at-a-glance help with syntax notation, declarations, ANSI changes, scope rules, and the list goes on and on."
           link: "https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628"
     oop:
       title: "Object-oriented programming"
@@ -536,7 +530,7 @@ pages:
           link: "https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627"
         - name: "domain_driven"
           title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
-          description: "This is serious book about domain modeling in software design. Software development society lives from one hype wave to another. OOP, patterns, XP, TDD, CI/CD, BigData, DevOps - this is just to name few. This book is originated from golden age of OOP. The author admits that object oriented paradigm is not the only one available but the bias toward OOP/OOD is obvious (and justifiable). This book tells about how to do the modeling of core software components “the right way”."
+          description: "This is a serious book about domain modeling in software design. Software development society lives from one hype wave to another. OOP, patterns, XP, TDD, CI/CD, BigData, DevOps - this is just to name a few. This book is originated from the golden age of OOP. The author admits that the object-oriented paradigm is not the only one available but the bias toward OOP/OOD is obvious (and justifiable). This book tells about how to do the modeling of core software components “the right way”."
           link: "https://www.amazon.com/Domain-Driven-Tacking-Complexity-Software/dp/8131724468/ref=sr_1_fkmr1_2?s=books&ie=UTF8&qid=1542577469&sr=1-2-fkmr1&keywords=Domain-Driven+Design%3A+Tackling+Complexity+in+the+Heart+of+Software"
     ruby:
       title: "Know you lang"
@@ -551,10 +545,10 @@ pages:
           link: "https://www.amazon.com/Programming-Ruby-Pragmatic-Programmers-Second/dp/0974514055"
         - name: "ruby_programming"
           title: "The Ruby Programming Language: Everything You Need to Know"
-          description: "This book begins with a quick-start tutorial to the language, and then explains the language in detail from the bottom up: from lexical and syntactic structure to datatypes to expressions and statements and on through methods, blocks, lambdas, closures, classes and modules. The book also includes a long and thorough introduction to the rich API of the Ruby platform, demonstrating -- with heavily-commented example code -- Ruby's facilities for text processing, numeric manipulation, collections, input/output, networking, and concurrency. An entire chapter is devoted to Ruby's metaprogramming capabilities."
+          description: "This book begins with a quick-start tutorial to the language, and then explains the language in detail from the bottom up: from lexical and syntactic structure to datatypes to expressions and statements and on through methods, blocks, lambdas, closures, classes, and modules. The book also includes a long and thorough introduction to the rich API of the Ruby platform, demonstrating -- with heavily-commented example code -- Ruby's facilities for text processing, numeric manipulation, collections, input/output, networking, and concurrency. An entire chapter is devoted to Ruby's metaprogramming capabilities."
           link: "https://www.amazon.com/Ruby-Programming-Language-Everything-Need/dp/0596516177"
   interview_questions:
-    title: "Interview quesions"
+    title: "Interview questions"
     description: "This section keeps resources links for reading and interview preparation"
     list:
       - name: "Toptal: How to Hire a Great Ruby Developer"
@@ -574,8 +568,8 @@ pages:
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: "What is Better Docs"
-    description: "This website is web adoptation github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated to chanise language. Better Docs allow you to quickly find a lot best practice that were collected in one repository. Just you this repos like reference or interview preparation resource."
+    description: "This website is web adaptation Github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated into the Chinese language. Better Docs allow you to quickly find a lot best practice that was collected in one repository. Just you this repo like the reference or interview preparation resource."
     oss:
       title: "Thanks to Open Source"
-      description: "Better Docs woke up while working and finding out about bestpractices and knowlage about ruby, an open source engineering for the web development aplications written in Ruby. In spite of the fact that the source code is somewhat obsolete, you may discover helpful to checkout the current test suites."
+      description: "Better Docs woke up while working and finding out about best practices and knowledge about ruby, an open source engineering for the web development applications written in Ruby. In spite of the fact that the source code is somewhat obsolete, you may discover helpful to check out the current test suites."
       thanks: "If Better Docs helped you in any way, think about giving us a Star on <a href=\"https://github.com/howtohireme/ruby.fundamental\">Github</a> (it helps us to reach more developers) or contributing to our projects."
