@@ -744,3 +744,12 @@ body {
     float: right;
   }
 }
+
+.github-buttons {
+  margin-top: 30px;
+  text-align: center;
+
+  > span {
+    margin: 0 30px;
+  }
+}
