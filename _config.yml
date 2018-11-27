@@ -1,35 +1,22 @@
 encoding: utf-8
 
-# Url settings
-baseurl: ""
-# url: "https://betterdocs.org"
-url: "https://betterdocs.herokuapp.com/"
-
+baseurl: ''
+url: 'localhost:4000'
 
 collections:
   pages:
     output: true
     permalink: /:path
 
-# Locales settings
 languages:
   - en
   # - ru
 timezone: Europe/Moscow
-exclude_from_localizations: ["javascript", "images", "css"]
+exclude_from_localizations: ['javascript', 'images', 'css']
 
-# Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
-
-# Yandex, Google
-counters:
-  yandex:
-    metrica: "XXXXXXXX"
-    webmaster: "XXXXXXXXXXXXXXXX"
-  google:
-    analytics: "XX-XXXXXXXXX-X"

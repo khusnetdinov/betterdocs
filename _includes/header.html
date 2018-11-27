@@ -1,10 +1,12 @@
-<!-- Yandex.Metrika counter -->
-<!-- <noscript> -->
-<!-- <div> -->
-<!-- <img src="https://mc.yandex.ru/watch/{{ site.counters.yandex.metrica }}" class= "yandex-metrika-counter" alt="" /> -->
-<!-- </div> -->
-<!-- </noscript> -->
-<!-- /Yandex.Metrika counter -->
+{%- if jekyll.environment == "production" -%}
+  <!-- Yandex.Metrika counter -->
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/{{ site.counters.yandex.metrica }}" class= "yandex-metrika-counter" alt="" />
+    </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+{%- endif -%}
 
 <!-- <nav class="nav"> -->
 <!-- <a class="item" href="{{ "/" }}"> -->
