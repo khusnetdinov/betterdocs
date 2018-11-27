@@ -1,3 +1,21 @@
 encoding: utf-8
 
 url: 'https://betterdocs.herokuapp.com/'
+
+collections:
+  pages:
+    output: true
+    permalink: /:path
+
+languages:
+  - en
+  # - ru
+timezone: Europe/Moscow
+exclude_from_localizations: ['javascript', 'images', 'css']
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-multiple-languages-plugin
+  - jekyll-sitemap
