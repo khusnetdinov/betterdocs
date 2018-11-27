@@ -1,7 +1,6 @@
 encoding: utf-8
 
 baseurl: ''
-url: 'localhost:4000'
 
 collections:
   pages:
