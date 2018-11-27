@@ -2,14 +2,9 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-{% include sponsors/300x600.html %}
-
 <div class="content">
-  {% include github.html %}
-
   <article>
-    <h1>{% t pages.gotchas.title %}</h1>
+    <h1 class="post-title">{% t pages.gotchas.title %}</h1>
     <p>{% t pages.gotchas.description1 %}</p>
     <p>{% t pages.gotchas.description2 %}</p>
     <p>{% t pages.gotchas.description3 %}</p>
@@ -18,7 +13,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.surprising.title %}</h3>
+    <h3 id="surprising">{% t pages.gotchas.surprising.title %}</h3>
     <p>{% t pages.gotchas.surprising.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.surprising.title %}</p>
@@ -49,7 +44,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.quotes.title %}</h3>
+    <h3 id="quotes">{% t pages.gotchas.quotes.title %}</h3>
     <p>{% t pages.gotchas.quotes.description  %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.quotes.title %}</p>
@@ -69,7 +64,7 @@ layout: default
 
 
   <article>
-    <h3>{% t pages.gotchas.twue.title %}</h3>
+    <h3 id="twue">{% t pages.gotchas.twue.title %}</h3>
     <p>{% t pages.gotchas.twue.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.twue.title %}</p>
@@ -95,7 +90,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.symbols_and_strings.title %}</h3>
+    <h3 id="symbols_and_strings">{% t pages.gotchas.symbols_and_strings.title %}</h3>
     <p>{% t pages.gotchas.symbols_and_strings.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.symbols_and_strings.title %}</p>
@@ -116,7 +111,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.string_or_nothing.title %}</h3>
+    <h3 id="string_or_nothing">{% t pages.gotchas.string_or_nothing.title %}</h3>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.string_or_nothing.title %}</p>
 {% highlight ruby %}
@@ -153,7 +148,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.constants.title %}</h3>
+    <h3 id="constants">{% t pages.gotchas.constants.title %}</h3>
     <p>{% t pages.gotchas.constants.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.constants.title %}</p>
@@ -184,7 +179,7 @@ layout: default
   {% include sponsors/728x90.html %}
 
   <article>
-    <h3>{% t pages.gotchas.equals.title %}</h3>
+    <h3 id="equals">{% t pages.gotchas.equals.title %}</h3>
     <p>{% t pages.gotchas.equals.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.equals.title %}</p>
@@ -213,7 +208,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.operations.title %}</h3>
+    <h3 id="operations">{% t pages.gotchas.operations.title %}</h3>
     <p>{% t pages.gotchas.operations.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.operations.title %}</p>
@@ -246,7 +241,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.priority.title %}</h3>
+    <h3 id="priority">{% t pages.gotchas.priority.title %}</h3>
     <p>{% t pages.gotchas.priority.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.priority.title %}</p>
@@ -279,7 +274,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.sensitive.title %}</h3>
+    <h3 id="sensitive">{% t pages.gotchas.sensitive.title %}</h3>
     <p>{% t pages.gotchas.sensitive.description %}</p>
     <p class="info">{% t pages.gotchas.sensitive.usage %}</p>
     <div class="code-block">
@@ -366,7 +361,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.onto.title %}</h3>
+    <h3 id="onto">{% t pages.gotchas.onto.title %}</h3>
     <p>{% t pages.gotchas.onto.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.onto.title %}</p>
@@ -398,7 +393,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.variables.title %}</h3>
+    <h3 id="variables">{% t pages.gotchas.variables.title %}</h3>
     <p>{% t pages.gotchas.variables.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.variables.title %}</p>
@@ -432,7 +427,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.initialize.title %}</h3>
+    <h3 id="initialize">{% t pages.gotchas.initialize.title %}</h3>
     <p>{% t pages.gotchas.initialize.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.initialize.title %}</p>
@@ -474,7 +469,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.superman.title %}</h3>
+    <h3 id="superman">{% t pages.gotchas.superman.title %}</h3>
     <p>{% t pages.gotchas.superman.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.superman.title %}</p>
@@ -511,7 +506,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.regexp.title %}</h3>
+    <h3 id="regexp">{% t pages.gotchas.regexp.title %}</h3>
     <p>{% t pages.gotchas.regexp.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.regexp.title %}</p>
@@ -534,7 +529,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.any.title %}</h3>
+    <h3 id="any">{% t pages.gotchas.any.title %}</h3>
     <p>{% t pages.gotchas.any.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.any.title %}</p>
@@ -563,7 +558,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.undef.title %}</h3>
+    <h3 id="undef">{% t pages.gotchas.undef.title %}</h3>
     <p>{% t pages.gotchas.undef.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.undef.title %}</p>
@@ -590,7 +585,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.freeze.title %}</h3>
+    <h3 id="freeze">{% t pages.gotchas.freeze.title %}</h3>
     <p>{% t pages.gotchas.freeze.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.freeze.title %}</p>
@@ -619,7 +614,7 @@ layout: default
   {% include sponsors/728x90.html %}
 
   <article>
-    <h3>{% t pages.gotchas.one_is_one.title %}</h3>
+    <h3 id="one_is_one">{% t pages.gotchas.one_is_one.title %}</h3>
     <p>{% t pages.gotchas.one_is_one.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.one_is_one.title %}</p>
@@ -644,7 +639,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.bang.title %}</h3>
+    <h3 id="bang">{% t pages.gotchas.bang.title %}</h3>
     <p>{% t pages.gotchas.bang.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.bang.title %}</p>
@@ -674,7 +669,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.array.title %}</h3>
+    <h3 id="array">{% t pages.gotchas.array.title %}</h3>
     <p>{% t pages.gotchas.array.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.array.title %}</p>
@@ -700,7 +695,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.hash.title %}</h3>
+    <h3 id="hash">{% t pages.gotchas.hash.title %}</h3>
     <p>{% t pages.gotchas.hash.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.hash.title %}</p>
@@ -729,7 +724,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.rescue.title %}</h3>
+    <h3 id="rescue">{% t pages.gotchas.rescue.title %}</h3>
     <p>{% t pages.gotchas.rescue.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.rescue.title %}</p>
@@ -759,7 +754,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.to_str.title %}</h3>
+    <h3 id="to_str">{% t pages.gotchas.to_str.title %}</h3>
     <p>{% t pages.gotchas.to_str.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.to_str.title %}</p>
@@ -784,7 +779,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.missing.title %}</h3>
+    <h3 id="missing">{% t pages.gotchas.missing.title %}</h3>
     <p>{% t pages.gotchas.missing.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.missing.title %}</p>
@@ -834,7 +829,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.exception.title %}</h3>
+    <h3 id="exception">{% t pages.gotchas.exception.title %}</h3>
     <p>{% t pages.gotchas.exception.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.exception.title %}</p>
@@ -849,7 +844,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.private.title %}</h3>
+    <h3 id="private">{% t pages.gotchas.private.title %}</h3>
     <p>{% t pages.gotchas.private.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.private.title %}</p>
@@ -888,7 +883,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.gotchas.braces.title %}</h3>
+    <h3 id="braces">{% t pages.gotchas.braces.title %}</h3>
     <p>{% t pages.gotchas.braces.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.braces.title %}</p>
@@ -909,7 +904,7 @@ layout: default
   {% include sponsors/728x90.html %}
 
   <article>
-    <h3>{% t pages.gotchas.module.title %}</h3>
+    <h3 id="module">{% t pages.gotchas.module.title %}</h3>
     <p>{% t pages.gotchas.module.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.gotchas.module.title %}</p>

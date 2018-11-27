@@ -2,19 +2,14 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-{% include sponsors/300x600.html %}
-
 <div class="content">
-  {% include github.html %}
-
   <article>
-    <h1>{% t pages.meta_programming.title %}</h1>
+    <h1 class="post-title">{% t pages.meta_programming.title %}</h1>
     <p>{% t pages.meta_programming.description %}</p>
   </article>
 
   <article>
-    <h3>{% t pages.meta_programming.dynamic_dispatch.title %}</h3>
+   <h3 id="dynamic_dispatch">{% t pages.meta_programming.dynamic_dispatch.title %}</h3>
     <p>{% t pages.meta_programming.dynamic_dispatch.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_dispatch.title %}</p>
@@ -30,7 +25,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.meta_programming.dynamic_method.title %}</h3>
+    <h3 id="dynamic_method">{% t pages.meta_programming.dynamic_method.title %}</h3>
     <p>{% t pages.meta_programming.dynamic_method.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_method.title %}</p>
@@ -121,8 +116,6 @@ layout: default
   </article>
 
   <article>
-    <h3></h3>
-    <p></p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_method.title %}</p>
 {% highlight ruby %}
@@ -146,7 +139,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.meta_programming.dynamic_proxies.title %}</h3>
+    <h3 id="dynamic_proxies">{% t pages.meta_programming.dynamic_proxies.title %}</h3>
     <p>{% t pages.meta_programming.dynamic_proxies.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.meta_programming.dynamic_proxies.title %}</p>

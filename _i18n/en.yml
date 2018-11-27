@@ -8,39 +8,143 @@ content:
   menu:
     open: Open Menu
     close: Close Menu
-  sidebar:
-    gotchas: Gotchas
-    meta_programming: Meta Programming
-    functional_programming: Functional Programming
-    threads: Threads
-    solid_principles: Solid Pronciples
-    design_patterns: Design Patterns
-    data_structures: Data Structures
-    algorithms: Algorithms
-    interview_questions: Interview Questions
-  footer:
 
 sidebar:
-  - title: Gotchas
-    url: gotchas
-  - title: Meta Programming
-    url: meta_programming
-  - title: Functional Programming
-    url: functional_programming
-  - title: Threads
-    url: threads
-  - title: Solid Principles
-    url: solid_principles
-  - title: Design Patterns
-    url: design_patterns
-  - title: Data Structures
-    url: data_structures
   - title: Algorithms
     url: algorithms
-  - title: Become Ruby Meister
-    url: ruby_meister
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Data Structures
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Design Patterns
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: Functional Programming
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
   - title: Interview Questions
     url: interview_questions
+  - title: Meta Programming
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Solid Principles
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Become Ruby Meister
+    url: ruby_meister
+  - title: Threads
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
 
 pages:
   wiki: "Read wiki"
@@ -464,14 +568,14 @@ pages:
       title: "Fibers"
       description: "Fibers are primitives for implementing light weight cooperative concurrency in Ruby. Basically, they are a means of creating code blocks that can be paused and resumed, much like threads. The main difference is that they are never preempted and that the scheduling must be done by the programmer and not the VM. As opposed to other stackless lightweight concurrency models, each fiber comes with a small 4KB stack. This enables the fiber to be paused from deeply nested function calls within the fiber block."
     rails:
-      title: "Rails - Thread-safety in the framework."
+      title: "Rails thread-safety"
       description: "The problem with this is that there is no simple way to say with absolute certainty whether an app as a whole is thread-safe. "
       global_variables: "Global variables are global. This means that they are shared between threads. If you weren’t convinced about not using global variables by now, here’s another reason to never touch them. If you really want to share something globally across an app, you are more than likely better served by a constant (but see below), anyway."
       class_variables: "Class variables. For the purpose of a discussion about threads, class variables are not much different from global variables. They are shared across threads just the same way.The problem isn’t so much about using class variables, but about mutating them. And if you are not going to mutate a class variable, in many cases a constant is again a better choice."
       instance_variables: "Class instance variables. But maybe you’ve read that you should always use class instance variables instead of class variables in Ruby. Well, maybe you should, but they are just as problematic for threaded programs as class variables."
       memoization: "Memoization by itself is not a thread safety issue. It is often used to store data in class variables or class instance variables (see the previous points). The <span class=\"code-inline\">||=</span> operator is, in fact, two operations, so there is a potential context switch happening in the middle of it, causing a race condition between threads. So even though you would only be using instance variables, you might end up with race conditions with memoization. Don’t memoize to class variables or class instance variables. If you need to memoize something on the class level, use thread local variables (<span class=\"code-inline\">Thread.current[:baz]</span>) instead. Be aware, though, that it is still kind of a global variable."
     config:
-      title: "config.threadsafe!: what does it do?"
+      title: "Configure threadsafe!?"
       description: "Calling this method sets four options in our app configuration. Let’s walk through each option and talk about what it does."
       frameworks: "Preloading Frameworks: The first option @preload_frameworks does pretty much what it says, it forces the Rails framework to be eagerly loaded on boot. When this option is not enabled, framework classes are loaded lazily via autoload. In multi-threaded environments, the framework needs to be eagerly loaded before any threads are created because of thread safety issues with autoload. We know that loading the framework isn’t threadsafe, so the strategy is to load it all up before any threads are ready to handle requests."
       cache: "Caching classes: The @cache_classes option controls whether or not classes get reloaded. Remember when you’re doing “TDD” in your application? You modify a controller, then reload the page to “test” it and see that things changed? Ya, that’s what this option controls. When this option is false, as in development, your classes will be reloaded when they are modified. Without this option, we wouldn’t be able to do our “F5DD” (yes, that’s F5 Driven Development). In production, we know that classes aren’t going to be modified on the fly, so doing the work to figure out whether or not to reload classes is just wasting resources, so it makes sense to never reload class definitions."
@@ -557,7 +661,6 @@ pages:
         link: "https://www.toptal.com/ruby/interview-questions"
       - name: "Hookops: 35+ Ruby and Rails Interview Questions and Answers"
         link: "https://lab.hookops.com/ruby-interview-prep.html"
-
       - name: "Educba: 15 Most Important Ruby Interview Questions And Answer"
         link: "https://www.educba.com/ruby-interview-questions/"
       - name: "Ruby Garage: How to Interview Your Ruby on Rails Developer"

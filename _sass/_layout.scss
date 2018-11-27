@@ -19,9 +19,13 @@ $a-hover-color: #dddddd;
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  overflow: hidden;
+  height: 100%;
   font-family: "Avenir Next", Avenir, "Helvetica Neue", "Lato", "Segoe UI", Helvetica, Arial, sans-serif;
   color: $body-color;
   background: $body-bg;
@@ -40,7 +44,7 @@ a {
   }
 }
 
-.container {
-  height: 100vh;
-  overflow-y: auto;
+ul,
+ol {
+  list-style: disc;
 }

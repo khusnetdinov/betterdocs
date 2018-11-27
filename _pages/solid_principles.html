@@ -2,21 +2,16 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-{% include sponsors/300x600.html %}
-
 <div class="content">
-  {% include github.html %}
-
   <article>
-    <h1>{% t pages.solid_principles.title %}</h1>
+    <h1 class="post-title">{% t pages.solid_principles.title %}</h1>
     <p>{% t pages.solid_principles.description %}</p>
   </article>
 
   {% include sponsors/728x90.html %}
 
   <article>
-    <h3>{% t pages.solid_principles.single.title %}</h3>
+    <h3 id="single">{% t pages.solid_principles.single.title %}</h3>
     <p>{% t pages.solid_principles.single.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
@@ -87,7 +82,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.solid_principles.open_close.title %}</h3>
+    <h3 id="open_close">{% t pages.solid_principles.open_close.title %}</h3>
     <p>{% t pages.solid_principles.open_close.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
@@ -154,7 +149,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.solid_principles.liskov.title %}</h3>
+    <h3 id="liskov">{% t pages.solid_principles.liskov.title %}</h3>
     <p>{% t pages.solid_principles.liskov.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
@@ -204,7 +199,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.solid_principles.segregation.title %}</h3>
+    <h3 id="segregation">{% t pages.solid_principles.segregation.title %}</h3>
     <p>{% t pages.solid_principles.segregation.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>
@@ -288,7 +283,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.solid_principles.di.title %}</h3>
+    <h3 id="di">{% t pages.solid_principles.di.title %}</h3>
     <p>{% t pages.solid_principles.di.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-wrong">{% t pages.solid_principles.bad %}</p>

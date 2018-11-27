@@ -1,11 +1,14 @@
+<button class="top-button" onclick="topFunction()">^</button>
+
 <button class='action action--open' aria-label='{% t content.menu.open %}'>
   <span class='icon icon--menu'></span>
 </button>
 
-<nav id='ml-menu' class='menu'>
+<nav class='menu'>
   <button class='action action--close' aria-label='{% t content.menu.close %}'>
     <span class='icon icon--cross'></span>
   </button>
+
   <div class='menu__wrap'>
     <ul data-menu='main' class='menu__level'>
       {%- for menu in site.translations[site.lang].sidebar -%}
@@ -13,14 +16,45 @@
           {%- if site.lang == 'en' -%}
             {{ site.baseurl_root }}{{ menu.url }}
           {%- else -%}
-            {{ site.baseurl_root }}{{ site.lang}}/{{ menu.url }}
+            {{ site.baseurl_root }}{{ site.lang }}/{{ menu.url }}
           {%- endif -%}
-        {%- endcapture %}
-        <li class='menu-item'>
-          <a class='menu__link' href='{{ link }}'>{{ menu.title }}</a>
+        {%- endcapture -%}
+        {% assign location = page.url | replace: '/', '' %}
+        {%- if location == link -%}
+          <li class='menu-item menu__submenus'>
+            <a class='menu__link menu__link--current' id='{{ link }}' href='{{ link }}'>{{ menu.title }}</a>
+        {%- else -%}
+          <li class='menu-item'>
+            <a class='menu__link' id='{{ link }}' href='{{ link }}'>{{ menu.title }}</a>
+        {%- endif -%}
+          <ul class="submenus">
+            {%- for submenu in menu.submenus -%}
+              {%- if submenu.submenus -%}
+                <h4>{{ site.translations[site.lang].pages[menu.url][submenu.key].title }}</h4>
+                <ul class="internal">
+                  {% assign subs = submenu.submenus %}
+                  {%- for sub in subs -%}
+                  <li>
+                    <a href="/{{ link }}#{{ sub }}">
+                      {{ site.translations[site.lang].pages[menu.url][submenu.key][sub].title }}
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+              {%- else -%}
+                <li>
+                  <a href="/{{ link }}#{{ submenu }}">
+                    {{ site.translations[site.lang].pages[menu.url][submenu].title }}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
         </li>
-      {%- endfor %}
+      {%- endfor -%}
     </ul>
+
+    {% include github.html %}
     {% include sponsors/234x60.html %}
   </div>
 </nav>

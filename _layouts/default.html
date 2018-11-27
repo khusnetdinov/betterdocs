@@ -8,8 +8,12 @@
       {% include header.html %}
     </header>
 
-    <div class="l-content container">
+    <div class="l-content">
+      {% include sidebar.html %}
+
       {{ content }}
+
+      {% include sponsors/300x600.html %}
     </div>
 
     <footer class="l-footer">
