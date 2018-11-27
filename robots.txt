@@ -9,7 +9,7 @@ Disallow: /javascripts/*
 Disallow: /images/*
 Disallow: /fonts/*
 Disallow: /_config.yml
-Disallow: /_config.stagint.yml
+Disallow: /_config.staging.yml
 Disallow: /_config.production.yml
 Disallow: /config.ru
 Disallow: /CNAME
