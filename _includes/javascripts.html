@@ -1,22 +1,2 @@
 <script src="/javascripts/vendor/classie.js"></script>
-<script src="/javascripts/vendor/dummydata.js"></script>
 <script src="/javascripts/main.js"></script>
-
-<script>
- (function() {
-   var menuEl = document.getElementById('ml-menu'),
-       openMenuCtrl = document.querySelector('.action--open'),
-       closeMenuCtrl = document.querySelector('.action--close');
-
-   function openMenu() {
-     classie.add(menuEl, 'menu--open');
-   }
-
-   function closeMenu() {
-     classie.remove(menuEl, 'menu--open');
-   }
-
-   openMenuCtrl.addEventListener('click', openMenu);
-   closeMenuCtrl.addEventListener('click', closeMenu);
- })();
-</script>

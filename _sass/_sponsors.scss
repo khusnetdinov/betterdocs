@@ -1,11 +1,16 @@
 // Variables
 
-$c-red: #ff0000;
-
+$c-red: #d73333;
+$adv-1300: 1300px;
+$adv-1000: 1000px;
+$adv-800:  800px;
+$adv-750:  750px;
+$adv-500:  500px;
 
 @mixin sponsor-block($width, $height) {
   width: $width;
   height: $height;
+  background-color: $c-red;
 }
 
 .sponsor-block {
@@ -22,28 +27,24 @@ $c-red: #ff0000;
   &.with-size-300x600 {
     @include sponsor-block(300px, 600px);
 
-    @media screen and (min-width: $on-desktop) {
-      display: block;
-    }
-
     position: fixed;
-    margin-top: 3.5em;
+    display: block;
+    margin-top: 2.5em;
     top: 70px;
     left: 1000px;
-  }
 
-  $adv-1000: 1000px;
-  $adv-800:  800px;
-  $adv-750:  750px;
-  $adv-500:  500px;
+    @media screen and (max-width: $adv-1300) {
+      display: none;
+    }
+  }
 
   &.with-size-728x90 {
     @include sponsor-block(728px, 90px);
 
-    display: none !important;
+    display: block;
 
-    @media screen and (min-width: $adv-1000) {
-      display: block;
+    @media screen and (max-width: $adv-1000) {
+      display: none;
     }
 
     @media screen and (max-width: $adv-800) {
@@ -60,7 +61,7 @@ $c-red: #ff0000;
   &.with-size-468x60 {
     @include sponsor-block(468px, 60px);
 
-    display: none !important;
+    display: none;
 
     @media screen and (max-width: $adv-1000 - 1px) {
       display: block;

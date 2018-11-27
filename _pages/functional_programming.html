@@ -2,14 +2,9 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-{% include sponsors/300x600.html %}
-
 <div class="content">
-  {% include github.html %}
-
   <article>
-    <h1>{% t pages.functional_programming.title %}</h1>
+    <h1 class="post-title">{% t pages.functional_programming.title %}</h1>
     <p>{% t pages.functional_programming.description %}</p>
     <ul>
       <li>{% t pages.functional_programming.axioms.immutable %}</li>
@@ -22,7 +17,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.functional_programming.pure_functions.title %}</h3>
+    <h3 id="pure_functions">{% t pages.functional_programming.pure_functions.title %}</h3>
     <p>{% t pages.functional_programming.pure_functions.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.functional_programming.pure_functions.title %}</p>
@@ -35,7 +30,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.functional_programming.closures.title %}</h3>
+    <h3 id="closures">{% t pages.functional_programming.closures.title %}</h3>
     <p>{% t pages.functional_programming.closures.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.functional_programming.closures.title %}</p>
@@ -94,7 +89,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.functional_programming.applying.title %}</h3>
+    <h3 id="applying">{% t pages.functional_programming.applying.title %}</h3>
     <p>{% t pages.functional_programming.applying.description %}</p>
     <p>{% t pages.functional_programming.applying.proc %}</p>
     <p>{% t pages.functional_programming.applying.partial %}</p>

@@ -2,14 +2,9 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-{% include sponsors/300x600.html %}
-
 <div class="content">
-  {% include github.html %}
-
   <article>
-    <h1>{% t pages.design_patterns.title %}</h1>
+    <h1 class="post-title">{% t pages.design_patterns.title %}</h1>
   </article>
 
   <article>
@@ -19,7 +14,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.creational.abstract_factory.title %}</h3>
+    <h3 id="abstract_factory">{% t pages.design_patterns.creational.abstract_factory.title %}</h3>
     <p>{% t pages.design_patterns.creational.abstract_factory.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.creational.abstract_factory.title %}</p>
@@ -89,7 +84,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.creational.builder.title %}</h3>
+    <h3 id="builder">{% t pages.design_patterns.creational.builder.title %}</h3>
     <p>{% t pages.design_patterns.creational.builder.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.creational.builder.title %}</p>
@@ -150,7 +145,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.creational.factory.title %}</h3>
+    <h3 id="factory">{% t pages.design_patterns.creational.factory.title %}</h3>
     <p>{% t pages.design_patterns.creational.factory.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.creational.factory.title %}</p>
@@ -182,7 +177,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.creational.prototype.title %}</h3>
+    <h3 id="prototype">{% t pages.design_patterns.creational.prototype.title %}</h3>
     <p>{% t pages.design_patterns.creational.prototype.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.creational.prototype.title %}</p>
@@ -240,7 +235,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.creational.singleton.title %}</h3>
+    <h3 id="singleton">{% t pages.design_patterns.creational.singleton.title %}</h3>
     <p>{% t pages.design_patterns.creational.singleton.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.creational.singleton.title %}</p>
@@ -287,7 +282,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.structural.adapter.title %}</h3>
+    <h3 id="adapter">{% t pages.design_patterns.structural.adapter.title %}</h3>
     <p>{% t pages.design_patterns.structural.adapter.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.structural.adapter.title %}</p>
@@ -318,7 +313,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.structural.composite.title %}</h3>
+    <h3 id="composite">{% t pages.design_patterns.structural.composite.title %}</h3>
     <p>{% t pages.design_patterns.structural.composite.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.structural.composite.title %}</p>
@@ -363,7 +358,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.structural.decorator.title %}</h3>
+    <h3 id="decorator">{% t pages.design_patterns.structural.decorator.title %}</h3>
     <p>{% t pages.design_patterns.structural.decorator.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.structural.decorator.title %}</p>
@@ -427,7 +422,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.structural.facade.title %}</h3>
+    <h3 id="facade">{% t pages.design_patterns.structural.facade.title %}</h3>
     <p>{% t pages.design_patterns.structural.facade.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.structural.facade.title %}</p>
@@ -478,7 +473,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.structural.flyweight.title %}</h3>
+    <h3 id="flyweight">{% t pages.design_patterns.structural.flyweight.title %}</h3>
     <p>{% t pages.design_patterns.structural.flyweight.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.structural.flyweight.title %}</p>
@@ -575,7 +570,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.structural.proxy.title %}</h3>
+    <h3 id="proxy">{% t pages.design_patterns.structural.proxy.title %}</h3>
     <p>{% t pages.design_patterns.structural.proxy.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.structural.proxy.title %}</p>
@@ -710,7 +705,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.chain_of_responsobility.title %}</h3>
+    <h3 id="chain_of_responsobility">{% t pages.design_patterns.behavioral.chain_of_responsobility.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.chain_of_responsobility.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.chain_of_responsobility.title %}</p>
@@ -833,7 +828,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.command.title %}</h3>
+    <h3 id="command">{% t pages.design_patterns.behavioral.command.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.command.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.command.title %}</p>
@@ -908,7 +903,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.interpreter.title %}</h3>
+    <h3 id="interpreter">{% t pages.design_patterns.behavioral.interpreter.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.interpreter.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.interpreter.title %}</p>
@@ -1004,7 +999,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.iterator.title %}</h3>
+    <h3 id="iterator">{% t pages.design_patterns.behavioral.iterator.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.iterator.description %}</p>
     <p>{% t pages.design_patterns.behavioral.external_iterator.description %}</p>
     <div class="code-block">
@@ -1095,7 +1090,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.mediator.title %}</h3>
+    <h3 id="mediator">{% t pages.design_patterns.behavioral.mediator.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.mediator.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.mediator.title %}</p>
@@ -1191,7 +1186,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.momento.title %}</h3>
+    <h3 id="momento">{% t pages.design_patterns.behavioral.momento.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.momento.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.momento.title %}</p>
@@ -1237,7 +1232,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.observer.title %}</h3>
+    <h3 id="observer">{% t pages.design_patterns.behavioral.observer.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.observer.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.observer.title %}</p>
@@ -1307,7 +1302,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.state.title %}</h3>
+    <h3 id="state">{% t pages.design_patterns.behavioral.state.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.state.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.state.title %}</p>
@@ -1411,7 +1406,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.strategy.title %}</h3>
+    <h3 id="strategy">{% t pages.design_patterns.behavioral.strategy.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.strategy.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.strategy.title %}</p>
@@ -1457,7 +1452,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.template.title %}</h3>
+    <h3 id="template">{% t pages.design_patterns.behavioral.template.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.template.description  %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.template.title %}</p>
@@ -1500,7 +1495,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.design_patterns.behavioral.visitor.title %}</h3>
+    <h3 id="visitor">{% t pages.design_patterns.behavioral.visitor.title %}</h3>
     <p>{% t pages.design_patterns.behavioral.visitor.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.design_patterns.behavioral.visitor.title %}</p>

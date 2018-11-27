@@ -2,24 +2,19 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-{% include sponsors/300x600.html %}
-
 <div class="content">
-  {% include github.html %}
-
   <article>
-    <h1>{% t pages.threads.title %}</h1>
+    <h1 class="post-title">{% t pages.threads.title %}</h1>
     <p>{% t pages.threads.description %}</p>
   </article>
 
   <article>
-    <h3>{% t pages.threads.green.title %}</h3>
+    <h3 id="green">{% t pages.threads.green.title %}</h3>
     <p>{% t pages.threads.green.description %}</p>
   </article>
 
   <article>
-    <h3>{% t pages.threads.gil.title %}</h3>
+    <h3 id="gil">{% t pages.threads.gil.title %}</h3>
     <p>{% t pages.threads.gil.description %}</p>
     <p>{% t pages.threads.gil.example %}</p>
     <div class="code-block">
@@ -45,7 +40,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.threads.mutex.title %}</h3>
+    <h3 id="mutex">{% t pages.threads.mutex.title %}</h3>
     <p>{% t pages.threads.mutex.description %}</p>
     <p>{% t pages.threads.mutex.example %}</p>
     <div class="code-block">
@@ -78,7 +73,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.threads.fibers.title %}</h3>
+    <h3 id="fibers">{% t pages.threads.fibers.title %}</h3>
     <p>{% t pages.threads.fibers.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.threads.example %}</p>
@@ -105,7 +100,7 @@ layout: default
   {% include sponsors/728x90.html %}
 
   <article>
-    <h3>{% t pages.threads.rails.title %}</h3>
+    <h3 id="rails">{% t pages.threads.rails.title %}</h3>
     <p>{% t pages.threads.rails.description %}</p>
     <p>{% t pages.threads.rails.global_variables %}</p>
     <p>{% t pages.threads.rails.class_variables %}</p>
@@ -114,7 +109,7 @@ layout: default
   </article>
 
   <article>
-    <h3>{% t pages.threads.config.title %}</h3>
+    <h3 id="config">{% t pages.threads.config.title %}</h3>
     <p>{% t pages.threads.config.description %}</p>
     <div class="code-block">
       <p class="spec-title spec-correct">{% t pages.threads.example %}</p>
