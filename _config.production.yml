@@ -1,0 +1,10 @@
+encoding: utf-8
+
+url: "https://betterdocs.org"
+
+counters:
+  yandex:
+    metrica: 'XXXXXXXX'
+    webmaster: 'XXXXXXXXXXXXXXXX'
+  google:
+    analytics: 'XX-XXXXXXXXX-X'

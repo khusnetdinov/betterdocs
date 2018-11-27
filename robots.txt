@@ -1,8 +1,16 @@
+---
+layout: none
+---
+
+# www.robotstxt.org/
+
 User-agent: *
 Disallow: /javascripts/*
 Disallow: /images/*
 Disallow: /fonts/*
 Disallow: /_config.yml
+Disallow: /_config.stagint.yml
+Disallow: /_config.production.yml
 Disallow: /config.ru
 Disallow: /CNAME
 Disallow: /Procfile
