@@ -19,5 +19,6 @@ Disallow: /Rakefile
 Disallow: /language.yml
 Disallow: /package.json
 Disallow: /static.json
+Disallow: /404.html
 
 Sitemap: {{ site.url }}/sitemap.xml

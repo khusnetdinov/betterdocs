@@ -1,6 +1,6 @@
 encoding: utf-8
 
-url: 'https://betterdocs.herokuapp.com/'
+url: 'https://betterdocs.herokuapp.com'
 
 collections:
   pages:
