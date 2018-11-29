@@ -1,4 +1,6 @@
-<title>{% t head.title %} - {{ page.title }}</title>
+{% assign key = page.url | remove_first: '/' %}
+{% assign title = site.translations[site.lang].pages[key].title %}
+<title>{% t head.title %} - {{ title }}</title>
 
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
