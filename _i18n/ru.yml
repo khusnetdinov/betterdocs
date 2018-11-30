@@ -241,10 +241,10 @@ pages:
         description: "Удалённый заместитель. Обеспечивает связь с «Субъектом», который находится в другом адресном пространстве или на удалённой машине. Также может отвечать за кодирование запроса и его аргументов и отправку закодированного запроса реальному «Субъекту»"
       not_covered:
         title: "Не рассмотренные шаблоны:"
-        callback: "Annotated Callback"
-        bridge: "Bridge"
-        data_bus: "Data Bus"
-        role: "Role Object"
+        callback: "Колбек с аннотацией / описанием"
+        bridge: "Мост"
+        data_bus: "Шина"
+        role: "Объект роли"
     behavioral:
       title: "Поведенческие паттерны проектирования"
       description: "Поведенческие шаблоны проектирования определяют общие закономерности связей между объектами, реализующими данные паттерны. Следование этим шаблонам уменьшает связность системы и облегчает коммуникацию между объектами, что улучшает гибкость программного продукта."
@@ -289,7 +289,7 @@ pages:
       not_covered:
         title: "Не рассмотренные шаблоны:"
         hierarchical: "Hierarchical visitor"
-      credits: "Code and articles were taken from resources:"
+      credits: "Код и статьи были взяты из ресурсов:"
   functional_programming:
     title: "Функциональное программирование"
     description: "Использование языка в функциональном стиле подразумевает, что у вас есть доступ к нескольким ключевым функциям, перечисленным ниже:"
@@ -417,7 +417,7 @@ pages:
     module:
       title: "class Foo::Bar, defined outside Module Foo, won’t see inside Foo"
       description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found where it will go back through each containing \"gateway\" and search the scope there."
-    credits: "Code and articles were taken from resources:"
+    credits: "Код и статьи были взяты из ресурсов:"
   meta_programming:
     title: "Метапрограммирование"
     description: "Метапрограммирование - это запись компьютерных программ, которые пишут или управляют другими программами (или самими собой) в качестве их данных или выполняют часть работы во время компиляции, которая в противном случае была бы выполнена во время выполнения. Во многих случаях это позволяет программистам делать больше за такое же количество времени, сколько потребуется, чтобы написать весь код вручную или предоставить программам большую гибкость для эффективного управления новыми ситуациями без перекомпиляции. Метапрограммирование - это код, который пишет код во время выполнения, чтобы сделать вашу жизнь проще."
