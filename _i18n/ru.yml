@@ -261,11 +261,11 @@ pages:
         title: "Шаблон Итератор"
         description: "Итератор — это поведенческий паттерн проектирования, который даёт возможность последовательно обходить элементы составных объектов, не раскрывая их внутреннего представления.
       external_iterator:
-        title: "External iterator pattern"
-        description: "External iterator: The iteration logic is contained in a separate class. The iteration class can be generalized to handle multiple object types as long as they allow indexing. It require the additional class to do the actual iterating, but they do allow for greater flexibility because you can control the iteration, which elements are iterated over and in what order."
+        title: "Шаблон Внешний Итератор"
+        description: "Внешний Итератор: Итерационная логика содержится в отдельном классе. The iteration class can be generalized to handle multiple object types as long as they allow indexing. It require the additional class to do the actual iterating, but they do allow for greater flexibility because you can control the iteration, which elements are iterated over and in what order."
       internal_iterator:
-        title: "Internal iterator pattern"
-        description: "Internal iterator: all the iterating logic occurs inside the aggregate object. Use a code block to pass your logic into the aggregate which then calls the block for each of it"s elements."
+        title: "Шаблон Внутренний Итератор"
+        description: "Внутренний итератор: вся логика итерации происходит внутри совокупного объекта. Use a code block to pass your logic into the aggregate which then calls the block for each of it"s elements."
       mediator:
         title: "Шаблон Посредник"
         description: "Посредник — это поведенческий паттерн проектирования, который позволяет уменьшить связанность множества классов между собой, благодаря перемещению этих связей в один класс-посредник."
@@ -385,10 +385,10 @@ pages:
       description: "Freezing an array (or a hash) freezes it, not the items it contains. Strings can be modified in place. This way, you can modify a given slot in a frozen Array of Strings."
     one_is_one:
       title: "1 is 1 … and ever more shall be so!"
-      description: "Changing Fixnum to new value means a new object. They can"t be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum"s <span class=\"code-inline\">object_id</span> is <span class=\"code-inline\">value * 2 + 1</span>"
+      description: "Changing Fixnum to new value means a new object. They can't be modified in place! So, can't modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum"s <span class=\"code-inline\">object_id</span> is <span class=\"code-inline\">value * 2 + 1</span>"
     bang:
       title: "(to! || ! to!) == ?"
-      description: "Bang marks the method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!"
+      description: "Метка Bang у метода обозначает, что он опасен. Почему? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING SAME VALUE AS NON-BANG VERSION! Many return nil if no change needed!"
     array:
       title: "Находка с новым массивом"
       description: "Значение по умолчанию, заданное как объект, является одним и тем же объектом для каждого слота! Мутирование одного мутирует значение по умолчанию для всех. Начальное значение, заданное как блок, оценивается отдельно для каждого слота. Используйте это, чтобы создать новые переменные для каждого."
@@ -407,9 +407,9 @@ pages:
       respond_to: "Lots of code (gems or your own) relies on respond_to? (for a good reason). Do you need to patch respond_to_missing? as well:"
     exception:
       title: "rescue from a StandardError, not an Exception"
-      description: "Don"t rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:"
+      description: "Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:"
     private:
-      title: "Private data isn’t really, and not at all w/ class methods"
+      title: "Private data isn't really, and not at all w/ class methods"
       description: "Есть способ сделать методы класса частными в Ruby, вы просто должны выполнить все условия. Err, I mean use the <span class=\"code-inline\">class << self</span> syntax. This oddity pushes an instance singleton onto the class effectively creating class methods."
     braces:
       title: "Braces vs. do-end"
@@ -512,7 +512,7 @@ pages:
           link: "https://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"
         - name: "sicp"
           title: "Structure and Interpretation of Computer Programs"
-          description: "Structure and Interpretation of Computer Programs have had a dramatic impact on computer science curricula over the past decade. This long-awaited revision contains changes throughout the text. There are new implementations of most of the major programming systems in the book, including the interpreters and compilers, and the authors have incorporated many small changes that reflect their experience teaching the course at MIT since the first edition was published. A new theme has been introduced that emphasizes the central role played by different approaches to dealing with time in computational models: objects with state, concurrent programming, functional programming, and lazy evaluation, and nondeterministic programming."
+          description: "Структура и интерпретация компьютерных программ оказали огромное влияние на учебные программы в области компьютерных наук за последнее десятилетие. Эта долгожданная ревизия содержит изменения во всем тексте. В книге реализованы новые версии большинства основных программных систем, включая переводчиков и составителей, и авторы включили множество небольших изменений, которые отражают их опыт преподавания курса в Массачусетском технологическом институте с момента публикации первого издания. Введена новая тема, в которой подчеркивается центральная роль различных подходов к работе со временем в вычислительных моделях: объекты с состоянием, параллельное программирование, функциональное программирование и ленивая оценка, а также недетерминированное программирование."
           link: "https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871"
         - name: "design_programms"
           title: "How to Design Programs: An Introduction to Programming and Computing"
