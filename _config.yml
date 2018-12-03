@@ -14,6 +14,21 @@ exclude_from_localizations: ['javascript', 'images', 'css']
 markdown: kramdown
 theme: minima
 plugins:
+  - jekyll-assets
   - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
+
+assets:
+  destination: '/assets'
+  source_maps: false
+  compression: true
+  gzip: false
+  defaults:
+    js: { integrity: false }
+    css: { integrity: false }
+    img: { integrity: false }
+  caching:
+    path: '.jekyll-cache/assets'
+    type: mempry
+    enabled: true
