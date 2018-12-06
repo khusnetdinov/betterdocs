@@ -5,7 +5,7 @@ url: 'https://betterdocs.herokuapp.com'
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: /:slug
 
 languages:
   - en

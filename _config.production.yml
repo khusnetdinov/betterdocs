@@ -1,11 +1,11 @@
 encoding: utf-8
 
-url: "https://betterdocs.org"
+url: "https://betterdocs.info"
 
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: /:slug
 
 languages:
   - en
