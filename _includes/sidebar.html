@@ -20,12 +20,13 @@
           {%- endif -%}
         {%- endcapture -%}
         {% assign location = page.url | replace: '/', '' %}
+        {% assign link = link | replace: '_', '-' %}
         {%- if location == link -%}
           <li class='menu-item menu__submenus'>
-            <a class='menu__link menu__link--current' id='{{ link }}' href='{{ link }}'>{{ menu.title }}</a>
+            <a class='menu__link menu__link--current' id='{{ link }}' href='/{{ link }}'>{{ menu.title }}</a>
         {%- else -%}
           <li class='menu-item'>
-            <a class='menu__link' id='{{ link }}' href='{{ link }}'>{{ menu.title }}</a>
+            <a class='menu__link' id='{{ link }}' href='/{{ link }}'>{{ menu.title }}</a>
         {%- endif -%}
           <ul class="submenus">
             {%- for submenu in menu.submenus -%}
@@ -35,7 +36,7 @@
                   {% assign subs = submenu.submenus %}
                   {%- for sub in subs -%}
                   <li>
-                    <a href="/{{ link }}#{{ sub }}">
+                    <a href="/{{ link }}#{{ sub | replace: '_', '-' }}">
                       {{ site.translations[site.lang].pages[menu.url][submenu.key][sub].title }}
                     </a>
                   </li>
@@ -43,7 +44,7 @@
                 </ul>
               {%- else -%}
                 <li>
-                  <a href="/{{ link }}#{{ submenu }}">
+                  <a href="/{{ link }}#{{ submenu | replace: '_', '-' }}">
                     {{ site.translations[site.lang].pages[menu.url][submenu].title }}
                   </a>
                 </li>

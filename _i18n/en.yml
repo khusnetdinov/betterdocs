@@ -43,6 +43,7 @@ sidebar:
           - queue
           - deque
           - singly_linked_list
+          - doubly_linked_list
           - ordered_list
           - hash_table
           - binary_tree

@@ -1,4 +1,6 @@
-<title>{% t head.title %}</title>
+{% assign key = page.url | remove_first: '/' %}
+{% assign title = site.translations[site.lang].pages[key].title %}
+<title>{% t head.title %} - {{ title }}</title>
 
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -16,8 +18,10 @@
 {% endif %}
 
 <!-- Favicons -->
-<!-- <link rel="shortcut icon" type="image/png" href="/favicon.png"> -->
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
 <link rel="icon" href="/favicon.ico">
+
+<link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index' }}">
 
 <!-- Styles -->
 <link rel="stylesheet" href="/css/main.css">
