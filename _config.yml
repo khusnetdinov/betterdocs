@@ -3,7 +3,7 @@ encoding: utf-8
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: /:slug
 
 languages:
   - en
