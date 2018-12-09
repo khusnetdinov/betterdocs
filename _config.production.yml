@@ -21,13 +21,6 @@ plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
 
-counters:
-  yandex:
-    metrica: 'XXXXXXXX'
-    webmaster: 'XXXXXXXXXXXXXXXX'
-  google:
-    analytics: 'XX-XXXXXXXXX-X'
-
 assets:
   destination: '/assets'
   source_maps: false
