@@ -1,3 +1,7 @@
+{% if jekyll.environment == "production" %}
+  {% include counters.html %}
+{% endif %}
+
 {% assign key = page.url | remove_first: '/' %}
 {% assign title = site.translations[site.lang].pages[key].title %}
 <title>{% t head.title %} - {{ title }}</title>
@@ -7,20 +11,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta name="revision" content="{{ site.data['hash'] }}"/>
 <meta name="env" content="{{ jekyll.environment }}"/>
+
 <!-- Seo -->
 <meta name="description" content="{% t head.metatags.description %}"/>
 <meta name="keywords" content="{% t head.metatags.keywords %}"/>
 <meta name="author" content="Marat Khusnetdinow, HowToHireMe"/>
 <meta name="robots" content="index, follow"/>
 
-{% if jekyll.environment == "production" %}
-  {% include counters.html %}
-{% endif %}
-
 <!-- Favicons -->
 <link rel="shortcut icon" type="image/png" href="/favicon.png">
 <link rel="icon" href="/favicon.ico">
-
 <link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index' }}">
 
 <!-- Styles -->
