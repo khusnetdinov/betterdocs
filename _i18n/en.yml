@@ -6,8 +6,8 @@ head:
 
 content:
   menu:
-    open: Open Menu
-    close: Close Menu
+    open: "Open Menu"
+    close: "Close Menu"
 
 sidebar:
   - title: Algorithms

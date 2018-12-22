@@ -1,34 +1,22 @@
 encoding: utf-8
+baseurl: "/"
+
+url: localost:4000
 
 collections:
   pages:
     output: true
     permalink: /:slug
 
-languages:
-  - en
-  # - ru
+default_lang: "en"
+languages: ['en', 'ru']
+
 timezone: Europe/Moscow
 exclude_from_localizations: ['javascript', 'images', 'css']
 
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-assets
   - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
-
-assets:
-  destination: '/assets'
-  source_maps: false
-  compression: true
-  gzip: false
-  defaults:
-    js: { integrity: false }
-    css: { integrity: false }
-    img: { integrity: false }
-  caching:
-    path: '.jekyll-cache/assets'
-    type: mempry
-    enabled: true
