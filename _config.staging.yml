@@ -1,4 +1,5 @@
 encoding: utf-8
+baseurl: "/"
 
 url: 'https://betterdocs.herokuapp.com'
 
@@ -7,30 +8,14 @@ collections:
     output: true
     permalink: /:slug
 
-languages:
-  - en
-  # - ru
+default_lang: "en"
+languages: ['en', 'ru']
 timezone: Europe/Moscow
 exclude_from_localizations: ['javascript', 'images', 'css']
 
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-assets
   - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
-
-assets:
-  destination: '/assets'
-  source_maps: false
-  compression: true
-  gzip: true
-  defaults:
-    js: { integrity: true }
-    css: { integrity: true }
-    img: { integrity: true }
-  caching:
-    path: '.jekyll-cache/assets'
-    type: memory
-    enabled: true

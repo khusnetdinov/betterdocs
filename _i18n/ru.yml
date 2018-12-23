@@ -1,50 +1,151 @@
 head:
-  title: Ruby Fundamental
+  title: "Ruby Fundamental"
   metatags:
-    description: >-
-      Основы Ruby с примерами и полезными ссылками. Вы прочтете про потоки,
-      принцип SOLID, паттерны проектирования, структуры данных, алгоритмы.
-    keywords: >-
-      Ruby, Fundamental, Ruby programming fundamental. Ruby gotchas, Functional
-      programming, Metaprogramming, Threads, Ruby solid princinle with examples,
-      Ruby design patterns with examples, Ruby algorithms with examples, Ruby
-      data structures with examples.
+    description: "Основы Ruby с примерами и полезными ссылками. Вы прочтете про потоки, принцип SOLID, паттерны проектирования, структуры данных, алгоритмы."
+    keywords: "Ruby, Fundamental, Ruby programming fundamental. Ruby gotchas, Functional programming, Metaprogramming, Threads, Ruby solid princinle with examples, Ruby design patterns with examples, Ruby algorithms with examples, Ruby data structures with examples."
 
 content:
   menu:
     open: "Открыть меню"
     close: "Закрыть меню"
-  sidebar:
-    gotchas: "Готчи"
-    meta_programming: "Мета программирование"
-    functional_programming: "Функциональное программирование"
-    threads: "Потоки"
-    solid_principles: "COЛИД"
-    design_patterns: "Паттерны проектирование"
-    data_structures: "Структуры данных"
-    algorithms: "Алгоритмы"
-    interview_questions: "Вопросы на интервью"
-  footer:
 
 sidebar:
-  - title: Готчи
-    url: gotchas
-  - title: Мета программирование
-    url: meta_programming
-  - title: Функциональное программирование
-    url: functional_programming
-  - title: Потоки
-    url: threads
-  - title: COЛИД
-    url: solid_principles
-  - title: Паттерны проектирование
-    url: design_patterns
-  - title: Структуры данных
-    url: data_structures
   - title: Алгоритмы
     url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Структуры Данных
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Шаблоны проектирования
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: Функциональное программирование
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Готчи
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
   - title: Вопросы на интервью
     url: interview_questions
+  - title: Метапрограммирование
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: СОЛИД
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Станьте специалистом в Руби
+    url: ruby_meister
+  - title: Потоки
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
 
 pages:
   wiki: "Читать wiki"
@@ -467,7 +568,7 @@ pages:
   threads:
     example: "Пример"
     title: "Потоки"
-    description: "Замечание о параллелизме и параллелизме: основное отличие между процессами и потоками заключается в том, как обрабатывается память. На высоком уровне процессы копируют память, а потоки обмениваются памятью. Это заставляет процесс нереститься медленнее, чем размножение нити, и приводит к тому, что процессы запускают больше ресурсов. В целом, потоки несут меньше затрат, чем процессы. Этот API-интерфейс является API-интерфейсом Ruby. Различные реализации Ruby имеют разные основные потоковые поведения."
+    description: "Замечание о параллелизме и конкуренции: основное отличие между процессами и потоками заключается в том, как обрабатывается память. На высоком уровне процессы копируют память, а потоки обмениваются памятью. Это заставляет процесс нереститься медленнее, чем размножение нити, и приводит к тому, что процессы запускают больше ресурсов. В целом, потоки несут меньше затрат, чем процессы. Этот API-интерфейс является API-интерфейсом Ruby. Различные реализации Ruby имеют разные основные потоковые поведения."
     green:
       title: "Зелёные потоки"
       description: "Актуально в Ruby до версии 1.9. Это потоки выполнения, управление которыми вместо операционной системы выполняет виртуальная машина (ВМ). Зелёные потоки эмулируют многопоточную среду, не полагаясь на возможности ОС по реализации легковесных потоков. Управление ими происходит в пользовательском пространстве, а не пространстве ядра, что позволяет им работать в условиях отсутствия поддержки встроенных потоков.."

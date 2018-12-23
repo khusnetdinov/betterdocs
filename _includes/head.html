@@ -2,9 +2,9 @@
   {% include counters.html %}
 {% endif %}
 
-{% assign key = page.url | remove_first: '/' %}
+{% assign key = page.url | remove_first: '/' | replace: '-', '_' %}
 {% assign title = site.translations[site.lang].pages[key].title %}
-<title>{% t head.title %} - {{ title }}</title>
+<title>{% t head.title %} {{ title }}</title>
 
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -19,13 +19,13 @@
 <meta name="robots" content="index, follow"/>
 
 <!-- Favicons -->
-<link rel="shortcut icon" type="image/png" href="/favicon.png">
-<link rel="icon" href="/favicon.ico">
+<link rel="shortcut icon" type="image/png" href={{ "/favicon.png" | prepend: site.url }}>
+<link rel="icon" href={{ "/favicon.ico" | prepend: site.url }}>
 <link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index' }}">
 
 <!-- Styles -->
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href={{ "/css/main.css" | prepend: site.url }}>
 
 <!-- JavaScript -->
-<script src="/javascripts/vendor/modernizr-custom.js"></script>
+<script src={{ "/javascripts/vendor/modernizr-custom.js" | prepend: site.url }}></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
