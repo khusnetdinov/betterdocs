@@ -20,8 +20,10 @@
           {%- endif -%}
         {%- endcapture -%}
         {% assign link = link | replace: '_', '-' %}
-        {%- if site.lang != site.default_lang -%}
-          {% assign location  = link | remove_first: "/" | remove_first: site.lang %}
+        {%- if site.lang == site.default_lang -%}
+          {% assign location = link %}
+        {%- else -%}
+          {% assign location = link | remove_first: "/" | remove_first: site.lang %}
         {%- endif -%}
         {%- if page.url == location -%}
           <li class='menu-item menu__submenus'>
