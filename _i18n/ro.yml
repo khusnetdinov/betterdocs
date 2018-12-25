@@ -1,0 +1,1491 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: Programare fundamentală cu exemple și referințe rubinice. Acesta
+      acoperă fire, principii SOLID, modele de design, structuri de date, algoritmi.
+    keywords: Docuri mai bune, Ruby, Fundamentele, fundamentele programării Ruby.
+      Ruby gotchas, programare funcțională, metaprogramare, fire, principii solide
+      Ruby cu exemple, modele de design Ruby cu exemple, algoritmi Ruby cu exemple,
+      structuri de date Ruby cu exemple.
+
+content:
+  menu:
+    open: Deschideți meniul
+    close: Închideți meniul
+ 
+sidebar:
+  - title: Algoritmi
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Structuri de date
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Modele de design
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: Programarea funcțională
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: Intrebari de interviu
+    url: interview_questions
+  - title: Meta Programare
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Principii solide
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Deveniți Ruby Meister
+    url: ruby_meister
+  - title: Subiecte
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+
+pages:
+  wiki: Citiți wiki
+  credits: credite
+  page404:
+    title: Pagina nu a fost gasita :(
+    description: Pagina solicitată nu a putut fi găsită.
+  algorithms:
+    title: algoritmi
+    complexity:
+      best: Cel mai bun
+      average: In medie
+      worst: Cel mai rău
+    sorting:
+      title: Triere
+      description: Un algoritm de sortare este un algoritm care pune elemente dintr-o
+        listă într-o anumită ordine. Cele mai utilizate comenzi sunt ordinea numerică
+        și ordinea lexicografică. Sortarea eficientă este importantă pentru optimizarea
+        utilizării altor algoritmi (cum ar fi algoritmi de căutare și de îmbinare) care
+        necesită ca datele de intrare să fie în liste sortate; este, de asemenea, adesea
+        utilă pentru canonizarea datelor și pentru producția de ieșire lizibilă de oameni.
+      bubble_sort:
+        title: Sortare prin metoda bulelor
+        description: Tipul de tip &quot;bubble&quot; are multe proprietăți asemănătoare
+          cu tipul de inserție, dar are o ușoară creștere mai mare. În cazul datelor
+          sortate, sortarea bulelor ia <span class="code-inline time">O(n)</span> ,
+          dar necesită cel puțin 2 treceri prin date (în timp ce sortarea inserției
+          necesită ceva mai mult ca 1 trecere).
+      insertion_sort:
+        title: Tipul de inserție
+        description: Deși este unul dintre algoritmii elementari de sortare cu <span
+          class="code-inline">O(n<sup>2</sup>)</span> timp cel mai rău caz, sortarea
+          inserției este algoritmul de alegere fie atunci când datele sunt aproape sortate
+          (deoarece sunt adaptive), fie când dimensiunea problemei este mică (pentru
+          că are supratensiune scăzută). Din aceste motive și pentru că este de asemenea
+          stabilă, sortarea inserției este adesea folosită ca caz de bază recursivă
+          (atunci când dimensiunea problemei este mică) pentru algoritmi de sortare
+          mai înalți de divizare și cucerire, cum ar fi îmbinarea sortului sau sortarea
+          rapidă.
+      selection_sort:
+        title: Selectare sortare
+        description: Din comparația prezentată aici, s-ar putea concluziona că niciun
+          fel de selecție nu ar trebui folosit niciodată. Nu se adaptează la date în
+          nici un fel (observați că cele patru animații de mai sus rulează în blocare),
+          astfel încât durata de execuție a acestuia este întotdeauna patratică. Cu
+          toate acestea, sortarea de selecție are proprietatea de a minimiza numărul
+          de swap-uri. În aplicațiile în care costul schimbului de articole este ridicat,
+          selecția foarte bine poate fi algoritmul de alegere.
+      shell_sort:
+        title: Shell cumva
+        description: Cel mai rău caz de complexitate a timpului de tipul shell-ului
+          depinde de secvența de incrementare. Pentru incremente 1 4 13 40 121 ...,
+          care este ceea ce este utilizat aici, complexitatea timp este
+          <span class="code-inline">O(n<sup><sup>3<sub>/</sub>2</sup></sup>)</span> Pentru alte trepte, complexitate
+          timp este cunoscut a fi <span class="code-inline">O(n<sup><sup>4<sub>/</sub>3</sup></sup>)</span>,
+          și chiar și <span class="code-inline">O(n·lg<sub>2</sub>(n))</span>.
+          Nu sunt cunoscute nici limitele superioare strânse
+          ale complexității timpului, nici cea mai bună secvență de creșteri. Deoarece
+          tipul de coajă se bazează pe tipul de inserție, tipul de coajă moștenește
+          proprietățile adaptive de sortare a inserției. Adaptarea nu este la fel de
+          dramatică, deoarece tipul de coajă necesită o trecere prin datele pentru fiecare
+          increment, dar este semnificativă. Pentru secvența de increment prezentată
+          mai sus, există înregistrări <span class="code-inline">log<sub>3</sub>(n)</span>
+          , astfel încât complexitatea de timp pentru datele aproape sortate este <span
+          class="code-inline">O(n·log<sub>3</sub>(n))</span> . Datorită suprafeței
+          mici, a implementării relativ simple, a proprietăților adaptive și a complexității
+          timpului sub-cadran, structura shell-ului poate fi o alternativă viabilă la
+          algoritmii de sortare <span class="code-inline">O(n·lg(n))</span> pentru
+          unele aplicații atunci când datele care urmează a fi sortate sunt nu foarte
+          mare.
+      heap_sort:
+        title: Morman Sortare
+        description: Morman Sortare este simplu de implementat, efectuează o sortare <span
+          class="code-inline">O (n · lg (n))</span> , dar nu este stabilă. Prima buclă,
+          faza &quot;heapify&quot; <span class="code-inline">Θ (n)</span> , pune matricea
+          în ordine de heap. Cea de-a doua buclă, faza <span class="code-inline">O (n
+          · lg (n))</span> &quot;sortare&quot;, extrage în mod repetat maximul și restabilește
+          ordinea heapului. Funcția chiuveta este scrisă recursiv pentru claritate.
+          Astfel, după cum este arătat, codul necesită spațiul <span class="code-inline">Θ
+          (lg (n))</span> pentru stiva apelurilor recursive. Cu toate acestea, recursiunea
+          coastei în chiuvetă () este ușor convertită la iterație, ceea ce duce la legarea
+          spațiului <span class="code-inline">O (1)</span> . Ambele faze sunt puțin
+          adaptabile, deși nu într-o manieră deosebit de utilă. În cazul aproape sortat,
+          faza de heapificare distruge ordinea inițială. În cazul invers, faza de heapificare
+          este cât mai rapidă posibil, deoarece matricea începe în ordine de heap, dar
+          apoi faza de sortare este tipică. În cazul celor câteva chei unice, există
+          o viteză rapidă, dar nu la fel de mult ca în tipul de coajă sau în rapiditate
+          cu 3 căi.
+      merge_sort:
+        title: Îmbina sort
+        description: 'Îmbina sortarea este foarte previzibilă. Efectuează
+          comparații între <span class="code-inline">0,5lg(n)</span> și <span
+          class="code-inline">1g(n)</span> pe element, și între swap-uri <span class="code-inline">lg(n)</span>
+          și <span class="code-inline">1,5lg (n)</span> pe element. Minimele
+          sunt obținute pentru datele deja sortate; maximele sunt obținute, în medie,
+          pentru date aleatorii. Dacă folosim <span class="code-inline">Θ (n),</span>
+          spațiul suplimentar nu are nicio problemă, atunci îmbinarea sortului este
+          o alegere excelentă: este simplu de implementat și este singurul algoritm
+          stabil de sortare <span class="code-inline">O(n·lg(n))</span> . Rețineți
+          că, la sortarea listelor legate, sortarea fuzionării necesită numai <span
+          class="code-inline">Θ(lg(n)</span> spațiu suplimentar (pentru recursivitate).
+          Merge sortarea este algoritmul de alegere pentru o varietate de situații:
+          când este necesară stabilitatea, când sortarea listelor legate, accesul este
+          mult mai scump decât accesul secvențial (de exemplu, sortarea externă pe bandă)
+          Există algoritmi de îmbinare în timp liniar în loc pentru ultima etapă a algoritmului,
+          dar sunt atât scumpi, cât și complexe. cum ar fi sortarea externă atunci când
+          nu există spațiu suplimentar <span class="code-inline">Θ(n)</span> .'
+      quick_sort:
+        title: Sortare rapida
+        description: Atunci când este implementat cu atenție, rapidul este robust și
+          are un nivel redus de cheltuieli. Atunci când nu este nevoie de un fel de
+          stabilitate, rapidul este un excelent sortare generală - deși versiunea de
+          partiționare cu 3 căi ar trebui să fie folosită întotdeauna. Codul de partiționare
+          bidirecțional prezentat mai sus este scris mai degrabă pentru claritate decât
+          pentru o performanță optimă; prezintă o localitate proastă și, în mod critic,
+          prezintă <span class="code-inline">O (n <sup>2</sup> )</span> timp când există
+          câteva chei unice. O metodă de partiționare mai eficientă și robustă este
+          dată în Quicksort este Optimal de Robert Sedgewick și Jon Bentley. Partiționarea
+          robustă produce recursivitate echilibrată atunci când există multe valori
+          egale cu pivotul, oferind garanții probabiliste pentru timpul <span class="code-inline">O
+          (n · lg (n))</span> și spațiul <span class="code-inline">O (lg (n))</span>
+          pentru toate intrările. Cu ambele sub-sortiri efectuate recursiv, sortarea
+          rapidă necesită <span class="code-inline">O (n)</span> spațiu suplimentar
+          pentru stiva de recursiune în cel mai rău caz când recursiunea nu este echilibrată.
+          Acest lucru este foarte puțin probabil să apară, dar poate fi evitat prin
+          mai întâi sortarea sub-matricei mai mici; al doilea sortare sub-array este
+          un apel recursiv cozii, care se poate face cu iterație. Cu această optimizare,
+          algoritmul folosește spațiul <span class="code-inline">O (lg (n))</span> în
+          cel mai rău caz.
+      other: Alți algoritmi de sortare
+      additional: Lectură suplimentară
+    searching:
+      title: In cautarea
+      binary_search:
+        title: Căutare binară
+        description: În domeniul informaticii, căutarea binară, cunoscută și ca căutare
+          pe jumătate sau căutare logaritmică, este un algoritm de căutare care găsește
+          poziția unei valori țintă într-o matrice sortată. Compară valoarea țintă cu
+          elementul intermediar al matricei; dacă acestea sunt inegale, jumătatea în
+          care țintă nu poate fi mincată este eliminată și căutarea continuă pe jumătatea
+          rămasă până când se va reuși.
+      knuth_moriss_pratt_search:
+        title: Search Knuth-Morris-Pratt
+        description: În domeniul informaticii, algoritmul de căutare al șirului Knuth-Morris-Pratt
+          (sau algoritmul KMP) caută apariția unui &quot;cuvânt&quot; W într-un &quot;șir
+          de text&quot; S principal, folosind observația că atunci când apare o nepotrivire,
+          informații pentru a determina unde ar putea începe următorul meci, ocolind
+          astfel reexaminarea caracterelor potrivite anterior.
+      other:
+        title: Alți algoritmi de căutare
+        dijkstra: Algoritmul lui Dijkstra
+        kruskal: Algoritmul lui Kruskal
+        longest: Cea mai mare creștere a subsecvenței
+        telephone_number: Numărul de telefon la cuvinte
+    credits: 'Codul și articolele au fost luate din resurse:'
+  data_structures:
+    title: Structuri de date
+    description: În domeniul informaticii, o notație O mare este folosită pentru clasificarea
+      algoritmilor prin modul în care răspund la modificările dimensiunii de intrare,
+      cum ar fi modul în care timpul de procesare al unui algoritm se modifică, deoarece
+      dimensiunea problemei devine extrem de mare. În teoria numerelor analitice se
+      utilizează pentru a estima &quot;eroarea comisă&quot;, în timp ce înlocuiește
+      mărimea asimptotică a unei funcții aritmetice cu valoarea pe care o are la un
+      argument finit mare. Un exemplu faimos este problema estimării termenului restul
+      în teorema numărului de prim.
+    axioms:
+      title: Axiomele fundamentale ale structurilor de date
+      description: Performanța timpului de rulare a runtimei limbajului comun este dată
+        de un set de axiome pe care o vom postula acum.
+      fetch_store:
+        title: Luați și depozitați timpul
+        description1: Timpul necesar pentru a prelua o referință la un obiect din memorie
+          este o constantă, <span class="code-inline">T_fetch</span> , iar timpul necesar
+          pentru a stoca o referință la un obiect din memorie este o constantă, <span
+          class="code-inline">T_store</span>
+        description2: Conform Axiom, instrucțiunea de atribuire are timpul de funcționare
+          <span class="code-inline">T_fetch + T_store</span> . Adică, timpul necesar
+          pentru a prelua referința obiectului din variabila x este <span class="code-inline">T_fetch</span>
+          și timpul necesar pentru stocarea referinței obiectului în variabila y este
+          <span class="code-inline">T_store</span> .
+        description3: De asemenea, are timp de funcționare <span class="code-inline">T_fetch
+          + T_store</span> . Pentru a vedea de ce ar trebui să fie cazul, considerăm
+          că constantul <span class="code-inline">1</span> numește un obiect Fixnum
+          cu valoarea unu. Prin urmare, ne putem aștepta ca costul preluării referinței
+          la obiectul numit 1 să fie același cu cel al preluării unei trimiteri la orice
+          alt obiect.
+      elementary_operations:
+        title: Operațiunea aritmetică elementară timp
+        description1: Timpurile necesare pentru a efectua operații elementare aritmetice,
+          cum ar fi adunarea, scăderea, înmulțirea, împărțirea și compararea, sunt toate
+          constante. Aceste timpuri sunt notate cu <span class="code-inline">T_ +, T_-,
+          T_ /, T_ *, T_ &lt;,</span> respectiv.
+        description2: Putem determina timpul unei instrucțiuni cum ar fi <span class="code-inline">2
+          * T_fetch + T_ + + T_store</span> . Acest lucru se datorează faptului că trebuie
+          să preluăm două referințe de obiect din variabilele y și 1; efectuați adăugarea
+          dând un obiect nou a cărui valoare este suma; și, stocați o referință la obiectul
+          nou în variabila y.
+        description3: Vom presupune că această alternativă necesită exact același timp
+          de funcționare ca și declarația originală.
+      call_method:
+        title: Apelarea timpului metodei
+        description1: Timpul necesar pentru a apela o metodă este o constantă, <span
+          class="code-inline">T_call</span> , iar timpul necesar pentru a reveni de
+          la o metodă este o constantă, <span class="code-inline">T_return</span> .
+          Rațiunea pentru realizarea cheltuielilor aferente parametrului care trece
+          aceleași ca și timpul pentru stocarea unei referințe de obiect este că transmiterea
+          unui argument este conceptual identică cu atribuirea valorii parametrilor
+          reali parametrului formal al metodei.
+        description2: Potrivit lui Axiom, timpul de execuție al instrucțiunii ar fi
+          <span class="code-inline">T_fetch + 2 * T_store + T_call + T_f (x)</span>
+          , unde <span class="code-inline">T_f (x)</span> este timpul de funcționare
+          al metodei f pentru intrarea x. Primul dintre cele două magazine se datorează
+          trecerii parametrului x la metoda f; a doua se datorează atribuirii variabilei
+          y.
+      calculating:
+        title: Timp de calcul
+        description1: Timpul necesar pentru calcularea adresei implicit printr-o operație
+          de abonament la matrice, de exemplu, <span class="code-inline">a[i]</span>
+          , este o constantă, <span class="code-inline">T_[]</span> . Acest timp nu
+          include timpul pentru a calcula expresia subscript, și nici nu include timpul
+          pentru a accesa elementul matrice.
+        description2: 'Acesta este <span class="code-inline">3 * T_fetch</span> . Sunt
+          necesare trei preluări de operand: prima pentru a prelua o referință la obiectul
+          de matrice a; a doua pentru a prelua o referință la obiectul index i; și a
+          treia pentru a aduce o referință la elementul matrice <span class="code-inline">a[i]</span> .'
+      object:
+        title: Timp de creare a obiectelor
+        description1: Timpul necesar pentru a crea o instanță nouă a unei clase este
+          o constantă, <span class="code-inline">T_new</span> . Acest timp nu include
+          timpul necesar inițializării obiectului. Aplicând Axioms putem determina timpul
+          de funcționare al instrucțiunii.
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> , unde <span class="code-inline">T_fixnum_init</span>
+          este timpul de rulare al metodei initialize a clasei Fixnum.
+      example:
+        title: Exemplu
+        description: În această secțiune vom aplica Axiome, analiza timpului de funcționare
+          a unui program pentru a calcula sumarizarea următoarelor serii simple aritmetice.
+    implementations:
+      title: Punerea în aplicare
+      stack:
+        title: Grămadă
+        description: Stiva este fratele coadă. Aceasta imita un stiva de viață reală
+          (de exemplu, de hârtie). Acesta este FILO (primul-in-out-out-out), astfel
+          încât atunci când articolele sunt extrase din stiva, ele sunt returnate în
+          inversa ordinii în care au fost adăugate. Din nou, Ruby Arrays oferă un container
+          perfect. Ca și în cazul Coadă, ar putea fi implementată și utilizând o listă
+          asociată.
+        as_array: Stivă ca matrice
+        as_linked_list: Stivă ca listă legată
+      queue:
+        title: Coadă
+        description: O coadă este o structură simplă bazată pe containere care imită
+          o coadă de viață reală (de ex. Așteptare în linie la bancă). Este FIFO (first-in-out-out),
+          ceea ce înseamnă că atunci când preluați elemente din coadă, acestea sunt
+          returnate în ordinea în care au intrat. Ruby Arrays oferă metode care fac
+          ca implementarea Queue să fie ușoară, dar care le-au denumit corespunzător
+          și conținute într-o clasă de conveniență merită să vadă că ele sunt implementate
+          și că alte structuri vor moșteni de la aceasta. O implementare alternativă
+          ar putea fi realizată utilizând o listă legată.
+        as_array: Cozi ca matrice
+        as_linked_list: Coada ca listă legată
+      deque:
+        title: și
+        description: A Deque este o coadă care permite adăugarea și eliminarea elementelor
+          la ambele capete.
+        as_array: Și, ca o matrice
+        as_linked_list: Deque ca listă legată
+      singly_linked_list:
+        title: Listă singură legată
+        description: Listele cu linkuri unice conțin noduri care au un câmp de date,
+          precum și un câmp &quot;următor&quot;, care indică nodul următor în rândul
+          nodurilor. Operațiile care pot fi efectuate pe liste singure legate includ
+          inserarea, ștergerea și traversarea.
+      doubly_linked_list:
+        title: Listă dublu legată
+        description: Într-o listă dublu legată, fiecare element de listă conține două
+          referințe - unul la succesorul său și unul la predecesorul său.
+      ordered_list:
+        title: Lista ordonata
+        description: O listă ordonată este o listă în care ordinea articolelor este
+          semnificativă. Cu toate acestea, elementele dintr-o listă ordonată nu sunt
+          în mod necesar sortate. În consecință, este posibil să modificați ordinea
+          articolelor și să aveți încă o listă valabilă.
+        as_array: Lista ordonată ca matrice
+      hash_table:
+        title: Hash Tabel
+        description: O tabelă hash este un container care poate fi căutat. Ca atare,
+          acesta oferă metode pentru a pune un obiect în container, pentru a găsi un
+          obiect în container și a elimina un obiect din container.
+      binary_tree:
+        title: Arbore binar
+        description: Un copac binar este un copac în care fiecare nod poate avea maximum
+          doi copii. Copiii sunt desemnați la stânga și la dreapta.
+      binary_search_tree:
+        title: Arborele de căutare binar &lt;
+        description: 'În domeniul informaticii, arborii binari de căutare (BST), numiți
+          uneori copaci binari ordonați sau trimiși, sunt un tip particular de containere:
+          structuri de date care stochează în memorie &quot;elemente&quot; (cum ar fi
+          numere, nume etc.). Ele permit căutarea, adăugarea și eliminarea rapidă a
+          elementelor și pot fi folosite pentru a implementa fie seturi dinamice de
+          elemente, fie tabele de căutare care permit găsirea unui element prin cheia
+          acestuia (de exemplu, găsirea numărului de telefon al unei persoane după nume)'
+      b_tree:
+        title: B-tree
+        description: În știința computerelor, un arbore B este o structură de date de
+          tip arborescent care păstrează datele sortate și permite căutări, acces secvențial,
+          inserții și ștergeri în timp logaritmic. B-arborele este o generalizare a
+          unui arbore binar de căutare în care un nod poate avea mai mult de doi copii
+          (Spre deosebire de arborii de căutare binar cu auto-echilibrare, arborele
+          B este optimizat pentru sistemele care citesc și scriu blocuri mari de date
+          B- copacii reprezintă un exemplu bun al unei structuri de date pentru memoria
+          externă. Este frecvent utilizat în baze de date și în sisteme de fișiere.
+      binary_heap:
+        title: Binar Heap
+        description: O grămadă binară este un arbore binar complet ordonat, care este
+          implementat utilizând o matrice. Într-o grămadă, cea mai mică cheie se găsește
+          la rădăcină și, deoarece rădăcina este întotdeauna găsită în prima poziție
+          a matricei, găsirea celei mai mici chei este o operație trivială într-o grămadă
+          binară.
+      credits: 'Codul și articolele au fost luate din resurse:'
+      source: Această pagină conține codul Ruby din cartea &quot;Structuri de date și
+        algoritmi cu modele de design orientate pe obiect în Ruby&quot; de Bruno R.
+        Preiss. Drept de autor (c) 2004 de Bruno R. Preiss, P. Eng. Toate drepturile
+        rezervate.
+  design_patterns:
+    title: Modele de design
+    creational:
+      title: Modele de creație
+      description: În ingineria software, modelele de design creațional sunt modele
+        de design care se ocupă de mecanismele de creare a obiectelor, încercând să
+        creeze obiecte într-o manieră adecvată situației. Forma de bază a creării de
+        obiecte ar putea duce la probleme de proiectare sau la o complexitate sporită
+        a designului. Modelele de design creator rezolvă această problemă controlând
+        cumva această creație a obiectului. Modelele designului creațional sunt compuse
+        din două idei dominante. Una este încapsularea cunoștințelor despre clasele
+        concrete pe care le utilizează sistemul. Un altul se ascunde cum sunt create
+        și combinate exemplele acestor clase concrete.
+      abstract_factory:
+        title: Modelul fabrica abstract
+        description: Modelul abstract din fabrică oferă o modalitate de încapsulare
+          a unui grup de fabrici individuale care au o temă comună fără a preciza clasele
+          lor concrete. În utilizarea normală, software-ul client creează o implementare
+          concretă a fabricii abstracte și apoi folosește interfața generică a fabricii
+          pentru a crea obiectele concrete care fac parte din temă. Clientul nu cunoaște
+          (sau nu îngrijește) obiectele concrete pe care le primește de la fiecare dintre
+          aceste fabrici interne, deoarece utilizează numai interfețele generice ale
+          produselor lor. Acest model separă detaliile implementării unui set de obiecte
+          de la utilizarea lor generală și se bazează pe compoziția obiectului, deoarece
+          crearea de obiecte este implementată în metode expuse în interfața fabricii.
+      builder:
+        title: Model de constructor
+        description: Modelul constructorului este un model de design software pentru
+          crearea de obiecte. Spre deosebire de modelul fabricii abstracte și modelul
+          metodei din fabrică a cărui intenție este de a permite polimorfismul, intenția
+          modelului constructorului este de a găsi o soluție la constructorul telescopic
+          anti-model. Modelul anti-model constructor telescopic are loc atunci când
+          creșterea combinației parametrilor constructorului de obiecte duce la o listă
+          exponențială de constructori. În loc să folosească numeroși constructori,
+          modelul constructor folosește un alt obiect, un constructor, care primește
+          fiecare pas de inițializare pas cu pas și apoi returnează obiectul construit
+          rezultant dintr-o dată.
+      factory:
+        title: Modelul fabricii
+        description: În programarea bazată pe clasă, modelul metodei din fabrică este
+          un model creator care utilizează metode din fabrică pentru a rezolva problema
+          creării de obiecte fără a fi nevoie să precizeze clasa exactă a obiectului
+          care va fi creat. Aceasta se face prin crearea de obiecte prin apelarea unei
+          metode din fabrică - fie specificată într-o interfață și implementată de clase
+          de copii, fie implementată într-o clasă de bază și opțional suprascrisă de
+          clase derivate - mai degrabă decât apelând un constructor.
+      prototype:
+        title: Model de prototip
+        description: Modelul prototip este un model de creatie conform liniilor fabricii.
+          Trucul cu prototipul este că creați obiecte noi prin copierea unui obiect
+          principal. Schimbarea acelui obiect principal și a tuturor obiectelor ulterioare
+          pe care le creați va duce la viață cu o copie a schimbării.
+      singleton:
+        title: Modelul singleton
+        description: Asigurați-vă că o clasă are doar o instanță și că oferă un punct
+          global de acces la ea. Acest lucru este util când este nevoie exact de un
+          obiect pentru a coordona acțiunile din sistem. Conceptul este generalizat
+          uneori la sisteme care funcționează mai eficient atunci când există doar un
+          singur obiect sau care restricționează instanționarea la un anumit număr de
+          obiecte.
+      not_covered:
+        title: 'Nu sunt acoperite modele:'
+        lazy: Linializare inițializare
+        multiton: multiton
+        pool: Piscină pentru obiecte
+        resource: Obținerea resurselor este inițializarea
+    structural:
+      title: Modele structurale
+      description: În ingineria software, modelele de design structural sunt modele
+        de design care ușurează proiectarea prin identificarea unei modalități simple
+        de realizare a relațiilor dintre entități.
+      adapter:
+        title: Modelul adaptorului
+        description: În ingineria software, modelul de adaptor este un model de design
+          software care permite interfeței unei clase existente să fie utilizată ca
+          o altă interfață. Este adesea folosit pentru a face clasele existente să lucreze
+          cu alții fără a modifica codul sursă.
+      composite:
+        title: Modelul compozit
+        description: Modelul de design compozit este un model structural folosit pentru
+          a reprezenta obiecte care au o structură ierarhică de arbori. Aceasta permite
+          tratarea uniformă atât a nodurilor individuale ale frunzelor, cât și a ramurilor
+          compuse din mai multe noduri.
+      decorator:
+        title: Modelul decoratorului
+        description: În programarea orientată pe obiecte, modelul de decorator (cunoscut
+          și ca Wrapper, o denumire alternativă împărtășită cu modelul Adaptor) este
+          un model de design care permite adăugarea unui comportament unui obiect individual,
+          fie static, fie dinamic, fără a afecta comportamentul altora obiecte din aceeași
+          clasă. Modelul de decorator este adesea util pentru aderarea la principiul
+          responsabilității unice, deoarece permite ca funcționalitatea să fie împărțită
+          între clase cu domenii unice de interes.
+      facade:
+        title: Fațadă
+        description: Modelul de proiectare a fațadelor este adesea utilizat atunci când
+          un sistem este foarte complex sau dificil de înțeles deoarece sistemul are
+          un număr mare de clase interdependente sau codul sursă este indisponibil.
+          Acest model ascunde complexitatea sistemului mai mare și oferă o interfață
+          mai simplă clientului. În mod obișnuit, aceasta implică o singură clasă care
+          cuprinde un set de membri cerut de client. Acești membri accesează sistemul
+          în numele clientului de fațadă și ascund detaliile implementării.
+      flyweight:
+        title: Flyweight model
+        description: În programarea pe calculator, flyweight este un model de design
+          software. Un flyweight este un obiect care minimizează utilizarea memoriei
+          prin împărțirea cât mai multor date cu alte obiecte similare; este o modalitate
+          de a folosi obiecte în numere mari atunci când o simplă reprezentare repetată
+          ar folosi o cantitate inacceptabilă de memorie. Adesea, anumite părți ale
+          stării obiectului pot fi partajate și este o practică obișnuită de a le ține
+          în structuri externe de date și de a le transfera temporar la obiectele flyweare
+          atunci când sunt folosite.
+      proxy:
+        title: Proxy model
+        description: 'Un proxy, în cea mai generală formă, este o clasă care funcționează
+          ca o interfață cu altceva. Proxy-ul poate interfața cu orice: o conexiune
+          la rețea, un obiect mare în memorie, un fișier sau o altă resursă care este
+          scumpă sau imposibil de duplicat. Pe scurt, un proxy este un obiect de wrap
+          sau agent care este apelat de către client pentru a accesa obiectul real de
+          difuzare din spatele scenei. Utilizarea proxy-ului poate fi pur și simplu
+          de redirecționare către obiectul real sau poate oferi o logică suplimentară.
+          În funcțiile proxy pot fi furnizate funcționalități suplimentare, cum ar fi
+          cache-ul atunci când operațiile asupra obiectului real sunt intensive sau
+          verificarea precondițiilor înainte ca operațiile asupra obiectului real să
+          fie invocate. Pentru client, utilizarea unui obiect proxy este similară cu
+          utilizarea obiectului real, deoarece ambele implementează aceeași interfață.'
+      protection_proxy:
+        title: Proxy de protecție
+        description: Proxy de protecție. Lucrezi la un MNC? Dacă este așa, s-ar putea
+          să fim conștienți de serverul proxy care ne oferă internet restricționând
+          accesul la un fel de site-uri web, cum ar fi e-mail public, rețele sociale,
+          stocare de date etc. Managementul consideră că este mai bine să blocheze anumite
+          conținuturi și furnizați numai pagini web legate de muncă. Serverul proxy
+          face acea slujbă. Acesta este un tip de model de proxy de design
+      virtual_proxy:
+        title: Proxy virtuale
+        description: Proxy virtuale. În locul unui obiect complex sau greu, utilizați
+          o reprezentare a scheletului. Atunci când o imagine de bază este imensă, reprezentați-o
+          folosind un obiect proxy virtual și încărcarea la cerere obiectul real. Știți
+          că obiectul real este costisitor în ceea ce privește instanțiația și astfel
+          fără o nevoie reală nu vom folosi obiectul real. Până va apărea necesitatea,
+          vom folosi proxy-ul virtual.
+      remote_proxy:
+        title: Proxy la distanță
+        description: Proxy la distanță. În comunicarea obiectului distribuit, un obiect
+          local reprezintă un obiect la distanță (unul care aparține unui spațiu de
+          adresă diferit). Obiectul local este un proxy pentru obiectul la distanță,
+          iar invocarea metodei pe obiectul local are ca rezultat invocarea de la distanță
+          a metodei de pe obiectul la distanță. Gândiți-vă la o implementare ATM, aceasta
+          va deține obiecte proxy pentru informații bancare existente în serverul de
+          la distanță.
+      not_covered:
+        title: 'Nu sunt acoperite modele:'
+        callback: Feedback adnotat
+        bridge: Pod
+        data_bus: Busul de date
+        role: Obiectul obiectului
+    behavioral:
+      title: Modele comportamentale
+      description: În ingineria software, modelele de design comportamentale sunt modele
+        de design care identifică modele comune de comunicare între obiecte și realizează
+        aceste modele. Procedând astfel, aceste modele cresc flexibilitatea în realizarea
+        acestei comunicări.
+      chain_of_responsobility:
+        title: Modelul lanțului de responsabilitate
+        description: În proiectarea orientată pe obiect, modelul lanțului de responsabilitate
+          este un model de design constând dintr-o sursă de obiecte de comandă și o
+          serie de obiecte de procesare. Fiecare obiect de procesare conține logică
+          care definește tipurile de obiecte de comandă pe care le poate gestiona; restul
+          sunt transferate către următorul obiect de procesare din lanț. De asemenea,
+          există un mecanism pentru adăugarea de noi obiecte de procesare la sfârșitul
+          acestui lanț.
+      command:
+        title: Modelul de comandă
+        description: Modelul de comandă este un model de comportament utilizat pentru
+          a stoca informațiile necesare pentru a apela metode în viitor. Comanda este
+          doar un set de acțiuni înfășurate într-un obiect. Cu rubin, putem folosi Procs
+          pentru a face același lucru fără a fi nevoie să creați un obiect separat.
+          Aceasta este o opțiune bună atunci când acțiunea este simplă și nu necesită
+          salvarea informațiilor de stare, altfel o clasă de comandă este cea mai bună
+          opțiune.
+      interpreter:
+        title: Modelul interpretului
+        description: În programarea pe calculator, modelul de interpret este un model
+          de design care specifică modul de evaluare a propozițiilor într-o limbă. Ideea
+          de bază este de a avea o clasă pentru fiecare simbol (terminal sau nonterminal)
+          într-o limbă de computer specializată. Arborele sintaxei unei propoziții în
+          limbă este o instanță a modelului compozit și este folosit pentru a evalua
+          (interpreta) propoziția pentru un client.
+      iterator:
+        title: Modelul iterator
+        description: Modelul de design iterator oferă acces secvențial elementelor din
+          interiorul unui container fără a expune modul în care containerul reprezintă
+          efectiv elementele. Iteratorul poate fi considerat ca un pointer mobil care
+          permite accesul la elementele încapsulate într-un container.
+      external_iterator:
+        title: Modelul iterator extern
+        description: 'Iteratorul extern: logica iterației este cuprinsă într-o clasă
+          separată. Clasa de iterație poate fi generalizată pentru a gestiona mai multe
+          tipuri de obiecte, atâta timp cât acestea permit indexarea. Aceasta necesită
+          clasa suplimentară pentru a realiza iterarea reală, dar ele permit o mai mare
+          flexibilitate deoarece puteți controla iterația, elementele care sunt iterate
+          și în ce ordine.'
+      internal_iterator:
+        title: Modelul iterator intern
+        description: 'Iterator intern: toate logica iteratoare apare în interiorul obiectului
+          agregat. Utilizați un bloc de coduri pentru a vă transmite logica în agregatul
+          care apoi apelează blocul pentru fiecare dintre elementele sale.'
+      mediator:
+        title: Modelul mediatorului
+        description: De obicei, un program este alcătuit dintr-un număr mare de clase.
+          Astfel, logica și calculul sunt distribuite între aceste clase. Cu toate acestea,
+          deoarece mai multe clase sunt dezvoltate într-un program, în special în timpul
+          întreținerii și / sau refactorizării, problema comunicării dintre aceste clase
+          poate deveni mai complexă. Acest lucru face ca programul să fie mai greu de
+          citit și de întreținut. Mai mult, poate deveni dificilă modificarea programului,
+          deoarece orice modificare poate afecta codul în mai multe alte clase. Cu modelul
+          de mediator, comunicarea între obiecte este încapsulată cu un obiect mediator.
+          Obiectele nu mai comunică direct între ele, ci comunică prin mediator. Aceasta
+          reduce dependențele dintre obiectele de comunicare, reducând astfel cuplarea.
+      momento:
+        title: Momentul modelului
+        description: 'Modelul Momento este implementat cu trei obiecte: inițiatorul,
+          îngrijitorul și momentele. Inițiatorul este un obiect care are o stare internă.
+          Îngrijitorul va face ceva pentru inițiator, dar vrea să fie capabil să anuleze
+          schimbarea. Îngrijitorul solicită inițial inițiatorului un obiect momento.
+          Apoi face orice operațiune (sau secvență de operațiuni) pe care urma să o
+          facă. Pentru a reveni la starea înainte de operațiuni, ea returnează obiectul
+          momento la inițiator. Obiectul momento în sine este un obiect opac (unul pe
+          care îngrijitorul nu îl poate modifica sau nu trebuie să îl schimbe). Atunci
+          când utilizați acest model, trebuie avut grijă dacă autorul poate schimba
+          alte obiecte sau resurse - modelul momente funcționează pe un singur obiect.'
+      observer:
+        title: Model de observator
+        description: Modelul de observator este un model de design software în care
+          un obiect numit subiect păstrează o listă a dependenților săi, numiți observatori,
+          și îi notifică automat despre orice schimbări de stare, de obicei apelând
+          una dintre metodele lor. Acesta este folosit în principal pentru implementarea
+          sistemelor distribuite de gestionare a evenimentelor. Modelul Observer este,
+          de asemenea, o parte esențială în modelul arhitectural familiar model-view-controller
+          (MVC). Modelul de observator este implementat în numeroase biblioteci de programare
+          și sisteme, inclusiv aproape toate seturile de instrumente GUI.
+      state:
+        title: Modelul de stat
+        description: Modelul de stare este un model de design comportamental care implementează
+          o mașină de stat într-un mod orientat pe obiect. Cu modelul de stat, o mașină
+          de stat este implementată prin implementarea fiecărui stat individual ca o
+          clasă derivată a interfeței de stat și a implementării tranzițiilor de stat
+          prin invocarea metodelor definite de superclajul modelului.
+      strategy:
+        title: Modelul de strategie
+        description: Strategia permite ca algoritmul să varieze independent de clienții
+          care îl folosesc. Strategia este unul dintre modelele incluse în modelele
+          influente de design de către Gamma și colab. care a popularizat conceptul
+          de utilizare a modelelor pentru a descrie designul de software. De exemplu,
+          o clasă care efectuează validarea datelor primite poate utiliza un model de
+          strategie pentru a selecta un algoritm de validare bazat pe tipul de date,
+          sursa datelor, alegerea utilizatorului sau alți factori de discriminare. Acești
+          factori nu sunt cunoscuți pentru fiecare caz până la execuție și pot necesita
+          o validare radicală diferită. Strategiile de validare, încapsulate separat
+          de obiectul validare, pot fi folosite de alte obiecte validate în diferite
+          zone ale sistemului (sau chiar sisteme diferite) fără dublarea codului.
+      template:
+        title: Modelul metodei șablonului
+        description: În programarea orientată pe obiecte, este creată mai întâi o clasă
+          care oferă pașii de bază ai unui design al algoritmului. Acești pași sunt
+          implementați utilizând metode abstracte. Ulterior, subclasele modifică metodele
+          abstracte pentru a implementa acțiuni reale. Astfel, algoritmul general este
+          salvat într-un singur loc, dar pașii concreți pot fi modificați de către subclasele.
+      visitor:
+        title: Modelul vizitatorului
+        description: În programarea orientată-obiect și ingineria software-ului, modelul
+          de design al vizitatorului este o modalitate de a separa un algoritm de o
+          structură obiect pe care o operează. Un rezultat practic al acestei separări
+          este capacitatea de a adăuga noi operații structurilor obiectuale existente
+          fără a modifica acele structuri. Este o modalitate de a urma principiul deschis
+          / închis. În esență, vizitatorul permite adăugarea de noi funcții virtuale
+          unei familii de clase fără modificarea clasei; în schimb, se creează o clasă
+          de vizitatori care implementează toate specializările corespunzătoare ale
+          funcției virtuale. Vizitatorul ia referința instanței ca intrare și implementează
+          obiectivul prin dublă expediere.
+      not_covered:
+        title: 'Nu sunt acoperite modele:'
+        hierarchical: Vizitator ierarhic
+      credits: 'Codul și articolele au fost luate din resurse:'
+  functional_programming:
+    title: Programare funcțională
+    description: 'Folosirea unei limbi într-un stil funcțional implică faptul că aveți
+      acces la câteva caracteristici cheie enumerate mai jos:'
+    axioms:
+      immutable: 'Valori imuabile: odată ce o &quot;variabilă&quot; este setată, nu
+        poate fi modificată. În Ruby, aceasta înseamnă că trebuie să tratezi efectiv
+        variabile precum constantele.'
+      side_effects: 'Nu există efecte secundare: atunci când a trecut o valoare dată,
+        o funcție trebuie să întoarcă întotdeauna același rezultat. Acest lucru merge
+        mână în mână cu valori imuabile; o funcție nu poate lua niciodată o valoare
+        și nu o poate schimba, deoarece aceasta ar cauza un efect secundar care este
+        tangent la returnarea unui rezultat.'
+      pure_functions: 'Funcții de ordin superior: acestea sunt funcții care permit funcții
+        ca argumente sau utilizează funcții ca valoare de retur. Aceasta este, fără
+        îndoială, una dintre cele mai importante caracteristici ale oricărui limbaj
+        funcțional.'
+      applying: 'Currying: activat de funcții de ordin superior, currying-ul transformă
+        o funcție care necesită mai multe argumente într-o funcție care are un argument.
+        Acest lucru merge mână în mână cu aplicarea funcției parțiale, care transformă
+        o funcție multi-argument într-o funcție care necesită mai puține argumente decât
+        atunci când a făcut inițial.'
+      recursion: 'Recursion: apelarea unei funcții din interiorul ei înșiși. Când nu
+        aveți acces la date transferabile, recursiunea este utilizată pentru a construi
+        și a construi lanțuri de date. Acest lucru se datorează faptului că looping-ul
+        nu este un concept funcțional, deoarece necesită transferarea variabilelor pentru
+        a stoca starea bucla la un moment dat.'
+      lazy: 'Lazy-evaluare sau evaluare întârziată: întârzierea procesării valorilor
+        până în momentul în care este de fapt nevoie. Dacă, de exemplu, aveți un cod
+        care a generat lista numerelor Fibonacci cu activare de evaluare leneș, acest
+        lucru nu ar fi procesat și calculat până când una dintre valorile din rezultat
+        nu a fost solicitată de o altă funcție, cum ar fi puts.'
+    pure_functions:
+      title: Funcții pure
+      description: Puteți vedea că această funcție calculează rezultatul folosind doar
+        argumentele sale.
+    closures:
+      title: închideri
+      description: De asemenea, Lambda impune o închidere și astfel își pot păstra contextul
+        între obiecte.
+    applying:
+      title: Aplicarea și transportul parțial
+      description: Să înțelegem mai întâi ce sunt aceste două aplicații diferite de
+        funcții. Aplicația funcțională parțială numește o funcție cu un număr de argumente,
+        pentru a obține o funcție înapoi care va lua mai multe argumente. Currying ia
+        o funcție care ia n argumente și o împarte în funcții n care iau un argument.
+      proc: Pentru a vă oferi o idee mai clară despre ceea ce fiecare dintre aceste
+        două lucruri va face o funcție, să luăm un exemplu Proc.
+      partial: Aplicarea parțială a acestei funcții s-ar întoarce, dacă am trece în
+        primele două argumente, următoarele Procs imbricate.
+      curry: <span class="code-inline">.curry</span> returnează un proces
+        procurat. Dacă este dată argumentul opțional arity, acesta determină
+        numărul de argumente. Un proc curried primește câteva argumente. Dacă este furnizat
+        un număr suficient de argumente, el transmite argumentele furnizate procului
+        original și returnează rezultatul. În caz contrar, returnează un alt procurat
+        care ia restul argumentelor.
+  gotchas:
+    title: Gotchas
+    description1: Majoritatea începătorilor din Ruby on Rails sunt încântați de cadru
+      și încep să creeze aplicații fără cunoașterea limbii. Și asta e magia lui RoR.
+    description2: La un moment dat, lucrurile încep să devină serioase. Unii iau timp
+      și efort pentru a explora secretele murdare ale lui Ruby on Rails, în timp ce
+      alții glosses și devin dezvoltatori seniori cu aproape zero cunoștințe despre
+      limbă.
+    description3: Oricum, mai devreme sau mai târziu, începători sau programatori cu
+      experiență, toți trăim în așa-numitele Ruby Gotchas - acele subtilități de limbaj
+      mic care se ascund de site-ul nostru timp de câteva ore de depanare hardcore.
+    description4: Iată o listă de interese și curiozități Ruby populare pe care dezvoltatorii
+      ar trebui să le cunoască. Pentru fiecare caz, există un exemplu de cod de confuzie
+      și / sau de eroare.
+    description5: Acestea vin împreună cu bunele practici, care vă vor împiedica să
+      faceți simple greșeli (dar greu de găsit) și să vă simplificați viața (și întreținerea
+      codului dvs.).
+    surprising:
+      title: Ruby poate fi surprinzător
+      description: Deși &quot;proiectat pentru a maximiza fericirea programatorului&quot;,
+        cu &quot;principiul celei mai puțin surprinzătoare&quot;, Ruby încă mai are.
+        Această prezentare va continua de la newbie trivial gotchas, la mai avansate
+        și confuză gotchas.
+    quotes:
+      title: Nu mă cita despre asta, dar ...
+      description: Interpolarea șirului (inclusiv caracterele speciale ca <span class="code-inline">\
+        n</span> ) eșuează cu citate <span class="code-inline">&quot;unice&quot;</span>
+        - necesită citate <span class="code-inline">&quot;dublu&quot;</span> . La fel
+        ca în majoritatea limbilor cu interpolare de șir. Pentru a evita folosirea dublei
+        ori de câte ori este posibil.
+    twue:
+      title: E un twee! E un twee!
+      description: 'Doar două lucruri sunt false: <span class="code-inline">false</span>
+        și <span class="code-inline">nil</span> . Totul altceva este trut, chiar <span
+        class="code-inline">0</span> (fals în C), <span class="code-inline">&quot;</span>
+        (fals în JS), <span class="code-inline">[]</span> , etc. Excursii pe oameni
+        din C, JS etc. unde unele dintre ele sunt false.'
+    symbols_and_strings:
+      title: Așteaptă-l în efigie sau String-l în sus, simbolic.
+      description: '<span class="code-inline">Symbol != String</span> . Chiar și atunci
+        când este imprimat. Amintiți-vă pe cine să utilizați pentru arge. În mod ideal,
+        luați fie și folosiți ceea ce se așteaptă la o metodă: &quot;Fii liberal în
+        ceea ce accepți și conservator în ceea ce trimiteți&quot;. Legea lui Postel.'
+    string_or_nothing:
+      title: String ... sau nimic!
+    constants:
+      title: Constantele nu sunt
+      description: Inițial, majuscule înseamnă constant, în Ruby. Încercați să schimbați
+        o constantă. Ooooh ai un AVERTISMENT! BFD. Chiar și înghețarea nu funcționează
+        pentru Fixnums. Ea funcționează pentru tablouri (în felul ăsta) și cele mai
+        multe alte obiecte ... a spus el prefigurat.
+    equals:
+      title: Unii sunt mai egali decât alții
+      description: <span class="code-inline">==</span> este aceeași valoare obișnuită,
+        <span class="code-inline">.eql?</span> este valoarea și clasa (1 este Fixnum,
+        1.0 este Float), <span class="code-inline">.equal?</span> este același obiect.
+        De fapt, este mult mai îngrijorătoare.
+    operations:
+      title: "&gt; ===! = ==!"
+      description: <span class="code-inline">===</span> este &quot;egalitatea cazului&quot;,
+        ca în declarațiile de caz. Un nume mai bun ar putea fi <span class="code-inline">.</span>
+        , sau supraîncărcare <span class="code-inline">.</span> . Din nou, este de fapt
+        mult mai îngrijorător; consultați docs-ul pe Object de clasă. Obține persoane
+        din limbile în care <span class="code-inline">===</span> este fie identitate
+        de obiect, fie aceeași valoare și aceeași clasă.
+    priority:
+      title: și! = &amp;&amp;, sau! = ||
+      description: '<span class="code-inline">&&</span> are precedență mai mare
+        decât <span class="code-inline">=</span> , deci <span class="code-inline">x
+        = true && false</span> înseamnă <span class="code-inline">x = (true
+        && false)</span> și are precedență inferioară, deci <span class="code-inline">x
+        = true and false</span> înseamnă <span class="code-inline">(x = true) and false</span>.
+        Ruby Style Guide: Folosiți <span class="code-inline">&&, ||</span>
+        pentru expresii booleene <span class="code-inline">and, or</span> pentru fluxul
+        de control.'
+    sensitive:
+      title: Nu fi așa de sensibil!
+      description: Indiferent de spațiul albului? NU INTOTDEAUNA! Parser crede că este
+        o expresie, ca un arg, dar <span class="code-inline">(1, 2)</span> nu este o
+        expresie valabilă Ruby! (Toate funcționează bine cu 1 argument).
+      usage: 'Cu arge multiple: <br/> - Fără pene, nici o problemă. <br/> - Părinții
+        fără spațiu, bine. <br/> - Parente și spațiu, NU!'
+      methods: '<span class="code-inline">method / num</span> este un regex sau un șir
+        nesupravegheat! Ruby crede că dai un argument acestei metode. Principiul general:
+        folosiți spațiul alb al balanței; ambele părți sau nici una.'
+      arguments: '<span class="code-inline">one -2</span> face Ruby să creadă că dai
+        un argument <span class="code-inline">-2</span> la metoda întâi. Același lucru
+        pentru <span class="code-inline">+2</span> sau chiar <span class="code-inline">*
+        2</span> . Din nou: utilizați spații libere balansate, ambele părți sau nici
+        una.'
+      stubby: "&quot;Stabby&quot; lambdas (1.9+) Parentheses optional Spațiu înainte
+        de după args fără părinți, OK. Spațiu după părinți, OK. Din nou, spațiu înainte
+        de părinți, NU! UPDATE: Fix în 2.0!"
+    onto:
+      title: Yer @ pe!
+      description: 'Valoarea goală devine o variabilă locală temporară! Soluție: rețineți
+        <span class="code-inline">@!</span> (Sau &quot;self&quot; sau folosiți <span
+        class="code-inline">attr_writer, attr_accessor</span> .) Obțineți oameni din
+        Java / C ++, nu atât Python (care are nevoie și de &quot;self&quot;). &quot;Continuați
+        să folosiți acea variabilă. Nu cred că înseamnă ceea ce credeți că înseamnă&quot;.
+        Nu este Inigo Montoya.'
+    variables:
+      title: Priviți-vă, este un @@!
+      description: Uite care este umplutura? Nu am schimbat
+        lui Parent <span class="code-inline">@@ valoarea</span> înainte să o verificăm, nici
+        deloc Copilul! Sau noi? <span class="code-inline">@@ variabilele</span> sunt
+        partajate cu subclasele - nu doar că există, ci și variabilele însele! Declarația
+        copilului <span class="code-inline">@@ valorii</span>a fost modificată de la părinți, inclusiv pe copilul schimbat al copilului.
+        Este un @@!
+    initialize:
+      title: Cu init (ialize) sau fără ea
+      description: Inițializatorul părintelui rulează automat numai dacă un copil nu
+        are nici unul. Altfel, părinții trebuie să fie chemați să alerge.
+    superman:
+      title: Superman vs. omul invizibil
+      description: '<span class="code-inline">super</span> cu lista nr-arg trimite ceea
+        ce apelantul a primit <span class="code-inline">super</span> cu args explicit
+        trimite args pentru a trimite NO args, utilizați parentale goale: <span class="code-inline">super()</span> .'
+    regexp:
+      title: Cand se va termina? (Sau incepe?)
+      description: 'În regexps standard: <span class="code-inlne">^</span> este începutul
+        și <span class="code-inline">$</span> este sfârșitul întregului șir. Ruby&#39;s
+        regexes implicit la multiline, deci: <span class="code-inline">^</span> este
+        start și <span class="code-inline">$</span> este sfârșitul oricărei linii! <span
+        class="code-inline">\ A</span> este începutul și <span class="code-inline">\
+        Z</span> este sfârșitul întregului șir. (Or \ z pentru a include orice linie
+        nouă ... care este un alt gotcha!)'
+    any:
+      title: obtinerea .any?
+      description: '<span class="code-inline">.any?</span> nu înseamnă &quot;orice
+        elemente?&quot;! Cu bloc: &quot;face orice face blocul adevărat?&quot;. Fără:
+        &quot;sunt orice trut?&quot; Are bloc implicit: <span class="code-inline">{ |element| element }</span> .'
+    undef:
+      title: "(Un) Def Leppard"
+      description: Variabilele declarate în blocuri transmise iteratorilor (de exemplu,
+        ori sau fiecare) sunt nedefinite în partea de sus a fiecărei iterații! Iteratorii
+        apelează blocul în mod repetat, astfel încât versurile să nu mai fie din nou
+        după fiecare apel. Built-in construcții buclă (de exemplu, în timp ce sau pentru)
+        sunt OK. (Sau să declare vars înainte de bloc.)
+    freeze:
+      title: Înghețați (Ar) ray
+      description: Înghețarea unei matrice (sau a unui hash) o îngheață, nu elementele
+        pe care le conține. Stringurile pot fi modificate în loc. În acest fel, puteți
+        modifica un slot dat într-o matrice de coarde înghețate.
+    one_is_one:
+      title: 1 este 1 ... și tot mai mult va fi așa!
+      description: 'Schimbarea Fixnum la valoarea nouă înseamnă un obiect nou. Ele nu
+        pot fi modificate în loc! Deci, nu se poate modifica o serie de congelați Fixnums.
+        (Fixnums și Integers nu au metode de bang-uri pentru a încerca demo-ul). BTW:
+        un obiect_id al lui <span class="code-inline">object_id</span> este <span class="code-inline">value
+        * 2 + 1</span>'
+    bang:
+      title: "(la! ||! to!) ==?"
+      description: Bang marchează metoda ca fiind periculoasă. De ce? Adesea, poate
+        modifica receptorul, versus non-modding non-bang versiune. NU VĂ RUGĂȚI RETURNAREA
+        ACESTEI VALORI CA VERSIUNEA NON-BANGĂ! Mulți se întorc la zero dacă nu este
+        necesară nicio schimbare!
+    array:
+      title: O serie de noi gotci
+      description: Valoarea implicită dată ca obiect este același obiect pentru fiecare
+        slot! Mutarea mută implicit pentru toți. Valoarea inițială dată ca bloc este
+        evaluată separat pentru fiecare slot. Utilizați aceasta pentru a crea noi vars
+        pentru fiecare.
+    hash:
+      title: Efectuați o rușine
+      description: 'În mare măsură aceeași problemă (și soluție) ca Arrays. MAI GOTCHAS:
+        creează un obiect nou pe orice acces la slotul gol! Poate crea un număr excesiv
+        de obiecte noi; ruinele care verifică conținutul sau numărul &quot;real&quot;
+        (verificare zero, .size, etc.).'
+    rescue:
+      title: Salvează-mă, arunc o linie, o să încerc să-l prind!
+      description: În Ruby, aruncarea și prinderea NU sunt pentru excepții! Acestea
+        sunt un control avansat al debitului, pentru a ieși din cuiburile adânci. Ruby
+        foloseste cresterea si salvarea pentru exceptii.
+    to_str:
+      title: to_s VS to_str
+      description: '<span class="code-inline">to_s</span> este definit pe fiecare obiect
+        și va întoarce întotdeauna ceva. <span class="code-inline">to_str</span> este
+        definit numai pe obiecte care sunt asemănătoare cu șirul. De exemplu, <span
+        class="code-inline">simbolul</span> are <span class="code-inline">to_str</span>,
+        dar <span class="code-inline">Array</span> nu. Astfel, puteți utiliza <span
+        class="code-inline">obj.respond_to?(:to_str)</span> în loc de ceva de genul
+        <span class="code-inline">obj.is_a?(String)</span> dacă doriți să profitați
+        de introducerea de rață fără să vă faceți griji dacă clasa cu care lucrați este
+        o subclasă de <span class="code-inline">String</span> sau nu.'
+    missing:
+      title: Necesitatea de a coordona method_missing și answer_to_missing?
+      description: 'Atunci când <span class="code-inline">method_missing</span>
+        , nu uitați să înlocuiți răspunsul la <span class="code-inline">respond_to_missing?</span> de asemenea. Când utilizați method_missing
+        pentru ca un obiect să returneze ceva într-un apel de metodă, asigurați-vă întotdeauna
+        că redefiniți răspunsul la trimitere ?. Dacă nu o faceți, nimic nu se va rupe
+        la prima vedere, dar în cele din urmă veți avea probleme. Luați în considerare
+        această clasă:'
+      respond_to: 'O mulțime de cod (pietre sau propria dvs.) se bazează pe answer_to?
+        (pentru un motiv bun). Ai nevoie de patch reply_to_missing? de asemenea:'
+    exception:
+      title: salvarea de la StandardError, nu o excepție
+      description: 'Nu salvați excepția, salvarea StandardError Înainte de salvarea
+        expresă Excepția va salva chiar și erorile care nu pot fi recuperate în mod
+        normal, cum ar fi SyntaxError, LoadError și Interrupt. Dacă omiteți calificatorul
+        de tip Excepție, atunci Ruby va prinde doar StandardError, ceea ce este probabil
+        ceea ce doriți:'
+    private:
+      title: Datele private nu sunt cu adevărat și deloc cu metode de clasă
+      description: Există o modalitate de a face metodele de clasă private în Ruby,
+        trebuie doar să treci prin niște cercuri. Err, vreau să spun că folosesc sintaxa
+        de <span class="code-inline">class << self</span> . Această ciudățenie împinge un exemplar
+        singleton pe clasă creând efectiv metode de clasă.
+    braces:
+      title: Brațele vs. do-end
+      description: Convenția generală este de a utiliza <span class="code-inline">do
+        .. end</span> blocurilor cu mai multe linii și a acoperișurilor curbate
+        pentru blocurile cu o singură linie, dar există, de asemenea, o diferență între
+        cele două care pot fi ilustrate. Acest lucru înseamnă că <span class="code-inline">{}</span>
+        are o prioritate mai mare decât până la <span class="code-inline">do .. end</span>
+        , deci țineți cont de acest lucru atunci când decideți ce doriți să utilizați.
+    module:
+      title: 'clasa Foo :: Bar, definită în afara modulului Foo, nu se va vedea în interiorul
+        Foo'
+      description: Vă puteți gândi la fiecare apariție a <span class="code-inline">module Something</span>,
+        la <span class="code-inline">class Something</span> sau la <span class="code-inline">def something</span>
+        unui &quot;gateway&quot; într-un nou domeniu. Atunci când Ruby caută definiția
+        unui nume care a fost referit, el privește mai întâi în domeniul de aplicare
+        curent (metoda, clasa sau modulul) și dacă nu se găsește unde va merge înapoi
+        prin fiecare conținând &quot;gateway&quot; și căutarea domeniul de aplicare.
+    credits: 'Codul și articolele au fost luate din resurse:'
+  meta_programming:
+    title: metaprogramarea
+    description: Metaprogramarea este scrierea programelor de computere care scriu sau
+      manipulează alte programe (sau ele însele) ca date sau care fac o parte a lucrării
+      la timpul de compilare care altfel ar fi făcut în timpul execuției. În multe cazuri,
+      acest lucru permite programatorilor să se realizeze mai mult în aceeași perioadă
+      de timp pe care o vor lua pentru a scrie întregul cod manual sau oferă programe
+      mai mare flexibilitate pentru a gestiona eficient situațiile noi fără recompilare.
+      Metaprogramarea este scrierea unui cod care scrie codul în timpul rulării pentru
+      a vă ușura viața.
+    dynamic_dispatch:
+      title: Dinamic dispatch
+      description: Ne permite să trimitem mesaje <span class="code-inline">subject.public_send
+        (message, * arguments)</span>
+    dynamic_method:
+      title: Metoda dinamică
+      description: 'Ne permite să creăm dinamic metode <span class="code-inline">define_method:
+        method_name {bloc care devine corp de metodă}</span>'
+    ghost_methods:
+      title: Metode fantomatice
+      description: Prinderea &quot;metodei fantomelor&quot; și redirecționarea acestora
+        pe altă metodă În timp ce este posibil să se adauge logică în jurul apelului.
+        Utilizează <span class="code-inline">method_missing</span>
+    dynamic_proxies:
+      title: Proxy-uri dinamice
+      description: 'De exemplu, puteți oferi metode imaginare utilizând <span class="code-inline">metoda_missing</span>
+        pentru a parsa mesajul primit (de exemplu, <span class="code-inline">get_name</span>
+        , <span class="code-inline">get_age</span> ) și pentru a delega o altă metodă,
+        cum ar fi <span class="code-inline">get (: data_type)</span> unde <span class="code-inline">:
+        data_type</span> este <span class="code-inline">: nume</span> sau <span class="code-inline">:
+        vârstă</span> .'
+      more: Dacă (după analiză) descoperiți o problemă de performanță cu metoda <span
+        class="code-inline">method_missing,</span> puteți folosi tehnica &quot;Metoda
+        dinamică&quot; pentru a crea o metodă reală după ce mesajul a fost primit de
+        prima dată cu `method_missing`.
+  solid_principles:
+    good: Bun!
+    bad: Rău!
+    title: Principii solide
+    description: În programarea pe calculator, Solid (responsabilitatea unică, Open-closed,
+      substituția Liskov, segregarea interfeței și inversarea dependenței) este un acronim
+      mnemonic introdus de Michael Feathers pentru &quot;Primele Cinci Principii&quot;
+      numite de Robert C. Martin la începutul anilor 2000 pentru cinci principii de
+      bază ale programării și designului orientat pe obiecte. Intenția este că aceste
+      principii, aplicate împreună, vor face mai probabil ca un programator să creeze
+      un sistem ușor de întreținut și extins în timp. Principiile SOLID sunt linii directoare
+      care pot fi aplicate în timp ce se lucrează la software pentru a elimina mirosurile
+      de cod cauzând programatorul să refacă codul sursă al software-ului până când
+      este atât lizibil, cât și extensibil. Face parte dintr-o strategie globală de
+      dezvoltare agile și adaptabile.
+    single:
+      title: Principiul unic de responsabilitate
+      description: Principiul Unic Responsabilitate este cel mai abstract din grup.
+        Ajută la păstrarea clasei și metodelor mici și întreținute. În plus față de
+        păstrarea claselor mici și concentrat le face, de asemenea, mai ușor de înțeles.Un
+        exemplu de acest lucru ar putea fi adăugarea de sprijin pentru trimiterea unui
+        rezumat e-mail de comisioane unei persoane specifice, după marcarea unei tranzacții
+        prelucrate. Faptul că putem identifica mai multe motive pentru a schimba semnalele
+        o încălcare a principiului responsabilității unice.
+    open_close:
+      title: Principiul deschis / închis
+      description: Principiul Open / Closed afirmă că clasele sau metodele trebuie să
+        fie deschise pentru extensie, dar închise pentru modificare. Acest lucru ne
+        spune că ar trebui să ne străduim pentru modele modulare care ne fac posibilă
+        schimbarea comportamentului sistemului fără a face modificări ale clasei în
+        sine. Acest lucru este realizat, în general, prin utilizarea unor modele cum
+        ar fi modelul de strategie.
+      after: Cu acest refactoring am făcut posibilă adăugarea de noi parseri fără a
+        schimba nici un cod. Orice comportament suplimentar va necesita adăugarea unui
+        nou handler. Acest lucru face ca FileParser-ul nostru să fie reutilizabil și,
+        în multe cazuri, ne va respecta principiul unic al responsabilității, încurajându-ne
+        să creăm clase mai mici concentrate.
+    liskov:
+      title: Principiul înlocuirii lui Liskov
+      description: Principiul lui Liskov tinde să fie cel mai greu de înțeles. Principiul
+        afirmă că ar trebui să puteți înlocui orice instanță a unei clase părinte cu
+        o instanță a unuia dintre copiii săi, fără a crea comportamente neașteptate
+        sau incorecte.
+    segregation:
+      title: Principiul inversării dependenței
+      description: Principiul prevede că un client nu ar trebui să fie nevoit să se
+        deplaseze pe metode pe care nu le utilizează. În acest exemplu, există cursuri
+        de Calculatoare, Programator și Tehnician. Atât Programatorul, cât și Tehnicianul
+        folosesc computerul într-un mod diferit. Programatorul folosește computerul
+        pentru tastare, dar tehnicianul știe cum să schimbe hard disk-ul calculatorului.
+        Ce principiu de segregare a interfeței (ISP) impune este că o clasă nu trebuie
+        să depindă de metodele pe care nu le utilizează. În cazul nostru, programatorul
+        este cuplat în mod inutil la metoda Computer_change_hard_drive, deoarece nu
+        îl folosește, dar modificările de stare pe care această metodă le aplică pot
+        afecta programatorul. Să refacem codul pentru a respecta LSP.
+      after: După acest refactor, tehnicianul folosește un obiect diferit de tipul ComputerInternals,
+        care este izolat de starea computerului. Starea obiectului Calculator poate
+        fi influențată de Programator, dar modificările nu vor afecta în nici un fel
+        Tehnicianul.
+    di:
+      title: Principiul inversării dependenței
+      description: Principiul inversiunii dependenței are de a face cu obiecte de nivel
+        înalt (gândiți logica afacerii) care nu depind de detaliile de implementare
+        la nivel scăzut (cred că interogarea bazei de date și IO). Acest lucru se poate
+        realiza cu tastarea rață și cu principiul inversării dependenței. Adesea, acest
+        model este folosit pentru a atinge principiul deschis / închis pe care l-am
+        discutat mai sus. De fapt, putem chiar reutiliza același exemplu ca o demonstrație
+        a acestui principiu. Acum există o clasă de formatori, dar am codificat-o pe
+        clasa Report, creând astfel o dependență de la raport la JSONFormatter. Deoarece
+        raportul este un concept mai abstract (la nivel înalt) decât JSONFormatter,
+        distrugem efectiv DIP.
+      after: În acest fel, raportul nu depinde de JSONFormatter și poate folosi orice
+        tip de formatator care are o metodă numită format (acest lucru este cunoscut
+        sub numele de tastare de rață). Alt lucru de remarcat este că am folosit, încă
+        o dată, injecția de dependență pentru a rezolva o problemă. Această tehnică
+        este una foarte puternică atunci când scopul nostru este decuplarea obiectelor
+        și chiar dacă are aceleași inițiale ca principiul inversiunii dependenței (vs
+        modelul de injecție a dependenței), ele sunt concepte complet diferite.
+  threads:
+    example: Exemplu
+    title: Subiecte
+    description: 'Notă despre paralelism și concurrency: Principala diferență între
+      utilizarea proceselor versus firele este modul în care este gestionată memoria.
+      La un nivel ridicat, procesele de copiere a memoriei, în timp ce firele partajează
+      memoria. Acest lucru face ca procesul să se reproducă mai lent decât înfundarea
+      firelor și duce la procese care consumă mai multe resurse odată ce rulează. În
+      ansamblu, firele suportă mai puțin decît procesele. Acest API Thread este un API
+      Ruby. Am înțeles că diferitele implementări Ruby au diferite comportamente de
+      filetare subiacente.'
+    green:
+      title: Verde fire
+      description: Ruby 1.9 a înlocuit firele verzi cu fire autohtone. Cu toate acestea,
+        GIL continuă să împiedice paralelismul. Acestea fiind spuse, concurența a fost
+        îmbunătățită printr-un program mai bun. Noul program face ca deciziile de comutare
+        a contextului să devină mai eficiente, trecându-le, în esență, într-un fir nativ
+        separat, cunoscut sub numele de fir de timer.
+    gil:
+      title: GIL - Închidere globală a interpreților
+      description: RMN are un blocaj de interpretare global (GIL). Este o blocare în
+        jurul execuției codului Ruby. Acest lucru înseamnă că într-un context multi-threaded,
+        numai un fir poate executa codul Ruby la un moment dat. Astfel, dacă aveți 8
+        fire care lucrează activ pe o mașină cu 8 nuclee, numai un fir și un nucleu
+        vor fi ocupate în orice moment . GIL există pentru a proteja internii Ruby de
+        condițiile de rasă care ar putea corupe datele. Există avertismente și optimizări,
+        dar acest lucru este esența.
+      example: Acest fapt simplu este ceea ce face firele atât de puternice și, de asemenea,
+        ceea ce le face dificil de a lucra cu. V-am dat deja o idee despre motivul pentru
+        care firele sunt bune; aici este un program simplu pentru a ilustra dificultatea
+        lor. Aici puteți vedea că avem <span class="code-inline">10 * 10000</span> elemente
+        în matrice. Rețineți că rubinul diferit poate afișa un rezultat diferit. GIL
+        există doar în rubinul RMN.
+    mutex:
+      title: Mutex - executare reciprocă
+      description: Mutexurile oferă un mecanism pentru fire multiple pentru a sincroniza
+        accesul la o parte critică a codului. Cu alte cuvinte, ele ajută la aducerea
+        unei ordini și a unor garanții în lumea haosului cu mai multe fire. Numele &quot;mutex&quot;
+        este o stenotă pentru &quot;excluderea reciprocă&quot;. Dacă înfășurați o secțiune
+        a codului dvs. cu un mutex, vă garantați că nici două fire nu pot intra în acea
+        secțiune în același timp. Mutexurile oferă un mecanism pentru fire multiple
+        pentru a sincroniza accesul la o parte critică a codului. Ajută la aducerea
+        unei ordini și a unei garanții în fața haosului cu mai multe fire.
+      example: În acest program, deoarece orice fir trebuie să blocheze mutexul înainte
+        de a putea împinge la matrice, există o garanție că nici două fire nu vor efectua
+        această operație în același timp. Cu alte cuvinte, această operațiune nu mai
+        poate fi întreruptă înainte de a fi terminată. Odată ce un fir începe să se
+        împingă la matrice, niciun alt fir nu va putea introduce acea porțiune de cod
+        până când nu se termină primul fir. Această operațiune este acum sigură. Aici
+        puteți vedea că avem <span class="code-inline">10 * 10000</span> elemente în
+        matrice. Acum toate sunt la fel, din cauza mutexului. Mutexul stabilește aceleași
+        limite pentru fir. Primul fir care lovește acest cod de cod va bloca mutex-ul.
+        apoi devine proprietarul acelui mutex. Până când firul propriu deblochează mutexul,
+        niciun alt fir nu îl poate bloca.
+    fibers:
+      title: Heliu
+      description: Fibrele sunt primitive pentru implementarea concurrencyului de cooperație
+        cu greutate redusă în Ruby. Practic, ele reprezintă un mijloc de a crea blocuri
+        de cod care pot fi întrerupte și reluate, la fel ca și firele. Principala diferență
+        este că acestea nu sunt niciodată preemptate și că planificarea trebuie făcută
+        de programator și nu de VM. Spre deosebire de alte modele de concurență ușoare,
+        fiecare fibră vine cu un mic set de 4KB. Acest lucru permite ca fibra să fie
+        întreruptă de apelurile de funcții înnoite în blocul de fibre.
+    rails:
+      title: Rails siguranța firului
+      description: Problema cu aceasta este că nu există nici o modalitate simplă de
+        a spune cu certitudine absolută dacă o aplicație ca întreg este sigură în legătură
+        cu firul.
+      global_variables: Variabilele globale sunt globale. Aceasta înseamnă că acestea
+        sunt împărțite între fire. Dacă nu v-ați convins că nu utilizați variabile globale
+        până acum, iată un alt motiv să nu le atingeți niciodată. Dacă într-adevăr doriți
+        să împărtășiți ceva global la o aplicație, sunteți mai mult decât probabil mai
+        bine serviți de o constantă (dar vedeți mai jos), oricum.
+      class_variables: Variabile de clasă. În scopul unei discuții despre fire, variabilele
+        de clasă nu sunt mult diferite de variabilele globale. Ele sunt împărțite între
+        fire în același mod. Problema nu este atât de folosirea variabilelor de clasă,
+        ci și despre mutarea acestora. Și dacă nu veți muta o variabilă de clasă, în
+        multe cazuri o constantă este din nou o alegere mai bună.
+      instance_variables: Clasificarea instanțelor de clasă. Dar poate ați citit că
+        ar trebui să utilizați întotdeauna variabile de instanță de clasă în loc de
+        variabile de clasă în Ruby. Ei bine, poate ar trebui, dar sunt la fel de problematice
+        pentru programele filetate ca variabile de clasă.
+      memoization: 'Memorizarea în sine nu reprezintă o problemă de siguranță a firului.
+        Este adesea folosit pentru a stoca date în variabile de clasă sau variabile
+        de instanță de clasă (vezi punctele anterioare). Operatorul <span class="code-inline">||
+        =</span> este, de fapt, două operații, deci există un potențial comutator de
+        context care se întâmplă în mijlocul acestuia, determinând o condiție de rasă
+        între fire. Deci, chiar dacă ați folosi numai variabile de instanță, s-ar putea
+        să ajungeți la condițiile de rasă cu memoizare. Nu memorați variabilele de clasă
+        sau variabilele de clasă. Dacă trebuie să memoriți ceva la nivel de clasă, utilizați
+        în schimb variabilele locale ale firelor (<span class="code-inline">Thread.current[:baz</span>). Fiți conștienți, totuși, că este încă un fel de variabilă globală.'
+    config:
+      title: Configurați threadsafe !?
+      description: Apelarea acestei metode stabilește patru opțiuni în configurația
+        aplicației noastre. Să trecem prin fiecare opțiune și să vorbim despre ceea
+        ce face.
+      frameworks: 'Cadrele de preîncărcare: Prima opțiune @preload_frameworks face exact
+        ceea ce se spune, forțează cadrele Rails să fie încărcate cu nerăbdare în boot.
+        Când această opțiune nu este activată, clasele cadru sunt încărcate leneș prin
+        intermediul autoload. În medii multi-threaded, framework-ul trebuie să fie încărcat
+        cu nerăbdare înainte ca orice fire să fie create din cauza problemelor de siguranță
+        a firului cu autoload. Știm că încărcarea cadrului nu este firewall, deci strategia
+        este de a încărca totul înainte ca toate firele să fie pregătite să facă față
+        cererilor.'
+      cache: 'Clasele de cache: Opțiunea @cache_classes controlează dacă clasele se
+        reîncarcă sau nu. Îți amintești când faci &quot;TDD&quot; în aplicația ta? Modificați
+        un controler, apoi reîncărcați pagina pentru ao &quot;testa&quot; și pentru
+        a vedea că lucrurile s-au schimbat? Ya, asta controlează această opțiune. Când
+        această opțiune este falsă, ca în curs de dezvoltare, clasele dvs. vor fi reîncărcate
+        atunci când vor fi modificate. Fără această opțiune, nu am putea să ne facem
+        &quot;F5DD&quot; (da, asta este F5 Driven Development). În producție, știm că
+        clasele nu vor fi modificate în zbor, așa că făcând lucrul pentru a afla dacă
+        să reîncărcați orele este doar să risipești resursele, deci este logic să nu
+        reîncărcați definițiile clasei.'
+      di: 'Încărcarea dependenței: Această opțiune, @dependency_loading încadrează codul
+        de încărcare când sunt întâlnite constante lipsă. De exemplu, un controler se
+        referă la modelul de utilizator, dar nu este definită constanta utilizatorului.
+        În acest caz, dacă @dependency_loading este adevărat, Rails va găsi fișierul
+        care conține Conținutul constant și va încărca acel fișier. Am vorbit deja despre
+        modul în care încărcarea de cod nu este thread-ul în siguranță, deci ideea aici
+        este că ar trebui să încărcăm cadrul, apoi să încărcăm tot codul de utilizator,
+        apoi să dezactiva încărcarea dependenței. Odată ce încărcarea dependenței este
+        dezactivată, codul cadru și codul aplicației ar trebui să fie încărcate, iar
+        toate constantele lipsă vor ridica doar o excepție, mai degrabă decât să încerce
+        să introducă codul. Noi justificăm dezactivarea acestei opțiuni în producție,
+        deoarece (așa cum sa menționat mai devreme) încărcarea codului nu este threadsafe,
+        și ne așteptăm să avem toate codurile încărcate înainte ca orice fire să poată
+        face față cererilor.'
+      concurrency: 'Permiterea concurrency: opțiunea @allow_concurrency controlează
+        dacă sau nu este utilizat în stackul dvs. middleware Rack :: Lock. Rack :: Lock
+        blochează un mutex în jurul cererii dvs. Ideea este că, dacă aveți un cod care
+        nu este threadsafe, acest mutex va împiedica mai multe fire de la executarea
+        codului dvs. de controler în același timp. Atunci când vă asigurați fire! este
+        setat, acest middleware este eliminat, iar codul controlerului poate fi executat
+        în paralel.'
+    credits: 'Codul și articolele au fost luate din resurse:'
+  ruby_meister:
+    title: Deveniți Ruby Meister
+    description: În această discuție, vom examina călătoria lungă de a fi un novice
+      Ruby pentru a obține o adevărată măiestrie a Ruby și va încerca să o scurteze
+      puțin pentru dvs. prin împărtășirea unor informații importante. Un maestru Rubyist
+      are o fundație teoretică mare, se bazează pe o vastă set de instrumente, are o
+      înțelegere profundă a valorilor și principiilor de bază ale Ruby și își îmbunătățește
+      întotdeauna abilitățile. Poate că vă spuneți &quot;Wow, acest lucru este destul
+      de vag!&quot;, Dar dacă participați la această sesiune vă promit că veți fi luminat,
+      amuzat și vă veți bucura de ea! Suna bine? Marile cărți vor face parte din resursele
+      pe care le-aș sugera oamenilor să-și îmbunătățească abilitățile.
+    video: Călătoria lungă spre măiestria lui Ruby de Bozhidar Batsov.
+    computer_science_fundamentals:
+      title: Informatică fundamentală
+      articles:
+        - name: inside_machine
+          title: 'În interiorul mașinii: o introducere ilustrată a microprocesoarelor
+            și a arhitecturii computerelor'
+          description: Computerele îndeplinesc nenumărate sarcini, variind de la o afacere
+            critică la cea de agrement, dar indiferent de cât de diferit ar putea să
+            arate și să se comporte, toate sunt uimitor de asemănătoare în funcția de
+            bază. Odată ce înțelegeți cum funcționează unitatea de procesare cu microprocesor
+            (CPU), veți avea o înțelegere fermă a conceptelor fundamentale, în centrul
+            tuturor proceselor moderne de calcul.
+        - name: code
+          title: 'Cod: Limbajul ascuns al calculatorului și al software-ului'
+          description: Ce fac lanternele, invazia britanică, pisicile negre și balansoarul
+            au de-a face cu calculatoarele? În CODE, ei ne arată modalitățile ingenioase
+            pe care le manipulăm și inventăm mijloace noi de a comunica unul cu celălalt.
+            Și prin COD, vedem cum această ingenuitate și constrângerea noastră foarte
+            umană de a comunica au condus inovațiile tehnologice din ultimele două secole.
+        - name: concrete_math
+          title: 'Materiale de beton: o fundație pentru informatică'
+          description: Această carte prezintă matematica care susține programarea avansată
+            a calculatorului și analiza algoritmilor. Scopul principal al autorilor
+            săi este de a oferi o bază solidă și relevantă de abilități matematice -
+            abilitățile necesare pentru a rezolva probleme complexe, a evalua sumele
+            oribile și pentru a descoperi modele subtile în date. Este un text și o
+            referință indispensabilă nu numai pentru oamenii de știință pe calculator
+            - autorii înșiși se bazează foarte mult pe el! - dar pentru utilizatorii
+            serioși de matematică în aproape toate disciplinele.
+        - name: sicp
+          title: Structura și interpretarea programelor de calculator
+          description: 'Structura și interpretarea programelor de calculator au avut
+            un impact dramatic asupra programelor de informatică din ultimul deceniu.
+            Această revizuire mult așteptată conține modificări în text. Există noi
+            implementări ale majorității sistemelor de programare majore din cartea,
+            inclusiv interpreții și compilatorii, iar autorii au încorporat multe mici
+            modificări care reflectă experiența lor de predare a cursului la MIT de
+            la publicarea primei ediții. A fost introdusă o nouă temă care pune accentul
+            pe rolul central jucat de diferitele abordări în abordarea timpului în modelele
+            computationale: obiecte cu stare, programare concurentă, programare funcțională,
+            evaluare leneșă și programare nedeterministă.'
+        - name: design_programms
+          title: 'Cum se proiectează programe: o introducere în programare și computere'
+          description: Această introducere în programare plasează știința informaticii
+            în centrul unei educații artistice liberale. Spre deosebire de alte cărți
+            introductive, se concentrează asupra procesului de proiectare a programului.
+            Această abordare favorizează o varietate de lectură critică a abilităților,
+            gândire analitică, sinteză creativă și atenție la detalii - care sunt importante
+            pentru toată lumea, nu doar pentru viitorii programatori de calculatoare.
+            Cartea expune cititorii la două idei fundamental noi. În primul rând, prezintă
+            regulile de proiectare a programului care arată cititorului cum să analizeze
+            o declarație de problemă; modul de formulare a unor obiective concise; cum
+            să facem exemple; cum să dezvolte o schiță a soluției, bazată pe analiză;
+            cum să terminați programul; și cum să încercați.
+        - name: algorithm_manual
+          title: Manualul de proiectare al algoritmului
+          description: Această nouă ediție recentă a celei mai bine vândute clasice
+            continuă să preia &quot;misterul&quot; din proiectarea algoritmilor și analizarea
+            eficacității și eficienței acestora. Extinzând prima ediție, cartea servește
+            acum ca manualul principal de alegere pentru cursurile de design al algoritmului,
+            menținându-și în același timp statutul de ghid de referință practic al algoritmilor
+            pentru programatori, cercetători și studenți.
+        - name: cormen
+          title: Introducere în algoritmi, ediția a treia (The MIT Press)
+          description: Unele cărți despre algoritmi sunt riguroase, dar incomplete;
+            altele acoperă mase de material, dar lipsesc rigoare. Introducerea în algoritmi
+            combină în mod unic rigoarea și comprehensivitatea. Cartea acoperă o gamă
+            largă de algoritmi în profunzime, dar face ca designul și analiza lor să
+            fie accesibile tuturor nivelurilor cititorilor. Fiecare capitol este relativ
+            autonom și poate fi folosit ca unitate de studiu. Algoritmii sunt descriși
+            în limba engleză și într-un pseudocod conceput pentru a putea fi citit de
+            oricine care a făcut o mică programare. Explicațiile au fost păstrate elementare
+            fără a sacrifica adâncimea de acoperire sau rigoarea matematică.
+        - name: compilers
+          title: 'Compilieri: principii, tehnici și instrumente (ediția a 2-a)'
+          description: 'Compilatorii: Principii, Tehnici și Instrumente, cunoscute de
+            profesori, studenți și dezvoltatori din întreaga lume ca &quot;Cartea Dragon&quot;,
+            sunt disponibile într-o ediție nouă. Fiecare capitol a fost complet revizuit
+            pentru a reflecta evoluțiile în domeniul ingineriei software, limbajelor
+            de programare și al arhitecturii computerelor care au avut loc în 1986,
+            când ultima ediție a fost publicată. Autorii, recunoscând că puțini cititori
+            vor continua să construiască un compilator, își vor păstra atenția asupra
+            setului mai larg de probleme cu care se confruntă proiectarea de software
+            și dezvoltarea de software.'
+        - name: c_lang
+          title: C Programming Language, ediția a 2-a
+          description: Autorii prezintă ghidul complet pentru programarea limbajului
+            C standard ANSI. Scrisă de dezvoltatorii C, această nouă versiune ajută
+            cititorii să țină pasul cu standardul ANSI finalizat pentru C, în timp ce
+            arată cum să profite de setul bogat de operatori ai C, economia de expresie,
+            fluxul de control îmbunătățit și structurile de date. 2 / E a fost complet
+            rescris cu exemple suplimentare și seturi de probleme pentru a clarifica
+            punerea în aplicare a construcțiilor dificile de limbă. De ani de zile,
+            programatorii C au lăsat K &amp; R să îi îndrume spre construirea unor programe
+            bine structurate și eficiente. Acum, același ajutor este disponibil pentru
+            cei care lucrează cu compilatoarele ANSI. Include o acoperire detaliată
+            a limbajului C plus manualul oficial de referință C pentru ajutor la scurt
+            timp cu notația sintaxă, declarații, modificări ANSI, reguli de domeniu
+            și lista continuă și continuă.
+    oop:
+      title: Programarea orientată pe obiecte
+      articles:
+        - name: growing
+          title: Software orientat spre obiect, orientat pe teste
+          description: 'Dezvoltarea bazată pe dezvoltare (TDD) este acum o tehnică stabilită
+            pentru furnizarea mai rapidă a unui software mai bun. TDD se bazează pe
+            o idee simplă: Scrie teste pentru codul dvs. înainte de a scrie codul în
+            sine. Cu toate acestea, această idee &quot;simplă&quot; necesită abilități
+            și judecăți pentru a face bine. Acum există un ghid practic pentru TDD care
+            vă duce dincolo de conceptele de bază. Bazându-se pe un deceniu de experiență
+            în construirea sistemelor din lumea reală, doi pionieri TDD arată cum să
+            lăsăm testele să ghideze dezvoltarea și să crească un software care să fie
+            coerent, fiabil și ușor de întreținut.'
+        - name: domain_driven
+          title: 'Design-ul bazat pe domenii: combaterea complexității în inima software-ului'
+          description: Aceasta este o carte serioasă despre modelarea domeniului în
+            designul de software. Software-ul dezvoltării societății trăiește de la
+            un val de hype la altul. OOP, modele, XP, TDD, CI / CD, BigData, DevOps
+            - este doar pentru a numi câteva. Această carte provine din epoca de aur
+            a OOP. Autorul admite că paradigma orientată-obiect nu este singura disponibilă,
+            dar părtinirea față de OOP / OOD este evidentă (și justificabilă). Această
+            carte explică modul de modelare a componentelor software de bază &quot;pe
+            calea cea bună&quot;.
+    ruby:
+      title: Cunoaște-ți lang
+      articles:
+        - name: well_grounded
+          title: Rubyistul bine întemeiat
+          description: Rubyistul bine pus la punct, Ediția a doua se adresează atât
+            nou-veniților programatorilor Ruby, cât și programatorilor Ruby care doresc
+            să-și aprofundeze înțelegerea limbii. Această ediție frumoasă și complet
+            revizuită include acoperirea caracteristicilor noi în Ruby 2.1, precum și
+            o acoperire extinsă și actualizată a aspectelor limbii care s-au schimbat.
+        - name: programming_ruby
+          title: 'Programarea Ruby: Ghidul programatorilor pragmatici, Ediția a II-a'
+          description: 'Ruby este un limbaj de programare dinamic din ce în ce mai popular,
+            complet orientat spre obiect, apreciat de mulți practicieni drept cea mai
+            bună și mai folositoare limbă disponibilă astăzi. Când Ruby a început să
+            apară pe scena din lumea occidentală, programatorii pragmatici au fost acolo
+            cu manualul de referință definitiv, Programarea Ruby: Ghidul programatorului
+            pragmatic.'
+        - name: ruby_programming
+          title: 'Limba de programare Ruby: Tot ce trebuie să știți'
+          description: 'Această carte începe cu un tutorial rapid de pornire a limbii
+            și apoi explică limba în detaliu de jos în sus: de la structura lexicală
+            și sintactică la tipurile de date la expresii și afirmații și prin metode,
+            blocuri, lambda, închideri, clase și module. Cartea include, de asemenea,
+            o introducere lungă și amănunțită a API-ului bogat al platformei Ruby, care
+            demonstrează - cu exemplul puternic codul - facilitățile Ruby pentru procesarea
+            textului, manipulare numerică, colecții, intrare / ieșire, rețea și concurrency.
+            Un capitol întreg este dedicat capabilităților de metaprogramare ale lui
+            Ruby.'
+  interview_questions:
+    title: Intrebari de interviu
+    description: Această secțiune păstrează legăturile de resurse pentru a citi și a
+      pregăti interviul
+    list:
+      - name: 'Toptal: Cum de a angaja un dezvoltator de Ruby Mare'
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: 'Toptal: 21 întrebări esențiale despre interviul Ruby'
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: 'Hookops: 35+ Ruby and Rails Întrebări și răspunsuri interviu'
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: 'Educba: Cele mai importante întrebări și răspunsuri la Ruby Interviu'
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: 'Ruby Garage: Cum să vă intervievați pe Ruby on Rails Developer'
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: 'RyanSobol: 15 întrebări de întrebat în timpul unui interviu Ruby'
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: 'Toptal: 9 întrebări esențiale despre Ruby on Rails Interview'
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: Ce este Better Docs
+    description: Acest site web este adaptare web Github repository <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
+      care a adunat o mulțime de stele și a fost tradus în limba chineză. Documentele
+      mai bune vă permit să găsiți rapid o bună practică care a fost colectată într-un
+      depozit. Doar tu acest repo cum ar fi resursa de referință sau de pregătire pentru
+      interviu.
+    oss:
+      title: Datorită Open Source
+      description: Documentele mai bune au fost create în timp ce lucrau și au descoperit
+        cele mai bune practici și cunoștințe despre rubin, o inginerie open source pentru
+        aplicațiile de dezvoltare web scrise în Ruby.
+      thanks: În cazul în care Better Docs v-a ajutat în vreun fel, gândiți-vă să ne
+        dați o stea pe <a href="https://github.com/howtohireme/ruby.fundamental">Github</a>
+        (ne ajută să ajungeți la mai mulți dezvoltatori) sau să contribuiți la proiectele
+        noastre.

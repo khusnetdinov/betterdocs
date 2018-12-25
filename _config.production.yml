@@ -8,8 +8,26 @@ collections:
     output: true
     permalink: /:slug
 
-default_lang: "en"
-languages: ['en', 'ru']
+default_lang: 'en'
+languages: [
+  'en',
+  'bg', 'bn',
+  'cn',
+  'de',
+  'el', 'es',
+  'fr',
+  'hi', 
+  'id', 'it',
+  'ja',
+  'ko',
+  'ms',
+  'pl', 'pt',
+  'ro',
+  'ru',
+  'th', 'tr',
+  'vi'
+]
+
 timezone: Europe/Moscow
 exclude_from_localizations: ['javascript', 'images', 'css']
 

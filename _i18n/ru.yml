@@ -10,7 +10,7 @@ content:
     close: "Закрыть меню"
 
 sidebar:
-  - title: Алгоритмы
+  - title: "Алгоритмы"
     url: algorithms
     submenus:
       - key: sorting
@@ -26,7 +26,7 @@ sidebar:
         submenus:
           - binary_search
           - knuth_moriss_pratt_search
-  - title: Структуры Данных
+  - title: "Структуры Данных"
     url: data_structures
     submenus:
       - key: axioms
@@ -51,7 +51,7 @@ sidebar:
           - b_tree
           - binary_heap
 
-  - title: Шаблоны проектирования
+  - title: "Шаблоны проектирования"
     url: design_patterns
     submenus:
       - key: creational
@@ -81,13 +81,13 @@ sidebar:
           - strategy
           - template
           - visitor
-  - title: Функциональное программирование
+  - title: "Функциональное программирование"
     url: functional_programming
     submenus:
       - pure_functions
       - closures
       - applying
-  - title: Готчи
+  - title: "Готчи"
     url: gotchas
     submenus:
       - surprising
@@ -119,15 +119,15 @@ sidebar:
       - private
       - braces
       - module
-  - title: Вопросы на интервью
+  - title: "Вопросы на интервью"
     url: interview_questions
-  - title: Метапрограммирование
+  - title: "Метапрограммирование"
     url: meta_programming
     submenus:
       - dynamic_dispatch
       - dynamic_method
       - dynamic_proxies
-  - title: СОЛИД
+  - title: "СОЛИД"
     url: solid_principles
     submenus:
       - single
@@ -135,9 +135,9 @@ sidebar:
       - liskov
       - segregation 
       - di
-  - title: Станьте специалистом в Руби
+  - title: "Станьте специалистом в Руби"
     url: ruby_meister
-  - title: Потоки
+  - title: "Потоки"
     url: threads
     submenus:
       - green
@@ -222,7 +222,7 @@ pages:
         description3: "Также имеет время выполнения <span class=\"code-inline\">T_fetch + T_store </span>. Чтобы понять, почему это должно быть так, считайте, что константа <span class=\"code-inline\"> 1 </span> обозначает объект Fixnum со значением один. Поэтому мы можем ожидать, что стоимость получения ссылки на объект с именем 1 будет такой же, как и выборка ссылки на любой другой объект."
       elementary_operations:
         title: "Время элементарных арифметических операций"
-        description1: "Время, необходимое для выполнения элементарных арифметических операций, таких как сложение, вычитание, умножение, деление и сравнение, являются постоянными. Эти времена обозначаются символом <span class =\"code-inline\"> T_ +, T_-, T_ /, T_ *, T _ <, </ span> соответственно."
+        description1: "Время, необходимое для выполнения элементарных арифметических операций, таких как сложение, вычитание, умножение, деление и сравнение, являются постоянными. Эти времена обозначаются символом <span class =\"code-inline\">T_+, T_-, T_/, T_*, T_<</span>, соответственно."
         description2: "Мы можем определить время выражения, например: <span class =\"code-inline\"> 2 * T_fetch + T_ + + T_store </span>. Это связано с тем, что нам нужно получить две ссылки на объекты из переменных y и 1; выполнить добавление, дающее новый объект, значение которого представляет собой сумму; и сохраните ссылку на новый объект в переменной y."
         description3: "Будем предполагать, что альтернатива требует точно такого же времени работы, что и исходное утверждение."
       call_method:
@@ -599,21 +599,21 @@ pages:
   ruby_meister:
     title: "Станьте специалистом в Руби"
     description: "В этом разговоре мы рассмотрим долгий путь от новичка до  мастера в Ruby и попытаемся немного его сократить, разделив важную информацию. Мастер имеет отличную теоретическую основу, опирается на обширный набор инструментов, имеет глубокое понимание основных ценностей и принципов Ruby и всегда оттачивает навыки. Возможно, вы говорите себе: «Ух ты, это довольно расплывчато!», но если вы посетите эту сессию, я обещаю, что вы будете просветлены и вам понравится! Звучит хорошо?"
-    video: "The Long Journey to Ruby Mastery by Bozhidar Batsov."
+    video: "Долгое путешествие к Ruby мастерству от Божидара Бацова."
     computer_science_fundamentals:
       title: "Основы информатики"
       articles:
         - name: "inside_machine"
           title: "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture"
-          description: "Computers perform countless tasks ranging from the business critical to the recreational, but regardless of how differently they may look and behave, they're all amazingly similar in basic function. Once you understand how the microprocessor—or central processing unit (CPU)—works, you'll have a firm grasp of the fundamental concepts at the heart of all modern computing."
+          description: "Компьютеры выполняют бесчисленное количество задач, начиная от критически важных для бизнеса и заканчивая рекреационными, но независимо от того, как иначе они могут выглядеть и вести себя, все они удивительно похожи по основной функции. Как только вы поймете, как работает микропроцессор или центральный процессор (CPU), вы получите четкое представление о фундаментальных концепциях, лежавших в основе всех современных вычислительных систем."
           link: "https://www.amazon.com/Inside-Machine-Introduction-Microprocessors-Architecture-ebook/dp/B004OEJO0A"
         - name: "code"
           title: "Code: The Hidden Language of Computer Hardware and Software"
-          description: "What do flashlights, the British invasion, black cats, and seesaws have to do with computers? In CODE, they show us the ingenious ways we manipulate language and invent new means of communicating with each other. And through CODE, we see how this ingenuity and our very human compulsion to communicate have driven the technological innovations of the past two centuries."
+          description: "Какое отношение имеют фонарики, британское вторжение, черные кошки и прозрачки к компьютерам? В CODE они показывают нам гениальные способы манипулирования языком и изобретать новые средства общения друг с другом. И через КОД мы видим, как эта изобретательность и наше человеческое принуждение к общению привели к технологическим инновациям последних двух столетий."
           link: "https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319"
         - name: "concrete_math"
           title: "Concrete Mathematics: A Foundation for Computer Science"
-          description: "This book introduces the mathematics that supports advanced computer programming and the analysis of algorithms. The primary aim of its well-known authors is to provide a solid and relevant base of mathematical skills - the skills needed to solve complex problems, to evaluate horrendous sums, and to discover subtle patterns in data. It is an indispensable text and reference not only for computer scientists - the authors themselves rely heavily on it! - but for serious users of mathematics in virtually every discipline."
+          description: "В этой книге представлена математика, поддерживающая расширенное компьютерное программирование и анализ алгоритмов. Основной целью известных авторов является обеспечение прочной и актуальной базы математических умений - навыков, необходимых для решения сложных задач, оценки ужасающих сумм и выявления тонких закономерностей в данных. Это незаменимый текст и ссылка не только для компьютерных ученых - авторы сами сильно полагаются на него! - но для серьезных пользователей математики практически в каждой дисциплине."
           link: "https://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"
         - name: "sicp"
           title: "Structure and Interpretation of Computer Programs"
@@ -621,73 +621,72 @@ pages:
           link: "https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871"
         - name: "design_programms"
           title: "How to Design Programs: An Introduction to Programming and Computing"
-          description: "This introduction to programming places computer science in the core of a liberal arts education. Unlike other introductory books, it focuses on the program design process. This approach fosters a variety of skills―critical reading, analytical thinking, creative synthesis, and attention to detail―that are important for everyone, not just future computer programmers. The book exposes readers to two fundamentally new ideas. First, it presents program design guidelines that show the reader how to analyze a problem statement; how to formulate concise goals; how to make up examples; how to develop an outline of the solution, based on the analysis; how to finish the program; and how to test."
+          description: "Это введение в программирование ставит информатику в ядро либерального художественного образования. В отличие от других вводных книг, он фокусируется на процессе разработки программ. Такой подход способствует развитию различных навыков — критического чтения, аналитического мышления, творческого синтеза и внимания к деталям — которые важны для всех, а не только для будущих программистов. Книга знакомит читателей с двумя принципиально новыми идеями. Во-первых, в нем представлены рекомендации по проектированию программ, которые показывают читателю, как анализировать постановку задачи; как сформулировать краткие цели; как составить примеры; как разработать план решения на основе анализа; как завершить программу; и как протестировать."
           link: "https://www.amazon.com/How-Design-Programs-Introduction-Programming/dp/0262062186"
         - name: "algorithm_manual"
           title: "The Algorithm Design Manual"
-          description: "This newly expanded and updated second edition of the best-selling classic continues to take the \"mystery\" out of designing algorithms, and analyzing their efficacy and efficiency. Expanding on the first edition, the book now serves as the primary textbook of choice for algorithm design courses while maintaining its status as the premier practical reference guide to algorithms for programmers, researchers, and students."
+          description: "Это недавно расширенное и обновленное второе издание бестселлера классики продолжает вынимать “тайну” из проектирования алгоритмов и анализа их эффективности и эффективности. В дополнение к первому изданию книга в настоящее время служит основным учебником для курсов алгоритмов проектирования, сохраняя при этом свой статус главного практического руководства по алгоритмам для программистов, исследователей и студентов."
           link: "https://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202"
         - name: "cormen"
           title: "Introduction to Algorithms, 3rd Edition (The MIT Press)"
-          description: "Some books on algorithms are rigorous but incomplete; others cover masses of material but lack rigor. Introduction to Algorithms uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in a pseudocode designed to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor."
+          description: "Некоторые книги по алгоритмам являются строгими, но неполными; другие охватывают массу материала, но недостаточно строгими. Введение в алгоритмы уникально сочетает строгость и полноту. Книга охватывает широкий спектр алгоритмов в глубину, но делает их дизайн и анализ доступными для всех уровней читателей. Каждая глава является относительно автономной и может быть использована в качестве единицы исследования. Алгоритмы описаны на английском языке и в псевдокоде, предназначенным для чтения любым, кто сделал небольшое программирование. Объяснения были сохранены элементарно, не жертвуя глубиной охвата или математической строгость."
           link: "https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"
         - name: "compilers"
           title: "Compilers: Principles, Techniques, and Tools (2nd Edition)"
-          description: "Compilers: Principles, Techniques, and Tools, known to professors, students, and developers worldwide as the \"Dragon Book,\" is available in a new edition.  Every chapter has been completely revised to reflect developments in software engineering, programming languages, and computer architecture that have occurred since 1986 when the last edition published.  The authors, recognizing that few readers will ever go on to construct a compiler, retain their focus on the broader set of problems faced in software design and software development."
+          description: "Компиляторы: принципы, методы и инструменты, известные профессорам, студентам и разработчикам во всем мире как “Книга драконов”, выпускается в новом издании. Каждая глава была полностью пересмотрена, чтобы отразить разработки программного обеспечения, языков программирования и компьютерной архитектуры, которые произошли с 1986 года, когда было опубликовано последнее издание. Авторы, признавая, что немногие читатели когда-либо будут продолжать строить компилятор, сохраняют свое внимание на более широком наборе проблем, возникающих при разработке программного обеспечения и разработке программного обеспечения."
           link: "https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811"
         - name: "c_lang"
           title: "C Programming Language, 2nd Edition"
-          description: "The authors present the complete guide to ANSI standard C language programming. Written by the developers of C, this new version helps readers keep up with the finalized ANSI standard for C while showing how to take advantage of C's rich set of operators, the economy of expression, improved control flow, and data structures. The 2/E has been completely rewritten with additional examples and problem sets to clarify the implementation of difficult language constructs. For years, C programmers have let K&R guide them to building well-structured and efficient programs. Now, this same help is available to those working with ANSI compilers. Includes detailed coverage of the C language plus the official C language reference manual for at-a-glance help with syntax notation, declarations, ANSI changes, scope rules, and the list goes on and on."
+          description: "Авторы представляют полное руководство по программированию языка языка ANSI. Написанная разработчиками C, эта новая версия помогает читателям идти в ногу с завершенным стандартом ANSI для C, показывая, как воспользоваться богатым набором операторов C, экономией выражения, улучшенным потоком управления и структурами данных. 2/E был полностью переписан с дополнительными примерами и наборами проблем, чтобы уточнить реализацию сложных языковых конструкций. В течение многих лет программисты C позволяли K & R направлять их на создание хорошо структурированных и эффективных программ. Теперь эта же справка доступна тем, кто работает с компиляторами ANSI. Содержит подробное описание языка C, а также официальное справочное руководство по языку C для краткой справки по синтаксису, объявлениям, изменениям ANSI, правилам области, а также список продолжается и продолжается."
           link: "https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628"
     oop:
       title: "Объектно-ориентированное программирование"
       articles:
         - name: "growing"
           title: "Growing Object-Oriented Software, Guided by Tests"
-          description: "Test-Driven Development (TDD) is now an established technique for delivering better software faster. TDD is based on a simple idea: Write tests for your code before you write the code itself. However, this \"simple\" idea takes skill and judgment to do well. Now there's a practical guide to TDD that takes you beyond the basic concepts. Drawing on a decade of experience building real-world systems, two TDD pioneers show how to let tests guide your development and “grow” software that is coherent, reliable, and maintainable."
+          description: "Тест-драйв разработки (TDD) в настоящее время является признанным методом для более быстрого предоставления лучшего программного обеспечения. TDD основан на простой идее: напишите тесты для вашего кода, прежде чем написать сам код. Однако эта “простая” идея требует умения и суждения, чтобы преуспеть. Теперь есть практическое руководство по TDD, которое выводит вас за рамки основных концепций. Основываясь на десятилетнем опыте создания реальных систем, два пионера TDD показывают, как позволить тестам направлять вашу разработку и “расти” программное обеспечение, которое является согласованным, надежным и поддерживаемым."
           link: "https://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627"
         - name: "domain_driven"
           title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
-          description: "This is a serious book about domain modeling in software design. Software development society lives from one hype wave to another. OOP, patterns, XP, TDD, CI/CD, BigData, DevOps - this is just to name a few. This book is originated from the golden age of OOP. The author admits that the object-oriented paradigm is not the only one available but the bias toward OOP/OOD is obvious (and justifiable). This book tells about how to do the modeling of core software components “the right way”."
+          description: "Это серьезная книга о предметном моделировании в разработке программного обеспечения. Общество разработки программного обеспечения живет от одной волны шумихи к другой. ООП, шаблоны, XP, TDD, CI/CD, BigData, DevOps - это всего лишь несколько. Эта книга возникла из золотого века ООП. Автор признает, что объектно-ориентированная парадигма не является единственной доступной, но склонность к ООП/ООД очевидна (и оправдана). В этой книге рассказывается о том, как сделать моделирование основных программных компонентов “правильным путем”."
           link: "https://www.amazon.com/Domain-Driven-Tacking-Complexity-Software/dp/8131724468/ref=sr_1_fkmr1_2?s=books&ie=UTF8&qid=1542577469&sr=1-2-fkmr1&keywords=Domain-Driven+Design%3A+Tackling+Complexity+in+the+Heart+of+Software"
     ruby:
       title: "Знай свой язык"
       articles:
         - name: "well_grounded"
           title: "The Well-Grounded Rubyist"
-          description: "The Well-Grounded Rubyist, Second Edition addresses both newcomers to Ruby as well as Ruby programmers who want to deepen their understanding of the language. This beautifully written and totally revised second edition includes coverage of features that are new in Ruby 2.1, as well as expanded and updated coverage of aspects of the language that have changed."
+          description: "The Well-Grounded Rubyist, Second Edition адресован как новичкам Ruby, так и программистам Ruby, которые хотят углубить свое понимание языка. Это красиво написанное и полностью пересмотренное второе издание включает в себя охват новых функций в Ruby 2.1, а также расширенное и обновленное освещение аспектов языка, которые изменились."
           link: "https://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617291692"
         - name: "programming_ruby"
           title: "Programming Ruby: The Pragmatic Programmers' Guide, Second Edition"
-          description: "Ruby is an increasingly popular, fully object-oriented dynamic programming language, hailed by many practitioners as the finest and most useful language available today. When Ruby first burst onto the scene in the Western world, the Pragmatic Programmers were there with the definitive reference manual, Programming Ruby: The Pragmatic Programmer's Guide."
+          description: "Ruby является все более популярным, полностью объектно-ориентированным динамическим языком программирования, который многие практикующие считают лучшим и самым полезным языком, доступным сегодня. Когда Руби впервые ворвался на сцену в западном мире, прагматические программисты были там с окончательным справочным руководством, Programming Ruby: The Pragmatic Programmer's Guide."
           link: "https://www.amazon.com/Programming-Ruby-Pragmatic-Programmers-Second/dp/0974514055"
         - name: "ruby_programming"
           title: "The Ruby Programming Language: Everything You Need to Know"
-          description: "This book begins with a quick-start tutorial to the language, and then explains the language in detail from the bottom up: from lexical and syntactic structure to datatypes to expressions and statements and on through methods, blocks, lambdas, closures, classes, and modules. The book also includes a long and thorough introduction to the rich API of the Ruby platform, demonstrating -- with heavily-commented example code -- Ruby's facilities for text processing, numeric manipulation, collections, input/output, networking, and concurrency. An entire chapter is devoted to Ruby's metaprogramming capabilities."
+          description: "Эта книга начинается с краткого руководства по языку, а затем подробно объясняет язык снизу вверх: от лексической и синтаксической структуры до типов данных, выражений и выражений и далее через методы, блоки, лямбды, замыкания, классы и модули. Книга также включает в себя длинное и подробное введение в богатый API платформы Ruby, демонстрируя - с тяжелыми комментариями пример кода - возможности Ruby для обработки текста, числовых манипуляций, коллекций, ввода-вывода, сетей и параллелизма. Целая глава посвящена возможностям метапрограммирования Ruby."
           link: "https://www.amazon.com/Ruby-Programming-Language-Everything-Need/dp/0596516177"
   interview_questions:
     title: "Вопросы на интервью"
     description: "Эта секция содержит ссылки на ресурсы для чтения и подготовки к собеседованию."
     list:
-      - name: "Toptal: How to Hire a Great Ruby Developer"
+      - name: "Toptal: Как нанять великого разработчика Ruby"
         link: "https://www.toptal.com/ruby#hiring-guide"
-      - name: "Toptal: 21 Essential Ruby Interview Questions"
+      - name: "Toptal: 21 Основные вопросы интервью Ruby"
         link: "https://www.toptal.com/ruby/interview-questions"
-      - name: "Hookops: 35+ Ruby and Rails Interview Questions and Answers"
+      - name: "Hookops: 35 + Ruby и Rails Интервью Вопросы и ответы"
         link: "https://lab.hookops.com/ruby-interview-prep.html"
-
-      - name: "Educba: 15 Most Important Ruby Interview Questions And Answer"
+      - name: "Educba: 15 наиболее важных вопросов и ответов на интервью Ruby"
         link: "https://www.educba.com/ruby-interview-questions/"
-      - name: "Ruby Garage: How to Interview Your Ruby on Rails Developer"
+      - name: "Ruby Garage: Как Интервью с разработчиком Ruby on Rails"
         link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
-      - name: "RyanSobol: 15 Questions to Ask During a Ruby Interview"
+      - name: "RyanSobol: 15 вопросов, которые нужно задать во время интервью Ruby"
         link: "https://gist.github.com/ryansobol/5252653"
-      - name: "Toptal: 9 Essential Ruby on Rails Interview Questions"
+      - name: "Toptal: 9 Основные вопросы для интервью Ruby on Rails"
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: "Что такое Better Docs"
     description: "Это сайт является веб адаптацией Github репозитория <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a>, который собрал множество звезд и был переведен на Японский язык. Better Docs позволяет вам быстро найти большое количество лучших практик, собранных в одном репозитории. Просто используйте это репозиторий как справку или ресурс для подготовки к собеседованию."
     oss:
       title: "Спасибо Open Source"
-      description: "Better Docs появился в процессе работы и поиска информации о лучших практиках и знаниях о Ruby, изучая проекты с открытым исходным кодом для разработки веб приложений, написанных на Ruby. Несмотря на то, что исходный код несколько устарел, вы можете найти полезным проверить текущие тесты."
+      description: "Better Docs появился в процессе работы и поиска информации о лучших практиках и знаниях о Ruby, изучая проекты с открытым исходным кодом для разработки веб приложений, написанных на Ruby."
       thanks: "Если Better Docs помог вам чем-либо, подумайте о том, что бы дать нам звезду на <a href=\"https://github.com/howtohireme/ruby.fundamental\">Github</a> (это поможет найти нас большему количеству разработчиков) или внести свой вклад в наши проекты."

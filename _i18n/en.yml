@@ -10,7 +10,7 @@ content:
     close: "Close Menu"
 
 sidebar:
-  - title: Algorithms
+  - title: "Algorithms"
     url: algorithms
     submenus:
       - key: sorting
@@ -26,7 +26,7 @@ sidebar:
         submenus:
           - binary_search
           - knuth_moriss_pratt_search
-  - title: Data Structures
+  - title: "Data Structures"
     url: data_structures
     submenus:
       - key: axioms
@@ -51,7 +51,7 @@ sidebar:
           - b_tree
           - binary_heap
 
-  - title: Design Patterns
+  - title: "Design Patterns"
     url: design_patterns
     submenus:
       - key: creational
@@ -81,7 +81,7 @@ sidebar:
           - strategy
           - template
           - visitor
-  - title: Functional Programming
+  - title: "Functional Programming"
     url: functional_programming
     submenus:
       - pure_functions
@@ -119,9 +119,9 @@ sidebar:
       - private
       - braces
       - module
-  - title: Interview Questions
+  - title: "Interview Questions"
     url: interview_questions
-  - title: Meta Programming
+  - title: Metaprogramming
     url: meta_programming
     submenus:
       - dynamic_dispatch
@@ -135,7 +135,7 @@ sidebar:
       - liskov
       - segregation 
       - di
-  - title: Become Ruby Meister
+  - title: "Become Ruby Meister"
     url: ruby_meister
   - title: Threads
     url: threads
@@ -173,15 +173,15 @@ pages:
         description: "From the comparison presented here, one might conclude that selection sort should never be used. It does not adapt to the data in any way (notice that the four animations above run in lockstep), so its runtime is always quadratic. However, selection sort has the property of minimizing the number of swaps. In applications where the cost of swapping items is high, selection sort very well may be the algorithm of choice."
       shell_sort:
         title: "Shell sort"
-        description: "The worst-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ..., which is what is used here, the time complexity is <span class=\"code-inline\">O(n<sup><sup>3</sup>&frasl;<sub>2</sub></sup>)</span>. For other increments, time complexity is known to be <span class=\"code-inline\">O(n<sup><sup>4</sup>&frasl;<sub>3</sub></sup>)</span> and even <span class=\"code-inline\">O(n·lg<sub>2</sub>(n))</span>. Neither tight upper bounds on time complexity nor the best increment sequence is known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adaptation is not as dramatic because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are <span class=\"code-inline\">log<sub>3</sub>(n)</span> increments, so the time complexity for nearly sorted data is <span class=\"code-inline\">O(n·log<sub>3</sub>(n))</span>. Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithms for some applications when the data to be sorted is not very large."
+        description: "The worst-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ...,which is what is used here, the time complexity is <span class=\"code-inline\">O(n<sup><sup>3</sup>&frasl;<sub>2</sub></sup>)</span>. For other increments, time complexity is known to be <span class=\"code-inline\">O(n<sup><sup>4</sup>&frasl;<sub>3</sub></sup>)</span> and even <span class=\"code-inline\">O(n·lg<sub>2</sub>(n))</span>. Neither tight upper bounds on time complexity nor the best increment sequence is known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adaptation is not as dramatic because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are <span class=\"code-inline\">log<sub>3</sub>(n)</span> increments, so the time complexity for nearly sorted data is <span class=\"code-inline\">O(n·log<sub>3</sub>(n))</span>. Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithms for some applications when the data to be sorted is not very large."
       heap_sort:
-        title: "Heapsort"
+        title: "Heap sort"
         description: "Heapsort is simple to implement, performs an <span class=\"code-inline\">O(n·lg(n))</span> in-place sort, but is not stable. The first loop, the <span class=\"code-inline\">Θ(n)</span> “heapify” phase, puts the array into heap order. The second loop, the <span class=\"code-inline\">O(n·lg(n))</span> “sort down” phase, repeatedly extracts the maximum and restores heap order. The sink function is written recursively for clarity. Thus, as shown, the code requires <span class=\"code-inline\">Θ(lg(n))</span> space for the recursive call stack. However, the tail recursion in sink() is easily converted to iteration, which yields the <span class=\"code-inline\">O(1)</span> space bound. Both phases are slightly adaptive, though not in any particularly useful manner. In the nearly sorted case, the heapify phase destroys the original order. In the reversed case, the heapify phase is as fast as possible since the array starts in heap order, but then the sort down phase is typical. In the few unique keys case, there is some speedup but not as much as in shell sort or 3-way quicksort."
       merge_sort:
-        title: "Mergesort"
+        title: "Merge sort"
         description: "Merge sort is very predictable. It makes between <span class=\"code-inline\">0.5lg(n)</span> and <span class=\"code-inline\">lg(n)</span> comparisons per element, and between <span class=\"code-inline\">lg(n)</span> and <span class=\"code-inline\">1.5lg(n)</span> swaps per element. The minima are achieved for already sorted data; the maxima are achieved, on average, for random data. If using <span class=\"code-inline\">Θ(n)</span> extra space is of no concern, then merge sort is an excellent choice: It is simple to implement, and it is the only stable <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithm. Note that when sorting linked lists, merge sort requires only <span class=\"code-inline\">Θ(lg(n)</span> extra space (for recursion). Merge sort is the algorithm of choice for a variety of situations: when stability is required, when sorting linked lists, and when random access is much more expensive than sequential access (for example, external sorting on tape). There do exist linear time in-place merge algorithms for the last step of the algorithm, but they are both expensive and complex. The complexity is justified for applications such as external sorting when <span class=\"code-inline\">Θ(n)</span> extra space is not available."
       quick_sort:
-        title: "Quicksort"
+        title: "Quick sort"
         description: "When carefully implemented, quicksort is robust and has low overhead. When a stable sort is not needed, quicksort is an excellent general-purpose sort – although the 3-way partitioning version should always be used instead. The 2-way partitioning code shown above is written for clarity rather than optimal performance; it exhibits poor locality, and, critically, exhibits <span class=\"code-inline\">O(n<sup>2</sup>)</span> time when there are few unique keys. A more efficient and robust 2-way partitioning method is given in Quicksort is Optimal by Robert Sedgewick and Jon Bentley. The robust partitioning produces balanced recursion when there are many values equal to the pivot, yielding probabilistic guarantees of <span class=\"code-inline\">O(n·lg(n))</span> time and <span class=\"code-inline\">O(lg(n))</span> space for all inputs. With both sub-sorts performed recursively, quick sort requires <span class=\"code-inline\">O(n)</span> extra space for the recursion stack in the worst case when recursion is not balanced. This is exceedingly unlikely to occur, but it can be avoided by sorting the smaller sub-array recursively first; the second sub-array sort is a tail recursive call, which may be done with iteration instead. With this optimization, the algorithm uses <span class=\"code-inline\">O(lg(n))</span> extra space in the worst case."
       other: "Other sorting algorithms"
       additional: "Additional reading"
@@ -208,7 +208,7 @@ pages:
       description: "The running time performance of the common language runtime is given by a set of axioms which we shall now postulate."
       fetch_store:
         title: "Fetch and store time"
-        description1: "The time required to fetch a reference to an object from memory is a constant, <span class=\"code-inline\">T_fetch</span>, and the time required to store a reference to an object in memory is a constant, <span class=\"code-inline\">T_store</span"
+        description1: "The time required to fetch a reference to an object from memory is a constant, <span class=\"code-inline\">T_fetch</span>, and the time required to store a reference to an object in memory is a constant, <span class=\"code-inline\">T_store</span>"
         description2: "According to Axiom, the assignment statement has running time <span class=\"code-inline\">T_fetch + T_store</span>. That is, the time taken to fetch the object reference from variable x is <span class=\"code-inline\">T_fetch</span> and the time taken to store that object reference in the variable y is <span class=\"code-inline\">T_store</span>."
         description3: "Also has running time <span class=\"code-inline\">T_fetch + T_store</span>. To see why this should be the case, consider that the constant <span class=\"code-inline\">1</span> names a Fixnum object with value one. Therefore, we can expect the cost of fetching the reference to the object named 1 is the same as that of fetching a reference to any other object."
       elementary_operations:
@@ -227,7 +227,7 @@ pages:
       object:
         title: "Object creation time"
         description1: "The time required to create a new object instance of a class is a constant, <span class=\"code-inline\">T_new</span>. This time does not include any time taken to initialize the object. By applying Axioms we can determine that the running time of the statement."
-        description2: "<span class=\"code-inline\">T_new + T_fetch + 2 * T_store + T_call + T_fixnum_init,</span> where <span class=\"code-inline\">T_fixnum_init</span> is the running time of the initialize method of the class Fixnum."
+        description2: "<span class=\"code-inline\">T_new + T_fetch + 2 * T_store + T_call + T_fixnum_init</span>, where <span class=\"code-inline\">T_fixnum_init</span> is the running time of the initialize method of the class Fixnum."
       example:
         title: "Example"
         description: "In this section we apply Axioms, the analysis of the running time of a program to compute the following simple arithmetic series summation."
@@ -675,5 +675,5 @@ pages:
     description: "This website is web adaptation Github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated into the Chinese language. Better Docs allow you to quickly find a lot best practice that was collected in one repository. Just you this repo like the reference or interview preparation resource."
     oss:
       title: "Thanks to Open Source"
-      description: "Better Docs woke up while working and finding out about best practices and knowledge about ruby, an open source engineering for the web development applications written in Ruby. In spite of the fact that the source code is somewhat obsolete, you may discover helpful to check out the current test suites."
+      description: "Better Docs was created while working and finding out about best practices and knowledge about ruby, an open source engineering for the web development applications written in Ruby."
       thanks: "If Better Docs helped you in any way, think about giving us a Star on <a href=\"https://github.com/howtohireme/ruby.fundamental\">Github</a> (it helps us to reach more developers) or contributing to our projects."

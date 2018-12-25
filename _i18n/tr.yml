@@ -1,0 +1,1415 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: Ruby örnekleri ve referansları ile temel programlama. İplikleri,
+      SOLID ilkelerini, tasarım modellerini, veri yapılarını, algoritmaları kapsar.
+    keywords: Daha iyi belgeler, Ruby, Temelleri, Ruby programlama esasları. Ruby
+      getchas, İşlevsel programlama, Metaprogramlama, Konular, Örneklerle Ruby&#39;nin
+      katı ilkeleri, Örneklerle Ruby tasarım kalıpları, Örneklerle Ruby algoritmaları,
+      Örneklerle Ruby veri yapıları.
+
+content:
+  menu:
+    open: Menüyü aç
+    close: Menüyü Kapat
+ 
+sidebar:
+  - title: Algoritmalar
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Veri Yapıları
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Tasarım desenleri
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: İşlevsel Programlama
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: Görüşme soruları
+    url: interview_questions
+  - title: Meta Programlama
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Katı ilkeler
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Ruby Meister ol
+    url: ruby_meister
+  - title: İş Parçacığı
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+
+pages:
+  wiki: Wiki oku
+  credits: Kredi
+  page404:
+    title: Sayfa bulunamadı :(
+    description: İstenilen sayfa bulunamadı.
+  algorithms:
+    title: Algoritmalar
+    complexity:
+      best: En iyi
+      average: Ortalama
+      worst: En kötü
+    sorting:
+      title: sınıflandırma
+      description: Bir sıralama algoritması, listenin öğelerini belirli bir sıraya yerleştiren
+        bir algoritmadır. En çok kullanılan sıralar sayısal sıra ve sözlük sıralamasıdır.
+        Girdi verilerinin sıralanmış listelerde olmasını gerektiren diğer algoritmaların
+        (arama ve birleştirme algoritmaları gibi) kullanımını optimize etmek için verimli
+        sıralama önemlidir; ayrıca, verilerin kanonikleştirilmesi ve insan tarafından
+        okunabilir çıktıların üretilmesi için de kullanışlıdır.
+      bubble_sort:
+        title: Kabarcık sıralama
+        description: Kabarcık sıralama, ekleme sıralama ile aynı özelliklerin çoğuna
+          sahiptir ancak ek yükü biraz daha yüksektir. Neredeyse sıralanan verilerde,
+          kabarcık sıralama <span class="code-inline time">O(n)</span> alır, ancak
+          verilerde en az 2 geçiş gerektirir (oysa ekleme sıralama 1 geçiş gibi daha
+          fazla bir şey gerektirir).
+      insertion_sort:
+        title: Ekleme sıralama
+        description: <span class="code-inline">O(n<sup>2</sup>)</span> en kötü durum
+          süresine sahip temel sıralama algoritmalarından biri olmasına rağmen, ekleme
+          sıralama ya veri neredeyse sıralandığında (uyarlanabilir olduğu için) ya da
+          problem boyutu küçük olduğunda (çünkü bu yükü düşüktür). Bu nedenlerden dolayı
+          ve ayrıca kararlı olduğu için, birleştirme sıralama veya hızlı sıralama gibi
+          daha yüksek genel gider bölme ve fethetme sıralama algoritmaları için özyinelemeli
+          temel durum olarak (sorun boyutu küçük olduğunda) ekleme sıralama kullanılır.
+      selection_sort:
+        title: Seçim Sıralama
+        description: Burada sunulan karşılaştırmadan, seçim sıralamalarının asla kullanılmaması
+          gerektiği sonucuna varılabilir. Verilere herhangi bir şekilde uyum sağlamaz
+          (yukarıdaki dört animasyonun adım adım ilerlemesine dikkat edin), bu nedenle
+          çalışma zamanı her zaman ikinci derecelidir. Bununla birlikte, seçim sıralama
+          takas sayısını en aza indirme özelliğine sahiptir. Değişim kalemlerinin maliyetinin
+          yüksek olduğu uygulamalarda seçim sırası çok iyi bir seçim olabilir.
+      shell_sort:
+        title: Kabuk sıralama
+        description: Kabuk türünün en kötü zaman karmaşıklığı, artış sırasına bağlıdır.
+          Burada kullanılan 1 4 13 40 121 ... artışları için, zaman karmaşıklığı <span
+          class="code-inline">O(n<sup><sup>3</sup>⁄<sub>2</sub></sup>)</span>
+          . Diğer artışlar için zaman karmaşıklığının <span class="code-inline">O(n
+          <sup><sup>4</sup>⁄<sub>3</sub></sup>)</span> ve hatta <span class="code-inline">O(n·lg<sub>2</sub>(n))</span>
+          olduğu bilinmektedir. Ne zaman karmaşıklığındaki
+          sıkı üst sınırlar ne de en iyi artış sırası bilinmemektedir. Kabuk sıralama,
+          ekleme sırasını temel aldığından, kabuk sıralama, ekleme sırasının uyarlanabilir
+          özelliklerini miras alır. Adaptasyon o kadar dramatik değildir, çünkü kabuk
+          sıralama her artış için verilerden bir kez geçirilmesini gerektirir, ancak
+          önemlidir. Yukarıda gösterilen artış dizisi için <span class="code-inline">log<sub>3</sub>(n)</span>
+          artışları vardır, bu yüzden neredeyse sıralanan verilerin
+          zaman karmaşıklığı <span class="code-inline">O(n·log<sub>3</sub>(n))</span> olur.
+           Düşük yükü, nispeten basit bir uygulama, uyarlanabilir özellikler
+          ve ikinci dereceden zaman zaman karmaşıklığı nedeniyle, kabuk sıralama, sıralanacak
+          veriler olduğunda bazı uygulamalar için <span class="code-inline">O(n·lg(n))</span>
+          sıralama algoritmalarına uygulanabilir bir alternatif olabilir
+          çok büyük değil
+      heap_sort:
+        title: Öbek sıralama
+        description: Öbek sıralama uygulanması basittir, yerinde <span class="code-inline">O
+          (n · lg (n))</span> sıralaması gerçekleştirir, ancak sabit değildir. İlk döngü
+          olan <span class="code-inline">Θ (n)</span> “heapify” aşaması, diziyi yığın
+          düzenine yerleştirir. İkinci döngü, <span class="code-inline">O (n · lg (n))</span>
+          “aşağı sıralama” aşaması, tekrar tekrar maksimumları çıkarır ve yığın düzenini
+          geri yükler. Lavabo işlevi netlik için tekrar tekrar yazılır. Bu nedenle,
+          gösterildiği gibi, kod özyinelemeli çağrı yığını için <span class="code-inline">Θ
+          (lg (n))</span> boşluğu gerektirir. Bununla birlikte, lavabondaki () kuyruk
+          özyinlemesi kolayca <span class="code-inline">O (1)</span> alanını bağlayan
+          tekrarlamaya dönüştürülür. Her iki faz da, özellikle kullanışlı bir şekilde
+          olmasa da, biraz uyarlanabilir. Neredeyse sınıflandırılmış durumda, yığınlama
+          aşaması orijinal sırayı tahrip eder. Ters çevrilmiş durumda, dizi yığın sırasına
+          başladığı için yığınlama aşaması olabildiğince hızlıdır, ancak sonra sıralama
+          aşaması tipiktir. Birkaç benzersiz anahtar durumunda, bazı hızlandırma var
+          ancak kabuk sıralama veya 3 yollu quicksort kadar değil.
+      merge_sort:
+        title: birleştirme sıralaması
+        description: 'Birleştirme sıralama çok öngörülebilir. Element
+          başına <span class="code-inline">0.5lg(n)</span> ve <span class="code-inline">lg
+          (n)</span> karşılaştırmaları ve element başına <span class="code-inline">lg
+          (n)</span> ve <span class="code-inline">1.5lg(n)</span> swapları arasında
+          karşılaştırma yapar. Minima zaten sıralanmış veriler için elde edilir; Maksimum
+          değer rasgele veriler için ortalama olarak elde edilir. <span class="code-inline">Θ
+          (n)</span> fazladan boşluk kullanmak önemli değilse, birleştirme sıralaması
+          mükemmel bir seçenektir: Uygulaması basittir ve tek kararlı <span class="code-inline">O
+          (n·lg(n))</span> sıralama algoritmasıdır. Bağlantılı listeleri sıralarken,
+          birleştirme sıralamasının yalnızca <span class="code-inline">Θ(lg(n)</span>
+          fazladan boşluk (özyineleme için) gerektirdiğini unutmayın. erişim, sıralı
+          erişime göre çok daha pahalıdır (örneğin, banttaki harici sıralama), algoritmanın
+          son adımı için doğrusal zaman yerinde birleştirme algoritmaları vardır, ancak
+          hem pahalı hem de karmaşıktırlar. <span class="code-inline">Θ(n)</span> fazladan
+          boşluk olmadığında harici sıralama gibi.'
+      quick_sort:
+        title: Hızlı sıralama
+        description: Dikkatli bir şekilde uygulandığında, quicksort sağlamdır ve ek
+          yükü düşüktür. Sabit bir sıralama gerekli olmadığında, quicksort mükemmel
+          bir genel amaçlı sıralamadır - bununla birlikte 3 yönlü bölümleme sürümü her
+          zaman kullanılmalıdır. Yukarıda gösterilen 2 yönlü bölümleme kodu, optimum
+          performanstan ziyade netlik için yazılmıştır; Zayıf yerellik sergiler ve eleştirel
+          bir şekilde, birkaç benzersiz anahtar bulunduğunda <span class="code-inline">O
+          (n <sup>2</sup> )</span> zamanı gösterir. Quicksort&#39;ta daha verimli ve
+          sağlam 2 yönlü bir bölümleme yöntemi verilmiştir, Robert Sedgewick ve Jon
+          Bentley tarafından Optimal&#39;dir. Sağlam bölümleme, pivot&#39;a eşit birçok
+          değer olduğunda dengeli bir özyinelemeye neden olur ve tüm girişler için <span
+          class="code-inline">O (n · lg (n))</span> süre ve <span class="code-inline">O
+          (lg (n))</span> alanın olası garantisini verir. Yinelemeli olarak gerçekleştirilen
+          her iki alt sıralama için, hızlı sıralama, özyineleme dengeli olmadığında
+          en kötü durumda özyineleme yığını için <span class="code-inline">O (n)</span>
+          fazladan alan gerektirir. Bu, son derece düşük bir ihtimaldir, ancak daha
+          küçük olan ilk alt diziyi tekrarlı bir şekilde sıralayarak önlenebilir; ikinci
+          alt dizi sıralama, bunun yerine yineleme ile yapılabilecek bir kuyruk özyinelemeli
+          çağrıdır. Bu optimizasyonda, algoritma en kötü durumda <span class="code-inline">O
+          (lg (n))</span> fazladan boşluk kullanır.
+      other: Diğer sıralama algoritmaları
+      additional: Ek okuma
+    searching:
+      title: Aramak
+      binary_search:
+        title: Ikili arama
+        description: Bilgisayar bilimlerinde, yarı aralıklı arama veya logaritmik arama
+          olarak da bilinen ikili arama, sıralanmış bir dizideki hedef değerin konumunu
+          bulan bir arama algoritmasıdır. Hedef değeri dizinin orta elemanı ile karşılaştırır;
+          Eğer eşitsizlerse, hedefin yalan söyleyemediği yarısı elimine edilir ve başarılı
+          olana kadar kalan yarıda arama devam eder.
+      knuth_moriss_pratt_search:
+        title: Knuth-Morris-Pratt arama
+        description: Bilgisayar bilimlerinde, Knuth-Morris – Pratt string arama algoritması
+          (veya KMP algoritması), bir ana uyuşmazlık olduğunda, kelimenin kendisinin
+          yeterince somutlaştığı gözlemini kullanarak &quot;ana&quot; metin dizgesinde
+          &quot;W&quot; kelimesi oluşumlarını araştırır. Bir sonraki maçın nerede başlayabileceğini
+          belirleyen bilgiler, bu nedenle önceden eşleşen karakterlerin yeniden incelenmesini
+          atlayarak.
+      other:
+        title: Diğer arama algoritmaları
+        dijkstra: Dijkstra&#39;nın algoritması
+        kruskal: Kruskal algoritması
+        longest: En uzun artan alt
+        telephone_number: Kelimelere telefon numarası
+    credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
+  data_structures:
+    title: Veri yapıları
+    description: Bilgisayar bilimlerinde, büyük O notasyonu, algoritmaları giriş büyüklüğündeki
+      değişikliklere nasıl cevap verdikleri ile sınıflandırmak için kullanılır, örneğin
+      bir algoritmanın işlem süresi problem büyüklüğü arttıkça değişir. Analitik sayı
+      teorisinde, aritmetik bir işlevin asimptotik büyüklüğünün yerine büyük bir sonlu
+      argümanda aldığı değer yerine &quot;işlenen hatayı&quot; tahmin etmek için kullanılır.
+      Ünlü bir örnek, asal sayı teoreminde geri kalan terimi tahmin etme problemidir.
+    axioms:
+      title: Veri yapılarının temel aksiyomları
+      description: Ortak dil çalışma zamanının çalışma süresi performansı, şimdi önereceğimiz
+        bir takım aksiyomlar tarafından verilir.
+      fetch_store:
+        title: Süreyi al ve sakla
+        description1: Bellekten bir nesneye başvuru almak için gereken süre sabittir,
+          <span class="code-inline">T_fetch</span> ve bellekteki bir nesneye başvuru
+          saklamak için gereken süre sabittir, <span class="code-inline">T_store</span>
+        description2: Axiom&#39;a göre, atama ifadesinin çalışma süresi <span class="code-inline">T_fetch
+          + T_store</span> &#39;dir . Yani, nesne değişkenini x değişkeninden almak için
+          geçen süre <span class="code-inline">T_fetch</span> ve bu nesne referansını
+          y değişkeninde saklamak için geçen süre <span class="code-inline">T_store</span>&#39;dir
+          .
+        description3: Ayrıca <span class="code-inline">T_fetch + T_store</span> çalışma
+          süresine sahiptir. Bunun neden böyle olması gerektiğini anlamak için, <span
+          class="code-inline">1</span> sabitinin
+          değerine sahip bir Fixnum nesnesi olarak adlandırıldığını düşünün. Bu nedenle,
+          1 adındaki nesneye referans alma maliyetinin, diğer herhangi bir nesneye referans
+          alma maliyetiyle aynı olmasını bekleyebiliriz.
+      elementary_operations:
+        title: İlköğretim aritmetik işlem süresi
+        description1: Toplama, çıkarma, çarpma, bölme ve karşılaştırma gibi temel aritmetik
+          işlemleri gerçekleştirmek için gereken zamanların tümü sabittir. Bu zamanlar
+          sırasıyla <span class="code-inline">T_ +, T_-, T_ /, T_ *, T_ &lt;ile gösterilir</span>
+          .
+        description2: <span class="code-inline">2 * T_fetch + T_ + + T_store</span>
+          gibi bir ifadenin zamanını belirleyebiliriz. Çünkü y ve 1 değişkenlerinden
+          iki nesne referansı almamız gerekiyor; değeri toplam olan yeni bir nesne vererek
+          ekleme işlemini gerçekleştirir; ve yeni değişkene bir başvuru y değişkeninde
+          saklanır.
+        description3: Alternatifin, orijinal ifade ile tam olarak aynı çalışma süresini
+          gerektirdiğini varsayacağız.
+      call_method:
+        title: Çağrı yöntemi zaman
+        description1: Bir usul aramak için gerekli zaman sabit ve <span class="code-inline">T_call</span>,
+          ve bu bir metoda döndürmek için gerekli zaman parametresi bir amacı, referans
+          olarak saklamak için zaman aynı geçen ilişkili yükü yapmak için bir sabit,
+          <span class="code-inline">T_return</span> mantığı olduğunu Bir argümanın iletilmesi
+          kavramsal olarak gerçek parametre değerinin yöntemin biçimsel parametresine
+          atanması ile aynıdır.
+        description2: Axiom&#39;a göre, ifadenin çalışma süresi <span class="code-inline">T_fetch
+          + 2 * T_store + T_call + T_f (x)</span> olur, burada <span class="code-inline">T_f
+          (x)</span> x girişi için f yönteminin çalışma süresidir. İki mağazanın ilki,
+          x parametresinin f yöntemine geçirilmesinden kaynaklanmaktadır; ikincisi,
+          a değişkeninden y değişkenine aittir.
+      calculating:
+        title: Hesaplama süresi
+        description1: Bir dizi abonelik işlemi tarafından belirtilen adres hesaplaması
+          için gereken süre, örneğin, <span class="code-inline">a[i]</span> , bir
+          sabit, <span class="code-inline">T_[]</span> &#39;dir . Bu süre, alt simge
+          ifadesini hesaplama süresini içermez ve dizi öğesine erişme süresini de içermez.
+        description2: 'Bu <span class="code-inline">3 * T_fetch</span> . Üç işlenen
+          alımı gerekir: ilk önce dizi nesnesine bir başvuru getiren a; indis nesnesine
+          bir başvuru getiren ikinci; ve dizi elemanına bir
+          referans <span class="code-inline">a[i]</span> getiren üçüncü kişi.'
+      object:
+        title: Nesne oluşturma zamanı
+        description1: Bir sınıfın yeni nesne örneğini oluşturmak için gereken zaman
+          sabittir, <span class="code-inline">T_new</span> . Bu süre, nesneyi başlatmak
+          için harcanan zamanı içermez. Axioms uygulayarak ifadenin çalışma zamanını
+          belirleyebiliriz.
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> , burada <span class="code-inline">T_fixnum_init</span>
+          , Fixnum sınıfının ilklendirme yönteminin çalışma zamanıdır.
+      example:
+        title: Örnek
+        description: Bu bölümde aşağıdaki basit aritmetik seri toplamını hesaplamak
+          için bir programın çalışma süresinin analizi olan Axioms uygulanmaktadır.
+    implementations:
+      title: uygulama
+      stack:
+        title: yığın
+        description: Yığın kuyruğun kardeşidir. Gerçek hayattaki bir yığını taklit eder
+          (örneğin, kağıt). FILO&#39;dur (ilk giren ilk çıkar), böylece öğeler yığından
+          alındığında, eklendikleri sıranın tersi ile geri döndürülürler. Yine, Ruby
+          Dizileri mükemmel bir kap sağlar. Kuyrukta olduğu gibi, bağlantılı bir liste
+          kullanılarak da uygulanabilir.
+        as_array: Dizi olarak yığ
+        as_linked_list: Bağlantılı liste olarak yığını
+      queue:
+        title: kuyruk
+        description: Bir sıra, gerçek yaşam sırasını taklit eden basit bir kap tabanlı
+          yapıdır (örneğin, bankada sırada beklemek). FIFO (ilk giren ilk çıkar), sıradaki
+          öğeleri aldığınızda, girdikleri sırayla döndürüldükleri anlamına gelir. Ruby
+          Archays, sıra uygulamalarını önemsiz derecede kolaylaştıran ancak uygun bir
+          şekilde adlandırılmış ve uygun bir sınıfta yer almasını sağlayan yöntemler
+          uyguladıklarını görmeye değer, çünkü diğer yapılar da bundan miras alacaklar.
+          Bağlantılı bir liste kullanılarak alternatif bir uygulama yapılabilir.
+        as_array: Dizi olarak sıra
+        as_linked_list: Bağlı liste olarak sıra
+      deque:
+        title: ve
+        description: Deque, her iki ucunda da öğe eklemeye ve çıkarmaya izin veren bir
+          sıradır.
+        as_array: Ve bir dizi olarak
+        as_linked_list: Bağlantılı liste olarak ayrıl
+      singly_linked_list:
+        title: Tek Bağlantılı Liste
+        description: Tek bağlantılı listeler, bir veri alanına sahip olan düğümlerin
+          yanı sıra, düğümler satırındaki bir sonraki düğüme işaret eden bir &#39;sonraki&#39;
+          alan içerir. Tek tek bağlantılı listelerde gerçekleştirilebilecek işlemler
+          arasında ekleme, silme ve gezinme bulunur.
+      doubly_linked_list:
+        title: Çift bağlantılı liste
+        description: İki bağlantılı bir listede, her liste öğesi iki referans içerir
+          - biri ardışık, diğeri selefine.
+      ordered_list:
+        title: Sipariş listesi
+        description: Sıralı liste, öğelerin sırasının önemli olduğu bir listedir. Ancak,
+          sipariş verilen listelerdeki öğeler mutlaka sıralanmamıştır. Sonuç olarak,
+          öğelerin sırasını değiştirmek ve hala geçerli bir sipariş listesine sahip
+          olmak mümkündür.
+        as_array: Dizi olarak sıralı liste
+      hash_table:
+        title: Karma Tablo
+        description: Bir karma tablo aranabilir bir kaptır. Bu nedenle, bir nesneyi
+          kabın içine koymak, kabın içinde bir nesneyi bulmak ve bir nesneyi kaptan
+          çıkarmak için yöntemler sağlar.
+      binary_tree:
+        title: İkili ağaç
+        description: İkili bir ağaç, her düğümün en fazla iki çocuğa sahip olabileceği
+          bir ağaçtır. Çocuklar sola ve sağa atanır.
+      binary_search_tree:
+        title: İkili Arama Ağacı &lt;
+        description: 'Bilgisayar bilimlerinde, bazen sıralı veya sıralanmış ikili ağaçlar
+          olarak adlandırılan ikili arama ağaçları (BST) belirli bir konteyner türüdür:
+          bellekte &quot;öğeler&quot; (sayılar, adlar vb.) Depolayan veri yapıları.
+          Hızlı arama, öğelerin eklenmesi ve kaldırılmasını sağlar ve dinamik öğe kümelerini
+          veya bir öğeyi anahtarından bulmayı sağlayan arama tablolarını uygulamak için
+          kullanılabilir (örneğin, bir kişinin telefon numarasını isme göre bulma)'
+      b_tree:
+        title: B-tree
+        description: Bilgisayar bilimlerinde B-ağacı, verileri düzenli tutan ve aramalara,
+          sıralı erişime, eklere ve logaritmik zamandaki silme işlemlerine izin veren
+          kendi kendini dengeleyen bir ağaç veri yapısıdır. B ağacı, bir düğümün ikiden
+          fazla çocuğa sahip olabileceği bir ikili arama ağacının genelleştirilmesidir
+          (Kendi kendini dengeleyen ikili arama ağaçlarının aksine, B ağacı, büyük veri
+          bloklarını okuyan ve yazan sistemler için optimize edilmiştir. ağaçlar harici
+          bellek için iyi bir veri yapısı örneğidir, genellikle veri tabanlarında ve
+          dosya sistemlerinde kullanılır.
+      binary_heap:
+        title: İkili öbek
+        description: İkili öbek, bir dizi kullanılarak uygulanan öbek sıralı bir tam
+          ikili ağaçtır. Bir yığında en küçük anahtar kökte bulunur ve kök her zaman
+          dizinin ilk konumunda bulunduğundan, en küçük anahtarı bulmak ikili bir yığında
+          önemsiz bir işlemdir.
+      credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
+      source: Bu sayfa, Ruby R. tarafından &quot;Ruby&#39;de Nesneye Yönelik Tasarım
+        Desenli Veri Yapıları ve Algoritmalar&quot; kitabından, Bruno R. Preiss. Telif
+        Hakkı (c) 2004, Bruno R. Preiss, P.Eng. Tüm hakları Saklıdır.
+  design_patterns:
+    title: Tasarım desenleri
+    creational:
+      title: Yaratılış kalıpları
+      description: Yazılım mühendisliğinde, yaratıcı tasarım desenleri, duruma göre
+        uygun nesneler yaratmaya çalışan, nesne oluşturma mekanizmalarıyla ilgilenen
+        tasarım kalıplarıdır. Temel nesne yaratma şekli, tasarım problemlerine veya
+        tasarıma karmaşıklık getirilmesine neden olabilir. Yaratıcı tasarım desenleri,
+        bu nesneyi bir şekilde kontrol ederek bu sorunu çözer. Yaratıcı tasarım desenleri
+        iki baskın fikirden oluşur. Birincisi, sistemin hangi somut sınıfları kullandığı
+        hakkında bilgi edinmektir. Bir diğeri, bu somut sınıfların örneklerinin nasıl
+        yaratıldığını ve birleştirildiğini gizliyor.
+      abstract_factory:
+        title: Soyut fabrika modeli
+        description: Soyut fabrika modeli, somut sınıflarını belirtmeden ortak temaya
+          sahip bir grup bireysel fabrikayı kapsüllemek için bir yol sağlar. Normal
+          kullanımda, istemci yazılımı soyut fabrikanın somut bir uygulamasını yaratır
+          ve daha sonra temanın bir parçası olan somut nesneleri oluşturmak için fabrikanın
+          genel arayüzünü kullanır. Müşteri, bu iç fabrikaların her birinden hangi somut
+          nesnelerden kaynaklandığını bilmiyor (veya umursamıyor) çünkü ürünlerinin
+          yalnızca genel arayüzlerini kullanıyor. Bu model, bir nesne grubunun uygulama
+          ayrıntılarını genel kullanımlarından ayırır ve nesne oluşturma fabrika arayüzünde
+          ortaya çıkan yöntemlerde uygulandığı için nesne kompozisyonuna dayanır.
+      builder:
+        title: Oluşturucu deseni
+        description: Oluşturucu deseni, bir nesne oluşturma yazılımı tasarım desenidir.
+          Soyut fabrika modelinin ve niyeti polimorfizmi sağlamak olan fabrika yöntemi
+          modelinin aksine, üretici modelinin amacı teleskopik yapıcı anti-paternine
+          [ihtiyaç duyulan] bir çözüm bulmaktır. Teleskop yapıcı anti-patern, nesne
+          yapıcı parametre kombinasyonunun artması, üstel bir yapıcı listesine yol açtığında
+          meydana gelir. Çok sayıda kurucu kullanmak yerine, oluşturucu paterni her
+          bir başlatma parametresini adım adım alan ve elde edilen kurucu nesneyi bir
+          kerede döndüren başka bir nesne, oluşturucu kullanır.
+      factory:
+        title: Fabrika desen
+        description: Sınıf tabanlı programlamada, fabrika yöntemi deseni, yaratılacak
+          nesnenin tam sınıfını belirtmek zorunda kalmadan, nesnelerin yaratılması sorununu
+          ele almak için fabrika yöntemlerini kullanan yaratıcı bir kalıptır. Bu, bir
+          arabirimde belirtilen ve alt sınıflar tarafından uygulanan veya bir temel
+          sınıfta uygulanan ve isteğe bağlı olarak türetilmiş sınıflar tarafından geçersiz
+          kılınan bir fabrika yöntemini çağırmak suretiyle bir kurucu çağırmak suretiyle
+          nesneler oluşturarak yapılır.
+      prototype:
+        title: Prototip desen
+        description: Prototip desen fabrika hatları boyunca yaratıcı bir desendir. Prototipteki
+          numara, bir ana nesneyi kopyalayarak yeni nesneler yaratmanızdır. Bu ana nesneyi
+          değiştirin ve oluşturduğunuz tüm sonraki nesneler değişikliğin bir kopyasıyla
+          birlikte canlanacaktır.
+      singleton:
+        title: Singleton deseni
+        description: Bir sınıfın yalnızca bir örneği olduğundan emin olun ve buna genel
+          bir erişim noktası sağlayın. Bu, sistemdeki eylemleri koordine etmek için
+          tam olarak bir nesneye ihtiyaç duyulduğunda kullanışlıdır. Konsept bazen,
+          yalnızca bir nesne olduğunda daha verimli çalışan veya başlatmayı belirli
+          sayıda nesneye kısıtlayan sistemlere genelleştirilir.
+      not_covered:
+        title: 'Kapsanmayan desenler:'
+        lazy: Tembel başlatma
+        multiton: multiton
+        pool: Nesne havuzu
+        resource: Kaynak edinimi başlatma
+    structural:
+      title: Yapısal desenler
+      description: Yazılım mühendisliğinde, yapısal tasarım kalıpları, varlıklar arasındaki
+        ilişkileri gerçekleştirmek için basit bir yol tanımlayarak tasarımı kolaylaştıran
+        tasarım kalıplarıdır.
+      adapter:
+        title: Adaptör desen
+        description: Yazılım mühendisliğinde, adaptör deseni, mevcut bir sınıfın arayüzünün
+          başka bir arayüz olarak kullanılmasını sağlayan bir yazılım tasarım desenidir.
+          Genellikle mevcut sınıfların kaynak kodlarını değiştirmeden başkalarıyla çalışmasını
+          sağlamak için kullanılır.
+      composite:
+        title: Bileşik desen
+        description: Kompozit tasarım deseni, hiyerarşik bir ağaç yapısına sahip nesneleri
+          temsil etmek için kullanılan yapısal bir kalıptır. Hem bireysel yaprak düğümlerinin
+          hem de birçok düğümden oluşan dalların düzgün muamele görmesine izin verir.
+      decorator:
+        title: Dekoratör deseni
+        description: Nesne yönelimli programlamada, dekoratör paterni (Adaptör paterniyle
+          paylaşılan alternatif bir adlandırma olan Sarıcı olarak da bilinir), bir başka
+          nesnenin davranışını etkilemeden, statik veya dinamik olarak bireysel bir
+          nesneye davranış eklenmesine izin veren bir tasarım desenidir. Aynı sınıftan
+          nesneler. Dekoratör modeli, tek bir Sorumluluk Prensibi&#39;ne uymak için
+          kullanışlıdır, çünkü işlevselliğin özel ilgi alanlarına sahip sınıflar arasında
+          bölünmesine izin verir.
+      facade:
+        title: Cephe düzeni
+        description: Cephe tasarım deseni genellikle bir sistem çok karmaşık veya anlaşılması
+          zor olduğunda kullanılır, çünkü sistemde çok sayıda birbirine bağlı sınıf
+          vardır veya kaynak kodu kullanılamaz. Bu kalıp daha büyük sistemin karmaşıklığını
+          gizler ve müşteriye daha basit bir arayüz sağlar. Genellikle, müşteri tarafından
+          istenen bir grup üyeyi içeren tek bir sarıcı sınıfını içerir. Bu üyeler cepheye
+          müşteri adına sisteme girmekte ve uygulama detaylarını gizlemektedir.
+      flyweight:
+        title: Flyweight modeli
+        description: Bilgisayar programlamasında flyweight bir yazılım tasarım desenidir.
+          Bir ufak ağırlık, diğer benzer nesnelerle mümkün olduğunca fazla veri paylaşarak
+          bellek kullanımını en aza indiren bir nesnedir; Basit bir tekrarlanan gösterimin
+          kabul edilemez miktarda bellek kullanması durumunda, nesneleri çok sayıda
+          kullanmanın bir yoludur. Genellikle, nesne durumunun bazı kısımları paylaşılabilir
+          ve bunları harici veri yapılarında tutmak ve bunları kullanıldığında geçici
+          olarak geçici nesnelere aktarmak yaygın bir uygulamadır.
+      proxy:
+        title: Proxy modeli
+        description: 'Proxy, en genel haliyle, başka bir şeyin arayüzü olarak işlev
+          gören bir sınıftır. Proxy, herhangi bir şeye arabirim oluşturabilir: bir ağ
+          bağlantısı, bellekteki büyük bir nesne, bir dosya veya kopyalanması pahalı
+          veya imkansız başka bir kaynak. Kısacası, bir proxy, müşteri tarafından sahnelerin
+          arkasındaki gerçek sunum nesnesine erişmesi için çağrılan bir sarıcı veya
+          ajan nesnesidir. Proxy kullanımı basitçe gerçek nesneye yönlendirebilir veya
+          ek mantık sağlayabilir. Proxy&#39;de, örneğin gerçek nesne üzerindeki işlemler
+          kaynak yoğun olduğunda önbellekleme veya gerçek nesne üzerindeki işlemler
+          başlatılmadan önce önkoşullar denetlendiğinde ek işlevsellik sağlanabilir.
+          İstemci için, her ikisi de aynı arayüzü uyguladığı için bir proxy nesnesinin
+          kullanımı, gerçek nesneyi kullanmaya benzer.'
+      protection_proxy:
+        title: Koruma vekil
+        description: Koruma vekili. Bir MNC üzerinde mi çalışıyorsunuz? Öyleyse, genel
+          e-posta, sosyal ağ, veri depolama vb. Bazı web sitelerine erişimi kısıtlayarak
+          bize internet sağlayan proxy sunucusunun farkında olabiliriz. Yönetim, bazı
+          içerikleri engellemenin daha iyi olacağını düşünüyor. yalnızca işle ilgili
+          web sayfaları sağlar. Proxy sunucusu bu işi yapar. Bu bir proxy tasarım deseni
+          türüdür
+      virtual_proxy:
+        title: Sanal vekil
+        description: Sanal vekil. Karmaşık veya ağır bir nesnenin yerine, bir iskelet
+          gösterimi kullanın. Alttaki görüntünün boyutu çok büyük olduğunda, yalnızca
+          sanal bir proxy nesnesi kullanarak temsil edin ve istek üzerine gerçek nesneyi
+          yükleyin. Gerçek nesnenin örnekleme açısından pahalı olduğunu biliyorsunuz
+          ve bu yüzden gerçek ihtiyaç olmadan gerçek nesneyi kullanmayacağız. İhtiyaç
+          doğana kadar sanal vekil kullanacağız.
+      remote_proxy:
+        title: Uzaktan proxy
+        description: Uzaktan proxy. Dağıtılmış nesne iletişiminde, yerel bir nesne uzak
+          bir nesneyi (farklı bir adres alanına ait olan) temsil eder. Yerel nesne,
+          uzak nesne için bir proxy&#39;dir ve yerel nesne üzerinde yöntem başlatma,
+          uzak nesne üzerinde uzaktan yöntem başlatma ile sonuçlanır. Bir ATM uygulaması
+          düşünün, uzak sunucuda bulunan banka bilgileri için proxy nesneleri tutacaktır.
+      not_covered:
+        title: 'Kapsanmayan desenler:'
+        callback: Açıklamalı Geri Arama
+        bridge: Köprü
+        data_bus: Veri yolu
+        role: Rol Nesnesi
+    behavioral:
+      title: Davranış kalıpları
+      description: Yazılım mühendisliğinde davranışsal tasarım kalıpları, nesneler arasındaki
+        ortak iletişim kalıplarını tanımlayan ve bu kalıpları gerçekleştiren tasarım
+        kalıplarıdır. Böylece, bu örüntüler bu iletişimi gerçekleştirmede esnekliği
+        arttırır.
+      chain_of_responsobility:
+        title: Sorumluluk zinciri zinciri
+        description: Nesneye yönelik tasarımda, sorumluluk zinciri modeli bir komut
+          nesnesi kaynağından ve bir dizi işlem nesnesinden oluşan bir tasarım desenidir.
+          Her işleme nesnesi, işleyebileceği komut nesnelerinin türlerini tanımlayan
+          bir mantık içerir; Gerisi zincirdeki bir sonraki işleme nesnesine geçirilir.
+          Bu zincirin sonuna yeni işleme nesneleri eklemek için bir mekanizma da vardır.
+      command:
+        title: Komut düzeni
+        description: Komut kalıbı, ileride yöntemleri çağırmak için gerekli bilgileri
+          depolamak için kullanılan bir davranış tasarım kalıbıdır. Komut yalnızca bir
+          nesneye sarılı bir eylemler kümesidir. Yakutla, Procs&#39;u ayrı bir nesne
+          oluşturmaya gerek kalmadan aynı şeyi yapmak için kullanabiliriz. İşlem basit
+          olduğunda ve durum bilgisinin kaydedilmesini gerektirmediğinde bu iyi bir
+          seçenektir, aksi takdirde bir komut sınıfı daha iyi seçenektir.
+      interpreter:
+        title: Tercüman desen
+        description: Bilgisayar programcılığında tercüman düzeni, bir dilde cümlelerin
+          nasıl değerlendirileceğini belirten bir tasarım desenidir. Temel fikir, özel
+          bir bilgisayar dilinde her sembol için (terminal veya nonterminal) bir sınıfa
+          sahip olmaktır. Bir cümlenin dildeki sözdizimi ağacı, bileşik desenin bir
+          örneğidir ve bir müşterinin cümlesini değerlendirmek (yorumlamak) için kullanılır.
+      iterator:
+        title: Yineleyici desen
+        description: Yineleyici tasarım deseni, kabın gerçekte elemanları nasıl temsil
+          ettiğini göstermeden bir kabın içindeki öğelere sıralı erişim sağlar. Yineleyici,
+          bir kap içine yerleştirilmiş elemanlara erişime izin veren hareketli bir işaretçi
+          olarak düşünülebilir.
+      external_iterator:
+        title: Harici yineleyici desen
+        description: 'Harici yineleyici: Yineleme mantığı ayrı bir sınıfta bulunur.
+          Yineleme sınıfı, dizin oluşturmaya izin verdiği sürece birden çok nesne türünü
+          işlemek için genelleştirilebilir. Gerçek yinelemeyi yapmak için ek bir sınıf
+          gerektirir, ancak bunlar daha fazla esneklik sağlar, çünkü yinelemeyi, hangi
+          öğelerin üzerinde ve hangi sırayla yinelendiğini kontrol edebilirsiniz.'
+      internal_iterator:
+        title: Dahili yineleyici deseni
+        description: 'Dahili yineleyici: tüm yinelenen mantık, toplam nesnenin içinde
+          gerçekleşir. Mantığınızı bir araya getirmek için bir kod bloğu kullanın ve
+          bu da her öğenin bloğunu çağırır.'
+      mediator:
+        title: Aracı desen
+        description: Genellikle bir program çok sayıda sınıftan oluşur. Dolayısıyla
+          mantık ve hesaplama bu sınıflar arasında dağılmıştır. Bununla birlikte, bir
+          programda, özellikle bakım ve / veya yeniden düzenleme sırasında daha fazla
+          sınıf geliştirildiğinden, bu sınıflar arasındaki iletişim sorunu daha karmaşık
+          hale gelebilir. Bu, programın okunmasını ve sürdürülmesini zorlaştırır. Ayrıca,
+          programın değiştirilmesi zorlaşabilir, çünkü herhangi bir değişiklik diğer
+          birkaç sınıftaki kodu etkileyebilir. Aracılık düzeninde nesneler arasındaki
+          iletişim, bir aracılık nesnesi ile kapsüllenir. Nesneler artık doğrudan birbirleriyle
+          iletişim kurmuyor, bunun yerine aracıyla iletişim kuruyor. Bu, iletişim kuran
+          nesneler arasındaki bağımlılıkları azaltır, böylece eşleşmeyi azaltır.
+      momento:
+        title: Desen momenti
+        description: 'Anlık kalıp, üç nesne ile uygulanır: yaratıcısı, bir bekçi ve
+          bir anı. Yaratıcı, içsel bir duruma sahip olan bazı nesnelerdir. Bekçi kaynakçıya
+          bir şeyler yapacak, ancak değişikliği geri alabilmek istiyor. Bekçi, ilk olarak
+          göndericiden bir ana nesne için soru sorar. Sonra ne yapacaksa o işlemi (ya
+          da işlem sırasını) yapacaktı. İşlemlerden önceki durumuna geri dönmek için,
+          ana nesneyi gönderene geri döndürür. Anlık nesnenin kendisi opak bir nesnedir
+          (bakıcının değiştiremediği veya değiştirmemesi gereken). Bu modeli kullanırken,
+          yaratıcının başka nesneleri veya kaynakları değiştirip değiştiremeyeceğine
+          dikkat edilmelidir - ana desen tek bir nesne üzerinde çalışır.'
+      observer:
+        title: Gözlemci modeli
+        description: Gözlemci modeli, özne olarak adlandırılan bir nesnenin bağımlılarının
+          bir listesini tuttuğu, gözlemci olarak adlandırdığı ve genellikle yöntemlerinden
+          birini çağırarak durum değişikliklerini otomatik olarak bildirdiği bir yazılım
+          tasarım desenidir. Genel olarak dağıtılmış olay işleme sistemlerini uygulamak
+          için kullanılır. Gözlemci modeli aynı zamanda tanıdık model-görünüm-denetleyici
+          (MVC) mimari düzeninde önemli bir parçasıdır. Gözlemci modeli, neredeyse tüm
+          GUI araç takımlarını içeren sayısız programlama kütüphanesinde ve sisteminde
+          uygulanmaktadır.
+      state:
+        title: Devlet desen
+        description: Durum modeli, durum makinesini nesne yönelimli bir şekilde uygulayan
+          davranışsal bir yazılım tasarım desenidir. Durum deseni ile, bir durum makinesi
+          her bir durumun durum modeli ara yüzünün türetilmiş bir sınıfı olarak uygulanması
+          ve modelin üst sınıfının tanımladığı yöntemlerin çağrılması yoluyla durum
+          geçişlerinin uygulanması ile uygulanır.
+      strategy:
+        title: Strateji kalıbı
+        description: Strateji, algoritmanın onu kullanan istemcilerden bağımsız olarak
+          değişmesine izin verir. Strateji, Gamma et al. yazılım tasarımını tanımlamak
+          için kalıp kullanma kavramını yaygınlaştırdı. Örneğin, gelen veriler üzerinde
+          doğrulama yapan bir sınıf, veri tipine, verinin kaynağına, kullanıcı seçimine
+          veya diğer ayırt edici faktörlere bağlı olarak bir doğrulama algoritması seçmek
+          için bir strateji deseni kullanabilir. Bu faktörler, çalışma süresine kadar
+          her vaka için bilinmemektedir ve radikal olarak farklı bir doğrulama yapılması
+          gerekebilir. Doğrulama nesnesinden ayrı olarak kaplanan doğrulama stratejileri,
+          sistemin farklı alanlarındaki (veya hatta farklı sistemlerdeki) diğer doğrulama
+          nesneleri kod çoğaltması olmadan kullanılabilir.
+      template:
+        title: Şablon yöntemi deseni
+        description: Nesneye yönelik programlamada, öncelikle bir algoritma tasarımının
+          temel adımlarını sağlayan bir sınıf oluşturulur. Bu adımlar soyut yöntemler
+          kullanılarak uygulanır. Daha sonra, alt sınıflar gerçek eylemleri uygulamak
+          için soyut yöntemleri değiştirir. Dolayısıyla, genel algoritma bir yerde saklanır,
+          ancak somut adımlar alt sınıflar tarafından değiştirilebilir.
+      visitor:
+        title: Ziyaretçi kalıbı
+        description: Nesne yönelimli programlama ve yazılım mühendisliğinde, ziyaretçi
+          tasarım deseni bir algoritmayı üzerinde çalıştığı nesne yapısından ayırmanın
+          bir yoludur. Bu ayrılmanın pratik bir sonucu, bu yapıları değiştirmeden mevcut
+          nesne yapılarına yeni işlemler ekleme yeteneğidir. Açık / kapalı prensibi
+          izlemenin bir yoludur. Temel olarak, ziyaretçi sınıflarını değiştirmeden sınıf
+          ailesine yeni sanal işlevler eklemesine izin verir; bunun yerine, biri sanal
+          işlevin uygun tüm uzmanlık alanlarını uygulayan bir ziyaretçi sınıfı oluşturur.
+          Ziyaretçi, örnek referansını girdi olarak alır ve hedefi iki kez göndererek
+          uygular.
+      not_covered:
+        title: 'Kapsanmayan desenler:'
+        hierarchical: Hiyerarşik ziyaretçi
+      credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
+  functional_programming:
+    title: İşlevsel programlama
+    description: 'Bir dili işlevsel bir tarzda kullanmak, aşağıda listelenen birkaç
+      temel özelliğe erişiminiz olduğunu gösterir:'
+    axioms:
+      immutable: 'Değişmez değerler: Bir “değişken” ayarlandıktan sonra değiştirilemez.
+        Ruby&#39;de bu, sabitler gibi değişkenleri etkili şekilde tedavi etmeniz gerektiği
+        anlamına gelir.'
+      side_effects: 'Yan etki yok: verilen bir değeri geçtiğinde, bir fonksiyon her
+        zaman aynı sonucu vermelidir. Bu, değişken değerleri olan el ele gider; bir
+        fonksiyon hiçbir zaman bir değer alamaz ve onu değiştiremez, çünkü bu bir sonucu
+        döndürmek için teğet olan bir yan etkiye neden olur.'
+      pure_functions: 'Yüksek dereceli işlevler: Bunlar, işlevlerin argüman olarak işlev
+        görmesine izin veren veya dönüş değeri olarak işlevlerin kullanıldığı işlevlerdir.
+        Bu, tartışmalı olarak, herhangi bir fonksiyonel dilin en kritik özelliklerinden
+        biridir.'
+      applying: 'Currying: yüksek dereceli işlevlerde etkin olan currying, birden fazla
+        argüman alan bir işlevi bir argüman alan bir işleve dönüştürüyor. Bu, çok argümanlı
+        bir işlevi, başlangıçta yaptığından daha az argüman alan bir işleve dönüştüren
+        kısmi işlev uygulamasıyla el ele gider.'
+      recursion: 'Özyineleme: İçinden bir işlevi çağırarak döngü. Değişken verilere
+        erişiminiz olmadığında, veri oluşumunu oluşturmak ve zincirlemek için özyineleme
+        kullanılır. Bunun sebebi ilmek fonksiyonun bir kavram olmamasıdır, çünkü ilme
+        halini belirli bir zamanda depolamak için değişkenlerin geçirilmesini gerektirir.'
+      lazy: 'Tembel değerlendirme veya gecikmeli değerlendirme: değerlerin işlenmesini
+        gerçekte ihtiyaç duyulan ana kadar erteler. Bir örnek olarak, tembel-değerlendirme
+        etkinleştirilmiş Fibonacci sayılarının listesini oluşturan bir kodunuz varsa,
+        sonuçtaki değerlerden biri koyar gibi başka bir fonksiyon gerektirene kadar
+        bu gerçekten işlenmez ve hesaplanmaz.'
+    pure_functions:
+      title: Saf fonksiyonlar
+      description: Bu işlevin sonucu yalnızca argümanlarını kullanarak hesapladığını
+        görebilirsiniz.
+    closures:
+      title: Kapaklar
+      description: Lambda da bir kapanmayı zorlar ve böylece bağlamlarını nesneler üzerinde
+        tutabilirler.
+    applying:
+      title: Kısmi uygulama ve taşıma
+      description: Önce bu iki farklı işlev uygulamasının ne olduğunu anlayalım. Kısmi
+        işlev uygulaması, daha az sayıda argüman alacak olan bir işlevi geri almak için,
+        çok sayıda argüman içeren bir işlev çağırıyor. Currying, n argümanını alan bir
+        işlevi alıyor ve onu bir argüman alan n işlevine bölüyor.
+      proc: Bu iki şeyin her birinin ne yapacağı hakkında size daha net bir fikir vermek
+        için, bir örnek Proc alalım.
+      partial: İlk iki argümana geçersek, aşağıdaki iç içe geçmiş Procs&#39;u bu fonksiyonun
+        kısmi uygulaması döndürür.
+      curry: <span class="code-inline">.Curry</span> bir kavrulmuş
+        proc verir. İsteğe bağlı arity argümanı verilirse, argüman sayısını belirler.
+        Körili bir proc bazı argümanlar alır. Yeterli sayıda argüman verilirse, sağlanan
+        argümanları orijinal prosese iletir ve sonucu döndürür. Aksi takdirde, argümanların
+        kalanını alan başka bir curried proc döndürür.
+  gotchas:
+    title: Sorunlar
+    description1: Çoğu Ruby on Rails yeni başlayanlar, çerçeve tarafından heyecanlanıyor
+      ve herhangi bir dil bilgisi olmadan uygulamalar üretmeye başlıyor. Ve bu da RoR&#39;ın
+      büyüsü.
+    description2: Bir noktada işler ciddileşmeye başlar. Bazıları Ruby on Rails&#39;in
+      kirli sırlarını araştırmak için zaman ve çaba harcarken, bazıları ise dil hakkında
+      neredeyse sıfır bilgi sahibi olan üst düzey geliştiriciler haline geldi.
+    description3: Her neyse, er ya da geç, yeni başlayanlar veya deneyimli programcılar,
+      hepimiz Ruby Gotchas denilen - sitemizden saatlerce sert hata ayıklama için gizlenen
+      küçük dil inceliklerini inceliyoruz.
+    description4: Geliştiricilerin dikkat etmesi gereken popüler Ruby gotchas ve meraklarının
+      bir listesi. Her durumda, kafa karıştırıcı ve / veya hataya açık kod örneği var.
+    description5: Basit (ancak bulmak zor) hatalar yapmanıza engel olacak ve (ve kod
+      koruyucunuzun) ömrünü kolaylaştıracak iyi uygulamalarla bir araya gelirler.
+    surprising:
+      title: Ruby şaşırtıcı olabilir
+      description: "&quot;Programcı mutluluğunu en üst düzeye çıkarmak için tasarlanmış&quot;
+        olmasına rağmen, &quot;en az sürpriz&quot; ilkesiyle, Ruby hala yakaladı. Bu
+        sunum, yeni başlayanlar için önemsiz gotchalardan daha gelişmiş ve kafa karıştırıcı
+        gotchalara doğru ilerleyecektir."
+    quotes:
+      title: Bana bu konuda teklif verme, ama ...
+      description: Dize enterpolasyonu ( <span class="code-inline">\ n</span> gibi özel
+        karakterler dahil) <span class="code-inline">&#39;tek&#39;</span> tırnak işaretleri
+        ile başarısız olur - <span class="code-inline">&quot;çift&quot;</span> tırnaklar
+        gerektirir. Aynı dize enterpolasyonu ile birçok dilde olduğu gibi. Kullanmamak
+        için pratikte iki katına çıkar.
+    twue:
+      title: Twue! Twue!
+      description: 'Sadece iki şey yanlıştır: <span class="code-inline">false</span>
+        ve <span class="code-inline">nil</span> . Her şey çok acımasız, hatta <span
+        class="code-inline">0</span> (C&#39;de yanlış), <span class="code-inline">&quot;&quot;</span>
+        (JS&#39;de yanlış), <span class="code-inline">[]</span> , vb. Bunları bazılarının
+        yanlış olduğu C, JS vb.'
+    symbols_and_strings:
+      title: Onu ustalıkla asın ya da sembolik olarak onu bağlayın.
+      description: '<span class="code-inline">Symbol != String</span> . Yazdırıldığında
+        aynı olsa bile. Hangi birini kullanacağınızı unutmayın. İdeal olarak, ikisinden
+        birini alın ve bir yöntemin beklediği şeyi kullanın: &quot;Kabul ettiğinizde
+        özgür, gönderdiklerinizde muhafazakar olun.&quot; Postel Yasası.'
+    string_or_nothing:
+      title: Dize ... ya da hiçbir şey!
+    constants:
+      title: Sabitler değil
+      description: İlk büyük harf Ruby&#39;de sabit demektir. Bir sabiti değiştirmeye
+        çalışın. Ooooh bir UYARI olsun! İDT. Donma bile Fixnums için işe yaramaz. Dizi
+        (tür) ve diğer birçok nesne için işe yarıyor ... dedi.
+    equals:
+      title: Bazıları diğerlerinden daha eşittir
+      description: <span class="code-inline">==</span> her zamanki gibi aynı değerdir,
+        <span class="code-inline">.eql?</span> ve sınıf nedir (1 Fixnum, 1.0 Float&#39;tır
+        ), <span class="code-inline">.equal?</span> Aynı nesne. Aslında çok daha saç.
+    operations:
+      title: "&gt; ===! = ==!"
+      description: <span class="code-inline">===</span> , durum ifadelerinde olduğu
+        gibi &quot;vaka eşitliği&quot; dir. Daha iyi bir isim <span class="code-inline">.describes
+        olabilir?</span> Veya aşırı yük <span class="code-inline">.includes?</span>
+        . Yine, aslında çok daha saç; Object sınıfındaki dokümanlara bakınız. İnsanları
+        <span class="code-inline">===</span> nesne kimliği veya aynı değer ve sınıf
+        olduğu dillerden alır.
+    priority:
+      title: ve! = &amp;&amp; veya! = ||
+      description: '<span class="code-inline">&amp;&amp;</span> <span class="code-inline">=
+        &#39;</span> den daha yüksek önceliğe sahiptir, bu nedenle <span class="code-inline">x = true && false</span>,
+        <span class="code-inline">x = (true && false)</span>
+        anlamına gelir ve daha düşük önceliğe sahiptir, yani <span class="code-inline">x
+        = true and false</span> araçları <span class="code-inline">(x = true) and false</span>
+        . Ruby Stili Kılavuzu: <span class="code-inline">&&, ||</span> boolean
+        ifadeleri için <span class="code-inline">and, or</span> kontrol akışı için.'
+    sensitive:
+      title: Çok hassas olmayın!
+      description: Boşluklara duyarsız mı? HER ZAMAN DEĞİL! Parser, bunun bir argüman
+        olarak bir ifade olduğunu düşünüyor, ancak <span class="code-inline">(1, 2)</span>
+        geçerli bir Ruby ifadesi değil! (Hepsi 1 argümanla gayet iyi çalışır).
+      usage: 'Birden fazla argü ile: <br/> - Ebeveyn yok, sorun yok. <br/> - Ebeveynleri
+        boşluksuz, tamam. <br/> - Parens ve uzay, HAYIR!'
+      methods: '<span class="code-inline">method / num</span> bitmemiş bir regex ya
+        da string! Ruby, metoda bir argüman verdiğini düşünüyor. Genel ilke: BALANCED
+        boşluk kullanın; iki taraf da ya da hiçbiri'
+      arguments: '<span class="code-inline">one -2</span> Yakut bağımsız değişken <span
+        class="code-inline">-2</span> yöntem birine veriyoruz düşündürüyor. <span class="code-inline">+2</span>
+        veya hatta <span class="code-inline">* 2</span> için aynı. Yine: BALANCED boşluk
+        kullanın, her iki taraf da veya hiçbiri.'
+      stubby: "&quot;Stabby&quot; lambdas (1.9+) İsteğe bağlı boşluğu ebeveynleri olmadan
+        sonradan tamam, tamam. Ebeveynlerden sonra boşluk, tamam. Yine, ebeveynlerden
+        önce boşluk, NO! GÜNCELLEME: 2.0 Sabit!"
+    onto:
+      title: Yer @ üzerine!
+      description: 'Çıplak değer geçici bir yerel değişken haline gelir! Çözüm: <span
+        class="code-inline">@!</span> hatırlayın (Veya
+        &quot;self&quot;. Veya <span class="code-inline">attr_writer, attr_accessor</span>
+        kullanın.) İnsanları Java / C ++ &#39;dan alır, Python&#39;dan (ki bu da &quot;öz&quot;
+        gerektirir) değil. “Siz bu değişkeni kullanmaya devam edersiniz. Ne anlama geldiğini
+        düşündüğünüzü anlamıyorum.”. Inigo Montoya değil.'
+    variables:
+      title: Dikkat edin, @@!
+      description: Boşluğu ne dolduruyor bakalım? Kontrol etmeden önce Ebeveyn&#39;in <span class="code-inline">@@ değerini</span>
+        değiştiremedik, ne de Çocuk hiç! Yoksa biz mi? <span class="code-inline">@@
+        değişkenleri</span> alt sınıflarla paylaşılır - yalnızca var olduklarından değil,
+        değişkenlerin kendileri! Çocuğun <span class="code-inline">@@ değerini</span>
+        bildirmek Veli değiştirdi ve Veli değiştirildi Çocuğun.ut dahil, @@!
+    initialize:
+      title: İnit ile (ialize) veya onsuz
+      description: Ebeveynin ilk başlatması otomatik olarak yalnızca bir çocuk yoksa.
+        Aksi takdirde, ebeveynin çalışması için çağrılmalıdır.
+    superman:
+      title: Süpermen ve Görünmez Adam
+      description: 'no-arg listesi ile <span class="code-inline">super</span> arayan
+        boş parens <span class="code-inline">super</span> açık args ile var YOK args
+        göndermek için bu args gönderir kullandığınız gönderir: <span class="code-inline">super()</span>.'
+    regexp:
+      title: ne zaman bitecek? (Veya başlamak?)
+      description: 'Standart regexps&#39;de: <span class="code-inlne">^</span> başlatılır
+        ve <span class="code-inline">$</span> tüm dizgenin sonudur. Ruby&#39;nin regexes&#39;i
+        varsayılan olarak çok satırlı, yani: <span class="code-inline">^</span> başlıyor
+        ve <span class="code-inline">$</span> herhangi bir satırın sonu! <span class="code-inline">\
+        A</span> başlangıç ve <span class="code-inline">\ Z</span> tüm dizgenin sonu.
+        (Ya da herhangi bir yeni satır ekleyelim… ki bu başka bir sonuçtur!)'
+    any:
+      title: ".anıyor musun?"
+      description: '<span class="code-inline">.any?</span> &quot;herhangi
+        bir öğe&quot; anlamına gelmez! Blok ile: &quot;herhangi biri bloğu gerçekleştirir
+        mi?&quot;. Olmadan: &quot;herhangi bir hakikat var mı?&quot; Örtük bloğu var:
+        <span class="code-inline">{ |element| element }</span> .'
+    undef:
+      title: "(Un) Def Leppard"
+      description: Yineleyicilere iletilen bloklarda bildirilen değişkenler (örneğin,
+        zamanlar veya her biri) her yinelemenin en üstünde tanımsız! Yineleyiciler bloğu
+        tekrar tekrar çağırır, bu nedenle her aramadan sonra değişkenler kapsam dışı
+        kalır. Yerleşik döngü yapıları (örneğin, süre veya for) TAMAM. (Ya da ilan bloğundan
+        önce değişiklik gösterir.)
+    freeze:
+      title: Dondur (Ar) ışını
+      description: Bir dizinin (veya bir karma) dondurulması, içerdiği öğeleri değil,
+        onu dondurur. Dizeler yerinde değiştirilebilir. Bu şekilde, verilen bir slotu
+        donmuş bir Dizge Dizisi&#39;nde değiştirebilirsiniz.
+    one_is_one:
+      title: 1, 1… ve daha fazlası böyle olacak!
+      description: 'Fixnum&#39;u yeni değere değiştirmek yeni bir nesne demektir. Yerinde
+        değiştirilemezler! Bu nedenle, donmuş bir Fixnums Dizisini değiştiremezsiniz.
+        (Fixnums ve Integers&#39;ın denemek için kullanabileceği hiçbir bang yöntemi
+        yoktur). BTW: Bir Fixnum&#39;un <span class="code-inline">object_id</span> <span
+        class="code-inline">value * 2 + 1&#39;dir</span>'
+    bang:
+      title: "(ila! ||! ila!) ==?"
+      description: Bang metodu tehlikeli olarak işaretler. Niye ya? Çoğu zaman, alıcının
+        modunu değiştirmeyen patlayıcı olmayan sürümle değiştirebilir. BAĞIMSIZ VERSİYON
+        OLARAK AYNI DEĞERİ GERİ DÖNÜYORUZ! Değişiklik gerekmiyorsa çoğu sıfır!
+    array:
+      title: Yeni Gotchas Dizisi
+      description: Nesne olarak verilen varsayılan değer her yuva için aynı nesnedir!
+        Bir mutasyonun mutasyona uğraması herkes için varsayılandır. Blok olarak verilen
+        ilk değer, her slot için ayrı ayrı değerlendirilir. Her biri için yeni değişkenler
+        oluşturmak için bunu kullanın.
+    hash:
+      title: Bir karma yapma
+      description: 'Dizilerle çoğunlukla aynı problem (ve çözüm). DAHA FAZLA GOTCHAS:
+        Boş slotlara erişimde yeni bir nesne yaratır! Aşırı sayıda yeni nesne oluşturabilir;
+        &quot;gerçek&quot; içerikleri veya sayıları kontrol etme (sıfır kontrolü, boyutu,
+        vb.)'
+    rescue:
+      title: Beni kurtar, bir çizgi fırlat, yakalamaya çalışacağım!
+      description: Ruby&#39;de, at ve yakala istisnalar için DEĞİL! Derin yuvalamadan
+        çıkmak için gelişmiş akış kontrolü vardır. Ruby istisnalar için yükseltme ve
+        kurtarma kullanır.
+    to_str:
+      title: to_s VS to_str
+      description: '<span class="code-inline">to_s</span> her nesnede tanımlanır ve
+        daima bir şey döndürür. <span class="code-inline">to_str</span>, yalnızca string
+        benzeri nesnelerde tanımlanır. Örneğin, <span class="code-inline">Symbol</span>
+        <span class="code-inline">to_str işlevine sahip</span> ama <span class="code-inline">Array</span>
+        değil. Böylece, <span class="code-inline">obj.respond_to?(:to_str)</span> Yerine <span class="code-inline">obj.is_a</span>
+        gibi bir şey <span class="code-inline">(String)</span> Eğer birlikte çalıştığınız
+        sınıfı <span class="code-inline">dize</span> veya bir alt sınıfı olup olmadığı
+        konusunda endişelenmeden ördek yazarak yararlanmak istiyorsanız değil.'
+    missing:
+      title: Method_missing ve reply_to_missing&#39;i koordine etmeniz mi gerekiyor?
+      description: '<span class="code-inline">method_missing</span>
+        , <span class="code-inline">response_to_missing?</span> yanı sıra. Bir nesnenin
+        bir yöntem çağrısında bir şey döndürmesini sağlamak için method_missing&#39;i
+        kullandığınızda, her zaman response_to_missing? Bunu yapmazsanız, ilk bakışta
+        hiçbir şey bozulmayacak, ancak sonunda başınız belaya girecek. Bu sınıfı düşünün:'
+      respond_to: 'Çok sayıda kod (taşlar veya kendi kodlarınız) answer_to? (İyi bir
+        sebep için). Response_to_missing’e düzeltme eki mi gerekiyor? ayrıca:'
+    exception:
+      title: bir İstisna&#39;dan değil, bir StandardError&#39;dan kurtarma
+      description: 'İstisnayı kurtarmayın, kurtarın StandardError&#39;ı kurtarın Açıkça
+        kurtarmadan önce İstisna, normal olarak SyntaxError, LoadError ve Interrupt
+        gibi kurtarılamayan hataları kurtarır. İstisna türü niteleyicisini çıkarırsanız,
+        Ruby muhtemelen yalnızca istediğiniz şekilde StandardError&#39;ı yakalar:'
+    private:
+      title: Özel veriler gerçekten değildir ve tüm w / class yöntemlerinde değildir.
+      description: Ruby&#39;de sınıf yöntemlerini özel yapmanın bir yolu var, sadece
+        bazı çemberlere atlamanız gerekiyor. Err, yani <span class="code-inline">class << self</span>
+        sözdizimini kullanın. Bu tuhaflık, bir örneği singleton&#39;u etkili
+        bir şekilde sınıf yöntemleri yaratan sınıfa zorlar.
+    braces:
+      title: Diş telleri vs. do-end
+      description: Genel kural, çok satırlı bloklar için <span class="code-inline">do .. end</span>
+        ve tek satırlı bloklar için küme parantezleri kullanmaktır, ancak
+        gösterilebilecek ikisi arasında da bir fark vardır. Bu <span class="code-inline">{}</span>
+        <span class="code-inline">do .. end</span> daha yüksek bir önceliğe sahip
+        olduğu anlamına gelir, bu nedenle kullanmak istediğiniz karar verirken göz önünde
+        bulundurun.
+    module:
+      title: 'Foo :: Bar, Foo Modülü dışında tanımlanmış, Foo içinde görünmez'
+      description: Bir yeni kapsam içine &quot;ağ geçidi&quot; olarak <span class="code-inline">module Something</span>,
+        <span class="code-inline">class Something</span> veya <span
+        class="code-inline">def something</span> her görünüm düşünebiliriz. Ruby, referans
+        verilen bir adın tanımını ararken, önce geçerli kapsamda (yöntem, sınıf veya
+        modül) bakar ve &quot;ağ geçidi&quot; içeren her birinden geri dönüp nereye
+        gideceğini bulamazsa, arama orada kapsamı.
+    credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
+  meta_programming:
+    title: metaprogramming
+    description: Metaprogramlama, diğer programları (veya kendilerini) kendi verileri
+      olarak yazan veya değiştiren veya çalışma zamanında başka bir yerde yapılacak
+      olan derleme zamanında işin bir kısmını yapan bilgisayar programlarının yazılmasıdır.
+      Çoğu durumda, bu, programcıların tüm kodu manuel olarak yazmak için harcadıkları
+      sürede daha fazla işlem yapmasına olanak tanır veya programlara yeniden derlenmeden
+      yeni durumları verimli bir şekilde ele almak için daha fazla esneklik sağlar.
+      Metaprogramming, hayatınızı kolaylaştırmak için çalışma zamanında kod yazan bir
+      kod yazıyor.
+    dynamic_dispatch:
+      title: Dinamik Sevkiyat
+      description: <span class="code-inline">Subject.public_send (message, * arguments)</span>
+        mesajlarını göndermemize izin verir.
+    dynamic_method:
+      title: Dinamik Yöntem
+      description: 'Dinamik olarak <span class="code-inline">metod_ethod</span> metodları
+        <span class="code-inline">yaratmamıza</span> izin verir <span class="code-inline">:
+        method_name {metod gövdesi haline gelen blok</span>'
+    ghost_methods:
+      title: Hayalet Yöntemleri
+      description: '&quot;Hayalet Yöntemleri&quot; yakalamak ve onları başka bir yönteme
+        iletmek. Muhtemelen çağrıya bir mantık eklerken. <span class="code-inline">Method_missing
+        kullanır</span>'
+    dynamic_proxies:
+      title: Dinamik Proxy&#39;ler
+      description: 'Örneğin, gelen iletiyi ayrıştırmak için <span class="code-inline">method_missing</span>
+        kullanarak (örneğin, <span class="code-inline">get_name</span> , <span class="code-inline">get_age</span>
+        ) hayali yöntemler <span class="code-inline">sunabilir</span> ve <span class="code-inline">get
+        (: data_type)</span> burada <span class="code-inline">: data_type</span> is
+        <span class="code-inline">: name</span> or <span class="code-inline">: age</span>
+        gibi başka bir yönteme devredebilirsiniz.'
+      more: Eğer (analizden sonra) <span class="code-inline">method_missing</span> kullanarak
+        bir performans sorunu keşfederseniz, mesaj ilk kez `method_missing &#39;tarafından
+        alındıktan sonra gerçek bir yöntem oluşturmak için&quot; Dinamik Yöntem &quot;tekniğini
+        kullanabilirsiniz.
+  solid_principles:
+    good: İyi!
+    bad: Kötü!
+    title: Katı ilkeleri
+    description: Bilgisayar programlamasında, SOLID (tek sorumluluk, Açık-kapalı, Liskov
+      ikamesi, arayüz ayrımı ve bağımlılık inversiyonu), 2000&#39;lerin başında duran
+      Robert C. Martin tarafından “İlk Beş İlke” için Michael Feathers tarafından tanıtılan
+      anımsatıcı bir kısaltmadır. nesneye yönelik programlama ve tasarımın beş temel
+      prensibi için. Amaç, bu ilkelerin birlikte uygulandığında, bir programcının bakımı
+      kolay ve zaman içinde uzayan bir sistem yaratma ihtimalini arttırmasıdır. SOLID
+      ilkeleri, programlayıcının hem okunabilir hem de genişletilebilir olana kadar
+      yazılım kaynak kodunu yeniden düzenlemesine neden olarak kod kokularını gidermek
+      için yazılım üzerinde çalışırken uygulanabilecek kurallardır. Genel çevik ve Uyarlanabilir
+      Yazılım Geliştirme stratejisinin bir parçasıdır.
+    single:
+      title: Tek Sorumluluk İlkesi
+      description: Tek Sorumluluk İlkesi, grubun en özetidir. Sınıfların ve yöntemlerin
+        küçük ve bakımlarının korunmasına yardımcı olur. Sınıfları küçük tutmaya ve
+        odaklanmaya ek olarak bunların anlaşılmasını da kolaylaştırır. Buna bir örnek,
+        işlenen bir anlaşmayı işaretledikten sonra belirli bir kişinin komisyonlarının
+        e-posta özetini gönderme desteği eklemek olabilir. Değişimin birçok nedenini
+        tanımlayabildiğimiz gerçeği, Tek Sorumluluk İlkesinin ihlal edildiğine işaret
+        ediyor.
+    open_close:
+      title: Açık / Kapalı Prensibi
+      description: Açık / Kapalı Prensip, sınıfların veya yöntemlerin uzatma için açık,
+        ancak değişiklik için kapalı olması gerektiğini belirtir. Bu bize sınıfların
+        kendilerinde değişiklik yapmadan sistemin davranışını değiştirmemizi mümkün
+        kılan modüler tasarımlar için çaba göstermemiz gerektiğini söylüyor. Bu genellikle
+        strateji kalıbı gibi kalıpların kullanılmasıyla başarılır.
+      after: Bu yeniden düzenleme ile herhangi bir kodu değiştirmeden yeni ayrıştırıcılar
+        eklemeyi mümkün kıldık. Herhangi bir ek davranış yalnızca yeni bir işleyici
+        eklenmesini gerektirir. Bu, FileParser&#39;ımızı yeniden kullanılabilir hale
+        getirir ve çoğu durumda bizi daha küçük odaklanmış sınıflar oluşturmaya teşvik
+        ederek Tek Sorumluluk İlkesi&#39;ne uygun bir şekilde tutar.
+    liskov:
+      title: Liskov&#39;un Değişim Prensibi
+      description: Liskov&#39;un ilkesi anlaşılması en zor olma eğilimindedir. İlke,
+        herhangi bir beklenmedik veya yanlış davranış oluşturmadan bir ebeveyn sınıfının
+        örneklerini alt öğelerinin bir örneğiyle değiştirebilmeniz gerektiğini belirtir.
+    segregation:
+      title: Bağımlılık İnversiyon Prensibi
+      description: 'İlke, bir müşterinin kullanmadığı yöntemlere bağlı kalmaması gerektiğini
+        belirtir. Bu örnekte, Bilgisayar, Programcı ve Teknisyen sınıfları bulunmaktadır.
+        Hem Programcı hem de Teknisyen Bilgisayarı farklı şekillerde kullanır. Programcı
+        bilgisayarı yazmak için bilgisayarı kullanır, ancak teknisyen bilgisayarın sabit
+        diskini nasıl değiştireceğini bilir. Arabirim Ayrıştırma İlkesinin (ISS) uyguladığı
+        şey, bir sınıfın kullanmadığı yöntemlere bağlı olmamalıdır. Bizim durumumuzda,
+        Programcı gereksiz yere Computer # change_hard_drive yöntemine bağlanmıştır
+        çünkü kullanmaz, ancak bu yöntemin uyguladığı durum Programlayıcıyı etkileyebilir.
+        LSP&#39;ye uymak için kodu tekrar gözden geçirelim.'
+      after: Bu yeniden düzenleyiciden sonra, Teknisyen Bilgisayarın durumundan izole
+        edilen ComputerInternals türünden farklı bir nesne kullanır. Computer nesnesinin
+        durumu, Programlayıcı&#39;dan etkilenebilir, ancak değişiklikler Teknisyeni
+        hiçbir şekilde etkilemeyecektir.
+    di:
+      title: Bağımlılık İnversiyon Prensibi
+      description: Bağımlılık İnversiyon Prensibi, düşük seviyeli (düşünen veritabanı
+        sorgulama ve IO) uygulama detaylarına bağlı olmayan yüksek seviye (iş mantığı)
+        nesnelerle ilgilidir. Bu, ördek yazarak ve Bağımlılık İnversiyon Prensibi ile
+        sağlanabilir. Genellikle bu desen yukarıda tartıştığımız Açık / Kapalı Prensibi
+        elde etmek için kullanılır. Aslında, aynı örneği bu ilkenin bir gösterimi olarak
+        yeniden kullanabiliriz. Şimdi bir biçimlendirici sınıfı var, ancak bunu Rapor
+        sınıfına kodladım, böylece Rapor&#39;dan JSONFormatter&#39;a bir bağımlılık
+        yarattım. Rapor, JSONFormatter&#39;dan daha soyut (üst düzey) bir kavram olduğundan,
+        DIP&#39;yi etkin bir şekilde çiğniyoruz.
+      after: Bu şekilde Rapor, JSONFormatter&#39;a bağlı değildir ve format adı verilen
+        bir yöntemi olan herhangi bir formatlayıcıyı kullanabilir (bu, ördek yazma olarak
+        bilinir). Unutulmaması gereken diğer bir şey, bir kez daha, bir sorunu çözmek
+        için bağımlılık enjeksiyonunu kullandığımızdır. Bu teknik, amacımız nesneleri
+        birbirinden ayırırken çok güçlü bir tekniktir ve bağımlılık inversiyon ilkesi
+        (vs bağımlılık enjeksiyon modeli) ile aynı baş harflere sahip olsa da, bunlar
+        tamamen farklı kavramlardır.
+  threads:
+    example: Örnek
+    title: İş Parçacığı
+    description: 'Paralellik ve eşzamanlılık hakkında not: İşlemleri iş parçacığına
+      karşı kullanma arasındaki birincil fark, belleğin işlenme şeklidir. İş parçacığı
+      belleği paylaşırken, yüksek düzeyde, kopya belleği işler. Bu, işlemin yumurtlamasını
+      iplik yumurtlamadan daha yavaş yapar ve bir kez çalıştırıldığında daha fazla kaynak
+      tüketen işlemlere yol açar. Genel olarak, dişler işlemlerden daha az ek yüke sahiptir.
+      Bu Thread API&#39;sı Ruby API&#39;dir. Farklı Ruby uygulamalarının altta yatan
+      farklı diş çekme davranışları olduğunu ima ettim.'
+    green:
+      title: Yeşil Konular
+      description: Ruby 1.9, yivli yivlerle yeşil yivlerin yerini aldı. Bununla birlikte,
+        GIL hala paralelliği önlüyor. Olduğu söyleniyor, eşzamanlılık daha iyi zamanlama
+        ile geliştirilmiştir. Yeni program, içerik değiştirme kararlarını daha verimli
+        hale getirir, esasen bunları zamanlayıcı iş parçacığı olarak bilinen ayrı bir
+        yerel iş parçacığına taşır.
+    gil:
+      title: GIL - Global Tercüman Kilidi
+      description: MRG&#39;nin global bir tercüman kilidi (GIL) vardır. Ruby kodunun
+        çalıştırılması etrafında bir kilit var. Bu, çok iş parçacıklı bir bağlamda,
+        Ruby kodunu herhangi bir anda yalnızca bir iş parçacığının çalıştırabileceği
+        anlamına gelir. Yani, 8 çekirdekli bir makinede yoğun şekilde çalışan 8 iş parçacığı
+        varsa, yalnızca bir iş parçacığı ve bir çekirdeğin herhangi bir zamanda meşgul
+        olacağı anlamına gelir . GIL, Ruby&#39;nin içeriklerini verileri bozabilecek
+        yarış koşullarından korumak için var. Uyarılar ve optimizasyonlar var, ama bu
+        özü.
+      example: Bu basit gerçek, konuları bu kadar güçlü kılan ve aynı zamanda çalışması
+        zor olan şeydir. Konuların neden iyi olduğu hakkında bir fikir verdim; İşte
+        zorluklarını göstermek için basit bir program. Burada, dizide <span class="code-inline">10
+        * 10000</span> elementin olduğunu görebilirsiniz. Farklı yakutların farklı sonuçlar
+        gösterebileceğini unutmayın. GIL sadece MRG&#39;de bulunur.
+    mutex:
+      title: Mutex - Karşılıklı Yürütme
+      description: Mutexes, birden fazla iş parçacığı için kodun kritik bir bölümüne
+        erişimi senkronize etmek için bir mekanizma sağlar. Başka bir deyişle, çok iş
+        parçacıklı kaos dünyasına bir düzen ve bazı garantiler getirilmesine yardım
+        ediyorlar. &#39;Mutex&#39; ismi &#39;karşılıklı dışlanma&#39; için kısaca. Kodunuzun
+        bir bölümünü bir muteksle kaplarsanız, aynı anda iki iş parçacığının giremeyeceğini
+        garanti edersiniz. Mutexes, birden fazla iş parçacığı için kodun kritik bir
+        bölümüne erişimi senkronize etmek için bir mekanizma sağlar. Çok iş parçacıklı
+        kaos dünyasına bir düzen ve bazı garantiler getirmeye yardımcı olur.
+      example: Bu programda, herhangi bir iş parçacığı Dizi&#39;ye basmadan önce mutex&#39;i
+        kilitlemek zorunda olduğu için, bu işlemi aynı anda iki ipliğin yapmama garantisi
+        vardır. Başka bir deyişle, bu işlem tamamlanmadan önce kesilemez. Bir iş parçacığı
+        Diziye basmaya başladığında, ilk iş parçacığı bitinceye kadar başka iş parçacığı
+        kodun bu bölümüne giremez. Bu işlem şimdi iş parçacığı güvenlidir. Burada, dizide
+        <span class="code-inline">10 * 10000</span> elementin olduğunu görebilirsiniz.
+        Şimdi hepsi muteks yüzünden aynı. Mutex, iş parçacığı için aynı sınırları belirler.
+        Bu kod parçasına isabet eden ilk iş parçacığı muteks kilitler. o zaman bu muteksin
+        sahibi olur. Sahiplik dişi muteksin kilidini açana kadar, başka hiçbir iplik
+        onu kilitleyemez.
+    fibers:
+      title: Lifler
+      description: Lifler, Ruby&#39;de hafif kooperatif eşzamanlılığının uygulanmasında
+        ilkeldir. Temel olarak, bunlar, benzer iş parçacıkları gibi duraklatılabilen
+        ve devam ettirilebilen kod blokları yaratmanın bir yoludur. Asıl fark, asla
+        önlenmemeleri ve zamanlamanın VM tarafından değil programcı tarafından yapılması
+        gerektiğidir. Diğer yığınsız hafif eşzamanlılık modellerinin aksine, her fiber
+        küçük 4KB&#39;lık bir yığınla geliyor. Bu, elyafın blok içerisindeki derinlemesine
+        yuvalanmış fonksiyon çağrılarından duraklatılmasını sağlar.
+    rails:
+      title: Ray iplik güvenliği
+      description: Bununla ilgili sorun, bir uygulamanın bir bütün olarak güvenli olup
+        olmadığını kesin bir şekilde söylemenin basit bir yolu olmamasıdır.
+      global_variables: Global değişkenler globaldir. Bu, iplikler arasında paylaşıldıkları
+        anlamına gelir. Şimdiye kadar global değişkenleri kullanmama konusunda ikna
+        edilmediyseniz, bunlara asla dokunmamanın başka bir nedeni. Bir uygulamada küresel
+        olarak bir şeyi gerçekten paylaşmak istiyorsanız, yine de bir sabit tarafından
+        (muhtemelen aşağıya bakınız) daha iyi hizmet verilebilir.
+      class_variables: Sınıf değişkenleri. İş parçacıkları hakkında bir tartışma için,
+        sınıf değişkenleri küresel değişkenlerden çok farklı değildir. Aynı şekilde
+        dişler arasında paylaşılırlar. Problem sınıf değişkenleri kullanmakla ilgili
+        değil, onları değiştirerek. Ve eğer bir sınıf değişkenini değiştirmeyecekseniz,
+        çoğu durumda sabit yine daha iyi bir seçimdir.
+      instance_variables: Sınıf örneği değişkenleri. Ama belki de Ruby&#39;de sınıf
+        değişkenleri yerine her zaman sınıf örneği değişkenlerini kullanmanız gerektiğini
+        okudunuz. Eh, belki de yapmalısın, ama onlar sadece sınıf değişkenleri gibi
+        iş parçacıklı programlar için sorunlu.
+      memoization: 'Kendiliğinden hafızalama iş parçacığı güvenliği meselesi değildir.
+        Verileri sınıf değişkenlerinde veya sınıf örneği değişkenlerinde depolamak için
+        kullanılır (önceki noktalara bakın). <span class="code-inline">|| =</span> operatörü,
+        aslında iki işlemdir, bu nedenle, ortasında ortaya çıkan potansiyel bir bağlam
+        anahtarı vardır ve bu, dişliler arasında bir yarış durumuna neden olur. Dolayısıyla,
+        yalnızca örnek değişkenleri kullanıyor olsanız bile, notlandırma ile yarış koşullarına
+        sahip olabilirsiniz. Sınıf değişkenlerine veya sınıf örneği değişkenlerine not
+        vermeyin. Sınıf seviyesindeki bir şeyi not almanız gerekiyorsa, bunun yerine
+        thread local değişkenlerini (<span class="code-inline">Thread.current[:baz]</span>) kullanın. Yine de, bunun tür bir global değişken olduğuna dikkat edin.'
+    config:
+      title: İş parçacığı güvenliğini yapılandırın?
+      description: Bu yöntemi kullanmak bizim uygulama yapılandırmamızda dört seçenek
+        belirler. Her seçeneğin üzerinden geçip ne yapacağını konuşalım.
+      frameworks: 'Altyapıları Önceden Yükleme: ilk seçenek @preload_frameworks söylediklerini
+        çok fazla yapar, Rails çerçevesini önyüklemeye istekli bir şekilde yüklenmeye
+        zorlar. Bu seçenek etkinleştirilmediğinde, çerçeve sınıfları otomatik yükleme
+        yoluyla tembel olarak yüklenir. Çok iş parçacıklı ortamlarda, otomatik yükleme
+        ile iş parçacığı güvenliği sorunları nedeniyle herhangi bir iş parçacığı oluşturulmadan
+        önce çerçevenin istekli bir şekilde yüklenmesi gerekir. Çerçeveyi yüklemek iş
+        parçacığının güvenli olmadığını biliyoruz, bu nedenle strateji, herhangi bir
+        iş parçacığı istekleri yerine getirmeye hazır olmadan önce hepsini yüklemektir.'
+      cache: 'Sınıfları önbelleğe alma: @cache_classes seçeneği, sınıfların yeniden
+        yüklenip yüklenmeyeceğini kontrol eder. Başvurunuzda &quot;TDD&quot; yaptığınız
+        zamanı hatırlıyor musunuz? Bir denetleyiciyi değiştiriyorsunuz, sonra sayfayı
+        “test etmek” için sayfayı yeniden yüklüyorsunuz ve değiştiğini görüyor musunuz?
+        Ya, bu seçenek bunu kontrol ediyor. Bu seçenek yanlış olduğunda, geliştirme
+        aşamasında olduğu gibi, sınıflarınız değiştirildiklerinde yeniden yüklenir.
+        Bu seçenek olmadan, “F5DD” ’mizi yapamazdık (evet, bu F5 Driven Development).
+        Üretimde, sınıfların anında değiştirilmeyeceğini biliyoruz, bu yüzden sınıfları
+        yeniden doldurup doldurmamaya çalışmanın sadece kaynakları boşa harcayacağına
+        karar vermek gerekiyor, bu yüzden sınıf tanımlarını hiçbir zaman yeniden yüklememek
+        mantıklı geliyor.'
+      di: 'Bağımlılık yükleme: Bu seçenek, @dependency_loading, eksik sabitlerle karşılaşıldığında
+        kod yüklemeyi kontrol eder. Örneğin, bir denetleyici Kullanıcı modeline referans
+        verir, ancak Kullanıcı sabiti tanımlanmaz. Bu durumda, @dependency_loading true
+        olursa, Rails, Kullanıcı sabitini içeren dosyayı bulur ve bu dosyayı yükler.
+        Kod yüklemesinin iş parçacığının güvenli olmadığı hakkında konuştuk, buradaki
+        fikir çerçeveyi, sonra tüm kullanıcı kodunu yükledikten sonra bağımlılık yüklemesini
+        devre dışı bırakmamız gerektiğidir. Bağımlılık yüklemesi devre dışı bırakıldığında,
+        çerçeve kodu ve uygulama kodu yüklenmelidir ve eksik sabitler kod yüklemeyi
+        denemek yerine sadece bir istisna oluşturacaktır. Üretimde bu seçeneği devre
+        dışı bırakmayı haklı çıkarırız (daha önce de belirtildiği gibi) kod yükleme
+        işlemi güvenli değildir ve herhangi bir iş parçacığı istekleri yerine getirmeden
+        önce tüm kodun yüklenmesini bekleriz.'
+      concurrency: 'Eşzamanlılık izin verme: @ allow_concurrency seçeneği, rafta: Rack
+        :: Lock ara katman yazılımının kullanılıp kullanılmayacağını kontrol eder. Raf
+        :: Kilit isteğiniz etrafında bir muteks sarar. İş parçacığı güvenli olmayan
+        bir kodunuz varsa, bu muteksin denetleyici kodunuzu aynı anda çalıştırmasını
+        engelleyeceği düşüncesidir. İplik güvenli olduğunda! ayarlandığında, bu ara
+        yazılım kaldırılır ve denetleyici kodu paralel olarak çalıştırılabilir.'
+    credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
+  ruby_meister:
+    title: Ruby Meister ol
+    description: Bu konuşmada, bir Ruby acemi olmaktan gerçek Ruby ustalığına ulaşmaya
+      kadar olan uzun yolculuğu inceleyeceğiz ve bazı önemli bilgileri paylaşarak sizin
+      için biraz kısaltmaya çalışacağız. Bir Üstat Rubyist&#39;in teorik bir temeli
+      vardır, geniş bir araç kutusuna dayanır, Ruby&#39;nin temel değerlerini ve ilkelerini
+      derinlemesine anlar ve her zaman yeteneklerini geliştirir. Belki de kendinize
+      “Vay, bu oldukça belirsiz!” Diyorsunuz, ancak bu oturuma katılırsanız aydınlanacağınız,
+      eğleneceğiniz ve tamamen keyif alacağınıza söz veriyorum! Kulağa iyi geliyor?
+      Harika kitaplar, insanlara becerilerini geliştirmek için önerdiğim kaynakların
+      bir parçası olacak.
+    video: Bozhidar Batsov&#39;dan Yakut Ustalığına Uzun Yolculuk.
+    computer_science_fundamentals:
+      title: Bilgisayar Bilimi Temelleri
+      articles:
+        - name: inside_machine
+          title: 'Makine İçinde: Mikroişlemcilere ve Bilgisayar Mimarisine Örnek Bir Giriş'
+          description: Bilgisayarlar, kritik iş dünyasından rekreasyon alanına kadar
+            sayısız görevi yerine getirir, ancak ne kadar farklı görünüp davrandıklarına
+            bakılmaksızın, hepsi temel işlevde inanılmaz derecede benzerdir. Mikroişlemcinin
+            (veya merkezi işlem ünitesinin (CPU)) nasıl çalıştığını anladıktan sonra,
+            tüm modern hesaplamaların merkezinde temel kavramları tam olarak kavrayacaksınız.
+        - name: code
+          title: 'Kod: Bilgisayar Donanımı ve Yazılımının Gizli Dili'
+          description: El fenerleri, İngiliz istilası, kara kediler ve tahterevallilerin
+            bilgisayarlarla ne ilgisi var? KOD&#39;da bize dili manipüle etmenin ustaca
+            yollarını gösterir ve birbirleriyle iletişim kurmanın yeni yollarını icat
+            ederler. KOD aracılığıyla, bu ustalığın ve iletişim kurmaya son derece insancılığımızın
+            son iki yüzyıldaki teknolojik yenilikleri nasıl yönlendirdiğini görüyoruz.
+        - name: concrete_math
+          title: 'Somut Matematik: Bilgisayar Bilimleri Vakfı'
+          description: Bu kitap, gelişmiş bilgisayar programlamayı ve algoritmaların
+            analizini destekleyen matematiği tanıtmaktadır. Tanınmış yazarlarının temel
+            amacı, matematiksel becerilerin sağlam ve ilgili bir temelini sağlamak -
+            karmaşık problemleri çözmek, korkunç toplamları değerlendirmek ve verilerdeki
+            ince kalıpları keşfetmek için gerekli becerilerdir. Bu sadece bilgisayar
+            bilimcileri için vazgeçilmez bir metin ve referans değil; yazarların kendisi
+            de büyük ölçüde ona güveniyor! - ama hemen hemen her disiplinde ciddi matematik
+            kullanıcıları için.
+        - name: sicp
+          title: Bilgisayar Programlarının Yapısı ve Yorumlanması
+          description: 'Bilgisayar Programlarının Yapısı ve Yorumlanması, son on yılda
+            bilgisayar bilimleri müfredatı üzerinde çarpıcı bir etki yarattı. Bu uzun
+            zamandır beklenen revizyon, metin boyunca değişiklikler içeriyor. Tercümanlar
+            ve derleyiciler de dahil olmak üzere kitaptaki çoğu programlama sisteminin
+            yeni uygulamaları vardır ve yazarlar, ilk basımdan bu yana MIT&#39;deki
+            kursu öğretme deneyimlerini yansıtan birçok küçük değişiklik içermektedir.
+            Hesaplamalı modellerde zamanla başa çıkmak için farklı yaklaşımların oynadığı
+            merkezi rolü vurgulayan yeni bir tema ortaya konmuştur: durumlu nesneler,
+            eşzamanlı programlama, fonksiyonel programlama ve tembel değerlendirme ve
+            özgün olmayan programlama.'
+        - name: design_programms
+          title: 'Programları Nasıl Tasarlar: Programlamaya ve Hesaplamaya Giriş'
+          description: Programlamaya bu giriş, bilgisayar bilimlerini liberal bir sanat
+            eğitiminin merkezine yerleştirir. Diğer tanıtım kitaplarının aksine, program
+            tasarım sürecine odaklanır. Bu yaklaşım, gelecekteki bilgisayar programcıları
+            için değil, herkes için önemli olan çeşitli eleştirel becerileri (eleştirel
+            okuma, analitik düşünme, yaratıcı sentez ve detaylara dikkat) teşvik eder.
+            Kitap, okuyucuları temelde yeni fikirlere maruz bırakıyor. İlk olarak, okuyucuya
+            bir problem ifadesinin nasıl analiz edileceğini gösteren program tasarım
+            rehberleri sunar; özlü hedeflerin nasıl formüle edileceği; örnekler nasıl
+            hazırlanır; analize dayalı olarak, çözümün bir taslağını nasıl geliştireceğinizi;
+            programın nasıl bitirileceği; ve nasıl test edilir.
+        - name: algorithm_manual
+          title: Algoritma Tasarım Kılavuzu
+          description: En çok satan klasiklerin bu yeni genişletilmiş ve güncellenmiş
+            ikinci baskısı tasarım algoritmalarından &quot;gizemi&quot; çıkarmaya ve
+            etkinliklerini ve etkinliklerini analiz etmeye devam ediyor. İlk basımı
+            genişleten kitap, algoritma tasarım kursları için tercih edilen birincil
+            ders kitabı iken, programcılar, araştırmacılar ve öğrenciler için algoritmaların
+            öncül pratik referans rehberi olarak statüsünü koruyor.
+        - name: cormen
+          title: Algoritmalara Giriş, 3. Baskı (MIT Basını)
+          description: Algoritmalar hakkındaki bazı kitaplar titiz fakat eksik; diğerleri
+            ise malzeme yığınlarını kapsar ancak titizlikten yoksundur. Algoritmalara
+            giriş, titizliği ve anlaşılırlığı benzersiz bir şekilde birleştirir. Kitap,
+            derinlemesine geniş bir algoritma yelpazesini kapsar, ancak tasarımlarını
+            ve analizlerini tüm okuyucular için erişilebilir kılar. Her bölüm nispeten
+            bağımsızdır ve bir çalışma birimi olarak kullanılabilir. Algoritmalar İngilizce
+            olarak ve biraz programlama yapan herkes tarafından okunabilecek şekilde
+            tasarlanmış bir sözde kodda açıklanmıştır. Açıklamalar, kapsam derinliği
+            veya matematiksel titizlikten ödün vermeden basit tutuldu.
+        - name: compilers
+          title: 'Derleyiciler: İlkeler, Teknikler ve Araçlar (2. Baskı)'
+          description: 'Derleyiciler: “Dragon Book” olarak dünya çapındaki profesörler,
+            öğrenciler ve geliştiriciler tarafından bilinen İlkeler, Teknikler ve Araçlar
+            yeni bir basımda mevcuttur. Her bölüm, son baskının 1986&#39;dan beri meydana
+            gelen yazılım mühendisliği, programlama dilleri ve bilgisayar mimarisindeki
+            gelişmeleri yansıtacak şekilde tamamen revize edilmiştir. Bir derleyicinin
+            yapımında çok az sayıda okurun devam edeceğini bilen yazarlar, yazılım tasarımı
+            ve yazılım geliştirmede karşılaşılan daha geniş sorunlara odaklanmaya devam
+            ediyor.'
+        - name: c_lang
+          title: C Programlama Dili, 2. Baskı
+          description: Yazarlar, ANSI standart C dil programlama için eksiksiz bir kılavuz
+            sunar. C geliştiricileri tarafından yazılan bu yeni sürüm, C&#39;nin zengin
+            operatör kümesinden, ifade ekonomisinden, gelişmiş kontrol akışından ve
+            veri yapılarından nasıl yararlanılacağını gösterirken, okuyucular için C
+            için nihai ANSI standardını takip etmelerine yardımcı olur. 2 / E, zor dil
+            yapılarının uygulanmasını açıklığa kavuşturmak için ek örnekler ve problem
+            setleri ile tamamen yeniden yazılmıştır. Yıllar boyunca, C programcıları
+            K &amp; R&#39;nin onları iyi yapılandırılmış ve verimli programlar oluşturma
+            konusunda yönlendirmelerine izin verdi. Şimdi, bu aynı yardım ANSI derleyicileri
+            ile çalışanlar için kullanılabilir. C dilinin ayrıntılı kapsamını ve sözdizimi
+            notasyonu, bildirimleri, ANSI değişiklikleri, kapsam kuralları ve liste
+            uzayıp giderken bir bakışta yardım için resmi C dili referans el kitabını
+            içerir.
+    oop:
+      title: Nesne yönelimli programlama
+      articles:
+        - name: growing
+          title: Nesneye Dayalı Yazılımın Geliştirilmesi, Testlerle Rehberlik Edilmesi
+          description: 'Test Odaklı Gelişme (TDD) artık daha iyi bir yazılım daha hızlı
+            sunmak için kurulmuş bir tekniktir. TDD basit bir fikre dayanıyor: Kodu
+            kendiniz yazmadan önce kodunuz için testler yazın. Bununla birlikte, bu
+            &quot;basit&quot; fikir, iyi yapmak için beceri ve yargı gerektirir. Şimdi
+            sizi TDD&#39;nin temel kavramların ötesine götürecek pratik bir rehber var.
+            Gerçek dünya sistemleri oluşturma konusunda on yıllık bir deneyime dayanan
+            iki TDD öncüsü, testlerin gelişiminize nasıl rehberlik edeceğini ve tutarlı,
+            güvenilir ve sürdürülebilir bir yazılım “nasıl geliştirileceğini” gösterir.'
+        - name: domain_driven
+          title: 'Etki Alanına Dayalı Tasarım: Yazılımın Kalbinde Karmaşıklığın Artırılması'
+          description: Bu, yazılım tasarımında alan modellemesi hakkında ciddi bir kitaptır.
+            Yazılım geliştirme toplumu bir yutturmaca dalgasından diğerine yaşar. OOP,
+            kalıplar, XP, TDD, CI / CD, BigData, DevOps - bu sadece birkaç isim. Bu
+            kitap OOP&#39;un altın çağından kaynaklanmaktadır. Yazar, nesne yönelimli
+            paradigmanın sadece mevcut olmadığını, ancak OOP / OOD&#39;a olan önyargılarının
+            açık (ve haklı) olduğunu itiraf ediyor. Bu kitap, çekirdek yazılım bileşenlerinin
+            “doğru şekilde” modellenmesinin nasıl yapıldığını anlatmaktadır.
+    ruby:
+      title: Seni tanıyorsun
+      articles:
+        - name: well_grounded
+          title: Topraklı Yakut
+          description: Well-Grounded Rubyist, Second Edition hem Ruby&#39;yi hem de
+            dil anlayışlarını derinleştirmek isteyen Ruby programcılarını ele alıyor.
+            Bu güzel yazılmış ve tamamen revize edilmiş ikinci baskı, Ruby 2.1&#39;de
+            yeni olan özelliklerin yanı sıra, değişen dilin genişletilmiş ve güncellenmiş
+            içeriğini de içerir.
+        - name: programming_ruby
+          title: 'Programlama Ruby: Pragmatik Programcılar Rehberi, İkinci Baskı'
+          description: 'Ruby, günümüzde en iyi ve en kullanışlı dil olarak birçok uygulayıcı
+            tarafından selamlanan, giderek daha popüler, tamamen nesne yönelimli bir
+            dinamik programlama dilidir. Ruby, Batı dünyasındaki sahneye ilk çıktığında,
+            Pragmatik Programcılar, kesin bir referans kılavuzu olan Programming Ruby:
+            Pragmatik Programcı Kılavuzu&#39;ndaydı.'
+        - name: ruby_programming
+          title: 'Ruby Programlama Dili: Bilmeniz Gereken Her Şey'
+          description: 'Bu kitap dile hızlı bir başlangıç öğreticisiyle başlar ve daha
+            sonra dili aşağıdan yukarıya doğru ayrıntılı bir şekilde açıklar: sözcüksel
+            ve sözdizimsel yapıdan veri türlerine, ifadelere ve ifadelere ve yöntemler,
+            bloklar, lambdalar, kapanışlar, sınıflar ve modüller. Kitap ayrıca, Ruby
+            platformunun zengin API&#39;sine uzun ve kapsamlı bir giriş içerir ve çok
+            yorumlu bir örnek kodla Ruby&#39;nin metin işleme, sayısal manipülasyon,
+            koleksiyonlar, girdi / çıktı, ağ iletişimi ve eşzamanlılık özelliklerini
+            gösterir. Ruby&#39;nin metaprogramlama yeteneklerine bir bölüm ayrılmıştır.'
+  interview_questions:
+    title: Görüşme soruları
+    description: Bu bölüm okuma ve görüşme hazırlığı için kaynakları tutar.
+    list:
+      - name: 'Toptal: Harika bir Ruby Developer nasıl işe alınır'
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: 'Toptal: 21 Temel Yakut Röportaj Soruları'
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: 'Hookops: 35+ Ruby and Rails Röportaj Sorular ve Cevaplar'
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: 'Educba: 15 En Önemli Yakut Röportajı Soru Ve Cevap'
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: 'Ruby Garage: Ruby on Rails Geliştirici ile Nasıl Görüşme Yapılır'
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: 'RyanSobol: Yakut Görüşme Sırasında Sorulması Gereken 15 Soru'
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: 'Toptal: 9 Temel Ruby on Rails Röportaj Sorular'
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: Daha İyi Belgeler Nedir?
+    description: Bu web sitesi web uyarlaması olan Github deposu <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
+      çok fazla yıldız topladı ve Çince&#39;ye çevrildi. Better Docs, tek bir havuzda
+      toplanan çok sayıda en iyi uygulamayı hızla bulmanızı sağlar. Referans veya röportaj
+      hazırlık kaynağı gibi sadece bu repo.
+    oss:
+      title: Açık Kaynak sayesinde
+      description: Ruby&#39;de yazılmış web geliştirme uygulamaları için açık kaynaklı
+        bir mühendislik olan yakutla ilgili en iyi uygulamalar ve bilgiler hakkında
+        çalışırken ve öğrenirken Daha İyi Dokümanlar oluşturuldu.
+      thanks: Better Docs size herhangi bir şekilde yardımcı olduysa, bize <a href="https://github.com/howtohireme/ruby.fundamental">Github&#39;ta</a>
+        bir Yıldız vermeyi (daha fazla geliştiriciye ulaşmamıza yardımcı olur) veya
+        projelerimize katkıda bulunmayı düşünün.
