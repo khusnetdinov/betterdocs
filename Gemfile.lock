@@ -46,7 +46,7 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.10.0)
       jekyll (~> 3.3)
-    jekyll-multiple-languages-plugin (1.5.1)
+    jekyll-multiple-languages-plugin (1.6.0)
       jekyll (>= 2.0, < 4.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
