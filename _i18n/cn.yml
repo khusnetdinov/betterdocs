@@ -1,0 +1,746 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: 使用ruby示例和参考的基础编程。它涵盖了线程，SOLID原则，设计模式，数据结构，算法。
+    keywords: 更好的文档，Ruby，Fundamentals，Ruby编程基础。 Ruby陷阱，函数编程，元编程，线程，带实例的Ruby实体原理，带示例的Ruby设计模式，带示例的Ruby算法，带示例的Ruby数据结构。
+
+content:
+  menu:
+    open: 打开菜单
+    close: 关闭菜单
+
+sidebar:
+  - title: 算法
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: 数据结构
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: 设计模式
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: 功能编程
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: 面试问题
+    url: interview_questions
+  - title: 元编程
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: 坚实的原则
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: 成为Ruby Meister
+    url: ruby_meister
+  - title: 主题
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+
+pages:
+  wiki: 阅读维基
+  credits: 积分
+  page404:
+    title: 网页未找到 ：（
+    description: 所需的页面无法找到。
+  algorithms:
+    title: 算法
+    complexity:
+      best: 最好
+      average: 平均
+      worst: 最差
+    sorting:
+      title: 排序
+      description: 排序算法是一种以特定顺序放置列表元素的算法。最常用的订单是数字顺序和字典顺序。有效排序对于优化其他算法（例如搜索和合并算法）的使用非常重要，这些算法要求输入数据在排序列表中;它通常也可用于规范化数据和生成人类可读的输出。
+      bubble_sort:
+        title: 冒泡排序
+        description: 冒泡排序具有许多与插入排序相同的属性，但开销略高。在几乎排序的数据的情况下，冒泡排序需要<span class="code-inline
+          time">O(n)</span>，但是需要至少2次遍历数据（而插入排序需要更像1遍的东西)。
+      insertion_sort:
+        title: 插入排序
+        description: 虽然它是具有<span class="code-inline">O(n<sup>2</sup>)</span>最坏情况时间的基本排序算法之一，但是当数据几乎排序（因为它是自适应的）或当问题大小很小时（因为它），插入排序是选择的算法。开销很低）。由于这些原因，并且因为它也是稳定的，插入排序通常用作递归基本情况（当问题大小很小时）用于更高开销的分而治之的排序算法，例如合并排序或快速排序。
+      selection_sort:
+        title: 选择排序
+        description: 从这里给出的比较中，可以得出结论，绝不应该使用选择排序。它不以任何方式适应数据（注意上面的四个动画以锁步方式运行），因此它的运行时总是二次的。但是，选择排序具有最小化交换次数的属性。在交换项目的成本高的应用程序中，选择排序非常好可能是选择的算法。
+      shell_sort:
+        title: 壳排序
+        description: shell排序的最坏情况时间复杂度取决于增量序列。对于增量1 4 13 40 121 ...，这是这里所使用的，时间复杂性为<span
+          class="code-inline">O(n<sup><sup>3<sub>/</sub>2</sup></sup>)</span>。对于其他的增量，时间复杂性是已知的<span
+          class="code-inline">O(n<sup><sup>4<sub>/</sub>3</sup></sup>)</span> 和甚至<span
+          class="code-inline">O(n·lg<sub>2</sub>(n)</span>。既不知道时间复杂度的紧上限也不知道最佳增量序列。由于shell排序基于插入排序，因此shell排序会继承插入排序的自适应属性。适应性并不那么显着，因为shell排序需要为每个增量传递数据，但这很重要。对于上面显示的增量序列，有<span
+          class="code-inline">log<sub>3</sub>(n)</span>增量，因此几乎排序数据的时间复杂度为<span class="code-inline">O(n·log<sub>3</sub>(n)</span> 。由于其低开销，相对简单的实现，自适应属性和次二次时间复杂度，当要排序的数据是shell时，shell排序可能是某些应用程序的<span
+          class="code-inline">O(n·lg(n))</span>排序算法的可行替代方案。不是很大。
+      heap_sort:
+        title: 堆排序
+        description: Heapsort易于实现，执行<span class="code-inline">O(n·lg(n))</span>就地排序，但不稳定。第一个循环，
+          <span class="code-inline">Θ(n)</span> “heapify”阶段，将数组放入堆顺序。第二个循环， <span class="code-inline">O(n·lg(n))</span>
+          “排序”阶段，重复提取最大值并恢复堆顺序。为清楚起见，递归地写入接收器功能。因此，如图所示，代码需要用于递归调用栈的<span class="code-inline">Θ(lg(n))</span>空间。但是，sink(）中的尾递归很容易转换为迭代，从而产生<span
+          class="code-inline">O(1)</span>空间限制。虽然没有任何特别有用的方式，但两个阶段都略微适应。在几乎排序的情况下，heapify阶段会破坏原始顺序。在相反的情况下，堆化阶段尽可能快，因为数组以堆顺序开始，但是排序阶段是典型的。在少数独特的键情况下，有一些加速但不如shell排序或3向快速排序。
+      merge_sort:
+        title: 归并
+        description: 合并排序是非常可预测的。它在每个元素之间进行<span class="code-inline">0.5lg(n)</span>和<span
+          class="code-inline">lg(n)</span>比较，并且每个元素进行<span class="code-inline">lg(n)</span>和<span
+          class="code-inline">1.5lg(n)</span>交换。已经排序的数据实现了最小值;对于随机数据，平均达到最大值。如果使用<span
+          class="code-inline">Θ(n)</span>额外空间无关紧要，那么合并排序是一个很好的选择：它易于实现，并且它是唯一稳定的<span
+          class="code-inline">O(n·lg(n))</span>排序算法。请注意，在对链表进行排序时，合并排序只需要<span class="code-inline">Θ(lg(n)</span>额外空间（用于递归）。合并排序是各种情况下的首选算法：当需要稳定性时，排序链表时，以及随机时访问比顺序访问要昂贵得多（例如，磁带上的外部排序）。算法的最后一步确实存在线性时间就地合并算法，但它们既昂贵又复杂。复杂性对于应用程序是合理的例如当<span
+          class="code-inline">Θ(n)</span>额外空间不可用时的外部排序。
+      quick_sort:
+        title: 快速排序
+        description: 经过精心实施，快速排序功能强大且开销低。当不需要稳定排序时，quicksort是一种出色的通用排序 - 尽管应该始终使用3向分区版本。上面显示的双向分区代码是为了清晰而不是最佳性能而编写的;它表现出较差的局部性，并且，当很少有唯一键时，表现出<span
+          class="code-inline">O(n<sup>2</sup>)</span>时间。 Robert Sedgewick和Jon Bentley在Quicksort是Optimal中给出了一种更有效和更强大的双向分区方法。当有许多值等于枢轴时，强健分区会产生平衡递归，从而产生<span
+          class="code-inline">O(n·lg(n))</span>时间和所有输入的<span class="code-inline">O(lg(n))</span>空间的概率保证。对于递归执行的两个子排序，在递归不平衡的最坏情况下，快速排序需要<span
+          class="code-inline">O(n)</span>额外空间用于递归堆栈。这种情况极不可能发生，但可以通过首先递归地对较小的子阵列进行排序来避免这种情况。第二个子数组排序是尾递归调用，可以通过迭代来完成。通过这种优化，算法在最坏的情况下使用<span
+          class="code-inline">O(lg(n))</span>额外空间。
+      other: 其他排序算法
+      additional: 补充阅读
+    searching:
+      title: 搜索
+      binary_search:
+        title: 二进制搜索
+        description: 在计算机科学中，二分搜索（也称为半间隔搜索或对数搜索）是一种搜索算法，用于查找已排序数组中目标值的位置。它将目标值与数组的中间元素进行比较;如果它们不相等，则目标不能说谎的一半被消除，并且继续搜索剩下的一半直到它成功。
+      knuth_moriss_pratt_search:
+        title: Knuth-Morris-Pratt搜索
+        description: 在计算机科学中，Knuth-Morris-Pratt字符串搜索算法（或KMP算法）通过使用以下观察来搜索主“文本字符串”S内“单词”W的出现：当发生不匹配时，该单词本身就足以体现用于确定下一场比赛可以开始的位置的信息，从而绕过对先前匹配的角色的重新检查。
+      other:
+        title: 其他搜索算法
+        dijkstra: Dijkstra的算法
+        kruskal: Kruskal的算法
+        longest: 增长最快的子序列
+        telephone_number: 电话号码到单词
+    credits: 代码和文章来自资源：
+  data_structures:
+    title: 数据结构
+    description: 在计算机科学中，大O符号用于根据算法如何响应输入大小的变化来对算法进行分类，例如算法的处理时间随着问题大小变得非常大而如何变化。在解析数论中，它用于估计“错误提交”，同时用一个大的有限参数取代算术函数的渐近大小。一个着名的例子是在素数定理中估计余项的问题。
+    axioms:
+      title: 数据结构的基本公理
+      description: 公共语言运行时的运行时性能由一组公理给出，我们现在假设这些公理。
+      fetch_store:
+        title: 获取并存储时间
+        description1: 从内存中获取对象引用所需的时间是一个常量<span class="code-inline">T_fetch</span> ，在内存中存储对象引用所需的时间是一个常量，
+          <span class="code-inline">T_store</span>
+        description2: 根据Axiom，赋值语句的运行时间为<span class="code-inline">T_fetch + T_store</span>
+          。也就是说，从变量x获取对象引用所 花费的时间是<span class="code-inline">T_fetch，</span>并且在变量y中存储该对象引用所 花费 的时间是<span class="code-inline">T_store</span>
+          。
+        description3: 还有运行时<span class="code-inline">T_fetch + T_store</span> 。要了解为什么会出现这种情况，请考虑常量<span
+          class="code-inline">1</span>将Fixnum对象命名为值1。因此，我们可以预期获取对名为1的对象的引用的成本与获取对任何其他对象的引用的成本相同。
+      elementary_operations:
+        title: 基本算术运算时间
+        description1: 执行基本算术运算所需的时间，例如加法，减法，乘法，除法和比较，都是常数。这些时间分别由<span class="code-inline">T_
+          +，T_-，T_ /，T_ *，T_ <</span>表示 。
+        description2: 我们可以确定语句的时间，如<span class="code-inline">2 * T_fetch + T_ + + T_store</span>
+          。这是因为我们需要从变量y和1中获取两个对象引用;执行添加，给出一个值为和的新对象;并且，在变量y中存储对新对象的引用。
+        description3: 我们假设替代方案需要与原始语句完全相同的运行时间。
+      call_method:
+        title: 调用方法时间
+        description1: 调用方法所需的时间是一个常量， <span class="code-inline">T_call</span> ，从方法返回所需的时间是一个常量，
+          <span class="code-inline">T_return</span>使与参数传递相关的开销与存储对象引用的时间相同的基本原理是传递参数在概念上与将实际参数值赋值给方法的形式参数相同。
+        description2: 根据Axiom，语句的运行时间为<span class="code-inline">T_fetch + 2 * T_store
+          + T_call + T_f(x)</span> ，其中<span class="code-inline">T_f(x)</span>是输入x的方法f的运行时间。两个商店中的第一个是由于参数x传递给方法f;第二个来自变量y的赋值。
+      calculating:
+        title: 计算时间
+        description1: 由数组订阅操作（例如， <span class="code-inline">a[i]</span> 暗示的地址计算所需的时间是常数<span
+          class="code-inline">T_[]</span> 。此时间不包括计算下标表达式的时间，也不包括访问数组元素的时间。
+        description2: 这是<span class="code-inline">3 * T_fetch</span> 。需要三个操作数提取：第一个获取对数组对象a的引用;第二个获取对索引对象i的引用;并且，第三个获取对数组元素<span
+          class="code-inline">a[i]</span>的引用。
+      object:
+        title: 对象创建时间
+        description1: 创建类的新对象实例所需的时间是常量<span class="code-inline">T_new</span> 。此时间不包括初始化对象所需的任何时间。通过应用Axioms，我们可以确定语句的运行时间。
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> ，其中<span class="code-inline">T_fixnum_init</span>是类Fixnum的initialize方法的运行时间。
+      example:
+        title: 例
+        description: 在本节中，我们应用Axioms，分析程序的运行时间来计算以下简单的算术级数求和。
+    implementations:
+      title: 履行
+      stack:
+        title: 堆
+        description: 堆栈是队列的兄弟。它模仿真实的堆栈（例如纸张）。它是FILO（倒数第一个），因此当从堆栈中检索项目时，它们将按照添加顺序的相反方式返回。同样，Ruby
+          Arrays提供了一个完美的容器。与Queue一样，它也可以使用链表实现。
+        as_array: 堆栈为数组
+        as_linked_list: 堆叠为链表
+      queue:
+        title: 队列
+        description: 队列是一个简单的基于容器的结构，模仿真实的队列（例如在银行排队等候）。它是FIFO（先进先出），这意味着当您从队列中检索项目时，它们将按照它们输入的顺序返回。
+          Ruby Arrays提供的方法使得Queue实现变得简单，但是将它们命名为适当的并包含在一个便利类中是值得的，看它们是否已经实现，并且因为其他结构将继承这一结构。可以使用链表完成替代实现。
+        as_array: 队列为数组
+        as_linked_list: 队列为链表
+      deque:
+        title: 和
+        description: Deque是一个允许在两端添加和删除项目的队列。
+        as_array: 而作为一个数组
+        as_linked_list: Deque作为链表
+      singly_linked_list:
+        title: 单链表
+        description: 单链表包含具有数据字段和“下一个”字段的节点，该字段指向节点行中的下一个节点。可以在单链表上执行的操作包括插入，删除和遍历。
+      doubly_linked_list:
+        title: 双链表
+        description: 在双向链表中，每个列表元素包含两个引用 - 一个引用其后继，一个引用其前一个引用。
+      ordered_list:
+        title: 订购清单
+        description: 有序列表是项目顺序重要的列表。但是，有序列表中的项目不一定要排序。因此，可以更改项目的顺序，并且仍然具有有效的有序列表。
+        as_array: 将列表排序为数组
+      hash_table:
+        title: 哈希表
+        description: 哈希表是可搜索的容器。因此，它提供了将对象放入容器，在容器中查找对象以及从容器中移除对象的方法。
+      binary_tree:
+        title: 二叉树
+        description: 二叉树是一棵树，其中每个节点最多可以有两个子节点。孩子们被指定为左和右。
+      binary_search_tree:
+        title: 二叉搜索树&lt;
+        description: 在计算机科学中，二进制搜索树（BST），有时称为有序或有序二进制树，是特定类型的容器：在内存中存储“项目”（例如数字，名称等）的数据结构。它们允许快速查找，添加和删除项目，并且可以用于实现动态项目集，或者允许通过其键查找项目的查找表（例如，通过名称查找人员的电话号码）
+      b_tree:
+        title: B树
+        description: 在计算机科学中，B树是一种自平衡树数据结构，它可以对数据进行排序，并允许在对数时间内进行搜索，顺序访问，插入和删除。 B树是二叉搜索树的一般化，因为节点可以有两个以上的子节点（与自平衡二叉搜索树不同，B树针对读取和写入大块数据的系统进行了优化。树是外部存储器数据结构的一个很好的例子。它通常用在数据库和文件系统中。
+      binary_heap:
+        title: 二进制堆
+        description: 二进制堆是一个堆排序的完整二叉树，它使用数组实现。在堆中，在根处找到最小的密钥，并且因为根总是在数组的第一个位置找到，所以找到最小的密钥是二进制堆中的一个简单操作。
+      credits: 代码和文章来自资源：
+      source: 该页面包含Bruno R. Preiss的“Ruby中面向对象设计模式的数据结构和算法”一书中的Ruby代码。版权所有（c）2004，Bruno
+        R. Preiss，P.Eng。版权所有。
+  design_patterns:
+    title: 设计模式
+    creational:
+      title: 创作模式
+      description: 在软件工程中，创建设计模式是处理对象创建机制的设计模式，试图以适合于该情况的方式创建对象。对象创建的基本形式可能导致设计问题或设计的复杂性增加。创建设计模式通过某种方式控制此对象创建来解决此问题。创作设计模式由两个主导思想组成。一个是封装有关系统使用哪些具体类的知识。另一个是隐藏如何创建和组合这些具体类的实例。
+      abstract_factory:
+        title: 抽象工厂模式
+        description: 抽象工厂模式提供了一种封装一组具有共同主题但没有指定其具体类的单个工厂的方法。在正常使用中，客户端软件创建抽象工厂的具体实现，然后使用工厂的通用接口创建作为主题一部分的具体对象。客户端不知道（或关心）从每个内部工厂获得哪些具体对象，因为它仅使用其产品的通用接口。此模式将一组对象的实现细节与其一般用法分开，并依赖于对象组合，因为对象创建是在工厂界面中公开的方法中实现的。
+      builder:
+        title: 生成器模式
+        description: 构建器模式是对象创建软件设计模式。与抽象工厂模式和旨在实现多态的工厂方法模式不同，构建器模式的目的是找到伸缩构造函数反模式的解决方案[需要引证]。当对象构造函数参数组合的增加导致构造函数的指数列表时，发生伸缩构造函数反模式。构建器模式不是使用大量构造函数，而是使用另一个对象（构建器），它逐步接收每个初始化参数，然后立即返回生成的构造对象。
+      factory:
+        title: 工厂模式
+        description: 在基于类的编程中，工厂方法模式是一种创建模式，它使用工厂方法来处理创建对象的问题，而无需指定将要创建的对象的确切类。这是通过调用工厂方法来创建对象来完成的
+          - 在接口中指定并由子类实现，或者在基类中实现并可选地由派生类覆盖 - 而不是通过调用构造函数。
+      prototype:
+        title: 原型模式
+        description: 原型模式是沿着工厂的线条创建的模式。原型的技巧是通过复制主对象来创建新对象。更改主对象和您创建的所有后续对象将随着更改的副本而生效。
+      singleton:
+        title: 单身人士模式
+        description: 确保一个类只有一个实例，并提供一个全局访问点。当只需要一个对象来协调整个系统的操作时，这非常有用。该概念有时被推广到当只有一个对象存在时更有效地运行的系统，或者将实例化限制为一定数量的对象的系统。
+      not_covered:
+        title: 未涵盖的模式：
+        lazy: 延迟初始化
+        multiton: 多例
+        pool: 对象池
+        resource: 资源获取是初始化
+    structural:
+      title: 结构模式
+      description: 在软件工程中，结构设计模式是通过识别实现实体之间关系的简单方法来简化设计的设计模式。
+      adapter:
+        title: 适配器模式
+        description: 在软件工程中，适配器模式是一种软件设计模式，它允许将现有类的接口用作另一个接口。它通常用于使现有类与其他类一起工作而无需修改其源代码。
+      composite:
+        title: 复合图案
+        description: 复合设计模式是用于表示具有分层树结构的对象的结构模式。它允许对单个叶节点和由许多节点组成的分支进行均匀处理。
+      decorator:
+        title: 装饰图案
+        description: 在面向对象的编程中，装饰器模式（也称为Wrapper，与Adapter模式共享的替代命名）是一种设计模式，允许将行为静态或动态地添加到单个对象，而不会影响其他对象的行为。来自同一个类的对象。装饰器模式通常用于遵守单一责任原则，因为它允许在具有独特关注区域的类之间划分功能。
+      facade:
+        title: 门面模式
+        description: 当系统非常复杂或难以理解时，经常使用Facade设计模式，因为系统具有大量相互依赖的类或其源代码不可用。此模式隐藏了较大系统的复杂性，并为客户端提供了更简单的接口。它通常涉及一个包装器类，其中包含客户端所需的一组成员。这些成员代表facade客户端访问系统并隐藏实现细节。
+      flyweight:
+        title: Flyweight模式
+        description: 在计算机编程中，flyweight是一种软件设计模式。 flyweight是一个通过与其他类似对象共享尽可能多的数据来最小化内存使用的对象;当简单的重复表示使用不可接受的内存量时，它是一种大量使用对象的方法。通常，对象状态的某些部分可以共享，并且通常的做法是将它们保存在外部数据结构中，并在使用它们时临时将它们传递给flyweight对象。
+      proxy:
+        title: 代理模式
+        description: 代理以其最一般的形式，是一个充当其他东西的接口的类。代理可以与任何东西连接：网络连接，内存中的大对象，文件或其他昂贵或无法复制的资源。简而言之，代理是一个包装器或代理对象，客户端正在调用它来访问幕后的真实服务对象。使用代理可以简单地转发到真实对象，或者可以提供额外的逻辑。在代理中，可以提供额外的功能，例如当真实对象上的操作是资源密集时的高速缓存，或者在调用真实对象上的操作之前检查先决条件。对于客户端，代理对象的使用类似于使用真实对象，因为两者都实现相同的接口。
+      protection_proxy:
+        title: 保护代理
+        description: 保护代理。你在MNC工作吗？如果是这样，我们可能很清楚通过限制访问某些类型的网站（如公共电子邮件，社交网络，数据存储等）来为我们提供互联网的代理服务器。管理层认为，最好阻止某些内容和仅提供与工作相关的网页。代理服务器完成这项工作。这是一种代理设计模式
+      virtual_proxy:
+        title: 虚拟代理
+        description: 虚拟代理。代替复杂或重型对象，使用骨架表示。当底层图像的大小很大时，只需使用虚拟代理对象表示它并按需加载真实对象。你知道真实对象在实例化方面是昂贵的，所以没有真正需要我们就不会使用真实对象。在需要之前，我们将使用虚拟代理。
+      remote_proxy:
+        title: 远程代理
+        description: 远程代理。在分布式对象通信中，本地对象表示远程对象（属于不同地址空间的对象）。本地对象是远程对象的代理，本地对象上的方法调用导致远程对象上的远程方法调用。想想ATM实现，它将保存远程服务器中存在的银行信息的代理对象。
+      not_covered:
+        title: 未涵盖的模式：
+        callback: 带注释的回调
+        bridge: 桥
+        data_bus: 数据总线
+        role: 角色对象
+    behavioral:
+      title: 行为模式
+      description: 在软件工程中，行为设计模式是识别对象之间的共同通信模式并实现这些模式的设计模式。通过这样做，这些模式增加了进行该通信的灵活性。
+      chain_of_responsobility:
+        title: 责任链模式
+        description: 在面向对象的设计中，责任链模式是一种由命令对象源和一系列处理对象组成的设计模式。每个处理对象都包含定义它可以处理的命令对象类型的逻辑;其余的传递给链中的下一个处理对象。还存在一种机制，用于将新处理对象添加到该链的末尾。
+      command:
+        title: 命令模式
+        description: 命令模式是一种行为设计模式，用于存储将来调用方法所需的信息。该命令仅仅是包含在对象中的一组动作。使用ruby，我们可以使用Procs来执行相同的操作，而无需创建单独的对象。当操作很简单并且不需要保存状态信息时，这是一个很好的选择，否则，命令类是更好的选择。
+      interpreter:
+        title: 口译员模式
+        description: 在计算机编程中，解释器模式是一种设计模式，它指定如何评估语言中的句子。基本思想是在专用计算机语言中为每个符号（终端或非终端）创建一个类。语言中句子的语法树是复合模式的实例，用于评估（解释）客户端的句子。
+      iterator:
+        title: 迭代器模式
+        description: 迭代器设计模式提供对容器内元素的顺序访问，而不暴露容器实际表示元素的方式。迭代器可以被认为是一个可移动的指针，允许访问封装在容器中的元素。
+      external_iterator:
+        title: 外部迭代器模式
+        description: 外部迭代器：迭代逻辑包含在一个单独的类中。只要迭代类允许索引，就可以将迭代类推广到处理多个对象类型。它需要额外的类来进行实际迭代，但它们确实允许更大的灵活性，因为您可以控制迭代，迭代哪些元素以及以什么顺序迭代。
+      internal_iterator:
+        title: 内部迭代器模式
+        description: 内部迭代器：所有迭代逻辑都发生在聚合对象内部。使用代码块将逻辑传递给聚合，然后聚合调用每个元素的块。
+      mediator:
+        title: 中介模式
+        description: 通常程序由大量类组成。因此，逻辑和计算分布在这些类中。但是，随着在程序中开发更多类，特别是在维护和/或重构期间，这些类之间的通信问题可能变得更加复杂。这使得程序更难以阅读和维护。此外，更改程序可能变得困难，因为任何更改都可能影响其他几个类中的代码。使用中介模式，对象之间的通信将使用中介对象进行封装。对象不再直接相互通信，而是通过中介进行通信。这减少了通信对象之间的依赖性，从而降低了耦合。
+      momento:
+        title: 模式的时刻
+        description: momento模式由三个对象实现：发起者，看护者和偶像。发起者是一个具有内部状态的对象。看护人会对创始人做点什么，但希望能够撤消变更。看护人首先要求发起人提供一个瞬间对象。然后它执行它将要执行的任何操作（或操作序列）。要回滚到操作之前的状态，它会将momento对象返回给发起者。
+          momento对象本身是一个不透明的对象（看护人不能或不应该改变的对象）。使用此模式时，如果发起者可能更改其他对象或资源，则应小心 - 即时模式对单个对象进行操作。
+      observer:
+        title: 观察者模式
+        description: 观察者模式是一种软件设计模式，其中一个称为主体的对象维护其依赖者列表，称为观察者，并通常通过调用其中一种方法自动通知它们任何状态变化。它主要用于实现分布式事件处理系统。
+          Observer模式也是熟悉的模型 - 视图 - 控制器（MVC）架构模式中的关键部分。观察者模式在许多编程库和系统中实现，包括几乎所有GUI工具包。
+      state:
+        title: 国家模式
+        description: 状态模式是一种行为软件设计模式，它以面向对象的方式实现状态机。使用状态模式，通过将每个单独的状态实现为状态模式接口的派生类来实现状态机，并通过调用由模式的超类定义的方法来实现状态转换。
+      strategy:
+        title: 战略模式
+        description: 策略允许算法独立于使用它的客户端。战略是Gamma等人在有影响力的着作“设计模式”中所包含的模式之一。它推广了使用模式来描述软件设计的概念。例如，对输入数据执行验证的类可以使用策略模式来基于数据类型，数据源，用户选择或其他区分因素来选择验证算法。直到运行时，这些因素对于每种情况都是未知的，并且可能需要执行完全不同的验证。与验证对象分开封装的验证策略可以由系统的不同区域（或甚至不同的系统）中的其他验证对象使用，而无需代码重复。
+      template:
+        title: 模板方法模式
+        description: 在面向对象的编程中，首先创建一个类，它提供算法设计的基本步骤。这些步骤使用抽象方法实现。稍后，子类会更改抽象方法以实现实际操作。因此，通用算法保存在一个地方，但具体步骤可以由子类改变。
+      visitor:
+        title: 访客模式
+        description: 在面向对象的编程和软件工程中，访问者设计模式是一种将算法与其运行的对象结构分离的方法。这种分离的实际结果是能够在不修改这些结构的情况下向现有对象结构添加新操作。这是遵循开放/封闭原则的一种方式。从本质上讲，访问者允许在不修改类本身的情况下向一个类族添加新的虚函数;相反，我们创建了一个访问者类，它实现了虚函数的所有适当的特化。访问者将实例引用作为输入，并通过双重调度实现目标。
+      not_covered:
+        title: 未涵盖的模式：
+        hierarchical: 分层访问者
+      credits: 代码和文章来自资源：
+  functional_programming:
+    title: 功能编程
+    description: 使用功能样式的语言意味着您可以访问下面列出的一些关键功能：
+    axioms:
+      immutable: 不可变值：一旦设置了“变量”，就无法更改。在Ruby中，这意味着您必须有效地处理变量，如常量。
+      side_effects: 没有副作用：当传递给定值时，函数必须始终返回相同的结果。这与不可变的价值观密切相关;函数永远不能获取值并更改它，因为这会导致与返回结果相关的副作用。
+      pure_functions: 高阶函数：这些函数允许函数作为参数，或者使用函数作为返回值。可以说，这是任何功能语言最重要的特征之一。
+      applying: Currying：由高阶函数启用，currying正在转换一个函数，该函数将多个参数转换为带有一个参数的函数。这与部分函数应用程序密切相关，部分函数应用程序将多参数函数转换为一个函数，该函数比原来的参数少。
+      recursion: 递归：通过从内部调用函数来循环。当您无法访问可变数据时，递归用于构建和链数据构造。这是因为循环不是一个功能概念，因为它需要传递变量以在给定时间存储循环的状态。
+      lazy: 延迟评估或延迟评估：延迟处理值，直到实际需要它为止。例如，如果您有一些代码生成了启用了延迟评估的Fibonacci数列表，那么实际上不会对其进行处理和计算，直到另一个函数（例如puts）需要结果中的某个值。
+    pure_functions:
+      title: 纯粹的功能
+      description: 您可以看到此函数仅使用其参数计算结果。
+    closures:
+      title: 关闭
+      description: Lambda还强制执行闭包，因此能够跨对象保持其上下文。
+    applying:
+      title: 部分申请和携带
+      description: 让我们首先了解这两种不同的函数应用是什么。部分函数应用程序调用具有一些参数的函数，以便获得一个函数，该函数将占用更少的参数。 Currying正在采用一个带有n个参数的函数，并将其拆分为带有一个参数的n个函数。
+      proc: 为了让您更清楚地了解这两件事中的每一件都会起作用，让我们举一个例子Proc。
+      partial: 如果我们传入前两个参数，则此函数的部分应用将返回以下嵌套的Procs。
+      curry: <span class="code-inline">.curry</span>返回一个curry proc。如果给出了可选的arity参数，则它确定参数的数量。一个curried
+        proc接受了一些争论。如果提供了足够数量的参数，它会将提供的参数传递给原始proc并返回结果。否则，返回另一个带有其余参数的curried proc。
+  gotchas:
+    title: 陷阱
+    description1: 大多数Ruby on Rails初学者都对框架感到兴奋，并在不了解语言的情况下开始制作应用程序。这就是RoR的魔力。
+    description2: 在某些时候事情开始变得严肃起来。有些人需要花时间和精力来探索Ruby on Rails的肮脏秘密，而其他人则会掩盖并成为高级开发人员，几乎不了解该语言。
+    description3: 无论如何，迟早，初学者或有经验的程序员，我们都遇到了所谓的Ruby Gotchas--那些隐藏在我们网站上几个小时的核心调试的小语言细微之处。
+    description4: 以下列出了开发人员应该注意的流行的Ruby陷阱和好奇心。对于每种情况，都有一个混淆和/或容易出错的代码的例子。
+    description5: 它们结合了良好的实践，可以防止您制作简单（但很难找到）的错误并简化您（以及您的代码维护者）的生活。
+    surprising:
+      title: Ruby可能令人惊讶
+      description: 尽管“设计师最大限度地提高了程序员的幸福感”，但凭借“最少惊喜的原则”，Ruby仍然存在问题。这个演示将从新手琐碎的陷阱，到更高级和令人困惑的陷阱。
+    quotes:
+      title: 不要引用我这个，但......
+      description: 字符串插值（包括像<span class="code-inline">\ n</span>这样的特殊字符）失败，带有<span class="code-inline">“单个”</span>引号
+        - 它需要<span class="code-inline">“双”</span>引号。就像大多数使用字符串插值的语言一样。为了避免它，在实际使用时使用双打。
+    twue:
+      title: 这是两个！这是两个！
+      description: 只有两件事是假的： <span class="code-inline">false</span>和<span class="code-inline">nil</span>
+        。其他一切都是真实的，甚至是<span class="code-inline">0</span> （在C中是假的）， <span class="code-inline">“”</span>
+        （在JS中是假的）， <span class="code-inline">[]</span> ，等等。来自C，JS等人，其中一些是假的。
+    symbols_and_strings:
+      title: 象征性地把他挂在肖像或串起来。
+      description: <span class="code-inline">Symbol != String</span> 。即使打印时也一样。记住哪一个用于args。理想情况下，采取任何方法，并使用方法所期望的：“在你所接受的内容中保持自由，在你发送的内容中要保守。”
+        Postel定律。
+    string_or_nothing:
+      title: 字符串......或者没有！
+    constants:
+      title: 常数不是
+      description: 在Ruby中，初始大写意味着常量。尝试更改常量。哦，你得到一个警告！ BFD。即使冻结也不适用于Fixnums。它确实适用于阵列（某种）和大多数其他对象......他说预示着。
+    equals:
+      title: 有些人比其他人更平等
+      description: <span class="code-inline">==</span>是通常相同的值， <span class="code-inline">.eql?</span>是值和类（1是Fixnum，1.0是Float）
+        <span class="code-inline">.equal?</span>是同一个对象。它实际上更加毛茸茸。
+    operations:
+      title: "&gt; ===！= ==！"
+      description: <span class="code-inline">===</span>是“case equality”，就像case语句一样。一个更好的名字可能是<span
+        class="code-inline">.describes？</span>或者超载<span class="code-inline">.includes?</span>
+        。再一次，它实际上更加毛茸茸;查看类Object上的文档。从<span class="code-inline">===</span>是对象标识或相同值和类的语言中获取人员。
+    priority:
+      title: and != &&，or != ||
+      description: <span class="code-inline">&&</span>的 优先级高于<span class="code-inline">=</span>
+        ，因此<span class="code-inline">x = true &amp;&amp; false</span>表示<span class="code-inline">x
+        =（true && false）</span>且优先级较低，因此<span class="code-inline">x = true，false</span>表示<span
+        class="code-inline">(x = true）false</span>。 Ruby样式指南：使用<span class="code-inline">&&，||</span>用于布尔表达式，
+        <span class="code-inline">and. or</span>用于控制流。
+    sensitive:
+      title: 别那么敏感！
+      description: 空白不敏感？不总是！ Parser认为它是一个表达式，如同一个arg，但是<span class="code-inline">(1,2)</span>不是有效的Ruby表达式！
+        （所有工作都有1个参数）。
+      usage: 有多个args： <br/> - 没有parens，没问题。 <br/> - 父母没有空间，好的。 <br/> -  Parens和太空，不！
+      methods: <span class="code-inline">method / num</span>是一个未归档的正则表达式或字符串！ Ruby认为你正在为该方法提供一个参数。一般原则：使用BALANCED空格;双方都没有。
+      arguments: <span class="code-inline">one -2</span>让Ruby认为你给方法一给出一个参数<span class="code-inline">-2</span>
+        。 <span class="code-inline">+2</span>甚至<span class="code-inline">* 2</span>相同
+        。再次：使用BALANCED空白，双方或两者都没有。
+      stubby: "“Stabby”lambdas（1.9+）在没有父母的args之前括号可选空格，好的。父母之后的空间，好的。再次，父母面前的空间，不！更新：固定在2.0！"
+    onto:
+      title: 你@上！
+      description: 裸值成为临时局部变量！解决方案：记住<span class="code-inline">@！</span> （或者“自我。”。或者使用<span
+        class="code-inline">attr_writer，attr_accessor</span> 。）从Java / C ++获取人，而不是Python（需要“自我”）。
+        “你继续使用那个变量。我不认为这意味着你认为它意味着什么。”不是Inigo Montoya。
+    variables:
+      title: 请注意，这是@@！
+      description: 看什么填空？我们在检查之前没有更改Parent的<span class="code-inline">@@值</span> ，也没有更改Child的！或者我们呢？
+        <span class="code-inline">@@变量</span>与子类共享 - 不仅仅是它们存在，而是变量本身！声明Child的<span class="code-inline">@@值已</span>更改为Parent，包括Parent已更改的Child&#39;s.ut，这是@@！
+    initialize:
+      title: 使用init（ialize）或不使用它
+      description: 只有在孩子没有的情况下，父母的初始化才会自动运行。否则，必须要召唤父母。
+    superman:
+      title: 超人与隐形人
+      description: <span class="code-inline">super</span> with no-arg list发送调用者得到的<span
+        class="code-inline">super</span>显式args发送那些args发送NO args，使用空的parens： <span class="code-inline">super()</span>
+        。
+    regexp:
+      title: 什么时候结束？ （或者开始？）
+      description: 在标准的regexp中： <span class="code-inlne">^</span>是start， <span class="code-inline">$</span>是整个字符串的结尾。
+        Ruby的正则表达式默认为多行，所以： <span class="code-inline">^</span>是start， <span class="code-inline">$</span>是任意行的结尾！
+        <span class="code-inline">\ A</span>是开始， <span class="code-inline">\ Z</span>是整个字符串的结尾。
+        （或者\ z包含任何换行符......这是另一个问题！）
+    any:
+      title: 得到.any？
+      description: <span class="code-inline">.any?</span>并不意味着“任何元素？”！使用块：“任何使块成为真的吗？”。没有：“是不是真的？”有隐式块：
+        <span class="code-inline">{ |元素| 元素 }</span> 。
+    undef:
+      title: "（联合国）Def Leppard"
+      description: 传递给迭代器的块中声明的变量（例如，时间或每个）在每次迭代的顶部都是未定义的！迭代器重复调用该块，因此每次调用后vars都会超出范围。内置循环结构（例如，while或for）都可以。
+        （或者在块之前声明变量。）
+    freeze:
+      title: 冻结（Ar）射线
+      description: 冻结数组（或哈希）会冻结它，而不是它包含的项目。字符串可以在适当的位置进行修改。这样，您可以修改冻结的字符串数组中的给定插槽。
+    one_is_one:
+      title: 1是1 ......而且还会更多！
+      description: 将Fixnum更改为新值意味着新对象。他们不能修改到位！因此，无法修改冻结的Fixnums数组。 （Fixnums和Integers没有用于演示尝试的爆炸方法）。顺便说一句：Fixnum的<span
+        class="code-inline">object_id</span>是<span class="code-inline">value * 2 + 1</span>
+    bang:
+      title: "（来！||！来！）==？"
+      description: Bang标志着这种方法很危险。为什么？通常，可以修改接收器，而非修改非爆炸版本。不要依赖它们作为非爆炸版本返回相同的价值！如果不需要改变，许多人会返回零！
+    array:
+      title: 一系列新的陷阱
+      description: 作为对象给出的默认值是每个插槽的相同对象！变异一个变异默认为所有。作为块给出的初始值分别针对每个槽进行评估。使用它为每个创建新的变量。
+    hash:
+      title: 做一个哈希吧
+      description: 与阵列大致相同的问题（和解决方案）。更多GOTCHAS：在任何空槽访问中创建一个新对象！可能会创建过多的新对象;废墟检查“真实”内容或计数（零检查，.size等）。
+    rescue:
+      title: 救我，扔一条线，我会试着抓住它！
+      description: 在Ruby中，throw和catch不是例外！它们是先进的流量控制，可以退出深层嵌套。 Ruby使用raise和rescue来处理异常。
+    to_str:
+      title: to_s VS to_str
+      description: <span class="code-inline">to_s</span>在每个对象上定义，并且总是返回一些东西。 <span class="code-inline">to_str</span>仅在类似于字符串的对象上定义。例如，
+        <span class="code-inline">Symbol</span>有<span class="code-inline">to_str</span>但<span
+        class="code-inline">Array</span>没有。因此，你可以使用<span class="code-inline">obj.respond_to(:to_str)</span>而不是类似<span
+        class="code-inline">obj.is_a?(String)</span>的东西，如果你想利用duck typing而不用担心你正在使用的类是<span
+        class="code-inline">String</span>的子类还是不。
+    missing:
+      title: 需要协调method_missing和respond_to_missing？
+      description: 覆盖<span class="code-inline">method_missing</span> ，还记得覆盖<span class="code-inline">respond_to_missing?</span>同样。当您使用method_missing让对象在方法调用上返回某些内容时，请务必确保您还重新定义respond_to_missing？。如果你不这样做，乍一看什么都不会破坏，但你最终会遇到麻烦。考虑这个课程：
+      respond_to: 很多代码（宝石或你自己的代码）都依赖于respond_to？ （有充分理由）。你需要修补respond_to_missing吗？以及：
+    exception:
+      title: 从StandardError中解救，而不是Exception
+      description: 不要拯救Exception，拯救StandardError在明确地拯救Exception之前，甚至不会挽救通常不可恢复的错误，例如SyntaxError，LoadError和Interrupt。如果省略Exception类型限定符，那么Ruby将只捕获StandardError，这可能是你想要的：
+    private:
+      title: 私有数据并不是真的，而且根本不是w / class方法
+      description: 有一种方法可以让Ruby中的类方法变得私有，你只需要跳过一些箍。呃，我的意思是使用<span class="code-inline">class << self</span> syntax。这种奇怪的做法将一个实例单例推送到类上，有效地创建了类方法。
+    braces:
+      title: 大括号与do-end
+      description: 一般惯例是对多行块使用<span class="code-inline">do .. end</span> ，对单行块使用花括号，但两者之间也存在差异，可以说明。这意味着<span
+        class="code-inline">{}</span>具有比<span class="code-inline">do ...</span>更高的优先级，因此在决定要使用的内容时请记住这一点。
+    module:
+      title: '在Foo外部定义的类Foo :: Bar将不会在Foo中看到'
+      description: 您可以将<span class="code-inline">module Something</span>， <span class="code-inline">class
+        Something</span>或<span class="code-inline">def something</span>的每个外观都想象成新范围的“网关”。当Ruby搜索已引用的名称的定义时，它首先查找当前作用域（方法，类或模块），如果找不到它将返回通过每个包含“网关”的位置并搜索那里的范围。
+    credits: 代码和文章来自资源：
+  meta_programming:
+    title: 元编程
+    description: 元编程是编写或编写其他程序（或自身）作为数据的计算机程序，或者在编译时执行部分工作的计算机程序，否则将在运行时完成。在许多情况下，这使得程序员可以在与手动编写所有代码所花费的时间相同的时间内完成更多工作，或者为程序提供更大的灵活性，以便在不重新编译的情况下有效地处理新情况。元编程正在编写在运行时编写代码的代码，以使您的生活更轻松。
+    dynamic_dispatch:
+      title: 动态调度
+      description: 允许我们发送消息<span class="code-inline">subject.public_send(message，*arguments)</span>
+    dynamic_method:
+      title: 动态方法
+      description: 允许我们动态创建方法<span class="code-inline">define_method：method_name { block 成为方法体 }</span>
+    ghost_methods:
+      title: 鬼方法
+      description: 捕获“Ghost方法”并将它们转发到另一个方法虽然可能在呼叫周围添加逻辑。利用<span class="code-inline">method_missing</span>
+    dynamic_proxies:
+      title: 动态代理
+      description: 例如，您可以通过利用<span class="code-inline">method_missing</span>解析传入消息（例如<span
+        class="code-inline">get_name</span>， <span class="code-inline">get_age</span>
+        ）并委托给另一个方法（例如<span class="code-inline">get(:data_type))</span>来提供虚构方法，其中<span
+        class="code-inline">:data_type</span>为<span class="code-inline">:name</span>或<span
+        class="code-inline">:age</span> 。
+      more: 如果（在分析之后）您发现使用<span class="code-inline">method_missing</span>存在性能问题，则可以在第一次使用`method_missing`接收到消息后使用“动态方法”技术创建实际方法。
+  solid_principles:
+    good: 好！
+    bad: 坏！
+    title: 坚实的原则
+    description: 在计算机编程中，SOLID（单一责任，开放式闭合，Liskov替换，界面隔离和依赖性反转）是迈克尔·费尔斯（Michael Feathers）为罗伯特·C·马丁（Robert
+      C. Martin）在21世纪初命名的“前五个原则”所引入的助记符缩写。面向对象编程和设计的五个基本原则。目的是这些原则一起应用，将使程序员更有可能创建一个易于维护和扩展的系统。
+      SOLID的原理是指导程序，可以在处理软件时应用，通过使程序员重构软件的源代码，直到它既清晰易读又可扩展，从而消除代码气味。它是敏捷和自适应软件开发总体战略的一部分。
+    single:
+      title: 单一责任原则
+      description: 单一责任原则是最具抽象性的。它有助于保持类和方法的小巧和可维护性。除了保持课程规模小和重点突出之外，它还使它们更容易理解。例如，这可能是在标记交易处理后添加对发送特定人员佣金的电子邮件摘要的支持。我们可以确定多个改变原因的信号表明违反了单一责任原则。
+    open_close:
+      title: 开放/封闭原则
+      description: 开放/封闭原则规定类或方法应该开放以进行扩展，但是关闭以进行修改。这告诉我们，我们应该努力实现模块化设计，使我们能够在不修改类本身的情况下改变系统的行为。这通常通过使用诸如策略模式之类的模式来实现。
+      after: 通过这种重构，我们可以在不更改任何代码的情况下添加新的解析器。任何其他行为只需要添加一个新的处理程序。这使得我们的FileParser可以重复使用，并且在许多情况下将使我们遵守单一责任原则以及鼓励我们创建更小的更集中的类。
+    liskov:
+      title: 利斯科夫的替代原则
+      description: Liskov的原则往往是最难理解的。该原则规定您应该能够将父类的任何实例替换为其子类的实例，而不会创建任何意外或不正确的行为。
+    segregation:
+      title: 依赖倒置原则
+      description: 该原则规定客户不应该被迫依赖它不使用的方法。在此示例中，有计算机，程序员和技术人员类。程序员和技术人员都以不同的方式使用计算机。程序员使用计算机进行打字，但技术人员知道如何更换计算机硬盘。接口隔离原则（ISP）强制执行的是一个类不应该依赖于它不使用的方法。在我们的例子中，Programmer不必要地耦合到Computer＃change_hard_drive方法，因为它没有使用它，但是这个方法强制执行的状态更改会影响Programmer。让我们重构代码来服从LSP。
+      after: 在此重构之后，技术人员使用与计算机状态隔离的ComputerInternals类型中的其他对象。计算机对象的状态可能会受到程序员的影响，但更改不会以任何方式影响技术人员。
+    di:
+      title: 依赖倒置原则
+      description: 依赖性倒置原则与高级（思考业务逻辑）对象有关，而不依赖于低级（思考数据库查询和IO）实现细节。这可以通过duck typing和Dependency
+        Inversion原则来实现。通常，这种模式用于实现我们上面讨论的开放/封闭原则。事实上，我们甚至可以重复使用相同的例子来证明这一原则。现在有一个格式化程序类，但我在Report类上对其进行了硬编码，从而创建了从Report到JSONFormatter的依赖项。由于报告是比JSONFormatter更抽象（高级）的概念，因此我们有效地打破了DIP。
+      after: 这样，Report不依赖于JSONFormatter，并且可以使用任何类型的格式化程序，该格式化程序具有称为format的方法（这称为duck
+        typing）。另一件值得注意的事情是，我们再次使用依赖注入来解决问题。当我们的目标是解耦对象时，这种技术非常强大，即使它具有与依赖性倒置原则相同的首字母（vs依赖注入模式），它们也是完全不同的概念。
+  threads:
+    example: 例
+    title: 主题
+    description: 关于并行性和并发性的注意事项：使用进程与线程之间的主要区别在于处理内存的方式。在高级别，进程复制内存，而线程共享内存。这使得进程生成的速度比线程生成的速度慢，并且一旦运行就会导致进程占用更多资源。总的来说，线程比进程产生更少的开销。此Thread
+      API是一个Ruby API。我暗示不同的Ruby实现具有不同的底层线程行为。
+    green:
+      title: 绿色线程
+      description: Ruby 1.9用原生线程替换了绿色线程。但是，GIL仍在阻止并行性。话虽如此，通过更好的调度改进了并发性。新计划通过将它们移动到单独的本机线程（称为计时器线程），使上下文切换决策更有效。
+    gil:
+      title: GIL  - 全球翻译锁
+      description: MRI具有全局解释器锁（GIL）。这是对Ruby代码执行的锁定。这意味着在多线程上下文中，任何时候只有一个线程可以执行Ruby代码。因此，如果你有8个线程在8核机器上忙着工作，那么在任何给定时间只有一个线程和一个核心会忙。
+        GIL的存在是为了保护Ruby内部不受可能破坏数据的竞争条件的影响。有一些警告和优化，但这是要点。
+      example: 这个简单的事实就是线程如此强大，以及使它们难以使用的原因。我已经告诉过你为什么线程好了;这是一个简单的程序来说明他们的难度。在这里你可以看到我们在数组中有<span
+        class="code-inline">10 * 10000个</span>元素。请注意，不同的红宝石可以显示不同的结果。 GIL仅存在于MRI红宝石中。
+    mutex:
+      title: 互斥 - 相互执行
+      description: 互斥锁为多个线程提供了一种机制，可以同步对代码关键部分的访问。换句话说，它们有助于为多线程混乱带来一些秩序和一些保证。“互斥”这个名称是“互斥”的简写。如果使用互斥锁包装代码的某些部分，则可以保证没有两个线程可以同时进入该部分。互斥锁为多个线程提供了一种机制，可以同步对代码关键部分的访问。它有助于为多线程混乱带来一些秩序和一些保证。
+      example: 在这个程序中，由于任何线程必须先锁定互斥锁才能推送到数组，因此可以保证两个线程不会同时执行此操作。换句话说，此操作在完成之前不能再中断。一旦一个线程开始推送到Array，在第一个线程完成之前，没有其他线程能够进入该部分代码。此操作现在是线程安全的。在这里你可以看到我们在数组中有<span
+        class="code-inline">10 * 10000个</span>元素。现在一切都是一样的，因为互斥体。互斥锁为线程设置相同的边界。点击这段代码的第一个线程将锁定互斥锁。它然后成为该互斥体的所有者。在拥有线程解锁互斥锁之前，没有其他线程可以锁定它。
+    fibers:
+      title: 纤维
+      description: Fibers是在Ruby中实现轻量级协同并发的原语。基本上，它们是创建可以暂停和恢复的代码块的一种方法，就像线程一样。主要区别在于它们永远不会被抢占，并且调度必须由程序员而不是VM完成。与其他无堆栈轻量级并发模型相反，每个光纤都带有一个4KB的小堆栈。这使得光纤可以从光纤模块内的深嵌套函数调用中暂停。
+    rails:
+      title: Rails线程安全
+      description: 这样做的问题在于，没有简单的方法可以绝对肯定地说一个应用程序作为一个整体是否是线程安全的。
+      global_variables: 全局变量是全球变量。这意味着它们在线程之间共享。如果你现在不相信不使用全局变量，这是另一个永远不会触及它们的理由。如果你真的想在一个应用程序中全局分享一些东西，那么你很可能更好地服务于一个常数（但见下文）。
+      class_variables: 类变量。出于讨论线程的目的，类变量与全局变量没有太大区别。它们以相同的方式在线程之间共享。问题不在于使用类变量，而是在改变它们。如果你不打算改变一个类变量，在很多情况下，常量也是一个更好的选择。
+      instance_variables: 类实例变量。但也许你已经读过你应该总是在Ruby中使用类实例变量而不是类变量。好吧，也许你应该，但它们对于线程程序和类变量一样有问题。
+      memoization: 记忆本身并不是线程安全问题。它通常用于在类变量或类实例变量中存储数据（请参阅前面的几点）。事实上， <span class="code-inline">||
+        =</span>运算符是两个操作，因此在它的中间发生了潜在的上下文切换，导致线程之间出现竞争条件。因此，即使您只使用实例变量，也可能最终会出现具有memoization的竞争条件。不要记住类变量或类实例变量。如果需要在类级别上记忆，请使用线程局部变量（
+        <span class="code-inline">Thread.current [：baz]</span> ）。但要注意，它仍然是一个全局变量。
+    config:
+      title: 配置线程安全！？
+      description: 调用此方法会在我们的应用配置中设置四个选项。让我们来看看每个选项，并谈谈它的作用。
+      frameworks: 预加载框架：第一个选项@preload_frameworks完全按照它所说的做，它强制Rails框架在启动时急切加载。如果未启用此选项，则会通过自动加载延迟加载框架类。在多线程环境中，由于自动加载的线程安全问题，在创建任何线程之前需要急切地加载框架。我们知道加载框架不是线程安全的，因此策略是在任何线程准备好处理请求之前加载它。
+      cache: 缓存类：@cache_classes选项控制是否重新加载类。还记得你在申请中做“TDD”吗？您修改控制器，然后重新加载页面以“测试”它并看到事情发生了变化？呀，这个选项控制的是什么。当此选项为false时，如在开发中，您的类将在修改时重新加载。如果没有这个选项，我们将无法完成“F5DD”（是的，那就是F5驱动开发）。在生产中，我们知道类不会被动态修改，所以做工作来确定是否重新加载类只是浪费资源，所以从不重新加载类定义是有意义的。
+      di: 依赖加载：此选项@dependency_loading控制遇到缺失常量时的代码加载。例如，控制器引用User模型，但未定义User常量。在这种情况下，如果@dependency_loading为true，Rails将找到包含User常量的文件并加载该文件。我们已经讨论了代码加载如何不是线程安全的，所以这里的想法是我们应该加载框架，然后加载所有用户代码，然后禁用依赖加载。禁用依赖关系加载后，应加载框架代码和应用程序代码，任何缺少的常量只会引发异常，而不是尝试加载代码。我们证明在生产中禁用此选项是正确的，因为（如前所述）代码加载不是线程安全的，我们希望在任何线程可以处理请求之前加载所有代码。
+      concurrency: '允许并发：@allow_concurrency选项控制是否在堆栈中使用Rack :: Lock中间件。 Rack :: Lock围绕您的请求包装互斥锁。我们的想法是，如果您的代码不是线程安全的，那么这个互斥锁将阻止多个线程同时执行您的控制器代码。线程安全的时候！设置后，该中间件被删除，控制器代码可以并行执行。'
+    credits: 代码和文章来自资源：
+  ruby_meister:
+    title: 成为Ruby Meister
+    description: 在本次演讲中，我们将探讨从Ruby新手到实现真正的Ruby掌握的漫长旅程，并尝试通过分享一些重要的见解来缩短它。 Ruby Rubyist拥有丰富的理论基础，依赖于广泛的工具箱，对Ruby的核心价值观和原则有着深刻的理解，并且总是在磨练自己的技能。也许你告诉自己“哇，这很模糊！”但是，如果你参加这个课程，我保证你会开悟，逗乐，你会完全享受它！听起来不错？这些伟大的书籍将成为我建议人们提升技能的资源的一部分。
+    video: Bozhidar Batsov漫长的红宝石之旅。
+    computer_science_fundamentals:
+      title: 计算机科学基础
+      articles:
+        - name: inside_machine
+          title: 机器内部：微处理器和计算机体系结构的插图介绍
+          description: 计算机执行从业务关键到娱乐的无数任务，但无论它们的外观和行为有多么不同，它们在基本功能方面都非常相似。一旦了解了微处理器或中央处理单元（CPU）的工作原理，您就能牢牢掌握所有现代计算的核心概念。
+        - name: code
+          title: 代码：计算机硬件和软件的隐藏语言
+          description: 手电筒，英国入侵，黑猫和跷跷板与电脑有什么关系？在CODE中，它们向我们展示了我们操纵语言的巧妙方式，并创造了彼此沟通的新方式。通过CODE，我们看到这种聪明才智和我们非常强烈的人际交往能力如何推动了过去两个世纪的技术创新。
+        - name: concrete_math
+          title: 具体数学：计算机科学基础
+          description: 本书介绍了支持高级计算机编程和算法分析的数学。其着名作者的主要目的是提供一个坚实且相关的数学技能基础 - 解决复杂问题所需的技能，评估可怕的总和，以及发现数据中的微妙模式。它不仅是计算机科学家不可或缺的文本和参考
+            - 作者自己也非常依赖它！ - 但对于几乎每个学科的严肃的数学用户。
+        - name: sicp
+          title: 计算机程序的结构与解释
+          description: 计算机程序的结构和解释在过去十年中对计算机科学课程产生了巨大影响。这个期待已久的修订包含整个文本的变化。本书中大多数主要编程系统都有新的实现，包括解释器和编译器，作者已经纳入了许多小的变化，反映了自第一版出版以来在麻省理工学院教授该课程的经验。引入了一个新主题，强调了计算模型中处理时间的不同方法所发挥的核心作用：具有状态，并发编程，函数编程和惰性求值的对象，以及非确定性编程。
+        - name: design_programms
+          title: 如何设计程序：编程和计算简介
+          description: 这种编程入门将计算机科学置于文科教育的核心。与其他入门书籍不同，它侧重于程序设计过程。这种方法促进了各种技能 - 批判性阅读，分析思维，创造性综合和对细节的关注
+            - 这对每个人都很重要，而不仅仅是未来的计算机程序员。这本书向读者展示了两个全新的想法。首先，它提出了程序设计指南，向读者展示如何分析问题陈述;如何制定简洁的目标;如何编写例子;在分析的基础上，如何制定解决方案的大纲;如何完成该计划;以及如何测试。
+        - name: algorithm_manual
+          title: 算法设计手册
+          description: 这个新近扩展和更新的畅销经典的第二版继续从设计算法的“神秘”，并分析其效力和效率。该书扩展到第一版，现在作为算法设计课程的首选教科书，同时保持其作为程序员，研究人员和学生算法的首要实用参考指南的地位。
+        - name: cormen
+          title: 算法导论，第3版（麻省理工学院出版社）
+          description: 有些关于算法的书很严谨但不完整;其他人覆盖了大量的材料，但缺乏严谨性。算法简介独特地结合了严谨性和全面性。本书深入介绍了各种算法，并使各种读者都可以使用它们的设计和分析。每一章都是相对独立的，可以作为一个学习单位。这些算法用英语描述，并以伪代码描述，设计为任何做过一点编程的人都可读。在不牺牲覆盖深度或数学严谨性的情况下，解释基本保持不变。
+        - name: compilers
+          title: 编译器：原理，技术和工具（第2版）
+          description: 编译器：原理，技术和工具，作为“龙书”，全世界的教授，学生和开发者都知道，可以在新版本中获得。每一章都经过全面修订，以反映自1986年上一版出版以来发生的软件工程，编程语言和计算机体系结构的发展。作者认识到很少有读者会继续构建编译器，因此他们将注意力集中在软件设计和软件开发中面临的更广泛的问题上。
+        - name: c_lang
+          title: C编程语言，第2版
+          description: 作者提供了ANSI标准C语言编程的完整指南。这个新版本由C的开发人员编写，帮助读者了解C的最终ANSI标准，同时展示如何利用C丰富的运算符，表达的经济性，改进的控制流和数据结构。
+            2 / E已经完全用其他示例和问题集重写，以阐明困难的语言结构的实现。多年来，C程序员让K＆R指导他们构建结构合理，高效的程序。现在，使用ANSI编译器的人可以使用相同的帮助。包括C语言的详细介绍以及官方C语言参考手册，以便一目了然地帮助语法符号，声明，ANSI更改，范围规则以及列表等等。
+    oop:
+      title: 面向对象的编程
+      articles:
+        - name: growing
+          title: 以测试为指导，发展面向对象的软件
+          description: 测试驱动开发（TDD）现在是一种用于更快地提供更好软件的成熟技术。 TDD基于一个简单的想法：在编写代码之前为代码编写测试。然而，这种“简单”的想法需要技巧和判断才能做得好。现在有一个TDD的实用指南，它将超越基本概念。借助建立真实系统的十年经验，两位TDD先驱展示了如何让测试指导您的开发和“增长”连贯，可靠和可维护的软件。
+        - name: domain_driven
+          title: 领域驱动设计：解决软件核心的复杂性
+          description: 这是一本关于软件设计领域建模的重要书籍。软件开发社会从一个炒作浪潮到另一个炒作浪潮。 OOP，模式，XP，TDD，CI /
+            CD，BigData，DevOps  - 仅举几例。本书起源于OOP的黄金时代。作者承认，面向对象的范式不是唯一可用的范例，但对OOP / OOD的偏见是显而易见的（并且是合理的）。本书讲述了如何以“正确的方式”对核心软件组件进行建模。
+    ruby:
+      title: 知道你了
+      articles:
+        - name: well_grounded
+          title: 有条不紊的Rubyist
+          description: 精心设计的Rubyist，第二版针对Ruby的新手以及希望加深对语言理解的Ruby程序员。这篇精美编写和完全修订的第二版包括对Ruby
+            2.1中新增功能的介绍，以及对已更改语言方面的扩展和更新报道。
+        - name: programming_ruby
+          title: Ruby编程：实用程序员指南，第二版
+          description: Ruby是一种越来越受欢迎的，完全面向对象的动态编程语言，被许多从业者誉为当今最好和最有用的语言。当Ruby第一次出现在西方世界的场景中时，实用程序员就在那里使用了权威的参考手册“编程Ruby：实用程序员指南”。
+        - name: ruby_programming
+          title: Ruby编程语言：你需要知道的一切
+          description: 本书从该语言的快速入门教程开始，然后从下到上详细解释语言：从词法和句法结构到数据类型到表达式和语句，以及通过方法，块，lambdas，闭包，类和模块。本书还包括对Ruby平台的丰富API的详尽介绍，使用重要注释的示例代码演示
+            -  Ruby用于文本处理，数字操作，集合，输入/输出，网络和并发的工具。整整一章专门讨论Ruby的元编程功能。
+  interview_questions:
+    title: 面试问题
+    description: 本节保留了阅读和面试准备的资源链接
+    list:
+      - name: Toptal：如何聘请优秀的Ruby开发人员
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: Toptal：21个必要的Ruby访谈问题
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: Hookops：35+ Ruby和Rails面试问题和答案
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: Educba：15个最重要的Ruby面试问题和答案
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: Ruby Garage：如何采访Ruby on Rails Developer
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: RyanSobol：在Ruby访谈期间提出的15个问题
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: Toptal：9个基本的Ruby on Rails面试问题
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"    
+  index:
+    title: 什么是更好的文档
+    description: 这个网站是网络改编Github存储库<a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
+      ，它收集了很多明星并被翻译成中文。 Better Docs允许您快速找到在一个存储库中收集的大量最佳实践。只是你这个回购像参考或面试准备资源。
+    oss:
+      title: 感谢开源
+      description: Better Docs是在工作和创建有关ruby的最佳实践和知识时创建的，这是一个用Ruby编写的Web开发应用程序的开源工程。
+      thanks: 如果Better Docs以任何方式帮助您，请考虑在<a href="https://github.com/howtohireme/ruby.fundamental">Github</a>上为我们提供Star（它可以帮助我们吸引更多开发人员）或为我们的项目做出贡献。

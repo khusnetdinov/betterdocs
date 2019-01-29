@@ -1,0 +1,1472 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: Lập trình cơ bản với các ví dụ và tài liệu tham khảo ruby. Nó bao
+      gồm các chủ đề, nguyên tắc RẮN, các mẫu thiết kế, cấu trúc dữ liệu, thuật toán.
+    keywords: Tài liệu tốt hơn, Ruby, Nguyên tắc cơ bản, Nguyên tắc lập trình Ruby.
+      Ruby gotchas, Lập trình hàm, Lập trình siêu dữ liệu, Chủ đề, Nguyên tắc vững
+      chắc của Ruby với các ví dụ, mẫu thiết kế Ruby với các ví dụ, thuật toán Ruby
+      với các ví dụ, cấu trúc dữ liệu Ruby với các ví dụ.
+
+content:
+  menu:
+    open: Mở thực đơn
+    close: Đóng Menu
+sidebar:
+  a: 
+  ds: 
+  dp: 
+  fp: 
+  iq: 
+  mp: 
+  sp: 
+  brm: 
+  t: 
+sidebar:
+  - title: Thuật toán
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Cấu trúc dữ liệu
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Mẫu thiết kế
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: Lập trình chức năng
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: Câu hỏi phỏng vấn
+    url: interview_questions
+  - title: Lập trình meta
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Nguyên tắc vững chắc
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Trở thành Ruby Meister
+    url: ruby_meister
+  - title: Chủ đề
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+
+pages:
+  wiki: Đọc wiki
+  credits: Tín dụng
+  page404:
+    title: Không tìm thấy trang :(
+    description: Không tìm thấy trang yêu cầu.
+  algorithms:
+    title: Thuật toán
+    complexity:
+      best: Tốt
+      average: Trung bình cộng
+      worst: Tệ nhất
+    sorting:
+      title: Sắp xếp
+      description: Thuật toán sắp xếp là một thuật toán đặt các phần tử của danh sách
+        theo một thứ tự nhất định. Các đơn hàng được sử dụng nhiều nhất là thứ tự số
+        và thứ tự từ điển. Sắp xếp hiệu quả là rất quan trọng để tối ưu hóa việc sử
+        dụng các thuật toán khác (như thuật toán tìm kiếm và hợp nhất) yêu cầu dữ liệu
+        đầu vào phải nằm trong danh sách được sắp xếp; nó cũng thường hữu ích cho việc
+        chuẩn hóa dữ liệu và tạo ra đầu ra có thể đọc được của con người.
+      bubble_sort:
+        title: Sắp xếp bong bóng
+        description: Sắp xếp bong bóng có nhiều thuộc tính giống như sắp xếp chèn, nhưng
+          có chi phí cao hơn một chút. Trong trường hợp dữ liệu gần như được sắp xếp,
+          sắp xếp bong bóng mất <span class="code-inline time">O(n)</span> , nhưng
+          yêu cầu ít nhất 2 lần đi qua dữ liệu (trong khi sắp xếp chèn yêu cầu nhiều
+          hơn 1 lần)
+      insertion_sort:
+        title: Sắp xếp chèn
+        description: Mặc dù nó là một trong những thuật toán sắp xếp cơ bản với thời
+          gian trong trường hợp xấu nhất <span class="code-inline">O(n<sup>2</sup>)</span>,
+          sắp xếp chèn là thuật toán được lựa chọn khi dữ liệu gần như được
+          sắp xếp (vì nó thích nghi) hoặc khi kích thước sự cố nhỏ (vì nó nhỏ có chi
+          phí thấp). Vì những lý do này và vì nó cũng ổn định, sắp xếp chèn thường được
+          sử dụng làm trường hợp cơ sở đệ quy (khi kích thước bài toán nhỏ) cho các
+          thuật toán sắp xếp phân chia và chinh phục trên cao hơn, chẳng hạn như sắp
+          xếp hợp nhất hoặc sắp xếp nhanh.
+      selection_sort:
+        title: Sắp xếp lựa chọn
+        description: Từ so sánh được trình bày ở đây, người ta có thể kết luận rằng
+          không bao giờ nên sử dụng loại lựa chọn. Nó không thích ứng với dữ liệu theo
+          bất kỳ cách nào (lưu ý rằng bốn hình động ở trên chạy theo bước khóa), vì
+          vậy thời gian chạy của nó luôn luôn là bậc hai. Tuy nhiên, sắp xếp lựa chọn
+          có đặc tính giảm thiểu số lượng giao dịch hoán đổi. Trong các ứng dụng có
+          chi phí hoán đổi vật phẩm cao, sắp xếp lựa chọn rất tốt có thể là thuật toán
+          được lựa chọn.
+      shell_sort:
+        title: Sắp xếp vỏ
+        description: Độ phức tạp thời gian trong trường hợp xấu nhất của sắp xếp vỏ
+          phụ thuộc vào trình tự tăng dần. Đối với số gia 1 4 13 40 121 ..., đó là những
+          gì được sử dụng ở đây, độ phức tạp thời gian là
+          <span class="code-inline">O(n<sup><sup>3</sup>/<sub>2</sub></sup>)</span>.
+          Đối với các mức tăng khác,
+          độ phức tạp thời gian được gọi là <span class="code-inline">O(n<sup><sup>4</sup>⁄<sub>3</sub></sup>)</span>
+          và thậm chí <span class="code-inline">O(n·lg<sub>2</sub>(n))</span>
+          . Không giới hạn chặt chẽ về độ phức tạp thời
+          gian cũng như trình tự gia tăng tốt nhất được biết đến. Vì sắp xếp shell dựa
+          trên sắp xếp chèn, sắp xếp shell kế thừa các thuộc tính thích ứng của sắp
+          xếp chèn. Sự thích ứng không ấn tượng vì sắp xếp shell yêu cầu một lần chuyển
+          dữ liệu cho mỗi lần tăng, nhưng nó rất quan trọng. Đối với chuỗi gia tăng
+          được hiển thị ở trên, có các mức tăng <span class="code-inline">log<sub>3</sub>(n)</span>,
+          vì vậy độ phức tạp thời gian cho dữ liệu gần như được sắp xếp
+          là <span class="code-inline">O(n·log<sub>3</sub>(n))</span>. Do chi
+          phí thấp, triển khai tương đối đơn giản, thuộc tính thích ứng và độ phức tạp
+          thời gian của phương pháp bậc hai, sắp xếp shell có thể là sự thay thế khả
+          thi cho thuật toán sắp xếp <span class="code-inline">O(n·lg(n))</span>
+          cho một số ứng dụng khi sắp xếp dữ liệu không lớn lắm
+      heap_sort:
+        title: Sắp xếp đống
+        description: Sắp xếp đống đơn giản để thực hiện, thực hiện sắp xếp tại chỗ <span
+          class="code-inline">O (n · lg (n))</span> , nhưng không ổn định. Vòng lặp
+          đầu tiên, giai đoạn heapify của “ <span class="code-inline">(n)</span> , đặt
+          mảng theo thứ tự heap. Vòng lặp thứ hai, giai đoạn sắp xếp xuống <span class="code-inline">O
+          (n · lg (n)),</span> sắp xếp lại tối đa và khôi phục lại thứ tự heap. Hàm
+          chìm được viết đệ quy cho rõ ràng. Do đó, như được hiển thị, mã yêu cầu không
+          gian <span class="code-inline">(lg (n))</span> cho ngăn xếp cuộc gọi đệ quy.
+          Tuy nhiên, đệ quy đuôi trong chìm () dễ dàng được chuyển đổi thành phép lặp,
+          điều này mang lại không gian <span class="code-inline">O (1)</span> bị ràng
+          buộc. Cả hai pha đều hơi thích nghi, mặc dù không theo bất kỳ cách đặc biệt
+          hữu ích nào. Trong trường hợp gần như được sắp xếp, pha heapify phá hủy thứ
+          tự ban đầu. Trong trường hợp đảo ngược, pha heapify càng nhanh càng tốt vì
+          mảng bắt đầu theo thứ tự heap, nhưng sau đó pha sắp xếp xuống là điển hình.
+          Trong một vài trường hợp phím duy nhất, có một số tăng tốc nhưng không nhiều
+          như trong sắp xếp shell hoặc quicksort 3 chiều.
+      merge_sort:
+        title: Sáp nhập
+        description: 'Hợp nhất sắp xếp là rất dễ đoán. Nó tạo ra sự so sánh giữa <span
+          class="code-inline">0,5lg (n)</span> và <span class="code-inline">lg (n)</span>
+          cho mỗi phần tử và giữa các lần hoán đổi <span class="code-inline">lg (n)</span>
+          và <span class="code-inline">1,5lg (n)</span> cho mỗi phần tử. Các cực tiểu
+          đạt được cho dữ liệu đã được sắp xếp; trung bình đạt được tối đa cho dữ liệu
+          ngẫu nhiên. Nếu việc sử dụng không gian thêm <span class="code-inline">Θ (n)</span>
+          không đáng lo ngại, thì sắp xếp hợp nhất là một lựa chọn tuyệt vời: Thật đơn
+          giản để thực hiện và đó là thuật toán sắp xếp <span class="code-inline">O
+          (n · lg (n))</span> ổn định duy nhất. Lưu ý rằng khi sắp xếp danh sách được
+          liên kết, sắp xếp hợp nhất chỉ cần <span class="code-inline">(lg (n)</span>
+          không gian thừa (để đệ quy). Sắp xếp hợp nhất là thuật toán lựa chọn cho nhiều
+          tình huống: khi cần ổn định, khi sắp xếp danh sách được liên kết và khi ngẫu
+          nhiên truy cập đắt hơn nhiều so với truy cập tuần tự (ví dụ: sắp xếp bên ngoài
+          trên băng). Có tồn tại thuật toán hợp nhất tại chỗ theo thời gian tuyến tính
+          cho bước cuối cùng của thuật toán, nhưng chúng đều tốn kém và phức tạp. chẳng
+          hạn như sắp xếp bên ngoài khi không có thêm <span class="code-inline">Θ (n)</span>
+          .'
+      quick_sort:
+        title: Sắp xếp nhanh chóng
+        description: Khi được thực hiện cẩn thận, quicksort mạnh mẽ và có chi phí thấp.
+          Khi không cần một loại ổn định, quicksort là một loại mục đích chung tuyệt
+          vời - mặc dù phiên bản phân vùng 3 chiều luôn luôn được sử dụng thay thế.
+          Mã phân vùng 2 chiều hiển thị ở trên được viết cho rõ ràng hơn là hiệu suất
+          tối ưu; nó thể hiện địa phương nghèo, và, quan trọng, thể hiện thời gian <span
+          class="code-inline">O (n <sup>2</sup> )</span> khi có ít khóa duy nhất. Một
+          phương pháp phân vùng 2 chiều hiệu quả và mạnh mẽ hơn được đưa ra trong Quicksort
+          là Tối ưu của Robert Sedgewick và Jon Bentley. Phân vùng mạnh tạo ra đệ quy
+          cân bằng khi có nhiều giá trị bằng trục, mang lại đảm bảo xác suất về thời
+          gian <span class="code-inline">O (n · lg (n))</span> và không gian <span class="code-inline">O
+          (lg (n))</span> cho tất cả các đầu vào. Với cả hai loại phụ được thực hiện
+          đệ quy, sắp xếp nhanh yêu cầu thêm không gian <span class="code-inline">O
+          (n)</span> cho ngăn đệ quy trong trường hợp xấu nhất khi đệ quy không cân
+          bằng. Điều này là cực kỳ khó xảy ra, nhưng nó có thể tránh được bằng cách
+          sắp xếp các mảng con nhỏ hơn theo cách đệ quy trước; sắp xếp mảng con thứ
+          hai là một cuộc gọi đệ quy đuôi, có thể được thực hiện với phép lặp thay thế.
+          Với tối ưu hóa này, thuật toán sử dụng không gian thừa <span class="code-inline">O
+          (lg (n))</span> trong trường hợp xấu nhất.
+      other: Các thuật toán sắp xếp khác
+      additional: Đọc thêm
+    searching:
+      title: Đang tìm kiếm
+      binary_search:
+        title: Tìm kiếm nhị phân
+        description: Trong khoa học máy tính, tìm kiếm nhị phân, còn được gọi là tìm
+          kiếm nửa quãng hoặc tìm kiếm logarit, là một thuật toán tìm kiếm tìm vị trí
+          của một giá trị đích trong một mảng được sắp xếp. Nó so sánh giá trị đích
+          với phần tử ở giữa của mảng; nếu chúng không bằng nhau, một nửa trong đó mục
+          tiêu không thể nói dối bị loại bỏ và việc tìm kiếm tiếp tục ở nửa còn lại
+          cho đến khi thành công.
+      knuth_moriss_pratt_search:
+        title: Tìm kiếm Knuth-Morris-Pratt
+        description: Trong khoa học máy tính, thuật toán tìm kiếm chuỗi Knuth của Morrisuth
+          Prith (thuật toán KMP) tìm kiếm sự xuất hiện của một &quot;từ&quot; W trong
+          một &quot;chuỗi văn bản&quot; chính bằng cách sử dụng quan sát rằng khi xảy
+          ra sự không khớp thông tin để xác định nơi trận đấu tiếp theo có thể bắt đầu,
+          do đó bỏ qua việc kiểm tra lại các nhân vật được khớp trước đó.
+      other:
+        title: Các thuật toán tìm kiếm khác
+        dijkstra: Thuật toán của Dijkstra
+        kruskal: Thuật toán của Kruskal
+        longest: Sự gia tăng dài nhất
+        telephone_number: Số điện thoại để từ
+    credits: 'Mã và bài viết được lấy từ các tài nguyên:'
+  data_structures:
+    title: Cấu trúc dữ liệu
+    description: Trong khoa học máy tính, ký hiệu O lớn được sử dụng để phân loại thuật
+      toán bằng cách chúng phản ứng với những thay đổi về kích thước đầu vào, chẳng
+      hạn như thời gian xử lý của thuật toán thay đổi như thế nào khi kích thước bài
+      toán trở nên cực kỳ lớn. Trong lý thuyết số phân tích, nó được sử dụng để ước
+      tính &quot;lỗi đã phạm&quot; trong khi thay thế kích thước tiệm cận của hàm số
+      đối xứng bằng giá trị mà nó nhận được ở một đối số hữu hạn lớn. Một ví dụ nổi
+      tiếng là vấn đề ước tính số hạng còn lại trong định lý số nguyên tố.
+    axioms:
+      title: Các tiên đề cơ bản của cấu trúc dữ liệu
+      description: Hiệu suất thời gian chạy của thời gian chạy ngôn ngữ chung được đưa
+        ra bởi một tập hợp tiên đề mà bây giờ chúng ta sẽ định nghĩa.
+      fetch_store:
+        title: Lấy và lưu trữ thời gian
+        description1: Thời gian cần thiết để tìm nạp một tham chiếu đến một đối tượng
+          từ bộ nhớ là một hằng số, <span class="code-inline">T_fetch</span> và thời
+          gian cần thiết để lưu trữ một tham chiếu đến một đối tượng trong bộ nhớ là
+          một hằng số, <span class="code-inline">T_store</span>
+        description2: Theo Axiom, câu lệnh gán có thời gian chạy <span class="code-inline">T_fetch
+          + T_store</span> . Nghĩa là, thời gian để tìm nạp tham chiếu đối tượng từ
+          biến x là <span class="code-inline">T_fetch</span> và thời gian để lưu trữ
+          tham chiếu đối tượng đó trong biến y là <span class="code-inline">T_store</span>
+          .
+        description3: Cũng có thời gian chạy <span class="code-inline">T_fetch + T_store</span>
+          . Để xem tại sao điều này nên xảy ra, hãy xem xét rằng hằng số <span class="code-inline">1</span>
+          đặt tên một đối tượng Fixnum với giá trị một. Do đó, chúng ta có thể mong
+          đợi chi phí tìm nạp tham chiếu đến đối tượng có tên 1 giống như tìm nạp tham
+          chiếu đến bất kỳ đối tượng nào khác.
+      elementary_operations:
+        title: Thời gian hoạt động số học cơ bản
+        description1: Thời gian cần thiết để thực hiện các phép toán số học cơ bản,
+          chẳng hạn như cộng, trừ, nhân, chia và so sánh, đều là các hằng số. Những
+          thời điểm này được ký hiệu lần lượt là <span class="code-inline">T_ +, T_-,
+          T_ /, T_ *, T_ &lt;</span> .
+        description2: Chúng ta có thể xác định thời gian của một câu lệnh như là <span
+          class="code-inline">2 * T_fetch + T_ + + T_store</span> . Điều này là do chúng
+          ta cần tìm nạp hai tham chiếu đối tượng từ các biến y và 1; thực hiện phép
+          cộng cho một đối tượng mới có giá trị là tổng; và, lưu trữ một tham chiếu
+          đến đối tượng mới trong biến y.
+        description3: Chúng ta sẽ giả sử rằng giải pháp thay thế đòi hỏi chính xác thời
+          gian chạy giống như tuyên bố ban đầu.
+      call_method:
+        title: Phương thức gọi thời gian
+        description1: Thời gian cần thiết để gọi một phương thức là một hằng số, <span
+          class="code-inline">T_call</span> và thời gian cần thiết để trả về từ một
+          phương thức là một hằng số, <span class="code-inline">T_return</span> Lý do
+          để tạo ra chi phí liên kết với tham số truyền giống như thời gian để lưu trữ
+          tham chiếu đối tượng là việc truyền một đối số về mặt khái niệm giống như
+          việc gán giá trị tham số thực tế cho tham số chính thức của phương thức.
+        description2: Theo Axiom, thời gian chạy của câu lệnh sẽ là <span class="code-inline">T_fetch
+          + 2 * T_store + T_call + T_f (x)</span> , trong đó <span class="code-inline">T_f
+          (x)</span> là thời gian chạy của phương thức f cho đầu vào x. Cửa hàng đầu
+          tiên trong hai cửa hàng là do việc truyền tham số x cho phương thức f; thứ
+          hai phát sinh từ việc gán cho biến y.
+      calculating:
+        title: Thời gian tính toán
+        description1: 'Thời gian cần thiết để tính toán địa chỉ được ngụ ý bởi một hoạt
+          động đăng ký mảng, ví dụ: <span class="code-inline">a[i]</span> , là một hằng
+          số, <span class="code-inline">T_[]</span> . Thời gian này không bao gồm thời
+          gian để tính biểu thức đăng ký, cũng không bao gồm thời gian để truy cập phần
+          tử mảng.'
+        description2: 'Đây là <span class="code-inline">3 * T_fetch</span> . Cần có
+          ba lần tìm nạp toán hạng: lần đầu tiên tìm nạp một tham chiếu đến đối tượng
+          mảng a; thứ hai để lấy một tham chiếu đến đối tượng chỉ mục i; và, thứ ba
+          để lấy tham chiếu đến phần tử mảng <span class="code-inline">a[i]</span>
+          .'
+      object:
+        title: Thời gian tạo đối tượng
+        description1: Thời gian cần thiết để tạo một thể hiện đối tượng mới của một
+          lớp là hằng số, <span class="code-inline">T_new</span> . Thời gian này không
+          bao gồm bất kỳ thời gian nào để khởi tạo đối tượng. Bằng cách áp dụng Axioms
+          chúng ta có thể xác định rằng thời gian chạy của câu lệnh.
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> , trong đó <span class="code-inline">T_fixnum_init</span>
+          là thời gian chạy của phương thức khởi tạo của lớp Fixnum.
+      example:
+        title: Thí dụ
+        description: Trong phần này, chúng tôi áp dụng Axioms, phân tích thời gian chạy
+          của một chương trình để tính tổng các chuỗi số học đơn giản sau đây.
+    implementations:
+      title: Thực hiện
+      stack:
+        title: Cây rơm
+        description: Các ngăn xếp là anh chị em của hàng đợi. Nó bắt chước một chồng
+          thực tế (ví dụ như giấy). Đó là FILO (nhập trước xuất trước), do đó, khi các
+          mục được lấy từ ngăn xếp, chúng được trả về theo thứ tự ngược lại với thứ
+          tự chúng được thêm vào. Một lần nữa, Ruby Arrays cung cấp một container hoàn
+          hảo. Như với Hàng đợi, nó cũng có thể được thực hiện bằng cách sử dụng danh
+          sách được liên kết.
+        as_array: Xếp chồng thành mảng
+        as_linked_list: Ngăn xếp như danh sách liên kết
+      queue:
+        title: Xếp hàng
+        description: 'Hàng đợi là một cấu trúc dựa trên container đơn giản bắt chước
+          hàng đợi trong đời thực (ví dụ: xếp hàng tại ngân hàng). Đó là FIFO (nhập
+          trước xuất trước), nghĩa là khi bạn truy xuất các mục từ hàng đợi, chúng được
+          trả về theo thứ tự mà chúng đã nhập. Ruby Arrays cung cấp các phương thức
+          làm cho việc triển khai Hàng đợi trở nên dễ dàng nhưng việc đặt tên chúng
+          một cách thích hợp và được chứa trong một lớp tiện lợi là điều đáng để thấy
+          chúng được thực hiện và bởi vì các cấu trúc khác sẽ kế thừa từ cấu trúc này.
+          Một triển khai thay thế có thể được thực hiện bằng cách sử dụng một danh sách
+          liên kết.'
+        as_array: Xếp hàng dưới dạng mảng
+        as_linked_list: Hàng đợi dưới dạng danh sách liên kết
+      deque:
+        title: và
+        description: Deque là một hàng đợi cho phép thêm và xóa các mục ở cả hai đầu.
+        as_array: Và như một mảng
+        as_linked_list: Deque như danh sách liên kết
+      singly_linked_list:
+        title: Danh sách liên kết đơn
+        description: Danh sách được liên kết đơn có chứa các nút có trường dữ liệu cũng
+          như trường &#39;tiếp theo&#39;, trỏ đến nút tiếp theo trong dòng nút. Các
+          hoạt động có thể được thực hiện trên các danh sách liên kết đơn bao gồm chèn,
+          xóa và truyền tải.
+      doubly_linked_list:
+        title: Danh sách liên kết đôi
+        description: Trong một danh sách liên kết đôi, mỗi thành phần danh sách chứa
+          hai tham chiếu - một cho người kế nhiệm và một cho người tiền nhiệm.
+      ordered_list:
+        title: Danh sách được yêu cầu
+        description: Một danh sách được sắp xếp là một danh sách trong đó thứ tự của
+          các mặt hàng là quan trọng. Tuy nhiên, các mục trong danh sách được sắp xếp
+          không nhất thiết phải được sắp xếp. Do đó, có thể thay đổi thứ tự của các
+          mặt hàng và vẫn có một danh sách đặt hàng hợp lệ.
+        as_array: Danh sách được sắp xếp dưới dạng mảng
+      hash_table:
+        title: Bảng băm
+        description: Một bảng băm là một container có thể tìm kiếm. Như vậy, nó cung
+          cấp các phương thức để đưa một đối tượng vào trong container, tìm một đối
+          tượng trong container và loại bỏ một đối tượng khỏi container.
+      binary_tree:
+        title: Cây nhị phân
+        description: Cây nhị phân là một cây trong đó mỗi nút có thể có tối đa hai con.
+          Các em được chỉ định trái và phải.
+      binary_search_tree:
+        title: Cây tìm kiếm nhị phân &lt;
+        description: 'Trong khoa học máy tính, cây tìm kiếm nhị phân (BST), đôi khi
+          được gọi là cây nhị phân được sắp xếp hoặc sắp xếp, là một loại thùng chứa
+          cụ thể: cấu trúc dữ liệu lưu trữ &quot;vật phẩm&quot; (như số, tên, v.v.)
+          trong bộ nhớ. Chúng cho phép tra cứu nhanh, thêm và xóa các mục và có thể
+          được sử dụng để triển khai các bộ vật phẩm động hoặc các bảng tra cứu cho
+          phép tìm một mục bằng khóa của nó (ví dụ: tìm số điện thoại của một người
+          theo tên)'
+      b_tree:
+        title: Cây B
+        description: Trong khoa học máy tính, cây B là cấu trúc dữ liệu cây tự cân bằng,
+          giữ cho dữ liệu được sắp xếp và cho phép tìm kiếm, truy cập tuần tự, chèn
+          thêm và xóa trong thời gian logarit. Cây B là một khái quát của cây tìm kiếm
+          nhị phân trong đó một nút có thể có nhiều hơn hai con (Không giống như cây
+          tìm kiếm nhị phân tự cân bằng, cây B được tối ưu hóa cho các hệ thống đọc
+          và ghi các khối dữ liệu lớn. B- cây là một ví dụ tốt về cấu trúc dữ liệu cho
+          bộ nhớ ngoài. Nó thường được sử dụng trong cơ sở dữ liệu và hệ thống tập tin.
+      binary_heap:
+        title: Heap nhị phân
+        description: Heap nhị phân là một cây nhị phân hoàn chỉnh theo thứ tự heap được
+          thực hiện bằng cách sử dụng một mảng. Trong một đống, khóa nhỏ nhất được tìm
+          thấy ở gốc và vì gốc luôn được tìm thấy ở vị trí đầu tiên của mảng, nên tìm
+          khóa nhỏ nhất là một thao tác tầm thường trong một đống nhị phân.
+      credits: 'Mã và bài viết được lấy từ các tài nguyên:'
+      source: Trang này chứa mã Ruby từ cuốn sách &quot;Cấu trúc dữ liệu và thuật toán
+        với các mẫu thiết kế hướng đối tượng trong Ruby&quot; của Bruno R. Preiss. Bản
+        quyền (c) 2004 bởi Bruno R. Preiss, P.Eng. Đã đăng ký Bản quyền.
+  design_patterns:
+    title: Mẫu thiết kế
+    creational:
+      title: Mô hình sáng tạo
+      description: Trong công nghệ phần mềm, các mẫu thiết kế sáng tạo là các mẫu thiết
+        kế xử lý các cơ chế tạo đối tượng, cố gắng tạo các đối tượng theo cách phù hợp
+        với tình huống. Hình thức cơ bản của việc tạo đối tượng có thể dẫn đến các vấn
+        đề thiết kế hoặc làm tăng thêm độ phức tạp cho thiết kế. Các mẫu thiết kế sáng
+        tạo giải quyết vấn đề này bằng cách nào đó kiểm soát việc tạo đối tượng này.
+        Các mẫu thiết kế sáng tạo bao gồm hai ý tưởng chủ đạo. Một là gói gọn kiến thức
+        về các lớp cụ thể mà hệ thống sử dụng. Một cách khác là che giấu cách các thể
+        hiện của các lớp cụ thể này được tạo và kết hợp.
+      abstract_factory:
+        title: Mô hình nhà máy trừu tượng
+        description: Mẫu nhà máy trừu tượng cung cấp một cách để gói gọn một nhóm các
+          nhà máy riêng lẻ có một chủ đề chung mà không chỉ định các lớp cụ thể của
+          họ. Trong sử dụng bình thường, phần mềm máy khách tạo ra một triển khai cụ
+          thể của nhà máy trừu tượng và sau đó sử dụng giao diện chung của nhà máy để
+          tạo các đối tượng cụ thể là một phần của chủ đề. Khách hàng không biết (hoặc
+          quan tâm) những đối tượng cụ thể mà họ nhận được từ mỗi nhà máy nội bộ này,
+          vì nó chỉ sử dụng các giao diện chung của các sản phẩm của họ. Mẫu này phân
+          tách các chi tiết thực hiện của một tập hợp các đối tượng khỏi cách sử dụng
+          chung của chúng và dựa vào thành phần đối tượng, vì việc tạo đối tượng được
+          thực hiện trong các phương thức được hiển thị trong giao diện nhà máy.
+      builder:
+        title: Mô hình xây dựng
+        description: Mẫu xây dựng là một mẫu thiết kế phần mềm tạo đối tượng. Không
+          giống như mẫu nhà máy trừu tượng và mẫu phương thức nhà máy có ý định kích
+          hoạt tính đa hình, ý định của mẫu công cụ xây dựng là tìm giải pháp cho mẫu
+          chống xây dựng kính viễn vọng [cần dẫn nguồn]. Mô hình chống xây dựng kính
+          viễn vọng xảy ra khi sự gia tăng của tổ hợp tham số của trình xây dựng đối
+          tượng dẫn đến một danh sách các hàm tạo. Thay vì sử dụng nhiều hàm tạo, mẫu
+          trình xây dựng sử dụng một đối tượng khác, một trình xây dựng, nhận từng tham
+          số khởi tạo từng bước và sau đó trả về đối tượng được xây dựng kết quả cùng
+          một lúc.
+      factory:
+        title: Mô hình nhà máy
+        description: Trong lập trình dựa trên lớp, mẫu phương thức nhà máy là một mẫu
+          sáng tạo sử dụng các phương thức của nhà máy để giải quyết vấn đề tạo đối
+          tượng mà không phải chỉ định lớp chính xác của đối tượng sẽ được tạo. Điều
+          này được thực hiện bằng cách tạo các đối tượng bằng cách gọi một phương thức
+          xuất xưởng, được chỉ định trong một giao diện và được thực hiện bởi các lớp
+          con hoặc được triển khai trong một lớp cơ sở và được ghi đè tùy ý bởi các
+          lớp dẫn xuất Thay vì gọi một hàm tạo.
+      prototype:
+        title: Mẫu thử nghiệm
+        description: Mẫu nguyên mẫu là một mẫu sáng tạo dọc theo các dòng của nhà máy.
+          Thủ thuật với nguyên mẫu là bạn tạo các đối tượng mới bằng cách sao chép một
+          đối tượng chính. Thay đổi đối tượng chính đó và tất cả các đối tượng tiếp
+          theo mà bạn tạo sẽ đi vào cuộc sống với một bản sao của thay đổi.
+      singleton:
+        title: Mẫu đơn
+        description: Đảm bảo một lớp chỉ có một thể hiện và cung cấp một điểm truy cập
+          toàn cầu vào nó. Điều này hữu ích khi chính xác một đối tượng là cần thiết
+          để phối hợp các hành động trên toàn hệ thống. Khái niệm này đôi khi được khái
+          quát cho các hệ thống hoạt động hiệu quả hơn khi chỉ có một đối tượng tồn
+          tại hoặc hạn chế khởi tạo đối với một số đối tượng nhất định.
+      not_covered:
+        title: 'Các mẫu không được bảo hiểm:'
+        lazy: Khởi tạo lười biếng
+        multiton: Đa tuyến
+        pool: Nhóm đối tượng
+        resource: Mua lại tài nguyên là khởi tạo
+    structural:
+      title: Mô hình kết cấu
+      description: Trong công nghệ phần mềm, các mẫu thiết kế cấu trúc là các mẫu thiết
+        kế dễ dàng thiết kế bằng cách xác định một cách đơn giản để nhận ra mối quan
+        hệ giữa các thực thể.
+      adapter:
+        title: Mẫu bộ điều hợp
+        description: Trong công nghệ phần mềm, mẫu bộ điều hợp là một mẫu thiết kế phần
+          mềm cho phép giao diện của một lớp hiện có được sử dụng làm giao diện khác.
+          Nó thường được sử dụng để làm cho các lớp hiện có hoạt động với các lớp khác
+          mà không sửa đổi mã nguồn của chúng.
+      composite:
+        title: Mô hình tổng hợp
+        description: Mẫu thiết kế tổng hợp là một mẫu cấu trúc được sử dụng để thể hiện
+          các đối tượng có cấu trúc cây phân cấp. Nó cho phép xử lý thống nhất cả hai
+          nút lá riêng lẻ và các nhánh bao gồm nhiều nút.
+      decorator:
+        title: Mẫu trang trí
+        description: Trong lập trình hướng đối tượng, mẫu trang trí (còn được gọi là
+          Wrapper, một cách đặt tên thay thế được chia sẻ với mẫu Adaptor) là mẫu thiết
+          kế cho phép thêm hành vi vào một đối tượng riêng lẻ, tĩnh hoặc động, mà không
+          ảnh hưởng đến hành vi của người khác các đối tượng từ cùng một lớp. Mẫu trang
+          trí thường hữu ích cho việc tuân thủ Nguyên tắc Trách nhiệm duy nhất, vì nó
+          cho phép chức năng được phân chia giữa các lớp với các lĩnh vực quan tâm duy
+          nhất.
+      facade:
+        title: Mô hình mặt tiền
+        description: Mẫu thiết kế Facade thường được sử dụng khi một hệ thống rất phức
+          tạp hoặc khó hiểu vì hệ thống có số lượng lớn các lớp phụ thuộc lẫn nhau hoặc
+          mã nguồn của nó không có sẵn. Mẫu này che giấu sự phức tạp của hệ thống lớn
+          hơn và cung cấp giao diện đơn giản hơn cho máy khách. Nó thường bao gồm một
+          lớp bao bọc duy nhất chứa một tập hợp các thành viên được yêu cầu bởi khách
+          hàng. Các thành viên này truy cập hệ thống thay mặt cho khách hàng mặt tiền
+          và ẩn các chi tiết thực hiện.
+      flyweight:
+        title: Mẫu bay bổng
+        description: Trong lập trình máy tính, fly weight là một mẫu thiết kế phần mềm.
+          Một trọng lượng là một đối tượng giảm thiểu việc sử dụng bộ nhớ bằng cách
+          chia sẻ càng nhiều dữ liệu càng tốt với các đối tượng tương tự khác; đó là
+          một cách để sử dụng các đối tượng với số lượng lớn khi một biểu diễn lặp lại
+          đơn giản sẽ sử dụng một lượng bộ nhớ không thể chấp nhận được. Thường thì
+          một số phần của trạng thái đối tượng có thể được chia sẻ, và thông thường
+          là giữ chúng trong các cấu trúc dữ liệu bên ngoài và chuyển chúng đến các
+          đối tượng bay trong khi chúng được sử dụng.
+      proxy:
+        title: Mẫu proxy
+        description: 'Một proxy, ở dạng chung nhất của nó, là một lớp hoạt động như
+          một giao diện cho một thứ khác. Proxy có thể giao tiếp với mọi thứ: kết nối
+          mạng, một đối tượng lớn trong bộ nhớ, tệp hoặc một số tài nguyên khác đắt
+          tiền hoặc không thể sao chép. Nói tóm lại, proxy là một đối tượng trình bao
+          bọc hoặc tác nhân được khách hàng gọi để truy cập đối tượng phục vụ thực sự
+          phía sau hậu trường. Việc sử dụng proxy có thể chỉ đơn giản là chuyển tiếp
+          đến đối tượng thực hoặc có thể cung cấp logic bổ sung. Trong proxy, chức năng
+          bổ sung có thể được cung cấp, ví dụ như bộ đệm ẩn khi các hoạt động trên đối
+          tượng thực sự tốn nhiều tài nguyên hoặc kiểm tra các điều kiện tiên quyết
+          trước khi các hoạt động trên đối tượng thực được gọi. Đối với máy khách, việc
+          sử dụng một đối tượng proxy tương tự như sử dụng đối tượng thực, bởi vì cả
+          hai đều thực hiện cùng một giao diện.'
+      protection_proxy:
+        title: Proxy bảo vệ
+        description: Proxy bảo vệ. Bạn đang làm việc trên một MNC? Nếu vậy, chúng tôi
+          có thể nhận thức rõ máy chủ proxy cung cấp cho chúng tôi internet bằng cách
+          hạn chế quyền truy cập vào một số loại trang web như e-mail công cộng, mạng
+          xã hội, lưu trữ dữ liệu, v.v. chỉ cung cấp các trang web liên quan đến công
+          việc. Máy chủ proxy thực hiện công việc đó. Đây là một kiểu mẫu thiết kế proxy
+      virtual_proxy:
+        title: Proxy ảo
+        description: Proxy ảo. Thay cho một vật thể phức tạp hoặc nặng, sử dụng một
+          bộ xương đại diện. Khi một hình ảnh cơ bản có kích thước rất lớn, chỉ cần
+          thể hiện nó bằng cách sử dụng một đối tượng proxy ảo và theo yêu cầu tải đối
+          tượng thực. Bạn biết rằng đối tượng thực sự đắt đỏ về mặt khởi tạo và vì vậy
+          nếu không có nhu cầu thực sự, chúng ta sẽ không sử dụng đối tượng thực sự.
+          Cho đến khi có nhu cầu, chúng tôi sẽ sử dụng proxy ảo.
+      remote_proxy:
+        title: Proxy từ xa
+        description: Proxy từ xa. Trong giao tiếp đối tượng phân tán, một đối tượng
+          cục bộ đại diện cho một đối tượng ở xa (một đối tượng thuộc về một không gian
+          địa chỉ khác). Đối tượng cục bộ là proxy cho đối tượng từ xa và việc gọi phương
+          thức trên đối tượng cục bộ dẫn đến việc gọi phương thức từ xa trên đối tượng
+          từ xa. Hãy nghĩ về việc triển khai ATM, nó sẽ giữ các đối tượng proxy cho
+          thông tin ngân hàng tồn tại trong máy chủ từ xa.
+      not_covered:
+        title: 'Các mẫu không được bảo hiểm:'
+        callback: Gọi lại chú thích
+        bridge: Cầu
+        data_bus: Xe buýt dữ liệu
+        role: Đối tượng vai trò
+    behavioral:
+      title: Mẫu hành vi
+      description: Trong công nghệ phần mềm, các mẫu thiết kế hành vi là các mẫu thiết
+        kế xác định các mẫu giao tiếp phổ biến giữa các đối tượng và nhận ra các mẫu
+        này. Bằng cách làm như vậy, các mẫu này tăng tính linh hoạt trong việc thực
+        hiện giao tiếp này.
+      chain_of_responsobility:
+        title: Chuỗi mẫu trách nhiệm
+        description: Trong thiết kế hướng đối tượng, mẫu trách nhiệm chuỗi là mẫu thiết
+          kế bao gồm nguồn đối tượng lệnh và một loạt các đối tượng xử lý. Mỗi đối tượng
+          xử lý chứa logic xác định các loại đối tượng lệnh mà nó có thể xử lý; phần
+          còn lại được truyền cho đối tượng xử lý tiếp theo trong chuỗi. Một cơ chế
+          cũng tồn tại để thêm các đối tượng xử lý mới vào cuối chuỗi này.
+      command:
+        title: Mẫu lệnh
+        description: Mẫu lệnh là một mẫu thiết kế hành vi được sử dụng để lưu trữ thông
+          tin cần thiết để gọi các phương thức tại một thời điểm trong tương lai. Lệnh
+          chỉ đơn thuần là một tập hợp các hành động được bọc trong một đối tượng. Với
+          ruby, chúng ta có thể sử dụng Procs để làm điều tương tự mà không cần phải
+          tạo một đối tượng riêng biệt. Đây là một tùy chọn tốt khi hành động đơn giản
+          và không yêu cầu lưu thông tin trạng thái, nếu không, lớp lệnh là tùy chọn
+          tốt hơn.
+      interpreter:
+        title: Mẫu phiên dịch
+        description: Trong lập trình máy tính, mẫu trình thông dịch là một mẫu thiết
+          kế chỉ định cách đánh giá các câu trong một ngôn ngữ. Ý tưởng cơ bản là có
+          một lớp cho mỗi ký hiệu (terminal hoặc nonterminal) bằng ngôn ngữ máy tính
+          chuyên dụng. Cây cú pháp của một câu trong ngôn ngữ là một thể hiện của mẫu
+          tổng hợp và được sử dụng để đánh giá (giải thích) câu cho khách hàng.
+      iterator:
+        title: Mô hình lặp
+        description: Mẫu thiết kế iterator cung cấp truy cập tuần tự đến các phần tử
+          trong một container mà không tiết lộ cách container thực sự đại diện cho các
+          phần tử. Trình lặp có thể được coi là một con trỏ di động cho phép truy cập
+          vào các phần tử được gói gọn trong một thùng chứa.
+      external_iterator:
+        title: Mẫu lặp bên ngoài
+        description: 'Trình lặp ngoài: Logic lặp được chứa trong một lớp riêng. Lớp
+          lặp có thể được tổng quát hóa để xử lý nhiều loại đối tượng miễn là chúng
+          cho phép lập chỉ mục. Nó yêu cầu lớp bổ sung thực hiện phép lặp thực tế, nhưng
+          chúng cho phép linh hoạt hơn vì bạn có thể điều khiển phép lặp, phần tử nào
+          được lặp lại theo thứ tự.'
+      internal_iterator:
+        title: Mẫu lặp nội bộ
+        description: 'Internal iterator: tất cả logic lặp xảy ra bên trong đối tượng
+          tổng hợp. Sử dụng một khối mã để chuyển logic của bạn vào tổng hợp, sau đó
+          gọi khối cho từng thành phần của nó.'
+      mediator:
+        title: Mẫu hòa giải
+        description: Thông thường một chương trình được tạo thành từ một số lượng lớn
+          các lớp. Vì vậy, logic và tính toán được phân phối giữa các lớp này. Tuy nhiên,
+          khi nhiều lớp được phát triển trong một chương trình, đặc biệt là trong quá
+          trình bảo trì và / hoặc tái cấu trúc, vấn đề giao tiếp giữa các lớp này có
+          thể trở nên phức tạp hơn. Điều này làm cho chương trình khó đọc và duy trì
+          hơn. Hơn nữa, nó có thể trở nên khó khăn để thay đổi chương trình, vì bất
+          kỳ thay đổi nào cũng có thể ảnh hưởng đến mã trong một số lớp khác. Với mẫu
+          hòa giải, giao tiếp giữa các đối tượng được gói gọn với một đối tượng hòa
+          giải. Các đối tượng không còn giao tiếp trực tiếp với nhau, mà thay vào đó
+          giao tiếp thông qua hòa giải viên. Điều này làm giảm sự phụ thuộc giữa các
+          đối tượng giao tiếp, do đó làm giảm khớp nối.
+      momento:
+        title: Khoảnh khắc của mẫu
+        description: 'Mô hình mô hình được thực hiện với ba đối tượng: người khởi tạo,
+          người chăm sóc và mô hình. Người khởi tạo là một số đối tượng có trạng thái
+          bên trong. Người chăm sóc sẽ làm một cái gì đó cho người khởi tạo, nhưng muốn
+          có thể hoàn tác thay đổi. Người chăm sóc đầu tiên yêu cầu người khởi tạo cho
+          một đối tượng tạm thời. Sau đó, nó thực hiện bất kỳ hoạt động nào (hoặc chuỗi
+          hoạt động) mà nó sẽ làm. Để quay trở lại trạng thái trước các hoạt động, nó
+          trả về đối tượng tạm thời cho người khởi tạo. Bản thân đối tượng tạm thời
+          là một đối tượng mờ đục (một đối tượng mà người chăm sóc không thể, hoặc không
+          nên thay đổi). Khi sử dụng mẫu này, cần thận trọng nếu người khởi tạo có thể
+          thay đổi các đối tượng hoặc tài nguyên khác - mẫu mô hình hoạt động trên một
+          đối tượng.'
+      observer:
+        title: Mẫu quan sát
+        description: Mẫu quan sát là một mẫu thiết kế phần mềm trong đó một đối tượng,
+          được gọi là chủ thể, duy trì một danh sách những người phụ thuộc của nó, được
+          gọi là người quan sát và tự động thông báo cho họ về bất kỳ thay đổi trạng
+          thái nào, thường bằng cách gọi một trong các phương thức của họ. Nó chủ yếu
+          được sử dụng để thực hiện các hệ thống xử lý sự kiện phân tán. Mẫu Observer
+          cũng là một phần quan trọng trong mẫu kiến trúc mô hình bộ điều khiển (MVC)
+          quen thuộc của mô hình. Mẫu quan sát được triển khai trong nhiều thư viện
+          và hệ thống lập trình, bao gồm hầu hết tất cả các bộ công cụ GUI.
+      state:
+        title: Mẫu nhà nước
+        description: Mẫu trạng thái là một mẫu thiết kế phần mềm hành vi thực hiện một
+          máy trạng thái theo cách hướng đối tượng. Với mẫu trạng thái, một máy trạng
+          thái được triển khai bằng cách triển khai từng trạng thái riêng lẻ như là
+          một lớp dẫn xuất của giao diện mẫu trạng thái và thực hiện chuyển đổi trạng
+          thái bằng cách gọi các phương thức được xác định bởi siêu lớp của mẫu.
+      strategy:
+        title: Mô hình chiến lược
+        description: Chiến lược cho phép thuật toán thay đổi độc lập với các khách hàng
+          sử dụng nó. Chiến lược là một trong những mẫu được bao gồm trong cuốn sách
+          Các mẫu thiết kế có ảnh hưởng của Gamma et al. đã phổ biến khái niệm sử dụng
+          các mẫu để mô tả thiết kế phần mềm. Chẳng hạn, một lớp thực hiện xác nhận
+          dữ liệu đến có thể sử dụng mẫu chiến lược để chọn thuật toán xác thực dựa
+          trên loại dữ liệu, nguồn dữ liệu, lựa chọn của người dùng hoặc các yếu tố
+          phân biệt đối xử khác. Các yếu tố này không được biết đến cho từng trường
+          hợp cho đến thời gian chạy và có thể yêu cầu xác thực hoàn toàn khác nhau
+          để được thực hiện. Các chiến lược xác nhận, được gói gọn tách biệt với đối
+          tượng xác nhận, có thể được sử dụng bởi các đối tượng xác thực khác trong
+          các khu vực khác nhau của hệ thống (hoặc thậm chí các hệ thống khác nhau)
+          mà không cần sao chép mã.
+      template:
+        title: Mẫu phương thức mẫu
+        description: Trong lập trình hướng đối tượng, đầu tiên một lớp được tạo ra cung
+          cấp các bước cơ bản của thiết kế thuật toán. Các bước này được thực hiện bằng
+          các phương pháp trừu tượng. Sau đó, các lớp con thay đổi các phương thức trừu
+          tượng để thực hiện các hành động thực tế. Do đó, thuật toán chung được lưu
+          ở một nơi nhưng các bước cụ thể có thể được thay đổi bởi các lớp con.
+      visitor:
+        title: Mẫu khách
+        description: Trong lập trình hướng đối tượng và công nghệ phần mềm, mẫu thiết
+          kế của khách truy cập là một cách tách thuật toán khỏi cấu trúc đối tượng
+          mà nó vận hành. Một kết quả thực tế của sự tách biệt này là khả năng thêm
+          các hoạt động mới vào các cấu trúc đối tượng hiện có mà không sửa đổi các
+          cấu trúc đó. Đó là một cách để tuân theo nguyên tắc mở / đóng. Về bản chất,
+          khách truy cập cho phép một người thêm các hàm ảo mới vào một nhóm các lớp
+          mà không cần sửa đổi các lớp đó; thay vào đó, người ta tạo ra một lớp khách
+          truy cập thực hiện tất cả các chuyên môn phù hợp của hàm ảo. Khách truy cập
+          lấy tham chiếu thể hiện làm đầu vào và thực hiện mục tiêu thông qua công văn
+          kép.
+      not_covered:
+        title: 'Các mẫu không được bảo hiểm:'
+        hierarchical: Khách truy cập phân cấp
+      credits: 'Mã và bài viết được lấy từ các tài nguyên:'
+  functional_programming:
+    title: Lập trình chức năng
+    description: 'Sử dụng ngôn ngữ theo kiểu chức năng ngụ ý rằng bạn có quyền truy
+      cập vào một số tính năng chính được liệt kê bên dưới:'
+    axioms:
+      immutable: 'Các giá trị không thay đổi: một khi một biến số của người Viking được
+        thiết lập, nó không thể thay đổi. Trong Ruby, điều này có nghĩa là bạn thực
+        sự phải xử lý các biến như hằng số.'
+      side_effects: 'Không có tác dụng phụ: khi được thông qua một giá trị nhất định,
+        một hàm phải luôn trả về cùng một kết quả. Điều này đi đôi với việc có các giá
+        trị bất biến; một hàm không bao giờ có thể lấy một giá trị và thay đổi nó, vì
+        điều này sẽ gây ra hiệu ứng phụ là tiếp tuyến để trả về kết quả.'
+      pure_functions: 'Hàm bậc cao hơn: đây là các hàm cho phép các hàm làm đối số hoặc
+        sử dụng các hàm làm giá trị trả về. Đây được cho là một trong những tính năng
+        quan trọng nhất của bất kỳ ngôn ngữ chức năng nào.'
+      applying: 'Currying: được kích hoạt bởi các hàm bậc cao hơn, currying đang chuyển
+        đổi một hàm đưa nhiều đối số thành một hàm có một đối số. Điều này đi đôi với
+        ứng dụng hàm một phần, đó là chuyển đổi một hàm đa đối số thành một hàm có ít
+        đối số hơn so với ban đầu.'
+      recursion: 'Đệ quy: lặp bằng cách gọi một hàm từ bên trong chính nó. Khi bạn không
+        có quyền truy cập vào dữ liệu có thể thay đổi, đệ quy được sử dụng để xây dựng
+        và xây dựng chuỗi dữ liệu. Điều này là do looping không phải là một khái niệm
+        chức năng, vì nó yêu cầu các biến được truyền xung quanh để lưu trữ trạng thái
+        của vòng lặp tại một thời điểm nhất định.'
+      lazy: 'Đánh giá lười biếng, hoặc đánh giá chậm: trì hoãn xử lý các giá trị cho
+        đến thời điểm thực sự cần thiết. Ví dụ, nếu bạn có một số mã tạo danh sách các
+        số Fibonacci được bật đánh giá lười biếng, thì điều này thực sự sẽ không được
+        xử lý và tính toán cho đến khi một trong các giá trị trong kết quả được yêu
+        cầu bởi một hàm khác, chẳng hạn như đặt.'
+    pure_functions:
+      title: Hàm tinh khiết
+      description: Bạn có thể thấy rằng hàm này chỉ tính toán kết quả bằng cách sử dụng
+        các đối số của nó.
+    closures:
+      title: Đóng cửa
+      description: Lambda&#39;s cũng thi hành việc đóng cửa và vì vậy có thể giữ bối
+        cảnh của họ trên các đối tượng.
+    applying:
+      title: Áp dụng một phần và mang
+      description: Trước tiên chúng ta hãy hiểu hai ứng dụng chức năng khác nhau này
+        là gì. Ứng dụng hàm một phần đang gọi một hàm với một số đối số, để lấy lại
+        hàm sẽ lấy ít đối số đó hơn. Currying đang lấy một hàm có n đối số và tách nó
+        thành n hàm có một đối số.
+      proc: Để cung cấp cho bạn ý tưởng rõ ràng hơn về việc hai thứ này sẽ làm một chức
+        năng gì, hãy lấy một ví dụ Proc.
+      partial: Ứng dụng một phần của hàm này sẽ trả về, nếu chúng ta chuyển qua hai
+        đối số đầu tiên, các Procs lồng nhau sau đây.
+      curry: <span class="code-inline">.curry</span> trả lại một Proc. Nếu đối số arity
+        tùy chọn được đưa ra, nó sẽ xác định số lượng đối số. Một Proc curried nhận
+        được một số đối số. Nếu đủ số lượng đối số được cung cấp, nó sẽ chuyển các đối
+        số được cung cấp cho Proc ban đầu và trả về kết quả. Mặt khác, trả về một Proc
+        bị quấy rầy mà lấy phần còn lại của các đối số.
+  gotchas:
+    title: Gotchas
+    description1: Hầu hết những người mới bắt đầu với Ruby on Rails đều cảm thấy phấn
+      khích với khung công tác và bắt đầu tạo các ứng dụng mà không có bất kỳ kiến thức
+      nào về ngôn ngữ. Và đó là điều kỳ diệu của RoR.
+    description2: Tại một số điểm mọi thứ bắt đầu trở nên nghiêm trọng. Một số người
+      dành thời gian và nỗ lực để khám phá những bí mật bẩn thỉu của Ruby on Rails,
+      trong khi những người khác che đậy và trở thành nhà phát triển cấp cao với kiến
+      thức về ngôn ngữ gần như bằng không.
+    description3: Dù sao, sớm hay muộn, người mới bắt đầu hay lập trình viên có kinh
+      nghiệm, tất cả chúng ta đều gặp phải cái gọi là Ruby Gotchas - những thứ tinh
+      tế ngôn ngữ nhỏ ẩn khỏi trang web của chúng ta trong nhiều giờ gỡ lỗi.
+    description4: Dưới đây là danh sách các vấn đề phổ biến và sự tò mò của Ruby mà
+      các nhà phát triển nên biết. Đối với mỗi trường hợp, có một ví dụ về mã khó hiểu
+      và / hoặc dễ bị lỗi.
+    description5: Chúng kết hợp với các thực tiễn tốt, điều đó sẽ ngăn bạn mắc các lỗi
+      đơn giản (nhưng khó tìm) và đơn giản hóa cuộc sống của bạn (và người bảo trì mã
+      của bạn).
+    surprising:
+      title: Ruby có thể gây ngạc nhiên
+      description: Mặc dù &quot;được thiết kế để tối đa hóa hạnh phúc của lập trình
+        viên&quot;, nhưng với &quot;nguyên tắc ít bất ngờ nhất&quot;, Ruby vẫn có gotchas.
+        Bài thuyết trình này sẽ được tiến hành từ các gotchas tầm thường của newbie,
+        đến các gotchas cao cấp và khó hiểu hơn.
+    quotes:
+      title: Đừng trích dẫn tôi về điều này, nhưng ...
+      description: Nội suy chuỗi (bao gồm các ký tự đặc biệt như <span class="code-inline">\
+        n</span> ) không thành công với dấu ngoặc kép <span class="code-inline">&#39;đơn&#39;</span>
+        - nó yêu cầu dấu ngoặc kép <span class="code-inline">&quot;gấp đôi&quot;</span>
+        . Giống như trong hầu hết các ngôn ngữ có nội suy chuỗi. Để tránh nó sử dụng
+        gấp đôi bất cứ khi nào thực tế.
+    twue:
+      title: Đó là thứ hai! Đó là thứ hai!
+      description: 'Chỉ có hai điều là sai: <span class="code-inline">false</span> và
+        <span class="code-inline">nil</span> . Mọi thứ khác đều là sự thật, thậm chí
+        <span class="code-inline">0</span> (sai trong C), <span class="code-inline">&quot;&quot;</span>
+        (sai trong JS), <span class="code-inline">[]</span> , v.v.'
+    symbols_and_strings:
+      title: Treo anh ta trong hình nộm hoặc Chuỗi anh ta lên, một cách tượng trưng.
+      description: '<span class="code-inline">Symbol != String</span> . Ngay cả khi
+        giống nhau khi in. Hãy nhớ cái nào để sử dụng cho args. Lý tưởng nhất là lấy
+        một trong hai và sử dụng những gì một phương pháp mong đợi: &quot;Hãy tự do
+        trong những gì bạn chấp nhận và bảo thủ trong những gì bạn gửi.&quot; Luật Postel.'
+    string_or_nothing:
+      title: Chuỗi ... hoặc không có gì!
+    constants:
+      title: Hằng không
+      description: Chữ hoa ban đầu có nghĩa là hằng số, trong Ruby. Cố gắng thay đổi
+        một hằng số. Ooooh bạn nhận được một CẢNH BÁO! BFD. Ngay cả đóng băng cũng không
+        hoạt động cho Fixnums. Nó hoạt động cho các mảng (loại) và hầu hết các đối tượng
+        khác ... ông nói đã báo trước.
+    equals:
+      title: Một số bình đẳng hơn những người khác
+      description: <span class="code-inline">==</span> là cùng một giá trị thông thường,
+        <span class="code-inline">.eql?</span> là giá trị và lớp (1 là Fixnum, 1.0 là
+        Float), <span class="code-inline">.equal?</span> là cùng một đối tượng. Nó thực
+        sự nhiều hairier.
+    operations:
+      title: "&gt; ===! = ==!"
+      description: <span class="code-inline">===</span> là &quot;bình đẳng trường hợp&quot;,
+        như trong các báo cáo trường hợp. Một cái tên tốt hơn có thể là <span class="code-inline">.descripes?</span>
+        , hoặc quá tải <span class="code-inline">. bao gồm?</span> . Một lần nữa, nó
+        thực sự nhiều hairier; xem các tài liệu trên lớp Object. Lấy người từ các ngôn
+        ngữ trong đó <span class="code-inline">===</span> là danh tính đối tượng hoặc
+        cùng giá trị và lớp.
+    priority:
+      title: và! = &amp;&amp;, hoặc! = ||
+      description: '<span class="code-inline">&&</span> có mức độ ưu tiên cao
+        hơn <span class="code-inline">=</span>, vì vậy <span class="code-inline">x
+        = true && false</span> có nghĩa là <span class="code-inline">x = (true
+        && false)</span> và có mức độ ưu tiên thấp hơn, vì vậy <span class="code-inline">x
+        = true and false</span> có nghĩa là <span class="code-inline">(x = true) and false</span>
+        . Hướng dẫn về Phong cách Ruby: Sử dụng <span class="code-inline">&amp;&amp;,
+        ||</span> cho các biểu thức boolean <span class="code-inline">and, or</span>
+        cho luồng điều khiển.'
+    sensitive:
+      title: Đừng quá nhạy cảm!
+      description: Khoảng trắng vô cảm? KHÔNG LUÔN! Parser nghĩ rằng đó là một biểu
+        thức, như một đối số, nhưng <span class="code-inline">(1, 2)</span> không phải
+        là biểu thức Ruby hợp lệ! (Tất cả đều hoạt động tốt với 1 đối số).
+      usage: 'Với nhiều đối số: <br/> - Không có parens, không có vấn đề. <br/> - Cha
+        mẹ không có không gian, OK. <br/> - Parens và không gian, KHÔNG!'
+      methods: '<span class="code-inline">method / num</span> là một regex hoặc
+        chuỗi chưa được xử lý! Ruby nghĩ rằng bạn đang đưa ra một đối số cho phương
+        thức. Nguyên tắc chung: sử dụng khoảng trắng BALANCED; cả hai bên hoặc không.'
+      arguments: '<span class="code-inline">one -2</span> làm cho Ruby nghĩ rằng bạn
+        đang đưa ra một đối số <span class="code-inline">-2</span> cho phương thức một.
+        Tương tự cho <span class="code-inline">+2</span> hoặc thậm chí <span class="code-inline">*
+        2</span> . Một lần nữa: sử dụng khoảng trắng BALANCED, cả hai bên hoặc không.'
+      stubby: 'Lambdas &quot;Stabby&quot; (1.9+) Dấu ngoặc không gian tùy chọn trước
+        sau khi không có cha mẹ, OK. Không gian sau cha mẹ, OK. Một lần nữa, không gian
+        trước cha mẹ, KHÔNG! CẬP NHẬT: Đã sửa trong 2.0!'
+    onto:
+      title: Các yer @ lên!
+      description: 'Giá trị trần trụi trở thành một biến cục bộ tạm thời! Giải pháp:
+        hãy nhớ <span class="code-inline">@!</span> (Hoặc &quot;tự.&quot;. Hoặc sử dụng
+        <span class="code-inline">attr_writer, attr_accessor.)</span> Gets người từ
+        Java / C ++, không quá nhiều Python (trong đó nhu cầu &quot;tự.&quot; Quá).
+        &quot;Bạn tiếp tục sử dụng biến đó. Tôi không nghĩ nó có nghĩa như bạn nghĩ.&quot;
+        Không phải Inigo Montoya.'
+    variables:
+      title: Xem ra, đó là một @@!
+      description: Hãy nhìn những gì điền vào chỗ trống? Chúng tôi đã không thay đổi
+        <span class="code-inline">giá trị @@</span> của Parent trước khi kiểm tra nó,
+        cũng không phải của Child! Hay chúng ta đã làm? <span class="code-inline">Các
+        biến @@</span> được chia sẻ với các lớp con - không chỉ là chúng tồn tại mà
+        còn là các biến! Khai báo <span class="code-inline">giá trị @@</span> của trẻ
+        đã thay đổi Cha mẹ và bao gồm cả Cha mẹ đã thay đổi. Đó là @@!
+    initialize:
+      title: Với init (ialize) hoặc không có nó
+      description: Khởi tạo của cha mẹ chỉ chạy tự động nếu trẻ không có. Khác, cha
+        mẹ phải được gọi để chạy.
+    superman:
+      title: Siêu nhân so với người vô hình
+      description: '<span class="code-inline">super</span> với không-arg danh sách gửi
+        những gì người gọi có <span class="code-inline">super</span> với args rõ ràng
+        gửi những args để gửi NO args, sử dụng dấu ngoặc rỗng: <span class="code-inline">super()</span>.'
+    regexp:
+      title: Khi nào nó sẽ kết thúc? (Hoặc bắt đầu?)
+      description: 'Trong regexps tiêu chuẩn: <span class="code-inlne">^</span> là bắt
+        đầu và <span class="code-inline">$</span> là kết thúc của toàn bộ chuỗi. Các
+        biểu thức của Ruby mặc định là đa dòng, vì vậy: <span class="code-inline">^</span>
+        là bắt đầu và <span class="code-inline">$</span> là kết thúc của bất kỳ dòng
+        nào! <span class="code-inline">\ A</span> là bắt đầu và <span class="code-inline">\
+        Z</span> là kết thúc của toàn bộ chuỗi. (Hoặc \ z để bao gồm bất kỳ dòng mới
+        nào là một gotcha khác!)'
+    any:
+      title: nhận được .any?
+      description: '<span class="code-inline">.any?</span> không có nghĩa là &quot;bất
+        kỳ yếu tố nào?&quot;! Với khối: &quot;có làm cho khối đúng không?&quot;. Không
+        có: &quot;có sự thật nào không?&quot; Có khối ẩn: <span class="code-inline">{ |element| element }</span> .'
+    undef:
+      title: "(Un) Def Leppard"
+      description: 'Các biến được khai báo trong các khối được truyền cho các vòng lặp
+        (ví dụ: thời gian hoặc mỗi lần) không được xác định ở đầu mỗi lần lặp! Các vòng
+        lặp gọi khối liên tục, vì vậy các vars lại nằm ngoài phạm vi sau mỗi cuộc gọi.
+        Các cấu trúc vòng lặp tích hợp (ví dụ: while hoặc for) đều ổn. (Hoặc khai báo
+        vars trước khối.)'
+    freeze:
+      title: Tia đóng băng (Ar)
+      description: Đóng băng một mảng (hoặc băm) đóng băng nó, không phải các mục mà
+        nó chứa. Chuỗi có thể được sửa đổi tại chỗ. Bằng cách này, bạn có thể sửa đổi
+        một vị trí nhất định trong Mảng Chuỗi bị đóng băng.
+    one_is_one:
+      title: 1 là 1 và và hơn thế nữa sẽ là như vậy!
+      description: 'Thay đổi Fixnum thành giá trị mới có nghĩa là một đối tượng mới.
+        Chúng không thể được sửa đổi tại chỗ! Vì vậy, không thể sửa đổi một mảng Fixnums
+        bị đóng băng. (Fixnums và Integers không có phương pháp bang để thử demo). BTW:
+        <span class="code-inline">object_id</span> của Fixnum là <span class="code-inline">value * 2 + 1</span>'
+    bang:
+      title: "(đến! ||! đến!) ==?"
+      description: Bang đánh dấu phương pháp là nguy hiểm. Tại sao? Thông thường, có
+        thể sửa đổi máy thu, so với phiên bản không đập không sửa đổi. ĐỪNG LIÊN QUAN
+        ĐẾN GIÁ TRỊ CÙNG TRẢ LẠI NHƯ VERSION KHÔNG! Nhiều người trở về nếu không cần
+        thay đổi!
+    array:
+      title: Một mảng của Gotchas mới
+      description: Giá trị mặc định được cung cấp dưới dạng đối tượng là cùng một đối
+        tượng cho mỗi vị trí! Đột biến một đột biến mặc định cho tất cả. Giá trị ban
+        đầu được đưa ra dưới dạng khối được đánh giá riêng cho từng vị trí. Sử dụng
+        này để tạo ra các bình mới cho mỗi.
+    hash:
+      title: Tạo một Hash của nó
+      description: 'Chủ yếu là cùng một vấn đề (và giải pháp) như Mảng. GOTCHAS THÊM:
+        tạo một đối tượng mới trên bất kỳ quyền truy cập vào khe trống! Có thể tạo ra
+        quá nhiều đối tượng mới; hủy hoại kiểm tra nội dung &quot;thực&quot; hoặc đếm
+        (không kiểm tra, kích thước, v.v.).'
+    rescue:
+      title: Cứu tôi, ném dây, tôi sẽ cố bắt nó!
+      description: Trong Ruby, ném và bắt KHÔNG phải là ngoại lệ! Chúng là kiểm soát
+        dòng chảy tiên tiến, để thoát khỏi làm tổ sâu. Ruby sử dụng tăng và cứu cho
+        các trường hợp ngoại lệ.
+    to_str:
+      title: to_s VS to_str
+      description: '<span class="code-inline">to_s</span> được định nghĩa trên mọi đối
+        tượng và sẽ luôn trả về một cái gì đó. <span class="code-inline">to_str</span>
+        chỉ được định nghĩa trên các đối tượng giống như chuỗi. Ví dụ: <span class="code-inline">Symbol</span>
+        có <span class="code-inline">to_str</span> nhưng <span class="code-inline">Array</span>
+        thì không. Vì vậy, bạn có thể sử dụng <span class="code-inline">obj.respond_to?(:to_str)?</span> Thay vì một cái gì đó giống
+        như <span class="code-inline">obj.is_a?(String)</span> nếu bạn muốn tận dụng
+        gõ vịt mà không lo lắng về việc liệu các lớp học mà bạn đang làm việc với là
+        một lớp con của <span class="code-inline">String</span> hay không phải.'
+    missing:
+      title: Cần phối hợp phương thức_missing và respons_to_missing?
+      description: 'Khi ghi đè phương <span class="code-inline">method_missing</span>
+        , hãy nhớ ghi đè <span class="code-inline">respond_to_missing?</span> cũng. Khi
+        bạn sử dụng phương thức_missing để có một đối tượng trả về một cái gì đó trong
+        lệnh gọi phương thức, luôn đảm bảo rằng bạn cũng xác định lại answer_to_missing?.
+        Nếu bạn không làm điều đó, sẽ không có gì phá vỡ ngay từ cái nhìn đầu tiên,
+        nhưng cuối cùng bạn sẽ gặp rắc rối. Hãy xem xét lớp này:'
+      respond_to: 'Rất nhiều mã (đá quý hoặc của riêng bạn) dựa vào answer_to? (vì một
+        mục đích tốt). Bạn có cần vá respons_to_missing không? cũng:'
+    exception:
+      title: giải cứu khỏi StandardError, không phải là Ngoại lệ
+      description: 'Đừng giải cứu Ngoại lệ, giải cứu StandardError Trước khi giải cứu
+        hoàn toàn Ngoại lệ sẽ cứu ngay cả những lỗi không thể phục hồi thông thường
+        như SyntaxError, LoadError và Interrupt. Nếu bạn bỏ qua vòng loại Loại ngoại
+        lệ, thì Ruby sẽ chỉ bắt StandardError, đây có thể là điều bạn muốn:'
+    private:
+      title: Dữ liệu riêng tư không thực sự và không phải là phương thức w / class
+      description: Có một cách để làm cho các phương thức lớp trở nên riêng tư trong
+        Ruby, bạn chỉ cần nhảy qua vài vòng. Err, ý tôi là sử dụng <span class="code-inline">class << self</span>
+        cú pháp . Sự kỳ quặc này
+        đẩy một cá thể đơn lẻ vào lớp tạo hiệu quả các phương thức lớp.
+    braces:
+      title: Niềng răng so với kết thúc
+      description: Quy ước chung là sử dụng <span class="code-inline">do .. end</span>
+        cho các khối nhiều dòng và dấu ngoặc nhọn cho các khối dòng đơn, nhưng cũng
+        có một sự khác biệt giữa hai khối có thể được minh họa. Điều này có nghĩa là
+        <span class="code-inline">{}</span> có quyền ưu tiên cao hơn so với <span class="code-inline">do .. end</span>,
+        vì vậy hãy ghi nhớ điều đó khi quyết định những gì bạn muốn sử
+        dụng.
+    module:
+      title: 'class Foo :: Bar, được xác định bên ngoài Module Foo, sẽ không thấy bên
+        trong Foo'
+      description: Bạn có thể nghĩ về mỗi lần xuất hiện của <span class="code-inline">module Something</span>,
+        <span class="code-inline">class Something</span> hoặc
+        <span class="code-inline">def something</span> như là một &quot;cổng&quot;
+        vào một phạm vi mới. Khi Ruby đang tìm kiếm định nghĩa của một tên đã được tham
+        chiếu, đầu tiên nó sẽ tìm trong phạm vi hiện tại (phương thức, lớp hoặc mô-đun)
+        và nếu nó không được tìm thấy thì nó sẽ quay trở lại qua mỗi &quot;gateway&quot;
+        và tìm kiếm phạm vi đó.
+    credits: 'Mã và bài viết được lấy từ các tài nguyên:'
+  meta_programming:
+    title: Lập trình siêu dữ liệu
+    description: Metaprogramming là việc viết các chương trình máy tính viết hoặc thao
+      tác các chương trình khác (hoặc chính chúng) làm dữ liệu của chúng hoặc là một
+      phần của công việc trong thời gian biên dịch mà nếu không sẽ được thực hiện trong
+      thời gian chạy. Trong nhiều trường hợp, điều này cho phép các lập trình viên hoàn
+      thành nhiều công việc hơn trong cùng một khoảng thời gian như họ sẽ viết tất cả
+      mã theo cách thủ công hoặc giúp chương trình linh hoạt hơn để xử lý hiệu quả các
+      tình huống mới mà không cần biên dịch lại. Metaprogramming là viết mã viết mã
+      trong thời gian chạy để làm cho cuộc sống của bạn dễ dàng hơn.
+    dynamic_dispatch:
+      title: Công văn năng động
+      description: Cho phép chúng tôi gửi tin nhắn <span class="code-inline">topic.public_send
+        (tin nhắn, * đối số)</span>
+    dynamic_method:
+      title: Phương pháp động
+      description: 'Cho phép chúng tôi tự động tạo các phương thức <span class="code-inline">notify_method:
+        method_name {block trở thành thân phương thức}</span>'
+    ghost_methods:
+      title: Phương pháp ma
+      description: Bắt &quot;Phương thức ma&quot; và chuyển tiếp chúng sang phương thức
+        khác trong khi có thể thêm logic xung quanh cuộc gọi. Sử dụng phương <span class="code-inline">thức_missing</span>
+    dynamic_proxies:
+      title: Proxy động
+      description: 'Ví dụ: Bạn có thể cung cấp các phương thức tưởng tượng bằng cách
+        sử dụng phương <span class="code-inline">thức_missing</span> để phân tích thông
+        điệp đến (ví dụ <span class="code-inline">get_name</span> , <span class="code-inline">get_age</span>
+        ) và ủy thác cho một phương thức khác như <span class="code-inline">get (: data_type)</span>
+        trong đó <span class="code-inline">: data_type</span> là <span class="code-inline">:
+        name</span> hoặc <span class="code-inline">: age</span> .'
+      more: Nếu (sau khi phân tích) bạn phát hiện ra vấn đề về hiệu năng khi sử dụng
+        phương <span class="code-inline">thức_missing,</span> bạn có thể sử dụng kỹ
+        thuật &quot;Phương thức động&quot; để tạo một phương thức thực sau khi nhận
+        được thông báo của `method_missing`.
+  solid_principles:
+    good: Tốt
+    bad: Xấu!
+    title: Nguyên tắc vững chắc
+    description: Trong lập trình máy tính, RẮN (trách nhiệm duy nhất, đóng mở, thay
+      thế Liskov, phân tách giao diện và đảo ngược phụ thuộc) là từ viết tắt được Michael
+      Feathers giới thiệu cho &quot;Năm nguyên tắc đầu tiên&quot; được đặt tên bởi Robert
+      C. Martin vào đầu những năm 2000 cho năm nguyên tắc cơ bản của lập trình và thiết
+      kế hướng đối tượng. Ý định là những nguyên tắc này, khi được áp dụng cùng nhau,
+      sẽ khiến cho một lập trình viên sẽ tạo ra một hệ thống dễ bảo trì và kéo dài theo
+      thời gian. Các nguyên tắc của RẮN là các hướng dẫn có thể được áp dụng trong khi
+      làm việc trên phần mềm để loại bỏ mùi mã bằng cách khiến lập trình viên cấu trúc
+      lại mã nguồn của phần mềm cho đến khi cả hai đều dễ đọc và có thể mở rộng. Nó
+      là một phần của chiến lược tổng thể về Phát triển phần mềm thích ứng và nhanh
+      nhẹn.
+    single:
+      title: Nguyên tắc trách nhiệm duy nhất
+      description: Nguyên tắc trách nhiệm duy nhất là trừu tượng nhất của bó. Nó giúp
+        giữ cho các lớp và phương thức nhỏ và có thể duy trì. Ngoài việc giữ cho các
+        lớp học nhỏ và tập trung, nó cũng giúp họ dễ hiểu hơn. Một ví dụ về điều này
+        có thể là thêm hỗ trợ để gửi một bản tóm tắt email về hoa hồng của một người
+        cụ thể sau khi đánh dấu một thỏa thuận. Thực tế là chúng ta có thể xác định
+        nhiều lý do để thay đổi tín hiệu vi phạm Nguyên tắc Trách nhiệm duy nhất.
+    open_close:
+      title: Nguyên tắc mở / đóng
+      description: Nguyên tắc mở / đóng nói rằng các lớp hoặc phương thức nên được mở
+        để mở rộng, nhưng đóng để sửa đổi. Điều này cho chúng ta biết chúng ta nên cố
+        gắng thiết kế mô-đun để chúng ta có thể thay đổi hành vi của hệ thống mà không
+        cần sửa đổi các lớp. Điều này thường đạt được thông qua việc sử dụng các mẫu
+        như mẫu chiến lược.
+      after: Với việc tái cấu trúc này, chúng tôi đã có thể thêm các trình phân tích
+        cú pháp mới mà không thay đổi bất kỳ mã nào. Bất kỳ hành vi bổ sung sẽ chỉ yêu
+        cầu bổ sung một trình xử lý mới. Điều này làm cho FileParser của chúng tôi có
+        thể sử dụng lại và trong nhiều trường hợp sẽ giữ cho chúng tôi tuân thủ Nguyên
+        tắc Trách nhiệm duy nhất cũng như bằng cách khuyến khích chúng tôi tạo các lớp
+        tập trung nhỏ hơn.
+    liskov:
+      title: Nguyên tắc thay thế của Liskov
+      description: Nguyên tắc của Liskov có xu hướng khó hiểu nhất. Nguyên tắc nói rằng
+        bạn sẽ có thể thay thế bất kỳ trường hợp nào của lớp cha mẹ bằng một thể hiện
+        của một trong các con của nó mà không tạo ra bất kỳ hành vi bất ngờ hoặc không
+        chính xác nào.
+    segregation:
+      title: Nguyên tắc đảo ngược phụ thuộc
+      description: 'Nguyên tắc nói rằng khách hàng không nên bị buộc phải phụ thuộc
+        vào các phương thức mà nó không sử dụng. Trong ví dụ này, có các lớp Máy tính,
+        Lập trình viên và Kỹ thuật viên. Cả Lập trình viên và Kỹ thuật viên đều sử dụng
+        Máy tính theo một cách khác. Lập trình viên sử dụng máy tính để gõ, nhưng kỹ
+        thuật viên biết cách thay đổi ổ cứng máy tính. Nguyên tắc phân chia giao diện
+        (ISP) thực thi là một lớp không nên phụ thuộc vào các phương thức mà nó không
+        sử dụng. Trong trường hợp của chúng tôi, Lập trình viên được ghép nối một cách
+        không cần thiết với phương thức Máy tính # change_hard_drive vì nó không sử
+        dụng nó, nhưng các thay đổi trạng thái mà phương thức này thi hành có thể ảnh
+        hưởng đến Lập trình viên. Hãy cấu trúc lại mã để tuân theo LSP.'
+      after: Sau khi cấu trúc lại này, Kỹ thuật viên sử dụng một đối tượng khác với
+        loại ComputerIternals được cách ly với trạng thái của Máy tính. Trạng thái của
+        đối tượng Máy tính có thể bị ảnh hưởng bởi Lập trình viên nhưng những thay đổi
+        sẽ không ảnh hưởng đến Kỹ thuật viên theo bất kỳ cách nào.
+    di:
+      title: Nguyên tắc đảo ngược phụ thuộc
+      description: Nguyên tắc đảo ngược phụ thuộc phải thực hiện với các đối tượng mức
+        cao (nghĩ logic kinh doanh) không phụ thuộc vào chi tiết triển khai (nghĩ truy
+        vấn cơ sở dữ liệu và IO) cấp thấp. Điều này có thể đạt được với việc gõ vịt
+        và Nguyên tắc đảo ngược phụ thuộc. Thông thường mẫu này được sử dụng để đạt
+        được Nguyên tắc Mở / Đóng mà chúng ta đã thảo luận ở trên. Trên thực tế, chúng
+        ta thậm chí có thể sử dụng lại ví dụ tương tự như một minh chứng cho nguyên
+        tắc này. Bây giờ có một lớp định dạng, nhưng tôi đã mã hóa nó trên lớp Báo cáo,
+        do đó tạo ra sự phụ thuộc từ Báo cáo vào JSONFormatter. Vì Báo cáo là một khái
+        niệm trừu tượng (mức cao) hơn so với JSONFormatter, nên chúng tôi thực sự phá
+        vỡ DIP.
+      after: Theo cách này, Báo cáo không phụ thuộc vào JSONFormatter và có thể sử dụng
+        bất kỳ loại trình định dạng nào có phương thức gọi là định dạng (cái này được
+        gọi là gõ vịt). Một điều lưu ý nữa là chúng tôi đã sử dụng, một lần nữa, tiêm
+        phụ thuộc để giải quyết vấn đề. Kỹ thuật này rất mạnh khi mục tiêu của chúng
+        tôi là tách các đối tượng và mặc dù nó có cùng tên viết tắt với nguyên tắc đảo
+        ngược phụ thuộc (so với mô hình tiêm phụ thuộc), chúng là các khái niệm hoàn
+        toàn khác nhau.
+  threads:
+    example: Thí dụ
+    title: Chủ đề
+    description: 'Lưu ý về tính song song và đồng thời: Sự khác biệt chính giữa việc
+      sử dụng các quy trình so với các luồng là cách xử lý bộ nhớ. Ở mức cao, xử lý
+      sao chép bộ nhớ, trong khi các luồng chia sẻ bộ nhớ. Điều này làm cho quá trình
+      sinh sản chậm hơn so với sinh sản luồng và dẫn đến các quy trình tiêu tốn nhiều
+      tài nguyên hơn một khi chạy. Nhìn chung, các chủ đề phát sinh ít chi phí hơn các
+      quy trình. API chủ đề này là API Ruby. Tôi đã gợi ý rằng các triển khai Ruby khác
+      nhau có các hành vi phân luồng cơ bản khác nhau.'
+    green:
+      title: Chủ đề xanh
+      description: Ruby 1.9 thay thế các chủ đề xanh bằng các chủ đề gốc. Tuy nhiên,
+        GIL vẫn đang ngăn chặn sự song song. Điều đó đang được nói, đồng thời đã được
+        cải thiện thông qua lập kế hoạch tốt hơn. Lịch trình mới làm cho các quyết định
+        chuyển đổi ngữ cảnh hiệu quả hơn, bằng cách di chuyển chúng sang một luồng riêng,
+        được gọi là luồng hẹn giờ.
+    gil:
+      title: GIL - Khóa phiên dịch toàn cầu
+      description: MRI có khóa thông dịch toàn cầu (GIL). Đó là một khóa xung quanh
+        việc thực thi mã Ruby. Điều này có nghĩa là trong ngữ cảnh đa luồng, chỉ một
+        luồng có thể thực thi mã Ruby bất kỳ lúc nào. Vì vậy, nếu bạn có 8 luồng làm
+        việc bận rộn trên máy 8 lõi, chỉ một luồng và một lõi sẽ bận rộn vào bất kỳ
+        thời điểm nào . GIL tồn tại để bảo vệ nội bộ Ruby khỏi các điều kiện chủng tộc
+        có thể làm hỏng dữ liệu. Có những cảnh báo và tối ưu hóa, nhưng đây là ý chính.
+      example: Thực tế đơn giản này là những gì làm cho các chủ đề rất mạnh mẽ, và cũng
+        là những gì làm cho chúng khó làm việc với. Tôi đã cho bạn một ý tưởng về lý
+        do tại sao các chủ đề là tốt; đây là một chương trình đơn giản để minh họa cho
+        khó khăn của họ. Ở đây bạn có thể thấy rằng chúng ta có <span class="code-inline">10
+        * 10000</span> phần tử trong mảng. Lưu ý rằng ruby khác nhau có thể hiển thị
+        một kết quả khác nhau. GIL chỉ tồn tại trong ruby MRI.
+    mutex:
+      title: Mutex - Thi hành lẫn nhau
+      description: Mutexes cung cấp một cơ chế cho nhiều luồng để đồng bộ hóa quyền
+        truy cập vào một phần quan trọng của mã. Nói cách khác, chúng giúp mang lại
+        một số trật tự và một số đảm bảo cho thế giới của sự hỗn loạn đa luồng. Tên
+        &#39;mutex&#39; là viết tắt của &#39;loại trừ lẫn nhau&#39;. Nếu bạn bọc một
+        số phần của mã của mình bằng một mutex, bạn đảm bảo rằng không có hai luồng
+        nào có thể nhập vào phần đó cùng một lúc. Mutexes cung cấp một cơ chế cho nhiều
+        luồng để đồng bộ hóa quyền truy cập vào một phần quan trọng của mã. Nó giúp
+        mang lại một số trật tự và một số đảm bảo cho thế giới của sự hỗn loạn đa luồng.
+      example: Trong chương trình này, vì bất kỳ luồng nào cũng phải khóa mutex trước
+        khi nó có thể chuyển sang Array, nên có một đảm bảo rằng không có hai luồng
+        nào sẽ thực hiện thao tác này cùng một lúc. Nói cách khác, thao tác này không
+        còn có thể bị gián đoạn trước khi hoàn thành. Khi một luồng bắt đầu đẩy vào
+        Mảng, sẽ không có luồng nào khác có thể nhập phần mã đó cho đến khi luồng đầu
+        tiên kết thúc. Hoạt động này bây giờ là an toàn chủ đề. Ở đây bạn có thể thấy
+        rằng chúng ta có <span class="code-inline">10 * 10000</span> phần tử trong mảng.
+        Bây giờ tất cả đều giống nhau, vì sự đột biến. Các mutex thiết lập cùng một
+        ranh giới cho chủ đề. Chuỗi đầu tiên chạm vào đoạn mã này sẽ khóa mutex. sau
+        đó nó trở thành chủ sở hữu của mutex đó. Cho đến khi chủ đề sở hữu mở khóa mutex,
+        không có chủ đề nào khác có thể khóa nó.
+    fibers:
+      title: Xơ
+      description: Sợi là nguyên thủy để thực hiện đồng thời hợp tác trọng lượng nhẹ
+        trong Ruby. Về cơ bản, chúng là một phương tiện tạo các khối mã có thể được
+        tạm dừng và tiếp tục, giống như các luồng. Sự khác biệt chính là chúng không
+        bao giờ được ưu tiên và việc lập lịch phải được thực hiện bởi lập trình viên
+        chứ không phải VM. Trái ngược với các mô hình tương tranh nhẹ không chồng khác,
+        mỗi sợi đi kèm với một ngăn xếp 4KB nhỏ. Điều này cho phép tạm dừng sợi từ các
+        lệnh gọi hàm được lồng sâu trong khối sợi.
+    rails:
+      title: Rails chủ đề an toàn
+      description: Vấn đề với điều này là không có cách nào đơn giản để nói một cách
+        chắc chắn tuyệt đối cho dù một ứng dụng nói chung có an toàn cho chuỗi hay không.
+      global_variables: Biến toàn cầu là toàn cầu. Điều này có nghĩa là chúng được chia
+        sẻ giữa các chủ đề. Nếu bây giờ bạn chưa bị thuyết phục về việc không sử dụng
+        các biến toàn cục, thì đây là một lý do khác để không bao giờ chạm vào chúng.
+        Nếu bạn thực sự muốn chia sẻ một cái gì đó trên toàn cầu trên một ứng dụng,
+        thì nhiều khả năng bạn sẽ được phục vụ tốt hơn bởi một hằng số (nhưng xem bên
+        dưới), dù sao đi nữa.
+      class_variables: Biến lớp. Với mục đích thảo luận về các chủ đề, các biến lớp
+        không khác nhiều so với các biến toàn cục. Chúng được chia sẻ trên các luồng
+        theo cùng một cách. Vấn đề không phải là quá nhiều về việc sử dụng các biến
+        lớp, mà là về việc biến đổi chúng. Và nếu bạn sẽ không biến đổi một biến lớp,
+        trong nhiều trường hợp, một hằng số lại là một lựa chọn tốt hơn.
+      instance_variables: Các biến thể hiện của lớp. Nhưng có lẽ bạn đã đọc rằng bạn
+        nên luôn sử dụng các biến thể hiện của lớp thay vì các biến lớp trong Ruby.
+        Vâng, có lẽ bạn nên, nhưng chúng chỉ gây rắc rối cho các chương trình luồng
+        như các biến lớp.
+      memoization: 'Ghi nhớ tự nó không phải là một vấn đề an toàn chủ đề. Nó thường
+        được sử dụng để lưu trữ dữ liệu trong các biến lớp hoặc biến thể hiện của lớp
+        (xem các điểm trước đó). Toán tử <span class="code-inline">|| =</span> trên
+        thực tế là hai thao tác, do đó, có một chuyển đổi ngữ cảnh tiềm năng xảy ra
+        ở giữa nó, gây ra tình trạng chạy đua giữa các luồng. Vì vậy, mặc dù bạn sẽ
+        chỉ sử dụng các biến thể hiện, bạn có thể kết thúc với các điều kiện cuộc đua
+        với việc ghi nhớ. Không ghi nhớ các biến lớp hoặc biến thể hiện của lớp. Nếu
+        bạn cần ghi nhớ một cái gì đó ở cấp độ lớp, hãy sử dụng các biến cục bộ của
+        luồng (<span class="code-inline">Thread.current[:baz]</span>) để thay thế. Mặc
+        dù vậy, hãy lưu ý rằng nó vẫn là một loại biến toàn cầu.'
+    config:
+      title: Cấu hình chủ đề an toàn!?
+      description: Gọi phương thức này đặt bốn tùy chọn trong cấu hình ứng dụng của
+        chúng tôi. Chúng ta hãy đi qua từng lựa chọn và nói về những gì nó làm.
+      frameworks: 'Khung tải trước: Tùy chọn đầu tiên @preload_frameworks thực hiện
+        khá nhiều những gì nó nói, nó buộc khung Rails được tải một cách háo hức khi
+        khởi động. Khi tùy chọn này không được bật, các lớp khung được tải một cách
+        lười biếng thông qua tự động tải. Trong môi trường đa luồng, khung cần phải
+        được tải một cách háo hức trước khi bất kỳ luồng nào được tạo vì các vấn đề
+        an toàn của luồng với tự động tải. Chúng tôi biết rằng việc tải khung không
+        phải là luồng an toàn, vì vậy chiến lược là tải tất cả lên trước khi bất kỳ
+        luồng nào sẵn sàng xử lý các yêu cầu.'
+      cache: 'Các lớp bộ đệm: Tùy chọn @cache_groupes kiểm soát xem các lớp có được
+        tải lại hay không. Bạn có nhớ khi bạn đang thực hiện chương trình TDDD trong
+        ứng dụng của mình không? Bạn sửa đổi một bộ điều khiển, sau đó tải lại trang
+        để kiểm tra thử và xem mọi thứ đã thay đổi? Ya, đó là những gì tùy chọn này
+        kiểm soát. Khi tùy chọn này là sai, như trong quá trình phát triển, các lớp
+        của bạn sẽ được tải lại khi chúng được sửa đổi. Nếu không có tùy chọn này, chúng
+        tôi sẽ không thể thực hiện F5DD của chúng tôi (vâng, đó là F5 Phát triển theo
+        hướng). Trong sản xuất, chúng ta biết rằng các lớp sẽ không được sửa đổi một
+        cách nhanh chóng, do đó, việc thực hiện để tìm hiểu xem có nên tải lại các lớp
+        hay không chỉ là lãng phí tài nguyên, vì vậy sẽ không bao giờ tải lại các định
+        nghĩa lớp.'
+      di: 'Tải phụ thuộc: Tùy chọn này, @dependency_loading kiểm soát tải mã khi gặp
+        các hằng số bị thiếu. Ví dụ: bộ điều khiển tham chiếu mô hình Người dùng, nhưng
+        hằng số Người dùng không được xác định. Trong trường hợp đó, nếu @dependency_loading
+        là đúng, Rails sẽ tìm tệp chứa hằng số Người dùng và tải tệp đó. Chúng ta đã
+        nói về cách tải mã không phải là luồng an toàn, vì vậy ý tưởng ở đây là chúng
+        ta nên tải khung, sau đó tải tất cả mã người dùng, sau đó vô hiệu hóa tải phụ
+        thuộc. Khi tải phụ thuộc bị vô hiệu hóa, mã khung và mã ứng dụng sẽ được tải
+        và mọi hằng số bị thiếu sẽ chỉ đưa ra một ngoại lệ thay vì cố gắng tải mã. Chúng
+        tôi biện minh cho việc vô hiệu hóa tùy chọn này trong sản xuất vì (như đã đề
+        cập trước đó) tải mã không phải là luồng an toàn và chúng tôi hy vọng sẽ tải
+        tất cả mã trước khi bất kỳ luồng nào có thể xử lý các yêu cầu.'
+      concurrency: 'Cho phép đồng thời: tùy chọn @allow_concurrency kiểm soát xem phần
+        mềm trung gian Rack :: Lock có được sử dụng trong ngăn xếp của bạn hay không.
+        Rack :: Lock kết thúc một mutex xung quanh yêu cầu của bạn. Ý tưởng là nếu bạn
+        có mã không phải là chủ đề an toàn, thì mutex này sẽ ngăn nhiều luồng thực thi
+        mã điều khiển của bạn cùng một lúc. Khi chủ đề an toàn! được thiết lập, phần
+        mềm trung gian này bị loại bỏ và mã điều khiển có thể được thực thi song song.'
+    credits: 'Mã và bài viết được lấy từ các tài nguyên:'
+  ruby_meister:
+    title: Trở thành Ruby Meister
+    description: Trong buổi nói chuyện này, chúng tôi sẽ kiểm tra hành trình dài từ
+      việc trở thành người mới của Ruby để đạt được thành thạo Ruby thực sự và sẽ cố
+      gắng rút ngắn nó một chút cho bạn bằng cách chia sẻ một số hiểu biết quan trọng.
+      Một Master Rubyist có một nền tảng lý thuyết tuyệt vời, dựa vào một hộp công cụ
+      rộng lớn, có hiểu biết sâu sắc về các giá trị và nguyên tắc cốt lõi của Ruby và
+      luôn luôn mài giũa kỹ năng của họ. Có lẽ bạn đang tự nói với bản thân mình &quot;Wow,
+      điều này khá mơ hồ!&quot;, Nhưng nếu bạn tham dự phiên này, tôi hứa rằng bạn sẽ
+      được giác ngộ, thích thú và bạn sẽ hoàn toàn thích nó! Nghe có vẻ tốt? Những cuốn
+      sách tuyệt vời sẽ là một phần của các tài nguyên mà tôi đề xuất cho mọi người
+      để nâng cao kỹ năng của họ.
+    video: Hành trình dài đến Ruby Mastery của Bozhidar Batsov.
+    computer_science_fundamentals:
+      title: Khoa học máy tính cơ bản
+      articles:
+        - name: inside_machine
+          title: 'Bên trong máy: Giới thiệu minh họa về Bộ vi xử lý và Kiến trúc máy
+            tính'
+          description: Máy tính thực hiện vô số nhiệm vụ từ kinh doanh quan trọng đến
+            giải trí, nhưng bất kể chúng có vẻ ngoài và hành xử khác nhau như thế nào,
+            chúng đều giống nhau một cách đáng kinh ngạc về chức năng cơ bản. Một khi
+            bạn hiểu được bộ vi xử lý của bộ vi xử lý hoặc bộ xử lý trung tâm (CPU),
+            bạn sẽ nắm vững các khái niệm cơ bản ở trung tâm của tất cả các máy tính
+            hiện đại.
+        - name: code
+          title: 'Mã: Ngôn ngữ ẩn của phần cứng và phần mềm máy tính'
+          description: Đèn pin, cuộc xâm lược của Anh, mèo đen và bập bênh phải làm
+            gì với máy tính? Trong CODE, họ chỉ cho chúng ta những cách khéo léo mà
+            chúng ta điều khiển ngôn ngữ và phát minh ra các phương tiện giao tiếp mới
+            với nhau. Và thông qua CODE, chúng ta thấy sự khéo léo và sự bắt buộc rất
+            con người của chúng ta trong giao tiếp đã thúc đẩy sự đổi mới công nghệ
+            trong hai thế kỷ qua.
+        - name: concrete_math
+          title: 'Toán học cụ thể: Một nền tảng cho khoa học máy tính'
+          description: Cuốn sách này giới thiệu toán học hỗ trợ lập trình máy tính tiên
+            tiến và phân tích các thuật toán. Mục đích chính của các tác giả nổi tiếng
+            của nó là cung cấp một nền tảng kỹ năng toán học vững chắc và phù hợp -
+            các kỹ năng cần thiết để giải quyết các vấn đề phức tạp, đánh giá các khoản
+            tiền khủng khiếp và khám phá các mẫu tinh tế trong dữ liệu. Đó là một văn
+            bản và tài liệu tham khảo không thể thiếu không chỉ cho các nhà khoa học
+            máy tính - chính các tác giả phụ thuộc rất nhiều vào nó! - nhưng đối với
+            những người sử dụng toán học nghiêm túc trong hầu hết mọi ngành học.
+        - name: sicp
+          title: Cấu trúc và giải thích các chương trình máy tính
+          description: 'Cấu trúc và giải thích các chương trình máy tính đã có tác động
+            mạnh mẽ đến chương trình giảng dạy khoa học máy tính trong thập kỷ qua.
+            Bản sửa đổi được chờ đợi từ lâu này chứa các thay đổi trong toàn bộ văn
+            bản. Có những triển khai mới của hầu hết các hệ thống lập trình chính trong
+            cuốn sách, bao gồm các thông dịch viên và người biên dịch, và các tác giả
+            đã kết hợp nhiều thay đổi nhỏ phản ánh kinh nghiệm giảng dạy khóa học của
+            họ tại MIT kể từ khi ấn bản đầu tiên được xuất bản. Một chủ đề mới đã được
+            giới thiệu nhấn mạnh vai trò trung tâm của các cách tiếp cận khác nhau để
+            xử lý thời gian trong các mô hình tính toán: các đối tượng với trạng thái,
+            lập trình đồng thời, lập trình chức năng và đánh giá lười biếng và lập trình
+            không điều kiện.'
+        - name: design_programms
+          title: 'Cách thiết kế chương trình: Giới thiệu về lập trình và tính toán'
+          description: Giới thiệu về lập trình này đặt khoa học máy tính vào cốt lõi
+            của một nền giáo dục nghệ thuật tự do. Không giống như các cuốn sách giới
+            thiệu khác, nó tập trung vào quá trình thiết kế chương trình. Cách tiếp
+            cận này thúc đẩy nhiều kỹ năng khác nhau, đọc quan trọng, tư duy phân tích,
+            tổng hợp sáng tạo và chú ý đến chi tiết quan trọng đối với mọi người, không
+            chỉ các lập trình viên máy tính trong tương lai. Cuốn sách đưa ra cho độc
+            giả hai ý tưởng mới về cơ bản. Đầu tiên, nó trình bày các hướng dẫn thiết
+            kế chương trình chỉ cho người đọc cách phân tích một tuyên bố vấn đề; cách
+            xây dựng mục tiêu ngắn gọn; làm thế nào để tạo nên các ví dụ; làm thế nào
+            để phát triển một phác thảo của giải pháp, dựa trên phân tích; làm thế nào
+            để kết thúc chương trình; và cách kiểm tra.
+        - name: algorithm_manual
+          title: Hướng dẫn thiết kế thuật toán
+          description: Phiên bản thứ hai mới được mở rộng và cập nhật của tác phẩm kinh
+            điển bán chạy nhất này tiếp tục đưa &quot;bí ẩn&quot; ra khỏi các thuật
+            toán thiết kế, và phân tích hiệu lực và hiệu quả của chúng. Mở rộng trên
+            phiên bản đầu tiên, cuốn sách hiện đóng vai trò là sách giáo khoa chính
+            được lựa chọn cho các khóa học thiết kế thuật toán trong khi vẫn duy trì
+            trạng thái là hướng dẫn tham khảo thực tế hàng đầu về thuật toán cho các
+            lập trình viên, nhà nghiên cứu và sinh viên.
+        - name: cormen
+          title: Giới thiệu về Thuật toán, Ấn bản thứ 3 (Báo chí MIT)
+          description: Một số sách về thuật toán là nghiêm ngặt nhưng không đầy đủ;
+            những người khác bao gồm hàng loạt vật chất nhưng thiếu nghiêm ngặt. Giới
+            thiệu về Thuật toán kết hợp độc đáo sự chặt chẽ và toàn diện. Cuốn sách
+            bao gồm một loạt các thuật toán chuyên sâu, nhưng làm cho thiết kế và phân
+            tích của chúng có thể truy cập được cho tất cả các cấp độc giả. Mỗi chương
+            tương đối khép kín và có thể được sử dụng như một đơn vị nghiên cứu. Các
+            thuật toán được mô tả bằng tiếng Anh và mã giả được thiết kế để có thể đọc
+            được bởi bất kỳ ai đã thực hiện một chương trình nhỏ. Các giải thích đã
+            được giữ sơ cấp mà không hy sinh độ sâu của phạm vi bảo hiểm hoặc sự chặt
+            chẽ toán học.
+        - name: compilers
+          title: 'Trình biên dịch: Nguyên tắc, Kỹ thuật và Công cụ (Phiên bản 2)'
+          description: 'Trình biên dịch: Nguyên tắc, Kỹ thuật và Công cụ, được các giáo
+            sư, sinh viên và nhà phát triển trên toàn thế giới gọi là &quot;Sách Rồng&quot;,
+            có sẵn trong phiên bản mới. Mỗi chương đã được sửa đổi hoàn toàn để phản
+            ánh sự phát triển trong công nghệ phần mềm, ngôn ngữ lập trình và kiến trúc
+            máy tính đã xảy ra từ năm 1986 khi phiên bản cuối cùng được xuất bản. Các
+            tác giả, nhận ra rằng sẽ có ít độc giả tiếp tục xây dựng trình biên dịch,
+            duy trì sự tập trung của họ vào tập hợp rộng hơn các vấn đề gặp phải trong
+            thiết kế phần mềm và phát triển phần mềm.'
+        - name: c_lang
+          title: Ngôn ngữ lập trình C, tái bản lần 2
+          description: Các tác giả trình bày hướng dẫn đầy đủ để lập trình ngôn ngữ
+            C tiêu chuẩn ANSI. Được viết bởi các nhà phát triển của C, phiên bản mới
+            này giúp người đọc theo kịp tiêu chuẩn ANSI hoàn chỉnh cho C trong khi chỉ
+            ra cách tận dụng tập hợp toán tử phong phú của C, tính kinh tế của biểu
+            thức, luồng điều khiển được cải thiện và cấu trúc dữ liệu. 2 / E đã được
+            viết lại hoàn toàn với các ví dụ và bộ vấn đề bổ sung để làm rõ việc thực
+            hiện các cấu trúc ngôn ngữ khó. Trong nhiều năm, các lập trình viên C đã
+            để K &amp; R hướng dẫn họ xây dựng các chương trình có cấu trúc tốt và hiệu
+            quả. Bây giờ, sự trợ giúp tương tự này có sẵn cho những người làm việc với
+            trình biên dịch ANSI. Bao gồm bảo hiểm chi tiết của ngôn ngữ C cộng với
+            hướng dẫn tham khảo ngôn ngữ C chính thức để trợ giúp nhanh chóng với ký
+            hiệu cú pháp, khai báo, thay đổi ANSI, quy tắc phạm vi và danh sách được
+            bật và tắt.
+    oop:
+      title: Lập trình hướng đối tượng
+      articles:
+        - name: growing
+          title: Phát triển phần mềm hướng đối tượng, được hướng dẫn bởi các thử nghiệm
+          description: 'Phát triển dựa trên thử nghiệm (TDD) hiện là một kỹ thuật được
+            thiết lập để cung cấp phần mềm tốt hơn nhanh hơn. TDD dựa trên một ý tưởng
+            đơn giản: Viết các bài kiểm tra cho mã của bạn trước khi bạn tự viết mã.
+            Tuy nhiên, ý tưởng &quot;đơn giản&quot; này đòi hỏi kỹ năng và phán đoán
+            để làm tốt. Bây giờ có một hướng dẫn thực tế về TDD đưa bạn vượt ra ngoài
+            các khái niệm cơ bản. Dựa trên một thập kỷ kinh nghiệm xây dựng các hệ thống
+            trong thế giới thực, hai nhà tiên phong TDD chỉ ra cách để các bài kiểm
+            tra hướng dẫn sự phát triển của bạn và phần mềm phát triển trực tuyến, mạch
+            lạc, đáng tin cậy và có thể bảo trì.'
+        - name: domain_driven
+          title: 'Thiết kế hướng tên miền: Giải quyết sự phức tạp trong trung tâm của
+            phần mềm'
+          description: Đây là một cuốn sách nghiêm túc về mô hình miền trong thiết kế
+            phần mềm. Xã hội phát triển phần mềm sống từ làn sóng cường điệu này đến
+            làn sóng khác. OOP, mẫu, XP, TDD, CI / CD, BigData, DevOps - đây chỉ là
+            một vài cái tên. Cuốn sách này có nguồn gốc từ thời kỳ hoàng kim của OOP.
+            Tác giả thừa nhận rằng mô hình hướng đối tượng không phải là duy nhất có
+            sẵn nhưng sự thiên vị đối với OOP / OOD là rõ ràng (và chính đáng). Cuốn
+            sách này nói về cách thực hiện mô hình hóa các thành phần phần mềm cốt lõi,
+            đúng cách.
+    ruby:
+      title: Biết bạn lang
+      articles:
+        - name: well_grounded
+          title: Viên ngọc tốt
+          description: The Ruby-Grounded Rubyist, Second Edition đề cập đến cả những
+            người mới đến với Ruby cũng như các lập trình viên Ruby, những người muốn
+            hiểu sâu hơn về ngôn ngữ này. Phiên bản thứ hai được viết và sửa đổi hoàn
+            toàn này bao gồm bảo hiểm các tính năng mới trong Ruby 2.1, cũng như phạm
+            vi bảo hiểm được mở rộng và cập nhật về các khía cạnh của ngôn ngữ đã thay
+            đổi.
+        - name: programming_ruby
+          title: 'Lập trình Ruby: Hướng dẫn lập trình viên thực dụng, tái bản lần thứ
+            hai'
+          description: 'Ruby là một ngôn ngữ lập trình động hướng đối tượng hoàn toàn
+            ngày càng phổ biến, được nhiều học viên ca ngợi là ngôn ngữ tốt nhất và
+            hữu ích nhất hiện nay. Khi Ruby lần đầu tiên xuất hiện trong thế giới phương
+            Tây, các lập trình viên thực dụng đã ở đó với hướng dẫn tham khảo dứt khoát,
+            Lập trình Ruby: Hướng dẫn lập trình viên thực dụng.'
+        - name: ruby_programming
+          title: 'Ngôn ngữ lập trình Ruby: Mọi thứ bạn cần biết'
+          description: 'Cuốn sách này bắt đầu với một hướng dẫn nhanh về ngôn ngữ, và
+            sau đó giải thích chi tiết ngôn ngữ từ dưới lên: từ cấu trúc từ vựng và
+            cú pháp đến kiểu dữ liệu đến biểu thức và câu lệnh và thông qua các phương
+            thức, khối, lambdas, bao đóng, lớp và mô-đun. Cuốn sách cũng bao gồm phần
+            giới thiệu dài và kỹ lưỡng về API phong phú của nền tảng Ruby, chứng minh
+            - với mã ví dụ được nhận xét nhiều - phương tiện của Ruby để xử lý văn bản,
+            thao tác số, thu thập, đầu vào / đầu ra, kết nối mạng và tương tranh. Toàn
+            bộ một chương dành cho khả năng siêu lập trình của Ruby.'
+  interview_questions:
+    title: Câu hỏi phỏng vấn
+    description: Phần này giữ các liên kết tài nguyên để đọc và chuẩn bị phỏng vấn
+    list:
+      - name: 'Toptal: Làm thế nào để thuê một nhà phát triển Ruby tuyệt vời'
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: 'Toptal: 21 câu hỏi phỏng vấn Ruby cần thiết'
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: 'Hookops: 35+ câu hỏi và câu trả lời phỏng vấn của Ruby và Rails'
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: 'Giáo dục: 15 câu hỏi và trả lời phỏng vấn quan trọng nhất của Ruby'
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: 'Ruby Garage: Cách phỏng vấn Nhà phát triển Ruby on Rails của bạn'
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: 'RyanSobol: 15 câu hỏi cần hỏi khi phỏng vấn Ruby'
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: 'Toptal: 9 câu hỏi phỏng vấn về Ruby cần thiết'
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: Tài liệu tốt hơn là gì
+    description: Trang web này là kho lưu trữ web Github <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Funduel</a>
+      , trang web đã thu thập rất nhiều ngôi sao và được dịch sang tiếng Trung Quốc.
+      Tài liệu tốt hơn cho phép bạn nhanh chóng tìm thấy nhiều thực tiễn tốt nhất được
+      thu thập trong một kho lưu trữ. Chỉ cần bạn repo này như tài liệu chuẩn bị tham
+      khảo hoặc phỏng vấn.
+    oss:
+      title: Cảm ơn nguồn mở
+      description: Better Docs được tạo ra trong khi làm việc và tìm hiểu về các thực
+        tiễn và kiến thức tốt nhất về ruby, một kỹ thuật nguồn mở cho các ứng dụng phát
+        triển web được viết bằng Ruby.
+      thanks: Nếu Better Docs giúp bạn bằng mọi cách, hãy nghĩ đến việc cho chúng tôi
+        một Ngôi sao trên <a href="https://github.com/howtohireme/ruby.fundamental">Github</a>
+        (nó giúp chúng tôi tiếp cận nhiều nhà phát triển hơn) hoặc đóng góp cho các
+        dự án của chúng tôi.

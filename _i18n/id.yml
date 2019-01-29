@@ -1,0 +1,1483 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: Pemrograman dasar dengan contoh dan referensi ruby. Ini mencakup
+      utas, prinsip SOLID, pola desain, struktur data, algoritma.
+    keywords: Dokumen yang lebih baik, Ruby, Fundamentals, Fundamental pemrograman
+      Ruby. Gotchas Ruby, pemrograman fungsional, Metaprogramming, Threads, prinsip-prinsip
+      solid Ruby dengan contoh, pola desain Ruby dengan contoh, algoritma Ruby dengan
+      contoh, struktur data Ruby dengan contoh
+content:
+  menu:
+    open: Buka Menu
+    close: Tutup Menu
+sidebar:
+  a: Algoritma
+  ds: Struktur data
+  dp: Pola desain
+  fp: Pemrograman Fungsional
+  iq: Pertanyaan Wawancara
+  mp: Pemrograman Meta
+  sp: Prinsip yang Solid
+  brm: Menjadi Ruby Meister
+  t: Utas
+sidebar:
+  - title: "Algorithms"
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: "Data Structures"
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: "Design Patterns"
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: "Functional Programming"
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: "Interview Questions"
+    url: interview_questions
+  - title: Metaprogramming
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Solid Principles
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: "Become Ruby Meister"
+    url: ruby_meister
+  - title: Threads
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+
+pages:
+  wiki: Baca wiki
+  credits: Kredit
+  page404:
+    title: Halaman tidak ditemukan :(
+    description: Halaman yang diminta tidak dapat ditemukan.
+  algorithms:
+    title: Algoritma
+    complexity:
+      best: Terbaik
+      average: Rata-rata
+      worst: Terburuk
+    sorting:
+      title: Penyortiran
+      description: Algoritma pengurutan adalah algoritma yang menempatkan elemen daftar
+        dalam urutan tertentu. Pesanan yang paling sering digunakan adalah pesanan numerik
+        dan pesanan leksikografis. Penyortiran yang efisien penting untuk mengoptimalkan
+        penggunaan algoritma lain (seperti algoritma pencarian dan penggabungan) yang
+        membutuhkan data input untuk berada dalam daftar yang diurutkan; ini juga sering
+        berguna untuk mengkanoniskan data dan untuk menghasilkan keluaran yang dapat
+        dibaca manusia.
+      bubble_sort:
+        title: Semacam gelembung
+        description: Bubble sort memiliki banyak properti yang sama dengan sortasi sortir,
+          tetapi memiliki overhead yang sedikit lebih tinggi. Dalam kasus data yang
+          hampir diurutkan, bubble sort mengambil <span class="code-inline time">O (n)</span>
+          , tetapi membutuhkan setidaknya 2 melewati data (sedangkan sortasi sort membutuhkan
+          sesuatu yang lebih seperti 1 pass).
+      insertion_sort:
+        title: Jenis penyisipan
+        description: Meskipun ini adalah salah satu algoritma pengurutan dasar dengan
+          waktu kasus terburuk <span class="code-inline">O (n <sup>2</sup> )</span>
+          , jenis penyisipan adalah algoritma pilihan baik ketika data hampir diurutkan
+          (karena adaptif) atau ketika ukuran masalahnya kecil (karena itu memiliki
+          overhead rendah). Untuk alasan ini, dan karena ini juga stabil, jenis penyisipan
+          sering digunakan sebagai kasus dasar rekursif (ketika ukuran masalahnya kecil)
+          untuk algoritma pengurutan pembagian-dan-penaklukan overhead yang lebih tinggi,
+          seperti jenis penggabungan atau pengurutan cepat.
+      selection_sort:
+        title: Seleksi Pilihan
+        description: Dari perbandingan yang disajikan di sini, orang mungkin menyimpulkan
+          bahwa jenis seleksi tidak boleh digunakan. Itu tidak beradaptasi dengan data
+          dengan cara apa pun (perhatikan bahwa keempat animasi di atas berjalan di
+          lockstep), sehingga runtime selalu kuadratik. Namun, pemilihan semacam memiliki
+          sifat meminimalkan jumlah swap. Dalam aplikasi di mana biaya item bertukar
+          tinggi, pemilihan semacam sangat baik mungkin merupakan algoritma pilihan.
+      shell_sort:
+        title: Semacam shell
+        description: Kompleksitas waktu terburuk dari jenis shell tergantung pada urutan
+          kenaikan. Untuk penambahan 1 4 13 40 121 ..., yang digunakan di sini, kompleksitas
+          waktu adalah <span class="code-inline">O (n <sup><sup>3</sup> ⁄ <sub>2</sub></sup>
+          )</span> . Untuk penambahan lainnya, kompleksitas waktu dikenal sebagai <span
+          class="code-inline">O (n <sup><sup>4</sup> ⁄ <sub>3</sub></sup> )</span> dan
+          bahkan <span class="code-inline">O (n · lg <sub>2</sub> (n))</span> . Baik
+          batas atas yang ketat pada kompleksitas waktu maupun urutan kenaikan terbaik
+          tidak diketahui. Karena jenis shell didasarkan pada jenis penyisipan, jenis
+          shell mewarisi sifat adaptif jenis penyisipan. Adaptasi ini tidak sedramatis
+          karena shell sort memerlukan satu kali melewati data untuk setiap kenaikan,
+          tetapi itu signifikan. Untuk urutan kenaikan yang ditunjukkan di atas, ada
+          penambahan <span class="code-inline">log <sub>3</sub> (n)</span> , jadi kompleksitas
+          waktu untuk data yang hampir diurutkan adalah <span class="code-inline">O
+          (n · log <sub>3</sub> (n))</span> . Karena overhead yang rendah, implementasi
+          yang relatif sederhana, sifat adaptif, dan kompleksitas waktu sub-kuadrat,
+          sortasi shell dapat menjadi alternatif yang layak untuk algoritma pengurutan
+          <span class="code-inline">O (n · lg (n))</span> untuk beberapa aplikasi ketika
+          data yang akan disortir adalah tidak terlalu besar.
+      heap_sort:
+        title: Tumpukan semacam
+        description: Tumpukan semacam mudah diimplementasikan, melakukan semacam <span class="code-inline">O
+          (n·lg (n))</span> di tempat, tetapi tidak stabil. Loop pertama, fase <span
+          class="code-inline">Θ(n)</span> “heapify”, menempatkan array ke dalam urutan
+          heap. Loop kedua, fase “sort down” <span class="code-inline">O(n·lg(n))</span>
+          , berulang kali mengekstrak maksimum dan mengembalikan urutan tumpukan. Fungsi
+          wastafel ditulis secara rekursif untuk kejelasan. Jadi, seperti yang ditunjukkan,
+          kode membutuhkan ruang <span class="code-inline">Θ(lg(n))</span> untuk tumpukan
+          panggilan rekursif. Namun, rekursi ekor di wastafel () mudah dikonversi menjadi
+          iterasi, yang menghasilkan ruang <span class="code-inline">O(1)</span> terikat.
+          Kedua fase sedikit adaptif, meskipun tidak dengan cara yang sangat bermanfaat.
+          Dalam kasus yang hampir diurutkan, fase heapify menghancurkan orde asli. Dalam
+          kasus terbalik, fase heapify secepat mungkin karena array dimulai dalam urutan
+          heap, tetapi kemudian fase sortasi adalah tipikal. Dalam beberapa kasus kunci
+          unik, ada beberapa speedup tetapi tidak sebanyak di sortir shell atau quicksort
+          3 arah.
+      merge_sort:
+        title: Gabungkan semacam
+        description: 'Jenis gabungan sangat dapat diprediksi. Itu membuat antara <span
+          class="code-inline">0,5lg(n)</span> dan <span class="code-inline">lg(n)</span>
+          perbandingan per elemen, dan antara <span class="code-inline">lg(n)</span>
+          dan <span class="code-inline">1,5lg(n)</span>  bertukar per elemen. Nilai
+          minimum tercapai untuk data yang sudah diurutkan; maxima dicapai, rata-rata,
+          untuk data acak. Jika menggunakan <span class="code-inline">Θ(n)</span> ruang
+          tambahan tidak menjadi masalah, maka menggabungkan jenis adalah pilihan yang
+          sangat baik: Sederhana untuk diimplementasikan, dan itu adalah satu-satunya
+          algoritma penyortiran <span class="code-inline">O(n·lg(n))</span>  yang
+          stabil. Perhatikan bahwa saat menyortir daftar yang ditautkan, menggabungkan
+          jenis hanya membutuhkan <span class="code-inline">Θ(lg(n)</span> ruang tambahan
+          (untuk rekursi). Urutan gabungan adalah algoritme pilihan untuk berbagai situasi:
+          ketika stabilitas diperlukan, saat menyortir daftar yang ditautkan, dan ketika
+          acak akses jauh lebih mahal daripada akses sekuensial (misalnya, pengurutan
+          eksternal pada pita). Memang ada waktu linear di tempat menggabungkan algoritma
+          untuk langkah terakhir dari algoritma, tetapi keduanya mahal dan kompleks.
+          Kompleksitas dibenarkan untuk aplikasi seperti penyortiran eksternal ketika
+          <span class="code-inline">Θ(n)</span> ruang tambahan tidak tersedia.'
+      quick_sort:
+        title: Sortir cepat
+        description: Ketika diimplementasikan dengan hati-hati, quicksort kuat dan memiliki
+          overhead yang rendah. Ketika jenis stabil tidak diperlukan, quicksort adalah
+          jenis tujuan umum yang sangat baik - meskipun versi partisi 3-arah harus selalu
+          digunakan sebagai gantinya. Kode partisi 2 arah yang ditunjukkan di atas ditulis
+          untuk kejelasan daripada kinerja yang optimal; itu menunjukkan lokalitas yang
+          buruk, dan, kritis, menunjukkan <span class="code-inline">O (n <sup>2</sup>
+          )</span> waktu ketika ada beberapa kunci unik. Metode partisi 2 arah yang
+          lebih efisien dan kuat diberikan di Quicksort adalah Optimal oleh Robert Sedgewick
+          dan Jon Bentley. Partisi yang kokoh menghasilkan rekursi yang seimbang ketika
+          ada banyak nilai yang setara dengan pivot, menghasilkan jaminan probabilitas
+          waktu <span class="code-inline">O (n · lg (n))</span> dan ruang <span class="code-inline">O
+          (lg (n))</span> untuk semua input. Dengan kedua sub-sort dilakukan secara
+          rekursif, sort cepat memerlukan <span class="code-inline">O (n)</span> ruang
+          ekstra untuk tumpukan rekursi dalam kasus terburuk ketika rekursi tidak seimbang.
+          Ini sangat tidak mungkin terjadi, tetapi dapat dihindari dengan mengurutkan
+          sub-array yang lebih kecil secara rekursif terlebih dahulu; sub-array sort
+          kedua adalah panggilan rekursif ekor, yang mungkin dilakukan dengan iterasi.
+          Dengan optimasi ini, algoritma menggunakan <span class="code-inline">O (lg
+          (n))</span> ruang ekstra dalam kasus terburuk.
+      other: Algoritma pengurutan lainnya
+      additional: Bacaan tambahan
+    searching:
+      title: Mencari
+      binary_search:
+        title: Pencarian biner
+        description: Dalam ilmu komputer, pencarian biner, juga dikenal sebagai pencarian
+          setengah interval atau pencarian logaritmik, adalah algoritma pencarian yang
+          menemukan posisi nilai target dalam array yang diurutkan. Ini membandingkan
+          nilai target ke elemen tengah array; jika mereka tidak setara, setengah di
+          mana target tidak bisa berbohong dihilangkan dan pencarian berlanjut pada
+          setengah sisanya sampai berhasil.
+      knuth_moriss_pratt_search:
+        title: Pencarian Knuth-Morris-Pratt
+        description: Dalam ilmu komputer, algoritma pencarian string Knuth-Morris-Pratt
+          (atau algoritma KMP) mencari kejadian &quot;kata&quot; W dalam &quot;teks
+          string&quot; S utama dengan menggunakan pengamatan bahwa ketika ketidakcocokan
+          terjadi, kata itu sendiri mewujudkan cukup informasi untuk menentukan di mana
+          pertandingan berikutnya dapat dimulai, sehingga melewati pemeriksaan ulang
+          karakter yang sebelumnya cocok.
+      other:
+        title: Algoritma pencarian lainnya
+        dijkstra: Algoritma Dijkstra
+        kruskal: Algoritma Kruskal
+        longest: Selanjutnya meningkat terpanjang
+        telephone_number: Nomor telepon untuk kata-kata
+    credits: 'Kode dan artikel diambil dari sumber:'
+  data_structures:
+    title: Struktur data
+    description: Dalam ilmu komputer, notasi O besar digunakan untuk mengklasifikasikan
+      algoritma dengan cara mereka merespons perubahan dalam ukuran input, seperti bagaimana
+      waktu pemrosesan suatu algoritma berubah ketika ukuran masalah menjadi sangat
+      besar. Dalam teori bilangan analitik digunakan untuk memperkirakan &quot;kesalahan
+      yang dilakukan&quot; sambil mengganti ukuran asimptotik dari fungsi aritmetika
+      dengan nilai yang dibutuhkan pada argumen terbatas yang besar. Contoh terkenal
+      adalah masalah memperkirakan sisa istilah dalam teorema bilangan prima.
+    axioms:
+      title: Aksioma dasar struktur data
+      description: Kinerja waktu berjalan dari runtime bahasa umum diberikan oleh seperangkat
+        aksioma yang sekarang akan kita dalilkan.
+      fetch_store:
+        title: Ambil dan simpan waktu
+        description1: Waktu yang diperlukan untuk mengambil referensi ke objek dari
+          memori adalah konstan, <span class="code-inline">T_fetch</span> , dan waktu
+          yang diperlukan untuk menyimpan referensi ke objek di memori adalah konstan,
+          <span class="code-inline">T_store</span>
+        description2: Menurut Axiom, pernyataan penugasan memiliki waktu berjalan <span
+          class="code-inline">T_fetch + T_store</span> . Yaitu, waktu yang diambil untuk
+          mengambil referensi objek dari variabel x adalah <span class="code-inline">T_fetch</span>
+          dan waktu yang dibutuhkan untuk menyimpan referensi objek dalam variabel y
+          adalah <span class="code-inline">T_store</span> .
+        description3: Juga memiliki waktu berjalan <span class="code-inline">T_fetch
+          + T_store</span> . Untuk melihat mengapa ini harusnya terjadi, pertimbangkan
+          bahwa konstanta <span class="code-inline">1</span> menamai objek Fixnum dengan
+          nilai satu. Oleh karena itu, kita dapat mengharapkan biaya mengambil referensi
+          ke objek bernama 1 sama dengan mengambil referensi ke objek lain.
+      elementary_operations:
+        title: Waktu operasi aritmatika dasar
+        description1: Waktu yang diperlukan untuk melakukan operasi aritmatika dasar,
+          seperti penjumlahan, pengurangan, perkalian, pembagian, dan perbandingan,
+          semuanya adalah konstanta. Waktu-waktu ini dilambangkan dengan <span class="code-inline">T_
+          +, T_-, T_ /, T_ *, T_ &lt;,</span> masing-masing.
+        description2: Kita dapat menentukan waktu pernyataan seperti apakah <span class="code-inline">2
+          * T_fetch + T_ + + T_store</span> . Ini karena kita perlu mengambil dua referensi
+          objek dari variabel y dan 1; melakukan penambahan memberi objek baru yang
+          nilainya adalah jumlah; dan, menyimpan referensi ke objek baru dalam variabel
+          y.
+        description3: Kami akan menganggap bahwa alternatif membutuhkan waktu berjalan
+          yang persis sama dengan pernyataan aslinya.
+      call_method:
+        title: Waktu metode panggilan
+        description1: Waktu yang diperlukan untuk memanggil metode adalah konstan, <span
+          class="code-inline">T_call</span> , dan waktu yang diperlukan untuk kembali
+          dari metode adalah konstan, <span class="code-inline">T_return</span> Dasar
+          pemikiran untuk membuat overhead terkait dengan parameter yang melewati sama
+          dengan waktu untuk menyimpan referensi objek adalah melewati sebuah argumen
+          secara konseptual sama dengan penetapan nilai parameter aktual ke parameter
+          formal metode.
+        description2: Menurut Axiom, waktu menjalankan pernyataan adalah <span class="code-inline">T_fetch
+          + 2 * T_store + T_call + T_f(x)</span> , di mana <span class="code-inline">T_f
+          (x)</span> adalah waktu berjalan dari metode f untuk input x. Yang pertama
+          dari dua toko disebabkan oleh berlalunya parameter x ke metode f; yang kedua
+          muncul dari penugasan ke variabel y.
+      calculating:
+        title: Waktu perhitungan
+        description1: Waktu yang diperlukan untuk perhitungan alamat yang tersirat oleh
+          operasi langganan array, misalnya, <span class="code-inline">a[i]</span> ,
+          adalah konstan, <span class="code-inline">T_[]</span> . Waktu ini tidak termasuk
+          waktu untuk menghitung ekspresi subskrip, juga tidak termasuk waktu untuk
+          mengakses elemen array.
+        description2: 'Ini <span class="code-inline">3 * T_fetch</span> . Diperlukan
+          tiga operan: yang pertama mengambil referensi ke objek array a; yang kedua
+          untuk mengambil referensi ke objek indeks i; dan, yang ketiga untuk mengambil
+          referensi ke elemen array <span class="code-inline">a [i]</span> .'
+      object:
+        title: Waktu pembuatan objek
+        description1: Waktu yang diperlukan untuk membuat instance objek baru dari sebuah
+          kelas adalah konstanta, <span class="code-inline">T_new</span> . Waktu ini
+          tidak termasuk waktu yang diambil untuk menginisialisasi objek. Dengan menerapkan
+          Aksioma kita dapat menentukan waktu menjalankan pernyataan itu.
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> , di mana <span class="code-inline">T_fixnum_init</span>
+          adalah waktu menjalankan metode inisialisasi dari kelas Fixnum.
+      example:
+        title: Contoh
+        description: Pada bagian ini kita menerapkan Aksioma, analisis waktu berjalan
+          suatu program untuk menghitung penjumlahan seri aritmatika sederhana berikut.
+    implementations:
+      title: Pelaksanaan
+      stack:
+        title: Tumpukan
+        description: Tumpukan adalah saudara kandung antrian. Ini meniru tumpukan kehidupan
+          nyata (misalnya kertas). Itu adalah FILO (first-in-last-out), sehingga ketika
+          item diambil dari stack, mereka dikembalikan dengan urutan terbalik di mana
+          mereka ditambahkan. Sekali lagi, Ruby Arrays menyediakan wadah yang sempurna.
+          Seperti dengan Antrian, itu juga dapat diimplementasikan menggunakan daftar
+          tertaut.
+        as_array: Tumpuk sebagai array
+        as_linked_list: Tumpuk sebagai daftar tertaut
+      queue:
+        title: Antre
+        description: Antrian adalah struktur berbasis wadah sederhana yang meniru antrian
+          kehidupan nyata (misalnya mengantri di bank). Itu adalah FIFO (first-in-first-out),
+          yang berarti bahwa ketika Anda mengambil item dari antrian, mereka dikembalikan
+          sesuai urutan memasukkannya. Ruby Arrays menyediakan metode yang membuat implementasi
+          Queue menjadi mudah, tetapi membuat mereka dinamai dengan benar dan terkandung
+          dalam kelas kenyamanan adalah layak untuk melihat implementasi mereka, dan
+          karena struktur lain akan mewarisi dari ini. Implementasi alternatif dapat
+          dilakukan dengan menggunakan daftar tertaut.
+        as_array: Antri sebagai array
+        as_linked_list: Antri sebagai daftar tertaut
+      deque:
+        title: dan
+        description: Deque adalah antrian yang memungkinkan penambahan dan penghapusan
+          item di kedua ujungnya.
+        as_array: Dan sebagai array
+        as_linked_list: Deque sebagai daftar tertaut
+      singly_linked_list:
+        title: Daftar Tertaut Tunggal
+        description: Daftar tertaut tunggal berisi node yang memiliki bidang data serta
+          bidang &#39;berikutnya&#39;, yang menunjuk ke node berikutnya dalam garis
+          node. Operasi yang dapat dilakukan pada daftar yang terhubung sendiri termasuk
+          penyisipan, penghapusan dan traversal.
+      doubly_linked_list:
+        title: Daftar ditautkan ganda
+        description: Dalam daftar yang ditautkan dua kali lipat, setiap elemen daftar
+          berisi dua referensi - satu untuk penggantinya dan satu ke pendahulunya.
+      ordered_list:
+        title: Daftar pesanan
+        description: Daftar yang diurutkan adalah daftar yang urutan barangnya signifikan.
+          Namun, item dalam daftar yang dipesan tidak perlu diurutkan. Akibatnya, dimungkinkan
+          untuk mengubah urutan barang dan masih memiliki daftar pesanan yang valid.
+        as_array: Daftar yang dipesan sebagai array
+      hash_table:
+        title: Meja Hash
+        description: Tabel hash adalah wadah yang bisa dicari. Karena itu, ia menyediakan
+          metode untuk menempatkan objek ke dalam wadah, menemukan objek dalam wadah,
+          dan menghapus objek dari wadah.
+      binary_tree:
+        title: Pohon Biner
+        description: Pohon biner adalah pohon di mana setiap simpul dapat memiliki maksimal
+          dua anak. Anak-anak ditunjuk kiri dan kanan.
+      binary_search_tree:
+        title: Pohon Pencarian Biner &lt;
+        description: 'Dalam ilmu komputer, pohon pencarian biner (BST), kadang-kadang
+          disebut pohon biner dipesan atau diurutkan, adalah jenis wadah tertentu: struktur
+          data yang menyimpan &quot;item&quot; (seperti angka, nama dll) dalam memori.
+          Mereka memungkinkan pencarian cepat, penambahan dan penghapusan item, dan
+          dapat digunakan untuk mengimplementasikan set dinamis item, atau tabel pencarian
+          yang memungkinkan menemukan item dengan kuncinya (misalnya, menemukan nomor
+          telepon seseorang dengan nama)'
+      b_tree:
+        title: B-tree
+        description: Dalam ilmu komputer, B-tree adalah struktur data pohon self-balancing
+          yang membuat data diurutkan dan memungkinkan pencarian, akses sekuensial,
+          penyisipan, dan penghapusan dalam waktu logaritmik. B-tree adalah generalisasi
+          dari pohon pencarian biner di mana sebuah simpul dapat memiliki lebih dari
+          dua anak (Tidak seperti pohon pencarian biner yang menyeimbangkan diri sendiri,
+          B-tree dioptimalkan untuk sistem yang membaca dan menulis blok data yang besar.
+          B- pohon adalah contoh yang baik dari struktur data untuk memori eksternal,
+          biasanya digunakan dalam database dan sistem file.
+      binary_heap:
+        title: Binary Heap
+        description: Biner heap adalah pohon biner lengkap yang diurutkan berdasarkan
+          heap yang diimplementasikan menggunakan sebuah array. Dalam tumpukan, kunci
+          terkecil ditemukan di root dan karena root selalu ditemukan di posisi pertama
+          array, menemukan kunci terkecil adalah operasi sepele di tumpukan biner.
+      credits: 'Kode dan artikel diambil dari sumber:'
+      source: Halaman ini berisi kode Ruby dari buku &quot;Struktur Data dan Algoritma
+        dengan Pola Desain Berorientasi Objek di Ruby&quot; oleh Bruno R. Preiss. Hak
+        Cipta (c) 2004 oleh Bruno R. Preiss, P.Eng. Seluruh hak cipta.
+  design_patterns:
+    title: Pola desain
+    creational:
+      title: Pola penciptaan
+      description: Dalam rekayasa perangkat lunak, pola desain kreasi adalah pola desain
+        yang berhubungan dengan mekanisme pembuatan objek, mencoba membuat objek dengan
+        cara yang sesuai dengan situasi. Bentuk dasar dari penciptaan objek dapat menyebabkan
+        masalah desain atau menambah kompleksitas pada desain. Pola desain kreasi menyelesaikan
+        masalah ini dengan cara mengendalikan pembuatan objek ini. Pola desain kreatif
+        terdiri dari dua ide dominan. Salah satunya adalah merangkum pengetahuan tentang
+        kelas konkret yang digunakan sistem. Yang lain menyembunyikan bagaimana instance
+        dari kelas-kelas konkret ini dibuat dan digabungkan.
+      abstract_factory:
+        title: Pola pabrik abstrak
+        description: Pola pabrik abstrak menyediakan cara untuk merangkum sekelompok
+          pabrik individu yang memiliki tema bersama tanpa menentukan kelas konkretnya.
+          Dalam penggunaan normal, perangkat lunak klien membuat implementasi konkret
+          dari pabrik abstrak dan kemudian menggunakan antarmuka generik pabrik untuk
+          membuat objek konkret yang merupakan bagian dari tema. Klien tidak tahu (atau
+          peduli) objek konkret apa yang didapatnya dari masing-masing pabrik internal
+          ini, karena hanya menggunakan antarmuka generik dari produk mereka. Pola ini
+          memisahkan detail implementasi dari serangkaian objek dari penggunaan umumnya
+          dan bergantung pada komposisi objek, karena pembuatan objek diimplementasikan
+          dalam metode yang diekspos di antarmuka pabrik.
+      builder:
+        title: Pola pembangun
+        description: Pola pembangun adalah pola desain perangkat lunak pembuatan objek.
+          Tidak seperti pola pabrik abstrak dan pola metode pabrik yang tujuannya adalah
+          untuk memungkinkan polimorfisme, tujuan dari pola pembangun adalah untuk menemukan
+          solusi terhadap anti-pola konstruktor teleskopik. Anti-pola konstruktor teleskopik
+          terjadi ketika peningkatan kombinasi parameter konstruktor objek mengarah
+          ke daftar konstruktor eksponensial. Alih-alih menggunakan banyak konstruktor,
+          pola pembangun menggunakan objek lain, pembangun, yang menerima setiap parameter
+          inisialisasi langkah demi langkah dan kemudian mengembalikan objek yang dibangun
+          sekaligus.
+      factory:
+        title: Pola pabrik
+        description: Dalam pemrograman berbasis kelas, pola metode pabrik adalah pola
+          kreatif yang menggunakan metode pabrik untuk menangani masalah membuat objek
+          tanpa harus menentukan kelas objek yang tepat yang akan dibuat. Ini dilakukan
+          dengan membuat objek dengan memanggil metode pabrik - baik ditentukan dalam
+          antarmuka dan diimplementasikan oleh kelas anak, atau diimplementasikan dalam
+          kelas dasar dan secara opsional diganti oleh kelas turunan - daripada dengan
+          memanggil konstruktor.
+      prototype:
+        title: Pola prototipe
+        description: Pola prototipe adalah pola kreasi sepanjang garis pabrik. Trik
+          dengan prototipe adalah Anda membuat objek baru dengan menyalin objek master.
+          Ubah objek master itu dan semua objek berikutnya yang Anda buat akan hidup
+          dengan salinan perubahan.
+      singleton:
+        title: Pola singleton
+        description: Pastikan kelas hanya memiliki satu instance, dan memberikan titik
+          akses global untuk itu. Ini berguna ketika tepat satu objek diperlukan untuk
+          mengoordinasikan tindakan di seluruh sistem. Konsep ini kadang-kadang digeneralisasikan
+          ke sistem yang beroperasi lebih efisien ketika hanya ada satu objek, atau
+          yang membatasi instantiasi ke sejumlah objek.
+      not_covered:
+        title: 'Pola tidak tertutup:'
+        lazy: Inisialisasi malas
+        multiton: Multiton
+        pool: Kolam objek
+        resource: Akuisisi sumber daya adalah inisialisasi
+    structural:
+      title: Pola struktural
+      description: Dalam rekayasa perangkat lunak, pola desain struktural adalah pola
+        desain yang memudahkan desain dengan mengidentifikasi cara sederhana untuk mewujudkan
+        hubungan antar entitas.
+      adapter:
+        title: Pola adaptor
+        description: Dalam rekayasa perangkat lunak, pola adaptor adalah pola desain
+          perangkat lunak yang memungkinkan antarmuka kelas yang ada untuk digunakan
+          sebagai antarmuka lain. Ini sering digunakan untuk membuat kelas yang ada
+          berfungsi dengan orang lain tanpa mengubah kode sumber mereka.
+      composite:
+        title: Pola komposit
+        description: Pola desain komposit adalah pola struktural yang digunakan untuk
+          mewakili objek yang memiliki struktur pohon hierarkis. Hal ini memungkinkan
+          untuk perawatan yang seragam dari masing-masing simpul daun dan cabang yang
+          terdiri dari banyak simpul.
+      decorator:
+        title: Pola dekorator
+        description: Dalam pemrograman berorientasi objek, pola dekorator (juga dikenal
+          sebagai Wrapper, penamaan alternatif bersama dengan pola Adaptor) adalah pola
+          desain yang memungkinkan perilaku ditambahkan ke objek individu, baik secara
+          statis maupun dinamis, tanpa mempengaruhi perilaku lainnya. benda dari kelas
+          yang sama. Pola dekorator sering berguna untuk mematuhi Prinsip Tanggung Jawab
+          Tunggal, karena memungkinkan fungsionalitas dibagi antara kelas dengan bidang
+          unik yang menjadi perhatian.
+      facade:
+        title: Pola fasad
+        description: Pola desain Facade sering digunakan ketika suatu sistem sangat
+          kompleks atau sulit dipahami karena sistem memiliki sejumlah besar kelas yang
+          saling tergantung atau kode sumbernya tidak tersedia. Pola ini menyembunyikan
+          kompleksitas sistem yang lebih besar dan menyediakan antarmuka yang lebih
+          sederhana bagi klien. Biasanya melibatkan kelas pembungkus tunggal yang berisi
+          sekumpulan anggota yang dibutuhkan oleh klien. Anggota ini mengakses sistem
+          atas nama klien fasad dan menyembunyikan detail implementasi.
+      flyweight:
+        title: Pola terbang
+        description: Dalam pemrograman komputer, kelas terbang adalah pola desain perangkat
+          lunak. Kelas terbang adalah objek yang meminimalkan penggunaan memori dengan
+          berbagi data sebanyak mungkin dengan objek serupa lainnya; ini adalah cara
+          untuk menggunakan objek dalam jumlah besar ketika representasi berulang yang
+          sederhana akan menggunakan jumlah memori yang tidak dapat diterima. Seringkali
+          beberapa bagian dari keadaan objek dapat dibagikan, dan itu adalah praktik
+          umum untuk menahan mereka dalam struktur data eksternal dan meneruskannya
+          ke objek kelas terbang sementara ketika mereka digunakan.
+      proxy:
+        title: Pola proksi
+        description: 'Proxy, dalam bentuknya yang paling umum, adalah kelas yang berfungsi
+          sebagai antarmuka untuk sesuatu yang lain. Proxy dapat berinteraksi dengan
+          apa saja: koneksi jaringan, objek besar dalam memori, file, atau sumber daya
+          lain yang mahal atau tidak mungkin untuk digandakan. Singkatnya, proksi adalah
+          objek pembungkus atau agen yang dipanggil oleh klien untuk mengakses objek
+          melayani nyata di belakang layar. Penggunaan proxy hanya dapat meneruskan
+          ke objek nyata, atau dapat memberikan logika tambahan. Dalam proksi fungsionalitas
+          tambahan dapat disediakan, misalnya caching ketika operasi pada objek nyata
+          adalah sumber daya intensif, atau memeriksa prasyarat sebelum operasi pada
+          objek nyata dipanggil. Untuk klien, penggunaan objek proxy mirip dengan menggunakan
+          objek nyata, karena keduanya mengimplementasikan antarmuka yang sama.'
+      protection_proxy:
+        title: Proxy perlindungan
+        description: Proxy perlindungan. Apakah Anda bekerja pada MNC? Jika demikian,
+          kami mungkin sangat menyadari server proxy yang memberikan kami internet dengan
+          membatasi akses ke beberapa jenis situs web seperti email publik, jejaring
+          sosial, penyimpanan data, dll. Manajemen merasa bahwa, lebih baik untuk memblokir
+          beberapa konten dan hanya menyediakan halaman web terkait pekerjaan. Server
+          proxy melakukan pekerjaan itu. Ini adalah jenis pola desain proksi
+      virtual_proxy:
+        title: Proksi virtual
+        description: Proksi virtual. Di tempat benda yang kompleks atau berat, gunakan
+          representasi kerangka. Ketika gambar yang mendasarinya sangat besar ukurannya,
+          hanya mewakili itu menggunakan objek proxy virtual dan sesuai permintaan memuat
+          objek nyata. Anda tahu bahwa objek nyata itu mahal dalam hal Instansiasi dan
+          tanpa kebutuhan nyata kita tidak akan menggunakan objek nyata. Sampai diperlukan,
+          kami akan menggunakan proxy virtual.
+      remote_proxy:
+        title: Proksi jarak jauh
+        description: Proksi jarak jauh. Dalam komunikasi objek terdistribusi, objek
+          lokal mewakili objek jarak jauh (yang milik ruang alamat berbeda). Objek lokal
+          adalah proxy untuk objek jarak jauh, dan pemanggilan metode pada objek lokal
+          menghasilkan pemanggilan metode jarak jauh pada objek jarak jauh. Pikirkan
+          implementasi ATM, ia akan menyimpan objek proxy untuk informasi bank yang
+          ada di server jarak jauh.
+      not_covered:
+        title: 'Pola tidak tertutup:'
+        callback: Callback Beranotasi
+        bridge: Jembatan
+        data_bus: Bus Data
+        role: Obyek Peran
+    behavioral:
+      title: Pola perilaku
+      description: Dalam rekayasa perangkat lunak, pola desain perilaku adalah pola
+        desain yang mengidentifikasi pola komunikasi umum antara objek dan mewujudkan
+        pola ini. Dengan demikian, pola-pola ini meningkatkan fleksibilitas dalam melakukan
+        komunikasi ini.
+      chain_of_responsobility:
+        title: Pola rantai tanggung jawab
+        description: Dalam desain berorientasi objek, pola rantai tanggung jawab adalah
+          pola desain yang terdiri dari sumber objek perintah dan serangkaian objek
+          pemrosesan. Setiap objek pemrosesan berisi logika yang mendefinisikan jenis
+          objek perintah yang dapat ditangani; sisanya diteruskan ke objek pemrosesan
+          berikutnya dalam rantai. Ada juga mekanisme untuk menambahkan objek pemrosesan
+          baru ke akhir rantai ini.
+      command:
+        title: Pola perintah
+        description: Pola perintah adalah pola desain perilaku yang digunakan untuk
+          menyimpan informasi yang diperlukan untuk memanggil metode di masa mendatang.
+          Perintah itu hanyalah serangkaian tindakan yang dibungkus dengan suatu objek.
+          Dengan ruby, kita dapat menggunakan Procs untuk melakukan hal yang sama tanpa
+          perlu membuat objek terpisah. Ini adalah opsi yang baik ketika tindakannya
+          sederhana dan tidak memerlukan penyimpanan informasi keadaan, jika tidak,
+          kelas perintah adalah pilihan yang lebih baik.
+      interpreter:
+        title: Pola juru bahasa
+        description: Dalam pemrograman komputer, pola interpreter adalah pola desain
+          yang menentukan cara mengevaluasi kalimat dalam suatu bahasa. Ide dasarnya
+          adalah memiliki kelas untuk setiap simbol (terminal atau nonterminal) dalam
+          bahasa komputer khusus. Sintaksis pohon kalimat dalam bahasa adalah turunan
+          dari pola gabungan dan digunakan untuk mengevaluasi (menafsirkan) kalimat
+          untuk klien.
+      iterator:
+        title: Pola iterator
+        description: Pola desain iterator memberikan akses berurutan ke elemen-elemen
+          dalam sebuah wadah tanpa memaparkan bagaimana sebenarnya wadah mewakili elemen-elemen
+          tersebut. Iterator dapat dianggap sebagai pointer bergerak yang memungkinkan
+          akses ke elemen yang dikemas dalam wadah.
+      external_iterator:
+        title: Pola iterator eksternal
+        description: 'Iterator eksternal: Logika iterasi terkandung dalam kelas yang
+          terpisah. Kelas iterasi dapat digeneralisasi untuk menangani beberapa tipe
+          objek selama mereka memungkinkan pengindeksan. Ini membutuhkan kelas tambahan
+          untuk melakukan iterasi yang sebenarnya, tetapi mereka memungkinkan fleksibilitas
+          yang lebih besar karena Anda dapat mengontrol iterasi, elemen mana yang diiterasi
+          berulang dan dalam urutan apa.'
+      internal_iterator:
+        title: Pola iterator internal
+        description: 'Iterator internal: semua logika iterasi terjadi di dalam objek
+          agregat. Gunakan blok kode untuk meneruskan logika Anda ke agregat yang kemudian
+          memanggil blok untuk masing-masing elemen itu.'
+      mediator:
+        title: Pola mediator
+        description: Biasanya suatu program terdiri dari sejumlah besar kelas. Jadi
+          logika dan perhitungan didistribusikan di antara kelas-kelas ini. Namun, karena
+          semakin banyak kelas yang dikembangkan dalam suatu program, terutama selama
+          pemeliharaan dan / atau refactoring, masalah komunikasi antara kelas-kelas
+          ini dapat menjadi lebih kompleks. Ini membuat program lebih sulit untuk dibaca
+          dan dipelihara. Selain itu, bisa sulit untuk mengubah program, karena perubahan
+          apa pun dapat memengaruhi kode di beberapa kelas lain. Dengan pola mediator,
+          komunikasi antara objek dirangkum dengan objek mediator. Objek tidak lagi
+          berkomunikasi secara langsung satu sama lain, melainkan berkomunikasi melalui
+          mediator. Ini mengurangi ketergantungan antara objek yang berkomunikasi, sehingga
+          menurunkan kopling.
+      momento:
+        title: Momen pola
+        description: 'Pola momento diimplementasikan dengan tiga objek: pencetusnya,
+          juru kunci dan seorang momento. Pencetus adalah beberapa objek yang memiliki
+          keadaan internal. Pengasuh akan melakukan sesuatu kepada pencetusnya, tetapi
+          ingin dapat membatalkan perubahan. Pengasuh pertama-tama meminta objek sesaat
+          kepada penggagasnya. Kemudian ia melakukan operasi apa pun (atau urutan operasi)
+          yang akan dilakukannya. Untuk mengembalikan ke kondisi sebelum operasi, ia
+          mengembalikan objek momento ke originator. Objek momento itu sendiri adalah
+          objek buram (yang tidak bisa diubah oleh penjaga sementara). Saat menggunakan
+          pola ini, kehati-hatian harus diambil jika pencetus dapat mengubah objek atau
+          sumber daya lain - pola momento beroperasi pada satu objek.'
+      observer:
+        title: Pola pengamat
+        description: Pola pengamat adalah pola desain perangkat lunak di mana objek,
+          yang disebut subjek, memelihara daftar tanggungannya, yang disebut pengamat,
+          dan memberi tahu mereka secara otomatis setiap perubahan keadaan, biasanya
+          dengan memanggil salah satu metode mereka. Ini terutama digunakan untuk mengimplementasikan
+          sistem penanganan acara terdistribusi. Pola Observer juga merupakan bagian
+          penting dalam pola arsitektur model-view-controller (MVC) yang sudah dikenal.
+          Pola pengamat diimplementasikan di berbagai perpustakaan pemrograman dan sistem,
+          termasuk hampir semua toolkit GUI.
+      state:
+        title: Pola negara
+        description: Pola keadaan adalah pola desain perangkat lunak perilaku yang mengimplementasikan
+          mesin negara dengan cara yang berorientasi objek. Dengan pola keadaan, mesin
+          negara diimplementasikan dengan menerapkan setiap keadaan individu sebagai
+          kelas turunan dari antarmuka pola keadaan, dan menerapkan transisi keadaan
+          dengan menerapkan metode yang ditentukan oleh superclass pola.
+      strategy:
+        title: Pola strategi
+        description: Strategi memungkinkan algoritma bervariasi secara independen dari
+          klien yang menggunakannya. Strategi adalah salah satu pola yang termasuk dalam
+          Pola Desain buku berpengaruh oleh Gamma et al. yang mempopulerkan konsep menggunakan
+          pola untuk menggambarkan desain perangkat lunak. Misalnya, kelas yang melakukan
+          validasi pada data yang masuk dapat menggunakan pola strategi untuk memilih
+          algoritma validasi berdasarkan tipe data, sumber data, pilihan pengguna, atau
+          faktor-faktor diskriminatif lainnya. Faktor-faktor ini tidak diketahui untuk
+          setiap kasus sampai run-time, dan mungkin memerlukan validasi yang sangat
+          berbeda untuk dilakukan. Strategi validasi, yang dienkapsulasi secara terpisah
+          dari objek yang divalidasi, dapat digunakan oleh objek yang divalidasi lainnya
+          di berbagai area sistem (atau bahkan sistem yang berbeda) tanpa duplikasi
+          kode.
+      template:
+        title: Pola metode templat
+        description: Dalam pemrograman berorientasi objek, pertama kelas dibuat yang
+          menyediakan langkah-langkah dasar dari desain algoritma. Langkah-langkah ini
+          diimplementasikan menggunakan metode abstrak. Kemudian, subkelas mengubah
+          metode abstrak untuk mengimplementasikan tindakan nyata. Dengan demikian algoritma
+          umum disimpan di satu tempat tetapi langkah konkret dapat diubah oleh subclass.
+      visitor:
+        title: Pola pengunjung
+        description: Dalam pemrograman berorientasi objek dan rekayasa perangkat lunak,
+          pola desain pengunjung adalah cara untuk memisahkan suatu algoritma dari suatu
+          struktur objek di mana ia beroperasi. Hasil praktis dari pemisahan ini adalah
+          kemampuan untuk menambahkan operasi baru ke struktur objek yang ada tanpa
+          memodifikasi struktur tersebut. Ini adalah salah satu cara untuk mengikuti
+          prinsip terbuka / tertutup. Pada dasarnya, pengunjung memungkinkan seseorang
+          untuk menambahkan fungsi virtual baru ke keluarga kelas tanpa memodifikasi
+          kelas itu sendiri; alih-alih, seseorang membuat kelas pengunjung yang mengimplementasikan
+          semua spesialisasi yang sesuai dari fungsi virtual. Pengunjung mengambil referensi
+          contoh sebagai input, dan mengimplementasikan tujuan melalui pengiriman ganda.
+      not_covered:
+        title: 'Pola tidak tertutup:'
+        hierarchical: Pengunjung hierarkis
+      credits: 'Kode dan artikel diambil dari sumber:'
+  functional_programming:
+    title: Pemrograman fungsional
+    description: 'Menggunakan bahasa dengan gaya fungsional menyiratkan Anda memiliki
+      akses ke beberapa fitur utama yang tercantum di bawah ini:'
+    axioms:
+      immutable: 'Nilai yang tidak dapat diubah: setelah &quot;variabel&quot; diset,
+        itu tidak dapat diubah. Di Ruby, ini berarti Anda harus memperlakukan variabel
+        seperti konstanta secara efektif.'
+      side_effects: 'Tidak ada efek samping: ketika melewati nilai yang diberikan, suatu
+        fungsi harus selalu mengembalikan hasil yang sama. Ini sejalan dengan memiliki
+        nilai-nilai abadi; suatu fungsi tidak pernah dapat mengambil nilai dan mengubahnya,
+        karena ini akan menyebabkan efek samping yang tangensial untuk mengembalikan
+        hasil.'
+      pure_functions: 'Fungsi tingkat tinggi: ini adalah fungsi yang memungkinkan fungsi
+        sebagai argumen, atau menggunakan fungsi sebagai nilai balik. Ini, bisa dibilang,
+        salah satu fitur paling kritis dari bahasa fungsional.'
+      applying: 'Currying: diaktifkan oleh fungsi tingkat tinggi, currying mengubah
+        fungsi yang mengambil banyak argumen menjadi fungsi yang mengambil satu argumen.
+        Ini sejalan dengan aplikasi fungsi parsial, yang mengubah fungsi multi-argumen
+        menjadi fungsi yang membutuhkan lebih sedikit argumen daripada yang awalnya.'
+      recursion: 'Rekursi: pengulangan dengan memanggil fungsi dari dalam dirinya sendiri.
+        Ketika Anda tidak memiliki akses ke data yang bisa diubah, rekursi digunakan
+        untuk membangun dan membuat rantai data. Ini karena perulangan bukan konsep
+        fungsional, karena memerlukan variabel yang akan diedarkan untuk menyimpan keadaan
+        loop pada waktu tertentu.'
+      lazy: 'Malas evaluasi, atau evaluasi tertunda: menunda pemrosesan nilai sampai
+        saat ketika sebenarnya dibutuhkan. Jika, sebagai contoh, Anda memiliki beberapa
+        kode yang menghasilkan daftar angka-angka Fibonacci dengan evaluasi malas diaktifkan,
+        ini tidak akan benar-benar diproses dan dihitung sampai salah satu nilai dalam
+        hasil diperlukan oleh fungsi lain, seperti menempatkan.'
+    pure_functions:
+      title: Fungsi murni
+      description: Anda dapat melihat bahwa fungsi ini menghitung hasil hanya menggunakan
+        argumennya.
+    closures:
+      title: Penutupan
+      description: Lambda juga menerapkan penutupan dan mampu menjaga konteksnya di
+        seluruh objek.
+    applying:
+      title: Menerapkan dan membawa sebagian
+      description: Pertama mari kita memahami apa dua aplikasi fungsi yang berbeda ini.
+        Aplikasi fungsi parsial memanggil fungsi dengan sejumlah argumen, untuk mendapatkan
+        fungsi kembali yang akan mengambil argumen yang lebih sedikit. Currying adalah
+        mengambil fungsi yang mengambil n argumen, dan membaginya menjadi n fungsi yang
+        mengambil satu argumen.
+      proc: Untuk memberi Anda gagasan yang lebih jelas tentang apa yang masing-masing
+        dari kedua hal ini akan lakukan, mari kita ambil contoh Proc.
+      partial: Aplikasi parsial dari fungsi ini akan kembali, jika kita melewati dua
+        argumen pertama, Procs bersarang berikut.
+      curry: <span class="code-inline">.curry</span> mengembalikan proc yang kari. Jika
+        argumen arity opsional diberikan, ia menentukan jumlah argumen. Seorang proc
+        yang sedang kari menerima beberapa argumen. Jika cukup banyak argumen yang disediakan,
+        ia meneruskan argumen yang disediakan ke proc asli dan mengembalikan hasilnya.
+        Kalau tidak, kembalikan proc yang sudah kari yang mengambil sisa argumen.
+  gotchas:
+    title: Gotcha
+    description1: Kebanyakan pemula Ruby on Rails merasa senang dengan kerangka kerja
+      dan mulai membuat aplikasi tanpa pengetahuan bahasa. Dan itulah keajaiban RoR.
+    description2: Pada titik tertentu hal-hal mulai menjadi serius. Beberapa membutuhkan
+      waktu dan upaya untuk mengeksplorasi rahasia kotor Ruby on Rails, sementara yang
+      lain diam-diam dan menjadi pengembang senior yang hampir tidak memiliki pengetahuan
+      bahasa.
+    description3: Ngomong-ngomong, cepat atau lambat, pemula atau programmer berpengalaman,
+      kita semua bertemu dengan yang disebut Ruby Gotchas - seluk-beluk bahasa kecil
+      yang bersembunyi dari situs kami selama berjam-jam melakukan debugging hardcore.
+    description4: Berikut adalah daftar gotcha Ruby populer dan keingintahuan yang harus
+      diperhatikan pengembang. Untuk setiap kasus, ada contoh kode yang membingungkan
+      dan / atau rawan kesalahan.
+    description5: Mereka datang bersama dengan praktik yang baik, yang akan mencegah
+      Anda membuat kesalahan sederhana (tetapi sulit ditemukan) dan menyederhanakan
+      kehidupan Anda (dan pengelola kode Anda).
+    surprising:
+      title: Ruby bisa mengejutkan
+      description: Meskipun &quot;direkayasa untuk memaksimalkan kebahagiaan programmer&quot;,
+        dengan &quot;prinsip kejutan paling tidak&quot;, Ruby masih memiliki gotcha.
+        Presentasi ini akan berlanjut dari gotchas pemula yang baru, ke gotchas yang
+        lebih canggih dan membingungkan.
+    quotes:
+      title: Jangan mengutip saya tentang ini, tapi ...
+      description: Interpolasi string (termasuk karakter khusus seperti <span class="code-inline">\
+        n</span> ) gagal dengan tanda kutip <span class="code-inline">&#39;tunggal&#39;</span>
+        - ini membutuhkan tanda kutip <span class="code-inline">&quot;ganda&quot;</span>
+        . Sama seperti di sebagian besar bahasa dengan interpolasi string. Untuk menghindarinya
+        gunakan ganda kapan saja praktis.
+    twue:
+      title: Itu twue! Itu twue!
+      description: 'Hanya dua hal yang salah: <span class="code-inline">false</span>
+        dan <span class="code-inline">nil</span>. Segala sesuatu yang lain adalah benar,
+        bahkan <span class="code-inline">0</span> (salah dalam C), <span class="code-inline">&quot;&quot;</span>
+        (salah dalam JS), <span class="code-inline">[]</span> , dll. Menjebak orang-orang
+        dari C, JS, dll. Di mana beberapa di antaranya palsu.'
+    symbols_and_strings:
+      title: Gantung dia di patung atau Tali dia, secara simbolis.
+      description: '<span class="code-inline">Symbol != String</span>. Kalaupun sama
+        saat dicetak. Ingat yang mana yang akan digunakan untuk args. Idealnya, ambil
+        salah satu, dan gunakan metode yang diharapkan: &quot;Jadilah liberal dalam
+        apa yang Anda terima, dan konservatif dalam apa yang Anda kirim.&quot; Hukum
+        Postel.'
+    string_or_nothing:
+      title: Tali ... atau tidak sama sekali!
+    constants:
+      title: Konstanta Tidak
+      description: Huruf awal berarti konstan, dalam Ruby. Cobalah untuk mengubah konstanta.
+        Ooooh Anda mendapatkan PERINGATAN! BFD. Bahkan pembekuan tidak bekerja untuk
+        Fixnums. Itu berfungsi untuk array (semacam) dan sebagian besar objek lainnya
+        ... katanya pertanda
+    equals:
+      title: Beberapa lebih setara daripada yang lain
+      description: <span class="code-inline">==</span> adalah nilai yang biasanya sama,
+        <span class="code-inline">.eql?</span> adalah nilai dan kelas (1 adalah Fixnum,
+        1.0 adalah Float), <span class="code-inline">.equal?</span> adalah objek yang
+        sama. Ini sebenarnya jauh lebih hairier.
+    operations:
+      title: "> ===! = ==!"
+      description: <span class="code-inline">===</span> adalah &quot;persamaan kasus&quot;,
+        seperti dalam pernyataan kasus. Nama yang lebih baik mungkin <span class="code-inline">.describes?</span>
+        , atau kelebihan <span class="code-inline">.includes?</span> . Sekali lagi,
+        ini sebenarnya jauh lebih hairier; lihat dokumen pada Object class. Mendapat
+        orang dari bahasa tempat <span class="code-inline">===</span> adalah identitas
+        objek atau nilai dan kelas yang sama.
+    priority:
+      title: dan! = &amp;&amp;, atau! = ||
+      description: '<span class="code-inline">&&</span> memiliki prioritas lebih
+        tinggi dari <span class="code-inline">=</span>, jadi <span class="code-inline">x
+        = true && false</span> berarti <span class="code-inline">x = (true && false)</span> dan memiliki prioritas lebih rendah,
+        jadi <span class="code-inline">x = true and false</span> berarti <span class="code-inline">(x = true) and false</span>
+        . Panduan Gaya Ruby: Gunakan <span class="code-inline">&&, ||</span>
+        untuk ekspresi boolean, <span class="code-inline">and, or</span> untuk aliran
+        kontrol.'
+    sensitive:
+      title: Jangan terlalu sensitif!
+      description: Ruang putih tidak sensitif? TIDAK SELALU! Parser berpikir itu adalah
+        sebuah ekspresi, sebagai satu argumen, tetapi <span class="code-inline">(1,
+        2)</span> bukan ekspresi Ruby yang valid! (Semua berfungsi dengan baik dengan
+        1 argumen).
+      usage: 'Dengan beberapa argumen: <br/> - Tidak ada orangtua, tidak ada masalah.
+        <br/> - Orang tua tanpa ruang, OK. <br/> - Parens dan ruang, TIDAK!'
+      methods: '<span class="code-inline">method / num</span> adalah regex atau string
+        tanpa akhir! Ruby berpikir Anda memberikan argumen tentang metode ini. Prinsip
+        umum: gunakan spasi putih BALANCED; kedua belah pihak atau tidak sama sekali.'
+      arguments: '<span class="code-inline">one -2</span> membuat Ruby berpikir Anda
+        memberikan argumen <span class="code-inline">-2</span> ke metode satu. Sama
+        dengan <span class="code-inline">+2</span> atau bahkan <span class="code-inline">*
+        2</span> . Sekali lagi: gunakan spasi putih BALANCED, kedua sisi atau tidak
+        sama sekali.'
+      stubby: 'Lambda &quot;Stabby&quot; (1.9+) Mengurung Ruang opsional sebelum setelah
+        pertengkaran tanpa orangtua, oke. Ruang setelah orang tua, oke. Sekali lagi,
+        ruang sebelum orang tua, TIDAK! UPDATE: Diperbaiki dalam 2.0!'
+    onto:
+      title: Yer @ ke!
+      description: 'Nilai telanjang menjadi variabel lokal sementara! Solusi: ingat
+        <span class="code-inline">@!</span> (Atau &quot;self.&quot;. Atau gunakan <span
+        class="code-inline">attr_writer, attr_accessor</span> .) Mendapat orang dari
+        Java / C ++, bukan Python (yang membutuhkan &quot;self.&quot; Juga) &quot;Anda
+        terus menggunakan variabel itu. Saya tidak berpikir itu berarti apa yang Anda
+        pikirkan artinya.&quot; Bukan Inigo Montoya.'
+    variables:
+      title: Lihat, ini adalah @@!
+      description: Lihat apa isinya yang kosong? Kami tidak mengubah <span class="code-inline">nilai
+        @@</span> Orang Tua sebelum memeriksanya, atau nilai Child sama sekali! Atau
+        apakah kita? <span class="code-inline">@@ variabel</span> dibagikan dengan subclass
+        - tidak hanya mereka ada, tetapi variabel itu sendiri! Mendeklarasikan <span
+        class="code-inline">nilai @@</span> Child mengubah Parent, dan termasuk Parent&#39;s
+        mengubah Child&#39;s.ut, ini adalah @@!
+    initialize:
+      title: Dengan init (ialize) atau tanpa itu
+      description: Inisialisasi orangtua berjalan secara otomatis hanya jika anak tidak
+        memilikinya. Selain itu, orangtua harus dipanggil untuk menjalankan.
+    superman:
+      title: Superman vs the Invisible Man
+      description: '<span class="code-inline">super</span> tanpa daftar no-arg mengirimkan
+        pemanggil yang mendapat <span class="code-inline">super</span> dengan args eksplisit
+        mengirim args untuk mengirim NO args, gunakan parens kosong: <span class="code-inline">super
+        ()</span> .'
+    regexp:
+      title: Kapan itu akan berakhir? (Atau mulai?)
+      description: 'Dalam regexps standar: <span class="code-inlne">^</span> adalah
+        awal dan <span class="code-inline">$</span> adalah akhir dari seluruh string.
+        Regex Ruby default untuk multiline, jadi: <span class="code-inline">^</span>
+        adalah awal dan <span class="code-inline">$</span> adalah akhir dari semua baris
+        <span class="code-inline">\ A</span> adalah awal dan <span class="code-inline">\
+        Z</span> adalah akhir dari seluruh string. (Atau untuk memasukkan baris baru
+        ... yang merupakan gotcha lain!)'
+    any:
+      title: dapatkan .any?
+      description: '<span class="code-inline">.any?</span> tidak berarti &quot;ada
+        elemen?&quot;! Dengan blok: &quot;apakah ada yang membuat blok itu benar?&quot;.
+        Tanpa: &quot;apakah ada kebenaran?&quot; Memiliki blok implisit: <span class="code-inline">{ |element| elemen }</span>.'
+    undef:
+      title: "(Un) Def Leppard"
+      description: Variabel yang dideklarasikan dalam blok yang diteruskan ke iterator
+        (mis., Waktu atau masing-masing) tidak ditentukan di atas setiap iterasi! Iterator
+        memanggil blok berulang kali, sehingga vars berada di luar jangkauan lagi setelah
+        setiap panggilan. Konstruk pengulangan bawaan (misalnya, sementara atau untuk)
+        adalah OK. (Atau nyatakan vars sebelum blok.)
+    freeze:
+      title: Sinar beku (Ar)
+      description: Membekukan array (atau hash) membekukannya, bukan item yang dikandungnya.
+        String dapat dimodifikasi di tempat. Dengan cara ini, Anda dapat memodifikasi
+        slot yang diberikan dalam Array of Strings yang dibekukan.
+    one_is_one:
+      title: 1 adalah 1 ... dan akan lebih lagi!
+      description: 'Mengubah Fixnum ke nilai baru berarti objek baru. Mereka tidak dapat
+        dimodifikasi di tempat! Jadi, tidak dapat memodifikasi Array Fixnums yang beku.
+        (Fixnums dan Integers tidak memiliki bang-metode untuk demo mencoba). BTW: <span
+        class="code-inline">object_id</span> Fixnum adalah <span class="code-inline">value
+        * 2 + 1</span>'
+    bang:
+      title: "(ke! ||! ke!) ==?"
+      description: Bang menandai metode ini sebagai berbahaya. Mengapa? Seringkali,
+        dapat memodifikasi penerima, vs non-modding versi non-bang. JANGAN MENGANDALKAN
+        MEREKA KEMBALI NILAI YANG SAMA SEBAGAI VERSI NON-BANG! Banyak yang mengembalikan
+        nol jika tidak ada perubahan yang diperlukan!
+    array:
+      title: Array Gotcha Baru
+      description: Nilai default yang diberikan sebagai objek adalah objek yang sama
+        untuk setiap slot! Mutasi satu mutasi default untuk semua. Nilai awal yang diberikan
+        sebagai blok akan dievaluasi secara terpisah untuk setiap slot. Gunakan ini
+        untuk membuat vars baru untuk masing-masing.
+    hash:
+      title: Membuat hash itu
+      description: 'Sebagian besar masalah yang sama (dan solusi) sebagai Array. LEBIH
+        BANYAK GOTCHAS: membuat objek baru pada akses apa pun ke slot kosong! Dapat
+        membuat terlalu banyak objek baru; reruntuhan memeriksa konten &quot;nyata&quot;
+        atau menghitung (memeriksa nol, ukuran., dll).'
+    rescue:
+      title: Selamatkan Aku, Lempar Garis, Aku akan Mencoba Menangkapnya!
+      description: Di Ruby, lempar dan tangkap BUKAN untuk pengecualian! Mereka adalah
+        kontrol aliran canggih, untuk keluar dari sarang yang dalam. Ruby menggunakan
+        kenaikan gaji dan penyelamatan untuk pengecualian.
+    to_str:
+      title: to_s VS to_str
+      description: '<span class="code-inline">to_s</span> didefinisikan pada setiap
+        objek dan akan selalu mengembalikan sesuatu. <span class="code-inline">to_str</span>
+        hanya didefinisikan pada objek yang seperti string. Misalnya, <span class="code-inline">Simbol</span>
+        memiliki <span class="code-inline">to_str</span> tetapi <span class="code-inline">Array</span>
+        tidak. Dengan demikian, Anda dapat menggunakan <span class="code-inline">obj.respond_to?(:to_str)</span> daripada sesuatu seperti <span class="code-inline">obj.is_a?
+        (String)</span> jika Anda ingin mengambil keuntungan dari mengetik bebek tanpa
+        khawatir tentang apakah kelas yang Anda kerjakan adalah subclass dari <span
+        class="code-inline">String</span> atau tidak.'
+    missing:
+      title: Perlu mengoordinasikan method_missing dan respond_to_missing?
+      description: 'Ketika override <span class="code-inline">method_missing,</span>
+        ingat untuk menimpa <span class="code-inline">respond_to_missing?</span> demikian
+        juga. Ketika Anda menggunakan method_missing untuk membuat objek mengembalikan
+        sesuatu pada pemanggilan metode, selalu pastikan Anda juga mendefinisikan ulang
+        response_to_missing ?. Jika Anda tidak melakukannya, tidak ada yang akan pecah
+        pada pandangan pertama, tetapi Anda akan mengalami masalah pada akhirnya. Pertimbangkan
+        kelas ini:'
+      respond_to: 'Banyak kode (permata atau milik Anda sendiri) bergantung pada respond_to?
+        (untuk alasan yang bagus). Apakah Anda perlu menambal response_to_missing? demikian
+        juga:'
+    exception:
+      title: penyelamatan dari StandardError, bukan Pengecualian
+      description: 'Jangan menyelamatkan Exception, menyelamatkan StandardError Before,
+        menyelamatkan Exception secara eksplisit akan menyelamatkan bahkan kesalahan
+        yang tidak dapat dipulihkan seperti SyntaxError, LoadError, dan Interrupt. Jika
+        Anda menghilangkan kualifikasi jenis Pengecualian, maka Ruby hanya akan menangkap
+        StandardError, yang mungkin Anda inginkan:'
+    private:
+      title: Data pribadi tidak benar-benar, dan tidak sama sekali metode w / class
+      description: Ada cara untuk membuat metode kelas pribadi di Ruby, Anda hanya harus
+        melewati beberapa rintangan. Err, maksud saya gunakan <span class="code-inline">class << self</span> sintaks. Keanehan ini
+        mendorong contoh tunggal ke kelas secara efektif menciptakan metode kelas.
+    braces:
+      title: Kawat gigi vs do-end
+      description: Konvensi umum adalah menggunakan <span class="code-inline">do ..
+        end</span> untuk blok multi-line dan kurung kurawal untuk blok baris tunggal,
+        tetapi ada juga perbedaan antara keduanya yang dapat diilustrasikan. Ini berarti
+        bahwa <span class="code-inline">{}</span> memiliki prioritas lebih tinggi daripada
+        <span class="code-inline">do .. end</span> , jadi ingatlah itu ketika memutuskan
+        apa yang ingin Anda gunakan.
+    module:
+      title: 'class Foo :: Bar, didefinisikan di luar Module Foo, tidak akan melihat
+        di dalam Foo'
+      description: Anda dapat memikirkan setiap tampilan <span class="code-inline">module Something</span> , <span class="code-inline">class Something</span> atau <span class="code-inline">def
+        something</span> sebagai &quot;gateway&quot; ke dalam ruang lingkup baru. Ketika
+        Ruby sedang mencari definisi nama yang telah direferensikan, pertama kali terlihat
+        di lingkup saat ini (metode, kelas atau modul), dan jika tidak ditemukan di
+        mana ia akan kembali melalui masing-masing berisi &quot;gateway&quot; dan cari
+        ruang lingkup di sana.
+    credits: 'Kode dan artikel diambil dari sumber:'
+  meta_programming:
+    title: Metaprogramming
+    description: Metaprogramming adalah penulisan program komputer yang menulis atau
+      memanipulasi program lain (atau diri mereka sendiri) sebagai data mereka, atau
+      yang melakukan bagian dari pekerjaan pada waktu kompilasi yang seharusnya dilakukan
+      saat runtime. Dalam banyak kasus, ini memungkinkan programmer untuk menyelesaikan
+      lebih banyak dalam jumlah waktu yang sama seperti yang akan mereka lakukan untuk
+      menulis semua kode secara manual, atau memberikan program fleksibilitas yang lebih
+      besar untuk secara efisien menangani situasi baru tanpa kompilasi ulang. Metaprogramming
+      adalah menulis kode yang menulis kode selama runtime untuk membuat hidup Anda
+      lebih mudah.
+    dynamic_dispatch:
+      title: Pengiriman Dinamis
+      description: Mengizinkan kami mengirim pesan <span class="code-inline">subject.public_send(message, *arguments)</span>
+    dynamic_method:
+      title: Metode Dinamis
+      description: 'Mengizinkan kami secara dinamis membuat metode <span class="code-inline">define_method:
+        method_name { blok yang menjadi tubuh metode }</span>'
+    ghost_methods:
+      title: Metode Hantu
+      description: Menangkap &quot;Metode Ghost&quot; dan meneruskannya ke metode lain
+        Sementara mungkin menambahkan logika di sekitar panggilan. Memanfaatkan <span
+        class="code-inline">method_missing</span>
+    dynamic_proxies:
+      title: Proxy Dinamis
+      description: 'Misalnya, Anda dapat memberikan metode imajiner dengan memanfaatkan
+        <span class="code-inline">method_missing</span> untuk mem-parsing pesan masuk
+        (mis. <span class="code-inline">get_name</span> , <span class="code-inline">get_age</span>)
+        dan untuk mendelegasikan ke metode lain seperti <span class="code-inline">get(:data_type)</span>
+        di mana <span class="code-inline">:data_type</span> adalah
+        <span class="code-inline">:name</span> atau <span class="code-inline">:age</span>
+        .'
+      more: Jika (setelah analisis) Anda menemukan masalah kinerja dengan menggunakan
+        <span class="code-inline">method_missing</span> Anda dapat menggunakan teknik
+        &quot;Metode Dinamis&quot; untuk membuat metode nyata setelah pesan diterima
+        oleh `method_missing` pertama kali.
+  solid_principles:
+    good: Baik!
+    bad: Buruk!
+    title: Prinsip yang kuat
+    description: Dalam pemrograman komputer, SOLID (tanggung jawab tunggal, Open-closed,
+      substitusi Liskov, segregasi antarmuka, dan inversi ketergantungan) adalah akronim
+      mnemonik yang diperkenalkan oleh Michael Feathers untuk &quot;Lima Prinsip Pertama&quot;
+      yang dinamai oleh Robert C. Martin pada awal 2000-an untuk lima prinsip dasar
+      pemrograman dan desain berorientasi objek. Maksudnya adalah bahwa prinsip-prinsip
+      ini, ketika diterapkan bersama, akan membuatnya lebih mungkin bahwa seorang programmer
+      akan membuat sistem yang mudah untuk dipelihara dan diperluas dari waktu ke waktu.
+      Prinsip-prinsip SOLID adalah pedoman yang dapat diterapkan saat bekerja pada perangkat
+      lunak untuk menghilangkan bau kode dengan menyebabkan programmer untuk memperbaiki
+      kode sumber perangkat lunak hingga dapat dibaca dan diperluas. Ini adalah bagian
+      dari keseluruhan strategi Pengembangan Perangkat Lunak yang gesit dan adaptif.
+    single:
+      title: Prinsip Tanggung Jawab Tunggal
+      description: Prinsip Tanggung Jawab Tunggal adalah yang paling abstrak dari kelompok
+        itu. Ini membantu menjaga kelas dan metode tetap kecil dan terpelihara. Selain
+        menjaga agar kelas tetap kecil dan fokus, ini juga membuat mereka lebih mudah
+        untuk dipahami. Contohnya mungkin menambahkan dukungan untuk mengirim ringkasan
+        email dari komisi orang tertentu setelah menandai kesepakatan yang diproses.
+        Fakta bahwa kita dapat mengidentifikasi berbagai alasan untuk mengubah sinyal
+        merupakan pelanggaran terhadap Prinsip Tanggung Jawab Tunggal.
+    open_close:
+      title: Prinsip Terbuka / Tertutup
+      description: Prinsip Terbuka / Tertutup menyatakan bahwa kelas atau metode harus
+        terbuka untuk ekstensi, tetapi ditutup untuk modifikasi. Ini memberitahu kita
+        bahwa kita harus berusaha untuk desain modular yang memungkinkan kita untuk
+        mengubah perilaku sistem tanpa membuat modifikasi pada kelas itu sendiri. Ini
+        umumnya dicapai melalui penggunaan pola-pola seperti pola strategi.
+      after: Dengan refactoring ini, kami dapat menambahkan parser baru tanpa mengubah
+        kode apa pun. Perilaku tambahan apa pun hanya akan membutuhkan penambahan penangan
+        baru. Ini membuat FileParser kami dapat digunakan kembali dan dalam banyak kasus
+        akan membuat kami mematuhi Prinsip Tanggung Jawab Tunggal dengan mendorong kami
+        untuk membuat kelas yang lebih kecil dan lebih fokus.
+    liskov:
+      title: Prinsip Pergantian Liskov
+      description: Prinsip Liskov cenderung paling sulit dipahami. Prinsip tersebut
+        menyatakan bahwa Anda harus dapat mengganti instance dari kelas induk dengan
+        instance dari salah satu anaknya tanpa menciptakan perilaku yang tidak terduga
+        atau salah.
+    segregation:
+      title: Prinsip Pembalikan Ketergantungan
+      description: 'Prinsip tersebut menyatakan bahwa klien tidak boleh dipaksa untuk
+        bergantung pada metode yang tidak digunakannya. Dalam contoh ini, ada kelas
+        Komputer, Programmer, dan Teknisi. Baik Programmer dan Teknisi menggunakan Komputer
+        dengan cara yang berbeda. Programmer menggunakan komputer untuk mengetik, tetapi
+        teknisi tahu bagaimana mengubah hard drive komputer. Apa yang diterapkan Prinsip
+        Segregasi Antarmuka (ISP) adalah bahwa satu kelas tidak boleh bergantung pada
+        metode yang tidak digunakannya. Dalam kasus kami, Programmer tidak perlu digabungkan
+        ke metode Computer # change_hard_drive karena tidak menggunakannya, tetapi perubahan
+        status yang diterapkan metode ini dapat memengaruhi Programmer. Mari kita refactor
+        kode untuk mematuhi LSP.'
+      after: Setelah refactor ini Teknisi menggunakan objek yang berbeda dari tipe ComputerInternals
+        yang diisolasi dari keadaan Komputer. Keadaan objek Komputer dapat dipengaruhi
+        oleh Programmer tetapi perubahan tidak akan mempengaruhi Teknisi dengan cara
+        apa pun.
+    di:
+      title: Prinsip Pembalikan Ketergantungan
+      description: Prinsip Ketergantungan Pembalikan berkaitan dengan objek tingkat
+        tinggi (pikir logika bisnis) tidak tergantung pada rincian implementasi tingkat
+        rendah (pikirkan kueri basis data dan IO). Ini dapat dicapai dengan mengetik
+        bebek dan Prinsip Ketergantungan Pembalikan. Seringkali pola ini digunakan untuk
+        mencapai Prinsip Terbuka / Tertutup yang kita bahas di atas. Faktanya, kita
+        bahkan dapat menggunakan kembali contoh yang sama sebagai demonstrasi dari prinsip
+        ini. Sekarang ada kelas formatter, tapi saya sudah meng-hardcodenya di kelas
+        Report, sehingga menciptakan ketergantungan dari Report ke JSONFormatter. Karena
+        Laporan adalah konsep yang lebih abstrak (tingkat tinggi) daripada JSONFormatter,
+        kami secara efektif melanggar DIP.
+      after: Dengan cara ini, Laporan tidak bergantung pada JSONFormatter dan dapat
+        menggunakan semua jenis formatter yang memiliki metode yang disebut format (ini
+        dikenal sebagai pengetikan bebek). Hal lain yang perlu diperhatikan adalah bahwa
+        kami telah menggunakan, sekali lagi, injeksi ketergantungan untuk menyelesaikan
+        masalah. Teknik ini sangat kuat ketika tujuan kami adalah memisahkan objek,
+        dan meskipun memiliki inisial yang sama dengan prinsip inversi ketergantungan
+        (vs pola injeksi ketergantungan), mereka adalah konsep yang sama sekali berbeda.
+  threads:
+    example: Contoh
+    title: Utas
+    description: 'Catatan tentang paralelisme dan konkurensi: Perbedaan utama antara
+      menggunakan proses versus utas adalah cara penanganan memori. Pada level tinggi,
+      proses menyalin memori, sementara utas berbagi memori. Ini membuat proses pemijahan
+      lebih lambat daripada pemijahan benang dan mengarah pada proses yang menghabiskan
+      lebih banyak sumber daya setelah berjalan. Secara keseluruhan, thread mengeluarkan
+      biaya overhead lebih sedikit daripada proses. API Utas ini adalah API Ruby. Saya
+      telah mengisyaratkan bahwa implementasi Ruby yang berbeda memiliki perilaku threading
+      mendasar yang berbeda.'
+    green:
+      title: Benang Hijau
+      description: Ruby 1.9 mengganti utas hijau dengan utas asli. Namun, GIL masih
+        mencegah paralelisme. Karena itu, konkurensi telah ditingkatkan melalui penjadwalan
+        yang lebih baik. Jadwal baru membuat keputusan konteks-beralih lebih efisien,
+        dengan pada dasarnya memindahkannya ke utas asli yang terpisah, yang dikenal
+        sebagai utas waktu.
+    gil:
+      title: GIL - Kunci Penerjemah Global
+      description: MRI memiliki kunci juru bahasa global (GIL). Ini adalah kunci di
+        sekitar pelaksanaan kode Ruby. Ini berarti bahwa dalam konteks multi-utas, hanya
+        satu utas yang dapat mengeksekusi kode Ruby setiap saat. . GIL ada untuk melindungi
+        internal Ruby dari kondisi ras yang dapat merusak data. Ada banyak peringatan
+        dan optimisasi, tetapi inilah intinya.
+      example: Fakta sederhana ini adalah apa yang membuat utas sangat kuat, dan juga
+        yang membuat mereka sulit untuk dikerjakan. Saya sudah memberi Anda ide mengapa
+        utas bagus; inilah program sederhana untuk menggambarkan kesulitan mereka. Di
+        sini Anda dapat melihat bahwa kami memiliki <span class="code-inline">10 * 10.000</span>
+        elemen dalam array. Perhatikan bahwa ruby yang berbeda dapat menunjukkan hasil
+        yang berbeda. GIL hanya ada di rubi MRI.
+    mutex:
+      title: Mutex - Eksekusi Bersama
+      description: Mutex menyediakan mekanisme untuk beberapa utas untuk menyinkronkan
+        akses ke bagian penting dari kode. Dengan kata lain, mereka membantu membawa
+        ketertiban, dan beberapa jaminan, ke dunia kekacauan multi-threaded. Nama &#39;mutex&#39;
+        adalah singkatan untuk &#39;saling pengecualian.&#39; Jika Anda membungkus beberapa
+        bagian dari kode Anda dengan suatu mutex, Anda menjamin bahwa tidak ada dua
+        utas yang dapat memasuki bagian itu secara bersamaan. Mutex menyediakan mekanisme
+        untuk beberapa utas untuk menyinkronkan akses ke bagian penting dari kode. Ini
+        membantu membawa ketertiban dan beberapa jaminan ke dunia kekacauan multi-utas.
+      example: Dalam program ini, karena utas apa pun harus mengunci mutex sebelum dapat
+        mendorong ke Array, ada jaminan bahwa tidak ada dua utas yang akan melakukan
+        operasi ini pada saat yang sama. Dengan kata lain, operasi ini tidak dapat lagi
+        terputus sebelum selesai. Setelah satu utas mulai mendorong ke Array, tidak
+        ada utas lain yang dapat memasukkan bagian kode sampai utas pertama selesai.
+        Operasi ini sekarang aman dari thread. Di sini Anda dapat melihat bahwa kami
+        memiliki <span class="code-inline">10 * 10.000</span> elemen dalam array. Sekarang
+        semuanya sama, karena mutex. Mutex menetapkan batas yang sama untuk utas. Utas
+        pertama yang mengenai sedikit kode ini akan mengunci mutex. itu kemudian menjadi
+        pemilik mutex itu. Sampai utas yang dimiliki membuka kunci mutex, tidak ada
+        utas lain yang bisa menguncinya.
+    fibers:
+      title: Serat
+      description: Serat adalah primitif untuk menerapkan konkurensi koperasi ringan
+        di Ruby. Pada dasarnya, mereka adalah cara membuat blok kode yang dapat dijeda
+        dan dilanjutkan, seperti utas. Perbedaan utama adalah bahwa mereka tidak pernah
+        mendahului dan bahwa penjadwalan harus dilakukan oleh programmer dan bukan pada
+        VM. Berbeda dengan model concurrency ringan stackless lainnya, masing-masing
+        serat hadir dengan tumpukan 4KB kecil. Ini memungkinkan serat untuk dijeda dari
+        panggilan fungsi yang sangat bersarang di dalam blok serat.
+    rails:
+      title: Rel pengaman benang
+      description: Masalah dengan ini adalah bahwa tidak ada cara sederhana untuk mengatakan
+        dengan kepastian absolut apakah aplikasi secara keseluruhan aman-thread.
+      global_variables: Variabel global bersifat global. Ini berarti bahwa mereka dibagikan
+        di antara utas. Jika Anda tidak yakin tentang tidak menggunakan variabel global
+        sekarang, inilah alasan lain untuk tidak pernah menyentuhnya. Jika Anda benar-benar
+        ingin berbagi sesuatu secara global di seluruh aplikasi, Anda kemungkinan besar
+        lebih baik dilayani oleh konstanta (tetapi lihat di bawah).
+      class_variables: Variabel kelas. Untuk tujuan diskusi tentang utas, variabel kelas
+        tidak jauh berbeda dari variabel global. Mereka dibagikan di seluruh utas dengan
+        cara yang sama. Masalahnya bukan tentang menggunakan variabel kelas, tetapi
+        tentang memutasi mereka. Dan jika Anda tidak akan mengubah variabel kelas, dalam
+        banyak kasus konstanta lagi merupakan pilihan yang lebih baik.
+      instance_variables: Variabel instance kelas. Tetapi mungkin Anda pernah membaca
+        bahwa Anda harus selalu menggunakan variabel instance kelas alih-alih variabel
+        kelas di Ruby. Yah, mungkin Anda harus, tetapi mereka sama bermasalahnya untuk
+        program berulir sebagai variabel kelas.
+      memoization: 'Memoisasi dengan sendirinya bukan masalah keamanan utas. Ini sering
+        digunakan untuk menyimpan data dalam variabel kelas atau variabel instance kelas
+        (lihat poin sebelumnya). Operator <span class="code-inline">|| =</span> sebenarnya
+        adalah dua operasi, jadi ada kemungkinan konteks yang terjadi di tengahnya,
+        yang menyebabkan kondisi balapan di antara utas. Jadi meskipun Anda hanya akan
+        menggunakan variabel instan, Anda mungkin berakhir dengan kondisi balapan dengan
+        memoisasi. Jangan memo ke variabel kelas atau variabel instance kelas. Jika
+        Anda perlu menulis memo sesuatu di tingkat
+        kelas, gunakan variabel lokal thread (<span class="code-inline">Thread.current
+        [:baz]</span>) sebagai gantinya. Namun, perlu diketahui bahwa itu masih semacam
+        variabel global.'
+    config:
+      title: Konfigurasikan threadsafe !?
+      description: Memanggil metode ini menetapkan empat opsi dalam konfigurasi aplikasi
+        kami. Mari kita telusuri setiap opsi dan bicarakan apa fungsinya.
+      frameworks: 'Preloading Frameworks: Opsi pertama @preload_frameworks melakukan
+        cukup banyak seperti yang dikatakan, ia memaksa kerangka Rails untuk dimuat
+        dengan penuh semangat saat boot. Ketika opsi ini tidak diaktifkan, kelas kerangka
+        dimuat dengan malas melalui autoload. Dalam lingkungan multi-utas, kerangka
+        kerja perlu dimuat dengan penuh semangat sebelum ada utas yang dibuat karena
+        masalah keamanan utas dengan pengisian otomatis. Kami tahu bahwa memuat kerangka
+        kerja bukanlah threadsafe, jadi strateginya adalah memuat semuanya sebelum utas
+        siap menangani permintaan.'
+      cache: 'Kelas cache: Opsi @cache_classes mengontrol apakah kelas dimuat ulang
+        atau tidak. Ingat ketika Anda melakukan &quot;TDD&quot; di aplikasi Anda? Anda
+        memodifikasi pengontrol, lalu memuat ulang halaman untuk &quot;menguji&quot;
+        dan melihat bahwa semuanya berubah? Ya, itulah yang dikendalikan opsi ini. Ketika
+        opsi ini salah, seperti dalam pengembangan, kelas Anda akan dimuat ulang ketika
+        mereka diubah. Tanpa opsi ini, kami tidak akan dapat melakukan &quot;F5DD&quot;
+        kami (ya, itu F5 Driven Development). Dalam produksi, kita tahu bahwa kelas
+        tidak akan dimodifikasi dengan cepat, jadi melakukan pekerjaan untuk mengetahui
+        apakah memuat ulang kelas hanya membuang-buang sumber daya, jadi masuk akal
+        untuk tidak pernah memuat ulang definisi kelas.'
+      di: 'Ketergantungan pemuatan: Opsi ini, @dependency_loading mengontrol pemuatan
+        kode ketika konstanta yang hilang ditemukan. Misalnya, pengontrol merujuk pada
+        model Pengguna, tetapi konstanta Pengguna tidak ditentukan. Jika demikian, jika
+        @dependency_loading benar, Rails akan menemukan file yang berisi konstanta pengguna
+        dan memuat file itu. Kita sudah bicara tentang bagaimana memuat kode bukan thread
+        aman, jadi idenya di sini adalah bahwa kita harus memuat kerangka kerja, lalu
+        memuat semua kode pengguna, lalu nonaktifkan pemuatan ketergantungan. Setelah
+        pemuatan dependensi dinonaktifkan, kode kerangka kerja dan kode aplikasi harus
+        dimuat, dan konstanta yang hilang hanya akan meningkatkan pengecualian daripada
+        upaya untuk memuat kode. Kami membenarkan menonaktifkan opsi ini dalam produksi
+        karena (seperti yang disebutkan sebelumnya) memuat kode tidak threadsafe, dan
+        kami berharap semua kode dimuat sebelum utas mana pun dapat menangani permintaan.'
+      concurrency: 'Mengizinkan concurrency: opsi @allow_concurrency mengontrol apakah
+        middleware Rack :: Lock digunakan atau tidak di stack Anda. Rack :: Lock membungkus
+        mutex di sekitar permintaan Anda. Gagasannya adalah jika Anda memiliki kode
+        yang bukan threadsafe, mutex ini akan mencegah beberapa utas dari mengeksekusi
+        kode pengontrol Anda secara bersamaan. Saat threadsafe! diatur, middleware ini
+        dihapus, dan kode pengontrol dapat dieksekusi secara paralel.'
+    credits: 'Kode dan artikel diambil dari sumber:'
+  ruby_meister:
+    title: Menjadi Ruby Meister
+    description: Dalam pembicaraan ini, kami akan memeriksa perjalanan panjang dari
+      menjadi seorang pemula Ruby hingga mencapai penguasaan Ruby yang sebenarnya dan
+      akan mencoba mempersingkatnya untuk Anda dengan berbagi beberapa wawasan penting.
+      Master Rubyist memiliki landasan teori yang hebat, mengandalkan kotak peralatan
+      yang luas, memiliki pemahaman mendalam tentang nilai-nilai inti dan prinsip-prinsip
+      Ruby dan selalu mengasah keterampilan mereka. Mungkin Anda mengatakan pada diri
+      sendiri, &quot;Wow, ini sangat kabur!&quot;, Tetapi jika Anda menghadiri sesi
+      ini saya berjanji bahwa Anda akan tercerahkan, terhibur dan Anda akan benar-benar
+      menikmatinya! Kedengarannya bagus? Buku-buku hebat akan menjadi bagian dari sumber
+      yang saya sarankan kepada orang-orang untuk meningkatkan keterampilan mereka.
+    video: Perjalanan Panjang ke Penguasaan Ruby oleh Bozhidar Batsov.
+    computer_science_fundamentals:
+      title: Dasar-dasar Ilmu Komputer
+      articles:
+        - name: inside_machine
+          title: 'Di dalam Mesin: Pengantar Ilustrasi untuk Mikroprosesor dan Arsitektur
+            Komputer'
+          description: Komputer melakukan tugas yang tak terhitung jumlahnya mulai dari
+            bisnis yang kritis hingga rekreasi, tetapi terlepas dari betapa berbedanya
+            mereka terlihat dan berperilaku, mereka semua sangat mirip dalam fungsi
+            dasar. Setelah Anda memahami bagaimana mikroprosesor — atau unit pemrosesan
+            pusat (CPU) — bekerja, Anda akan memahami konsep dasar di jantung semua
+            komputasi modern.
+        - name: code
+          title: 'Kode: Bahasa Tersembunyi dari Perangkat Keras dan Perangkat Lunak
+            Komputer'
+          description: Apa hubungan senter, invasi Inggris, kucing hitam, dan jungkat-jungkit
+            dengan komputer? Dalam CODE, mereka menunjukkan kepada kita cara-cara cerdas
+            kita memanipulasi bahasa dan menemukan cara baru untuk berkomunikasi satu
+            sama lain. Dan melalui CODE, kita melihat bagaimana kecerdikan ini dan dorongan
+            manusiawi kita untuk berkomunikasi telah mendorong inovasi teknologi selama
+            dua abad terakhir.
+        - name: concrete_math
+          title: 'Matematika Beton: Yayasan Ilmu Komputer'
+          description: Buku ini memperkenalkan matematika yang mendukung pemrograman
+            komputer tingkat lanjut dan analisis algoritma. Tujuan utama dari penulis
+            terkenal adalah untuk memberikan dasar yang kuat dan relevan dari keterampilan
+            matematika - keterampilan yang dibutuhkan untuk memecahkan masalah yang
+            kompleks, untuk mengevaluasi jumlah yang menghebohkan, dan untuk menemukan
+            pola halus dalam data. Ini adalah teks yang sangat diperlukan dan referensi
+            tidak hanya untuk para ilmuwan komputer - penulis sendiri sangat bergantung
+            padanya! - tetapi untuk pengguna matematika yang serius di hampir setiap
+            disiplin ilmu.
+        - name: sicp
+          title: Struktur dan Interpretasi Program Komputer
+          description: 'Struktur dan Interpretasi Program Komputer telah memiliki dampak
+            dramatis pada kurikulum ilmu komputer selama dekade terakhir. Revisi yang
+            sudah lama dinanti ini berisi perubahan di seluruh teks. Ada implementasi
+            baru dari sebagian besar sistem pemrograman utama dalam buku ini, termasuk
+            penerjemah dan penyusun, dan penulis telah memasukkan banyak perubahan kecil
+            yang mencerminkan pengalaman mereka mengajar kursus di MIT sejak edisi pertama
+            diterbitkan. Tema baru telah diperkenalkan yang menekankan peran sentral
+            yang dimainkan oleh pendekatan yang berbeda untuk berurusan dengan waktu
+            dalam model komputasi: objek dengan negara, pemrograman bersamaan, pemrograman
+            fungsional, dan evaluasi malas, dan pemrograman nondeterministic.'
+        - name: design_programms
+          title: 'Cara Mendesain Program: Pengantar Pemrograman dan Komputasi'
+          description: Pengantar pemrograman ini menempatkan ilmu komputer sebagai inti
+            dari pendidikan seni liberal. Tidak seperti buku pengantar lainnya, buku
+            ini berfokus pada proses desain program. Pendekatan ini menumbuhkan berbagai
+            keterampilan ― membaca kritis, berpikir analitis, sintesis kreatif, dan
+            memperhatikan detail ― yang penting bagi semua orang, bukan hanya programmer
+            komputer masa depan. Buku ini menghadapkan pembaca pada dua ide fundamental
+            baru. Pertama, ini menyajikan pedoman desain program yang menunjukkan kepada
+            pembaca bagaimana menganalisis pernyataan masalah; bagaimana merumuskan
+            tujuan ringkas; cara membuat contoh; bagaimana mengembangkan garis besar
+            solusi, berdasarkan analisis; cara menyelesaikan program; dan bagaimana
+            cara menguji.
+        - name: algorithm_manual
+          title: Manual Desain Algoritma
+          description: Edisi kedua yang baru diperluas dan diperbarui dari klasik terlaris
+            ini terus mengeluarkan &quot;misteri&quot; dari merancang algoritma, dan
+            menganalisis kemanjuran dan efisiensinya. Memperluas pada edisi pertama,
+            buku ini sekarang berfungsi sebagai buku teks pilihan utama untuk kursus
+            desain algoritma sambil mempertahankan statusnya sebagai panduan referensi
+            praktis utama untuk algoritma untuk programmer, peneliti, dan siswa.
+        - name: cormen
+          title: Pengantar Algoritma, Edisi ke-3 (The MIT Press)
+          description: Beberapa buku tentang algoritma sangat ketat tetapi tidak lengkap;
+            yang lain menutupi massa material tetapi kurang keras. Pengantar Algoritma
+            secara unik menggabungkan ketelitian dan kelengkapan. Buku ini mencakup
+            berbagai algoritma secara mendalam, namun membuat desain dan analisisnya
+            dapat diakses oleh semua tingkat pembaca. Setiap bab relatif mandiri dan
+            dapat digunakan sebagai unit studi. Algoritma tersebut dijelaskan dalam
+            bahasa Inggris dan dalam pseudocode yang dirancang agar dapat dibaca oleh
+            siapa saja yang telah melakukan sedikit pemrograman. Penjelasannya tetap
+            sederhana tanpa mengorbankan kedalaman cakupan atau ketelitian matematika.
+        - name: compilers
+          title: 'Penyusun: Prinsip, Teknik, dan Peralatan (Edisi ke-2)'
+          description: 'Penyusun: Prinsip, Teknik, dan Peralatan, yang dikenal oleh
+            para profesor, mahasiswa, dan pengembang di seluruh dunia sebagai &quot;Buku
+            Naga,&quot; tersedia dalam edisi baru. Setiap bab telah sepenuhnya direvisi
+            untuk mencerminkan perkembangan dalam rekayasa perangkat lunak, bahasa pemrograman,
+            dan arsitektur komputer yang telah terjadi sejak 1986 ketika edisi terakhir
+            diterbitkan. Para penulis, mengakui bahwa sedikit pembaca yang akan terus
+            membangun kompiler, mempertahankan fokus mereka pada serangkaian masalah
+            yang lebih luas yang dihadapi dalam desain perangkat lunak dan pengembangan
+            perangkat lunak.'
+        - name: c_lang
+          title: Bahasa Pemrograman C, Edisi ke-2
+          description: Penulis menyajikan panduan lengkap untuk pemrograman bahasa C
+            standar ANSI. Ditulis oleh pengembang C, versi baru ini membantu pembaca
+            mengikuti standar ANSI final untuk C sambil menunjukkan cara memanfaatkan
+            rangkaian operator C yang kaya, ekonomi ekspresi, aliran kontrol yang lebih
+            baik, dan struktur data. 2 / E telah sepenuhnya ditulis ulang dengan contoh
+            dan set masalah tambahan untuk memperjelas implementasi konstruksi bahasa
+            yang sulit. Selama bertahun-tahun, programmer C membiarkan K&amp;R membimbing
+            mereka untuk membangun program yang terstruktur dengan baik dan efisien.
+            Sekarang, bantuan yang sama ini tersedia bagi mereka yang bekerja dengan
+            kompiler ANSI. Termasuk cakupan terperinci dari bahasa C ditambah manual
+            referensi bahasa C resmi untuk bantuan sekilas dengan notasi sintaksis,
+            deklarasi, perubahan ANSI, aturan cakupan, dan daftar berjalan dan terus.
+    oop:
+      title: Pemrograman berorientasi objek
+      articles:
+        - name: growing
+          title: Tumbuh Perangkat Lunak Berorientasi Objek, Dipandu oleh Tes
+          description: 'Test-Driven Development (TDD) sekarang merupakan teknik yang
+            mapan untuk memberikan perangkat lunak yang lebih baik dengan lebih cepat.
+            TDD didasarkan pada ide sederhana: Tulis tes untuk kode Anda sebelum Anda
+            menulis kode itu sendiri. Namun, ide &quot;sederhana&quot; ini membutuhkan
+            keterampilan dan penilaian untuk melakukannya dengan baik. Sekarang ada
+            panduan praktis untuk TDD yang membawa Anda melampaui konsep dasar. Berdasarkan
+            pengalaman selama sepuluh tahun dalam membangun sistem dunia nyata, dua
+            perintis TDD menunjukkan bagaimana membiarkan tes memandu pengembangan Anda
+            dan “menumbuhkan” perangkat lunak yang koheren, andal, dan dapat dipertahankan.'
+        - name: domain_driven
+          title: 'Desain Berbasis Domain: Menangani Kompleksitas di Jantung Perangkat
+            Lunak'
+          description: Ini adalah buku serius tentang pemodelan domain dalam desain
+            perangkat lunak. Masyarakat pengembangan perangkat lunak hidup dari satu
+            gelombang sensasi ke gelombang lainnya. OOP, pola, XP, TDD, CI / CD, BigData,
+            DevOps - ini hanya beberapa nama saja. Buku ini berasal dari zaman keemasan
+            OOP. Penulis mengakui bahwa paradigma berorientasi objek bukan satu-satunya
+            yang tersedia tetapi bias terhadap OOP / OOD jelas (dan dapat dibenarkan).
+            Buku ini menceritakan tentang bagaimana melakukan pemodelan komponen perangkat
+            lunak inti “dengan cara yang benar”.
+    ruby:
+      title: Tahu kamu lang
+      articles:
+        - name: well_grounded
+          title: Rubyist yang Beralas
+          description: The Well-Grounded Rubyist, Second Edition membahas kedua pendatang
+            baru di Ruby dan juga programmer Ruby yang ingin memperdalam pemahaman mereka
+            tentang bahasa tersebut. Edisi kedua yang ditulis dengan indah dan benar-benar
+            direvisi ini mencakup liputan fitur yang baru di Ruby 2.1, serta liputan
+            yang diperluas dan diperbarui dari aspek bahasa yang telah berubah.
+        - name: programming_ruby
+          title: 'Pemrograman Ruby: Panduan Programmer Pragmatis, Edisi Kedua'
+          description: 'Ruby adalah bahasa pemrograman dinamis yang semakin populer,
+            berorientasi objek, dipuji oleh banyak praktisi sebagai bahasa terbaik dan
+            paling berguna yang tersedia saat ini. Ketika Ruby pertama kali muncul di
+            dunia Barat, Programmer Pragmatis ada di sana dengan manual referensi definitif,
+            Pemrograman Ruby: Panduan Pragmatis Programmer.'
+        - name: ruby_programming
+          title: 'Bahasa Pemrograman Ruby: Semua yang Harus Anda Ketahui'
+          description: 'Buku ini dimulai dengan tutorial cepat-awal untuk bahasa, dan
+            kemudian menjelaskan bahasa secara rinci dari bawah ke atas: dari struktur
+            leksikal dan sintaksis ke tipe data untuk ekspresi dan pernyataan dan melalui
+            metode, blok, lambdas, penutupan, kelas, dan modul. Buku ini juga mencakup
+            pengenalan panjang dan menyeluruh tentang API kaya platform Ruby, menunjukkan
+            - dengan kode contoh yang banyak dikomentari - Fasilitas Ruby untuk pemrosesan
+            teks, manipulasi angka, koleksi, input / output, jaringan, dan konkurensi.
+            Seluruh bab dikhususkan untuk kemampuan pemrograman metro Ruby.'
+  interview_questions:
+    title: Pertanyaan wawancara
+    description: Bagian ini menyimpan tautan sumber daya untuk persiapan membaca dan
+      wawancara
+    list:
+      - name: 'Toptal: Cara Menyewa Pengembang Great Ruby'
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: 'Toptal: 21 Pertanyaan Wawancara Ruby Esensial'
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: 'Hookops: 35+ Pertanyaan dan Jawaban Wawancara Ruby dan Rails'
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: 'Educba: 15 Pertanyaan dan Jawaban Ruby Wawancara Paling Penting'
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: 'Ruby Garage: Cara Wawancarai Pengembang Ruby on Rails Anda'
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: 'RyanSobol: 15 Pertanyaan untuk Ditanyakan Selama Wawancara Ruby'
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: 'Toptal: 9 Pertanyaan Esensial Ruby on Rails'
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: Apa itu Dokumen yang Lebih Baik
+    description: Situs web ini adalah adaptasi web Github, repositori <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.
+      Fundamental</a> yang mengumpulkan banyak bintang dan diterjemahkan ke dalam bahasa
+      Cina. Better Documents memungkinkan Anda dengan cepat menemukan banyak praktik
+      terbaik yang dikumpulkan dalam satu repositori. Hanya Anda, repo ini yang suka
+      referensi atau sumber persiapan wawancara.
+    oss:
+      title: Berkat Open Source
+      description: Better Docs dibuat saat bekerja dan mencari tahu tentang praktik
+        terbaik dan pengetahuan tentang ruby, rekayasa open source untuk aplikasi pengembangan
+        web yang ditulis dalam Ruby.
+      thanks: Jika Better Docs membantu Anda dengan cara apa pun, pikirkan untuk memberi
+        kami Star on <a href="https://github.com/howtohireme/ruby.fundamental">Github</a>
+        (membantu kami menjangkau lebih banyak pengembang) atau berkontribusi pada proyek
+        kami.

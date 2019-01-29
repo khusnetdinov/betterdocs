@@ -1,0 +1,1483 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: Pengaturcaraan asas dengan contoh dan rujukan ruby. Ia meliputi benang,
+      prinsip SOLID, corak rekabentuk, struktur data, algoritma.
+    keywords: Dokumen yang lebih baik, Ruby, Fundamental, asas pengaturcaraan Ruby.
+      Ruby gotchas, Pengaturcaraan fungsional, Metaprogramming, Threads, Prinsip pepejal
+      Ruby dengan contoh, corak reka bentuk Ruby dengan contoh, algoritma ruby dengan
+      contoh, struktur data Ruby dengan contoh.
+
+content:
+  menu:
+    open: Buka Menu
+    close: Tutup Menu
+
+sidebar:
+  - title: Algoritma
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Struktur Data
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Corak Reka Bentuk
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: Pemrograman Fungsian
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: Soalan Wawancara
+    url: interview_questions
+  - title: Pemrograman Meta
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Prinsip Pepejal
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Menjadi Ruby Meister
+    url: ruby_meister
+  - title: Threads
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+
+pages:
+  wiki: Baca wiki
+  credits: Kredit
+  page404:
+    title: Laman tidak dijumpai :(
+    description: Halaman yang diminta tidak dapat dijumpai.
+  algorithms:
+    title: Algoritma
+    complexity:
+      best: Terbaik
+      average: Purata
+      worst: Terburuk
+    sorting:
+      title: Menyusun
+      description: Algoritma penyortiran adalah algoritma yang meletakkan elemen senarai
+        dalam urutan tertentu. Pesanan yang paling banyak digunakan ialah pesanan berangka
+        dan perintah leksikografik. Pengisihan yang cekap adalah penting untuk mengoptimumkan
+        penggunaan algoritma lain (seperti algoritma carian dan penggabungan) yang memerlukan
+        data masukan dalam senarai yang disusun; ia juga sering berguna untuk data kanonik
+        dan untuk menghasilkan output yang boleh dibaca manusia.
+      bubble_sort:
+        title: Bubble jenis
+        description: Jenis gelembung mempunyai banyak sifat yang sama seperti sisipan,
+          tetapi mempunyai overhead sedikit lebih tinggi. Dalam kes data hampir disusun,
+          jenis gelembung mengambil <span class="code-inline time">O(n)</span> , tetapi
+          memerlukan sekurang-kurangnya 2 pas melalui data (sedangkan jenis pemasukan
+          memerlukan sesuatu yang lebih seperti 1 pass).
+      insertion_sort:
+        title: Jenis penyisipan
+        description: Walaupun ia merupakan salah satu algoritma penyortiran asas dengan
+          <span class="code-inline">O(n<sup>2</sup>)</span> masa terburuk, sisipan
+          sisipan adalah algoritma pilihan sama ada apabila data hampir disusun (kerana
+          ia adalah penyesuaian) atau ketika saiz masalah kecil (kerana mempunyai overhead
+          rendah). Atas sebab-sebab ini, dan kerana ia juga stabil, jenis penyisipan
+          sering digunakan sebagai kes asas rekursif (apabila saiz masalah adalah kecil)
+          untuk algoritma sorting overhead-and-conquer yang lebih tinggi, seperti menyusun
+          jenis atau semacam pantas.
+      selection_sort:
+        title: Susun Pilihan
+        description: Daripada perbandingan yang dibentangkan di sini, seseorang mungkin
+          menyimpulkan bahawa jenis pemilihan tidak boleh digunakan. Ia tidak menyesuaikan
+          diri dengan data dalam apa cara sekalipun (perhatikan bahawa empat animasi
+          di atas berjalan di lockstep), jadi runtimenya sentiasa kuadratik. Walau bagaimanapun,
+          jenis pemilihan mempunyai harta untuk meminimumkan bilangan swap. Di dalam
+          aplikasi di mana kos item swap adalah tinggi, pilihan pemilihan yang sangat
+          baik boleh menjadi algoritma pilihan.
+      shell_sort:
+        title: Shell jenis
+        description: Kerumitan masa terburuk dari jenis shell bergantung kepada urutan
+          kenaikan. Untuk kenaikan 1 4 13 40 121 ..., yang adalah apa yang digunakan
+          di sini, kerumitan masa adalah <span class="code-inline">O(n<sup><sup>3</sup>/<sub>2</sub></sup>)</span>
+          Untuk kenaikan lain, masa kerumitan dikenali sebagai <span class="code-inline">O(n<sup><sup>4</sup>/<sub>3</sub></sup>)</span>
+          dan juga <span class="code-inline">O(n·lg<sub>2</sub>(n))</span>. Tiada batas atas yang ketat pada kerumitan
+          masa atau urutan kenaikan terbaik diketahui. Oleh kerana jenis shell adalah
+          berdasarkan jenis penyisipan, jenis shell mewarisi ciri penyesuaian jenis
+          sisipan. Penyesuaian ini tidak seperti dramatik kerana jenis shell memerlukan
+          satu lulus melalui data untuk setiap kenaikan, tetapi ia penting. Untuk urutan
+          bertambah yang ditunjukkan di atas, terdapat <span class="code-inline">log<sub>3</sub>(n)</span>
+          penambahan, jadi kerumitan masa untuk data hampir
+          disusun adalah <span class="code-inline">O(n·log<sub>3</sub>(n))</span>
+          . Kerana overhead yang rendah, pelaksanaan yang mudah, sifat penyesuaian,
+          dan kerumitan masa sub-kuadratik, jenis shell mungkin merupakan alternatif
+          yang sesuai untuk algoritma sorting <span class="code-inline">O(n·lg(n))</span>
+          untuk beberapa aplikasi apabila data yang disusun adalah tidak terlalu besar.
+      heap_sort:
+        title: Timbunan jenis
+        description: Timbunan jenis adalah mudah untuk dilaksanakan, melaksanakan <span class="code-inline">O
+          (n · lg (n))</span> di tempat, tetapi tidak stabil. Gelung pertama, <span
+          class="code-inline">Θ (n)</span> &quot;heapify&quot; fasa, meletakkan array
+          ke dalam urutan timbunan. Gelung kedua, fasa &quot;sort&quot; <span class="code-inline">(O)</span>
+          , berulang kali mengekstrak maksimum dan mengembalikan urutan timbunan. Fungsi
+          tenggelam ditulis secara rekursif untuk kejelasan. Oleh itu, seperti yang
+          ditunjukkan, kod tersebut memerlukan ruang <span class="code-inline">Θ (lg
+          (n))</span> untuk timbunan panggilan rekursif. Walau bagaimanapun, rekursi
+          ekor dalam sink () mudah ditukar kepada lelaran, yang menghasilkan ruang <span
+          class="code-inline">O (1)</span> terikat. Kedua-dua fasa ini sedikit adaptif,
+          walaupun tidak dengan cara yang sangat berguna. Dalam kes yang hampir disusun,
+          fasa heapify memusnahkan perintah asal. Dalam kes yang dibalikkan, fasa heapify
+          adalah secepat yang mungkin kerana array bermula dari urutan timbunan, tetapi
+          fasa sort down adalah tipikal. Dalam beberapa kekunci kunci yang unik, terdapat
+          beberapa kelajuan tetapi tidak sama seperti dalam shell shell atau 3-way quicksort.
+      merge_sort:
+        title: Mergesort
+        description: 'Merge sort adalah sangat diramalkan. Ia menjadikan antara <span
+          class="code-inline">0.5lg(n)</span> dan <span class="code-inline">lg(n)</span>
+          perbandingan setiap elemen, dan antara <span class="code-inline">lg (n)</span>
+          dan <span class="code-inline">1.5lg(n)</span> swap bagi setiap elemen. Minima
+          dicapai untuk data yang sudah disusun; maksima dicapai, secara purata, untuk
+          data rawak. Sekiranya menggunakan <span class="code-inline">Θ(n)</span> ruang
+          tambahan tidak peduli, maka gabungan sort adalah pilihan yang sangat baik:
+          Ia mudah untuk dilaksanakan, dan ia adalah satu-satunya stabil <span class="code-inline">O
+          (n · lg (n))</span> algoritma sorting. Perhatikan bahawa apabila menyusun
+          senarai yang dikaitkan, gabungan jenis memerlukan hanya <span class="code-inline">Θ
+          (lg (n)</span> ruang tambahan (untuk rekursi). Merge sort adalah algoritma
+          pilihan untuk pelbagai situasi: apabila kestabilan diperlukan, akses jauh
+          lebih mahal daripada akses berturut-turut (contohnya, menyusun luaran pada
+          pita). Terdapat algoritma penggabungan masa lurus di tempat untuk langkah
+          terakhir algoritma, tetapi kedua-duanya adalah mahal dan kompleks. Kerumitan
+          adalah wajar untuk aplikasi seperti penyisihan luaran apabila <span class="code-inline">Θ
+          (n)</span> ruang tambahan tidak tersedia.'
+      quick_sort:
+        title: Quicksort
+        description: Apabila dilaksanakan dengan teliti, quicksort adalah kukuh dan
+          mempunyai overhead rendah. Apabila jenis stabil tidak diperlukan, quicksort
+          adalah sejenis tujuan umum yang sangat baik - walaupun versi partition 3-arah
+          selalu digunakan. Kod partition 2 arah yang ditunjukkan di atas ditulis untuk
+          kejelasan dan bukannya prestasi optimum; ia memperlihatkan kawasan yang miskin,
+          dan secara kritikal, pameran <span class="code-inline">O (n <sup>2</sup> )</span>
+          masa apabila terdapat beberapa kekunci unik. Kaedah pembahagian 2-cara yang
+          lebih cekap dan mantap diberikan dalam Quicksort adalah Optimal oleh Robert
+          Sedgewick dan Jon Bentley. Pemisahan yang mantap menghasilkan rekursi seimbang
+          apabila terdapat banyak nilai yang sama dengan pivot, menghasilkan jaminan
+          probabilistik masa <span class="code-inline">O (n · lg (n))</span> dan ruang
+          <span class="code-inline">O (lg (n))</span> untuk semua input. Dengan kedua
+          sub-jenis dilakukan secara rekursif, semacam pantas memerlukan <span class="code-inline">O
+          (n)</span> ruang tambahan untuk timbunan rekursi dalam kes terburuk apabila
+          rekursi tidak seimbang. Hal ini tidak mungkin berlaku, tetapi dapat dielakkan
+          dengan menyusun sub-array yang lebih kecil secara rekursif terlebih dahulu;
+          jenis sub-array kedua adalah panggilan rekursif ekor, yang mungkin dilakukan
+          dengan lelaran sebaliknya. Dengan pengoptimuman ini, algoritma menggunakan
+          ruang tambahan <span class="code-inline">O (lg (n))</span> dalam kes yang
+          paling teruk.
+      other: Algoritma penyusun lain
+      additional: Bacaan tambahan
+    searching:
+      title: Mencari
+      binary_search:
+        title: Carian perduaan
+        description: Dalam sains komputer, carian binari, yang juga dikenali sebagai
+          pencarian separuh atau carian logaritma, adalah algoritma carian yang mendapati
+          kedudukan nilai sasaran dalam array yang disusun. Ia membandingkan nilai sasaran
+          ke elemen tengah array; jika mereka tidak sama rata, separuh di mana sasaran
+          tidak boleh berbohong dihapuskan dan carian terus menerus pada baki separuh
+          sehingga berjaya.
+      knuth_moriss_pratt_search:
+        title: Carian Knuth-Morris-Pratt
+        description: Dalam sains komputer, algoritma mencari algoritma Knuth-Morris-Pratt
+          (atau algoritma KMP) mencari kejadian &quot;kata&quot; W dalam &quot;teks
+          teks&quot; utama S dengan menggunakan pemerhatian bahawa apabila ketidakpatuhan
+          berlaku, perkataan itu sendiri merangkumi cukup maklumat untuk menentukan
+          di mana perlawanan seterusnya boleh bermula, sekali gus melangkau pemeriksaan
+          semula aksara yang dipadankan sebelum ini.
+      other:
+        title: Algoritma carian lain
+        dijkstra: Algoritma Dijkstra
+        kruskal: Algoritma Kruskal
+        longest: Peningkatan yang paling lama
+        telephone_number: Nombor telefon kepada perkataan
+    credits: 'Kod dan artikel diambil dari sumber:'
+  data_structures:
+    title: Struktur data
+    description: Dalam sains komputer, notasi O besar digunakan untuk mengelaskan algoritma
+      dengan cara mereka bertindak balas terhadap perubahan dalam saiz input, seperti
+      bagaimana masa pemprosesan algoritma berubah sebagai saiz masalah menjadi sangat
+      besar. Dalam teori nombor analitik, ia digunakan untuk menganggarkan &quot;kesalahan
+      yang dilakukan&quot; sambil menggantikan saiz asimtotik fungsi aritmetik dengan
+      nilai yang diperlukan pada hujuran terhingga yang besar. Contoh yang terkenal
+      adalah masalah untuk menganggarkan istilah sisa dalam teorem nombor perdana.
+    axioms:
+      title: Aksioma asas struktur data
+      description: Prestasi masa berjalan dalam runtime bahasa biasa diberikan oleh
+        satu set aksioma yang akan kita buat sekarang.
+      fetch_store:
+        title: Ambil dan simpan masa
+        description1: Masa yang diperlukan untuk mendapatkan rujukan ke objek dari ingatan
+          adalah <span class="code-inline">T_fetch</span>, dan masa yang diperlukan untuk
+          menyimpan rujukan kepada objek dalam memori adalah tetap, <span class="code-inline">T_store</span>
+        description2: Menurut Axiom, pernyataan tugasan telah menjalankan masa <span
+          class="code-inline">T_fetch + T_store</span> . Maksudnya, masa yang diambil
+          untuk mendapatkan rujukan objek daripada pembolehubah x ialah <span class="code-inline">T_fetch</span>
+          dan masa yang diambil untuk menyimpan rujukan objek dalam pembolehubah y ialah
+          <span class="code-inline">T_store</span> .
+        description3: Juga mempunyai masa berjalan <span class="code-inline">T_fetch
+          + T_store</span> . Untuk melihat mengapa ini sepatutnya berlaku, pertimbangkan
+          bahawa <span class="code-inline">1</span> tetap nama objek Fixnum dengan nilai
+          satu. Oleh itu, kita boleh menjangkakan kos pengambilan rujuk kepada objek
+          bernama 1 adalah sama dengan pengambilan rujukan kepada objek lain.
+      elementary_operations:
+        title: Masa operasi aritmetik asas
+        description1: Masa yang diperlukan untuk melaksanakan operasi aritmetik asas,
+          seperti penambahan, penolakan, pendaraban, pembahagian, dan perbandingan,
+          adalah pemalar. Masa ini dilambangkan oleh <span class="code-inline">T_ +,
+          T_-, T_ /, T_ *, T_ &lt;,</span> masing-masing.
+        description2: Kita boleh menentukan masa penyataan seperti <span class="code-inline">2
+          * T_fetch + T_ + + T_store</span> . Ini kerana kita perlu mengambil dua rujukan
+          objek daripada pemboleh ubah y dan 1; melakukan penambahan memberi objek baru
+          yang nilainya adalah jumlah; dan, simpan sebutan kepada objek baru dalam pembolehubah
+          y.
+        description3: Kami akan mengandaikan bahawa alternatif memerlukan tepat masa
+          yang sama seperti kenyataan asal.
+      call_method:
+        title: Memanggil masa kaedah
+        description1: Masa yang diperlukan untuk memanggil kaedah adalah tetap, <span
+          class="code-inline">T_call</span> , dan masa yang diperlukan untuk kembali
+          dari kaedah adalah tetap, <span class="code-inline">T_return</span> Rasional
+          untuk membuat overhead yang berkaitan dengan parameter yang lulus sama dengan
+          masa untuk menyimpan rujukan objek adalah bahawa lulus hujah secara konseptual
+          sama seperti penyerahan nilai parameter sebenar kepada parameter rasmi kaedah.
+        description2: Menurut Axiom, masa berjalan pernyataan adalah <span class="code-inline">T_fetch
+          + 2 * T_store + T_call + T_f (x)</span> , di mana <span class="code-inline">T_f
+          (x)</span> adalah masa berjalan kaedah f untuk input x. Yang pertama dari
+          kedua-dua kedai adalah disebabkan oleh lulus parameter x kepada kaedah f;
+          yang kedua timbul dari tugasan kepada pemboleh ubah y.
+      calculating:
+        title: Masa pengiraan
+        description1: Masa yang diperlukan untuk perhitungan alamat yang tersirat oleh
+          operasi susunan array, misalnya, <span class="code-inline">a[i]</span> , adalah
+          tetap, <span class="code-inline">T_[]</span> . Kali ini tidak termasuk masa
+          untuk mengira ungkapan subskrip, dan tidak termasuk masa untuk mengakses elemen
+          array.
+        description2: 'Ini ialah <span class="code-inline">3 * T_fetch</span> . Tiga
+          pengendali yang diperlukan: yang pertama mengambil rujukan ke objek array
+          a; yang kedua untuk mendapatkan rujukan ke objek indeks i; dan ketiga yang
+          mengambil rujukan kepada elemen array <span class="code-inline">a[i]</span>
+          .'
+      object:
+        title: Masa penciptaan objek
+        description1: Masa yang diperlukan untuk membuat contoh objek baru bagi kelas
+          adalah tetap, <span class="code-inline">T_new</span> . Kali ini tidak termasuk
+          masa yang diambil untuk memulakan objek tersebut. Dengan menggunakan aksioma,
+          kita dapat menentukan masa berlakunya kenyataan.
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> , di mana <span class="code-inline">T_fixnum_init</span>
+          adalah masa menjalankan kaedah permulaan kelas Fixnum.
+      example:
+        title: Contoh
+        description: Dalam seksyen ini kita menggunakan Axioms, analisis masa tamat
+          program untuk mengira penjelasan siri aritmetik mudah berikut.
+    implementations:
+      title: Pelaksanaan
+      stack:
+        title: Timbunan
+        description: Tumpukan adalah adik beradik. Ia menyerupai tindanan kehidupan
+          sebenar (contohnya kertas). Ia adalah FILO (first-in-last-out), supaya apabila
+          barang diambil dari timbunan, mereka dikembalikan dalam sebaliknya perintah
+          yang mereka tambah. Sekali lagi, Ruby Arrays menyediakan bekas yang sempurna.
+          Seperti dengan Baris, ia juga boleh dilaksanakan menggunakan senarai yang
+          dipautkan.
+        as_array: Tumpukan sebagai array
+        as_linked_list: Tumpukan sebagai senarai yang dikaitkan
+      queue:
+        title: Beratur
+        description: Baris adalah struktur berasaskan bekas mudah yang menyerupai barisan
+          hayat sejagat (contohnya menunggu dalam barisan di bank). Ia adalah FIFO (first-in-first-out),
+          yang bermakna apabila anda mengambil item dari barisan, mereka akan dikembalikan
+          mengikut susunan yang mereka masukkan. Ruby Arrays menyediakan kaedah yang
+          membuat pelaksanaan Queue secara mudah tetapi mempunyai nama yang sesuai dan
+          terkandung dalam kelas kemudahan adalah bernilai untuk melihatnya dilaksanakan,
+          dan kerana struktur lain akan mewarisi dari yang satu ini. Pelaksanaan alternatif
+          boleh dilakukan dengan menggunakan senarai berkaitan.
+        as_array: Beratur sebagai array
+        as_linked_list: Beratur sebagai senarai tertaut
+      deque:
+        title: dan
+        description: A Deque adalah barisan yang membolehkan menambah dan mengeluarkan
+          barang di kedua-dua hujungnya.
+        as_array: Dan sebagai array
+        as_linked_list: Deque sebagai senarai yang dikaitkan
+      singly_linked_list:
+        title: Senarai Terkini Berkaitan
+        description: Senarai yang dipautkan secara tunggal mengandungi nod yang mempunyai
+          medan data serta medan &#39;seterusnya&#39;, yang menunjuk ke simpul seterusnya
+          dalam garis nod. Operasi yang boleh dilakukan pada senarai yang disambungkan
+          secara merangkumi penyisipan, penghapusan dan traversal.
+      doubly_linked_list:
+        title: Senarai berkaitan dua kali
+        description: Dalam senarai dua kali ganda, setiap elemen senarai mengandungi
+          dua rujukan - satu kepada penggantinya dan satu kepada pendahulunya.
+      ordered_list:
+        title: Senarai yang dipesan
+        description: Senarai yang diperintahkan adalah senarai di mana susunan item
+          adalah penting. Walau bagaimanapun, item dalam senarai yang disusun tidak
+          semestinya disusun. Akibatnya, adalah mungkin untuk menukar susunan item dan
+          masih mempunyai senarai yang diperintahkan yang sah.
+        as_array: Senarai yang dipesan sebagai array
+      hash_table:
+        title: Jadual Hash
+        description: Jadual hash ialah bekas yang boleh dicari. Oleh itu, ia menyediakan
+          kaedah untuk meletakkan objek ke dalam bekas, mencari objek dalam bekas, dan
+          mengeluarkan objek dari bekas.
+      binary_tree:
+        title: Pokok Perduaan
+        description: Pokok binari adalah pokok di mana setiap nod boleh mempunyai maksimum
+          dua orang anak. Kanak-kanak ditetapkan kiri dan kanan.
+      binary_search_tree:
+        title: Pohon Carian Perduaan &lt;
+        description: 'Dalam sains komputer, pokok carian binari (BST), yang kadang-kadang
+          dipanggil memerintahkan atau menyusun pokok binari, adalah jenis tertentu
+          bekas: struktur data yang menyimpan &quot;item&quot; (seperti nombor, nama
+          dan sebagainya) dalam ingatan. Mereka membolehkan carian pantas, tambahan
+          dan penyingkiran item, dan boleh digunakan untuk melaksanakan sama ada set
+          item yang dinamik, atau jadual mencari yang membolehkan mencari item dengan
+          kuncinya (misalnya, mencari nombor telefon seseorang dengan nama)'
+      b_tree:
+        title: B-pokok
+        description: Dalam sains komputer, pokok B adalah struktur data pokok yang menyeimbangkan
+          diri yang menyimpan data yang disusun dan membolehkan pencarian, akses berturut-turut,
+          penyisipan, dan penghapusan dalam masa logaritma. Pokok B adalah generalisasi
+          pokok carian binari di mana nod boleh mempunyai lebih daripada dua orang anak
+          (Tidak seperti pokok-pokok carian binari yang menyeimbangkan diri, B-tree
+          dioptimumkan untuk sistem yang membaca dan menulis blok besar data B- pokok
+          adalah contoh yang baik dari struktur data untuk memori luaran. Ia biasanya
+          digunakan dalam pangkalan data dan sistem fail.
+      binary_heap:
+        title: Timbunan perduaan
+        description: Timbunan biner adalah pokok perduaan lengkap yang ditempatkan dengan
+          timbunan yang dilaksanakan menggunakan tatasusunan. Dalam timbunan kunci terkecil
+          didapati di akar dan sejak akar sentiasa dijumpai di kedudukan pertama array,
+          mencari kunci terkecil adalah operasi remeh dalam timbunan binari.
+      credits: 'Kod dan artikel diambil dari sumber:'
+      source: Halaman ini mengandungi kod Ruby dari buku &quot;Struktur Data dan Algoritma
+        dengan Corak Reka Bentuk Berorientasikan Objek di Ruby&quot; oleh Bruno R. Preiss.
+        Hak Cipta (c) 2004 oleh Bruno R. Preiss, P. Eng. Hak cipta terpelihara.
+  design_patterns:
+    title: Corak reka bentuk
+    creational:
+      title: Corak penciptaan
+      description: Dalam kejuruteraan perisian, corak reka bentuk ciptaan adalah corak
+        reka bentuk yang berurusan dengan mekanisme penciptaan objek, cuba membuat objek
+        mengikut cara yang sesuai dengan keadaan. Bentuk asas penciptaan objek boleh
+        mengakibatkan masalah reka bentuk atau menambah kerumitan pada reka bentuk.
+        Corak reka bentuk penciptaan menyelesaikan masalah ini dengan entah bagaimana
+        mengawal penciptaan objek ini. Corak reka bentuk penciptaan terdiri daripada
+        dua idea yang dominan. Salah satunya adalah membekalkan pengetahuan mengenai
+        kelas konkrit yang digunakan oleh sistem. Satu lagi menyembunyikan bagaimana
+        keadaan kelas konkrit ini dicipta dan digabungkan.
+      abstract_factory:
+        title: Corak kilang abstrak
+        description: Corak kilang abstrak menyediakan cara untuk merangkum sekumpulan
+          kilang-kilang individu yang mempunyai tema yang sama tanpa menentukan kelas
+          konkrit mereka. Dalam penggunaan biasa, perisian klien mewujudkan pelaksanaan
+          konkrit kilang abstrak dan kemudian menggunakan antara muka generik kilang
+          untuk membuat objek konkrit yang menjadi sebahagian daripada tema. Pelanggan
+          tidak tahu (atau peduli) objek konkrit yang diperoleh dari setiap kilang-kilang
+          dalaman ini, kerana hanya menggunakan antarmuka generik produk mereka. Corak
+          ini memisahkan butir-butir pelaksanaan satu set objek dari penggunaan umum
+          mereka dan bergantung kepada komposisi objek, kerana penciptaan objek dilaksanakan
+          dalam kaedah yang terdedah dalam antara muka kilang.
+      builder:
+        title: Corak pembina
+        description: Corak pembina adalah corak reka bentuk perisian penciptaan objek.
+          Tidak seperti corak kilang abstrak dan corak kaedah kilang yang niatnya untuk
+          membolehkan polimorfisme, niat corak pembina adalah untuk mencari penyelesaian
+          kepada penstrukturan telescoping anti-corak [rujukan?]. Anti-corak konstruktor
+          teleskop berlaku apabila peningkatan kombinasi parameter pembina objek membawa
+          kepada senarai pembina yang eksponen. Daripada menggunakan banyak pembina,
+          corak pembina menggunakan objek lain, pembina, yang menerima setiap langkah
+          inisialisasi langkah demi langkah dan kemudian mengembalikan objek yang terhasil
+          terhasil sekaligus.
+      factory:
+        title: Corak kilang
+        description: Dalam pengaturcaraan berasaskan kelas, corak kaedah kilang adalah
+          corak ciptaan yang menggunakan kaedah kilang untuk menangani masalah mewujudkan
+          objek tanpa perlu menentukan kelas tepat objek yang akan dibuat. Ini dilakukan
+          dengan membuat objek dengan memanggil kaedah kilang-sama ada dinyatakan dalam
+          antara muka dan dilaksanakan oleh kelas kanak-kanak, atau dilaksanakan dalam
+          kelas asas dan secara opsyen ditindih oleh kelas yang diturunkan-bukan dengan
+          memanggil pembina.
+      prototype:
+        title: Corak prototaip
+        description: Corak prototaip adalah corak ciptaan di sepanjang garis kilang.
+          Caranya dengan prototaip ialah anda membuat objek baru dengan menyalin objek
+          induk. Tukar objek tuan dan semua objek berikutnya yang anda buat akan pergi
+          ke kehidupan dengan salinan perubahan.
+      singleton:
+        title: Corak singleton
+        description: Memastikan kelas hanya mempunyai satu contoh, dan menyediakan satu
+          titik akses global kepadanya. Ini berguna ketika tepat satu objek diperlukan
+          untuk menyelaraskan tindakan di seluruh sistem. Konsep ini kadangkala digeneralisasikan
+          kepada sistem yang beroperasi dengan lebih cekap apabila hanya ada satu objek,
+          atau yang menyekat instantiasi kepada beberapa objek tertentu.
+      not_covered:
+        title: 'Corak tidak dilindungi:'
+        lazy: Permulaan malas
+        multiton: Multiton
+        pool: Kolam objek
+        resource: Pengambilalihan sumber adalah permulaan
+    structural:
+      title: Corak struktur
+      description: Dalam kejuruteraan perisian, corak reka bentuk struktur adalah corak
+        reka bentuk yang memudahkan reka bentuk dengan mengenalpasti cara mudah untuk
+        merealisasikan hubungan antara entiti.
+      adapter:
+        title: Corak penyesuai
+        description: Dalam kejuruteraan perisian, corak penyesuai adalah corak reka
+          bentuk perisian yang membolehkan antara muka kelas sedia ada digunakan sebagai
+          antara muka yang lain. Ia sering digunakan untuk membuat kelas sedia ada bekerja
+          dengan orang lain tanpa mengubah kod sumbernya.
+      composite:
+        title: Corak komposit
+        description: Corak reka bentuk komposit adalah corak struktur yang digunakan
+          untuk mewakili objek yang mempunyai struktur pokok hierarki. Ia membolehkan
+          rawatan seragam kedua-dua nod daun individu dan cawangan terdiri daripada
+          banyak nod.
+      decorator:
+        title: Corak penghias
+        description: Dalam pengaturcaraan berorientasikan objek, corak penghias (juga
+          dikenali sebagai Wrapper, penamaan alternatif dikongsi dengan corak Adaptor)
+          adalah corak reka bentuk yang membolehkan tingkah laku ditambah kepada objek
+          individu, baik secara statik atau dinamik, tanpa menjejaskan tingkah laku
+          yang lain objek dari kelas yang sama. Corak penghias sering digunakan untuk
+          mematuhi Prinsip Tanggungjawab Tunggal, kerana ia membolehkan fungsi dibahagikan
+          antara kelas dengan kebimbangan yang unik.
+      facade:
+        title: Corak muka
+        description: Reka bentuk reka bentuk Facade sering digunakan apabila sistem
+          sangat rumit atau sukar difahami kerana sistem mempunyai banyak kelas yang
+          saling bergantung atau kod sumbernya tidak tersedia. Corak ini menyembunyikan
+          kerumitan sistem yang lebih besar dan menyediakan antara muka yang lebih mudah
+          kepada pelanggan. Ia biasanya melibatkan kelas bungkus tunggal yang mengandungi
+          satu set ahli yang diperlukan oleh klien. Ahli-ahli ini mengakses sistem bagi
+          pihak klien fasad dan menyembunyikan butiran pelaksanaannya.
+      flyweight:
+        title: Corak kelas berat
+        description: Dalam pengaturcaraan komputer, flyweight adalah corak reka bentuk
+          perisian. Flyweight adalah objek yang meminimalkan penggunaan memori dengan
+          berkongsi sebanyak mungkin data dengan objek lain yang serupa; ia adalah satu
+          cara untuk menggunakan objek dalam bilangan besar apabila perwakilan berulang
+          mudah akan menggunakan jumlah memori yang tidak dapat diterima. Selalunya
+          beberapa bahagian objek objek boleh dikongsi, dan amalan biasa untuk memegang
+          mereka dalam struktur data luaran dan menyerahkannya kepada objek flyweight
+          buat sementara waktu apabila digunakan.
+      proxy:
+        title: Corak proksi
+        description: 'Proksi, dalam bentuk yang paling umum, adalah kelas berfungsi
+          sebagai antara muka untuk sesuatu yang lain. Proksi boleh menyambung kepada
+          apa saja: sambungan rangkaian, objek besar dalam memori, fail, atau sumber
+          lain yang mahal atau tidak mungkin untuk diduplikasi. Singkatnya, proksi adalah
+          pembungkus atau objek ejen yang dipanggil oleh klien untuk mengakses objek
+          penyampaian sebenar di belakang tabir. Penggunaan proksi hanya boleh dihantar
+          ke objek sebenar, atau boleh memberikan logik tambahan. Dalam fungsi tambahan
+          proksi boleh disediakan, contohnya caching apabila operasi pada objek sebenar
+          adalah sumber yang intensif, atau memeriksa prasyarat sebelum operasi pada
+          objek sebenarnya diterapkan. Bagi pelanggan, penggunaan objek proksi sama
+          dengan menggunakan objek sebenar, kerana kedua-duanya melaksanakan antara
+          muka yang sama.'
+      protection_proxy:
+        title: Proksi perlindungan
+        description: Proksi perlindungan. Adakah anda bekerja di sebuah MNC? Jika ya,
+          kami mungkin menyedari pelayan proksi yang memberikan kami internet dengan
+          menyekat akses kepada beberapa jenis laman web seperti e-mel awam, rangkaian
+          sosial, penyimpanan data dan lain-lain. Pihak pengurusan merasakan bahawa,
+          lebih baik untuk menyekat beberapa kandungan dan hanya menyediakan halaman
+          web yang berkaitan dengan kerja. Pelayan proksi melakukan tugas itu. Ini adalah
+          jenis corak reka bentuk proksi
+      virtual_proxy:
+        title: Proksi maya
+        description: Proksi maya. Di tempat objek kompleks atau berat, gunakan perwakilan
+          kerangka. Apabila imej yang mendasar sangat besar, hanya mewakilinya menggunakan
+          objek proksi maya dan beban atas permintaan objek sebenar. Anda tahu bahawa
+          objek sebenar mahal dari segi instantiasi dan tanpa keperluan sebenar kita
+          tidak akan menggunakan objek sebenar. Sehingga keperluan timbul, kami akan
+          menggunakan proksi maya.
+      remote_proxy:
+        title: Proksi jauh
+        description: Proksi jauh. Dalam komunikasi objek yang diedarkan, objek tempatan
+          mewakili objek terpencil (yang dimiliki oleh ruang alamat yang berbeza). Objek
+          tempatan adalah proksi untuk objek terpencil, dan kaedah invocation pada hasil
+          objek tempatan dalam penyerahan kaedah terpencil pada objek terpencil. Fikirkan
+          pelaksanaan ATM, ia akan memegang objek proksi untuk maklumat bank yang ada
+          di pelayan jauh.
+      not_covered:
+        title: 'Corak tidak dilindungi:'
+        callback: Panggil balik Anotasi
+        bridge: Jambatan
+        data_bus: Bus Data
+        role: Objek Peranan
+    behavioral:
+      title: Corak tingkah laku
+      description: Dalam kejuruteraan perisian, corak reka bentuk tingkah laku adalah
+        corak reka bentuk yang mengenal pasti corak komunikasi yang sama antara objek
+        dan merealisasikan pola ini. Dengan berbuat demikian, corak ini meningkatkan
+        fleksibiliti dalam menjalankan komunikasi ini.
+      chain_of_responsobility:
+        title: Rangkaian pola tanggungjawab
+        description: Dalam reka bentuk berorientasikan objek, corak rantaian tanggungjawab
+          adalah corak reka bentuk yang terdiri daripada sumber objek arahan dan satu
+          siri objek pemprosesan. Setiap objek pemprosesan mengandungi logik yang menentukan
+          jenis objek arahan yang boleh dikendalikan; selebihnya diserahkan kepada objek
+          pemprosesan berikutnya dalam rantai. Mekanisme juga wujud untuk menambah objek
+          pemprosesan baru hingga akhir rantaian ini.
+      command:
+        title: Corak arahan
+        description: Corak arahan adalah corak reka bentuk tingkah laku yang digunakan
+          untuk menyimpan maklumat yang diperlukan untuk memanggil kaedah pada masa
+          hadapan. Perintah itu hanyalah sekumpulan tindakan yang dibungkus dalam objek.
+          Dengan ruby, kita boleh menggunakan Procs untuk melakukan perkara yang sama
+          tanpa perlu membuat objek berasingan. Ini adalah pilihan yang baik apabila
+          tindakan itu mudah dan tidak memerlukan maklumat penjimatan keadaan, jika
+          tidak, kelas arahan adalah pilihan yang lebih baik.
+      interpreter:
+        title: Corak penafsir
+        description: Dalam pengaturcaraan komputer, corak interpreter adalah corak reka
+          bentuk yang menentukan bagaimana untuk menilai ayat dalam bahasa. Idea asas
+          adalah untuk mempunyai kelas bagi setiap simbol (terminal atau nonterminal)
+          dalam bahasa komputer khusus. Pokok sintaks dalam kalimat dalam bahasa adalah
+          contoh corak komposit dan digunakan untuk menilai (menafsirkan) ayat untuk
+          klien.
+      iterator:
+        title: Corak pemula
+        description: Corak reka bentuk iterator menyediakan akses berturut-turut ke
+          elemen dalam wadah tanpa mendedahkan bagaimana kontena sebenarnya mewakili
+          unsur-unsur. Pemula boleh dianggap sebagai penunjuk alih yang membolehkan
+          akses ke elemen terkandung di dalam bekas.
+      external_iterator:
+        title: Corak pemisah luar
+        description: 'Pengatur luaran: Logik lelaran terkandung dalam kelas yang berasingan.
+          Kelas lelaran boleh digeneralisasi untuk mengendalikan pelbagai jenis objek
+          selagi mereka membenarkan pengindeksan. Ia memerlukan kelas tambahan untuk
+          melakukan lelaran sebenar, tetapi ia membolehkan fleksibiliti yang lebih besar
+          kerana anda dapat mengawal lelaran, unsur-unsur yang dilewatkan dan dalam
+          urutan apa.'
+      internal_iterator:
+        title: Corak pemisah dalaman
+        description: 'Pemanasan dalaman: semua logik iterasi berlaku di dalam objek
+          agregat. Gunakan blok kod untuk lulus logik anda ke agregat yang kemudiannya
+          memanggil blok untuk setiap elemen itu.'
+      mediator:
+        title: Corak pengantara
+        description: Biasanya program terdiri daripada sebilangan besar kelas. Oleh
+          itu logik dan perhitungan diedarkan di kalangan kelas-kelas ini. Walau bagaimanapun,
+          apabila lebih banyak kelas dibangunkan dalam sesuatu program, terutamanya
+          semasa penyelenggaraan dan / atau refactoring, masalah komunikasi antara kelas-kelas
+          ini mungkin menjadi lebih kompleks. Ini menjadikan program ini lebih sukar
+          untuk dibaca dan dijaga. Tambahan pula, ia boleh menjadi sukar untuk mengubah
+          program, kerana sebarang perubahan boleh mempengaruhi kod dalam beberapa kelas
+          lain. Dengan corak mediator, komunikasi antara objek dikemas dengan objek
+          pengantara. Objek tidak lagi berkomunikasi secara langsung antara satu sama
+          lain, tetapi sebaliknya berkomunikasi melalui mediator. Ini mengurangkan kebergantungan
+          antara berkomunikasi objek, dengan itu menurunkan gandingan.
+      momento:
+        title: Moment of pattern
+        description: 'Corak momento dilaksanakan dengan tiga objek: pemula, penjaga
+          dan momento. Pemula adalah beberapa objek yang mempunyai keadaan dalaman.
+          Penjaga akan melakukan sesuatu kepada pemula, tetapi ingin dapat membatalkan
+          perubahan itu. Penjaga pertama meminta pemula untuk objek momento. Kemudian
+          ia melakukan apa-apa operasi (atau urutan operasi) yang akan dilakukan. Untuk
+          kembali ke keadaan sebelum operasi, ia mengembalikan objek momento kepada
+          pemula. Objek momento itu sendiri adalah objek opaque (yang tidak dapat dialihkan,
+          atau tidak, berubah). Apabila menggunakan corak ini, penjagaan perlu diambil
+          jika pemula mungkin menukar objek atau sumber lain - corak momento beroperasi
+          pada objek tunggal.'
+      observer:
+        title: Corak pemerhati
+        description: Corak pemerhati adalah corak reka bentuk perisian di mana objek,
+          yang disebut subjek, mengekalkan senarai tanggungannya, dipanggil pemerhati,
+          dan memberitahu secara automatik mana-mana perubahan keadaan, biasanya dengan
+          memanggil salah satu kaedah mereka. Ia digunakan terutamanya untuk melaksanakan
+          sistem pengendalian acara diedarkan. Corak Observer juga merupakan bahagian
+          penting dalam corak seni bina model-view-controller (MVC) yang biasa. Corak
+          pemerhati dilaksanakan dalam pelbagai perpustakaan dan sistem pengaturcaraan,
+          termasuk hampir semua alat GUI.
+      state:
+        title: Corak negeri
+        description: Corak negeri adalah corak reka bentuk perisian tingkah laku yang
+          melaksanakan mesin negeri dengan cara berorientasikan objek. Dengan corak
+          keadaan, mesin negara dilaksanakan dengan melaksanakan setiap negeri sebagai
+          kelas turunan corak negeri, dan melaksanakan peralihan keadaan dengan menggunakan
+          kaedah yang ditentukan oleh superclass corak.
+      strategy:
+        title: Corak strategi
+        description: Strategi membolehkan algoritma berbeza dari pelanggan yang menggunakannya.
+          Strategi adalah salah satu corak termasuk dalam Corak Rekaan buku yang berpengaruh
+          oleh Gamma et al. yang mempopularkan konsep menggunakan corak untuk menggambarkan
+          reka bentuk perisian. Sebagai contoh, kelas yang melakukan pengesahan pada
+          data masuk boleh menggunakan corak strategi untuk memilih algoritma pengesahan
+          berdasarkan jenis data, sumber data, pilihan pengguna, atau faktor lain yang
+          membezakan. Faktor-faktor ini tidak diketahui bagi setiap kes sehingga masa
+          larian, dan mungkin memerlukan pengesahan yang berlainan secara radikal untuk
+          dilakukan. Strategi pengesahan, yang dikemas secara berasingan dari objek
+          pengesahan, boleh digunakan oleh objek pengesahan lain dalam bidang yang berlainan
+          sistem (atau bahkan sistem yang berbeza) tanpa duplikasi kod.
+      template:
+        title: Corak kaedah templat
+        description: Dalam pengaturcaraan berorientasikan objek, pertama kelas dibuat
+          yang menyediakan langkah-langkah asas reka bentuk algoritma. Langkah-langkah
+          ini dilaksanakan menggunakan kaedah abstrak. Kemudian, subclass mengubah kaedah
+          abstrak untuk melaksanakan tindakan sebenar. Oleh itu, algoritma umum disimpan
+          di satu tempat tetapi langkah konkrit boleh diubah oleh subkelas.
+      visitor:
+        title: Corak Pelawat
+        description: Dalam pengaturcaraan berorientasikan objek dan kejuruteraan perisian,
+          corak reka bentuk pengunjung adalah cara memisahkan algoritma dari struktur
+          objek di mana ia beroperasi. Hasil praktikal pemisahan ini adalah keupayaan
+          untuk menambah operasi baru ke struktur objek yang sedia ada tanpa mengubah
+          struktur tersebut. Ini adalah salah satu cara untuk mengikuti prinsip terbuka
+          / tertutup. Pada dasarnya, pengunjung membolehkan seseorang untuk menambah
+          fungsi maya baru kepada keluarga kelas tanpa mengubah kelas itu sendiri; Sebaliknya,
+          seseorang membuat kelas pelawat yang melaksanakan semua pengkhususan sesuai
+          fungsi maya. Pelawat mengambil rujukan contoh sebagai masukan, dan menerapkan
+          matlamat melalui penghantaran ganda.
+      not_covered:
+        title: 'Corak tidak dilindungi:'
+        hierarchical: Pengunjung hierarki
+      credits: 'Kod dan artikel diambil dari sumber:'
+  functional_programming:
+    title: Pengaturcaraan fungsian
+    description: 'Menggunakan bahasa dalam gaya fungsional bermakna anda mempunyai akses
+      kepada beberapa ciri utama yang disenaraikan di bawah:'
+    axioms:
+      immutable: 'Nilai yang tidak boleh diubah: sekali &quot;pembolehubah&quot; ditetapkan,
+        ia tidak boleh diubah. Dalam Ruby, ini bermakna anda perlu merawat pembolehubah
+        seperti pemalar.'
+      side_effects: 'Tiada kesan sampingan: apabila lulus nilai yang diberikan, fungsi
+        mesti selalu mengembalikan hasil yang sama. Ini berjalan seiring dengan mempunyai
+        nilai yang tidak berubah; satu fungsi tidak boleh mengambil nilai dan mengubahnya,
+        kerana ini akan menyebabkan kesan sampingan yang tangensial untuk mengembalikan
+        hasilnya.'
+      pure_functions: 'Fungsi pesanan lebih tinggi: ini adalah fungsi yang membolehkan
+        fungsi sebagai argumen, atau menggunakan fungsi sebagai nilai pulangan. Ini,
+        boleh dikatakan, salah satu ciri yang paling kritikal dari mana-mana bahasa
+        berfungsi.'
+      applying: 'Kari: didayakan oleh fungsi pesanan yang lebih tinggi, kari sedang
+        mengubah fungsi yang memerlukan pelbagai hujah ke dalam satu fungsi yang mengambil
+        satu hujah. Ini berjalan seiring dengan aplikasi fungsi separa, yang mengubah
+        fungsi berbilang argumen ke dalam fungsi yang mengambil argumen yang kurang
+        maka ia pada mulanya.'
+      recursion: 'Rekursi: gelung dengan memanggil fungsi dari dalam dirinya sendiri.
+        Apabila anda tidak mempunyai akses kepada data yang boleh berubah, rekursi digunakan
+        untuk membina dan membina pembinaan data. Ini kerana gelung bukanlah konsep
+        yang berfungsi, kerana ia memerlukan pemboleh ubah untuk diluluskan untuk menyimpan
+        keadaan gelung pada masa tertentu.'
+      lazy: 'Lazy-evaluation, or delay-evaluation: delaying pemprosesan nilai-nilai
+        sehingga saat ia benar-benar diperlukan. Jika, sebagai contoh, anda mempunyai
+        beberapa kod yang menjana senarai nombor Fibonacci dengan penilaian malas yang
+        didayakan, ini tidak akan diproses dan dikira sehingga salah satu daripada nilai
+        dalam hasilnya diperlukan oleh fungsi lain, seperti meletakkan.'
+    pure_functions:
+      title: Fungsi tulen
+      description: Anda dapat melihat bahawa fungsi ini mengira hasilnya hanya menggunakan
+        hujah-hujahnya.
+    closures:
+      title: Penutupan
+      description: Lambda juga menguatkuasakan penutupan dan dapat mengekalkan konteksnya
+        terhadap objek.
+    applying:
+      title: Memohon dan membawa sebahagian
+      description: Mula-mula kita faham apakah kedua-dua aplikasi fungsi yang berbeza
+        ini. Aplikasi fungsi separa memanggil fungsi dengan beberapa jumlah argumen,
+        untuk mendapatkan fungsi kembali yang akan mengambil banyak argumen yang lebih
+        sedikit. Currying mengambil fungsi yang mengambil argumen n, dan memisahkannya
+        ke fungsi n yang mengambil satu hujah.
+      proc: Untuk memberi anda gambaran yang lebih jelas mengenai apa yang kedua-dua
+        perkara ini akan berfungsi, mari kita ambil contoh Proc.
+      partial: Permohonan separa fungsi ini akan kembali, jika kita lulus dalam dua
+        argumen pertama, Procs bersarang berikut.
+      curry: <span class="code-inline">.curry</span> mengembalikan proc yang kari. Jika
+        hujah armen pilihan diberikan, ia menentukan bilangan hujah. Seorang proc yang
+        sedang menerima beberapa hujah. Jika bilangan hujah yang mencukupi dibekalkan,
+        ia akan menyampaikan hujah yang dibekalkan kepada proc asli dan mengembalikan
+        hasilnya. Jika tidak, mengembalikan satu proc yang lain yang mengambil argumen.
+  gotchas:
+    title: Gotchas
+    description1: Kebanyakan pemula Ruby on Rails teruja dengan rangka kerja dan mula
+      membuat aplikasi tanpa pengetahuan bahasa tersebut. Dan itulah keajaiban RoR.
+    description2: Pada satu ketika, perkara mula menjadi serius. Ada yang mengambil
+      masa dan usaha untuk meneroka rahsia-rahsia kotor Ruby on Rails, sementara yang
+      lain berkilat dan menjadi pemaju kanan dengan hampir tanpa pengetahuan bahasa.
+    description3: Bagaimanapun, lambat laun, pemula atau pengaturcara yang berpengalaman,
+      kita semua berjalan ke apa yang dipanggil Ruby Gotchas - kehalusan bahasa kecil
+      yang menyembunyikan dari laman web kami selama berjam-jam debugging tegar.
+    description4: Berikut adalah senarai popular Ruby gotchas dan keingintahuan yang
+      harus diketahui oleh pemaju. Untuk setiap kes, terdapat contoh kod mengelirukan
+      dan / atau rawan ralat.
+    description5: Mereka bersama-sama dengan amalan yang baik, yang akan menghalang
+      anda daripada membuat kesilapan mudah (tetapi sukar untuk mencari) dan memudahkan
+      kehidupan (dan penyelenggara kod anda).
+    surprising:
+      title: Ruby boleh mengejutkan
+      description: Walaupun &quot;kejuruteraan untuk memaksimumkan kebahagiaan programmer&quot;,
+        dengan &quot;prinsip paling tidak mengejutkan&quot;, Ruby masih mempunyai gotchas.
+        Penyampaian ini akan diteruskan dari gotchas remeh newbie, kepada yang lebih
+        maju dan membingungkan gotchas.
+    quotes:
+      title: Jangan memetik saya tentang ini, tetapi ...
+      description: Interpolasi tali (termasuk aksara khusus seperti <span class="code-inline">\
+        n</span> ) gagal dengan petikan <span class="code-inline">&#39;tunggal&#39;</span>
+        - ia memerlukan petikan <span class="code-inline">&quot;dua kali&quot;</span>
+        . Sama seperti kebanyakan bahasa dengan penyambungan rentetan. Untuk mengelakkan
+        ia menggunakan beregu apabila praktikal.
+    twue:
+      title: Ia berdua! Ia berdua!
+      description: 'Hanya dua perkara yang salah: <span class="code-inline">false</span>
+        dan <span class="code-inline">nil</span>. Segala yang lain adalah kebenaran,
+        walaupun <span class="code-inline">0</span> (palsu dalam C), <span class="code-inline">&quot;&quot;</span>
+        (palsu dalam JS), <span class="code-inline">[]</span> , dan lain-lain. Perjalanan
+        orang dari C, JS, dll.'
+    symbols_and_strings:
+      title: Gantung dia dalam effigy atau String dia, secara simbolik.
+      description: '<span class="code-inline">Simbol! = String</span> . Walaupun sama
+        apabila dicetak. Ingat siapa yang hendak digunakan untuk args. Sebaiknya, ambil
+        sama ada, dan gunakan kaedah yang dijangka: &quot;Berilah liberal dalam apa
+        yang anda terima, dan konservatif dalam apa yang anda hantar.&quot; Undang-undang
+        Postel.'
+    string_or_nothing:
+      title: String ... atau apa-apa!
+    constants:
+      title: Selalunya tidak
+      description: Huruf pertama bermaksud malar, dalam Ruby. Cuba untuk menukar pemalar.
+        Ooooh anda mendapat AMARAN! BFD. Malah pembekuan tidak berfungsi untuk Fixnums.
+        Ia berfungsi untuk tatasusunan (semacam) dan kebanyakan objek lain ... dia berkata
+        meramalkan.
+    equals:
+      title: Ada yang lebih sama daripada yang lain
+      description: <span class="code-inline">==</span> ialah nilai yang sama biasa,
+        <span class="code-inline">.eql?</span> adalah nilai dan kelas (1 adalah Fixnum,
+        1.0 ialah Float), <span class="code-inline">.equal?</span> adalah objek yang
+        sama. Ia sebenarnya lebih garang.
+    operations:
+      title: "&gt; ===! = ==!"
+      description: <span class="code-inline">===</span> ialah &quot;kesamaan kes&quot;,
+        seperti dalam kes kenyataan. Nama yang lebih baik mungkin <span class="code-inline">.describes?</span>
+        , atau terlalu <span class="code-inline">.includes?</span>. Sekali lagi,
+        ia sebenarnya lebih kurus; lihat dokumen pada Objek kelas. Mendapatkan orang
+        dari bahasa di mana <span class="code-inline">===</span> sama ada identiti objek
+        atau nilai dan kelas yang sama.
+    priority:
+      title: and != &&, atau != ||
+      description: '<span class="code-inline">&&</span> mempunyai keutamaan
+        yang lebih tinggi daripada <span class="code-inline">=</span>, jadi <span class="code-inline">x
+        = true && false</span> bermakna <span class="code-inline">x = (true &&
+        false)</span> dan mempunyai lebih rendah keutamaan, jadi <span class="code-inline">x
+        = true and false</span> means <span class="code-inline">(x = true) and false</span>
+        . Panduan Gaya Ruby: Gunakan <span class="code-inline">&amp;&amp;, ||</span>
+        untuk ungkapan boolean, <span class="code-inline">and, or</span> untuk aliran
+        kawalan.'
+    sensitive:
+      title: Jangan begitu sensitif!
+      description: Insensitif Whitespace? TIDAK SELALU! Parser fikir ia adalah ungkapan,
+        sebagai satu arg, tetapi <span class="code-inline">(1, 2)</span> bukan ungkapan
+        Ruby yang sah! (Semua berfungsi dengan baik dengan 1 hujah).
+      usage: 'Dengan pelbagai args: <br/> - Tiada parens, tidak ada masalah. <br/> -
+        Ibu bapa dengan ruang, OK. <br/> - Parens dan ruang, TIDAK!'
+      methods: '<span class="code-inline">method/ num</span> ialah regex atau rentetan
+        tanpa had! Ruby fikir anda memberi hujah kepada kaedah itu. Prinsip umum: gunakan
+        ruang kosong BALANCED; kedua-dua pihak atau tidak.'
+      arguments: '<span class="code-inline">one -2</span> membuat Ruby fikir anda memberi
+        argumen <span class="code-inline">-2</span> kepada kaedah satu. Sama untuk <span
+        class="code-inline">+2</span> atau bahkan <span class="code-inline">* 2</span>
+        . Sekali lagi: gunakan ruang kosong BALANCED, kedua-dua belah atau tidak.'
+      stubby: "&quot;Lusuh&quot; lambdas (1.9+) Parentheses optional Space sebelum selepas
+        args tanpa ibu bapa, OK. Ruang selepas ibu bapa, OK. Sekali lagi, ruang sebelum
+        ibu bapa, TIDAK! UPDATE: Tetap dalam 2.0!"
+    onto:
+      title: The yer @ ke!
+      description: 'Nilai telanjang menjadi pemboleh ubah setempat sementara! Penyelesaian:
+        ingat <span class="code-inline">@!</span> Atau, gunakan <span class="code-inline">attr_writer,
+        attr_accessor</span> .) Gets people from Java / C ++, tidak banyak Python (yang
+        memerlukan &quot;diri sendiri&quot; juga). &quot;Anda terus menggunakan pemboleh
+        ubah itu, saya tidak fikir ia bermakna apa yang anda fikir ia bermakna.&quot;.
+        Bukan Inigo Montoya.'
+    variables:
+      title: Lihatlah, ini adalah @@!
+      description: Lihat apa yang mengisi kosong? Kami tidak mengubah <span class="code-inline">nilai
+        @@</span> Parent sebelum menyemaknya, dan tidak langsung! Atau adakah kita?
+        <span class="code-inline">@@ pembolehubah</span> dikongsi dengan subclass -
+        bukan hanya mereka wujud, tetapi pembolehubah itu sendiri! Mengisytiharkan <span
+        class="code-inline">nilai @@</span> Kanak-kanak berubah menjadi Ibu Bapa, dan
+        termasuk Ibu bapa yang telah berubah Kanak-kanak, itu adalah @@!
+    initialize:
+      title: Dengan init (ialize) atau tanpa ia
+      description: Inisiatif ibu bapa berjalan secara automatik sekiranya kanak-kanak
+        tiada. Lain, ibu bapa mesti dipanggil untuk berlari.
+    superman:
+      title: Superman vs the Invisible Man
+      description: '<span class="code-inline">super</span> dengan tiada senarai arg
+        menghantar pemanggil yang mendapat <span class="code-inline">super</span> dengan
+        arg eksplisit menghantar args tersebut untuk menghantar NO args, menggunakan
+        parens kosong: <span class="code-inline">super()</span> .'
+    regexp:
+      title: Bilakah ia akan berakhir? (Atau mulakan?)
+      description: 'Dalam regexps standard: <span class="code-inlne">^</span> bermula
+        dan <span class="code-inline">$</span> adalah akhir rentetan keseluruhan. Regex
+        Ruby lalai untuk multiline, jadi: <span class="code-inline">^</span> bermula
+        dan <span class="code-inline">$</span> adalah akhir mana-mana baris! <span class="code-inline">\
+        A</span> bermula dan <span class="code-inline">\ Z</span> adalah akhir rentetan
+        keseluruhan. (Atau \ z untuk memasukkan sebarang garis baru ... yang merupakan
+        satu lagi gotcha!)'
+    any:
+      title: mendapat .any?
+      description: '<span class="code-inline">.any?</span> tidak bermakna &quot;mana-mana
+        unsur?&quot;! Dengan blok: &quot;buat mana-mana membuat blok benar?&quot;. Tanpa:
+        &quot;ada kebenaran?&quot; Mempunyai blok tersirat: <span class="code-inline">{ |element| element }</span> .'
+    undef:
+      title: "(Un) Def Leppard"
+      description: Pembolehubah yang diisytiharkan dalam blok yang dihantar kepada lelaran
+        (misalnya, masa atau setiap satu) tidak ditentukan di bahagian atas setiap lelaran!
+        Iterators memanggil blok berulang kali, jadi vars tidak lagi diluar skop selepas
+        setiap panggilan. Pembina gelung terbina dalam (misalnya, semasa atau untuk)
+        adalah OK. (Atau mengisytiharkan nama sebelum blok.)
+    freeze:
+      title: Ray beku (Ar)
+      description: Pembekuan pelbagai (atau hash) membeku, bukan item yang terkandung.
+        Strings boleh diubah suai di tempat. Dengan cara ini, anda boleh mengubah suai
+        slot yang diberikan dalam Array of Strings yang beku.
+    one_is_one:
+      title: 1 adalah 1 ... dan lebih lagi akan jadi!
+      description: 'Mengubah Fixnum kepada nilai baru bermaksud objek baru. Mereka tidak
+        boleh diubah suai di tempat! Jadi, tidak boleh mengubah Array Fixnums yang beku.
+        (Fixnums dan Integer tidak mempunyai kaedah-kaedah untuk demo cuba dengan).
+        BTW: object_id <span class="code-inline">object_id</span> adalah <span class="code-inline">value * 2 + 1</span>'
+    bang:
+      title: "(kepada! ||! to!) ==?"
+      description: Bang menandakan kaedah itu berbahaya. Mengapa? Sering kali, boleh
+        mengubah suai penerima, berbanding versi non-mod yang tidak dimodifikasi. TIDAK
+        SELESAIKAN PADA MENGURANGKAN NILAI YANG SAMA SEBAGAI NON-BANG VERSION! Banyak
+        kembali nihil jika tiada perubahan diperlukan!
+    array:
+      title: Array New Gotchas
+      description: Nilai lalai yang diberikan sebagai objek adalah objek yang sama untuk
+        setiap slot! Mutasi satu mutates default untuk semua. Nilai awal yang diberikan
+        sebagai blok akan dinilai secara berasingan untuk setiap slot. Gunakan ini untuk
+        membuat var baru untuk setiap.
+    hash:
+      title: Membuat Hash itu
+      description: 'Kebanyakan masalah yang sama (dan penyelesaian) sebagai Arrays.
+        LEBIH GOTCHAS: mencipta objek baru pada sebarang akses ke slot kosong! Boleh
+        membuat bilangan objek yang berlebihan; reruntuhan menyemak kandungan &quot;sebenar&quot;
+        atau menghitung (tidak semestinya, .size, dll.).'
+    rescue:
+      title: Menyelamatkan saya, melemparkan garis, saya akan cuba untuk menangkapnya!
+      description: Dalam Ruby, membuang dan menangkap TIDAK untuk pengecualian! Mereka
+        adalah kawalan aliran maju, untuk keluar bersarang dalam. Ruby menggunakan peningkatan
+        dan penyelamatan untuk pengecualian.
+    to_str:
+      title: to_s VS to_str
+      description: '<span class="code-inline">to_s</span> ditakrifkan pada setiap objek
+        dan akan sentiasa mengembalikan sesuatu. <span class="code-inline">to_str</span>
+        hanya didefinisikan pada objek yang bersifat rentetan. Sebagai contoh, <span
+        class="code-inline">Simbol</span> mempunyai <span class="code-inline">to_str</span>
+        tetapi <span class="code-inline">Array</span> tidak. Oleh itu, anda boleh menggunakan
+        <span class="code-inline">obj.respond_to?(:to_str)</span> bukan sesuatu seperti
+        <span class="code-inline">obj.is_a? (String)</span> jika anda ingin memanfaatkan
+        menaip itik tanpa bimbang sama ada kelas yang anda bekerjasama adalah subclass
+        <span class="code-inline">String</span> atau tidak.'
+    missing:
+      title: Perlu menyelaras method_missing and respond_to_missing?
+      description: 'Apabila kaedah <span class="code-inline">method_missing</span> mengatasi,
+        ingatlah untuk menimpa <span class="code-inline">respond_to_missing?</span>
+        juga. Apabila anda menggunakan method_missing untuk mempunyai objek mengembalikan
+        sesuatu pada panggilan kaedah, pastikan anda juga mentakrifkan respons_to_missing
+        ?. Jika anda tidak melakukannya, tiada apa yang akan memecahkan pada pandangan
+        pertama, tetapi anda akan menghadapi masalah pada akhirnya. Pertimbangkan kelas
+        ini:'
+      respond_to: 'Banyak kod (permata atau anda sendiri) bergantung kepada respons_to?
+        (untuk sebab yang baik). Adakah anda perlu menampal respond_to_missing? juga:'
+    exception:
+      title: menyelamatkan dari StandardError, bukan Pengecualian
+      description: 'Jangan menyelamatkan Pengecualian, penyelamat StandardError Sebelum
+        Eksplisit menyelamatkan Pengecualian akan menyelamatkan walaupun tidak dapat
+        dipinda seperti ralat SyntaxError, LoadError, dan Interrupt. Jika anda melepaskan
+        pengecualian jenis Pengecualian, maka Ruby akan menangkap StandardError sahaja,
+        yang mungkin yang anda inginkan:'
+    private:
+      title: Data peribadi tidak benar, dan tidak sama sekali dengan kaedah kelas /
+        kelas
+      description: Terdapat cara untuk membuat kaedah kelas peribadi di Ruby, anda hanya
+        perlu melompat melalui beberapa gelung. Err, Maksud saya gunakan <span class="code-inline">class << self</span> syntax. Keanehan ini
+        menolak satu contoh tunggal ke kelas dengan berkesan mewujudkan kaedah kelas.
+    braces:
+      title: Penyokong vs do-end
+      description: Konvensyen umum adalah untuk menggunakan <span class="code-inline">do .. end</span>
+        blok berbilang talian dan pendakap kerinting untuk blok talian
+        tunggal, tetapi terdapat juga perbezaan antara kedua-dua yang boleh digambarkan.
+        Ini bermakna bahawa <span class="code-inline">{}</span> mempunyai tahap yang
+        lebih tinggi daripada <span class="code-inline">do .. end</span> ,
+        jadi ingatlah itu apabila memutuskan apa yang anda mahu gunakan.
+    module:
+      title: 'kelas Foo :: Bar, ditakrifkan di luar Module Foo, tidak akan melihat di
+        dalam Foo'
+      description: Anda boleh memikirkan setiap penampilan <span class="code-inline">module Something</span>,
+        <span class="code-inline">class Something</span> atau <span class="code-inline">def something</span>
+        sebagai &quot;pintu masuk&quot; ke ruang lingkup yang baru. Apabila
+        Ruby mencari definisi nama yang telah dirujuk ia mula-mula melihat dalam skop
+        semasa (kaedah, kelas atau modul), dan jika tidak dijumpai di mana ia akan kembali
+        melalui masing-masing yang mengandungi &quot;gerbang&quot; dan mencari skop
+        di sana.
+    credits: 'Kod dan artikel diambil dari sumber:'
+  meta_programming:
+    title: Metaprogramming
+    description: Metaprogramming adalah penulisan program komputer yang menulis atau
+      memanipulasi program lain (atau diri mereka sendiri) sebagai data mereka, atau
+      yang melakukan sebahagian daripada kerja pada masa kompilasi yang akan dilakukan
+      pada masa runtime. Dalam banyak kes, ini membolehkan para pengaturcara melakukan
+      lebih banyak kerja dalam jumlah masa yang sama seperti yang mereka ambil untuk
+      menulis semua kod secara manual, atau memberikan lebih banyak fleksibiliti program
+      untuk menangani situasi baru tanpa cekap. Metaprogramming adalah menulis kod yang
+      menulis kod semasa runtime untuk menjadikan hidup anda lebih mudah.
+    dynamic_dispatch:
+      title: Pengiriman Dinamik
+      description: Membolehkan kita menghantar <span class="code-inline">subjek subject.public_send
+        (mesej, * argumen)</span>
+    dynamic_method:
+      title: Kaedah Dinamik
+      description: 'Membolehkan kami membuat kaedah <span class="code-inline">define_method</span>
+        secara dinamik <span class="code-inline">: method_name {blok yang menjadi badan
+        kaedah}</span>'
+    ghost_methods:
+      title: Kaedah Hantu
+      description: Menangkap &quot;Kaedah Hantu&quot; dan menghantarnya ke kaedah yang
+        lain. Walaupun mungkin menambah logik di sekitar panggilan. Menggunakan <span
+        class="code-inline">method_missing</span>
+    dynamic_proxies:
+      title: Proksi Dinamik
+      description: 'Sebagai contoh, Anda boleh memberikan kaedah imajiner dengan menggunakan
+        <span class="code-inline">method_missing</span> untuk menghuraikan mesej masuk
+        (misalnya <span class="code-inline">get_name</span> , <span class="code-inline">get_age</span>
+        ) dan untuk mewakilkan kepada kaedah lain seperti <span class="code-inline">mendapatkan
+        (: data_type)</span> di mana <span class="code-inline">: data_type</span> adalah
+        <span class="code-inline">: nama</span> atau <span class="code-inline">: umur</span>
+        .'
+      more: Jika (selepas analisis) anda menemui masalah prestasi dengan menggunakan
+        <span class="code-inline">method_missing</span> anda boleh menggunakan teknik
+        &quot;Kaedah Dynamic&quot; untuk mencipta kaedah sebenar selepas mesej telah
+        diterima oleh `method_missing` buat kali pertama.
+  solid_principles:
+    good: Baik!
+    bad: Bad!
+    title: Prinsip pepejal
+    description: Dalam pengaturcaraan komputer, SOLID (tanggungjawab tunggal, Open-closed,
+      penggantian Liskov, penyisihan antara muka, dan penyongsangan kebergantungan)
+      adalah akronim mnemonik yang diperkenalkan oleh Michael Feathers untuk &quot;Lima
+      Prinsip Pertama&quot; yang dinamakan oleh Robert C. Martin pada awal tahun 2000
+      yang berdiri untuk lima prinsip asas pemrograman dan reka bentuk berorientasikan
+      objek. Hasratnya adalah bahawa prinsip-prinsip ini, apabila diterapkan bersama,
+      akan membuatnya lebih mungkin bahawa seorang pengaturcara akan mewujudkan satu
+      sistem yang mudah dijaga dan diperpanjang dari masa ke masa. Prinsip SOLID adalah
+      garis panduan yang dapat diterapkan sewaktu bekerja pada perisian untuk menghilangkan
+      bau kod dengan menyebabkan pengatur program untuk refactor kode sumber perangkat
+      lunak sehingga keduanya dapat dibaca dan mudah diperluas. Ia adalah sebahagian
+      daripada keseluruhan strategi Pembangunan Perisian yang lincah dan Adaptif.
+    single:
+      title: Prinsip Tanggungjawab Tunggal
+      description: Prinsip Tanggungjawab Tunggal adalah yang paling abstrak dari sekumpulan.
+        Ia membantu mengekalkan kelas dan kaedah yang kecil dan boleh dipelihara. Di
+        samping menjaga kelas yang kecil dan memberi tumpuan, ia juga memudahkan mereka
+        memahami. Satu contoh ini mungkin menambah sokongan untuk menghantar ringkasan
+        e-mel komisen orang tertentu selepas menandakan kesepakatan yang diproses. Fakta
+        bahawa kita boleh mengenal pasti pelbagai sebab untuk mengubah isyarat pelanggaran
+        Prinsip Tanggungjawab Tunggal.
+    open_close:
+      title: Prinsip Terbuka / Tutup
+      description: Prinsip Terbuka / Tertutup menyatakan bahawa kelas atau kaedah harus
+        terbuka untuk sambungan, tetapi tertutup untuk pengubahsuaian. Ini memberitahu
+        kita kita harus berusaha untuk reka bentuk modular yang membolehkan kita mengubah
+        tingkah laku sistem tanpa membuat modifikasi kepada kelas itu sendiri. Ini umumnya
+        dicapai melalui penggunaan corak seperti corak strategi.
+      after: Dengan refactoring ini, kami telah membuat kemungkinan untuk menambah parser
+        baru tanpa mengubah sebarang kod. Setiap tingkah laku tambahan hanya memerlukan
+        penambahan seorang penangan baru. Ini menjadikan kami FileParser boleh diguna
+        semula dan dalam banyak kes akan memastikan kami mematuhi Prinsip Tanggungjawab
+        Tunggal dan juga menggalakkan kami untuk membuat kelas yang lebih fokus.
+    liskov:
+      title: Prinsip Penggantian Liskov
+      description: Prinsip Liskov cenderung menjadi yang paling sukar difahami. Prinsip
+        menyatakan bahawa anda sepatutnya dapat menggantikan sebarang contoh kelas induk
+        dengan contoh salah seorang anaknya tanpa membuat sebarang tingkah laku yang
+        tidak dijangka atau tidak tepat.
+    segregation:
+      title: Prinsip Penyongsangan Ketergantungan
+      description: 'Prinsip menyatakan bahawa pelanggan tidak harus dipaksa bergantung
+        pada kaedah yang tidak digunakan. Dalam contoh ini, terdapat kelas Komputer,
+        Programmer dan Juruteknik. Kedua-dua Programmer dan Juruteknik menggunakan Komputer
+        dengan cara yang berbeza. Pengaturcara menggunakan komputer untuk menaip, tetapi
+        juruteknik tahu cara mengubah cakera keras komputer. Menguatkuasakan Prinsip
+        Pengasingan Antara Muka (ISP) adalah bahawa satu kelas tidak harus bergantung
+        pada kaedah yang tidak digunakannya. Dalam kes kita, Programmer tidak perlu
+        ditambah dengan kaedah # change_hard_drive Komputer kerana ia tidak menggunakannya,
+        tetapi perubahan keadaan yang menguatkan kaedah ini boleh mempengaruhi Programmer.
+        Mari kita refactor kod untuk mematuhi LSP.'
+      after: Selepas refactor ini Juruteknik menggunakan objek yang berbeza dari jenis
+        ComputerInternals yang terpencil dari keadaan Komputer. Keadaan objek Komputer
+        boleh dipengaruhi oleh Programmer tetapi perubahan tidak akan mempengaruhi Juruteknik
+        dengan cara apa pun.
+    di:
+      title: Prinsip Penyongsangan Ketergantungan
+      description: Prinsip Penyongsangan Ketergantungan mempunyai kaitan dengan objek
+        peringkat tinggi (berfikir logik perniagaan) tidak bergantung kepada butiran
+        pelaksanaan peringkat rendah (berfikir pangkalan data dan IO). Ini boleh dicapai
+        dengan menaip itik dan Prinsip Penyongsangan Ketergantungan. Selalunya corak
+        ini digunakan untuk mencapai Prinsip Terbuka / Tertutup yang dibincangkan di
+        atas. Sebenarnya, kita dapat menggunakan semula contoh yang sama seperti demonstrasi
+        prinsip ini. Sekarang ada kelas formatter, tetapi saya telah mengkodkannya pada
+        kelas Laporan, dengan itu mewujudkan kebergantungan dari Laporan ke JSONFormatter.
+        Oleh kerana Laporan ini adalah konsep yang lebih abstrak (peringkat tinggi)
+        daripada JSONFormatter, kami berkesan memecahkan DIP.
+      after: Dengan cara ini Laporan tidak bergantung kepada JSONFormatter dan boleh
+        menggunakan sebarang jenis formatter yang mempunyai kaedah yang dipanggil format
+        (ini dikenali sebagai menaip itik). Satu lagi perkara yang perlu diperhatikan
+        ialah kita telah menggunakan, sekali lagi, suntikan ketergantungan untuk menyelesaikan
+        masalah. Teknik ini adalah yang sangat kuat apabila matlamat kami adalah objek
+        decoupling, dan walaupun ia mempunyai inisial yang sama seperti prinsip penyongsangan
+        ketergantungan (vs corak suntikan ketergantungan), mereka adalah konsep yang
+        sama sekali berbeza.
+  threads:
+    example: Contoh
+    title: Threads
+    description: 'Perhatikan tentang paralelisme dan kesukaran: Perbezaan utama antara
+      menggunakan proses berbanding benang ialah cara memori dikendalikan. Pada tahap
+      yang tinggi, proses menyalin memori, sementara benang berkongsi memori. Ini menjadikan
+      proses ini bertumbuh lebih lambat daripada pemijahan benang dan mengarah ke proses
+      memakan lebih banyak sumber sekali berjalan. Secara keseluruhan, benang dikenakan
+      kurang overhead daripada proses. API Thread ini adalah API Ruby. Saya telah membayangkan
+      bahawa pelaksanaan Ruby yang berbeza mempunyai perilaku threading yang mendasari
+      yang berlainan.'
+    green:
+      title: Benang Hijau
+      description: Ruby 1.9 menggantikan benang hijau dengan benang asli. Walau bagaimanapun,
+        GIL masih menghalang paralelisme. Bahawa dikatakan, kesukaran telah diperbaiki
+        melalui penjadualan yang lebih baik. Jadual baru menjadikan keputusan beralih
+        konteks lebih efisien, dengan dasarnya memindahkannya ke benang asli yang berasingan,
+        dikenali sebagai benang pemasa.
+    gil:
+      title: GIL - Kunci Interpreter Global
+      description: MRI mempunyai kunci interpreter global (GIL). Ia adalah kunci sekitar
+        pelaksanaan kod Ruby. Ini bermakna dalam konteks multi-threaded, hanya satu
+        thread yang dapat melaksanakan kod Ruby pada satu masa. Jadi jika anda mempunyai
+        8 thread sibuk bekerja pada mesin 8-core, hanya satu thread dan satu core akan
+        sibuk pada suatu waktu tertentu . GIL wujud untuk melindungi dalaman Ruby daripada
+        keadaan perlumbaan yang boleh merosakkan data. Terdapat peringatan dan pengoptimuman,
+        tetapi ini adalah intipati.
+      example: Fakta mudah ini adalah apa yang membuat benang sangat kuat, dan juga
+        apa yang menjadikan mereka sukar untuk bekerja dengan. Saya sudah memberikan
+        anda idea mengapa benang baik; inilah program mudah untuk menggambarkan kesukaran
+        mereka. Di sini anda dapat melihat bahawa kami mempunyai <span class="code-inline">10
+        * 10000</span> unsur dalam array. Perhatikan bahawa rubi berbeza boleh menunjukkan
+        hasil yang berbeza. GIL wujud hanya di ruby MRI.
+    mutex:
+      title: Mutex - Pelaksanaan Bersama
+      description: Mutexes menyediakan mekanisme untuk berbilang benang untuk menyegerakkan
+        akses kepada bahagian penting kod. Dalam erti kata lain, mereka membantu membawa
+        beberapa perintah, dan beberapa jaminan, kepada dunia kekacauan pelbagai thread.
+        Nama &#39;mutex&#39; adalah cendekiawan untuk &#39;pengecualian saling&#39;.
+        Jika anda membungkus beberapa bahagian kod anda dengan mutex, anda menjamin
+        bahawa tidak ada dua thread yang boleh memasukkan seksyen itu pada masa yang
+        sama. Mutexes menyediakan mekanisme untuk berbilang benang untuk menyegerakkan
+        akses kepada bahagian penting kod. Ia membantu membawa beberapa pesanan dan
+        beberapa jaminan kepada dunia kekacauan berbilang mata.
+      example: Dalam program ini, kerana mana-mana thread harus mengunci mutex sebelum
+        dapat menolak ke Array, ada jaminan bahwa tidak ada dua thread akan melakukan
+        operasi ini pada waktu yang sama. Dengan kata lain, operasi ini tidak lagi boleh
+        diganggu sebelum selesai. Sebaik sahaja satu benang mula menolak ke Array, tiada
+        benang lain akan dapat memasukkan bahagian kod tersebut sehingga benang pertama
+        selesai. Operasi ini kini selamat. Di sini anda dapat melihat bahawa kami mempunyai
+        <span class="code-inline">10 * 10000</span> unsur dalam array. Kini semuanya
+        sama, kerana mutex itu. Mutex menetapkan sempadan yang sama untuk benang. Benang
+        pertama yang menyentuh sedikit kod ini akan mengunci mutex. maka ia menjadi
+        pemilik mutex itu. Sehingga benang memiliki membuka mutex, tiada benang lain
+        dapat menguncinya.
+    fibers:
+      title: Serat
+      description: Serat adalah primitif untuk melaksanakan konkurensi koperasi berat
+        ringan di Ruby. Pada dasarnya, mereka adalah cara untuk membuat blok kod yang
+        boleh dihentikan dan diteruskan, sama seperti benang. Perbezaan utama adalah
+        bahawa mereka tidak pernah terdedah dan penjadualan mesti dilakukan oleh programmer
+        dan bukan VM. Berbanding dengan model konkuren ringan yang lain, setiap serat
+        datang dengan timbunan 4KB yang kecil. Ini membolehkan gentian dijeda daripada
+        panggilan fungsi yang bersarang dalam blok serat.
+    rails:
+      title: Rails thread-safety
+      description: Masalah dengan ini adalah bahawa tidak ada cara mudah untuk mengatakan
+        dengan kepastian mutlak sama ada aplikasi secara keseluruhan adalah benang selamat.
+      global_variables: Pembolehubah global adalah global. Ini bermakna bahawa mereka
+        dikongsi antara benang. Sekiranya anda tidak yakin tentang tidak menggunakan
+        pembolehubah global sekarang ini, inilah sebab lain untuk tidak menyentuh mereka.
+        Jika anda benar-benar mahu berkongsi sesuatu secara global di seluruh aplikasi,
+        anda lebih berkemungkinan lebih baik dilayan oleh pemalar (tetapi lihat di bawah),
+        juga.
+      class_variables: Pembolehubah kelas. Untuk tujuan perbincangan tentang benang,
+        pemboleh ubah kelas tidak jauh berbeza daripada pembolehubah global. Mereka
+        dikongsi melalui benang hanya dengan cara yang sama. Masalahnya tidak banyak
+        tentang menggunakan pembolehubah kelas, tetapi tentang mutasi mereka. Dan jika
+        anda tidak akan bermutasi pembolehubah kelas, dalam banyak kes pemalar adalah
+        pilihan yang lebih baik.
+      instance_variables: Pemboleh ubah contoh kelas. Tetapi mungkin anda telah membaca
+        bahawa anda harus selalu menggunakan pembolehubah contoh kelas dan bukan pembolehubah
+        kelas dalam Ruby. Nah, mungkin anda perlu, tetapi ia sama seperti masalah untuk
+        program thread sebagai pemboleh ubah kelas.
+      memoization: 'Memoisasi dengan sendirinya bukan isu keselamatan thread. Ia sering
+        digunakan untuk menyimpan data dalam pembolehubah kelas atau pemboleh ubah contoh
+        kelas (lihat mata sebelumnya). The <span class="code-inline">|| =</span> pengendali,
+        sebenarnya, dua operasi, jadi terdapat suis konteks yang berpotensi berlaku
+        di tengah-tengahnya, menyebabkan keadaan perlumbaan di antara benang. Jadi walaupun
+        anda hanya akan menggunakan pembolehubah contoh, anda mungkin akan berakhir
+        dengan keadaan perlumbaan dengan memoisasi. Jangan memoize kepada pemboleh ubah
+        kelas atau pemboleh ubah contoh kelas. Jika anda perlu memoize sesuatu di peringkat
+        kelas, gunakan pembolehubah tempatan thread (<span class="code-inline">Thread.current[:baz]</span>)
+        sebaliknya. Sedarlah, ia masih jenis pembolehubah global.'
+    config:
+      title: Konfigurasikan threadsafe !?
+      description: Memanggil kaedah ini menetapkan empat pilihan dalam konfigurasi aplikasi
+        kami. Mari kita jalankan setiap pilihan dan bercakap tentang apa yang berlaku.
+      frameworks: 'Rangka Kerja Preloading: Opsyen pertama @preload_frameworks cukup
+        banyak apa yang dikatakannya, ia memaksa kerangka Rails untuk dimuatkan dengan
+        kuat pada boot. Apabila pilihan ini tidak didayakan, kelas rangka kerja dimuatkan
+        secara malas melalui autoload. Dalam persekitaran berbilang mata, kerangka perlu
+        dimuatkan secara bersemangat sebelum sebarang benang dibuat kerana masalah keselamatan
+        thread dengan autoload. Kami tahu bahawa pemuatan kerangka kerja tidak menjadi
+        masalah, jadi strateginya adalah untuk memuatkan semuanya sebelum thread apa
+        pun siap untuk menangani permintaan.'
+      cache: 'Kelas caching: Opsyen @cache_classes mengawal sama ada kelas akan dimuat
+        semula atau tidak. Ingat apabila anda melakukan &quot;TDD&quot; dalam permohonan
+        anda? Anda mengubah suai pengawal, kemudian muat semula halaman tersebut untuk
+        &quot;menguji&quot; dan melihat perkara itu berubah? Ya, itulah pilihan ini.
+        Apabila pilihan ini salah, seperti dalam pembangunan, kelas anda akan dimuat
+        semula apabila ia diubah suai. Tanpa pilihan ini, kami tidak dapat melakukan
+        &quot;F5DD&quot; kami (ya, itulah F5 Driven Development). Dalam pengeluaran,
+        kita tahu bahawa kelas tidak akan diubah suai dengan cepat, jadi melakukan kerja
+        untuk mengetahui sama ada atau tidak untuk memuatkan semula kelas hanya membuang
+        sumber, jadi masuk akal untuk tidak pernah memuatkan definisi kelas.'
+      di: 'Pemasangan ketergantungan: Pilihan ini, @dependency_loading mengawal pemuatan
+        kod apabila terdapat pemalar yang hilang. Sebagai contoh, pengawal merujuk kepada
+        model Pengguna, tetapi pemalar Pengguna tidak ditakrifkan. Dalam kes itu, jika
+        @dependency_loading adalah benar, Rails akan mencari fail yang mengandungi pemalar
+        Pengguna dan memuat fail tersebut. Kami sudah membincangkan tentang cara memuatkan
+        kod tidak benang selamat, jadi idea di sini ialah kita harus memuatkan rangka
+        kerja, kemudian memuat semua kod pengguna, kemudian matikan beban kebergantungan.
+        Apabila beban kebergantungan dilumpuhkan, kod kerangka dan kod apl harus dimuatkan,
+        dan mana-mana pemalar yang hilang hanya akan menaikkan pengecualian daripada
+        percubaan untuk memuatkan kod. Kami membenarkan penolakan opsyen ini dalam pengeluaran
+        kerana (seperti yang disebutkan sebelumnya) memuatkan kod tidak boleh digunakan,
+        dan kami mengharapkan agar semua kod dimuat sebelum sebarang benang dapat menangani
+        permintaan.'
+      concurrency: 'Mengizinkan kesukaran: pilihan @allow_concurrency mengawal sama
+        ada atau tidak Rak :: Lock middleware digunakan dalam timbunan anda. Rak ::
+        Kunci membungkus mutex sekitar permintaan anda. Idea ini ialah jika anda mempunyai
+        kod yang tidak boleh digunakan, mutex ini akan menghalang banyak thread daripada
+        melaksanakan kod pengawal anda pada masa yang sama. Apabila threadsafe! ditetapkan,
+        middleware ini dikeluarkan, dan kod pengawal boleh dilaksanakan secara selari.'
+    credits: 'Kod dan artikel diambil dari sumber:'
+  ruby_meister:
+    title: Menjadi Ruby Meister
+    description: Dalam perbualan ini, kami akan meneliti perjalanan panjang dari menjadi
+      pemula Ruby untuk mencapai penguasaan Ruby yang sebenar dan akan cuba memendekkannya
+      sedikit demi sedikit dengan berkongsi beberapa pandangan penting. Master Rubyist
+      mempunyai asas teoretikal yang hebat, bergantung pada kotak alat yang luas, mempunyai
+      pemahaman mendalam tentang nilai dan prinsip teras Ruby dan sentiasa mengasah
+      kemahiran mereka. Mungkin anda memberitahu diri anda sendiri &quot;Wow, ini agak
+      samar!&quot;, Tetapi jika anda menghadiri sesi ini, saya berjanji bahawa anda
+      akan tercerahkan, gembira dan anda akan benar-benar menikmatinya! Bunyi baik?
+      Buku-buku hebat akan menjadi sebahagian daripada sumber yang saya cadangkan kepada
+      orang untuk meningkatkan kemahiran mereka.
+    video: Perjalanan Panjang ke Penguasaan Ruby oleh Bozhidar Batsov.
+    computer_science_fundamentals:
+      title: Asas Sains Komputer
+      articles:
+        - name: inside_machine
+          title: 'Di dalam Mesin: Pengenalan Illustrated kepada Mikropemproses dan Senibina
+            Komputer'
+          description: Komputer menjalankan tugas-tugas yang tidak terhitung dari perniagaan
+            yang kritikal untuk rekreasi, tetapi tidak kira bagaimana perbezaannya mereka
+            boleh melihat dan berkelakuan, mereka semua sama seperti fungsi asas. Sebaik
+            sahaja anda memahami bagaimana mikropemproses atau unit pemprosesan pusat
+            (CPU) -produk, anda akan mendapat pemahaman yang kukuh mengenai konsep-konsep
+            asas di tengah-tengah semua pengkomputeran moden.
+        - name: code
+          title: 'Kod: Bahasa Tersembunyi Perkakasan dan Perisian Komputer'
+          description: Apa yang menyala, penaklukan British, kucing hitam, dan seesaw
+            ada kaitan dengan komputer? Dalam CODE, mereka menunjukkan kepada kita cara-cara
+            yang bijak kita memanipulasi bahasa dan mencipta cara baru untuk berkomunikasi
+            antara satu sama lain. Dan melalui CODE, kita melihat bagaimana kecerdikan
+            ini dan paksaan manusia untuk berkomunikasi telah mendorong inovasi teknologi
+            dua abad yang lalu.
+        - name: concrete_math
+          title: 'Matematik Konkrit: Yayasan Sains Komputer'
+          description: Buku ini memperkenalkan matematik yang menyokong pengaturcaraan
+            komputer lanjutan dan analisis algoritma. Matlamat utama pengarangnya yang
+            terkenal adalah menyediakan asas kemahiran matematik yang kukuh dan relevan
+            - kemahiran yang diperlukan untuk menyelesaikan masalah yang rumit, untuk
+            menilai jumlah yang mengerikan, dan untuk mencari pola halus dalam data.
+            Ia adalah teks yang sangat diperlukan dan rujukan bukan sahaja untuk saintis
+            komputer - penulis sendiri banyak bergantung padanya! - tetapi untuk pengguna
+            matematik yang serius dalam hampir setiap disiplin.
+        - name: sicp
+          title: Struktur dan Tafsiran Program Komputer
+          description: 'Struktur dan Tafsiran Program Komputer mempunyai kesan dramatik
+            terhadap kurikulum sains komputer sepanjang dekad yang lalu. Semakan yang
+            lama ditunggu-tunggu ini mengandungi perubahan sepanjang teks. Terdapat
+            pelaksanaan baru kebanyakan sistem pengaturcaraan utama dalam buku itu,
+            termasuk penterjemah dan penyusun, dan penulis telah memasukkan banyak perubahan
+            kecil yang mencerminkan pengalaman mereka mengajar kursus di MIT sejak edisi
+            pertama diterbitkan. Tema baru telah diperkenalkan yang menekankan peranan
+            utama yang dimainkan oleh pendekatan yang berbeza untuk menangani masa dalam
+            model komputasi: objek dengan keadaan, pengaturcaraan serentak, pengaturcaraan
+            fungsional, dan penilaian malas, dan pengaturcaraan nondeterministik.'
+        - name: design_programms
+          title: 'Cara Merancang Program: Pengenalan kepada Pengaturcaraan dan Pengkomputeran'
+          description: Pengenalan kepada pengaturcaraan tempat sains komputer di teras
+            pendidikan seni liberal. Tidak seperti buku pengenalan lain, ia memberi
+            tumpuan kepada proses reka bentuk program. Pendekatan ini memupuk pelbagai
+            pembacaan kemahiran-kritikal, pemikiran analitik, sintesis kreatif, dan
+            perhatian terhadap perincian-yang penting untuk semua orang, bukan hanya
+            pemrogram komputer masa depan. Buku ini membentangkan pembaca kepada dua
+            idea baru. Pertama, ia membentangkan garis panduan reka bentuk program yang
+            menunjukkan pembaca bagaimana menganalisis pernyataan masalah; bagaimana
+            merangka matlamat ringkas; cara membuat contoh; bagaimana untuk membangunkan
+            garis panduan penyelesaian, berdasarkan analisis; bagaimana untuk menyelesaikan
+            program; dan bagaimana untuk menguji.
+        - name: algorithm_manual
+          title: Manual Reka Bentuk Algoritma
+          description: Edisi kedua terbaru yang diperluaskan dan dikemas kini klasik
+            terlaris ini terus mengambil &quot;misteri&quot; daripada merangka algoritma,
+            dan menganalisis keberkesanan dan kecekapan mereka. Memperluas edisi pertama,
+            buku ini kini berfungsi sebagai buku teks pilihan untuk kursus reka bentuk
+            algoritma sambil mengekalkan statusnya sebagai panduan rujukan praktikal
+            utama kepada algoritma untuk pengaturcara, penyelidik, dan pelajar.
+        - name: cormen
+          title: Pengenalan kepada Algoritma, Edisi Ketiga (The MIT Press)
+          description: Beberapa buku mengenai algoritma adalah ketat tetapi tidak lengkap;
+            yang lain meliputi jisim bahan tetapi kekurangan kekurangan. Pengenalan
+            kepada Algoritma secara unik menggabungkan kekukuhan dan komprehensif. Buku
+            ini merangkumi pelbagai algoritma secara mendalam, namun menjadikan reka
+            bentuk dan analisis mereka dapat diakses oleh semua peringkat pembaca. Setiap
+            bab adalah relatif mandiri dan boleh digunakan sebagai unit pengajian. Algoritma
+            diterangkan dalam bahasa Inggeris dan dalam pseudokod yang direka untuk
+            dibaca oleh sesiapa sahaja yang telah melakukan pengaturcaraan kecil. Penjelasannya
+            telah dipelihara asas tanpa mengorbankan kedalaman liputan atau kekukuhan
+            matematik.
+        - name: compilers
+          title: 'Penyusun: Prinsip, Teknik, dan Alat (Edisi ke-2)'
+          description: 'Penyusun: Prinsip, Teknik, dan Alat, yang dikenali sebagai profesor,
+            pelajar, dan pemaju di seluruh dunia sebagai &quot;Buku Naga,&quot; tersedia
+            dalam edisi baru. Setiap bab telah disemak sepenuhnya untuk mencerminkan
+            perkembangan dalam kejuruteraan perisian, bahasa pengaturcaraan, dan seni
+            bina komputer yang telah berlaku sejak tahun 1986 apabila edisi terakhir
+            diterbitkan. Para pengarang, mengakui bahawa beberapa pembaca akan meneruskan
+            pembina pengkompil, mengekalkan tumpuan mereka pada set permasalahan yang
+            lebih luas yang dihadapi dalam reka bentuk perisian dan pembangunan perisian.'
+        - name: c_lang
+          title: Bahasa Pengaturcaraan C, Edisi Kedua
+          description: Penulis menyampaikan panduan lengkap kepada pengaturcaraan bahasa
+            standard ANSI. Ditulis oleh pemaju C, versi baru ini membantu para pembaca
+            mengikuti standard ANSI yang telah dimuktamadkan untuk C sambil menunjukkan
+            bagaimana untuk mengambil kesempatan daripada kumpulan operator kaya C,
+            ekonomi ekspresi, aliran kawalan yang lebih baik, dan struktur data. 2 /
+            E telah ditulis semula sepenuhnya dengan contoh tambahan dan set masalah
+            untuk memperjelas pelaksanaan pembinaan bahasa yang sukar. Selama bertahun-tahun,
+            pengaturcara C telah membiarkan K &amp; R membimbing mereka untuk membina
+            program yang berstruktur dan cekap. Sekarang, bantuan yang sama ini tersedia
+            untuk mereka yang bekerja dengan penyusun ANSI. Termasuk liputan terperinci
+            bahasa C ditambah dengan manual rujukan bahasa rasmi C untuk bantuan sekejap
+            dengan notasi sintaks, pengisytiharan, perubahan ANSI, peraturan skop, dan
+            senarai terus dan seterusnya.
+    oop:
+      title: Pengaturcaraan berorientasikan objek
+      articles:
+        - name: growing
+          title: Meningkatkan Peranti Berorientasikan Objek, Dipandu oleh Ujian
+          description: 'Pembangunan Dipandu Ujian (TDD) kini merupakan teknik yang ditubuhkan
+            untuk memberikan perisian yang lebih baik dengan lebih cepat. TDD didasarkan
+            pada idea yang mudah: Tulis ujian untuk kod anda sebelum anda menulis kod
+            itu sendiri. Walau bagaimanapun, idea &quot;mudah&quot; ini memerlukan kemahiran
+            dan penghakiman untuk dilakukan dengan baik. Sekarang ada panduan praktikal
+            untuk TDD yang membawa anda melampaui konsep asas. Melukis pada satu dekad
+            pengalaman membina sistem dunia sebenar, dua pelopor TDD menunjukkan cara
+            untuk membiarkan ujian membimbing perkembangan anda dan &quot;mengembangkan&quot;
+            perisian yang koheren, boleh dipercayai, dan dapat dikekalkan.'
+        - name: domain_driven
+          title: 'Reka Bentuk Pemacu Domain: Menangani Kompleksiti dalam Jantung Perisian'
+          description: Ini adalah buku yang serius mengenai pemodelan domain dalam reka
+            bentuk perisian. Masyarakat pembangunan perisian hidup dari satu gelombang
+            hype ke yang lain. OOP, corak, XP, TDD, CI / CD, BigData, DevOps - ini hanya
+            untuk menamakan beberapa. Buku ini berasal dari zaman kegemilangan OOP.
+            Penulis mengaku bahawa paradigma berorientasikan objek bukan satu-satunya
+            yang tersedia tetapi kecenderungan terhadap OOP / OOD adalah jelas (dan
+            wajar). Buku ini menceritakan tentang cara membuat pemodelan komponen perisian
+            teras &quot;cara yang betul&quot;.
+    ruby:
+      title: Tahu awak
+      articles:
+        - name: well_grounded
+          title: Rubyist yang Terutama
+          description: Rubyist yang Terkenal, Edisi Kedua alamat kedua-dua pendatang
+            baru kepada Ruby dan juga pengaturcara Ruby yang ingin memperdalam pemahaman
+            mereka terhadap bahasa tersebut. Edisi kedua yang ditulis dengan baik dan
+            menyeluruh ini meliputi liputan ciri-ciri yang baru dalam Ruby 2.1, serta
+            liputan dan perkembangan terkini aspek bahasa yang telah berubah.
+        - name: programming_ruby
+          title: 'Pemrograman Ruby: Panduan Pemrograman Pragmatik, Edisi Kedua'
+          description: 'Ruby adalah bahasa pengaturcaraan dinamik berorientasikan objek
+            yang semakin popular, disambut oleh ramai pengamal sebagai bahasa yang paling
+            baik dan paling berguna pada hari ini. Apabila Ruby mula-mula meletup di
+            tempat kejadian di dunia Barat, Pragmatic Programmer ada di sana dengan
+            manual rujukan definitif, Ruby Programming: The Pragmatic Programmer&#39;s
+            Guide.'
+        - name: ruby_programming
+          title: 'Bahasa Pemrograman Ruby: Semuanya Anda Perlu Tahu'
+          description: 'Buku ini bermula dengan tutorial permulaan cepat kepada bahasa,
+            dan kemudian menerangkan bahasa secara terperinci dari bawah ke bawah: dari
+            struktur leksikal dan sintaksik kepada datatip untuk ekspresi dan pernyataan
+            dan melalui kaedah, blok, lambdas, penutupan, kelas, dan modul. Buku ini
+            juga termasuk pengenalan yang panjang dan menyeluruh kepada API yang kaya
+            dengan platform Ruby, yang menunjukkan - dengan contoh contoh yang sangat
+            mengulas - kemudahan Ruby untuk pemprosesan teks, manipulasi numerik, koleksi,
+            input / output, rangkaian, dan konkurensi. Bab keseluruhan ditumpukan kepada
+            kemampuan metaprogramming Ruby.'
+  interview_questions:
+    title: Soalan temu bual
+    description: Bahagian ini menyimpan pautan sumber untuk bacaan dan penyediaan temuduga
+    list:
+      - name: 'Toptal: Cara Hire Pemaju Ruby Besar'
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: 'Toptal: 21 Soalan Wawancara Ruby Penting'
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: 'Hookops: 35+ Ruby dan Rails Soalan dan Jawapan Wawancara'
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: 'Educba: 15 Soalan Temuduga Ruby Yang Paling Penting Dan Jawapan'
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: 'Ruby Garage: Bagaimana Untuk Wawancara Ruby Anda di Pemaju Rails'
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: 'RyanSobol: 15 Soalan untuk Tanya Semasa Temuduga Ruby'
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: 'Toptal: 9 Essential Ruby on Rails Questions Interview'
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: Apakah Dokumen yang Lebih Baik?
+    description: Laman web ini adalah adaptasi web Github repositori <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
+      yang mengumpul banyak bintang dan diterjemahkan ke dalam bahasa Cina. Dokumen
+      yang lebih baik membolehkan anda dengan cepat mencari amalan terbaik yang dikumpulkan
+      dalam satu repositori. Hanya anda repo ini seperti rujukan atau sumber penyediaan
+      wawancara.
+    oss:
+      title: Terima kasih kepada Sumber Terbuka
+      description: Dokumen yang lebih baik telah dicipta semasa bekerja dan mencari
+        tahu mengenai amalan terbaik dan pengetahuan tentang ruby, satu kejuruteraan
+        sumber terbuka untuk aplikasi pembangunan web yang ditulis dalam Ruby.
+      thanks: Sekiranya Dokumen yang Lebih Baik membantu anda dalam apa cara sekalipun,
+        fikirkan untuk memberi kami Star on <a href="https://github.com/howtohireme/ruby.fundamental">Github</a>
+        (ia membantu kami untuk mencapai lebih banyak pemaju) atau menyumbang kepada
+        projek kami.

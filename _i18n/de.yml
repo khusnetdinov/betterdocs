@@ -1,0 +1,1524 @@
+head:
+  title: BetterDocs
+  metatags:
+    description: Grundlegende Programmierung mit Ruby-Beispielen und Referenzen. Es
+      umfasst Threads, SOLID-Prinzipien, Entwurfsmuster, Datenstrukturen, Algorithmen.
+    keywords: Bessere Dokumente, Ruby, Grundlagen, Ruby-Programmiergrundlagen. Ruby
+      Gotchas, Funktionale Programmierung, Metaprogrammierung, Threads, Ruby-Solid-Prinzipien
+      mit Beispielen, Ruby-Entwurfsmuster mit Beispielen, Ruby-Algorithmen mit Beispielen,
+      Ruby-Datenstrukturen mit Beispielen.
+content:
+  menu:
+    open: Menü öffnen
+    close: Menü schließen
+
+sidebar:
+  - title: Algorithmen
+    url: algorithms
+    submenus:
+      - key: sorting
+        submenus:
+          - bubble_sort
+          - insertion_sort
+          - selection_sort
+          - shell_sort
+          - heap_sort
+          - merge_sort
+          - quick_sort
+      - key: searching
+        submenus:
+          - binary_search
+          - knuth_moriss_pratt_search
+  - title: Datenstrukturen
+    url: data_structures
+    submenus:
+      - key: axioms
+        submenus:
+          - fetch_store
+          - elementary_operations
+          - call_method
+          - calculating
+          - object
+          - example
+      - key: implementations
+        submenus:
+          - stack
+          - queue
+          - deque
+          - singly_linked_list
+          - doubly_linked_list
+          - ordered_list
+          - hash_table
+          - binary_tree
+          - binary_search_tree
+          - b_tree
+          - binary_heap
+
+  - title: Designmuster
+    url: design_patterns
+    submenus:
+      - key: creational
+        submenus:
+          - abstract_factory
+          - builder
+          - factory
+          - prototype
+          - singleton
+      - key: structural
+        submenus:
+          - adapter
+          - composite
+          - decorator
+          - facade
+          - flyweight
+          - proxy
+      - key: behavioral
+        submenus:
+          - chain_of_responsobility
+          - command
+          - interpreter
+          - iterator
+          - mediator
+          - observer
+          - state
+          - strategy
+          - template
+          - visitor
+  - title: Funktionsprogrammierung
+    url: functional_programming
+    submenus:
+      - pure_functions
+      - closures
+      - applying
+  - title: Gotchas
+    url: gotchas
+    submenus:
+      - surprising
+      - quotes
+      - twue
+      - symbols_and_strings
+      - string_or_nothing
+      - constants
+      - equals
+      - operations
+      - priority
+      - sensitive
+      - onto
+      - variables
+      - initialize
+      - superman
+      - regexp
+      - any
+      - undef
+      - freeze
+      - one_is_one
+      - bang
+      - array
+      - hash
+      - rescue
+      - to_str
+      - missing
+      - exception
+      - private
+      - braces
+      - module
+  - title: Interview Fragen
+    url: interview_questions
+  - title: Metaprogrammierung
+    url: meta_programming
+    submenus:
+      - dynamic_dispatch
+      - dynamic_method
+      - dynamic_proxies
+  - title: Solid Prinzipien
+    url: solid_principles
+    submenus:
+      - single
+      - open_close
+      - liskov
+      - segregation 
+      - di
+  - title: Become Ruby Meister
+    url: ruby_meister
+  - title: Fäden
+    url: threads
+    submenus:
+      - green
+      - gil
+      - mutex
+      - fibers
+      - rails
+      - config
+pages:
+  wiki: Lesen Sie das Wiki
+  credits: Credits
+  page404:
+    title: Seite nicht gefunden :(
+    description: Die angeforderte Seite konnte nicht gefunden werden.
+  algorithms:
+    title: Algorithmen
+    complexity:
+      best: Beste
+      average: Durchschnittlich
+      worst: Am schlimmsten
+    sorting:
+      title: Sortierung
+      description: Ein Sortieralgorithmus ist ein Algorithmus, der Elemente einer Liste
+        in eine bestimmte Reihenfolge bringt. Die am häufigsten verwendeten Aufträge
+        sind numerische und lexikografische Reihenfolge. Eine effiziente Sortierung
+        ist wichtig, um die Verwendung anderer Algorithmen (z. B. Such- und Zusammenführungsalgorithmen)
+        zu optimieren, für die Eingabedaten in sortierten Listen vorhanden sein müssen.
+        Es ist auch oft nützlich, um Daten kanonisieren zu können und um von Menschen
+        lesbare Ausgaben zu erzeugen.
+      bubble_sort:
+        title: Blase sortieren
+        description: Die Blasensortierung hat viele Eigenschaften wie die Einfügungssortierung,
+          hat jedoch einen etwas höheren Overhead. Bei nahezu sortierten Daten benötigt
+          die Bubblesortierung <span class="code-inline time">O (n)</span> , erfordert
+          jedoch mindestens 2 Durchgänge durch die Daten (wohingegen die Einfügungssortierung
+          eher einen Durchgang erfordert).
+      insertion_sort:
+        title: Sortieren durch Einfügen
+        description: Obwohl es sich um einen der elementaren Sortieralgorithmen mit
+          der ungünstigsten Zeit von <span class="code-inline">O(n<sup>2</sup>)</span> handelt
+          , ist die Einfügungssortierung der Algorithmus der Wahl, entweder wenn die
+          Daten nahezu sortiert sind (weil sie adaptiv sind) oder wenn die Problemgröße
+          klein ist (weil es) hat geringen Aufwand). Aus diesen Gründen und weil es
+          auch stabil ist, wird die Einfügungssortierung häufig als rekursiver Basisfall
+          (wenn die Problemgröße klein ist) für Sortieralgorithmen mit höherem Overhead-Divide-and-Conquer-Typ
+          verwendet, z.
+      selection_sort:
+        title: Auswahl sortieren
+        description: Aus dem hier vorgestellten Vergleich könnte man schließen, dass
+          die Auswahlsortierung niemals verwendet werden sollte. Es passt sich in keiner
+          Weise an die Daten an (beachten Sie, dass die vier obigen Animationen in Lockstep
+          ausgeführt werden), sodass die Laufzeit immer quadratisch ist. Auswahlsortierung
+          hat jedoch die Eigenschaft, die Anzahl der Swaps zu minimieren. Bei Anwendungen,
+          bei denen die Kosten für den Austausch von Artikeln hoch sind, kann die Auswahlsortierung
+          der Algorithmus der Wahl sein.
+      shell_sort:
+        title: Shell sortieren
+        description: Die Komplexität der Shell-Sortierung im ungünstigsten Fall hängt
+          von der Inkrementierungssequenz ab. Für die hier verwendeten Inkremente 1
+          4 13 40 121 ... beträgt die zeitliche Komplexität <span class="code-inline">O
+          (n <sup><sup>3</sup>⁄<sub>2</sub></sup>)</span> . Für andere Inkremente
+          ist bekannt, dass die Zeitkomplexität <span class="code-inline">O(n<sup><sup>4</sup>⁄<sub>3</sub></sup>)</span> und sogar <span class="code-inline">O(n·lg
+          <sub>2</sub>(n))</span> . Es sind weder enge Grenzen der zeitlichen Komplexität
+          noch die beste Inkrementiersequenz bekannt. Da die Shell-Sortierung auf der
+          Einfügungssortierung basiert, erbt die Shell-Sortierung die adaptiven Eigenschaften
+          der Einfügungssortierung. Die Anpassung ist nicht so dramatisch, da die Shell-Sortierung
+          die Daten für jedes Inkrement einmal durchläuft, aber sie ist signifikant.
+          Für die oben gezeigte Inkrementierungssequenz gibt es <span class="code-inline">log
+          <sub>3</sub>(n)</span> Inkremente, so dass die zeitliche Komplexität für
+          nahezu sortierte Daten <span class="code-inline">0(n·log<sub>3</sub>(n))</span>.
+          Aufgrund ihres geringen Overheads, der relativ einfachen Implementierung,
+          der adaptiven Eigenschaften und der subquadratischen Zeitkomplexität kann
+          die Shell-Sortierung für einige Anwendungen eine sinnvolle Alternative zu
+          den <span class="code-inline">O(n·lg(n))</span> Sortieralgorithmen sein,
+          wenn die zu sortierenden Daten vorliegen nicht sehr groß
+      heap_sort:
+        title: Heap sortieren
+        description: Heap sortieren ist einfach zu implementieren, führt eine <span class="code-inline">O
+          (n·lg(n))</span> In-Place-Sortierung durch, ist aber nicht stabil. Die
+          erste Schleife, die &quot;heapify&quot; -Phase <span class="code-inline">O(n)</span>
+          , versetzt das Array in die Heap-Reihenfolge. Die zweite Schleife, die <span
+          class="code-inline">O(n·lg(n))</span> &quot;Abwärtssortierphase&quot;,
+          extrahiert wiederholt das Maximum und stellt die Heap-Reihenfolge wieder her.
+          Die Sink-Funktion wird zur besseren Übersichtlichkeit rekursiv geschrieben.
+          Wie gezeigt, benötigt der Code also <span class="code-inline">Θ(lg(n))</span>
+          Speicherplatz für den rekursiven Aufrufstapel. Die Schwanzrekursion in sink
+          () kann jedoch leicht in Iteration konvertiert werden, wodurch die <span class="code-inline">O(1)</span> Raumgrenze entsteht. Beide Phasen sind leicht anpassungsfähig,
+          jedoch nicht besonders nützlich. Im fast sortierten Fall zerstört die Heapify-Phase
+          die ursprüngliche Reihenfolge. Im umgekehrten Fall ist die Heapify-Phase so
+          schnell wie möglich, da das Array in der Heap-Reihenfolge gestartet wird.
+          Die Sortierphase ist jedoch typisch. In den wenigen Fällen mit eindeutigen
+          Schlüsseln gibt es eine gewisse Beschleunigung, jedoch nicht so viel wie bei
+          der Shell-Sortierung oder dem 3-Wege-Quicksort.
+      merge_sort:
+        title: Zusammenführen, sortieren
+        description: 'Zusammenführungssortierung ist sehr vorhersehbar. Es führt zwischen
+          <span class="code-inline">0,5lg(n)</span> und <span class="code-inline">lg(n)</span>
+          Vergleichen pro Element und zwischen <span class="code-inline">lg (n)</span>
+          und <span class="code-inline">1,5lg(n)</span> Swaps pro Element durch. Die Minima werden
+          für bereits sortierte Daten erreicht; Die Maxima werden im Durchschnitt für
+          Zufallsdaten erreicht. Wenn using <span class="code-inline">(n)</span> zusätzlicher
+          Speicherplatz keine Rolle spielt, ist die Zusammenführungssortierung eine
+          ausgezeichnete Wahl: Sie ist einfach zu implementieren und ist der einzige
+          stabile <span class="code-inline">O(n·lg(n))</span> Sortieralgorithmus.
+          Beachten Sie, dass beim Sortieren von verknüpften Listen für die Zusammenführungssortierung
+          nur <span class="code-inline">Θ(lg(n)</span> zusätzlicher Platz erforderlich
+          ist (für Rekursion). Die Zusammenführungssortierung ist der Algorithmus der
+          Wahl für eine Vielzahl von Situationen: Wenn Stabilität erforderlich ist,
+          wenn Sie verknüpfte Listen sortieren und wenn zufällig Der Zugriff ist viel
+          teurer als der sequenzielle Zugriff (z. B. externe Sortierung auf Band). Für
+          den letzten Schritt des Algorithmus gibt es lineare Merge-Algorithmen für
+          die In-Place-Verknüpfung, die jedoch sowohl teuer als auch komplex sind. Die
+          Komplexität ist für Anwendungen gerechtfertigt B. externe Sortierung, wenn
+          <span class="code-inline">Θ(n)</span> kein zusätzlicher Speicherplatz verfügbar
+          ist.'
+      quick_sort:
+        title: Schnelle Sorte
+        description: Bei sorgfältiger Implementierung ist quicksort robust und hat einen
+          geringen Overhead. Wenn keine stabile Sortierung erforderlich ist, eignet
+          sich Quicksort hervorragend für allgemeine Zwecke - obwohl stattdessen immer
+          die 3-Wege-Partitionierungsversion verwendet werden sollte. Der oben gezeigte
+          2-Wege-Partitionierungscode wurde aus Gründen der Übersichtlichkeit und nicht
+          der optimalen Leistung geschrieben. es weist eine schlechte Lokalität auf
+          und zeigt kritisch die Zeit <span class="code-inline">O(n<sup>2</sup>), </span>
+          wenn es nur wenige eindeutige Schlüssel gibt. Eine effizientere und robustere
+          2-Wege-Partitionierungsmethode wird in Quicksort is Optimal von Robert Sedgewick
+          und Jon Bentley angegeben. Die robuste Partitionierung führt zu einer ausgewogenen
+          Rekursion, wenn viele Werte gleich dem Pivot sind, was Wahrscheinlichkeitsgarantien
+          der Zeit <span class="code-inline">O(n·lg(n))</span> und des Raums <span
+          class="code-inline">O(lg(n))</span> für alle Eingaben ergibt. Da beide Untersortierungen
+          rekursiv ausgeführt werden, erfordert die schnelle Sortierung <span class="code-inline">O
+          (n)</span> zusätzlichen Platz für den Rekursionsstapel, falls die Rekursion
+          nicht im Gleichgewicht ist. Dies ist äußerst unwahrscheinlich, kann jedoch
+          vermieden werden, indem zuerst das kleinere Subarray rekursiv sortiert wird.
+          Die zweite Unterarray-Sortierung ist ein rekursiver Tail-Aufruf, der stattdessen
+          mit Iteration erfolgen kann. Bei dieser Optimierung verwendet der Algorithmus
+          im ungünstigsten Fall zusätzlichen Raum
+          <span class="code-inline">O(lg(n))</span> .
+      other: Andere Sortieralgorithmen
+      additional: Zusätzliche Lektüre
+    searching:
+      title: Suchen
+      binary_search:
+        title: Binäre Suche
+        description: In der Informatik ist die binäre Suche, auch als Halbintervallsuche
+          oder logarithmische Suche bekannt, ein Suchalgorithmus, der die Position eines
+          Zielwerts innerhalb eines sortierten Arrays ermittelt. Der Zielwert wird mit
+          dem mittleren Element des Arrays verglichen. Wenn sie ungleich sind, wird
+          die Hälfte, in der das Ziel nicht liegen kann, eliminiert und die Suche wird
+          solange fortgesetzt, bis sie erfolgreich ist.
+      knuth_moriss_pratt_search:
+        title: Knuth-Morris-Pratt-Suche
+        description: In der Informatik sucht der Knuth-Morris-Pratt-String-Suchalgorithmus
+          (oder KMP-Algorithmus) nach Vorkommen eines &quot;Worts&quot; W innerhalb
+          einer Haupt- &quot;Textzeichenfolge&quot; S, indem er die Beobachtung verwendet,
+          dass das Wort selbst bei Auftreten einer Nichtübereinstimmung ausreichend
+          ist Informationen, um zu bestimmen, wo der nächste Treffer beginnen könnte,
+          so dass eine erneute Überprüfung zuvor übereinstimmender Zeichen umgangen
+          wird.
+      other:
+        title: Andere Suchalgorithmen
+        dijkstra: Dijkstra-Algorithmus
+        kruskal: Kruskal-Algorithmus
+        longest: Längst zunehmende Folge
+        telephone_number: Telefonnummer zu Wörtern
+    credits: 'Code und Artikel wurden aus Ressourcen entnommen:'
+  data_structures:
+    title: Datenstrukturen
+    description: In der Informatik wird Big-O-Notation verwendet, um Algorithmen dadurch
+      zu klassifizieren, wie sie auf Änderungen der Eingabegröße reagieren, beispielsweise
+      wie sich die Verarbeitungszeit eines Algorithmus ändert, wenn die Problemgröße
+      extrem groß wird. In der analytischen Zahlentheorie wird sie verwendet, um den
+      &quot;begangenen Fehler&quot; abzuschätzen, während die asymptotische Größe einer
+      arithmetischen Funktion durch den Wert ersetzt wird, den sie bei einem großen
+      endlichen Argument benötigt. Ein bekanntes Beispiel ist das Problem der Schätzung
+      der Restbezeichnung im Primzahlensatz.
+    axioms:
+      title: Grundlegende Axiome von Datenstrukturen
+      description: Die Laufzeitperformance der Common Language Runtime wird durch eine
+        Reihe von Axiomen gegeben, die wir nun postulieren.
+      fetch_store:
+        title: Zeit abrufen und speichern
+        description1: Die Zeit, die benötigt wird, um eine Referenz auf ein Objekt aus
+          dem Speicher abzurufen, ist eine Konstante
+          <span class="code-inline">T_fetch</span> , und die Zeit, die zum Speichern
+          einer Referenz auf ein Objekt im Speicher benötigt wird, ist eine Konstante
+          <span class="code-inline">T_store</span>
+        description2: Laut Axiom hat die Zuweisungsanweisung die Laufzeit <span class="code-inline">T_fetch
+          + T_store</span> . Das heißt, die Zeit, die zum Abrufen der Objektreferenz
+          aus der Variablen x benötigt wird, ist <span class="code-inline">T_fetch</span>
+          und die Zeit, die zum Speichern dieser Objektreferenz in der Variablen y benötigt
+          wird, ist <span class="code-inline">T_store</span> .
+        description3: Hat auch die Laufzeit <span class="code-inline">T_fetch
+          + T_store</span> . Um zu sehen, warum dies der Fall sein sollte, beachten
+          Sie, dass die Konstante <span class="code-inline">1</span> ein Fixnum-Objekt
+          mit dem Wert Eins benennt. Daher können wir erwarten, dass die Kosten für
+          das Abrufen des Verweises auf das mit 1 bezeichnete Objekt die gleichen sind
+          wie das Abrufen eines Verweises auf ein beliebiges anderes Objekt.
+      elementary_operations:
+        title: Elementare Rechenoperationszeit
+        description1: Die zur Durchführung elementarer Rechenoperationen erforderlichen
+          Zeiten, wie Addition, Subtraktion, Multiplikation, Division und Vergleich,
+          sind alle Konstanten. Diese Zeiten sind jeweils mit <span class="code-inline">T_
+          +, T_-, T_ /, T_ *, T_ &lt;</span> bezeichnet.
+        description2: Wir können die Zeit einer Anweisung wie <span class="code-inline">2
+          * T_fetch + T_ + + T_store bestimmen</span> . Dies liegt daran, dass wir zwei
+          Objektreferenzen aus den Variablen y und 1 abrufen müssen. führen Sie die
+          Addition aus und geben Sie ein neues Objekt an, dessen Wert die Summe ist.
+          und speichern Sie einen Verweis auf das neue Objekt in der Variablen y.
+        description3: Wir gehen davon aus, dass die Alternative genau die gleiche Laufzeit
+          wie die ursprüngliche Anweisung benötigt.
+      call_method:
+        title: Methode Zeit aufrufen
+        description1: Die zum Aufrufen einer Methode erforderliche Zeit ist eine Konstante,
+          <span class="code-inline">T_call</span> , und die für die Rückkehr von einer
+          Methode benötigte Zeit ist eine Konstante, <span class="code-inline">T_return</span>
+          Das Übergeben eines Arguments ist konzeptionell gleichbedeutend mit der Zuordnung
+          des Aktualparameterwerts zum Formalparameter der Methode.
+        description2: Gemäß Axiom wäre die Laufzeit der Anweisung <span class="code-inline">T_fetch
+          + 2 * T_store + T_call + T_f (x)</span> , wobei <span class="code-inline">T_f
+          (x)</span> die Laufzeit der Methode f für die Eingabe x ist. Der erste der
+          beiden Speicher liegt an der Übergabe des Parameters x an die Methode f; der
+          zweite ergibt sich aus der Zuordnung zu der Variablen y.
+      calculating:
+        title: Berechnungszeit
+        description1: Die Zeit, die für die Adressberechnung erforderlich ist, die durch
+          eine Feldsubskriptionsoperation, z. B. <span class="code-inline">a [i]</span>
+          , impliziert wird, ist eine Konstante <span class="code-inline">T_ []</span>
+          . Diese Zeit beinhaltet nicht die Zeit zum Berechnen des Indexausdrucks oder
+          die Zeit für den Zugriff auf das Array-Element.
+        description2: 'Dies ist <span class="code-inline">3 * T_fetch</span> . Es werden
+          drei Operandenabfragen benötigt: der erste, um eine Referenz auf das Arrayobjekt
+          a abzurufen; der zweite, um eine Referenz auf das Indexobjekt i abzurufen;
+          und drittens, um eine Referenz auf das Array-Element <span class="code-inline">a
+          [i]</span> abzurufen.'
+      object:
+        title: Zeit für die Objekterstellung
+        description1: Die Zeit, die benötigt wird, um eine neue Objektinstanz einer
+          Klasse zu erstellen, ist eine Konstante, <span class="code-inline">T_new</span>
+          . Diese Zeit beinhaltet keine Zeit zum Initialisieren des Objekts. Durch die
+          Anwendung von Axioms können wir die Laufzeit der Anweisung bestimmen.
+        description2: <span class="code-inline">T_new + T_fetch + 2 * T_store + T_call
+          + T_fixnum_init</span> , wobei <span class="code-inline">T_fixnum_init</span>
+          die Laufzeit der Initialisierungsmethode der Klasse Fixnum ist.
+      example:
+        title: Beispiel
+        description: In diesem Abschnitt wenden wir Axiome an, die Analyse der Laufzeit
+          eines Programms, um die folgende einfache arithmetische Reihensummierung zu
+          berechnen.
+    implementations:
+      title: Implementierung
+      stack:
+        title: Stapel
+        description: Der Stapel ist das Geschwister der Warteschlange. Es ahmt einen
+          realen Stapel (z. B. aus Papier) nach. Es handelt sich um FILO (first-in-last-out).
+          Wenn Elemente aus dem Stapel abgerufen werden, werden sie in umgekehrter Reihenfolge
+          zurückgegeben, in der sie hinzugefügt wurden. Auch hier bieten Ruby Arrays
+          einen perfekten Container. Wie bei der Warteschlange kann auch eine verkettete
+          Liste verwendet werden.
+        as_array: Als Array stapeln
+        as_linked_list: Stapeln Sie als verknüpfte Liste
+      queue:
+        title: Warteschlange
+        description: Eine Warteschlange ist eine einfache auf Container basierende Struktur,
+          die eine reale Warteschlange nachahmt (z. B. Warteschlange bei der Bank).
+          Es handelt sich um FIFO (first-in-first-out), dh wenn Sie Elemente aus der
+          Warteschlange abrufen, werden sie in der Reihenfolge zurückgegeben, in der
+          sie eingegeben wurden. Ruby-Arrays stellen Methoden bereit, die die Implementierung
+          von Warteschlangen trivial vereinfachen. Wenn sie jedoch entsprechend benannt
+          und in einer Convenience-Klasse enthalten sind, lohnt es sich zu sehen, dass
+          sie implementiert werden. Eine alternative Implementierung kann unter Verwendung
+          einer verknüpften Liste durchgeführt werden.
+        as_array: Warteschlange als Array
+        as_linked_list: Warteschlange als verknüpfte Liste
+      deque:
+        title: und
+        description: Ein Deque ist eine Warteschlange, die das Hinzufügen und Entfernen
+          von Elementen an beiden Enden ermöglicht.
+        as_array: Und als Array
+        as_linked_list: Deque als verknüpfte Liste
+      singly_linked_list:
+        title: Einfach verknüpfte Liste
+        description: Einfach verknüpfte Listen enthalten Knoten, die ein Datenfeld sowie
+          ein &#39;nächstes&#39; Feld haben, das auf den nächsten Knoten in der Knotenzeile
+          zeigt. Operationen, die für einzeln verknüpfte Listen ausgeführt werden können,
+          umfassen das Einfügen, Löschen und Durchlaufen.
+      doubly_linked_list:
+        title: Doppelte verknüpfte Liste
+        description: In einer doppelt verknüpften Liste enthält jedes Listenelement
+          zwei Verweise - einen auf seinen Nachfolger und einen auf seinen Vorgänger.
+      ordered_list:
+        title: Bestellliste
+        description: Eine geordnete Liste ist eine Liste, in der die Reihenfolge der
+          Elemente von Bedeutung ist. Die Elemente in einer geordneten Liste sind jedoch
+          nicht notwendigerweise sortiert. Folglich ist es möglich, die Reihenfolge
+          der Artikel zu ändern und trotzdem eine gültige geordnete Liste zu haben.
+        as_array: Sortierte Liste als Array
+      hash_table:
+        title: Hash-tabelle
+        description: Eine Hashtabelle ist ein durchsuchbarer Container. Als solches
+          bietet es Methoden zum Einfügen eines Objekts in den Container, zum Suchen
+          eines Objekts im Container und zum Entfernen eines Objekts aus dem Container.
+      binary_tree:
+        title: Binärer Baum
+        description: Ein binärer Baum ist ein Baum, in dem jeder Knoten maximal zwei
+          Kinder haben kann. Die Kinder sind links und rechts ausgewiesen.
+      binary_search_tree:
+        title: Binärer Suchbaum &lt;
+        description: 'In der Informatik stellen binäre Suchbäume (BST), die manchmal
+          als geordnete oder sortierte Binärbäume bezeichnet werden, einen besonderen
+          Typ von Containern dar: Datenstrukturen, die &quot;Elemente&quot; (wie Zahlen,
+          Namen usw.) im Speicher speichern. Sie ermöglichen ein schnelles Suchen, Hinzufügen
+          und Entfernen von Elementen und können verwendet werden, um entweder dynamische
+          Sätze von Elementen oder Nachschlagetabellen zu implementieren, mit denen
+          ein Element anhand seines Schlüssels gefunden werden kann (z. B. Ermitteln
+          der Telefonnummer einer Person anhand des Namens).'
+      b_tree:
+        title: B-Baum
+        description: In der Informatik ist ein B-Baum eine selbstausgleichende Baumdatenstruktur,
+          die die Daten sortiert hält und Suchen, sequentiellen Zugriff, Einfügungen
+          und Löschvorgänge in logarithmischer Zeit ermöglicht. Der B-Baum ist eine
+          Verallgemeinerung eines binären Suchbaums, in dem ein Knoten mehr als zwei
+          Kinder haben kann (Im Gegensatz zu selbstausgleichenden binären Suchbäumen
+          ist der B-Baum für Systeme optimiert, die große Datenblöcke lesen und schreiben.
+          B- Bäume stellen ein gutes Beispiel für eine Datenstruktur für externe Speicher
+          dar. Sie wird häufig in Datenbanken und Dateisystemen verwendet.
+      binary_heap:
+        title: Binärer Haufen
+        description: Ein binärer Heap ist ein Heap-geordneter vollständiger binärer
+          Baum, der mithilfe eines Arrays implementiert wird. In einem Heap befindet
+          sich der kleinste Schlüssel an der Wurzel. Da sich der Stamm immer an der
+          ersten Position des Arrays befindet, ist das Finden des kleinsten Schlüssels
+          eine triviale Operation in einem binären Heap.
+      credits: 'Code und Artikel wurden aus Ressourcen entnommen:'
+      source: Diese Seite enthält den Ruby-Code aus dem Buch &quot;Datenstrukturen und
+        Algorithmen mit objektorientierten Entwurfsmustern in Ruby&quot; von Bruno R.
+        Preiss. Copyright (c) 2004 von Bruno R. Preiss, P.Eng. Alle Rechte vorbehalten.
+  design_patterns:
+    title: Designmuster
+    creational:
+      title: Kreationelle Muster
+      description: Im Software-Engineering sind kreative Entwurfsmuster Entwurfsmuster,
+        die sich mit Mechanismen zur Objekterstellung befassen und versuchen, Objekte
+        situationsgerecht zu erstellen. Die grundlegende Form der Objekterstellung kann
+        zu Designproblemen oder zu einer erhöhten Komplexität des Designs führen. Kreative
+        Entwurfsmuster lösen dieses Problem, indem sie diese Objekterstellung irgendwie
+        steuern. Kreative Designmuster setzen sich aus zwei vorherrschenden Ideen zusammen.
+        Eine beinhaltet das Wissen darüber, welche konkreten Klassen das System verwendet.
+        Ein anderes ist, wie Instanzen dieser konkreten Klassen erstellt und kombiniert
+        werden.
+      abstract_factory:
+        title: Abstraktes Fabrikmuster
+        description: Das abstrakte Fabrikmuster bietet eine Möglichkeit, eine Gruppe
+          einzelner Fabriken, die ein gemeinsames Thema haben, zu kapseln, ohne ihre
+          konkreten Klassen anzugeben. Bei normaler Verwendung erstellt die Client-Software
+          eine konkrete Implementierung der abstrakten Factory und erstellt dann mithilfe
+          der generischen Benutzeroberfläche der Factory die konkreten Objekte, die
+          Teil des Designs sind. Der Kunde weiß nicht (oder kümmert sich nicht), welche
+          konkreten Objekte er von jeder dieser internen Fabriken erhält, da er nur
+          die generischen Schnittstellen seiner Produkte verwendet. Dieses Muster trennt
+          die Details der Implementierung einer Gruppe von Objekten von ihrer allgemeinen
+          Verwendung und hängt von der Objektzusammensetzung ab, da die Objekterstellung
+          in Methoden implementiert wird, die in der Factory-Schnittstelle verfügbar
+          gemacht werden.
+      builder:
+        title: Builder-Muster
+        description: Das Builder-Muster ist ein Entwurfsmuster für Objekterstellungssoftware.
+          Im Gegensatz zu dem abstrakten Fabrikmuster und dem Fabrikmethode-Muster,
+          das die Absicht hat, Polymorphismus zu ermöglichen, besteht das Ziel des Builder-Musters
+          darin, eine Lösung für das Anti-Muster des teleskopierenden Konstruktors zu
+          finden. Das Anti-Muster des Teleskopkonstruktors tritt auf, wenn die Kombination
+          von Objektkonstruktorparametern zu einer exponentiellen Liste von Konstruktoren
+          führt. Anstatt zahlreiche Konstruktoren zu verwenden, verwendet das Builder-Muster
+          ein anderes Objekt, einen Builder, der jeden Initialisierungsparameter Schritt
+          für Schritt empfängt und dann das resultierende konstruierte Objekt sofort
+          zurückgibt.
+      factory:
+        title: Fabrik muster
+        description: Bei der klassenbasierten Programmierung ist das Factory-Method-Pattern
+          ein Erzeugungsmuster, das Factory-Methoden verwendet, um das Problem beim
+          Erstellen von Objekten zu lösen, ohne die genaue Klasse des zu erstellenden
+          Objekts angeben zu müssen. Dazu erstellen Sie Objekte durch Aufrufen einer
+          Factory-Methode - entweder in einer Schnittstelle angegeben und von untergeordneten
+          Klassen implementiert oder in einer Basisklasse implementiert und optional
+          von abgeleiteten Klassen überschrieben -, anstatt einen Konstruktor aufzurufen.
+      prototype:
+        title: Prototypmuster
+        description: Das Prototypmuster ist ein kreatives Muster entlang der Linie der
+          Fabrik. Der Trick beim Prototyp ist, dass Sie neue Objekte erstellen, indem
+          Sie ein Master-Objekt kopieren. Ändern Sie das Hauptobjekt und alle nachfolgenden
+          Objekte, die Sie erstellen, werden mit einer Kopie der Änderung zum Leben
+          erweckt.
+      singleton:
+        title: Singleton-Muster
+        description: Stellen Sie sicher, dass eine Klasse nur eine Instanz hat, und
+          stellen Sie einen globalen Zugriffspunkt zur Verfügung. Dies ist nützlich,
+          wenn genau ein Objekt benötigt wird, um Aktionen im gesamten System zu koordinieren.
+          Das Konzept wird manchmal auf Systeme verallgemeinert, die effizienter arbeiten,
+          wenn nur ein Objekt vorhanden ist oder die Instantiierung auf eine bestimmte
+          Anzahl von Objekten beschränkt.
+      not_covered:
+        title: 'Nicht abgedeckte Muster:'
+        lazy: Faule Initialisierung
+        multiton: Multiton
+        pool: Objektpool
+        resource: Die Beschaffung von Ressourcen ist Initialisierung
+    structural:
+      title: Strukturmuster
+      description: In der Softwareentwicklung sind strukturelle Entwurfsmuster Entwurfsmuster,
+        die den Entwurf erleichtern, indem sie auf einfache Weise Beziehungen zwischen
+        Entitäten erkennen.
+      adapter:
+        title: Adaptermuster
+        description: In der Softwareentwicklung ist das Adaptermuster ein Software-Entwurfsmuster,
+          mit dem die Schnittstelle einer vorhandenen Klasse als eine andere Schnittstelle
+          verwendet werden kann. Es wird häufig verwendet, um vorhandene Klassen mit
+          anderen zusammenarbeiten zu lassen, ohne ihren Quellcode zu ändern.
+      composite:
+        title: Zusammengesetztes Muster
+        description: Das zusammengesetzte Entwurfsmuster ist ein strukturelles Muster,
+          das zur Darstellung von Objekten mit hierarchischer Baumstruktur verwendet
+          wird. Es ermöglicht die einheitliche Behandlung sowohl einzelner Blattknoten
+          als auch von Zweigen, die aus vielen Knoten bestehen.
+      decorator:
+        title: Dekorateur-Muster
+        description: Bei der objektorientierten Programmierung ist das Dekorationsmuster
+          (auch als Wrapper bezeichnet, eine alternative Bezeichnung, die mit dem Adapter-Muster
+          gemeinsam genutzt wird) ein Entwurfsmuster, mit dem das Verhalten einem einzelnen
+          Objekt entweder statisch oder dynamisch hinzugefügt werden kann, ohne das
+          Verhalten anderer zu beeinflussen Objekte aus derselben Klasse. Das Dekorateur-Muster
+          ist häufig hilfreich, um das Single-Responsibility-Prinzip einzuhalten, da
+          die Funktionalität zwischen Klassen mit eindeutigen Problembereichen aufgeteilt
+          werden kann.
+      facade:
+        title: Fassadenmuster
+        description: Das Fassadenentwurfsmuster wird häufig verwendet, wenn ein System
+          sehr komplex oder schwer verständlich ist, weil das System über eine große
+          Anzahl voneinander abhängiger Klassen verfügt oder sein Quellcode nicht verfügbar
+          ist. Dieses Muster verbirgt die Komplexität des größeren Systems und bietet
+          eine einfachere Schnittstelle zum Client. Normalerweise handelt es sich dabei
+          um eine einzelne Wrapper-Klasse, die eine Reihe von Mitgliedern enthält, die
+          der Client benötigt. Diese Mitglieder greifen im Auftrag des Fassadenclients
+          auf das System zu und blenden die Implementierungsdetails aus.
+      flyweight:
+        title: Fliegengewicht
+        description: In der Computerprogrammierung ist Fliegengewicht ein Softwaredesignmuster.
+          Ein Fliegengewicht ist ein Objekt, das den Speicherbedarf minimiert, indem
+          möglichst viele Daten mit anderen ähnlichen Objekten gemeinsam genutzt werden.
+          Es ist eine Möglichkeit, Objekte in großer Anzahl zu verwenden, wenn eine
+          einfache wiederholte Darstellung eine unakzeptable Menge an Speicher beanspruchen
+          würde. Oft können einige Teile des Objektstatus gemeinsam genutzt werden,
+          und es ist üblich, sie in externen Datenstrukturen zu speichern und bei ihrer
+          Verwendung temporär an die Flyweight-Objekte zu übergeben.
+      proxy:
+        title: Proxy-Muster
+        description: 'Ein Proxy ist in seiner allgemeinsten Form eine Klasse, die als
+          Schnittstelle zu etwas anderem fungiert. Der Proxy kann eine Schnittstelle
+          zu allem herstellen: einer Netzwerkverbindung, einem großen Objekt im Arbeitsspeicher,
+          einer Datei oder einer anderen Ressource, die teuer ist oder nicht dupliziert
+          werden kann. Kurz gesagt, ein Proxy ist ein Wrapper- oder Agentenobjekt, das
+          vom Client aufgerufen wird, um hinter den Kulissen auf das reale Serverobjekt
+          zuzugreifen. Die Verwendung des Proxy kann einfach an das reale Objekt weitergeleitet
+          werden oder zusätzliche Logik bereitstellen. Im Proxy kann eine zusätzliche
+          Funktionalität bereitgestellt werden, z. B. Caching, wenn Operationen am realen
+          Objekt ressourcenintensiv sind, oder das Überprüfen von Vorbedingungen, bevor
+          Operationen am realen Objekt aufgerufen werden. Für den Client ähnelt die
+          Verwendung eines Proxy-Objekts der Verwendung des realen Objekts, da beide
+          dieselbe Schnittstelle implementieren.'
+      protection_proxy:
+        title: Schutz-Proxy
+        description: Schutz-Proxy. Arbeiten Sie an einem MNC? Wenn ja, ist uns der Proxyserver,
+          der uns das Internet zur Verfügung stellt, wohl bekannt, indem er den Zugriff
+          auf Websites wie öffentliche E-Mails, soziale Netzwerke, Datenspeicher usw.
+          einschränkt. Das Management ist der Ansicht, dass es besser ist, einige Inhalte
+          zu blockieren bieten nur arbeitsbezogene Webseiten an. Der Proxy-Server erledigt
+          diese Aufgabe. Dies ist eine Art Proxy-Entwurfsmuster
+      virtual_proxy:
+        title: Virtueller Proxy
+        description: Virtueller Proxy. Verwenden Sie anstelle eines komplexen oder schweren
+          Objekts eine Skelettdarstellung. Wenn ein untergeordnetes Bild sehr groß ist,
+          stellen Sie es einfach mit einem virtuellen Proxy-Objekt dar und laden Sie
+          bei Bedarf das reale Objekt. Sie wissen, dass das reale Objekt in Bezug auf
+          die Instantiierung teuer ist, und ohne die reale Notwendigkeit werden wir
+          das reale Objekt nicht verwenden. Bis der Bedarf entsteht, verwenden wir den
+          virtuellen Proxy.
+      remote_proxy:
+        title: Remote-Proxy
+        description: Remote-Proxy. Bei der verteilten Objektkommunikation stellt ein
+          lokales Objekt ein entferntes Objekt dar (eines, das zu einem anderen Adressraum
+          gehört). Das lokale Objekt ist ein Proxy für das Remote-Objekt, und der Methodenaufruf
+          im lokalen Objekt führt zum Aufruf der Remote-Methode im Remote-Objekt. Stellen
+          Sie sich eine ATM-Implementierung vor, die Proxy-Objekte für Bankinformationen
+          enthält, die auf dem Remote-Server vorhanden sind.
+      not_covered:
+        title: 'Nicht abgedeckte Muster:'
+        callback: Kommentierter Rückruf
+        bridge: Brücke
+        data_bus: Datenbus
+        role: Rollenobjekt
+    behavioral:
+      title: Verhaltensmuster
+      description: Im Software-Engineering sind Verhaltensmuster Designmuster, die gängige
+        Kommunikationsmuster zwischen Objekten identifizieren und diese Muster realisieren.
+        Dadurch erhöhen diese Muster die Flexibilität bei der Durchführung dieser Kommunikation.
+      chain_of_responsobility:
+        title: Kette von Verantwortungsmustern
+        description: Beim objektorientierten Design ist das Verantwortungskettenmuster
+          ein Designmuster, das aus einer Quelle von Befehlsobjekten und einer Reihe
+          von Verarbeitungsobjekten besteht. Jedes Verarbeitungsobjekt enthält eine
+          Logik, die die Typen von Befehlsobjekten definiert, die es verarbeiten kann.
+          Der Rest wird an das nächste Verarbeitungsobjekt in der Kette übergeben. Es
+          gibt auch einen Mechanismus, um neue Verarbeitungsobjekte am Ende dieser Kette
+          hinzuzufügen.
+      command:
+        title: Befehlsmuster
+        description: Das Befehlsmuster ist ein Verhaltensmuster, in dem die Informationen
+          gespeichert werden, die zum Aufruf von Methoden zu einem späteren Zeitpunkt
+          erforderlich sind. Der Befehl besteht lediglich aus einer Reihe von Aktionen,
+          die in einem Objekt eingeschlossen sind. Mit Ruby können Sie mit Procs dasselbe
+          tun, ohne ein separates Objekt erstellen zu müssen. Dies ist eine gute Option,
+          wenn die Aktion einfach ist und keine Statusinformationen gespeichert werden
+          müssen. Andernfalls ist eine Befehlsklasse die bessere Option.
+      interpreter:
+        title: Interpretiermuster
+        description: Bei der Computerprogrammierung ist das Interpretiermuster ein Entwurfsmuster,
+          das angibt, wie Sätze in einer Sprache ausgewertet werden. Die Grundidee ist,
+          für jedes Symbol (Terminal oder Nichtterminal) eine Klasse in einer speziellen
+          Computersprache zu haben. Der Syntaxbaum eines Satzes in der Sprache ist eine
+          Instanz des zusammengesetzten Musters und wird verwendet, um den Satz für
+          einen Client auszuwerten (zu interpretieren).
+      iterator:
+        title: Iteratormuster
+        description: Das Iterator-Entwurfsmuster ermöglicht den sequentiellen Zugriff
+          auf Elemente in einem Container, ohne zu zeigen, wie der Container die Elemente
+          tatsächlich darstellt. Der Iterator kann als beweglicher Zeiger betrachtet
+          werden, der den Zugriff auf Elemente ermöglicht, die in einem Container eingeschlossen
+          sind.
+      external_iterator:
+        title: Externes Iteratormuster
+        description: 'Externer Iterator: Die Iterationslogik ist in einer separaten
+          Klasse enthalten. Die Iterationsklasse kann für die Verarbeitung mehrerer
+          Objekttypen verallgemeinert werden, sofern sie die Indizierung zulassen. Sie
+          erfordert, dass die zusätzliche Klasse die eigentliche Iteration durchführt,
+          sie ermöglicht jedoch eine größere Flexibilität, da Sie die Iteration steuern
+          können, welche Elemente in welcher Reihenfolge iteriert werden.'
+      internal_iterator:
+        title: Internes Iteratormuster
+        description: 'Interner Iterator: Die gesamte Iterationslogik findet im Aggregatobjekt
+          statt. Verwenden Sie einen Codeblock, um Ihre Logik an das Aggregat zu übergeben,
+          das dann den Block für jedes seiner Elemente aufruft.'
+      mediator:
+        title: Mediator-Muster
+        description: Normalerweise besteht ein Programm aus einer großen Anzahl von
+          Klassen. Die Logik und die Berechnung sind also auf diese Klassen verteilt.
+          Da jedoch mehr Klassen in einem Programm entwickelt werden, insbesondere während
+          der Wartung und / oder des Refactorings, kann das Problem der Kommunikation
+          zwischen diesen Klassen komplexer werden. Dies macht es schwieriger, das Programm
+          zu lesen und zu warten. Außerdem kann es schwierig werden, das Programm zu
+          ändern, da jede Änderung den Code in mehreren anderen Klassen beeinflussen
+          kann. Mit dem Vermittlermuster wird die Kommunikation zwischen Objekten mit
+          einem Vermittlerobjekt verkapselt. Objekte kommunizieren nicht mehr direkt
+          miteinander, sondern kommunizieren über den Vermittler. Dies reduziert die
+          Abhängigkeiten zwischen kommunizierenden Objekten und verringert dadurch die
+          Kopplung.
+      momento:
+        title: Moment des Musters
+        description: 'Das Momento-Muster wird mit drei Objekten implementiert: dem Urheber,
+          einem Hausmeister und einem Momento. Der Urheber ist ein Objekt, das einen
+          internen Status hat. Der Hausmeister wird dem Urheber etwas antun, möchte
+          aber die Änderung rückgängig machen können. Der Hausmeister bittet zunächst
+          den Urheber um ein Objekt. Dann führt er jede Operation (oder Abfolge von
+          Operationen) aus, die er ausführen würde. Um den Status vor den Operationen
+          wiederherzustellen, wird das Momento-Objekt an den Absender zurückgegeben.
+          Das Momento-Objekt selbst ist ein undurchsichtiges Objekt (Objekt, das der
+          Hausmeister nicht ändern kann oder soll). Bei der Verwendung dieses Musters
+          sollte darauf geachtet werden, ob der Urheber andere Objekte oder Ressourcen
+          ändern kann - das Momentomuster wirkt auf ein einzelnes Objekt.'
+      observer:
+        title: Beobachtermuster
+        description: Das Beobachtermuster ist ein Software-Entwurfsmuster, in dem ein
+          Objekt, das als Subjekt bezeichnet wird, eine Liste seiner abhängigen Personen,
+          sogenannte Observer, verwaltet und diese automatisch über alle Zustandsänderungen
+          benachrichtigt, normalerweise durch Aufrufen einer ihrer Methoden. Es wird
+          hauptsächlich zur Implementierung von verteilten Ereignisbehandlungssystemen
+          verwendet. Das Observer-Muster ist auch ein Schlüsselelement in dem bekannten
+          MVC-Architekturmuster (Model-View-Controller). Das Beobachtermuster ist in
+          zahlreichen Programmierbibliotheken und -systemen implementiert, darunter
+          fast alle GUI-Toolkits.
+      state:
+        title: Zustandsmuster
+        description: Das Zustandsmuster ist ein Verhaltenssoftware-Entwurfsmuster, das
+          eine Zustandsmaschine auf objektorientierte Weise implementiert. Mit dem Zustandsmuster
+          wird eine Zustandsmaschine implementiert, indem jeder einzelne Zustand als
+          abgeleitete Klasse der Zustandsmusterschnittstelle implementiert wird und
+          Zustandsübergänge durch Aufrufen von durch die Superklasse des Musters definierten
+          Methoden implementiert werden.
+      strategy:
+        title: Strategiemuster
+        description: Die Strategie lässt den Algorithmus unabhängig von den Clients
+          variieren, die ihn verwenden. Strategie ist eines der Muster, das in dem einflussreichen
+          Buch Design Patterns von Gamma et al. Enthalten ist. das popularisierte das
+          Konzept der Verwendung von Mustern zur Beschreibung des Softwaredesigns. Zum
+          Beispiel kann eine Klasse, die eine Validierung ankommenden Daten durchführt,
+          ein Strategiemuster verwenden, um einen Validierungsalgorithmus basierend
+          auf dem Datentyp, der Datenquelle, der Benutzerauswahl oder anderen Unterscheidungsfaktoren
+          auszuwählen. Diese Faktoren sind bis zur Laufzeit nicht für jeden Fall bekannt
+          und erfordern möglicherweise eine radikal andere Validierung. Die Validierungsstrategien,
+          die getrennt vom Validierungsobjekt gekapselt sind, können von anderen Validierungsobjekten
+          in verschiedenen Bereichen des Systems (oder sogar von verschiedenen Systemen)
+          ohne Code-Duplizierung verwendet werden.
+      template:
+        title: Vorlagenmethode Muster
+        description: Bei der objektorientierten Programmierung wird zunächst eine Klasse
+          erstellt, die die grundlegenden Schritte eines Algorithmusentwurfs bereitstellt.
+          Diese Schritte werden mit abstrakten Methoden implementiert. Später ändern
+          Unterklassen die abstrakten Methoden, um echte Aktionen zu implementieren.
+          Somit wird der allgemeine Algorithmus an einer Stelle gespeichert, die konkreten
+          Schritte können jedoch von den Unterklassen geändert werden.
+      visitor:
+        title: Besuchermuster
+        description: Beim objektorientierten Programmieren und beim Software-Engineering
+          ist das Besucherentwurfsmuster eine Möglichkeit, einen Algorithmus von einer
+          Objektstruktur zu trennen, auf der er arbeitet. Ein praktisches Ergebnis dieser
+          Trennung ist die Möglichkeit, vorhandene Objektstrukturen mit neuen Operationen
+          zu versehen, ohne diese Strukturen zu ändern. Es ist eine Möglichkeit, dem
+          offenen / geschlossenen Prinzip zu folgen. Im Wesentlichen erlaubt der Besucher,
+          einer Klasse von Klassen neue virtuelle Funktionen hinzuzufügen, ohne die
+          Klassen selbst zu ändern. Stattdessen erstellt man eine Besucherklasse, die
+          alle entsprechenden Spezialisierungen der virtuellen Funktion implementiert.
+          Der Besucher nimmt die Instanzreferenz als Eingabe und implementiert das Ziel
+          durch Doppelversand.
+      not_covered:
+        title: 'Nicht abgedeckte Muster:'
+        hierarchical: Hierarchischer Besucher
+      credits: 'Code und Artikel wurden aus Ressourcen entnommen:'
+  functional_programming:
+    title: Funktionsprogrammierung
+    description: 'Wenn Sie eine Sprache in einem funktionalen Stil verwenden, haben
+      Sie Zugriff auf einige wichtige Funktionen, die unten aufgeführt sind:'
+    axioms:
+      immutable: 'Unveränderbare Werte: Sobald eine &quot;Variable&quot; gesetzt ist,
+        kann sie nicht mehr geändert werden. In Ruby bedeutet dies, dass Sie Variablen
+        effektiv wie Konstanten behandeln müssen.'
+      side_effects: 'Keine Nebenwirkungen: Wenn ein bestimmter Wert übergeben wird,
+        muss eine Funktion immer dasselbe Ergebnis zurückgeben. Dies geht einher mit
+        unveränderlichen Werten. Eine Funktion kann niemals einen Wert annehmen und
+        ändern, da dies einen Nebeneffekt hervorrufen würde, der die Rückgabe eines
+        Ergebnisses tangiert.'
+      pure_functions: 'Funktionen höherer Ordnung: Dies sind Funktionen, die Funktionen
+        als Argumente zulassen oder Funktionen als Rückgabewert verwenden. Dies ist
+        zweifellos eines der wichtigsten Merkmale jeder funktionalen Sprache.'
+      applying: 'Currying: Durch Funktionen mit höherer Ordnung aktiviert, transformiert
+        Currying eine Funktion, die mehrere Argumente verwendet, in eine Funktion, die
+        ein Argument akzeptiert. Dies geht mit einer Teilfunktionsanwendung einher,
+        bei der eine Funktion mit mehreren Argumenten in eine Funktion umgewandelt wird,
+        die weniger Argumente als ursprünglich angenommen hat.'
+      recursion: 'Rekursion: Schleife durch Aufruf einer Funktion aus sich heraus. Wenn
+        Sie keinen Zugriff auf veränderliche Daten haben, wird die Rekursion zum Aufbau
+        und zur Verkettung der Datenerstellung verwendet. Dies ist darauf zurückzuführen,
+        dass das Schleifen kein funktionales Konzept ist, da zum Weitergeben des Zustands
+        der Schleife zu einem bestimmten Zeitpunkt Variablen weitergegeben werden müssen.'
+      lazy: 'Lazy-Evaluation oder Delayed-Evaluation: Die Verarbeitung von Werten wird
+        bis zu dem Moment verzögert, an dem sie tatsächlich benötigt wird. Wenn Sie
+        beispielsweise über einen Code verfügen, der eine Liste von Fibonacci-Zahlen
+        mit aktivierter Lazy-Auswertung generiert, wird dieser nicht verarbeitet und
+        berechnet, bis einer der Werte im Ergebnis von einer anderen Funktion (z. B.
+        put) benötigt wird.'
+    pure_functions:
+      title: Reine Funktionen
+      description: Sie können sehen, dass diese Funktion das Ergebnis nur mit ihren
+        Argumenten berechnet.
+    closures:
+      title: Verschlüsse
+      description: Lambdas erzwingen auch eine Schließung und können so ihren Kontext
+        objektübergreifend beibehalten.
+    applying:
+      title: Teilweise anwenden und tragen
+      description: Lassen Sie uns zuerst verstehen, was diese zwei verschiedenen Funktionsanwendungen
+        sind. Eine Teilfunktionsanwendung ruft eine Funktion mit einer Anzahl von Argumenten
+        auf, um eine Funktion zurückzubekommen, die so viel weniger Argumente benötigt.
+        Currying nimmt eine Funktion, die n Argumente übernimmt, und teilt sie in n
+        Funktionen auf, die ein Argument annehmen.
+      proc: Um Ihnen eine klarere Vorstellung davon zu geben, was jede dieser beiden
+        Funktionen für eine Funktion leistet, nehmen wir ein Beispiel für Proc.
+      partial: Eine teilweise Anwendung dieser Funktion würde zurückgeben, wenn wir
+        in den ersten beiden Argumenten die folgenden verschachtelten Procs übergeben.
+      curry: <span class="code-inline">.curry</span> gibt eine aktuelle
+        Ausgabe zurück. Wenn das optionale Argument arity angegeben ist, bestimmt
+        es die Anzahl der Argumente. Eine curried-Prozedur erhält einige Argumente.
+        Wenn eine ausreichende Anzahl von Argumenten angegeben wird, werden die angegebenen
+        Argumente an die ursprüngliche Prozedur übergeben und das Ergebnis zurückgegeben.
+        Gibt andernfalls eine andere curried-Prozedur zurück, die den Rest der Argumente
+        übernimmt.
+  gotchas:
+    title: Gotchas
+    description1: Die meisten Anfänger von Ruby on Rails sind vom Framework begeistert
+      und beginnen, ohne Sprachkenntnisse Anwendungen zu erstellen. Und das ist der
+      Zauber von RoR.
+    description2: Irgendwann wird es ernst. Einige benötigen Zeit und Mühe, um die schmutzigen
+      Geheimnisse von Ruby on Rails zu erkunden, während andere sich beschämen und zu
+      älteren Entwicklern mit nahezu null Sprachkenntnissen werden.
+    description3: Wie auch immer, früher oder später, Anfänger oder erfahrene Programmierer,
+      stoßen wir auf so genannte Ruby Gotchas - diese kleinen sprachlichen Feinheiten,
+      die sich stundenlang von Hardcore-Debugging vor unserer Website verstecken.
+    description4: Hier finden Sie eine Liste mit beliebten Ruby-Gotchas und Kuriositäten,
+      die Entwickler beachten sollten. Für jeden Fall gibt es ein Beispiel für verwirrenden
+      und / oder fehleranfälligen Code.
+    description5: Sie verfügen über bewährte Vorgehensweisen, die Sie daran hindern,
+      einfache (aber schwer zu findende) Fehler zu machen und Ihr Leben (und den Ihres
+      Betreuers) zu vereinfachen.
+    surprising:
+      title: Ruby kann überraschend sein
+      description: Obwohl &quot;programmiert, um die Programmiererglücklichkeit zu maximieren&quot;,
+        mit dem &quot;Prinzip der geringsten Überraschung&quot;, hat Ruby immer noch
+        Streit. Diese Präsentation wird von trivialen Neueinsteiger-Gotchas zu fortgeschrittenen
+        und verwirrenderen Gotchas führen.
+    quotes:
+      title: Zitiere mich nicht dazu, aber ...
+      description: Die Zeichenketteninterpolation (einschließlich Sonderzeichen wie
+        <span class="code-inline">\ n</span> ) schlägt mit <span class="code-inline">&#39;einfachen&#39;</span>
+        Anführungszeichen fehl - es sind <span class="code-inline">&quot;doppelte&quot;</span>
+        Anführungszeichen erforderlich. Wie in den meisten Sprachen mit String-Interpolation.
+        Um dies zu vermeiden, verwenden Sie, wenn möglich, doppelte Werte.
+    twue:
+      title: Es ist Twue! Es ist Twue!
+      description: 'Nur zwei Dinge sind falsch: <span class="code-inline">false</span>
+        und <span class="code-inline">nil.</span> Alles andere ist wahr, sogar <span
+        class="code-inline">0</span> (falsch in C), <span class="code-inline">&quot;&quot;</span>
+        (falsch in JS), <span class="code-inline">[]</span> usw. Löst Leute von C, JS
+        usw. aus, von denen einige falsch sind.'
+    symbols_and_strings:
+      title: Hängen Sie ihn in ein Abbild oder reihen Sie ihn symbolisch auf.
+      description: '<span class="code-inline">Symbol! = String</span> . Auch wenn es
+        beim Drucken gleich ist. Denken Sie daran, welche Sie für args verwenden sollen.
+        Nehmen Sie im Idealfall entweder ein und verwenden Sie das, was eine Methode
+        erwartet: &quot;Seien Sie in dem, was Sie akzeptieren, liberal und in dem, was
+        Sie senden, konservativ.&quot; Postel-Gesetz.'
+    string_or_nothing:
+      title: String ... oder nichts!
+    constants:
+      title: Konstanten sind nicht
+      description: Anfangsbuchstaben bedeutet konstant, in Ruby. Versuchen Sie, eine
+        Konstante zu ändern. Ooooh bekommst du eine WARNUNG! BFD. Selbst das Einfrieren
+        funktioniert nicht für Fixnums. Es funktioniert für Arrays (eine Art) und für
+        die meisten anderen Objekte ... er sagte Vorahnung.
+    equals:
+      title: Einige sind gleicher als andere
+      description: <span class="code-inline">==</span> ist der übliche gleiche Wert,
+        <span class="code-inline">.eql?</span> ist Wert und Klasse (1 ist Fixnum, 1.0
+        ist Float), <span class="code-inline">.equal?</span> ist das gleiche Objekt.
+        Es ist eigentlich viel haariger.
+    operations:
+      title: ">===! = ==!"
+      description: <span class="code-inline">===</span> ist &quot; <span class="code-inline">.describes?</span>
+        &quot;, wie in den <span class="code-inline">.includes?</span> . Ein besserer
+        Name könnte sein. oder überladen.
+        . Wieder ist es tatsächlich viel haariger; Siehe die Dokumente zur Klasse Object.
+        Ruft Personen aus Sprachen ab, in denen <span class="code-inline">===</span>
+        entweder Objektidentität oder derselbe Wert und dieselbe Klasse ist.
+    priority:
+      title: and != &&, or != ||
+      description: '<span class="code-inline">&amp;&amp;</span> hat eine höhere Priorität
+        als <span class="code-inline">=</span> , dh <span class="code-inline">x = true
+        &amp;&amp; false</span> bedeutet <span class="code-inline">x = (true &amp;&amp;
+        false)</span> und hat eine niedrigere Priorität. <span class="code-inline">x
+        = true und false</span> bedeutet <span class="code-inline">(x = true) und false</span>
+        . Ruby Style Guide: Verwenden Sie <span class="code-inline">&amp;&amp;, ||</span>
+        für boolesche Ausdrücke <span class="code-inline">and, or</span> für den Steuerfluss.'
+    sensitive:
+      title: Sei nicht so empfindlich!
+      description: Leerzeichen unempfindlich? NICHT IMMER! Parser denkt, es ist ein
+        Ausdruck, als ein Argument, aber <span class="code-inline">(1, 2)</span> ist
+        kein gültiger Ruby-Ausdruck! (Alle funktionieren gut mit 1 Argument).
+      usage: 'Mit mehreren args: <br/> - Keine Parens, kein Problem. <br/> - Eltern
+        ohne Platz, OK. <br/> - Parens und Raum, NEIN!'
+      methods: '<span class="code-inline">method / num</span> ist eine nicht beendete
+        Regex oder Zeichenfolge! Ruby denkt, Sie geben der Methode ein Argument. Allgemeiner
+        Grundsatz: Verwenden Sie BALANCED Whitespace. beide Seiten oder keine.'
+      arguments: '<span class="code-inline">one -2</span> lässt Ruby denken, dass Sie
+        der Methode eins ein Argument <span class="code-inline">-2</span>. Gleiches
+        für <span class="code-inline">+2</span> oder sogar <span class="code-inline">*
+        2</span> . Nochmals: Verwenden Sie BALANCED Whitespace, beide Seiten oder keine.'
+      stubby: "&quot;Stabby&quot; -Lambdas (1.9+) Klammern optionales Leerzeichen vor
+        den Argumenten ohne Eltern, OK. Platz nach den Eltern, OK. Wieder Raum vor den
+        Eltern, NEIN! UPDATE: In 2.0 behoben!"
+    onto:
+      title: Das yer @ auf!
+      description: 'Nackter Wert wird zu einer temporären lokalen Variablen! Lösung:
+        Erinnere dich an das <span class="code-inline">@!</span>
+        (Oder &quot;self&quot;. Oder verwenden Sie <span class="code-inline">attr_writer,
+        attr_accessor</span> .) Ruft Leute aus Java / C ++ ab, nicht so sehr Python
+        (was auch &quot;self&quot; benötigt). &quot;Sie verwenden diese Variable weiterhin.
+        Ich glaube nicht, dass es bedeutet, was Sie denken, dass es bedeutet.&quot;
+        Nicht Inigo Montoya.'
+    variables:
+      title: Achtung, es ist ein @@!
+      description: Schau mal, was den Rohling ausfüllt? Wir haben den <span class="code-inline">@@Wertvon</span> Parent nicht geändert,bevor
+        wir ihn überprüft haben, noch über Child&#39;s! Oder haben wir <span class="code-inline">@@Variablen</span> werden mit Unterklassen geteilt - nicht nur, dass sie existieren,
+        sondern auch die Variablen selbst! Der <span class="code-inline">@@Wertvon</span>
+        Child wurde für Eltern geändert, und einschließlich
+        der geänderten Child&#39;s.ut von Parent ist dies ein @@!
+    initialize:
+      title: Mit init (ialize) oder ohne
+      description: Die Initialisierung des Elternteils wird nur dann automatisch durchgeführt,
+        wenn ein Kind keine hat. Ansonsten müssen die Eltern aufgerufen werden.
+    superman:
+      title: Superman gegen den Unsichtbaren
+      description: '<span class="code-inline">super</span> mit No-Arg-Liste sendet,
+        was der Anrufer mit expliziten Argumenten <span class="code-inline">super</span>hat,
+        sendet diese Argumente, um NO-Argumente zu senden. Verwenden Sie leere Parens:
+        <span class="code-inline">super()</span> .'
+    regexp:
+      title: Wann wird es enden? (Oder anfangen?)
+      description: 'In Standardausdrücken: <span class="code-inlne">^</span> ist start
+        und <span class="code-inline">$</span> ist das Ende der gesamten Zeichenfolge.
+        Rubys Regex ist standardmäßig mehrzeilig, also: <span class="code-inline">^</span>
+        ist Start und <span class="code-inline">$</span> ist das Ende einer Zeile! <span
+        class="code-inline">\ A</span> ist Start und <span class="code-inline">\ Z</span>
+        ist Ende der gesamten Zeichenfolge. (Oder \ z, um einen neuen Zeilenumbruch
+        einzuschließen ... was ein weiterer Spruch ist!)'
+    any:
+      title: bekommen.
+      description: '<span class="code-inline">.any?</span> bedeutet nicht &quot;irgendwelche
+        Elemente&quot;! Mit Block: &quot;Machen Sie den Block wahr?&quot; Ohne: &quot;Sind
+        die wahr?&quot; Hat einen impliziten Block: <span class="code-inline">{| element
+        | Element}</span> .'
+    undef:
+      title: "(Un) Def Leppard"
+      description: Variablen, die in Blöcken deklariert wurden, die an Iteratoren übergeben
+        werden (z. B. mal oder jeweils), sind am Anfang jeder Iteration undefiniert!
+        Iteratoren rufen den Block wiederholt auf, sodass vars nach jedem Aufruf erneut
+        außerhalb des Gültigkeitsbereichs liegen. Eingebaute Schleifen-Konstrukte (z.
+        B. while oder for) sind in Ordnung. (Oder deklarieren Sie vars vor dem Block.)
+    freeze:
+      title: "(Ar) ray einfrieren"
+      description: Durch das Einfrieren eines Arrays (oder eines Hash) wird das Array
+        eingefroren, nicht die darin enthaltenen Elemente. Strings können an Ort und
+        Stelle geändert werden. Auf diese Weise können Sie einen bestimmten Slot in
+        einem eingefrorenen String-Array ändern.
+    one_is_one:
+      title: 1 ist 1… und immer mehr soll es sein!
+      description: 'Wenn Sie Fixnum in einen neuen Wert ändern, wird ein neues Objekt
+        angezeigt. Sie können nicht an Ort und Stelle modifiziert werden! Ein eingefrorenes
+        Array von Fixnums kann also nicht geändert werden. (Fixnums und Integers haben
+        keine bang-Methoden zum Testen). BTW: Die <span class="code-inline">object_id</span>
+        eines Fixnums ist der <span class="code-inline">value * 2 + 1</span>'
+    bang:
+      title: "(zu! ||! zu!) ==?"
+      description: Bang bezeichnet die Methode als gefährlich. Warum? Häufig können
+        Empfänger und nicht modifizierte Nicht-Bang-Versionen geändert werden. Verlassen
+        Sie sich nicht auf den gleichen Wert als NON-BANG-Version! Viele kehren zurück,
+        wenn keine Änderung erforderlich ist!
+    array:
+      title: Eine Reihe neuer Gotchas
+      description: Der als Objekt angegebene Standardwert ist für jeden Steckplatz das
+        gleiche Objekt! Die Mutation eines mutiert den Standard für alle. Der als Block
+        angegebene Anfangswert wird für jeden Steckplatz separat ausgewertet. Verwenden
+        Sie diese Option, um für jeden eine neue Variable zu erstellen.
+    hash:
+      title: Ein Hash daraus machen
+      description: 'Meistens dasselbe Problem (und Lösung) wie bei Arrays. MORE GOTCHAS:
+        erstellt bei jedem Zugriff auf einen leeren Slot ein neues Objekt! Kann zu viele
+        neue Objekte erstellen; Ruinen, die &quot;echte&quot; Inhalte oder Zählungen
+        prüfen (Nullprüfung, .size usw.).'
+    rescue:
+      title: Rette mich, wirf eine Linie, ich versuche es zu fangen!
+      description: In Ruby sind werfen und fangen NICHT für Ausnahmen! Sie sind eine
+        fortgeschrittene Flusskontrolle, um tiefe Schachteln zu beenden. Ruby nutzt
+        Raise und Rettung für Ausnahmen.
+    to_str:
+      title: to_s VS to_str
+      description: '<span class="code-inline">to_s</span> ist für jedes Objekt definiert
+        und gibt immer etwas zurück. <span class="code-inline">to_str</span> wird nur
+        für Objekte definiert, die string-artig sind. Zum Beispiel hat <span class="code-inline">Symbol</span>
+        <span class="code-inline">to_str</span>, <span class="code-inline">Array</span>
+        jedoch nicht. Daher können Sie <span class="code-inline">obj.respond_to?(:to_str)</span> anstelle von so etwas wie <span class="code-inline">obj.is_a?
+        (String)</span> verwenden, wenn Sie die Eingabe von Ente nutzen möchten, ohne
+        sich darüber Sorgen zu machen, ob die Klasse, mit der Sie arbeiten, eine Unterklasse
+        von <span class="code-inline">String</span> oder ist nicht.'
+    missing:
+      title: Müssen Sie method_missing und response_to_missing koordinieren?
+      description: 'Denken Sie beim Überschreiben von
+        <span class="code-inline">method_missing</span> daran, <span class="code-inline">respond_to_missing</span>
+        zu überschreiben. auch. Wenn Sie method_missing
+        verwenden, um ein Objekt bei einem Methodenaufruf etwas zurückgeben zu lassen,
+        stellen Sie immer sicher, dass Sie response_to_missing? Neu definieren. Wenn
+        Sie es nicht tun, wird auf den ersten Blick nichts kaputt gehen, aber Sie werden
+        eventuell in Schwierigkeiten geraten. Betrachten Sie diese Klasse:'
+      respond_to: 'Viel Code (Edelsteine oder Ihr eigener) hängt von respons_to ab?
+        (aus einem guten Grund). Müssen Sie einen Antwort-Antwort-to-Missing-Patch durchführen?
+        auch:'
+    exception:
+      title: Rettung vor einem StandardError, keine Ausnahme
+      description: 'Ausnahme nicht retten, StandardError retten, bevor Durch das explizite
+        Wiederherstellen von Ausnahmen werden auch nicht normal behebbare Fehler wie
+        SyntaxError, LoadError und Interrupt gerettet. Wenn Sie das Qualifikationsmerkmal
+        für den Exception-Typ nicht angeben, fängt Ruby nur StandardError ab. Dies ist
+        wahrscheinlich das, was Sie wollen:'
+    private:
+      title: Private Daten sind nicht wirklich und überhaupt nicht mit Klassenmethoden
+      description: Es gibt eine Möglichkeit, Klassenmethoden in Ruby privat zu machen.
+        Man muss nur durch einige Reifen springen. Ich meine, ich benutze die <span
+        class="code-inline">class << self</span> Selbstsyntax. Diese Kuriosität drückt
+        ein Instanz-Singleton auf die Klasse, wodurch Klassenmethoden effektiv erstellt
+        werden.
+    braces:
+      title: Zahnspange vs. do-end
+      description: Die allgemeine Konvention ist die Verwendung von <span class="code-inline">do
+        .. end</span> für mehrzeilige Blöcke und geschweifte Klammern für einzeilige
+        Blöcke. Es gibt jedoch auch einen Unterschied zwischen den beiden, die dargestellt
+        werden können. Dies bedeutet, dass <span class="code-inline">{}</span> eine
+        höhere Priorität hat als <span class="code-inline">do .. end.</span> Denken
+        Sie also daran, wenn Sie entscheiden, was Sie verwenden möchten.
+    module:
+      title: 'Die Klasse Foo :: Bar, die außerhalb des Moduls Foo definiert wurde, kann
+        innerhalb von Foo nicht angezeigt werden'
+      description: Sie können sich jeden Auftritt des <span class="code-inline">module Something</span> , <span class="code-inline">class Something</span> oder <span class="code-inline">def something</span>
+        als &quot;Gateway&quot; in einen neuen Bereich vorstellen. Wenn Ruby nach der
+        Definition eines Namens sucht, auf den verwiesen wurde, wird zuerst im aktuellen
+        Gültigkeitsbereich (der Methode, Klasse oder dem Modul) gesucht. Wenn er nicht
+        gefunden wird, wird er durch jedes Gateway, das &quot;Gateway&quot; enthält,
+        durchsucht der Umfang dort.
+    credits: 'Code und Artikel wurden aus Ressourcen entnommen:'
+  meta_programming:
+    title: Metaprogrammierung
+    description: Metaprogrammierung ist das Schreiben von Computerprogrammen, die andere
+      Programme (oder sich selbst) als ihre Daten schreiben oder bearbeiten oder einen
+      Teil der Arbeit zur Kompilierzeit erledigen, der sonst zur Laufzeit ausgeführt
+      würde. In vielen Fällen können Programmierer so viel mehr in derselben Zeit erledigen,
+      wie sie zum manuellen Schreiben des gesamten Codes benötigen würden, oder sie
+      geben den Programmen mehr Flexibilität, um neue Situationen effizient ohne Neukompilierung
+      zu handhaben. Metaprogrammierung schreibt Code, der zur Laufzeit Code schreibt,
+      um Ihnen das Leben zu erleichtern.
+    dynamic_dispatch:
+      title: Dynamischer Versand
+      description: Ermöglicht das Senden von Nachrichten <span class="code-inline">subject.public_send
+        (:message, *arguments)</span>
+    dynamic_method:
+      title: Dynamische Methode
+      description: 'Ermöglicht das dynamische Erstellen von Methoden <span class="code-inline">define_method:
+        method_name { Block, der zum Methodenkörper wird }</span>'
+    ghost_methods:
+      title: Geist-Methoden
+      description: '&quot;Ghost-Methoden&quot; abfangen und an eine andere Methode weiterleiten,
+        während möglicherweise um den Anruf Logik hinzugefügt wird. Verwendet <span
+        class="code-inline">method_missing</span>'
+    dynamic_proxies:
+      title: Dynamische Proxies
+      description: 'Zum Beispiel können Sie imaginäre Methoden bieten durch <span class="code-inline">method_missing</span>
+        Verwendung der eingehenden Nachricht (zB <span class="code-inline">get_name</span>,
+        <span class="code-inline">get_age</span>) und delegieren , aus einem anderen
+        Verfahren wie erhalten zu analysieren <span
+        class="code-inline">(:data_type)</span> <span class="code-inline">:data_type</span>
+        <span class="code-inline">:name</span> <span class="code-inline">:age</span>'
+      more: Wenn Sie (nach der Analyse) ein Performance-Problem mit <span class="code-inline">method_missing</span> feststellen, können Sie die Methode &quot;Dynamic Method&quot; verwenden,
+        um eine echte Methode zu erstellen, nachdem die Nachricht zum ersten Mal von
+        &quot;method_missing&quot; empfangen wurde.
+  solid_principles:
+    good: Gut!
+    bad: Schlecht!
+    title: Solide Prinzipien
+    description: In der Computerprogrammierung ist SOLID (Einzelverantwortung, Offen-geschlossen,
+      Liskov-Substitution, Schnittstellentrennung und Abhängigkeitsinversion) eine von
+      Michael Feathers eingeführte mnemonische Abkürzung für die &quot;First Five Principles&quot;,
+      die Robert C. Martin Anfang der 2000er Jahre benannte für fünf Grundprinzipien
+      der objektorientierten Programmierung und des Designs. Die Absicht ist, dass diese
+      Prinzipien, wenn sie zusammen angewendet werden, es wahrscheinlicher machen, dass
+      ein Programmierer ein System schafft, das leicht zu warten und im Laufe der Zeit
+      zu erweitern ist. Die Prinzipien von SOLID sind Richtlinien, die während der Arbeit
+      an Software angewendet werden können, um Codegerüche zu entfernen, indem der Programmierer
+      den Quellcode der Software so lange umgestaltet, bis er lesbar und erweiterbar
+      ist. Es ist Teil einer Gesamtstrategie der agilen und adaptiven Softwareentwicklung.
+    single:
+      title: Grundsatz der Einzelverantwortung
+      description: Das Prinzip der Einzelverantwortung ist das abstrakteste der Gruppe.
+        Es hilft, Klassen und Methoden klein und wartbar zu halten. Zusätzlich zu den
+        kleinen und fokussierten Klassen werden sie auch leichter verständlich. Ein
+        Beispiel dafür ist das Hinzufügen einer E-Mail-Zusammenfassung der Provisionen
+        einer bestimmten Person, nachdem ein Geschäft markiert wurde. Die Tatsache,
+        dass wir mehrere Gründe für eine Änderung identifizieren können, weist auf einen
+        Verstoß gegen das Prinzip der einmaligen Verantwortung hin.
+    open_close:
+      title: Offenes / Geschlossenes Prinzip
+      description: Das Open / Closed-Prinzip legt fest, dass Klassen oder Methoden für
+        die Erweiterung geöffnet, für Änderungen jedoch geschlossen sein sollten. Dies
+        bedeutet, dass wir nach modularen Designs streben sollten, die es uns ermöglichen,
+        das Verhalten des Systems zu ändern, ohne Änderungen an den Klassen selbst vorzunehmen.
+        Dies wird im Allgemeinen durch die Verwendung von Mustern wie dem Strategiemuster
+        erreicht.
+      after: Mit diesem Refactoring haben wir es möglich gemacht, neue Parser hinzuzufügen,
+        ohne Code zu ändern. Für jedes zusätzliche Verhalten muss nur ein neuer Handler
+        hinzugefügt werden. Dadurch ist unser FileParser wiederverwendbar und hält uns
+        in vielen Fällen auch weiterhin an das Prinzip der einmaligen Verantwortung,
+        indem er uns ermutigt, kleinere, fokussiertere Klassen zu schaffen.
+    liskov:
+      title: Liskovs Substitutionsprinzip
+      description: Das Prinzip von Liskov ist am schwersten zu verstehen. Das Prinzip
+        besagt, dass Sie in der Lage sein sollten, Instanzen einer übergeordneten Klasse
+        durch eine Instanz eines ihrer untergeordneten Objekte zu ersetzen, ohne unerwartetes
+        oder falsches Verhalten zu erstellen.
+    segregation:
+      title: Prinzip der Inversion der Abhängigkeit
+      description: 'Das Prinzip besagt, dass ein Client nicht auf Methoden angewiesen
+        sein sollte, die er nicht verwendet. In diesem Beispiel gibt es Klassen für
+        Computer, Programmierer und Techniker. Sowohl Programmierer als auch Techniker
+        verwenden den Computer auf unterschiedliche Weise. Der Programmierer verwendet
+        den Computer zum Tippen, der Techniker weiß jedoch, wie er die Festplatte des
+        Computers ändert. Das Prinzip der Schnittstellenaufteilung (ISP) setzt voraus,
+        dass eine Klasse nicht von Methoden abhängt, die sie nicht verwendet. In unserem
+        Fall ist der Programmierer unnötigerweise mit der Methode Computer # change_hard_drive
+        verbunden, da er sie nicht verwendet. Die von dieser Methode erzwungenen Statusänderungen
+        können jedoch den Programmierer beeinflussen. Lassen Sie uns den Code umgestalten,
+        um dem LSP zu gehorchen.'
+      after: Nach diesem Refactor verwendet der Techniker ein anderes Objekt vom Typ
+        ComputerInternals, das vom Zustand des Computers isoliert ist. Der Status des
+        Computerobjekts kann vom Programmierer beeinflusst werden, aber die Änderungen
+        wirken sich in keiner Weise auf den Techniker aus.
+    di:
+      title: Prinzip der Inversion der Abhängigkeit
+      description: Das Prinzip der Abhängigkeitsinversion bezieht sich auf Objekte auf
+        hoher Ebene (Think-Business-Logik), die nicht von den Implementierungsdetails
+        auf niedriger Ebene (Think-Datenbankabfragen und E / A) abhängen. Dies kann
+        mit Duck-Typing und dem Inversion-Prinzip der Abhängigkeit erreicht werden.
+        Oft wird dieses Muster verwendet, um das oben diskutierte Open / Closed-Prinzip
+        zu erreichen. In der Tat können wir dasselbe Beispiel sogar als Demonstration
+        dieses Prinzips verwenden. Jetzt gibt es eine Formatierungsklasse, aber ich
+        habe sie in der Report-Klasse hartcodiert, wodurch eine Abhängigkeit vom Bericht
+        zum JSONFormatter erzeugt wird. Da es sich bei dem Bericht um ein abstrakteres
+        (übergeordnetes) Konzept als der JSONFormatter handelt, brechen wir effektiv
+        den DIP.
+      after: Auf diese Weise hängt der Bericht nicht vom JSONFormatter ab und kann einen
+        beliebigen Formatierer verwenden, der eine Methode namens format hat (dies wird
+        als Duck-Typing bezeichnet). Eine weitere Bemerkung ist, dass wir wieder Abhängigkeitsinjektion
+        verwendet haben, um ein Problem zu lösen. Diese Technik ist sehr effektiv, wenn
+        unser Ziel die Entkopplung von Objekten ist und obwohl sie die gleichen Initialen
+        wie das Prinzip der Abhängigkeitsinversion (vs. Abhängigkeitsinjektionsmuster)
+        hat, sie völlig unterschiedliche Konzepte sind.
+  threads:
+    example: Beispiel
+    title: Fäden
+    description: 'Hinweis zu Parallelität und Parallelität: Der Hauptunterschied zwischen
+      der Verwendung von Prozessen und Threads besteht in der Art und Weise, wie mit
+      dem Arbeitsspeicher umgegangen wird. Auf einer höheren Ebene werden Prozesse kopiert,
+      während Threads Speicher gemeinsam nutzen. Dies führt dazu, dass der Prozess langsamer
+      abläuft als das Thread-Laichen, und Prozesse verbrauchen mehr Ressourcen, sobald
+      sie ausgeführt werden. Insgesamt verursachen Threads weniger Aufwand als Prozesse.
+      Diese Thread-API ist eine Ruby-API. Ich habe angedeutet, dass die verschiedenen
+      Ruby-Implementierungen unterschiedliche Threading-Verhalten haben.'
+    green:
+      title: Grüne Fäden
+      description: Ruby 1.9 ersetzte grüne Threads durch native Threads. Die GIL verhindert
+        jedoch immer noch den Parallelismus. Die Parallelität wurde jedoch durch eine
+        bessere Planung verbessert. Der neue Zeitplan macht Kontextwechselentscheidungen
+        effizienter, indem er im Wesentlichen in einen separaten nativen Thread verschoben
+        wird, der als Timer-Thread bezeichnet wird.
+    gil:
+      title: GIL - Global Interpreter Lock
+      description: Die MRI verfügt über eine globale Interpretersperre (GIL). Es ist
+        eine Sperre um die Ausführung von Ruby-Code. Dies bedeutet, dass in einem Multithread-Kontext
+        nur ein Thread Ruby-Code gleichzeitig ausführen kann. Wenn also 8 Threads auf
+        einem 8-Core-Computer beschäftigt sind, sind jeweils nur ein Thread und ein
+        Core beschäftigt . Die GIL dient zum Schutz von Ruby-Interna vor Race-Bedingungen,
+        die Daten beschädigen könnten. Es gibt Vorbehalte und Optimierungen, aber das
+        ist das Wesentliche.
+      example: Diese einfache Tatsache macht Threads so mächtig und macht es schwierig,
+        mit ihnen zu arbeiten. Ich habe Ihnen bereits eine Idee gegeben, warum Threads
+        gut sind. Hier ist ein einfaches Programm, um ihre Schwierigkeiten zu veranschaulichen.
+        Hier sehen Sie, dass wir <span class="code-inline">10 * 10000</span> Elemente
+        in einem Array haben. Beachten Sie, dass verschiedene Rubine ein anderes Ergebnis
+        zeigen können. GIL gibt es nur in MRI-Rubin.
+    mutex:
+      title: Mutex - Gegenseitige Ausführung
+      description: Mutexe bieten einen Mechanismus für mehrere Threads, um den Zugriff
+        auf einen kritischen Codeteil zu synchronisieren. Mit anderen Worten, sie tragen
+        dazu bei, Ordnung und Sicherheit in die Welt des Chaos mit mehreren Threads
+        zu bringen. Der Name &quot;Mutex&quot; ist eine Abkürzung für &quot;gegenseitiger
+        Ausschluss&quot;. Wenn Sie einen Abschnitt Ihres Codes mit einem Mutex umschließen,
+        stellen Sie sicher, dass keine zwei Threads gleichzeitig in diesen Abschnitt
+        einsteigen können. Mutexe bieten einen Mechanismus für mehrere Threads, um den
+        Zugriff auf einen kritischen Codeteil zu synchronisieren. Es hilft, Ordnung
+        in die Welt des Chaos mit mehreren Threads zu bringen.
+      example: Da in diesem Programm ein Thread den Mutex sperren muss, bevor er auf
+        das Array pushen kann, besteht die Garantie, dass keine zwei Threads diese Operation
+        gleichzeitig ausführen. Mit anderen Worten, dieser Vorgang kann vor dem Abschluss
+        nicht mehr unterbrochen werden. Wenn ein Thread anfängt, auf das Array zuzugreifen,
+        kann kein anderer Thread diesen Teil des Codes eingeben, bis der erste Thread
+        abgeschlossen ist. Dieser Vorgang ist jetzt threadsicher. Hier sehen Sie, dass
+        wir <span class="code-inline">10 * 10000</span> Elemente in einem Array haben.
+        Jetzt sind alle wegen des Mutex gleich. Der Mutex legt dieselben Grenzen für
+        den Thread fest. Der erste Thread, der auf dieses Codebit trifft, sperrt den
+        Mutex. es wird dann der Besitzer dieses Mutex. Solange der besitzende Thread
+        den Mutex nicht entsperrt, kann ihn kein anderer Thread sperren.
+    fibers:
+      title: Fasern
+      description: Fasern sind Grundelemente für die Implementierung einer leichten
+        kooperativen Parallelität in Ruby. Im Grunde sind sie ein Mittel zum Erstellen
+        von Codeblöcken, die ähnlich wie Threads angehalten und wieder aufgenommen werden
+        können. Der Hauptunterschied besteht darin, dass sie niemals vorher ausgeschlossen
+        werden und dass die Zeitplanung vom Programmierer und nicht von der VM ausgeführt
+        werden muss. Im Gegensatz zu anderen stapellosen, leichten Parallelitätsmodellen
+        verfügt jede Faser über einen kleinen Stapel von 4 KB. Dadurch kann die Glasfaser
+        von tief verschachtelten Funktionsaufrufen innerhalb des Glasfaserblocks angehalten
+        werden.
+    rails:
+      title: Schienen-Gewindesicherheit
+      description: Das Problem dabei ist, dass es keine einfache Möglichkeit gibt, mit
+        absoluter Sicherheit zu sagen, ob eine App insgesamt Thread-sicher ist.
+      global_variables: Globale Variablen sind global. Dies bedeutet, dass sie von Threads
+        gemeinsam genutzt werden. Wenn Sie bisher nicht überzeugt waren, keine globalen
+        Variablen zu verwenden, gibt es einen weiteren Grund, sie niemals zu berühren.
+        Wenn Sie wirklich etwas global für eine App freigeben möchten, werden Sie wahrscheinlich
+        ohnehin besser von einer Konstanten (aber weiter unten) bedient.
+      class_variables: Klassenvariablen Zum Zwecke einer Diskussion über Threads unterscheiden
+        sich Klassenvariablen nicht sehr von globalen Variablen. Sie werden auf dieselbe
+        Weise von Threads gemeinsam genutzt. Das Problem besteht nicht so sehr darin,
+        Klassenvariablen zu verwenden, sondern sie zu mutieren. Und wenn Sie eine Klassenvariable
+        nicht mutieren, ist eine Konstante in vielen Fällen wieder die bessere Wahl.
+      instance_variables: Klasseninstanzvariablen Vielleicht haben Sie jedoch gelesen,
+        dass Sie in Ruby immer Klasseninstanzvariablen anstelle von Klassenvariablen
+        verwenden sollten. Nun, vielleicht sollten Sie dies tun, aber sie sind für Thread-Programme
+        genauso problematisch wie Klassenvariablen.
+      memoization: 'Memoization an sich ist kein Thread-Sicherheitsproblem. Es wird
+        häufig verwendet, um Daten in Klassenvariablen oder Klasseninstanzvariablen
+        zu speichern (siehe die vorherigen Punkte). Der Operator <span class="code-inline">||
+        =</span> besteht in der Tat aus zwei Operationen. In der Mitte findet ein potenzieller
+        Kontextwechsel statt, der eine Race-Bedingung zwischen Threads verursacht. Auch
+        wenn Sie nur Instanzvariablen verwenden würden, könnte es sein, dass Sie mit
+        Memo-Bedingungen Race-Bedingungen haben. Nicht an Klassenvariablen oder Klasseninstanzvariablen
+        erinnern. Wenn Sie sich etwas auf Klassenebene merken
+        müssen, verwenden Sie stattdessen lokale Thread-Variablen (<span class="code-inline">Thread.current
+        [:baz]</span> ). Beachten Sie jedoch, dass es sich immer noch um eine Art globale
+        Variable handelt.'
+    config:
+      title: Konfigurieren Sie threadsafe !?
+      description: Durch den Aufruf dieser Methode werden vier Optionen in unserer App-Konfiguration
+        festgelegt. Lass uns durch jede Option gehen und darüber reden, was sie tut.
+      frameworks: 'Preloading-Frameworks: Die erste Option @preload_frameworks hat so
+        ziemlich das, was sie sagt, sie zwingt das Rails-Framework dazu, beim Booten
+        eifrig geladen zu werden. Wenn diese Option nicht aktiviert ist, werden die
+        Framework-Klassen über das automatische Laden verzögert geladen. In Umgebungen
+        mit mehreren Threads muss das Framework vor dem Erstellen von Threads aufgrund
+        von Thread-Sicherheitsproblemen beim automatischen Laden eifrig geladen werden.
+        Wir wissen, dass das Laden des Frameworks nicht threadsicher ist. Daher besteht
+        die Strategie darin, alles zu laden, bevor Threads für die Bearbeitung von Anforderungen
+        bereit sind.'
+      cache: 'Zwischenspeichern von Klassen: Die Option @cache_classes steuert, ob Klassen
+        neu geladen werden. Erinnern Sie sich, wenn Sie in Ihrer Anwendung „TDD“ machen?
+        Sie modifizieren einen Controller und laden die Seite dann erneut, um sie zu
+        &quot;testen&quot; und zu sehen, dass sich die Dinge geändert haben? Ja, das
+        kontrolliert diese Option. Wenn diese Option, wie in der Entwicklung, auf false
+        gesetzt ist, werden Ihre Klassen beim Ändern erneut geladen. Ohne diese Option
+        wären wir nicht in der Lage, unsere &quot;F5DD&quot; (ja, das ist F5 Driven
+        Development) zu machen. In der Produktion wissen wir, dass Klassen nicht spontan
+        geändert werden. Wenn Sie also herausfinden, ob Klassen neu geladen werden sollen,
+        müssen Sie nur Ressourcen verschwenden. Daher ist es sinnvoll, Klassendefinitionen
+        niemals erneut zu laden.'
+      di: 'Abhängigkeitsladen: Diese Option @dependency_loading steuert das Laden von
+        Code, wenn fehlende Konstanten gefunden werden. Ein Controller verweist beispielsweise
+        auf das Benutzermodell, die Benutzerkonstante ist jedoch nicht definiert. Wenn
+        @dependency_loading true ist, wird Rails die Datei mit der Benutzerkonstante
+        suchen und diese Datei laden. Wir haben bereits darüber gesprochen, dass das
+        Laden von Code nicht fadensicher ist. Daher sollten wir das Framework laden,
+        dann den gesamten Benutzercode laden und dann das Laden von Abhängigkeiten deaktivieren.
+        Nach dem Deaktivieren des Abhängigkeitsladens sollten Framework-Code und App-Code
+        geladen werden, und fehlende Konstanten lösen lediglich eine Ausnahme aus, anstatt
+        zu versuchen, Code zu laden. Wir begründen das Deaktivieren dieser Option in
+        der Produktion, da (wie bereits erwähnt) das Laden von Code nicht threadsicher
+        ist, und wir erwarten, dass der gesamte Code geladen wird, bevor Threads Anforderungen
+        bearbeiten können.'
+      concurrency: 'Parallelität zulassen: Die Option @allow_concurrency steuert, ob
+        die Middleware Rack :: Lock in Ihrem Stack verwendet wird. Rack :: Lock umschließt
+        einen Mutex um Ihre Anfrage. Die Idee ist, dass, wenn Sie Code haben, der nicht
+        threadsicher ist, dieser Mutex verhindert, dass mehrere Threads Ihren Controller-Code
+        gleichzeitig ausführen. Wenn fadensicher! gesetzt, wird diese Middleware entfernt
+        und Controller-Code kann parallel ausgeführt werden.'
+    credits: 'Code und Artikel wurden aus Ressourcen entnommen:'
+  ruby_meister:
+    title: Werde Ruby Meister
+    description: In diesem Vortrag werden wir den langen Weg von einem Ruby-Anfänger
+      bis zur Erlangung einer wahren Ruby-Meisterschaft untersuchen und versuchen, ihn
+      für Sie ein bisschen zu verkürzen, indem Sie einige wichtige Erkenntnisse teilen.
+      Ein Master-Rubyist hat eine großartige theoretische Basis, stützt sich auf eine
+      umfangreiche Toolbox, hat ein tiefes Verständnis für die Grundwerte und Prinzipien
+      von Ruby und verfeinert ständig ihre Fähigkeiten. Vielleicht sagst du dir &quot;Wow,
+      das ist ziemlich vage!&quot;, Aber wenn du an dieser Sitzung teilnimmst, verspreche
+      ich dir, dass du aufgeklärt und amüsiert bist und es dir total gefallen wird!
+      Hört sich gut an? Die großartigen Bücher sind Teil der Ressourcen, die ich den
+      Leuten empfehlen würde, um ihre Fähigkeiten zu verbessern.
+    video: Die lange Reise nach Ruby Mastery von Bozhidar Batsov.
+    computer_science_fundamentals:
+      title: Grundlagen der Informatik
+      articles:
+        - name: inside_machine
+          title: 'In der Maschine: Eine illustrierte Einführung in Mikroprozessoren
+            und Computerarchitektur'
+          description: Computer führen unzählige Aufgaben aus, die von der Geschäftswelt
+            bis zur Freizeit reichen. Unabhängig davon, wie unterschiedlich sie aussehen
+            und sich verhalten, sind sie in ihrer Grundfunktion erstaunlich ähnlich.
+            Wenn Sie erst einmal verstanden haben, wie der Mikroprozessor - oder die
+            zentrale Verarbeitungseinheit (CPU) - funktioniert, haben Sie ein fundiertes
+            Verständnis für die grundlegenden Konzepte, die allen modernen Computern
+            zugrunde liegen.
+        - name: code
+          title: 'Code: Die verborgene Sprache von Computerhardware und -software'
+          description: Was haben Taschenlampen, die britische Invasion, schwarze Katzen
+            und Wippen mit Computern zu tun? In CODE zeigen sie uns, wie wir die Sprache
+            auf geniale Weise manipulieren und neue Wege der Kommunikation miteinander
+            finden. Und durch CODE sehen wir, wie dieser Einfallsreichtum und unser
+            sehr menschlicher Kommunikationszwang die technologischen Innovationen der
+            letzten zwei Jahrhunderte getrieben haben.
+        - name: concrete_math
+          title: 'Konkrete Mathematik: Eine Grundlage für die Informatik'
+          description: Dieses Buch stellt die Mathematik vor, die fortgeschrittene Computerprogrammierung
+            und die Analyse von Algorithmen unterstützt. Das Hauptziel seiner bekannten
+            Autoren ist es, eine solide und relevante Basis mathematischer Fähigkeiten
+            zu schaffen - die Fähigkeiten, die erforderlich sind, um komplexe Probleme
+            zu lösen, horrende Summen zu bewerten und subtile Muster in Daten zu entdecken.
+            Es ist ein unverzichtbarer Text und eine Referenz nicht nur für Informatiker
+            - die Autoren selbst verlassen sich stark darauf! - aber für ernsthafte
+            Benutzer der Mathematik in praktisch jeder Disziplin.
+        - name: sicp
+          title: Struktur und Interpretation von Computerprogrammen
+          description: 'Struktur und Interpretation von Computerprogrammen haben im
+            letzten Jahrzehnt dramatische Auswirkungen auf die Lehrpläne der Informatik
+            gehabt. Diese lang erwartete Version enthält Änderungen im gesamten Text.
+            Es gibt neue Implementierungen der meisten wichtigen Programmiersysteme
+            in diesem Buch, einschließlich der Interpreter und Compiler, und die Autoren
+            haben viele kleine Änderungen vorgenommen, die ihre Erfahrung mit dem Unterricht
+            am MIT seit der ersten Ausgabe widerspiegeln. Es wurde ein neues Thema eingeführt,
+            das die zentrale Rolle verschiedener Ansätze für den Umgang mit der Zeit
+            in Rechenmodellen hervorhebt: Objekte mit Status, gleichzeitiges Programmieren,
+            funktionales Programmieren und fauler Auswertung sowie nichtdeterministisches
+            Programmieren.'
+        - name: design_programms
+          title: 'So gestalten Sie Programme: Eine Einführung in das Programmieren und
+            Rechnen'
+          description: Diese Einführung in die Programmierung stellt die Informatik
+            in den Mittelpunkt einer liberalen Kunstausbildung. Im Gegensatz zu anderen
+            Einführungsbüchern konzentriert es sich auf den Programmgestaltungsprozess.
+            Dieser Ansatz fördert eine Vielzahl von Fertigkeiten (kritisches Lesen,
+            analytisches Denken, kreative Synthese und Liebe zum Detail), die für alle
+            und nicht nur für zukünftige Computerprogrammierer wichtig sind. Das Buch
+            stellt den Lesern zwei grundlegend neue Ideen vor. Zunächst werden Programmentwurfsrichtlinien
+            vorgestellt, die dem Leser zeigen, wie eine Problemaussage analysiert werden
+            kann. wie man kurze Ziele formuliert; wie man Beispiele macht; wie man einen
+            Überblick über die Lösung entwickelt, basierend auf der Analyse; wie man
+            das Programm beendet; und wie zu testen.
+        - name: algorithm_manual
+          title: Das Handbuch zum Entwurf von Algorithmen
+          description: Diese neue, erweiterte und aktualisierte zweite Auflage des Bestseller-Klassikers
+            macht das Entwerfen von Algorithmen und die Analyse ihrer Wirksamkeit und
+            Effizienz immer noch zu einem &quot;Rätsel&quot;. Das Buch ist auf die Erstausgabe
+            erweitert und dient jetzt als erstes Lehrbuch für Algorithmenentwurfskurse,
+            während es als erster praktischer Nachschlagewerk für Algorithmen für Programmierer,
+            Forscher und Studenten gilt.
+        - name: cormen
+          title: Einführung in Algorithmen, 3. Ausgabe (The MIT Press)
+          description: Einige Bücher über Algorithmen sind streng, aber unvollständig.
+            andere decken Materialmassen ab, es fehlt ihnen jedoch an Genauigkeit. Die
+            Einführung in Algorithmen verbindet auf einzigartige Weise Strenge und Vollständigkeit.
+            Das Buch deckt ein breites Spektrum an Algorithmen ab, macht es jedoch für
+            alle Leserebenen zugänglich. Jedes Kapitel ist relativ in sich geschlossen
+            und kann als Lerneinheit verwendet werden. Die Algorithmen sind in englischer
+            Sprache und in einem Pseudocode beschrieben, der für jeden lesbar ist, der
+            etwas programmiert hat. Die Erklärungen wurden elementar gehalten, ohne
+            die Abdeckungstiefe oder die mathematische Genauigkeit zu beeinträchtigen.
+        - name: compilers
+          title: 'Compiler: Prinzipien, Techniken und Werkzeuge (2. Ausgabe)'
+          description: 'Compiler: Prinzipien, Techniken und Tools, die Professoren,
+            Studenten und Entwicklern weltweit als &quot;Drachenbuch&quot; bezeichnet
+            werden, sind in einer neuen Ausgabe erhältlich. Jedes Kapitel wurde vollständig
+            überarbeitet, um Entwicklungen in Software-Engineering, Programmiersprachen
+            und Computerarchitektur widerzuspiegeln, die seit 1986, als die letzte Ausgabe
+            veröffentlicht wurde, stattgefunden haben. Die Autoren sind sich bewusst,
+            dass nur wenige Leser jemals einen Compiler erstellen werden, und konzentrieren
+            sich weiterhin auf die breiteren Probleme, die beim Softwaredesign und bei
+            der Softwareentwicklung auftreten.'
+        - name: c_lang
+          title: C-Programmiersprache, 2. Ausgabe
+          description: Die Autoren präsentieren das vollständige Handbuch zur Programmierung
+            der ANSI-Standardsprache C. Diese neue Version wurde von den Entwicklern
+            von C geschrieben und hilft den Lesern dabei, mit dem endgültigen ANSI-Standard
+            für C Schritt zu halten, und zeigt, wie sie die zahlreichen Operatoren von
+            C, die Ausdruckskraft, den verbesserten Kontrollfluss und die Datenstrukturen
+            nutzen können. Das 2 / E wurde komplett mit zusätzlichen Beispielen und
+            Problemstellungen überarbeitet, um die Implementierung schwieriger Sprachkonstrukte
+            zu verdeutlichen. C-Programmierer lassen sich von K &amp; R seit Jahren
+            dazu bringen, gut strukturierte und effiziente Programme zu erstellen. Diese
+            Hilfe steht jetzt allen zur Verfügung, die mit ANSI-Compilern arbeiten.
+            Enthält eine ausführliche Beschreibung der C-Sprache sowie das offizielle
+            Referenzhandbuch für die C-Sprache für eine übersichtliche Hilfe mit Syntaxnotation,
+            Deklarationen, ANSI-Änderungen, Bereichsregeln und die Liste wird fortgesetzt.
+    oop:
+      title: Objekt orientierte Programmierung
+      articles:
+        - name: growing
+          title: Wachsende objektorientierte Software, durch Tests geleitet
+          description: 'Test-Driven Development (TDD) ist heute eine etablierte Technik,
+            um bessere Software schneller bereitzustellen. TDD basiert auf einer einfachen
+            Idee: Schreiben Sie Tests für Ihren Code, bevor Sie den Code selbst schreiben.
+            Diese &quot;einfache&quot; Idee erfordert jedoch Geschicklichkeit und Urteilsvermögen.
+            Nun gibt es einen praktischen Leitfaden für TDD, der Sie über die grundlegenden
+            Konzepte hinausführt. Zwei TDD-Pioniere, die auf ein Jahrzehnt Erfahrung
+            beim Aufbau von realen Systemen zurückgreifen, zeigen, wie Tests Ihre Entwicklung
+            leiten und Software entwickeln können, die kohärent, zuverlässig und wartbar
+            ist.'
+        - name: domain_driven
+          title: 'Domänengetriebenes Design: Komplexität im Herzen von Software bewältigen'
+          description: Dies ist ein ernsthaftes Buch über Domänenmodellierung im Softwaredesign.
+            Die Softwareentwicklungsgesellschaft lebt von einer Hype-Welle zur anderen.
+            OOP, Patterns, XP, TDD, CI / CD, BigData, DevOps - um nur einige zu nennen.
+            Dieses Buch stammt aus dem goldenen Zeitalter der OOP. Der Autor gibt zu,
+            dass das objektorientierte Paradigma nicht das einzige verfügbare ist, sondern
+            die Neigung zu OOP / OOD offensichtlich ist (und zu rechtfertigen ist).
+            In diesem Buch erfahren Sie, wie Sie Kernkomponenten von Software &quot;auf
+            die richtige Art&quot; modellieren können.
+    ruby:
+      title: Kenne dich lang
+      articles:
+        - name: well_grounded
+          title: Der fundierte Rubyist
+          description: Die Second Edition von The Rubyist Rubyist ist sowohl für Neueinsteiger
+            als auch für Ruby-Programmierer gedacht, die ihr Sprachverständnis vertiefen
+            möchten. Diese wunderschön geschriebene und vollständig überarbeitete zweite
+            Ausgabe umfasst Funktionen, die in Ruby 2.1 neu sind, sowie erweiterte und
+            aktualisierte Aspekte der geänderten Sprache.
+        - name: programming_ruby
+          title: 'Programmier-Ruby: Der Pragmatic Programmers Guide, Zweite Ausgabe'
+          description: 'Ruby ist eine zunehmend beliebte, vollständig objektorientierte,
+            dynamische Programmiersprache, die von vielen Praktikern als die beste und
+            nützlichste Sprache bezeichnet wird, die heute verfügbar ist. Als Ruby in
+            der westlichen Welt zum ersten Mal auftauchte, waren die Pragmatischen Programmierer
+            mit dem endgültigen Referenzhandbuch, Programming Ruby: The Pragmatic Programmer&#39;s
+            Guide, dabei.'
+        - name:  ruby_programming
+          title: 'Die Programmiersprache Ruby: Alles, was Sie wissen müssen'
+          description: 'Dieses Buch beginnt mit einem Schnellstart-Tutorial für die
+            Sprache und erläutert anschließend die Sprache von unten nach unten im Detail:
+            von der lexikalischen und syntaktischen Struktur über Datentypen bis hin
+            zu Ausdrücken und Anweisungen und über Methoden, Blöcke, Lambdas, Closures,
+            Klassen und Module. Das Buch enthält außerdem eine lange und umfassende
+            Einführung in die umfassende API der Ruby-Plattform, die - mit ausführlich
+            kommentiertem Beispielcode - Rubys Möglichkeiten für Textverarbeitung, numerische
+            Manipulation, Sammlungen, Eingabe / Ausgabe, Vernetzung und Parallelität
+            demonstriert. Ein ganzes Kapitel ist den Metaprogrammierungsfunktionen von
+            Ruby gewidmet.'
+  interview_questions:
+    title: Interview Fragen
+    description: Dieser Abschnitt enthält Ressourcenlinks zum Lesen und zur Vorbereitung
+      von Interviews
+    list:
+      - name: 'Toptal: So stellen Sie einen großen Ruby-Entwickler ein'
+        link: "https://www.toptal.com/ruby#hiring-guide"
+      - name: 'Toptal: 21 wichtige Ruby-Interviewfragen'
+        link: "https://www.toptal.com/ruby/interview-questions"
+      - name: 'Hookops: 35+ Fragen und Antworten zu Ruby and Rails'
+        link: "https://lab.hookops.com/ruby-interview-prep.html"
+      - name: 'Educba: 15 wichtigste Ruby-Interviewfragen und -antworten'
+        link: "https://www.educba.com/ruby-interview-questions/"
+      - name: 'Ruby Garage: So interviewen Sie Ihren Ruby on Rails-Entwickler'
+        link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
+      - name: 'RyanSobol: 15 Fragen während eines Ruby-Interviews'
+        link: "https://gist.github.com/ryansobol/5252653"
+      - name: 'Toptal: 9 wichtige Fragen zu Ruby on Rails'
+        link: "https://www.toptal.com/ruby-on-rails/interview-questions"
+  index:
+    title: Was ist besser?
+    description: Diese Website ist ein Github-Repository <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental,</a>
+      das viele Sterne sammelte und in die chinesische Sprache übersetzt wurde. Bessere
+      Dokumente ermöglichen es Ihnen, schnell viele bewährte Methoden zu finden, die
+      in einem Repository gesammelt wurden. Nur Sie können dieses Repo als Referenz-
+      oder Interviewvorbereitungsressource nutzen.
+    oss:
+      title: Vielen Dank an Open Source
+      description: Better Docs wurde während der Arbeit erstellt, um Best Practices
+        und Wissen über Ruby, ein Open-Source-Engineering für Webentwicklungsanwendungen
+        in Ruby, zu erfahren.
+      thanks: Wenn Better Docs Ihnen irgendwie geholfen hat, denken Sie darüber nach,
+        uns einen Stern auf <a href="https://github.com/howtohireme/ruby.fundamental">Github
+        zu geben</a> (dies hilft uns, mehr Entwickler zu erreichen) oder einen Beitrag
+        zu unseren Projekten zu leisten.
