@@ -9,11 +9,24 @@ layout: none
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  
   {% for page in site.pages %}
     <url>
       <loc>{{ site.url }}{{ page.url }}</loc>
       <lastmod>{{ 'now' | date_to_xmlschema }}</lastmod>
       <priority>{{ page.priority }}</priority>
     </url>
+  {% endfor %}
+
+  {% for locale in site.languages %}
+    {% if locale != 'en'%}
+      {% for page in site.pages %}
+        <url>
+          <loc>{{ site.url }}/{{ locale }}{{ page.url }}</loc>
+          <lastmod>{{ 'now' | date_to_xmlschema }}</lastmod>
+          <priority>{{ page.priority }}</priority>
+        </url>
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 </urlset>
