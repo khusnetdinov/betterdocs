@@ -8,74 +8,24 @@
   <!-- /Yandex.Metrika counter -->
 {%- endif -%}
 
-  <nav class="nav">
-    <a class="item" href="{{ "/bg" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/bg.png" alt="bulgarian">
+<nav class="nav">
+  {% for locale in site.locales %}
+    {% if locale['locale'] == 'en' %}
+      <a class="item" href="{{ site.url }}{{ page.url }}">
+    {% else %}
+      <a class="item" hreflang="{{ site.lang }}" href="{{ site.url }}/{{ locale['locale'] }}{{ page.url }}">
+    {% endif %}
+      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/{{ locale['flag'] }}.png" alt="{{ locale['name'] }}">
     </a>
-    <a class="item" href="{{ "/bn" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/bn.png" alt="bengali">
-    </a>
-    <a class="item" href="{{ "/cn" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/cn.png" alt="chinese">
-    </a>
-    <a class="item" href="{{ "/de" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/de.png" alt="german">
-    </a>
-    <a class="item" href="{{ "/el" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/gr.png" alt="greek">
-    </a>
-    <a class="item" href="{{ "/es" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/es.png" alt="spanish">
-    </a>
-    <a class="item" href="{{ "/fr" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/fr.png" alt="french">
-    </a>
-    <a class="item" href="{{ "/hi" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/in.png" alt="hindi">
-    </a>
-    <a class="item" href="{{ "/id" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/id.png" alt="indonesian">
-    </a>
-    <a class="item" href="{{ "/it" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/it.png" alt="italian">
-    </a>
-    <a class="item" href="{{ "/ja" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/jp.png" alt="japanese">
-    </a>
-    <a class="item" href="{{ "/ko" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/kr.png" alt="korean">
-    </a>
-    <a class="item" href="{{ "/ms" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/ms.png" alt="malay">
-    </a>
-    <a class="item" href="{{ "/pl" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/pl.png" alt="polish">
-    </a>
-    <a class="item" href="{{ "/pt" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/pt.png" alt="portusuese">
-    </a>
-    <a class="item" href="{{ "/ro" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/ro.png" alt="romanian">
-    </a>
-    <a class="item" href="{{ "/ru" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/ru.png" alt="russian">
-    </a>
-    <a class="item" href="{{ "/th" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/th.png" alt="thai">
-    </a>
-    <a class="item" href="{{ "/tr" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/tr.png" alt="turkish">
-    </a>
-    <a class="item" href="{{ "/vi" }}{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/vi.png" alt="vietnamese">
-    </a>
-    <a class="item" href="{{ page.url }}">
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/us.png" alt="english">
-    </a>
-  </nav>
+  {% endfor %}
+</nav>
 
 <h1 class="heading">
-  <a href="/">Better Docs</a>
+  {% if site.lang == 'en' %}
+    <a class="item" href="{{ site.url }}">Better Docs</a>
+  {% else %}
+    <a class="item" hreflang="{{ site.lang }}" href="{{ site.url }}/{{ site.lang }}">Better Docs</a>
+  {% endif %}
   <span>{ ruby tricks guideline }</span>
 </h1>
 
