@@ -1,7 +1,8 @@
 encoding: utf-8
-baseurl: '/'
 
 url: localost:4000
+
+baseurl: /
 
 collections:
   pages:
@@ -53,7 +54,24 @@ locales:
   - {locale: vi, name: Vietnamese, flag: vi}
 
 timezone: Europe/Moscow
-exclude_from_localizations: ['javascript', 'images', 'css']
+exclude_from_localizations: [
+  'assets',
+  'css',
+  'fonts',
+  'images',
+  'javascripts',
+  'CODE_OF_CONDUCT.md',
+  'CONTRIBUTING.md',
+  'Procfile',
+  'Rakefile',
+  'README.md',
+  'config.ru',
+  'favicon.ico',
+  'feed.xml',
+  'language.yml',
+  'package.json',
+  'static.json',
+]
 
 markdown: kramdown
 theme: minima
