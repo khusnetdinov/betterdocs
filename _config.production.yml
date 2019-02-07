@@ -24,9 +24,33 @@ languages: [
   'pl', 'pt',
   'ro',
   'ru',
-  'th', 'tr',
+  'th',
+  'tr',
   'vi'
 ]
+
+locales:
+  - {locale: en, name: English, flag: us}
+  - {locale: bg, name: Bulgarian, flag: bg}
+  - {locale: bn, name: Bengali, flag: bn}
+  - {locale: cn, name: Chinese, flag: cn}
+  - {locale: de, name: German, flag: de}
+  - {locale: el, name: Greek, flag: gr}
+  - {locale: es, name: Spanish, flag: es}
+  - {locale: fr, name: French, flag: fr}
+  - {locale: hi, name: Hindi, flag: in}
+  - {locale: id, name: Indonesian, flag: id}
+  - {locale: it, name: Italian, flag: it}
+  - {locale: ja, name: Japanese, flag: jp}
+  - {locale: ko, name: Korean, flag: kr}
+  - {locale: ms, name: Malay, flag: ms}
+  - {locale: pl, name: Polish, flag: pl}
+  - {locale: pt, name: Portusuese, flag: es}
+  - {locale: ro, name: Romanian, flag: ro}
+  - {locale: ru, name: Russian, flag: ru}
+  - {locale: th, name: Thai, flag: th}
+  - {locale: tr, name: Turkish, flag: tr}
+  - {locale: vi, name: Vietnamese, flag: vi}
 
 timezone: Europe/Moscow
 exclude_from_localizations: ['javascript', 'images', 'css']
