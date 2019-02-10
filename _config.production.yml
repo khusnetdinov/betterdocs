@@ -32,26 +32,26 @@ languages: [
 
 locales:
   - {locale: en, name: English, flag: us}
-  - {locale: bg, name: Bulgarian, flag: bg}
-  - {locale: bn, name: Bengali, flag: bn}
-  - {locale: cn, name: Chinese, flag: cn}
-  - {locale: de, name: German, flag: de}
-  - {locale: el, name: Greek, flag: gr}
-  - {locale: es, name: Spanish, flag: es}
-  - {locale: fr, name: French, flag: fr}
-  - {locale: hi, name: Hindi, flag: in}
-  - {locale: id, name: Indonesian, flag: id}
-  - {locale: it, name: Italian, flag: it}
-  - {locale: ja, name: Japanese, flag: jp}
-  - {locale: ko, name: Korean, flag: kr}
-  - {locale: ms, name: Malay, flag: ms}
-  - {locale: pl, name: Polish, flag: pl}
-  - {locale: pt, name: Portusuese, flag: es}
-  - {locale: ro, name: Romanian, flag: ro}
-  - {locale: ru, name: Russian, flag: ru}
-  - {locale: th, name: Thai, flag: th}
-  - {locale: tr, name: Turkish, flag: tr}
-  - {locale: vi, name: Vietnamese, flag: vi}
+  - {locale: bg, name: Български, flag: bg}
+  - {locale: bn, name: বাঙালি, flag: bn}
+  - {locale: cn, name: 中文, flag: cn}
+  - {locale: de, name: Deutsche, flag: de}
+  - {locale: el, name: Ελληνικά, flag: gr}
+  - {locale: es, name: Español, flag: es}
+  - {locale: fr, name: Français, flag: fr}
+  - {locale: hi, name: हिंदी, flag: in}
+  - {locale: id, name: Bahasa, flag: id}
+  - {locale: it, name: Italiano, flag: it}
+  - {locale: ja, name: 日本人, flag: jp}
+  - {locale: ko, name: 한국어, flag: kr}
+  - {locale: ms, name: Melayu, flag: ms}
+  - {locale: pl, name: Polskie, flag: pl}
+  - {locale: pt, name: Português, flag: es}
+  - {locale: ro, name: Română, flag: ro}
+  - {locale: ru, name: Русский, flag: ru}
+  - {locale: th, name: ไทย, flag: th}
+  - {locale: tr, name: Türk, flag: tr}
+  - {locale: vi, name: Tiếng Việt, flag: vi}
 
 timezone: Europe/Moscow
 exclude_from_localizations: [

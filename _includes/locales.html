@@ -1,0 +1,15 @@
+<div class="localizations">
+  <select id="localization" onchange="localizationFunction(this.form)">
+    {% for locale in site.locales %}
+    <option
+      value="{{ locale['locale'] }}"
+      {% if locale['locale'] == site.lang %}
+      selected
+      {% endif %}
+      style="background: url(https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/{{ locale['flag'] }}.png);">
+      {{ locale['name'] }}
+    </option>
+    {% endfor %}
+  </select>
+</div>
+

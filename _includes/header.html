@@ -8,18 +8,6 @@
   <!-- /Yandex.Metrika counter -->
 {%- endif -%}
 
-<nav class="nav">
-  {% for locale in site.locales %}
-    {% if locale['locale'] == 'en' %}
-      <a class="item" href="{{ site.url }}{{ page.url }}">
-    {% else %}
-      <a class="item" hreflang="{{ site.lang }}" href="{{ site.url }}/{{ locale['locale'] }}{{ page.url }}">
-    {% endif %}
-      <img src="https://cdn1.iconfinder.com/data/icons/famfamfam_flag_icons/{{ locale['flag'] }}.png" alt="{{ locale['name'] }}">
-    </a>
-  {% endfor %}
-</nav>
-
 <h1 class="heading">
   {% if site.lang == 'en' %}
     <a class="item" href="{{ site.url }}">Better Docs</a>

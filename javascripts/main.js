@@ -35,4 +35,19 @@
 
   openMenuCtrl.addEventListener('click', openMenu);
   closeMenuCtrl.addEventListener('click', closeMenu);
+
+  function localizationFunction() {
+    var select = document.getElementById('localization'),
+        locale = select.options[select.selectedIndex].value,
+        locationStrings = window.location.pathname.split('/'),
+        currentLink = locationStrings[locationStrings.length - 1];
+
+    if (locale === 'en') {
+      window.location.pathname = '/' + currentLink;
+    } else {
+      window.location.pathname = '/' + locale + '/' + currentLink;
+    }
+  }
+
+  window.localizationFunction = localizationFunction;
 })(window, window.document, window.classie);
