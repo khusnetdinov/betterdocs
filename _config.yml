@@ -76,7 +76,6 @@ exclude_from_localizations: [
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
   - jekyll-gzip
