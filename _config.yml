@@ -79,3 +79,4 @@ plugins:
   - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
+  - jekyll-gzip
