@@ -1,4 +1,7 @@
 _site
-.sass-cache
 .jekyll-metadata
+.sass-cache
+.vagrant/machines
+.vagrant/rgloader
 node_modules
+ubuntu-bionic-18.04-cloudimg-console.log

@@ -16,9 +16,61 @@
 - Become Ruby Meister
 - Interview Questions
 
-## Contributong
+## Contributing
 
 Before open issue or PR, please check [contributing guide](CONTRIBUTING.md) for guidelines about how to proceed. Every contributor is expected to follow [code of conduct](CODE_OF_CONDUCT.md).
+
+## Development
+
+For setup development environment it requires:
+
+* Ruby 2.5.1
+* NodeJS v10
+
+In terminal:
+
+```
+git clone https://github.com/symbiod/betterdocs/
+cd betterdocs
+npm install
+bundle install
+
+jekyll serve
+```
+
+### Setup with Vagrant
+
+Vagrant unify development for different OS users.
+Setup environment requires preinstalled:
+
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+
+In terminal:
+
+```
+git clone https://github.com/symbiod/betterdocs/
+cd betterdocs
+vagrant up
+```
+
+Now vagrant virtual machine is runing enter to it:
+
+```
+vagrant ssh
+```
+
+Betterdocs is locate in `/app` on guest machine;
+
+```
+cd /app
+```
+
+Run vagrant (It requires host option for proper port binding, and it can depend on OS):
+
+```
+jekyll serve --host 0.0.0.0
+```
 
 ## About
 
