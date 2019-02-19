@@ -1,8 +1,9 @@
 encoding: utf-8
 
-url: localost:4000
+url: http://localhost:4000
 
 baseurl: /
+format: ''
 
 collections:
   pages:
@@ -64,18 +65,32 @@ exclude_from_localizations: [
   'CONTRIBUTING.md',
   'Procfile',
   'Rakefile',
+  'Vagrantfile',
   'README.md',
   'config.ru',
   'favicon.ico',
   'feed.xml',
+  'sitemap.xml',
   'language.yml',
   'package.json',
   'static.json',
+  'npm-shrinkwrap.json',
+  'robots.txt',
+  'ubuntu-bionic-18.04-cloudimg-console.log',
+  '500.html'
+]
+
+allowed: [
+  'css',
+  'fonts',
+  'images',
+  'javascripts',
+  'favicon.ico',
+  'robots.txt',
+  'sitemap.xml',
 ]
 
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-sitemap
-  - jekyll-gzip

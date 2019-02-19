@@ -157,6 +157,8 @@ pages:
   page404:
     title: Pagina nu a fost gasita :(
     description: Pagina solicitată nu a putut fi găsită.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: algoritmi
     complexity:

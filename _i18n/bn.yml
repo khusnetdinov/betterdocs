@@ -156,6 +156,8 @@ pages:
   page404:
     title: পৃষ্ঠা খুঁজে পাওয়া যায়নি :(
     description: অনুরোধ করা পৃষ্ঠা খুঁজে পাওয়া যাবে না।
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: আলগোরিদিম
     complexity:

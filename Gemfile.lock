@@ -43,19 +43,28 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+<<<<<<< HEAD
     jekyll-feed (0.10.0)
       jekyll (~> 3.3)
     jekyll-gzip (2.1.1)
       jekyll (~> 3.0)
+=======
+>>>>>>> [#147] Jekyll app prepare
     jekyll-multiple-languages-plugin (1.6.0)
       jekyll (>= 2.0, < 4.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
+<<<<<<< HEAD
     jekyll-seo-tag (2.5.0)
       jekyll (~> 3.3)
     jekyll-sitemap (1.3.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
+=======
+    jekyll-sitemap (1.2.0)
+      jekyll (~> 3.3)
+    jekyll-watch (2.1.2)
+>>>>>>> [#147] Jekyll app prepare
       listen (~> 3.0)
     kramdown (1.17.0)
     liquid (4.0.3)
@@ -65,10 +74,6 @@ GEM
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
     mini_portile2 (2.4.0)
-    minima (2.5.0)
-      jekyll (~> 3.5)
-      jekyll-feed (~> 0.9)
-      jekyll-seo-tag (~> 2.1)
     minitest (5.11.3)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -110,10 +115,8 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll (>= 3.7.4)
-  jekyll-gzip
   jekyll-multiple-languages-plugin
   jekyll-sitemap
-  minima
   rack (>= 1.6.11)
   rack-jekyll
   rake

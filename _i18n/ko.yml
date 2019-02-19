@@ -154,6 +154,8 @@ pages:
   page404:
     title: 페이지를 찾을 수 없음 :(
     description: 요청하신 페이지를 찾을 수 없습니다.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: 알고리즘
     complexity:

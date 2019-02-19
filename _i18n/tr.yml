@@ -157,6 +157,8 @@ pages:
   page404:
     title: Sayfa bulunamadı :(
     description: İstenilen sayfa bulunamadı.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: Algoritmalar
     complexity:
