@@ -46,7 +46,7 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.10.0)
       jekyll (~> 3.3)
-    jekyll-gzip (2.0.0)
+    jekyll-gzip (2.1.1)
       jekyll (~> 3.0)
     jekyll-multiple-languages-plugin (1.6.0)
       jekyll (>= 2.0, < 4.0)
