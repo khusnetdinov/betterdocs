@@ -43,28 +43,13 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-<<<<<<< HEAD
-    jekyll-feed (0.10.0)
-      jekyll (~> 3.3)
-    jekyll-gzip (2.1.1)
-      jekyll (~> 3.0)
-=======
->>>>>>> [#147] Jekyll app prepare
     jekyll-multiple-languages-plugin (1.6.0)
       jekyll (>= 2.0, < 4.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
-<<<<<<< HEAD
-    jekyll-seo-tag (2.5.0)
-      jekyll (~> 3.3)
     jekyll-sitemap (1.3.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
-=======
-    jekyll-sitemap (1.2.0)
-      jekyll (~> 3.3)
-    jekyll-watch (2.1.2)
->>>>>>> [#147] Jekyll app prepare
       listen (~> 3.0)
     kramdown (1.17.0)
     liquid (4.0.3)
@@ -126,4 +111,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.17.3
+   1.17.1

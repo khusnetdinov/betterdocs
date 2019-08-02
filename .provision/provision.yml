@@ -1,0 +1,43 @@
+---
+
+- hosts: betterdocs
+  remote_user: betterdocs
+  roles:
+    - role: nginx
+    - role: self_signed_certificates
+      provision_certificates_path: /etc/nginx/ssl
+      provision_certificate_passphrase: passphrase
+      provision_certificate_domain: betterdocs.info
+    - role: certbot
+      certbot_admin_email: khusnetinov@gmail.com
+      certbot_auto_renew_user: betterdocs
+      certbot_create_if_missing: true
+      certbot_create_standalone_stop_services: [nginx]
+      certbot_auto_renew_minute: 00
+      certbot_auto_renew_hour: 5
+
+  tasks:
+    - name: Allow all access to tcp port 22
+      ufw:
+        rule: allow
+        port: 22
+        proto: tcp
+
+    - name: Allow all access to tcp port 80
+      ufw:
+        rule: allow
+        port: 80
+        proto: tcp
+
+    - name: Allow all access to tcp port 443
+      ufw:
+        rule: allow
+        port: 443
+        proto: tcp
+
+    - name: Enable UFW
+      ufw:
+        state: enabled
+
+#   - name: Disable password for pem key
+#     shell: sudo openssl rsa -in /etc/nginx/ssl/self.pem -out /etc/nginx/ssl/self.key

@@ -1,6 +1,6 @@
 encoding: utf-8
 
-url: https://betterdocs.herokuapp.com
+url: https://37.228.118.252
 
 baseurl: /
 format: ''
@@ -66,6 +66,7 @@ exclude_from_localizations: [
   'Procfile',
   'Rakefile',
   'Vagrantfile',
+  'Dockerfile',
   'README.md',
   'config.ru',
   'favicon.ico',

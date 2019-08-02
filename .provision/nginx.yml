@@ -1,0 +1,13 @@
+---
+
+- hosts: betterdocs
+  remote_user: betterdocs
+  tasks:
+    - name: Congigure nginx
+      copy:
+        src: templates/nginx.conf
+        dest: /etc/nginx/nginx.conf
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted

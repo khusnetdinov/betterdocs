@@ -1,0 +1,10 @@
+---
+
+- hosts: betterdocs
+  remote_user: betterdocs
+  tasks:
+    - name: Synchronization of src on the control machine to dest on the remote hosts
+      synchronize:
+        src: ../_site
+        dest: /var/www/
+        recursive: yes

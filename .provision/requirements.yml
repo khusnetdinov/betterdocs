@@ -1,0 +1,25 @@
+---
+
+- src: "https://github.com/Stouts/Stouts.apt"
+  name: apt
+  version: 1.4.0
+
+- src: "https://github.com/Stouts/Stouts.timezone"
+  name: timezone
+  version: 2.2.0
+
+- src: "https://github.com/Oefenweb/ansible-swapfile"
+  name: swapfile
+
+- src: "https://github.com/khusnetdinov/provision.user"
+  name: user
+
+- src: "https://github.com/Stouts/Stouts.nginx"
+  name: nginx
+  version: 2.1.1
+
+- src: "https://github.com/geerlingguy/ansible-role-certbot"
+  name: certbot
+
+- src: "https://github.com/khusnetdinov/provision.self_signed_certificates"
+  name: self_signed_certificates
