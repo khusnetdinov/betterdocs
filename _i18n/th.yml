@@ -156,6 +156,8 @@ pages:
   page404:
     title: ไม่พบหน้านี้ :(
     description: ไม่พบหน้าที่ร้องขอ
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: อัลกอริทึม
     complexity:

@@ -157,6 +157,8 @@ pages:
   page404:
     title: Página não encontrada :(
     description: A página solicitada não pôde ser encontrada.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: Algoritmos
     complexity:

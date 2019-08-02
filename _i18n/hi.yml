@@ -156,6 +156,8 @@ pages:
   page404:
     title: पृष्ठ नहीं मिला :(
     description: अनुरोध किया गया पेज़ नहीं मिल सका।
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: एल्गोरिदम
     complexity:

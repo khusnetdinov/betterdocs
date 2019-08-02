@@ -153,6 +153,8 @@ pages:
   page404:
     title: Страницата не е намерена :(
     description: Заявената страница не можа да бъде намерена.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: Алгоритми
     complexity:

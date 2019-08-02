@@ -163,6 +163,8 @@ pages:
   page404:
     title: ページが見つかりません ：（
     description: 要求されたページが見つかりませんでした。
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: アルゴリズム
     complexity:

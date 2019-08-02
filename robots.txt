@@ -2,23 +2,6 @@
 layout: none
 ---
 
-# www.robotstxt.org/
-
 User-agent: *
-Disallow: /javascripts/*
-Disallow: /images/*
-Disallow: /fonts/*
-Disallow: /_config.yml
-Disallow: /_config.staging.yml
-Disallow: /_config.production.yml
-Disallow: /config.ru
-Disallow: /CNAME
-Disallow: /Procfile
-Disallow: /README.md
-Disallow: /Rakefile
-Disallow: /language.yml
-Disallow: /package.json
-Disallow: /static.json
-Disallow: /404.html
 
 Sitemap: {{ site.url }}/sitemap.xml

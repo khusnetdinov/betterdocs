@@ -153,6 +153,8 @@ pages:
   page404:
     title: "Страница не найдена :("
     description: "Запрошенная страница не найдена."
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: "Алгоритмы"
     complexity:

@@ -153,6 +153,8 @@ pages:
   page404:
     title: 网页未找到 ：（
     description: 所需的页面无法找到。
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: 算法
     complexity:

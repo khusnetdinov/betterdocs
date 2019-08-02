@@ -27,10 +27,10 @@
         {%- endif -%}
         {%- if page.url == location -%}
           <li class='menu-item menu__submenus'>
-            <a class='menu__link menu__link--current' id='{{ link }}' hreflang="{{ site.lang }}" href='{{ site.url }}{{ link }}'>{{ menu.title }}</a>
+            <a class='menu__link menu__link--current' id='{{ link }}' hreflang="{{ site.lang }}" href='{{ site.url }}{{ link }}{{ site.format }}'>{{ menu.title }}</a>
         {%- else -%}
           <li class='menu-item'>
-            <a class='menu__link' id='{{ link }}' hreflang="{{ site.lang }}" href='{{ site.url }}{{ link }}'>{{ menu.title }}</a>
+            <a class='menu__link' id='{{ link }}' hreflang="{{ site.lang }}" href='{{ site.url }}{{ link }}{{ site.format }}'>{{ menu.title }}</a>
         {%- endif -%}
           <ul class="submenus">
             {%- for submenu in menu.submenus -%}
@@ -40,7 +40,7 @@
                   {% assign subs = submenu.submenus %}
                   {%- for sub in subs -%}
                   <li>
-                    <a hreflang="{{ site.lang }}" href="{{ site.url }}{{ link }}#{{ sub | replace: '_', '-' }}">
+                    <a hreflang="{{ site.lang }}" href="{{ site.url }}{{ link }}{{ site.format }}#{{ sub | replace: '_', '-' }}">
                       {{ site.translations[site.lang].pages[menu.url][submenu.key][sub].title }}
                     </a>
                   </li>
@@ -48,7 +48,7 @@
                 </ul>
               {%- else -%}
                 <li>
-                  <a hreflang="{{ site.lang }}" href="{{ site.url }}{{ link }}#{{ submenu | replace: '_', '-' }}">
+                  <a hreflang="{{ site.lang }}" href="{{ site.url }}{{ link }}{{ site.format }}#{{ submenu | replace: '_', '-' }}">
                     {{ site.translations[site.lang].pages[menu.url][submenu].title }}
                   </a>
                 </li>

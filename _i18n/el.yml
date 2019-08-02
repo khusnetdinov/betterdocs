@@ -156,6 +156,8 @@ pages:
   page404:
     title: Η σελίδα δεν βρέθηκε :(
     description: Η σελίδα που ζητήσατε δεν βρέθηκε.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: Αλγόριθμοι
     complexity:

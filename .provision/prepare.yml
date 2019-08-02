@@ -1,0 +1,24 @@
+---
+
+- hosts: betterdocs
+  remote_user: root
+  roles:
+    - role: apt
+      apt_upgrade: full
+      apt_install_recommends: yes
+      apt_install_packages: yes
+      apt_packages:
+        - curl
+        - git
+        - python-pip
+
+    - role: timezone
+      timezone_timezone: Europe/Moscow
+
+    - role: swapfile
+      swapfile_size: 2GB
+      swapfile_swappiness: 10
+
+    - role: user
+      provision_user_name: betterdocs
+      provision_user_ssh_key: git

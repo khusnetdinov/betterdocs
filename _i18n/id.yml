@@ -165,6 +165,8 @@ pages:
   page404:
     title: Halaman tidak ditemukan :(
     description: Halaman yang diminta tidak dapat ditemukan.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: Algoritma
     complexity:

@@ -1,2 +1,0 @@
-RewriteCond %{HTTP_HOST} ^www\.betterdocs\.info$
-RewriteRule ^/?$ "https\:\/\/betterdocs\.info\/" [R=301,L]

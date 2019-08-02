@@ -166,6 +166,8 @@ pages:
   page404:
     title: Không tìm thấy trang :(
     description: Không tìm thấy trang yêu cầu.
+  page500:
+    title: "Something was going wrong :("
   algorithms:
     title: Thuật toán
     complexity:
