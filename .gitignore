@@ -1,6 +1,7 @@
 _site
 .jekyll-metadata
 .sass-cache
+.idea
 .provision/roles
 !.provision/roles/.keep
 .vagrant/machines

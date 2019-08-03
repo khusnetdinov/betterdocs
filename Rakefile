@@ -84,6 +84,11 @@ namespace :server do
     exec('ansible-playbook ./.provision/nginx.yml -i ./.provision/hosts')
   end
 
+  desc 'CGenerate certificates'
+  task :certificate do
+    exec('ansible-playbook ./.provision/certificates.yml -i ./.provision/hosts')
+  end
+
   namespace :check do
     desc 'Check preparation remote system for provision'
     task :prepare do

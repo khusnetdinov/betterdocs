@@ -4,13 +4,14 @@
 
 {% assign key = page.url | remove_first: '/' | replace: '-', '_' %}
 {% assign title = site.translations[site.lang].pages[key].title %}
-<title>{% t head.title %} {{ title }}</title>
+<title>{{ title }} {% t head.title %}</title>
 
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta name="revision" content="{{ site.data['hash'] }}"/>
 <meta name="env" content="{{ jekyll.environment }}"/>
+<meta name="yandex-verification" content="9d5d89d6ab6177d0" />
 
 <!-- Seo -->
 <meta name="description" content="{% t head.metatags.description %}"/>
@@ -38,3 +39,10 @@
 <!-- JavaScript -->
 <script src="{{ site.url }}/javascripts/vendor/modernizr-custom.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+ (adsbygoogle = window.adsbygoogle || []).push({
+   google_ad_client: "ca-pub-8710870510677881",
+   enable_page_level_ads: true
+ });
+</script>
