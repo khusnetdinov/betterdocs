@@ -49,7 +49,7 @@ Setup environment requires preinstalled:
 In terminal:
 
 ```
-git clone https://github.com/symbiod/betterdocs/
+git clone https://github.com/khusnetdinov/betterdocs/
 cd betterdocs
 vagrant up
 ```
