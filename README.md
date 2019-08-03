@@ -1,6 +1,6 @@
 ![image](http://res.cloudinary.com/dtoqqxqjv/image/upload/c_scale,w_112/v1534700660/github/Garnet_PNG_Clipart-794.png)
 
-# BetterDocs aka Ruby.Fundamental Web [![Build Status](https://travis-ci.org/symbiod/betterdocs.svg?branch=master)](https://travis-ci.org/symbiod/betterdocs) [![Open Source Helpers](https://www.codetriage.com/symbiod/betterdocs/badges/users.svg)](https://www.codetriage.com/symbiod/betterdocs)
+# BetterDocs aka Ruby.Fundamental Web [![Build Status](https://travis-ci.org/khusnetdinov/betterdocs.svg?branch=master)](https://travis-ci.org/khusnetdinov/betterdocs) [![Open Source Helpers](https://www.codetriage.com/khusnetdinov/betterdocs/badges/users.svg)](https://www.codetriage.com/khusnetdinov/betterdocs)
 ### This repo is web adoptation [Ruby.Fundamental](https://github.com/khusnetdinov/ruby.fundamental). It keeps examples with description modern principles, patterns.
 
 ## Content
@@ -30,7 +30,7 @@ For setup development environment it requires:
 In terminal:
 
 ```
-git clone https://github.com/symbiod/betterdocs/
+git clone https://github.com/khusnetdinov/betterdocs
 cd betterdocs
 npm install
 bundle install

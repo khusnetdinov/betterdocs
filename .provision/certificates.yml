@@ -1,0 +1,23 @@
+---
+
+- hosts: betterdocs
+  remote_user: betterdocs
+  roles:
+    - role: certbot
+      certbot_admin_email: khusnetinov@gmail.com
+      certbot_auto_renew_user: betterdocs
+      certbot_create_standalone_stop_services: [nginx]
+      certbot_auto_renew_minute: 00
+      certbot_auto_renew_hour: 5
+      certbot_create_if_missing: true
+      certbot_create_method: standalone
+      certbot_certs:
+        - email: khusnetinov@gmail.com
+          domains:
+            - betterdocs.info
+  tasks:
+    - name: Generate DH Parameters with a different size (2048 bits)
+      openssl_dhparam:
+        path: /etc/letsencrypt/live/betterdocs.info/dhparams.pem
+        size: 2048
+        force: yes
