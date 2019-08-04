@@ -10,7 +10,6 @@ $adv-500:  500px;
 @mixin sponsor-block($width, $height) {
   width: $width;
   height: $height;
-  background-color: $c-red;
 }
 
 .sponsor-block {
