@@ -1,27 +1,27 @@
 head:
   title: BetterDocs
   metatags:
-    description: Lập trình cơ bản với các ví dụ và tài liệu tham khảo ruby. Nó bao
-      gồm các chủ đề, nguyên tắc RẮN, các mẫu thiết kế, cấu trúc dữ liệu, thuật toán.
-    keywords: Tài liệu tốt hơn, Ruby, Nguyên tắc cơ bản, Nguyên tắc lập trình Ruby.
-      Ruby gotchas, Lập trình hàm, Lập trình siêu dữ liệu, Chủ đề, Nguyên tắc vững
-      chắc của Ruby với các ví dụ, mẫu thiết kế Ruby với các ví dụ, thuật toán Ruby
+    description: Lập trình ruby cơ bản với các ví dụ và tài liệu tham khảo. Bao
+      gồm threads, nguyên tắc SOLID, design pattern, cấu trúc dữ liệu, giải thuật.
+    keywords: Ruby, Nguyên tắc cơ bản, Nguyên tắc lập trình Ruby cơ bản.
+      Ruby gotchas, Lập trình hàm, Lập trình siêu dữ liệu, Threads, Nguyên tắc SOLID
+      với các ví dụ, Ruby design patterns với các ví dụ, thuật toán Ruby
       với các ví dụ, cấu trúc dữ liệu Ruby với các ví dụ.
 
 content:
   menu:
-    open: Mở thực đơn
+    open: Mở Menu
     close: Đóng Menu
 sidebar:
-  a: 
-  ds: 
-  dp: 
-  fp: 
-  iq: 
-  mp: 
-  sp: 
-  brm: 
-  t: 
+  a:
+  ds:
+  dp:
+  fp:
+  iq:
+  mp:
+  sp:
+  brm:
+  t:
 sidebar:
   - title: Thuật toán
     url: algorithms
@@ -64,7 +64,7 @@ sidebar:
           - b_tree
           - binary_heap
 
-  - title: Mẫu thiết kế
+  - title: Design Patterns
     url: design_patterns
     submenus:
       - key: creational
@@ -94,7 +94,7 @@ sidebar:
           - strategy
           - template
           - visitor
-  - title: Lập trình chức năng
+  - title: Lập trình hàm
     url: functional_programming
     submenus:
       - pure_functions
@@ -134,7 +134,7 @@ sidebar:
       - module
   - title: Câu hỏi phỏng vấn
     url: interview_questions
-  - title: Lập trình meta
+  - title: Metaprogramming
     url: meta_programming
     submenus:
       - dynamic_dispatch
@@ -146,11 +146,11 @@ sidebar:
       - single
       - open_close
       - liskov
-      - segregation 
+      - segregation
       - di
   - title: Trở thành Ruby Meister
     url: ruby_meister
-  - title: Chủ đề
+  - title: Threads
     url: threads
     submenus:
       - green
@@ -161,7 +161,7 @@ sidebar:
       - config
 
 pages:
-  wiki: Đọc wiki
+  wiki: Wiki
   credits: Tín dụng
   page404:
     title: Không tìm thấy trang :(
@@ -172,7 +172,7 @@ pages:
     title: Thuật toán
     complexity:
       best: Tốt
-      average: Trung bình cộng
+      average: Trung bình
       worst: Tệ nhất
     sorting:
       title: Sắp xếp
