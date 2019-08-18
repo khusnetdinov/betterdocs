@@ -71,7 +71,7 @@ sidebar:
           - proxy
       - key: behavioral
         submenus:
-          - chain_of_responsobility
+          - chain_of_responsibility
           - command
           - interpreter
           - iterator
