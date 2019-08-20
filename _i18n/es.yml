@@ -11,7 +11,7 @@ content:
   menu:
     open: Menú abierto
     close: Cerrar menú
- 
+
 sidebar:
   - title: Algoritmos
     url: algorithms
@@ -130,13 +130,13 @@ sidebar:
       - dynamic_dispatch
       - dynamic_method
       - dynamic_proxies
-  - title: Principios Solid 
+  - title: Principios Solid
     url: solid_principles
     submenus:
       - single
       - open_close
       - liskov
-      - segregation 
+      - segregation
       - di
   - title: Conviértete en Ruby Meister
     url: ruby_meister
@@ -150,7 +150,7 @@ sidebar:
       - rails
       - config
 
-pages:      
+pages:
   wiki: Leer wiki
   credits: Creditos
   page404:
@@ -174,15 +174,15 @@ pages:
         es útil para canonizar datos y para producir resultados legibles por humanos.
       bubble_sort:
         title: Ordenamiento de burbuja
-        description: La ordenación de burbuja tiene muchas de las mismas propiedades
-          que la ordenación por inserción, pero tiene una sobrecarga ligeramente mayor.
+        description: El ordenamiento de burbuja tiene muchas de las mismas propiedades
+          que el ordenamiento por inserción, pero tiene una sobrecarga ligeramente mayor.
           En el caso de datos casi ordenados, la ordenación por burbuja toma <span class="code-inline
           time">O (n)</span> , pero requiere al menos 2 pases a través de los datos
-          (mientras que la ordenación por inserción requiere algo más como 1 pasada).
+          (mientras que el ordenamiento por inserción requiere algo más como 1 pasada).
       insertion_sort:
-        title: Tipo de inserción
+        title: Ordenamiento por inserción
         description: Aunque es uno de los algoritmos de clasificación elemental con
-          <span class="code-inline">O (n <sup>2</sup> )</span> , el tipo de inserción
+          <span class="code-inline">O (n <sup>2</sup> )</span> , el ordenamiento por inserción
           es el algoritmo de elección cuando los datos están casi ordenados (porque
           son adaptables) o cuando el tamaño del problema es pequeño (porque tiene baja
           sobrecarga). Por estas razones, y debido a que también es estable, el ordenamiento
@@ -191,17 +191,17 @@ pages:
           conquista de mayor sobrecarga, como el ordenamiento por fusión o el ordenamiento
           rápido.
       selection_sort:
-        title: Selección de selección
+        title: Ordenamiento por selección
         description: A partir de la comparación que se presenta aquí, se podría concluir
-          que la clasificación por selección nunca debería usarse. No se adapta a los
+          que el ordenamiento por selección nunca debería usarse. No se adapta a los
           datos de ninguna manera (observe que las cuatro animaciones anteriores se
           ejecutan en lockstep), por lo que su tiempo de ejecución siempre es cuadrático.
           Sin embargo, la selección por selección tiene la propiedad de minimizar el
           número de swaps. En aplicaciones donde el costo de intercambiar elementos
           es alto, la selección puede ser el algoritmo de elección.
       shell_sort:
-        title: Tipo de concha
-        description: La complejidad en el peor de los casos de ordenación de shell depende
+        title: Ordenamiento Shell
+        description: La complejidad en el peor de los casos de ordenamiento Shell depende
           de la secuencia de incremento. Para los incrementos 1 4 13 40 121 ..., que
           es lo que se usa aquí, la complejidad del tiempo es <span class="code-inline">O
           (n <sup><sup>3</sup>⁄<sub>2</sub></sup>)</span>. Para otros incrementos,
@@ -209,20 +209,19 @@ pages:
           ⁄ <sub>3</sub></sup>)</span> e incluso <span class="code-inline">O(n·lg
           <sub>2</sub>(n))</span> . No se conocen los límites superiores ajustados
           en la complejidad del tiempo ni la mejor secuencia de incremento. Debido a
-          que la ordenación del shell se basa en la ordenación por inserción, la ordenación
-          del shell hereda las propiedades adaptativas de la ordenación por inserción.
-          La adaptación no es tan dramática porque la ordenación de la shell requiere
+          que el ordenamiento Shell se basa en el ordenamiento por inserción, el ordenamiento Shell hereda las propiedades adaptativas de la ordenación por inserción.
+          La adaptación no es tan dramática porque el ordenamiento Shell requiere
           un pase a través de los datos para cada incremento, pero es significativo.
           Para la secuencia de incremento que se muestra arriba, hay incrementos de
           <span class="code-inline">lg<sub>3</sub>(n)</span> , por lo que la
           complejidad del tiempo para los datos casi ordenados es <span class="code-inline">O
           (n·lg<sub>3</sub>(n))</span> . Debido a su baja sobrecarga, implementación
           relativamente simple, propiedades adaptativas y complejidad de tiempo sub-cuadrática,
-          la clasificación de shell puede ser una alternativa viable a los algoritmos
+          la clasificación Shell puede ser una alternativa viable a los algoritmos
           de clasificación <span class="code-inline">O(n·lg(n))</span> para algunas
           aplicaciones cuando los datos a clasificar son no muy grande
       heap_sort:
-        title: Tipo de pila
+        title: Ordenación por montículos
         description: Tipo de pila es fácil de implementar, realiza una ordenación in situ
           <span class="code-inline">O (n · lg (n))</span> , pero no es estable. El primer
           bucle, la fase <span class="code-inline">Θ (n)</span> &quot;heapify&quot;,
@@ -242,8 +241,8 @@ pages:
           únicas, hay un poco de aceleración, pero no tanto como en la ordenación de
           shell o en la ordenación rápida de 3 vías.
       merge_sort:
-        title: Fusionar orden
-        description: 'La clasificación por fusión es muy predecible. Hace entre <span
+        title: Ordenamiento por mezcla
+        description: El ordenamiento por mezcla es muy predecible. Hace entre <span
           class="code-inline">0.5lg (n)</span> y <span class="code-inline">lg (n)</span>
           comparaciones por elemento, y entre swaps de <span class="code-inline">lg
           (n)</span> y <span class="code-inline">1.5lg (n)</span> por elemento. Los
@@ -263,8 +262,8 @@ pages:
           para las aplicaciones como la clasificación externa cuando <span class="code-inline">Θ
           (n)</span> no hay espacio adicional disponible.'
       quick_sort:
-        title: Ordenación rápida
-        description: Cuando se implementa con cuidado, Quicksort es robusto y tiene
+        title: Ordenamiento rápido
+        description: Cuando se implementa con cuidado, el ordenamiento rápido es robusto y tiene
           pocos gastos generales. Cuando no se necesita una clasificación estable, quicksort
           es una excelente clasificación de propósito general, aunque en su lugar siempre
           se debe usar la versión de partición de 3 vías. El código de partición bidireccional
@@ -287,7 +286,7 @@ pages:
       other: Otros algoritmos de clasificación
       additional: Lectura adicional
     searching:
-      title: buscando
+      title: Búsqueda
       binary_search:
         title: Búsqueda binaria
         description: En informática, la búsqueda binaria, también conocida como búsqueda
