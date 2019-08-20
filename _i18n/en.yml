@@ -133,7 +133,7 @@ sidebar:
       - single
       - open_close
       - liskov
-      - segregation 
+      - segregation
       - di
   - title: "Become Ruby Meister"
     url: ruby_meister
@@ -287,7 +287,7 @@ pages:
         description: "The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes. In normal usage, the client software creates a concrete implementation of the abstract factory and then uses the generic interface of the factory to create the concrete objects that are part of the theme. The client doesn't know (or care) which concrete objects it gets from each of these internal factories, since it uses only the generic interfaces of their products. This pattern separates the details of implementation of a set of objects from their general usage and relies on object composition, as object creation is implemented in methods exposed in the factory interface."
       builder:
         title: "Builder pattern"
-        description: "The builder pattern is an object creation software design pattern. Unlike the abstract factory pattern and the factory method pattern whose intention is to enable polymorphism, the intention of the builder pattern is to find a solution to the telescoping constructor anti-pattern[citation needed]. The telescoping constructor anti-pattern occurs when the increase of object constructor parameter combination leads to an exponential list of constructors. Instead of using numerous constructors, the builder pattern uses another object, a builder, that receives each initialization parameter step by step and then returns the resulting constructed object at once." 
+        description: "The builder pattern is an object creation software design pattern. Unlike the abstract factory pattern and the factory method pattern whose intention is to enable polymorphism, the intention of the builder pattern is to find a solution to the telescoping constructor anti-pattern[citation needed]. The telescoping constructor anti-pattern occurs when the increase of object constructor parameter combination leads to an exponential list of constructors. Instead of using numerous constructors, the builder pattern uses another object, a builder, that receives each initialization parameter step by step and then returns the resulting constructed object at once."
       factory:
         title: "Factory pattern"
         description: "In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor."
@@ -302,7 +302,7 @@ pages:
         lazy: "Lazy initialization"
         multiton: "Multiton"
         pool: "Object pool"
-        resource: "Resource acquisition is initialization"   
+        resource: "Resource acquisition is initialization"
     structural:
       title: "Structural patterns"
       description: "In software engineering, structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities."
@@ -359,7 +359,7 @@ pages:
         description: "External iterator: The iteration logic is contained in a separate class. The iteration class can be generalized to handle multiple object types as long as they allow indexing. It require the additional class to do the actual iterating, but they do allow for greater flexibility because you can control the iteration, which elements are iterated over and in what order."
       internal_iterator:
         title: "Internal iterator pattern"
-        description: "Internal iterator: all the iterating logic occurs inside the aggregate object. Use a code block to pass your logic into the aggregate which then calls the block for each of it's elements." 
+        description: "Internal iterator: all the iterating logic occurs inside the aggregate object. Use a code block to pass your logic into the aggregate which then calls the block for each of it's elements."
       mediator:
         title: "Mediator pattern"
         description: "Usually a program is made up of a large number of classes. So the logic and computation is distributed among these classes. However, as more classes are developed in a program, especially during maintenance and / or refactoring, the problem of communication between these classes may become more complex. This makes the program harder to read and maintain. Furthermore, it can become difficult to change the program, since any change may affect code in several other classes. With the mediator pattern, communication between objects is encapsulated with a mediator object. Objects no longer communicate directly with each other, but instead communicate through the mediator. This reduces the dependencies between communicating objects, thereby lowering the coupling."
@@ -416,7 +416,7 @@ pages:
     description5: "They come together with good practices, that will prevent you from making simple (but difficult to find) mistakes and simplify your (and your code maintainer’s) life."
     surprising:
       title: "Ruby can be surprising"
-      description: "Though \"engineered to maximize programmer happiness\", with the \"principle of least surprise\", Ruby still has gotchas. This presentation will proceed from newbie trivial gotchas, to more advanced and confusing gotchas." 
+      description: "Though \"engineered to maximize programmer happiness\", with the \"principle of least surprise\", Ruby still has gotchas. This presentation will proceed from newbie trivial gotchas, to more advanced and confusing gotchas."
     quotes:
       title: "Don't quote me on this, but..."
       description: "String interpolation (including special chars like <span class=\"code-inline\">\\n</span>) fails with <span class=\"code-inline\">'single'</span> quotes - it requires <span class=\"code-inline\">\"double\"</span> quotes. Just like in most languages with string interpolation. To avoid it use doubles whenever practical."
@@ -433,7 +433,7 @@ pages:
       description: "Initial uppercase means constant, in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowing."
     equals:
       title: "Some are more equal than others"
-      description: "<span class=\"code-inline\">==</span> is the usual same value, <span class=\"code-inline\">.eql?</span> is value and class (1 is Fixnum, 1.0 is Float), <span class=\"code-inline\">.equal?</span> is same object. It's actually much hairier." 
+      description: "<span class=\"code-inline\">==</span> is the usual same value, <span class=\"code-inline\">.eql?</span> is value and class (1 is Fixnum, 1.0 is Float), <span class=\"code-inline\">.equal?</span> is same object. It's actually much hairier."
     operations:
       title: ">=== != ==!"
       description: "<span class=\"code-inline\">===</span> is \"case equality\", as in case statements. A better name might be <span class=\"code-inline\">.describes?</span>, or overload <span class=\"code-inline\">.includes?</span>. Again, it's actually much hairier; see the docs on class Object. Gets people from languages where <span class=\"code-inline\">===</span> is either object identity or same value and class."
@@ -459,7 +459,7 @@ pages:
       description: "Naked value becomes a temporary local variable! Solution: remember the <span class=\"code-inline\">@!</span> (Or \"self.\". Or use <span class=\"code-inline\">attr_writer,  attr_accessor</span>.) Gets people from Java / C++, not so much Python (which needs \"self.\" too). \"You keep on using that variable. I don't think it means what you think it means.\". Not Inigo Montoya."
     variables:
       title: "Look out, it’s an @@!"
-      description: "Look what the filling the blank? We didn't change Parent’s <span class=\"code-inline\">@@value</span> before checking it, nor Child’s at all! Or did we? <span class=\"code-inline\">@@variables</span> are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s <span class=\"code-inline\">@@value</span> changed Parent’s, and including Parent’s changed Child’s.ut, it’s an @@!" 
+      description: "Look what the filling the blank? We didn't change Parent’s <span class=\"code-inline\">@@value</span> before checking it, nor Child’s at all! Or did we? <span class=\"code-inline\">@@variables</span> are shared with subclasses - not just that they exist, but the variables themselves!  Declaring Child’s <span class=\"code-inline\">@@value</span> changed Parent’s, and including Parent’s changed Child’s.ut, it’s an @@!"
     initialize:
       title: "With init(ialize) or without it"
       description: "Parent's initialize runs automagically only if a child has none. Else, parent's must be called to run."
@@ -615,7 +615,7 @@ pages:
         - name: "algorithm_manual"
           title: "The Algorithm Design Manual"
           description: "This newly expanded and updated second edition of the best-selling classic continues to take the \"mystery\" out of designing algorithms, and analyzing their efficacy and efficiency. Expanding on the first edition, the book now serves as the primary textbook of choice for algorithm design courses while maintaining its status as the premier practical reference guide to algorithms for programmers, researchers, and students."
-          link: "https://www.amazon.com/gp/product/B07L5DP7LC/ref=as_li_tl?ie=UTF8&tag=khusnetdinov-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B07L5DP7LC&linkId=f9f72e74efcbc40545634f6b53b1e783" 
+          link: "https://www.amazon.com/gp/product/B07L5DP7LC/ref=as_li_tl?ie=UTF8&tag=khusnetdinov-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B07L5DP7LC&linkId=f9f72e74efcbc40545634f6b53b1e783"
         - name: "cormen"
           title: "Introduction to Algorithms, 3rd Edition (The MIT Press)"
           description: "Some books on algorithms are rigorous but incomplete; others cover masses of material but lack rigor. Introduction to Algorithms uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in a pseudocode designed to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor."
@@ -674,7 +674,7 @@ pages:
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: "What is Better Docs"
-    description: "This website is web adaptation Github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated into the Chinese language. Better Docs allow you to quickly find a lot best practice that was collected in one repository. Just you this repo like the reference or interview preparation resource."
+    description: "This website is web adaptation Github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated into the Chinese language. Better Docs allow you to quickly find a lot of best practice that was collected in one repository. Just use this repo like the reference or interview preparation resource."
     oss:
       title: "Thanks to Open Source"
       description: "Better Docs was created while working and finding out about best practices and knowledge about ruby, an open source engineering for the web development applications written in Ruby."
