@@ -555,86 +555,86 @@ pages:
         hierarchical: 계층적 방문자 패턴
       credits: 코드와 기사는 리소스에서 가져온 것입니다.
   functional_programming:
-    title: 기능적 프로그래밍
-    description: 기능적 스타일로 언어를 사용하면 아래 나열된 몇 가지 주요 기능에 액세스 할 수 있습니다.
+    title: 함수형 프로그래밍
+    description: 함수형 스타일로 언어를 사용하면 아래 나열된 몇 가지 주요 기능에 액세스 할 수 있습니다.
     axioms:
-      immutable: '변경할 수없는 값 : 일단 &quot;변수&quot;가 설정되면 변경할 수 없습니다. Ruby에서는 상수와 같은 변수를
+      immutable: '불변 값 : 일단 &quot;변수&quot;가 설정되면 변경할 수 없습니다. Ruby에서는 상수와 같은 변수를
         효과적으로 처리해야한다는 것을 의미합니다.'
-      side_effects: '부작용 없음 : 주어진 값이 전달되면 함수는 항상 동일한 결과를 반환해야합니다. 이것은 불변의 가치를 갖는 것과
+      side_effects: '부작용 없음 : 주어진 값이 전달되면 함수는 항상 동일한 결과를 반환해야 합니다. 이것은 불변의 값를 갖는 것과
         관련이 있습니다. 함수는 결과를 반환하는 접선 인 부작용을 일으킬 수 있으므로 값을 가져 와서 변경할 수 없습니다.'
-      pure_functions: '고차 함수 : 함수를 인수로 허용하거나 함수를 반환 값으로 사용하는 함수입니다. 이것은 틀림없이 어떤 함수 언어의
+      pure_functions: '순수 함수 : 함수를 인수로 허용하거나 함수를 반환 값으로 사용하는 함수입니다. 이것은 틀림없이 어떤 함수형 언어의
         가장 중요한 기능 중 하나입니다.'
       applying: 'Currying : 고차 함수에 의해 사용 가능하며, currying은 여러 인수를 취하는 함수를 하나의 인수를 취하는
         함수로 변환하는 것입니다. 이것은 다중 인수 함수를 인수를 덜 취한 함수로 변환하는 부분 함수 응용 프로그램과 함께 사용됩니다.'
-      recursion: '재귀 : 내부에서 함수를 호출하여 루핑. 변경할 수있는 데이터에 액세스 할 수없는 경우 재귀를 사용하여 데이터를 구성하고
-        체인을 구성합니다. 이는 루핑이 기능 개념이 아니기 때문에, 주어진 시간에 루프의 상태를 저장하기 위해 변수를 전달해야하기 때문입니다.'
+      recursion: '재귀 : 내부에서 함수를 호출하여 반복. 변경할 수 있는 데이터에 액세스 할 수 없는 경우 재귀를 사용하여 데이터를 구성하고
+        체인을 구성합니다. 이는 반복의 기능 개념이 아니기 때문에, 주어진 시간에 반복의 상태를 저장하기 위해 변수를 전달해야하기 때문입니다.'
       lazy: '지연 평가 또는 지연 평가 : 실제로 필요한 시점까지 값 처리 지연. 예를 들어, 지연 평가가 활성화 된 피보나치 수 목록을 생성
-        한 코드가있는 경우 결과의 값 중 하나가 펑션과 같은 다른 함수에 필요할 때까지 실제로 처리 및 계산되지 않습니다.'
+        한 코드가 있는 경우 결과의 값 중 하나가 기능과 같은 다른 함수에 필요할 때까지 실제로 처리 및 계산되지 않습니다.'
     pure_functions:
       title: 순수 함수
-      description: 이 함수는 인수를 사용하여 결과 만 계산한다는 것을 알 수 있습니다.
+      description: 이 함수는 인수를 사용하여 결과만 계산한다는 것을 알 수 있습니다.
     closures:
       title: 마감
       description: Lambda는 또한 클로저를 강제하므로 객체간에 컨텍스트를 유지할 수 있습니다.
     applying:
       title: 부분 적용 및 운반
-      description: 먼저이 두 개의 서로 다른 응용 프로그램 기능이 무엇인지 이해해 봅시다. 부분 함수 응용 프로그램은 더 많은 인수를
+      description: 먼저이 두 개의 서로 다른 응용 프로그램 기능이 무엇인지 이해해봅시다. 부분 함수 응용 프로그램은 더 많은 인수를
         사용하는 함수를 다시 얻으려면 몇 가지 인수로 함수를 호출합니다. Currying은 n 개의 인수를 취하고 하나의 인수를 취하는 n 개의
         함수로 분할하는 함수를 사용합니다.
       proc: 이 두 가지가 각각 어떤 기능을 수행하는지 명확하게 이해하기 위해 Proc를 예로 들어 봅니다.
       partial: 이 함수를 부분적으로 적용하면 첫 번째 두 개의 인수를 전달하면 다음 중첩 된 Procs가 반환됩니다.
-      curry: <span class="code-inline">.curry</span> 는 카레 proc를 반환합니다. 선택적 arity 인수가
-        제공되면 인수의 수를 판별합니다. 카레 proc는 몇 가지 인수를받습니다. 충분한 수의 인수가 제공되면 제공된 인수를 원래 proc로 전달하고
-        결과를 리턴합니다. 그렇지 않으면, 나머지 인수를 취하는 다른 카레 proc를 리턴합니다.
+      curry: <span class="code-inline">.curry</span> 는 curry proc를 반환합니다. 선택적 arity 인수가
+        제공되면 인수의 수를 판별합니다. curry proc는 몇 가지 인수를받습니다. 충분한 수의 인수가 제공되면 제공된 인수를 원래 proc로 전달하고
+        결과를 리턴합니다. 그렇지 않으면, 나머지 인수를 취하는 다른 curry proc를 리턴합니다.
   gotchas:
-    title: 잡았다
+    title: 루비 알기
     description1: 대부분의 Ruby on Rails 초보자는 프레임 워크에 흥분하고 언어에 대한 지식 없이도 응용 프로그램을 제작하기 시작합니다.
       이것이 바로 RoR의 마법입니다.
     description2: 어느 시점에서 일이 심각해지기 시작합니다. Ruby on Rails의 더러운 비밀을 탐색하는 데는 시간과 노력이 필요하고,
       다른 사람들은 언어에 대해 거의 알지 못하는 선임 개발자가되어 버렸습니다.
-    description3: 어쨌든 조만간 초보자 나 숙련 된 프로그래머, 우리 모두는 소위 하드 코어 디버깅을 위해 우리 사이트에서 숨기는 작은
-      언어의 미묘한 부분 인 Ruby Gotchas를 사용합니다.
-    description4: 다음은 개발자가 알아야 할 인기있는 Ruby 잡기 및 호기심 목록입니다. 각각의 경우에 혼란 스럽거나 오류가 발생하기
+    description3: 어쨌든 조만간 초보자나 숙련된 프로그래머, 우리 모두는 소위 하드 코어 디버깅을 위해 우리 사이트에서 숨기는 작은
+      언어의 미묘한 부분인 Ruby Gotchas를 사용합니다.
+    description4: 다음은 개발자가 알아야 할 인기있는 Ruby gotcha 및 호기심 목록입니다. 각각의 경우에 혼란 스럽거나 오류가 발생하기
       쉬운 코드의 예가 있습니다.
     description5: 그들은 좋은 습관과 함께 모여서, 당신이 단순한 (그러나 찾기가 어렵다) 실수를 피하고 당신의 (그리고 당신의 코드 관리자의)
       삶을 단순화시킵니다.
     surprising:
       title: 루비는 놀랄 수 있습니다.
-      description: Ruby는 &quot;프로그래머의 행복을 극대화하도록 설계되었지만&quot; &quot;가장 놀랄만하지 않은 원칙&quot;을
-        가지고 있지만 여전히 문제가 있습니다. 이 프리젠 테이션은 초보자의 사소한 잡다한 것에서 더 진보되고 혼란스러운 것에 이르기까지 진행될
+      description: Ruby는 &quot;프로그래머의 행복을 극대화하도록 설계&quot; &quot;에 가장 놀랄만하지 않은 원칙&quot;을
+        가지고 있지만 여전히 문제가 있습니다. 이 발표는 초보자의 사소한 잡다한 것에서 더 진보되고 혼란스러운 것에 이르기까지 진행될
         것입니다.
     quotes:
       title: 이걸 인용하지 말고 ...
       description: 문자열 보간법 ( <span class="code-inline">\ n</span> 과 같은 특수 문자 포함)은 <span
         class="code-inline">&#39;단일&#39;</span> 따옴표로 실패합니다. 따옴표는 <span class="code-inline">&quot;이중&quot;</span>
-        따옴표가 필요합니다. 문자열 보간을 사용하는 대부분의 언어 에서처럼. 그것을 피하기 위해 실용적이 될 때마다 복식을 사용하십시오.
+        따옴표가 필요합니다. 문자열 보간을 사용하는 대부분의 언어 에서처럼. 그것을 피하기 위해 실용적이 될 때마다 doubles을 사용하십시오.
     twue:
-      title: 그것은 twue 다! 그것은 twue 다!
+      title: 그것은 twue다! 그것은 twue다!
       description: <span class="code-inline">false</span> 와 <span class="code-inline">nil</span>의
         두 가지만 입니다. 그 밖의 모든 것은 진실입니다. 심지어 <span class="code-inline">0</span> (C에서 거짓), <span
         class="code-inline">&quot;&quot;</span> (JS에서 거짓), <span class="code-inline">[]</span>
         등. C, JS 등의 사람들을 여행합니다. 이들 중 일부는 거짓입니다.
     symbols_and_strings:
       title: 상상을 품거나 상징적으로 그를 묶어 라.
-      description: '<span class="code-inline">Symbol != String/span> . 같은 경우에도 인쇄. args에 사용할
+      description: '<span class="code-inline">Symbol != String/span> . 같은 경우에도 프린트. args에 사용할
         것을 기억하십시오. 이상적으로 말하자면, 어느 쪽을 택하든, 어떤 방법으로 기대하는 것을 사용하십시오 : &quot;당신이 받아들이는 것에서
         자유주의적이고, 보내는 것에서 보수적이십시오.&quot; 포스텔의 법.'
     string_or_nothing:
       title: 문자열 ... 아니면 아무것도!
     constants:
       title: 상수가 없습니다.
-      description: 대문자는 Ruby에서 상수를 의미합니다. 상수를 변경하십시오. 너 경고 받았어! BFD. Fixnums의 경우 동결조차도
+      description: 초기 대문자는 Ruby에서 상수를 의미합니다. 상수를 변경하십시오. 경고를 받았습니까? BFD. Fixnums의 경우 프리징 조차도
         작동하지 않습니다. 배열 (일종의) 및 대부분의 다른 객체에서 작동합니다 ... 그는 미리 말했습니다.
     equals:
       title: 일부는 다른 것보다 더 평등합니다.
       description: <span class="code-inline">==</span> 는 보통 같은 값인 <span class="code-inline">.eql?</span>
-        값과 클래스입니다 (1은 Fixnum, 1.0은 Float) <span class="code-inline">.equal?</span> 같은 대상입니다.
-        실제로는 훨씬 더 털이 있습니다.
+        값과 클래스입니다(1은 Fixnum, 1.0은 Float) <span class="code-inline">.equal?</span> 같은 대상입니다.
+        실제로는 훨씬 더 아슬아슬합니다.
     operations:
       title: "&gt; ===! = ==!"
       description: <span class="code-inline">===</span> 는 case 문과 마찬가지로 &quot;case equality&quot;입니다.
         더 나은 이름이있을 수 있습니다 <span class="code-inline">.describes?</span> , 또는 과부하 <span
-        class="code-inline">.includes?</span> . 다시 말하지만 실제로는 훨씬 더 털이 있습니다. Object 클래스의
+        class="code-inline">.includes?</span> . 다시 말하지만 실제로는 훨씬 더 아슬아슬 습니다. Object 클래스의
         문서를 참조하십시오. 언어에서 사람을 얻습니다. <span class="code-inline">===</span> 는 객체 ID 또는 동일한
         값과 클래스입니다.
     priority:
@@ -649,78 +649,78 @@ pages:
       title: 너무 민감하지 마!
       description: 공백을 구분하지 않습니까? 언제나! 파서 (Parser)는이 표현식을 하나의 arg로 생각하지만 <span class="code-inline">(1,
         2)</span> 는 유효한 Ruby 표현이 아닙니다! (모두 1 개의 인수로 잘 작동합니다.)
-      usage: '여러 개의 인수가있는 경우 : <br/> - 싫어, 문제 없어. <br/> - 부모님 / 외의 공간, OK. <br/> - 팸과
-        우주, 안돼!'
-      methods: '<span class="code-inline">method / num</span> 은 끝이없는 정규식이나 문자열입니다! 루비는
-        당신이이 방법에 대해 논쟁을하고 있다고 생각합니다. 일반 원칙 : BALANCED 공백을 사용하십시오. 양쪽 또는 둘 다.'
-      arguments: '<span class="code-inline">one -2</span> 는 Ruby가 당신이 방법 1에 <span class="code-inline">-2</span>
+      usage: '여러 개의 인수가있는 경우 : <br/> - 괄호가 없는 경우, 문제 없어. <br/> - 공백없는 괄호, OK. <br/> - 괄호와
+        공백, 안돼!'
+      methods: '<span class="code-inline">method / num</span> 은 끝이 없는 정규식이나 문자열입니다! 루비는
+        당신이 이 방법에 대해 논쟁을하고 있다고 생각합니다. 일반 원칙 : BALANCED 공백을 사용하십시오. 양쪽 또는 둘 다.'
+      arguments: '<span class="code-inline">one -2</span> 는 Ruby가 당신이 메소드 1에 <span class="code-inline">-2</span>
         인자를 준다고 생각하게 만듭니다. <span class="code-inline">+2</span> 또는 <span class="code-inline">*
         2</span> 와 동일합니다. 다시 말하지만 : BALANCED 공백 문자, 양쪽 또는 둘 다 사용하지 마십시오.'
-      stubby: "&quot;Stabby&quot;lambdas (1.9+) 괄호는 선택 사항입니다. 부모가없는 인수 뒤에는 공백이 있어야합니다.
-        부모님 뒤의 공간, OK. 다시 부모님 앞 공간! 업데이트 : 2.0에서 수정되었습니다!"
+      stubby: "&quot;Stabby&quot;lambdas (1.9+) 괄호는 선택 사항입니다. 부모가 없는 인수 뒤에는 공백이 있어야 합니다.
+        괄호 뒤의 공간, OK. 다시 괄호 앞 공간! 업데이트 : 2.0에서 수정되었습니다!"
     onto:
       title: "@에!"
-      description: '노출 된 값이 임시 로컬 변수가됩니다! 해결책 : <span class="code-inline">@!</span>
+      description: '노출된 값이 임시 로컬 변수가 됩니다! 해결책 : <span class="code-inline">@!</span>
         (또는 &quot;self.&quot;또는 <span class="code-inline">attr_writer, attr_accessor</span>를
         사용 하십시오.) Java / C ++에서 사람들을 얻으십시오
-        . Python ( &quot;self&quot;도 필요합니다)이 아닙니다. &quot;당신은 그 변수를 계속 사용합니다. 나는 당신이
-        생각하는 것을 의미하지 않는다고 생각합니다.&quot; Inigo Montoya가 아닙니다.'
+        . Python ( &quot;self&quot;도 필요합니다)이 아닙니다. &quot;당신은 그 변수를 계속 사용한다면, 나는 당신이
+        의미를 생각하고 있지 않는다고 생각합니다.&quot; Inigo Montoya가 아닙니다.'
     variables:
-      title: 밖으로보십시오, 그것은 @@입니다!
+      title: 저걸 봐, 그것은 @@야!
       description: 빈칸 채우는 게 뭐야? 우리는 부모의 <span class="code-inline">@@ 값</span> 을 확인하기
         전에 변경하지 않았으며, Child는 전혀 변경하지 않았습니다! 아니면 우리? <span class="code-inline">@@ 변수</span>
         는 하위 클래스와 공유됩니다 - 존재하는 것이 아니라 변수 자체! 자녀의 <span class="code-inline">@@ 값을</span>
         선언하면 부모가 변경되고 부모의 변경된 Child&#39;s.ut를 포함하여 @@!
     initialize:
       title: init (ialize)를 사용하거나 사용하지 않고
-      description: 부모의 초기화는 자식이없는 경우에만 자동으로 실행됩니다. 그렇지 않으면 부모님을 불러서 도망쳐 야합니다.
+      description: 부모의 초기화는 자식이 없는 경우에만 자동으로 실행됩니다. 그렇지 않으면 부모님을 부르게되면 도망칩니다.
     superman:
       title: 수퍼맨 대 보이지 않는 남자
-      description: 인수 없음의 목록 <span class="code-inline">super</span> 빈 괄호를 <span class="code-inline">super</span>
-        명시 적 인수에있어 어떠한 인수를 보낼에 그 인수를 전송, 무엇을 사용 보냅니다 <span class="code-inline">super().</span>
+      description: 인수가 없는 목록 <span class="code-inline">super</span> 호출자가 <span class="code-inline">super</span>
+        명시적 인수에 있어 어떠한 인수를 보낼 때 NO 인수를 전송합니다. 빈 괄호를 사용하세요 <span class="code-inline">super().</span>
     regexp:
       title: 언제 끝날까요? (또는 시작 하시겠습니까?)
       description: '표준 정규식에서 <span class="code-inlne">^</span> 는 시작이고 <span class="code-inline">$</span>
         는 전체 문자열의 끝입니다. 루비의 정규 표현식은 기본적으로 여러 줄로되어 있기 때문에 : <span class="code-inline">^</span>
         는 시작이고 <span class="code-inline">$</span> 는 임의의 줄의 끝입니다! <span class="code-inline">\
         A</span> 는 시작이고 <span class="code-inline">\ Z</span> 는 전체 문자열의 끝입니다. (또는 \ z에
-        개행을 포함 시키면 ... 또 하나의 잡았다!)'
+        개행을 포함 시키면 ... 또 하나를 알았다!)'
     any:
-      title: 점점?
+      title: 점점 .any?
       description: '<span class="code-inline">.any?</span> &quot;어떤 요소?&quot;라는 뜻이 아닙니다!
         블록으로 : &quot;블록을 사실대로 만들까요?&quot;. 없이 : &quot;어떤 진리일까요?&quot; 암시적인 블록을 가짐 :
         <span class="code-inline">{ | element | element }</span> .'
     undef:
-      title: "(Un) Def Leppard"
-      description: '반복자에 전달 된 블록에서 선언 된 변수 (예 : 시간 또는 각각)는 각 반복의 상단에서 정의되지 않습니다! 반복자는
-        블록을 반복적으로 호출하므로 각 호출 후에 vars가 다시 범위를 벗어납니다. 내장 루핑 구문 (예 : while 또는 for)은 정상입니다.
+      title: "(Un)Def Leppard"
+      description: '반복자에 전달 된 블록에서 선언된 변수 (예 : 시간 또는 각각)는 각 반복의 상단에서 정의되지 않습니다! 반복자는
+        블록을 반복적으로 호출하므로 각 호출 후에 vars가 다시 범위를 벗어납니다. 내장 반복 구문 (예 : while 또는 for)은 정상입니다.
         (또는 블록 앞에 vars를 선언하십시오.)'
     freeze:
-      title: 프리즈 (Ar) 레이
-      description: 배열 (또는 해시)을 고정하면 포함 된 항목이 아닌 고정시킵니다. 문자열은 제자리에서 수정할 수 있습니다. 이렇게하면
-        고정 된 문자열 배열에서 지정된 슬롯을 수정할 수 있습니다.
+      title: Freeze (Ar)ray
+      description: 배열 (또는 해시)을 고정하면, 아이템이 아니라 포함된 항목을 고정시킵니다. 문자열은 제자리에서 수정할 수 있습니다. 이렇게하면
+        고정된 문자열 배열에서 지정된 슬롯을 수정할 수 있습니다.
     one_is_one:
       title: 1은 1 ... 그리고 이제까지 더 많을 것입니다!
-      description: 'Fixnum을 새로운 값으로 변경하면 새 오브젝트를 의미합니다. 그들은 제자리에서 수정할 수 없습니다! 따라서 Fixnum의
-        고정 배열을 수정할 수 없습니다. (Fixnums와 Integers는 시도 할 데모 방법이 없습니다). BTW : Fixnum의 <span
+      description: 'Fixnum을 새로운 값으로 변경하는건 새 오브젝트를 의미합니다. 그들은 제자리에서 수정할 수 없습니다! 따라서 Fixnum의
+        고정 배열을 수정할 수 없습니다. (Fixnums와 Integers는 시도할 데모 방법이 없습니다). 잠깐 : Fixnum의 <span
         class="code-inline">object_id</span> 는 <span class="code-inline">value * 2 + 1.</span>입니다'
     bang:
       title: "(~!에!)! ==?"
-      description: Bang은이 방법을 위험한 것으로 표시합니다. 왜? 종종 리시버를 수정할 수 있으며, non-modding non-bang
-        버전과 비교할 수 있습니다. NON-BANG 버전과 동일한 값을 반환하지 마십시오! 변경이 필요하지 않으면 많은 사람들이 반환하지 않습니다!
+      description: Bang은 이 방법을 위험한 것으로 표시합니다. 왜? 종종 리시버를 수정할 수 있으며, non-modding non-bang
+        버전과 비교할 수 있습니다. NON-BANG 버전과 동일한 값을 반환하지 마십시오! 변경이 필요하지 않으면 대부분이 반환하지 않습니다!
     array:
-      title: 새로운 Gotchas의 배열
-      description: object로 지정된 기본값은 각 슬롯에 대해 동일한 객체입니다! 하나를 돌연변이시키는 것은 모두에 대한 기본값을 변형시킵니다.
+      title: new의 배열 알기
+      description: object로 지정된 기본값은 각 슬롯에 대해 동일한 객체입니다! 하나를 변이시키는 것은 모두에 대한 기본값을 변형시킵니다.
         블록으로 주어지는 초기 값은 각 슬롯에 대해 개별적으로 평가됩니다. 이것을 사용하여 각각에 대해 새 vars를 만듭니다.
     hash:
       title: 그것의 해시 만들기
       description: '배열과 거의 동일한 문제 (및 솔루션). MORE GOTCHAS : 빈 슬롯에 액세스 할 때 새로운 객체를 만듭니다!
-        과도한 수의 새로운 객체를 생성 할 수 있습니다. 폐물 &quot;진짜&quot;내용 또는 카운트 (nil-checking, .size,
-        등등).'
+        과도한 수의 새로운 객체를 생성한다면, &quot;진짜&quot;내용 또는 갯수 (nil-checking, .size,
+        등등)를 확인하는걸 망칠 수 있습니다.'
     rescue:
       title: 나를 구하라, 선을 던져라, 나는 그것을 잡으려고 노력할 것이다!
       description: Ruby에서 throw 및 catch는 예외가 아닙니다! 그들은 깊이있는 중첩을 종료하기 위해 고급 흐름 제어입니다.
-        루비는 예외에 대한 인상 및 구조를 사용합니다.
+        루비 사용자들은 예외를 일으키거나 및 구조합니다.
     to_str:
       title: to_s VS to_str
       description: '<span class="code-inline">to_s</span> 는 모든 객체에 정의되며 항상 무언가를 반환합니다.
@@ -728,25 +728,26 @@ pages:
         class="code-inline">Symbol</span> 에는 <span class="code-inline">to_str</span>이
         있지만 <span class="code-inline">Array</span> 에는 없습니다. 따라서 작업중인 클래스가 <span class="code-inline">String</span>
         의 하위 클래스인지 또는 <span class="code-inline">String</span> 클래스의 하위 클래스인지에 대한 염려없이
-        오리 유형을 활용하려는 경우 <span class="code-inline">obj.is_a? (String)</span> 와 같은 대신
-        <span class="code-inline">obj.respond_to?(:to_str)</span> 를 사용할 수 있습니다 <span
-        class="code-inline">String</span> 아니.'
+        유효한 구문을 활용하려는 경우 <span class="code-inline">obj.is_a? (String)</span> 와 같은 것 대신
+        <span class="code-inline">obj.respond_to?(:to_str)</span> 를 <span
+        class="code-inline">String</span> 에 상관없이 사용할 수 있습니다.'
     missing:
       title: method_missing 및 respond_to_missing을 조정해야합니까?
       description: <span class="code-inline">method_missing</span>을 재정의 할 때는 <span class="code-inline">respond_to_missing</span>
-        을 재정의 해야합니다 게다가. method_missing을 사용하여 메소드
-        호출시 객체가 무엇인가를 반환하도록 할 때는 항상 respond_to_missing?을 다시 정의해야합니다. 당신이 그것을하지 않으면,
-        언뜻 보면 아무것도 깨지지 않을 것이지만, 결국 당신은 곤경에 처하게 될 것입니다. 다음 클래스를 고려하십시오.
-      respond_to: 'respond_to에 의존하는 코드 (보석 또는 본인)가 많이 있습니까? (좋은 이유로). respond_to_missing에
-        패치를 적용해야합니까? 게다가:'
+        또한 재정의 해야합니다. method_missing을 사용하여 메소드
+        호출 시 객체가 무엇인가를 반환하도록 할 때는 항상 respond_to_missing을  재정의해야 합니다. 그렇지 않으면,
+        언뜻 보면 문제가 없을 것이지만, 결국 당신은 곤경에 처하게 될 것입니다. 다음 클래스를 고려하십시오.
+      respond_to: 'respond_to에 의존하는 코드 (gems 또는 소유)가 많이 있습니까? (좋은 이유로). respond_to_missing에
+        패치 또한 적용해야합니까?'
     exception:
-      title: 예외가 아닌 StandardError에서 구조하기
-      description: 구출하지 마라 Exception, rescue StandardError Before 명시 적으로 구출하기 예외는 SyntaxError,
+      title: 예외가 아닌 StandardError로부터 구조하기
+      description: Exception을 구조하지 마세요. StandardError Before 명시적으로 구조하기 예외는 SyntaxError,
         LoadError, Interrupt와 같은 정상적으로 복구 할 수없는 오류조차도 구출 할 것이다. Exception 타입 한정자를 생략하면
-        Ruby는 StandardError 만 잡아낼 수 있습니다.
+        Ruby는 StandardError만 잡아낼 수 있습니다.
     private:
-      title: 개인 데이터는 실제로는 아니며 클래스 메소드와는 전혀 관련이 없습니다.
-      description: 루비에서 클래스 메소드를 비공개로 만드는 방법이 있습니다. 오류, 나는 <span class="code-inline">class << self</span> 구문을 사용하는 것을 의미합니다. 이러한 이상한 점은 인스턴스 싱글 톤을 클래스에 푸시하여 클래스 메소드를
+      title: 개인 데이터는 실제하지 않으며 클래스 메소드와는 전혀 관련이 없습니다.
+      description: 루비에서 클래스 메소드를 비공개로 만드는 방법이 있습니다. 
+	   나는 <span class="code-inline">class << self</span> 구문을 사용하는 것을 의미합니다. 이러한 이상한 점은 싱글톤 인스턴스를 클래스에 푸시하여 클래스 메소드를
         효과적으로 생성합니다.
     braces:
       title: 중괄호 대 do-end
@@ -758,24 +759,24 @@ pages:
       title: '모듈 Foo 밖에서 정의 된 Foo :: Bar 클래스는 Foo 내부에서 볼 수 없습니다.'
       description: 당신은 <span class="code-inline">module Something</span> 의 각 외관을 생각할 수 있습니다. <span
         class="code-inline">class Something</span> , <span class="code-inline">def something</span> 또는
-        뭔가 를 새로운 범위의 &quot;게이트웨이&quot;로 정의하십시오. 루비가
-        참조 된 이름의 정의를 검색 할 때, 현재 스코프 (메소드, 클래스 또는 모듈)를 먼저보고, &quot;게이트웨이&quot;와 검색을 포함하고있는
-        곳으로 되돌아 갈 곳을 찾지 못한다면 범위.
+        뭔가를 새로운 범위의 &quot;게이트웨이&quot;로 정의하십시오. 루비가
+        참조된 이름의 정의를 검색 할 때, 현재 스코프 (메소드, 클래스 또는 모듈)를 먼저보고, 만약 찾지 못한다면 각 &quot;게이트웨이&quot;를 포함하고있는
+        곳으로 되돌아거나 범위내에서 탐색하세요.
     credits: 코드와 기사는 리소스에서 가져온 것입니다.
   meta_programming:
     title: 메타 프로그래밍
-    description: 메타 프로그래밍은 다른 프로그램 (또는 그 자체)을 데이터로 쓰거나 조작하는 컴퓨터 프로그램을 작성하거나 그렇지 않으면
-      런타임에 수행 될 컴파일 시간에 작업의 일부를 수행하는 컴퓨터 프로그램을 작성하는 것입니다. 대부분의 경우 프로그래머는 모든 코드를 수동으로
-      작성하는 데 소요되는 시간과 동일한 시간 내에 더 많은 작업을 수행 할 수 있으며 재 컴파일없이 새로운 상황을 효율적으로 처리 할 수있는 유연성을
+    description: 메타 프로그래밍은 다른 프로그램 (또는 그 자체)을 데이터로 쓰거나 조작하는 컴퓨터 프로그램을 작성하거나, 그렇지 않으면
+      런타임에 수행 될 작업의 일부를 컴파일 시간에 수행하는 컴퓨터 프로그램을 작성하는 것입니다. 대부분의 경우 프로그래머는 모든 코드를 수동으로
+      작성하는 데 소요되는 시간과 동일한 시간 내에 더 많은 작업을 수행 할 수 있거나, 재 컴파일없이 새로운 상황을 효율적으로 처리할 수있는 유연성을
       프로그램에 제공합니다. 메타 프로그래밍은 런타임 동안 코드를 작성하여 사용자의 삶을 편하게 해주는 코드를 작성하는 것입니다.
     dynamic_dispatch:
-      title: 다이나믹 디스패치
+      title: 동적 디스패치
       description: <span class="code-inline">subject.public_send (message, * arguments)
         메시지</span> 를 보낼 수 있습니다.
     dynamic_method:
       title: 동적 방법
       description: '<span class="code-inline">define_method : method_name {메소드 본문이되는
-        블록}</span>'
+        블록}</span>을 동적으로 만드는 방법'
     ghost_methods:
       title: 고스트 메소드
       description: '&quot;고스트 메소드&quot;잡기 및 다른 메소드로 전달 가능하다. <span class="code-inline">method_missing</span>
@@ -785,21 +786,21 @@ pages:
       description: '예를 들어 <span class="code-inline">method_missing</span> 을 사용하여 들어오는
         메시지 (예 : <span class="code-inline">get_name</span> , <span class="code-inline">get_age</span>
         )를 구문 분석하고 <span class="code-inline">get (: data_type)</span> 과 같은 다른 메소드로 위임
-        할 <span class="code-inline">수 있습니다.</span> 여기서 <span class="code-inline">data_type</span>
-        은 <span class="code-inline">name</span> 또는 <span class="code-inline">: age</span>
-        입니다.'
-      more: (분석 후) <span class="code-inline">method_missing</span> 을 사용하여 성능 문제를 발견하면
+        할 <span class="code-inline">수 있습니다.</span> 예를들어 <span class="code-inline">data_type</span>
+        의 <span class="code-inline">name</span> 또는 <span class="code-inline">: age</span>
+        에서 말이죠.'
+      more: <span class="code-inline">method_missing</span> 을 사용하여 성능 문제를 (분석 후)발견하면
         처음에 &#39;method_missing&#39;에 의해 메시지가 수신 된 후에 &#39;동적 메소드&#39;기술을 활용하여 실제 메소드를
         생성 할 수 있습니다.
   solid_principles:
     good: 좋은!
     bad: 나쁜!
-    title: 확실한 원칙
+    title: SOLID 원칙
     description: 컴퓨터 프로그래밍에서 SOLID (단일 책임, Open-closed, Liskov 대체, 인터페이스 분리 및 종속성 반전)는
       Michael Feathers가 Robert C. Martin이 2000 년 초에 이름을 붙인 &quot;First Five Principles&quot;에
-      대해 소개 한 니모닉 약어입니다 객체 지향 프로그래밍 및 디자인의 5 가지 기본 원칙 이 원칙을 함께 적용하면 프로그래머가 유지 보수 및 확장이
-      용이 한 시스템을 더 많이 만들 수있게됩니다. SOLID의 원칙은 프로그래머가 읽기 쉽고 확장 할 수있을 때까지 소프트웨어의 소스 코드를 리팩터링하여
-      코드 냄새를 제거하기 위해 소프트웨어 작업을하는 동안 적용 할 수있는 지침입니다. 이것은 민첩하고 적응력있는 소프트웨어 개발의 전체 전략의
+      대해 소개 한 니모닉 약어입니다 객체 지향 프로그래밍 및 디자인의 5가지 기본 원칙 이 원칙을 함께 적용하면 프로그래머가 유지 보수 및 확장이
+      용이 한 시스템을 더 많이 만들 수있게됩니다. SOLID의 원칙은 프로그래머가 읽기 쉽고 확장할 수있을 때까지 소프트웨어의 소스 코드를 리팩터링하여
+      코드 냄새를 제거하기 위해 소프트웨어 작업을 하는동안 적용 할 수 있는 지침입니다. 이것은 민첩하고 적응력있는 소프트웨어 개발의 전체 전략의
       일부입니다.
     single:
       title: 단일 책임 원칙
