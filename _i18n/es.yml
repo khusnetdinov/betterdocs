@@ -242,7 +242,7 @@ pages:
           shell o en la ordenación rápida de 3 vías.
       merge_sort:
         title: Ordenamiento por mezcla
-        description: El ordenamiento por mezcla es muy predecible. Hace entre <span
+        description: 'El ordenamiento por mezcla es muy predecible. Hace entre <span
           class="code-inline">0.5lg (n)</span> y <span class="code-inline">lg (n)</span>
           comparaciones por elemento, y entre swaps de <span class="code-inline">lg
           (n)</span> y <span class="code-inline">1.5lg (n)</span> por elemento. Los
