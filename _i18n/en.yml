@@ -92,7 +92,7 @@ sidebar:
     submenus:
       - surprising
       - quotes
-      - twue #What is this word?
+      - twue #Is this a Ruby word?
       - symbols_and_strings
       - string_or_nothing
       - constants
@@ -132,9 +132,9 @@ sidebar:
     submenus:
       - single
       - open_close
-      - liskov #What is this word? Seems to be incorrect translation
+      - liskov
       - segregation
-      - di #What does this mean?
+      - di
   - title: "Become Ruby Meister" #Do you mean Become Ruby MASTER, or do you mean Meister? Master would be better English, Meister is made-up slang
     url: ruby_meister #See comment on line 138
   - title: Threads
@@ -175,7 +175,7 @@ pages:
         description: "From the comparison presented here, one might conclude that selection sort should never be used. It does not adapt to the data in any way (notice that the four animations above run in lockstep), so its runtime is always quadratic. However, selection sort has the property of minimizing the number of swaps. In applications where the cost of swapping items is high, selection sort very well may be the algorithm of choice."
       shell_sort:
         title: "Shell sort"
-        description: "The worst-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ..., which is what is used here, the time complexity is <span class=\"code-inline\">O(n<sup><sup>3</sup>&frasl;<sub>2</sub></sup>)</span>. For other increments, time complexity is known to be <span class=\"code-inline\">O(n<sup><sup>4</sup>&frasl;<sub>3</sub></sup>)</span> and even <span class=\"code-inline\">O(n·lg<sub>2</sub>(n))</span>. Neither the tight upper bounds on the time complexity nor the best increment sequence is known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adaptation is not as dramatic, because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are <span class=\"code-inline\">log<sub>3</sub>(n)</span> increments, so the time complexity for nearly-sorted data is <span class=\"code-inline\">O(n·log<sub>3</sub>(n))</span>. Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithms for some applications when the data to be sorted is not very large."
+        description: "The worst-case time complexity of shell sort depends on the increment sequence. For the increments 1 4 13 40 121 ..., which is what is used here, the time complexity is <span class=\"code-inline\">O(n<sup><sup>3</sup>&frasl;<sub>2</sub></sup>)</span>. For other increments, time complexity is known to be <span class=\"code-inline\">O(n<sup><sup>4</sup>&frasl;<sub>3</sub></sup>)</span> and even <span class=\"code-inline\">O(n·lg<sub>2</sub>(n))</span>. Neither the tight upper bounds on the time complexity nor the best increment sequence is known. Because shell sort is based on insertion sort, shell sort inherits insertion sort’s adaptive properties. The adaptation is not as dramatic, because shell sort requires one pass through the data for each increment, but it is significant. For the increment sequence shown above, there are <span class=\"code-inline\">log<sub>3</sub>(n)</span> increments, so the time complexity for nearly-sorted data is <span class=\"code-inline\">O(n·log<sub>3</sub>(n))</span>. Because of its low overhead, relatively simple implementation, adaptive properties, and sub-quadratic time complexity, shell sort may be a viable alternative to the <span class=\"code-inline\">O(n·lg(n))</span> sorting algorithms for some applications, when the data to be sorted is not very large."
       heap_sort:
         title: "Heap sort"
         description: "Heap sort is simple to implement, performs an <span class=\"code-inline\">O(n·lg(n))</span> in-place sort, but is not stable. The first loop, the <span class=\"code-inline\">Θ(n)</span> “heapify” phase, puts the array into heap order. The second loop, the <span class=\"code-inline\">O(n·lg(n))</span> “sort down” phase, repeatedly extracts the maximum and restores heap order. The sink function is written recursively for clarity. Thus, as shown, the code requires <span class=\"code-inline\">Θ(lg(n))</span> space for the recursive call stack. However, the tail recursion in sink() is easily converted to iteration, which yields the <span class=\"code-inline\">O(1)</span> space bound. Both phases are slightly adaptive, though not in any particularly useful manner. In the nearly-sorted case, the heapify phase destroys the original order. In the reversed case, the heapify phase is as fast as possible, since the array starts in heap order, but then the sort down phase is typical. In the few unique keys case, there is some speedup, but not as much as in shell sort or 3-way quicksort."
@@ -242,7 +242,7 @@ pages:
         as_linked_list: "Stack as linked list"
       queue:
         title: "Queue"
-        description: "A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class #is worth it to see they are implemented, and because other structures will inherit from this one.# An alternate implementation could be done using a linked list." #The text between the two #'s doesn't make clear sense. What is the meaning you want to say?
+        description: "A queue is a simple container-based structure that mimics a real-life queue (e.g. waiting in line at the bank). It is FIFO (first-in-first-out), meaning that when you retrieve items from the queue, they are returned in the order in which they entered. Ruby Arrays provide methods that make Queue implementation trivially easy, but having them named appropriately and contained in a convenience class !is worth it to see they are implemented, and because other structures will inherit from this one.! An alternate implementation could be done using a linked list." #The text between the two !'s doesn't make clear sense. What is the meaning you want to say?
         as_array: "Queue as array"
         as_linked_list: "Queue as linked list"
       deque:
@@ -293,7 +293,7 @@ pages:
         description: "In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method (either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes) rather than by calling a constructor."
       prototype:
         title: "Prototype pattern"
-        description: "The prototype pattern is a creational pattern along the lines of the factory pattern. The trick with the prototype is that you create new objects by copying a master object. Changes to that master object and all subsequent objects that you create !will go off into life! with a copy of the change." #Return here to fix the bounded part
+        description: "The prototype pattern is a creational pattern along the lines of the factory pattern. The trick with the prototype is that you create new objects by copying a master object. Changes to that master object and all subsequent objects that you create !will go off into life! with a copy of the change." #Phrase between the !'s is not very good English. What do you mean to say?
       singleton:
         title: "Singleton pattern"
         description: "Ensures a class only has one instance, and provides a global point of access to it. This is useful when exactly one object is needed to coordinate actions across the system. The concept is sometimes generalized to systems that operate more efficiently when only one object exists, or that restrict the instantiation to a certain number of objects."
@@ -347,7 +347,7 @@ pages:
         description: "In object-oriented design, the chain-of-responsibility pattern is a design pattern consisting of a source of command objects and a series of processing objects. Each processing object contains logic that defines the types of command objects that it can handle; the rest are passed to the next processing object in the chain. A mechanism also exists for adding new processing objects to the end of this chain."
       command:
         title: "Command pattern"
-        description: "The command pattern is a behavioral design pattern used to store the information necessary to call methods at a future time. The command is merely a set of actions wrapped in an object. With ruby, we can use Procs to do the same thing without the need to create a separate object. This is a good option when the action is simple and doesn't require saving state information, otherwise, a command class is the better option."
+        description: "The command pattern is a behavioral design pattern used to store the information necessary to call methods at a future time. The command is merely a set of actions wrapped in an object. With Ruby, we can use Procs to do the same thing without the need to create a separate object. This is a good option when the action is simple and doesn't require saving state information, otherwise, a command class is the better option."
       interpreter:
         title: "Interpreter pattern"
         description: "In computer programming, the interpreter pattern is a design pattern that specifies how to evaluate sentences in a language. The basic idea is to have a class for each symbol (terminal or nonterminal) in a specialized computer language. The syntax tree of a sentence in the language is an instance of the composite pattern and is used to evaluate (interpret) the sentence for a client."
@@ -430,7 +430,7 @@ pages:
       title: "String... or nothing!"
     constants:
       title: "Constants Aren't"
-      description: "Initial uppercase means a constant in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowing."
+      description: "Initial uppercase means a constant in Ruby. Try to change a constant. Ooooh you get a WARNING! BFD. Even freezing doesn't work for Fixnums. It does work for arrays (sort of) and most other objects... he said foreshadowing." #English is very difficult to understand in this line
     equals:
       title: "Some are more equal than others"
       description: "<span class=\"code-inline\">==</span> is the usual same value, <span class=\"code-inline\">.eql?</span> is value and class (1 is Fixnum, 1.0 is Float), <span class=\"code-inline\">.equal?</span> is same object. It's actually much hairier."
@@ -483,7 +483,7 @@ pages:
       description: "Changing Fixnum to a new value means a new object. They can't be modified in place! So, can’t modify a frozen Array of Fixnums. (Fixnums and Integers have no bang-methods to demo trying with). BTW: a Fixnum's <span class=\"code-inline\">object_id</span> is <span class=\"code-inline\">value * 2 + 1</span>"
     bang:
       title: "(to! || ! to!) == ?"
-      description: "Bang marks the method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING THE SAME VALUE AS NON-BANG VERSION! Many return null if no change needed!"
+      description: "Bang marks the method as dangerous. Why? Often, may modify receiver, vs non-modding non-bang version. DO NOT RELY ON THEM RETURNING THE SAME VALUE AS NON-BANG VERSION! Many return null if no change needed!" #English not very clear in this line
     array:
       title: "An Array of New Gotchas"
       description: "Default value given as object is the same object for each slot! Mutating one mutates default for all. Initial value given as block gets evaluated separately for each slot. Use this to create new vars for each."
@@ -495,7 +495,7 @@ pages:
       description: "In Ruby, throw and catch are NOT for exceptions! They are advanced flow control, to exit deep nesting. Ruby uses raise and rescue for exceptions."
     to_str:
       title: "to_s VS to_str"
-      description: "<span class=\"code-inline\">to_s</span> is defined on every object and will always return something. <span class=\"code-inline\">to_str</span> is only defined on objects that are string-like. For example, <span class=\"code-inline\">Symbol</span> has <span class=\"code-inline\">to_str</span> but <span class=\"code-inline\">Array</span> does not. Thus, you can use <span class=\"code-inline\">obj.respond_to?(:to_str)</span> instead of something like <span class=\"code-inline\">obj.is_a?(String)</span> if you want to take advantage of duct-taping without worrying about whether the class you're working with is a subclass of <span class=\"code-inline\">String</span> or not."
+      description: "<span class=\"code-inline\">to_s</span> is defined on every object and will always return something. <span class=\"code-inline\">to_str</span> is only defined on objects that are string-like. For example, <span class=\"code-inline\">Symbol</span> has <span class=\"code-inline\">to_str</span> but <span class=\"code-inline\">Array</span> does not. Thus, you can use <span class=\"code-inline\">obj.respond_to?(:to_str)</span> instead of something like <span class=\"code-inline\">obj.is_a?(String)</span> if you want to take advantage of duck typing without worrying about whether the class you're working with is a subclass of <span class=\"code-inline\">String</span> or not."
     missing:
       title: "Need to coordinate method_missing and respond_to_missing?"
       description: "When overriding <span class=\"code-inline\">method_missing</span>, remember to override <span class=\"code-inline\">respond_to_missing?</span> as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing?. If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:"
@@ -511,7 +511,7 @@ pages:
       description: "The general convention is to use <span class=\"code-inline\">do .. end</span> for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that <span class=\"code-inline\">{}</span> has a higher precedence than <span class=\"code-inline\">do .. end</span>, so keep that in mind when deciding what you want to use."
     module:
       title: "class Foo::Bar, defined outside Module Foo, won’t see inside Foo"
-      description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class, or module), and if it isn’t found there, it will go back through each containing \"gateway\" and search the scope there."
+      description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced, it first looks in the current scope (the method, class, or module), and if it isn’t found there, it will go back through each containing \"gateway\" and search the scope there."
     credits: "Code and articles were taken from resources:"
   meta_programming:
     title: "Metaprogramming"
@@ -547,7 +547,7 @@ pages:
     segregation:
       title: "Dependency Inversion Principle"
       description: "The principle states that a client should not be forced to depend on methods that it does not use. In this example, there are Computer, Programmer, and Technician classes. Both Programmer and Technician use the Computer in a different way. The programmer uses the computer for typing, but the technician knows how to change the computer hard drive. What Interface Segregation Principle (ISP) enforces is that one class should not depend on methods it does not use. In our case, the Programmer is unnecessarily coupled to the Computer#change_hard_drive method because it does not use it, but the state changes that this method enforces can affect the Programmer. Let's refactor the code to obey the LSP."
-      after: "After this refactor the Technician uses a different object from the type ComputerInternals which is isolated from the state of the Computer. The state of the Computer object can be influenced by the Programmer, but the changes won't affect the Technician in any way."
+      after: "After this refactor, the Technician uses a different object from the type ComputerInternals which is isolated from the state of the Computer. The state of the Computer object can be influenced by the Programmer, but the changes won't affect the Technician in any way."
     di:
       title: "Dependency Inversion Principle"
       description: "The Dependency Inversion Principle has to do with high-level (think business logic) objects not depending on low-level (think database querying and IO) implementation details. This can be achieved with duck typing and the Dependency Inversion Principle. Often, this pattern is used to achieve the Open/Closed Principle that we discussed above. In fact, we can even reuse that same example as a demonstration of this principle. Now there is a formatter class, but I've hardcoded it on the Report class, thus creating a dependency from the Report to the JSONFormatter. Since the Report is a more abstract (high-level) concept than the JSONFormatter, we're effectively breaking the DIP."
@@ -562,7 +562,7 @@ pages:
     gil:
       title: "GIL - Global Interpreter Lock"
       description: "MRI has a global interpreter lock (GIL). It's a lock around the execution of Ruby code. This means that in a multi-threaded context, only one thread can execute Ruby code at any one time. So if you have 8 threads busily working on an 8-core machine, only one thread and one core will be busy at any given time. The GIL exists to protect Ruby internals from race conditions that could corrupt data. There are caveats and optimizations, but this is the gist."
-      example: "This simple fact is what makes threads so powerful, and also what makes them difficult to work with. I've already given you an idea of why threads are good; here's a simple program to illustrate their difficulty. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in an array. Note that different ruby can show a different result. GIL exist only in MRI ruby."
+      example: "This simple fact is what makes threads so powerful, and also what makes them difficult to work with. I've already given you an idea of why threads are good; here's a simple program to illustrate their difficulty. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in an array. Note that different Ruby can show a different result. GIL exist only in MRI Ruby."
     mutex:
       title: "Mutex - Mutual Execution"
       description: "Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. In other words, they help bring some order, and some guarantees, to the world of multi-threaded chaos. The name 'mutex' is shorthand for 'mutual exclusion.' If you wrap some section of your code with a mutex, you guarantee that no two threads can enter that section at the same time. Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code." #Deleted repitition in definition
@@ -587,14 +587,14 @@ pages:
     credits: "Code and articles were taken from resources:"
   ruby_meister:
     title: "Become Ruby Meister" #Do you mean Master? Meister could work, but it is slang
-    description: "In this talk, we'll examine the long journey from being a Ruby novice to achieving true Ruby mastery and will try to shorten it a bit for you by sharing some important insights. A Master Rubyist has a great theoretical foundation, relies on an extensive toolbox, has a deep understanding of the core values and principles of Ruby, and is always honing their skills. Perhaps you're telling yourself \" Wow, this is pretty vague!\", but if you attend this session, I promise that you'll be enlightened, amused, and you'll totally enjoy it! Sound good? Great books will be part of the resources I'll suggest to people to level-up their skills."
+    description: "In this talk, we'll examine the long journey from being a Ruby novice to achieving true Ruby mastery and will try to shorten it a bit for you by sharing some important insights. Master Rubyists have a great theoretical foundation, rely on an extensive toolbox, have a deep understanding of the core values and principles of Ruby, and are always honing their skills. Perhaps you're telling yourself \" Wow, this is pretty vague!\", but if you attend this session, I promise that you'll be enlightened, amused, and you'll totally enjoy it! Sound good? Great books will be part of the resources I'll suggest to people to level-up their skills."
     video: "The Long Journey to Ruby Mastery by Bozhidar Batsov."
     computer_science_fundamentals:
       title: "Computer Science Fundamentals"
       articles:
         - name: 'inside_machine'
           title: "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture"
-          description: "Computers perform countless tasks ranging from the business-critical to the recreational, but regardless of how differently they may look and behave, they're all amazingly similar in basic their basic functions. Once you understand how the microprocessor - or central processing unit (CPU) — works, you'll have a firm grasp of the fundamental concepts at the heart of all modern computing."
+          description: "Computers perform countless tasks ranging from the business-critical to the recreational, but regardless of how differently they may look and behave, they're all amazingly similar in their basic functions. Once you understand how the microprocessor - or central processing unit (CPU) — works, you'll have a firm grasp of the fundamental concepts at the heart of all modern computing."
           link: "https://www.amazon.com/gp/product/1593271042/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593271042&linkCode=as2&tag=khusnetdinov-20&linkId=f5f70df1b6ba3d39b4b114fe6dc617e1"
         - name: "code"
           title: "Code: The Hidden Language of Computer Hardware and Software"
@@ -610,7 +610,7 @@ pages:
           link: "https://www.amazon.com/gp/product/0262510871/ref=as_li_tl?ie=UTF8&tag=khusnetdinov-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0262510871&linkId=6e3898deeebdc0194f4f3604c09e84c4"
         - name: "design_programms"
           title: "How to Design Programs: An Introduction to Programming and Computing"
-          description: "This introduction to programming places computer science in the core of a liberal arts education. Unlike other introductory books, it focuses on the program design process. This approach fosters a variety of skills―critical reading, analytical thinking, creative synthesis, and attention to detail that are important for everyone, not just future computer programmers. The book exposes readers to two fundamentally new ideas. First, it presents program design guidelines that show the reader how to analyze a problem statement; how to formulate concise goals; how to make up examples; how to develop an outline of the solution, based on the analysis; how to finish the program; and how to test."
+          description: "This introduction to programming places computer science in the core of a liberal arts education. Unlike other introductory books, it focuses on the program design process. This approach fosters a variety of skills (critical reading, analytical thinking, creative synthesis, and attention to detail) that are important for everyone, not just future computer programmers. The book exposes readers to two fundamentally new ideas. First, it presents program design guidelines that show the reader how to analyze a problem statement; how to formulate concise goals; how to make up examples; how to develop an outline of the solution, based on the analysis; how to finish the program; and how to test."
           link: "https://www.amazon.com/gp/product/0262062186/ref=as_li_tl?ie=UTF8&tag=khusnetdinov-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0262062186&linkId=1fa435d64a33dfa781508818d2579677"
         - name: "algorithm_manual"
           title: "The Algorithm Design Manual"
@@ -637,7 +637,7 @@ pages:
           link: "https://www.amazon.com/gp/product/B07L6HSHFB/ref=as_li_tl?ie=UTF8&tag=khusnetdinov-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B07L6HSHFB&linkId=ea24df33da6c3ea5c32f34fe3848c3cc"
         - name: "domain_driven"
           title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
-          description: "This is a serious book about domain modeling in software design. Software development society lives from one wave of hype to another. OOP, patterns, XP, TDD, CI/CD, BigData, DevOps - this is just to name a few. This book originated from the golden age of OOP. The author admits that the object-oriented paradigm is not the only one available but the bias toward OOP/OOD is obvious (and justifiable). This book tells about how to do the modeling of core software components “the right way”."
+          description: "This is a serious book about domain modeling in software design. Software development society lives from one wave of hype to another. OOP, patterns, XP, TDD, CI/CD, BigData, DevOps - this is just to name a few. This book originated from the golden age of OOP. The author admits that the object-oriented paradigm is not the only one available, but the bias toward OOP/OOD is obvious (and justifiable). This book tells about how to do the modeling of core software components “the right way”."
           link: "https://www.amazon.com/gp/product/8131724468/ref=as_li_tl?ie=UTF8&tag=khusnetdinov-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=8131724468&linkId=8c60c936dfb1dbd0ffa827cdeca40983"
     ruby:
       title: "Know you lang"
@@ -674,8 +674,8 @@ pages:
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: "What is Better Docs"
-    description: "This website is a web adaptation Github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated into the Chinese language. Better Docs allows you to quickly find a lot of best practice that was collected in one repository. Just use this repo like the reference or interview preparation resource."
+    description: "This website is a web adaptation Github repository <a href=\"https://github.com/khusnetdinov/ruby.fundamental\">Ruby.Fundamental</a> which collected a lot of stars and was translated into the Chinese language. Better Docs allows you to quickly find a lot of best practices collected into one repository. Just use this repo like the reference or interview preparation resource."
     oss:
       title: "Thanks to Open Source"
-      description: "Better Docs was created while working and finding out about best practices and knowledge about ruby, an open source engineering for the web development applications written in Ruby." #Not sure what the 2nd half of the sentence (after the comma) is referring to
+      description: "Better Docs was created while working and finding out about best practices and knowledge about Ruby, an open source engineering for the web development applications written in Ruby." #Not sure what the 2nd half of the sentence (after the comma) is referring to
       thanks: "If Better Docs helped you in any way, think about giving us a Star on <a href=\"https://github.com/howtohireme/ruby.fundamental\">Github</a> (it helps us to reach more developers) or contributing to our projects."
