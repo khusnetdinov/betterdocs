@@ -82,6 +82,7 @@ exclude_from_localizations: [
 ]
 
 allowed: [
+  'ads.txt',
   'css',
   'fonts',
   'images',
