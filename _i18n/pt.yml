@@ -1,8 +1,8 @@
 head:
   title: BetterDocs
   metatags:
-    description: Programação fundamental com exemplos e referências rubi. Abrange
-      tópicos, princípios SOLID, padrões de design, estruturas de dados, algoritmos.
+    description: Programação fundamental com exemplos e referências em Rubi. Abrange
+      tópicos, princípios SOLID, padrões de design, estruturas de dados e algoritmos.
     keywords: Documentos melhores, Ruby, Fundamentals, Fundamentos de programação
       Ruby. Ruby gotchas, programação funcional, metaprogramação, threads, princípios
       sólidos Ruby com exemplos, padrões de projeto Ruby com exemplos, algoritmos
@@ -10,7 +10,7 @@ head:
 
 content:
   menu:
-    open: Abra o Menu
+    open: Abrir Menu
     close: Fechar Menu
 
 sidebar:
@@ -139,7 +139,7 @@ sidebar:
       - liskov
       - segregation 
       - di
-  - title: Torne-se Ruby Meister
+  - title: Torne-se Mestre em Ruby
     url: ruby_meister
   - title: Tópicos
     url: threads
@@ -962,8 +962,8 @@ pages:
     bang:
       title: "(para! ||! para!) ==?"
       description: O Bang marca o método como perigoso. Por quê? Muitas vezes, pode
-        modificar receptor, vs não-modding versão não-bang. NÃO CONFIE NELES QUE RETORRAM
-        DO MESMO VALOR COMO VERSÃO NÃO BANG! Muitos retornam nulo se nenhuma mudança
+        modificar receptor, vs não modificado versão não-bang. NÃO CONFIE NELES QUE RETORNAM
+        O MESMO VALOR COMO VERSÃO NÃO BANG! Muitos retornam nulo se nenhuma mudança
         for necessária!
     array:
       title: Uma matriz de novas armadilhas
@@ -1414,7 +1414,7 @@ pages:
             sobre como fazer a modelagem dos principais componentes de software “do
             jeito certo”.
     ruby:
-      title: Conheço você lang
+      title: Conheço você 'lang'
       articles:
         - name: well_grounded
           title: O Rubiísta Bem Fundamentado
@@ -1462,15 +1462,15 @@ pages:
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: O que é o Better Docs?
-    description: Este site é de adaptação web do repositório Github <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
-      que recolheu um monte de estrelas e foi traduzido para o idioma chinês. O Better
+    description: Este site é uma adaptação web do repositório Github <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
+      que recolheu um monte de estrelas e foi traduzido do mandarim. O Better
       Docs permite que você encontre rapidamente muitas práticas recomendadas que foram
       coletadas em um repositório. Só você esta repo como o recurso de referência ou
       preparação para entrevistas.
     oss:
       title: Graças ao Open Source
-      description: O Better Docs foi criado enquanto trabalhava e descobriu as melhores
-        práticas e conhecimento sobre o ruby, uma engenharia de código aberto para os
+      description: O Better Docs foi criado enquanto trabalhava e descobriu-se as melhores
+        práticas e conhecimento sobre o Ruby, uma engenharia de código aberto para os
         aplicativos de desenvolvimento da Web escritos em Ruby.
       thanks: Se o Better Docs ajudou você de alguma forma, pense em nos dar uma estrela
         no <a href="https://github.com/howtohireme/ruby.fundamental">Github</a> (isso
