@@ -3,14 +3,14 @@ head:
   metatags:
     description: Lập trình cơ bản với các ví dụ và tài liệu tham khảo ruby. Nó bao
       gồm các chủ đề, nguyên tắc RẮN, các mẫu thiết kế, cấu trúc dữ liệu, thuật toán.
-    keywords: Tài liệu tốt hơn, Ruby, Nguyên tắc cơ bản, Nguyên tắc lập trình Ruby.
+    keywords: Better Docs, Ruby, Nguyên tắc cơ bản, Nguyên tắc lập trình Ruby.
       Ruby gotchas, Lập trình hàm, Lập trình siêu dữ liệu, Chủ đề, Nguyên tắc vững
       chắc của Ruby với các ví dụ, mẫu thiết kế Ruby với các ví dụ, thuật toán Ruby
       với các ví dụ, cấu trúc dữ liệu Ruby với các ví dụ.
 
 content:
   menu:
-    open: Mở thực đơn
+    open: Mở Menu
     close: Đóng Menu
 sidebar:
   a: 
@@ -177,39 +177,39 @@ pages:
     sorting:
       title: Sắp xếp
       description: Thuật toán sắp xếp là một thuật toán đặt các phần tử của danh sách
-        theo một thứ tự nhất định. Các đơn hàng được sử dụng nhiều nhất là thứ tự số
+        theo một thứ tự nhất định. Các thứ tự được sử dụng nhiều nhất là thứ tự số
         và thứ tự từ điển. Sắp xếp hiệu quả là rất quan trọng để tối ưu hóa việc sử
         dụng các thuật toán khác (như thuật toán tìm kiếm và hợp nhất) yêu cầu dữ liệu
         đầu vào phải nằm trong danh sách được sắp xếp; nó cũng thường hữu ích cho việc
-        chuẩn hóa dữ liệu và tạo ra đầu ra có thể đọc được của con người.
+        chuẩn hóa dữ liệu và tạo ra đầu ra có thể đọc được.
       bubble_sort:
-        title: Sắp xếp bong bóng
-        description: Sắp xếp bong bóng có nhiều thuộc tính giống như sắp xếp chèn, nhưng
+        title: Bubble sort - Sắp xếp nổi bọt
+        description: Sắp xếp nổi bọt có nhiều thuộc tính giống như sắp xếp chèn, nhưng
           có chi phí cao hơn một chút. Trong trường hợp dữ liệu gần như được sắp xếp,
-          sắp xếp bong bóng mất <span class="code-inline time">O(n)</span> , nhưng
+          sắp xếp nổi bọt mất <span class="code-inline time">O(n)</span> , nhưng
           yêu cầu ít nhất 2 lần đi qua dữ liệu (trong khi sắp xếp chèn yêu cầu nhiều
           hơn 1 lần)
       insertion_sort:
-        title: Sắp xếp chèn
+        title: Insertion sort - Sắp xếp chèn
         description: Mặc dù nó là một trong những thuật toán sắp xếp cơ bản với thời
           gian trong trường hợp xấu nhất <span class="code-inline">O(n<sup>2</sup>)</span>,
           sắp xếp chèn là thuật toán được lựa chọn khi dữ liệu gần như được
-          sắp xếp (vì nó thích nghi) hoặc khi kích thước sự cố nhỏ (vì nó nhỏ có chi
+          sắp xếp (vì nó thích nghi) hoặc khi kích thước vấn đề nhỏ (vì nó nhỏ có chi
           phí thấp). Vì những lý do này và vì nó cũng ổn định, sắp xếp chèn thường được
           sử dụng làm trường hợp cơ sở đệ quy (khi kích thước bài toán nhỏ) cho các
           thuật toán sắp xếp phân chia và chinh phục trên cao hơn, chẳng hạn như sắp
           xếp hợp nhất hoặc sắp xếp nhanh.
       selection_sort:
-        title: Sắp xếp lựa chọn
+        title: Selection Sort - Sắp xếp lựa chọn
         description: Từ so sánh được trình bày ở đây, người ta có thể kết luận rằng
-          không bao giờ nên sử dụng loại lựa chọn. Nó không thích ứng với dữ liệu theo
+          không bao giờ nên sử dụng sắp xếp lựa chọn. Nó không thích ứng với dữ liệu theo
           bất kỳ cách nào (lưu ý rằng bốn hình động ở trên chạy theo bước khóa), vì
           vậy thời gian chạy của nó luôn luôn là bậc hai. Tuy nhiên, sắp xếp lựa chọn
           có đặc tính giảm thiểu số lượng giao dịch hoán đổi. Trong các ứng dụng có
           chi phí hoán đổi vật phẩm cao, sắp xếp lựa chọn rất tốt có thể là thuật toán
           được lựa chọn.
       shell_sort:
-        title: Sắp xếp vỏ
+        title: Shell sort - Sắp xếp vỏ
         description: Độ phức tạp thời gian trong trường hợp xấu nhất của sắp xếp vỏ
           phụ thuộc vào trình tự tăng dần. Đối với số gia 1 4 13 40 121 ..., đó là những
           gì được sử dụng ở đây, độ phức tạp thời gian là
@@ -230,7 +230,7 @@ pages:
           thi cho thuật toán sắp xếp <span class="code-inline">O(n·lg(n))</span>
           cho một số ứng dụng khi sắp xếp dữ liệu không lớn lắm
       heap_sort:
-        title: Sắp xếp đống
+        title: Heap sort - Sắp xếp đống
         description: Sắp xếp đống đơn giản để thực hiện, thực hiện sắp xếp tại chỗ <span
           class="code-inline">O (n · lg (n))</span> , nhưng không ổn định. Vòng lặp
           đầu tiên, giai đoạn heapify của “ <span class="code-inline">(n)</span> , đặt
@@ -247,8 +247,8 @@ pages:
           Trong một vài trường hợp phím duy nhất, có một số tăng tốc nhưng không nhiều
           như trong sắp xếp shell hoặc quicksort 3 chiều.
       merge_sort:
-        title: Sáp nhập
-        description: 'Hợp nhất sắp xếp là rất dễ đoán. Nó tạo ra sự so sánh giữa <span
+        title: Merge sort - Sắp xếp hợp nhất
+        description: 'Sắp xếp hợp nhất là rất dễ đoán. Nó tạo ra sự so sánh giữa <span
           class="code-inline">0,5lg (n)</span> và <span class="code-inline">lg (n)</span>
           cho mỗi phần tử và giữa các lần hoán đổi <span class="code-inline">lg (n)</span>
           và <span class="code-inline">1,5lg (n)</span> cho mỗi phần tử. Các cực tiểu
@@ -266,7 +266,7 @@ pages:
           hạn như sắp xếp bên ngoài khi không có thêm <span class="code-inline">Θ (n)</span>
           .'
       quick_sort:
-        title: Sắp xếp nhanh chóng
+        title: Quick sort - Sắp xếp nhanh chóng
         description: Khi được thực hiện cẩn thận, quicksort mạnh mẽ và có chi phí thấp.
           Khi không cần một loại ổn định, quicksort là một loại mục đích chung tuyệt
           vời - mặc dù phiên bản phân vùng 3 chiều luôn luôn được sử dụng thay thế.
@@ -1457,18 +1457,18 @@ pages:
       - name: 'Toptal: 9 câu hỏi phỏng vấn về Ruby cần thiết'
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
-    title: Tài liệu tốt hơn là gì
+    title: Better Docs là gì
     description: Trang web này là kho lưu trữ web Github <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Funduel</a>
-      , trang web đã thu thập rất nhiều ngôi sao và được dịch sang tiếng Trung Quốc.
-      Tài liệu tốt hơn cho phép bạn nhanh chóng tìm thấy nhiều thực tiễn tốt nhất được
-      thu thập trong một kho lưu trữ. Chỉ cần bạn repo này như tài liệu chuẩn bị tham
+      , trang web đã thu thập rất nhiều ngôi sao và được dịch sang nhiều ngôn ngữ.
+      Better Docs cho phép bạn nhanh chóng tìm thấy nhiều thực tiễn tốt nhất được
+      thu thập trong một kho lưu trữ. Bạn có thể dùng repo này như tài liệu chuẩn bị tham
       khảo hoặc phỏng vấn.
     oss:
-      title: Cảm ơn nguồn mở
+      title: Cảm ơn Nguồn mở
       description: Better Docs được tạo ra trong khi làm việc và tìm hiểu về các thực
         tiễn và kiến thức tốt nhất về ruby, một kỹ thuật nguồn mở cho các ứng dụng phát
         triển web được viết bằng Ruby.
-      thanks: Nếu Better Docs giúp bạn bằng mọi cách, hãy nghĩ đến việc cho chúng tôi
+      thanks: Nếu bạn thấy Better Docs có ích, hãy nghĩ đến việc cho chúng tôi
         một Ngôi sao trên <a href="https://github.com/howtohireme/ruby.fundamental">Github</a>
-        (nó giúp chúng tôi tiếp cận nhiều nhà phát triển hơn) hoặc đóng góp cho các
+        (nó giúp chúng tôi tiếp cận được nhiều nhà phát triển hơn) hoặc đóng góp cho các
         dự án của chúng tôi.
