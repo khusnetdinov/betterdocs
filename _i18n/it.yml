@@ -1,12 +1,12 @@
 head:
   title: BetterDocs
   metatags:
-    description: Programmazione fondamentale con esempi e riferimenti di rubini. Copre
-      discussioni, principi SOLIDI, schemi di progettazione, strutture dati, algoritmi.
-    keywords: Migliori documenti, fondamentali di programmazione Ruby, Fundamentals,
+    description: Fondamenti di programmazione con esempi in Ruby. Tratta
+      i thread, principi SOLID, pattern di design, strutture di dati, algoritmi.
+    keywords: Migliori documenti, fondamenti di programmazione Ruby, Fundamentals,
       Ruby. Trucchi Ruby, Programmazione funzionale, Metaprogrammazione, Thread, Principi
-      solidi Ruby con esempi, Modelli di design Ruby con esempi, Algoritmi di Ruby
-      con esempi, Strutture di dati Ruby con esempi.
+      solid Ruby con esempi, Modelli di design Ruby con esempi, Algoritmi Ruby
+      con esempi, Strutture di dati in Ruby con esempi.
 
 content:
   menu:
@@ -30,7 +30,7 @@ sidebar:
         submenus:
           - binary_search
           - knuth_moriss_pratt_search
-  - title: Strutture dati
+  - title: Strutture di dati
     url: data_structures
     submenus:
       - key: axioms
@@ -55,7 +55,7 @@ sidebar:
           - b_tree
           - binary_heap
 
-  - title: Modelli di progettazione
+  - title: Pattern di Design
     url: design_patterns
     submenus:
       - key: creational
@@ -123,7 +123,7 @@ sidebar:
       - private
       - braces
       - module
-  - title: Domande di intervista
+  - title: Domande dei colloqui di lavoro
     url: interview_questions
   - title: Meta Programmazione
     url: meta_programming
@@ -131,7 +131,7 @@ sidebar:
       - dynamic_dispatch
       - dynamic_method
       - dynamic_proxies
-  - title: Principi solidi
+  - title: Principi SOLID
     url: solid_principles
     submenus:
       - single
@@ -153,18 +153,18 @@ sidebar:
 
 pages:
   wiki: Leggi wiki
-  credits: Titoli di coda
+  credits: Crediti
   page404:
     title: Pagina non trovata :(
     description: La pagina richiesta non è stata trovata.
   page500:
-    title: "Something was going wrong :("
+    title:  "Qualcosa è andato storto :("
   algorithms:
     title: algoritmi
     complexity:
       best: Migliore
-      average: Media
-      worst: Peggio
+      average: Medio
+      worst: Peggiore
     sorting:
       title: Ordinamento
       description: Un algoritmo di ordinamento è un algoritmo che mette gli elementi
@@ -178,28 +178,28 @@ pages:
         title: Bubble sort
         description: Bubble sort ha molte delle stesse proprietà dell&#39;insertion
           sort, ma ha un overhead leggermente superiore. Nel caso di dati quasi ordinati,
-          l&#39;ordinamento di bolle richiede <span class="code-inline time">O(n)</span>
-          , ma richiede almeno 2 passaggi attraverso i dati (mentre l&#39;ordinamento
-          di inserimento richiede qualcosa di più simile a 1 passaggio).
+          il bubble sort richiede <span class="code-inline time">O(n)</span>
+          , ma richiede almeno 2 passaggi attraverso i dati (mentre l&#39;insertion sort
+           richiede qualcosa di più simile a 1 passaggio).
       insertion_sort:
-        title: Inserimento sort
-        description: Sebbene sia uno degli algoritmi di ordinamento elementare con <span
-          class="code-inline">O(n<sup>2</sup>)</span> tempo peggiore, l&#39;ordinamento
-          di inserimento è l&#39;algoritmo di scelta quando i dati sono quasi ordinati
+        title: Inserton sort
+        description: Sebbene sia uno degli algoritmi di ordinamento elementare con il caso pessimo <span
+          class="code-inline">O(n<sup>2</sup>)</span>, l&#39;insertion sort
+           è l&#39;algoritmo da scegliere quando i dati sono quasi ordinati
           (perché è adattivo) o quando la dimensione del problema è piccola (perché
-          ha un sovraccarico basso). Per questi motivi, e poiché è anche stabile, l&#39;ordinamento
-          di inserzione viene spesso utilizzato come caso base ricorsivo (quando la
-          dimensione del problema è piccola) per algoritmi di ordinamento over-divise
-          overhead più elevati, come l&#39;unisci sort o l&#39;ordinamento rapido.
+          ha un overhead basso). Per questi motivi, e poiché è anche stabile, l&#39;
+          insertion sort viene spesso utilizzato come caso base ricorsivo (quando la
+          dimensione del problema è piccola) per algoritmi di ordinamento divide-and-conquer con
+          overhead più elevati, come il merge sort o il quick sort.
       selection_sort:
-        title: Selezione Ordina
-        description: Dal confronto presentato qui, si potrebbe concludere che l&#39;ordinamento
-          di selezione non dovrebbe mai essere usato. Non si adatta in alcun modo ai
+        title: Selection sort
+        description: Dal confronto presentato qui, si potrebbe concludere che il selection
+          sort non dovrebbe mai essere usato. Non si adatta in alcun modo ai
           dati (si noti che le quattro animazioni di cui sopra sono eseguite in sequenza),
-          quindi il suo tempo di esecuzione è sempre quadratico. Tuttavia, l&#39;ordinamento
-          di selezione ha la proprietà di ridurre al minimo il numero di scambi. Nelle
-          applicazioni in cui il costo dello scambio di articoli è elevato, la selezione
-          sort molto bene può essere l&#39;algoritmo di scelta.
+          quindi il suo tempo di esecuzione è sempre quadratico. Tuttavia, il selection
+          sort ha la proprietà di ridurre al minimo il numero di scambi. Nelle
+          applicazioni in cui il costo dello scambio di elementi è elevato, il selection
+          sort può essere l&#39;algoritmo migliore.
       shell_sort:
         title: Shell sort
         description: La complessità temporale del caso peggiore dell&#39;ordinamento
