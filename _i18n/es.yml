@@ -829,7 +829,7 @@ pages:
   gotchas:
     title: Gotchas
     description1: La mayoría de los principiantes de Ruby on Rails se entusiasman con
-      el marco y comienzan a crear aplicaciones sin ningún conocimiento del idioma.
+      el framework y comienzan a crear aplicaciones sin ningún conocimiento del idioma.
       Y esa es la magia de RoR.
     description2: En algún momento las cosas empiezan a ponerse serias. Algunos toman
       tiempo y esfuerzo para explorar los secretos sucios de Ruby on Rails, mientras
@@ -873,7 +873,7 @@ pages:
       title: Cadena ... o nada!
     constants:
       title: Constantes no son
-      description: Mayúscula inicial significa constante, en rubí. Intenta cambiar una
+      description: Mayúscula inicial significa constante, en Ruby. Intenta cambiar una
         constante. Ooooh tienes una ADVERTENCIA! BFD. Incluso la congelación no funciona
         para Fixnums. Funciona para matrices (más o menos) y para la mayoría de los
         otros objetos ... dijo prefigurando.
@@ -1197,7 +1197,7 @@ pages:
         qué los hilos son buenos; Aquí hay un programa simple para ilustrar su dificultad.
         Aquí puede ver que tenemos <span class="code-inline">10 * 10000</span> elementos
         en matriz. Tenga en cuenta que ruby diferente puede mostrar un resultado diferente.
-        GIL existe sólo en rubí MRI.
+        GIL existe sólo en Ruby MRI.
     mutex:
       title: Mutex - Ejecución Mutua
       description: Mutexes proporciona un mecanismo para que varios subprocesos sincronicen
@@ -1314,7 +1314,7 @@ pages:
       vago!&quot;, Pero si asiste a esta sesión, le prometo que estará iluminado, divertido
       y lo disfrutará totalmente. ¿Suena bien? Los grandes libros formarán parte de
       los recursos que sugeriría a las personas para mejorar sus habilidades.
-    video: El largo viaje a la maestría de rubíes por Bozhidar Batsov.
+    video: El largo viaje a la maestría de Rubyes por Bozhidar Batsov.
     computer_science_fundamentals:
       title: Fundamentos de Ciencias de la Computación
       articles:
@@ -1493,17 +1493,17 @@ pages:
       - name: 'Toptal: 9 preguntas esenciales de la entrevista de Ruby on Rails'
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
-    title: Qué es mejor docs
+    title: Better Docs
     description: Este sitio web es el repositorio <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental
       de</a> Github de adaptación web que recogió muchas estrellas y se tradujo al idioma
-      chino. Better Docs le permite encontrar rápidamente muchas de las mejores prácticas
+      chino. Better Docs te permite encontrar rápidamente muchas de las mejores prácticas
       que se recopilaron en un repositorio. Solo te queda este repositorio como referencia
       o recurso de preparación de la entrevista.
     oss:
-      title: Gracias a Open Source
+      title: Gracias al Open Source
       description: Better Docs se creó al trabajar y conocer las mejores prácticas y
         los conocimientos sobre Ruby, una ingeniería de código abierto para las aplicaciones
         de desarrollo web escritas en Ruby.
-      thanks: Si Better Docs le ayudó de alguna manera, piense en darnos una estrella en
+      thanks: Si Better Docs te ayudó de alguna manera, piensa en darnos una estrella en
         <a href="https://github.com/howtohireme/ruby.fundamental">Github</a> (nos ayuda
         a llegar a más desarrolladores) o contribuir a nuestros proyectos.
