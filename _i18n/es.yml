@@ -138,9 +138,9 @@ sidebar:
       - liskov
       - segregation
       - di
-  - title: Conviértete en Ruby Meister
+  - title: Conviértete en Maestro de Ruby
     url: ruby_meister
-  - title: Trapos
+  - title: Hilos
     url: threads
     submenus:
       - green
@@ -325,7 +325,7 @@ pages:
       description: El rendimiento en tiempo de ejecución del tiempo de ejecución de
         lenguaje común viene dado por un conjunto de axiomas que ahora postularemos.
       fetch_store:
-        title: Fetch y almacenar tiempo
+        title: Tiempo de obtención y almacenamiento
         description1: El tiempo requerido para obtener una referencia a un objeto de
           la memoria es una constante, <span class="code-inline">T_fetch</span> , y
           el tiempo requerido para almacenar una referencia a un objeto en la memoria
@@ -369,7 +369,7 @@ pages:
           f para la entrada x. El primero de los dos almacenes se debe al paso del parámetro
           x al método f; El segundo surge de la asignación a la variable y.
       calculating:
-        title: Tiempo de calculo
+        title: Tiempo de cálculo
         description1: El tiempo requerido para el cálculo de la dirección implícito
           en una operación de suscripción de matriz, por ejemplo, <span class="code-inline">a
           [i]</span> , es una constante, <span class="code-inline">T_[]</span> . Esta
@@ -396,7 +396,7 @@ pages:
     implementations:
       title: Implementación
       stack:
-        title: Apilar
+        title: Pila
         description: La pila es la hermana de la cola. Imita una pila de la vida real
           (por ejemplo, de papel). Es FILO (primero en entrar, último en salir), de
           modo que cuando los elementos se recuperan de la pila, se devuelven en el
@@ -431,7 +431,7 @@ pages:
           nodo en la línea de nodos. Las operaciones que se pueden realizar en listas
           enlazadas individualmente incluyen inserción, eliminación y recorrido.
       doubly_linked_list:
-        title: Lista doble enlace
+        title: Lista doblemente enlazada
         description: 'En una lista con doble enlace, cada elemento de la lista contiene
           dos referencias: una a su sucesor y otra a su predecesora.'
       ordered_list:
@@ -442,7 +442,7 @@ pages:
           los artículos y aún tener una lista ordenada válida.
         as_array: Lista ordenada como matriz
       hash_table:
-        title: Tabla de picadillo
+        title: Tabla Hash
         description: Una tabla hash es un contenedor de búsqueda. Como tal, proporciona
           métodos para colocar un objeto en el contenedor, buscar un objeto en el contenedor
           y eliminar un objeto del contenedor.
@@ -704,7 +704,7 @@ pages:
           sino que se comunican a través del mediador. Esto reduce las dependencias
           entre los objetos en comunicación, reduciendo así el acoplamiento.
       momento:
-        title: Momento de patron
+        title: Patrón de momento
         description: 'El patrón de momento se implementa con tres objetos: el creador,
           un cuidador y un momento. El originador es un objeto que tiene un estado interno.
           El cuidador va a hacer algo al autor, pero quiere poder deshacer el cambio.
@@ -1167,7 +1167,7 @@ pages:
         de inyección de dependencia), son conceptos completamente diferentes.
   threads:
     example: Ejemplo
-    title: Trapos
+    title: Hilos
     description: 'Nota sobre el paralelismo y la concurrencia: la principal diferencia
       entre el uso de procesos y subprocesos es la forma en que se maneja la memoria.
       En un nivel alto, procesa la memoria de copia, mientras que los hilos comparten
@@ -1304,7 +1304,7 @@ pages:
         paralelo.'
     credits: 'Código y artículos fueron tomados de los recursos:'
   ruby_meister:
-    title: Conviértete en Ruby Meister
+    title: Conviértete en Maestro Ruby
     description: En esta charla, examinaremos el largo viaje desde ser un principiante
       en Ruby hasta lograr un verdadero dominio de Ruby e intentaremos acortarlo un
       poco para ti compartiendo algunas ideas importantes. Un maestro Rubyist tiene
@@ -1448,7 +1448,7 @@ pages:
       articles:
         - name: well_grounded
           title: El Rubyist bien fundado
-          description: The Good-Grounded Rubyist, Second Edition se dirige tanto a los
+          description: 'The Good-Grounded Rubyist, Second Edition' se dirige tanto a los
             recién llegados a Ruby como a los programadores de Ruby que desean profundizar
             su comprensión del lenguaje. Esta segunda edición, hermosamente escrita
             y totalmente revisada, incluye cobertura de características que son nuevas
