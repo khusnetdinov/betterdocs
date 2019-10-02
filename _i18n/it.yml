@@ -202,30 +202,30 @@ pages:
           sort può essere l&#39;algoritmo migliore.
       shell_sort:
         title: Shell sort
-        description: La complessità temporale del caso peggiore dell&#39;ordinamento
-          di shell dipende dalla sequenza di incremento. Per gli incrementi 1 4 13 40
+        description: La complessità temporale del caso peggiore dello shell sort
+          dipende dalla sequenza di incremento. Per gli incrementi 1 4 13 40
           121 ..., che è quello che viene utilizzato qui, la complessità temporale è
           <span class="code-inline">O(n<sup><sup>3<sub>/</sub>2</sup></sup>)</span>.
           Per altri incrementi, tempo complessità si caratterizza per essere <span class="code-inline">O
           (n<sup><sup>4<sub>/</sub>3</sup></sup>)</span> e anche <span class="code-inline">O(n·lg<sub>2</sub>(n))</span>.
            Non sono noti né i limiti superiori stretti
           sulla complessità temporale né la migliore sequenza di incremento. Poiché
-          l&#39;ordinamento della shell si basa sull&#39;ordinamento di inserimento,
-          l&#39;ordinamento della shell eredita le proprietà adattive dell&#39;ordinamento
-          di inserimento. L&#39;adattamento non è così drammatico perché l&#39;ordinamento
-          della shell richiede un passaggio attraverso i dati per ciascun incremento,
+          lo shell sort si basa sull&#39;ordinamento di inserimento,
+          lo shell sort eredita le proprietà adattive dell'insertion sort. 
+          L&#39;adattamento non è così drammatico perché lo shell sort
+           richiede un passaggio attraverso i dati per ciascun incremento,
           ma è significativo. Per la sequenza di incremento mostrata sopra, ci sono
           incrementi di <span class="code-inline">log<sub>3</sub>(n)</span> , quindi
           la complessità temporale per dati quasi ordinati è <span class="code-inline">O
-          (n·log<sub>3</sub>(n))</span> . A causa del suo basso overhead, implementazione
+          (n·log<sub>3</sub>(n))</span> . A causa del suo basso overhead,  di una implementazione
           relativamente semplice, proprietà adattive e complessità temporale sub-quadratica,
-          l&#39;ordinamento di shell può essere un&#39;alternativa valida agli algoritmi
+          lo shell sort può essere un&#39;alternativa valida agli algoritmi
           di ordinamento <span class="code-inline">O(n·lg(n))</span> per alcune
-          applicazioni quando i dati da ordinare sono non molto grande
+          applicazioni quando i dati da ordinare sono non molti.
       heap_sort:
-        title: Tipo di heap
-        description: Tipo di heap è semplice da implementare, esegue un ordinamento sul
-          posto <span class="code-inline">O(n·lg(n))</span> , ma non è stabile.
+        title: Heap sort
+        description: Heap sorr è semplice da implementare, esegue un ordinamento sul
+          posto in <span class="code-inline">O(n·lg(n))</span> , ma non è stabile.
           Il primo ciclo, la fase &quot;heapify&quot; di <span class="code-inline">Θ(n)</span>
           , mette la matrice in ordine di heap. Il secondo ciclo, la fase
           &quot;sort down&quot; di <span class="code-inline">O(n·lg(n))</span> ,
@@ -238,40 +238,40 @@ pages:
           adattive, anche se non in modo particolarmente utile. Nel caso quasi ordinato,
           la fase heapify distrugge l&#39;ordine originale. Nel caso contrario, la fase
           di heapify è il più veloce possibile poiché l&#39;array inizia nell&#39;ordine
-          di heap, ma la fase di ordinamento giù è tipica. Nel caso delle poche chiavi
+          di heap, ma la fase di &quot;sort down&quot; è tipica. Nel caso delle poche chiavi
           univoche, c&#39;è un po &#39;di accelerazione, ma non tanto quanto in shell
           sort o quicksort a 3 vie.
       merge_sort:
-        title: Unire l'ordinamento
-        description: 'Unisci sort è molto prevedibile. Rende tra <span class="code-inline">0,5
+        title: Merge sort
+        description: 'Merge sort è molto prevedibile. Rende tra <span class="code-inline">0,5
           lg(n)</span> e <span class="code-inline">lg(n)</span> confronti per elemento,
           e tra <span class="code-inline">lg(n)</span> e <span class="code-inline">1,5
           lg(n)</span> swap per elemento. I minimi vengono raggiunti per dati già ordinati;
           i massimi vengono raggiunti, in media, per dati casuali. Se usare <span class="code-inline">Θ
-          (n)</span> spazio extra non è un problema, allora unire sort è una scelta
+          (n)</span> spazio extra non è un problema, allora merge sort è una scelta
           eccellente: è semplice da implementare ed è l&#39;unico algoritmo di ordinamento
           <span class="code-inline">O(n·lg(n))</span> stabile. Si noti che quando
-          si ordinano gli elenchi collegati, l&#39;ordinamento di unione richiede solo
+          si ordinano linked list, il merge sorr richiede solo
           <span class="code-inline">Θ(lg(n)</span> spazio aggiuntivo (per la ricorsione).
-          L&#39;ordinamento unione è l&#39;algoritmo di scelta per una varietà di situazioni:
-          quando è richiesta stabilità, quando si ordinano gli elenchi collegati e quando
-          casuale l&#39;accesso è molto più costoso dell&#39;accesso sequenziale (ad
+          Il merge sorr è l&#39;algoritmo da scegliere in una varietà di situazioni:
+          quando è richiesta stabilità, quando si ordinano le linked list e quando
+          l&#39;accesso casuale è molto più costoso dell&#39;accesso sequenziale (ad
           esempio, l&#39;ordinamento esterno su nastro). Esistono algoritmi di unione
-          in tempo lineare per l&#39;ultimo passo dell&#39;algoritmo, ma sono entrambi
+          in tempo lineare per l&#39;ultimo passo dell&#39;algoritmo, ma sono 
           costosi e complessi. La complessità è giustificata per le applicazioni come
           l&#39;ordinamento esterno quando <span class="code-inline">Θ(n)</span> spazio
           extra non è disponibile.'
       quick_sort:
-        title: Ordinamento rapido
+        title: Quick sort
         description: Quando implementato con attenzione, quicksort è robusto e ha un
-          sovraccarico basso. Quando non è necessario un ordinamento stabile, quicksort
+          overhead basso. Quando non è necessario un ordinamento stabile, quicksort
           è un eccellente ordinamento generico, anche se la versione di partizionamento
           a 3 vie deve essere sempre utilizzata. Il codice di partizionamento a 2 vie
           mostrato sopra è scritto per chiarezza piuttosto che per prestazioni ottimali;
           mostra una località povera e, in modo critico, mostra il tempo <span class="code-inline">O
           (n<sup>2</sup>)</span> quando ci sono poche chiavi univoche. Un metodo di
-          partizionamento a 2 vie più efficiente e robusto è fornito in Quicksort è
-          ottimale da Robert Sedgewick e Jon Bentley. Il robusto partizionamento produce
+          partizionamento a 2 vie più efficiente e robusto è fornito in &quote;Quicksort is Optimal&quote;
+          di Robert Sedgewick e Jon Bentley. Il robusto partizionamento produce
           una ricorsione equilibrata quando vi sono molti valori uguali al pivot, fornendo
           garanzie probabilistiche di tempo <span class="code-inline">O(n·lg(n))</span>
           e spazio <span class="code-inline">O(lg(n))</span> per tutti gli input.
@@ -293,23 +293,23 @@ pages:
           a metà intervallo o ricerca logaritmica, è un algoritmo di ricerca che trova
           la posizione di un valore obiettivo all&#39;interno di una matrice ordinata.
           Confronta il valore target con l&#39;elemento medio dell&#39;array; se sono
-          diseguali, la metà in cui il bersaglio non può mentire viene eliminata e la
+          diseguali, la metà in cui il bersaglio non può essere presente viene eliminata e la
           ricerca continua nella metà rimanente fino a quando non ha successo.
       knuth_moriss_pratt_search:
         title: Ricerca Knuth-Morris-Pratt
         description: Nell&#39;informatica, l&#39;algoritmo di ricerca delle stringhe
           Knuth-Morris-Pratt (o algoritmo KMP) cerca le occorrenze di una &quot;parola&quot;
-          W all&#39;interno di una &quot;stringa di testo&quot; S utilizzando l&#39;osservazione
+          W all&#39;interno di una &quot;stringa&quot; S utilizzando l&#39;osservazione
           che quando si verifica una mancata corrispondenza, la parola stessa incorpora
           sufficiente informazioni per determinare dove potrebbe iniziare la prossima
-          partita, evitando così il riesame dei caratteri precedentemente abbinati.
+          occorrenza, evitando così il riesame dei caratteri precedentemente abbinati.
       other:
         title: Altri algoritmi di ricerca
         dijkstra: L&#39;algoritmo di Dijkstra
         kruskal: L&#39;algoritmo di Kruskal
-        longest: La sottosequenza crescente più lunga
+        longest: Longest increasing subsequence
         telephone_number: Numero di telefono a parole
-    credits: 'Il codice e gli articoli sono stati presi da risorse:'
+    credits: 'Il codice e gli articoli sono stati presi dalle risorse:'
   data_structures:
     title: Strutture dati
     description: Nell&#39;informatica, la notazione O grande viene utilizzata per classificare
