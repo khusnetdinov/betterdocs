@@ -1,7 +1,7 @@
 head:
   title: BetterDocs
   metatags:
-    description: Programación fundamental con ejemplos rubí y referencias. Cubre hilos,
+    description: Programación fundamental con ejemplos de Ruby y referencias. Cubre hilos,
       principios SÓLIDOS, patrones de diseño, estructuras de datos, algoritmos.
     keywords: Mejores documentos, Ruby, Fundamentos, Fundamentos de programación de
       Ruby. Ruby Gotchas, Programación funcional, Metaprogramación, Subprocesos, Principios
@@ -124,7 +124,7 @@ sidebar:
       - module
   - title: Preguntas de entrevista
     url: interview_questions
-  - title: Programación Meta
+  - title: Metaprogramación
     url: meta_programming
     submenus:
       - dynamic_dispatch
@@ -152,12 +152,12 @@ sidebar:
 
 pages:
   wiki: Leer wiki
-  credits: Creditos
+  credits: Créditos
   page404:
     title: Página no encontrada :(
     description: La página solicitada no pudo ser encontrada.
   page500:
-    title: "Something was going wrong :("
+    title: "Algo salió mal :("
   algorithms:
     title: Algoritmos
     complexity:
@@ -771,7 +771,7 @@ pages:
         hierarchical: Visitante jerárquico
       credits: 'Código y artículos fueron tomados de los recursos:'
   functional_programming:
-    title: Programacion funcional
+    title: Programación funcional
     description: 'El uso de un idioma en un estilo funcional implica que tiene acceso
       a algunas de las funciones clave que se enumeran a continuación:'
     axioms:
@@ -1054,7 +1054,7 @@ pages:
         y buscará El alcance allí.
     credits: 'Código y artículos fueron tomados de los recursos:'
   meta_programming:
-    title: Metaprogramacion
+    title: Metaprogramación
     description: La metaprogramación es la escritura de programas de computadora que
       escriben o manipulan otros programas (o ellos mismos) como sus datos, o que hacen
       parte del trabajo en tiempo de compilación que de otra manera se haría en tiempo
@@ -1493,7 +1493,7 @@ pages:
       - name: 'Toptal: 9 preguntas esenciales de la entrevista de Ruby on Rails'
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
-    title: Que es mejor docs
+    title: Qué es mejor docs
     description: Este sitio web es el repositorio <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental
       de</a> Github de adaptación web que recogió muchas estrellas y se tradujo al idioma
       chino. Better Docs le permite encontrar rápidamente muchas de las mejores prácticas
@@ -1502,8 +1502,8 @@ pages:
     oss:
       title: Gracias a Open Source
       description: Better Docs se creó al trabajar y conocer las mejores prácticas y
-        los conocimientos sobre ruby, una ingeniería de código abierto para las aplicaciones
+        los conocimientos sobre Ruby, una ingeniería de código abierto para las aplicaciones
         de desarrollo web escritas en Ruby.
-      thanks: Si Better Docs le ayudó de alguna manera, piense en darnos un Star en
+      thanks: Si Better Docs le ayudó de alguna manera, piense en darnos una estrella en
         <a href="https://github.com/howtohireme/ruby.fundamental">Github</a> (nos ayuda
         a llegar a más desarrolladores) o contribuir a nuestros proyectos.
