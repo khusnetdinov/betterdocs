@@ -90,7 +90,7 @@ sidebar:
       - pure_functions
       - closures
       - applying
-  - title: Gotchas
+  - title: समझ गया!
     url: gotchas
     submenus:
       - surprising
@@ -157,7 +157,7 @@ pages:
     title: पृष्ठ नहीं मिला :(
     description: अनुरोध किया गया पेज़ नहीं मिल सका।
   page500:
-    title: "Something was going wrong :("
+    title: कुछ गड़बड़ हो रही थी
   algorithms:
     title: एल्गोरिदम
     complexity:
