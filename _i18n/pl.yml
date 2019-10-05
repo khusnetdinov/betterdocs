@@ -199,7 +199,7 @@ pages:
           wymiany przedmiotów jest wysoki, wybór sortowania bardzo dobrze może być wybranym
           algorytmem.
       shell_sort:
-        title: Sortowanie za pomocą powłoki
+        title: "Sortowanie Shella"
         description: Najgorsza złożoność czasu sortowania powłoki zależy od sekwencji
           przyrostu. Dla odstępach co 1 4 13 40 121 ..., która jest, co jest tutaj używany,
           złożoność czas <span class="code-inline">O(n<sup><sup>3</sup>/<sub>2</sub></sup>)</span>
@@ -219,7 +219,7 @@ pages:
           class="code-inline">O(n·lg(n))</span> dla niektórych aplikacji, gdy dane
           do posortowania są niezbyt duże.
       heap_sort:
-        title: Sortowanie sterty
+        title: "Sortowanie stogowe"
         description: Sortowanie sterty jest prosty w implementacji, wykonuje sortowanie w miejscu
           <span class="code-inline">O(n·lg(n))</span> , ale nie jest stabilny. Pierwsza
           pętla, faza <span class="code-inline">Θ(n)</span> &quot;scalify&quot;, umieszcza
