@@ -1,19 +1,19 @@
 head:
-  title: BetterDocs
+  title: "Podstawy Ruby"
   metatags:
-    description: Podstawowe programowanie z przykładami rubinów i referencjami. Obejmuje
-      wątki, zasady SOLID, wzorce projektowe, struktury danych, algorytmy.
-    keywords: Lepsze dokumenty, Ruby, Fundamentals, podstawy programowania Ruby. Ruby
-      gotchas, programowanie funkcjonalne, metaprogramowanie, wątki, solidne podstawy
-      Rubiego z przykładami, wzorce projektowe Rubiego z przykładami, algorytmy Rubiego
-      z przykładami, struktury danych Rubiego z przykładami.
+    description: "Podstawowe programowanie z przykładami ruby i referencjami. Obejmuje
+      wątki, zasady SOLID, wzorce projektowe, struktury danych, algorytmy."
+    keywords: "Lepsze dokumenty, Ruby, Fundamentals, podstawy programowania Ruby. Ruby
+      gotchas, programowanie funkcjonalne, metaprogramowanie, wątki, zasady SOLID
+      Ruby z przykładami, wzorce projektowe Ruby z przykładami, algorytmy Ruby
+      z przykładami, struktury danych Ruby z przykładami."
 content:
   menu:
-    open: Otwórz menu
-    close: Zamknij menu
+    open: "Otwórz menu"
+    close: "Zamknij menu"
 
 sidebar:
-  - title: Algorytmy
+  - title: "Algorytmy"
     url: algorithms
     submenus:
       - key: sorting
@@ -29,7 +29,7 @@ sidebar:
         submenus:
           - binary_search
           - knuth_moriss_pratt_search
-  - title: Struktury danych
+  - title: "Struktury danych"
     url: data_structures
     submenus:
       - key: axioms
@@ -54,7 +54,7 @@ sidebar:
           - b_tree
           - binary_heap
 
-  - title: Wzorce projektowe
+  - title: "Wzorce projektowe"
     url: design_patterns
     submenus:
       - key: creational
@@ -84,13 +84,13 @@ sidebar:
           - strategy
           - template
           - visitor
-  - title: Programowanie funkcjonalne
+  - title: "Programowanie funkcjonalne"
     url: functional_programming
     submenus:
       - pure_functions
       - closures
       - applying
-  - title: Gotchas
+  - title: "Gotchas"
     url: gotchas
     submenus:
       - surprising
@@ -122,25 +122,25 @@ sidebar:
       - private
       - braces
       - module
-  - title: Pytania do wywiadu
+  - title: "Pytania do rozmów kwalifikacyjnych"
     url: interview_questions
-  - title: Meta programowania
+  - title: "Meta programowanie"
     url: meta_programming
     submenus:
       - dynamic_dispatch
       - dynamic_method
       - dynamic_proxies
-  - title: Solidne zasady
+  - title: "Zasady solid"
     url: solid_principles
     submenus:
       - single
       - open_close
       - liskov
-      - segregation 
+      - segregation
       - di
-  - title: Zostań Ruby Meister
+  - title: "Zostań Ruby Meister"
     url: ruby_meister
-  - title: Wątki
+  - title: "Wątki"
     url: threads
     submenus:
       - green
@@ -151,44 +151,44 @@ sidebar:
       - config
 
 pages:
-  wiki: Czytaj wiki
-  credits: Kredyty
+  wiki: "Czytaj wiki"
+  credits: "Credits"
   page404:
-    title: Strona nie znaleziona :(
-    description: Żądana strona nie została znaleziona.
+    title: "Strona nie znaleziona :("
+    description: "Żądana strona nie została znaleziona."
   page500:
-    title: "Something was going wrong :("
+    title: "Coś poszło nie tak :("
   algorithms:
-    title: Algorytmy
+    title: "Algorytmy"
     complexity:
-      best: Najlepiej
-      average: Średni
-      worst: Najgorszy
+      best: "Najlepiej"
+      average: "Średnio"
+      worst: "Najgorzej"
     sorting:
-      title: Sortowanie
-      description: Algorytm sortowania to algorytm, który umieszcza elementy listy w
-        określonej kolejności. Najczęściej używane zamówienia to porządek liczbowy i
+      title: "Sortowanie"
+      description: "Algorytm sortowania to algorytm, który umieszcza elementy listy w
+        określonej kolejności. Najczęściej stosowane to porządek liczbowy i
         porządek leksykograficzny. Efektywne sortowanie jest ważne dla optymalizacji
         wykorzystania innych algorytmów (takich jak algorytmy wyszukiwania i scalania),
         które wymagają danych wejściowych do posortowania list; jest również często
-        przydatna do kanonalizacji danych i do generowania danych czytelnych dla człowieka.
+        przydatna do kanonalizacji danych i do generowania danych czytelnych dla człowieka."
       bubble_sort:
-        title: Sortowanie bąbelkowe
-        description: Sortowanie bąbelkowe ma wiele takich samych właściwości jak sortowanie
-          wstawiania, ale ma nieco wyższy narzut. W przypadku prawie posortowanych danych
-          sortowanie bąbelkowe zajmuje <span class="code-inline time">O(n)</span> ,
-          ale wymaga co najmniej 2 przebiegów przez dane (podczas sortowania wstawiania
-          wymaga czegoś więcej niż 1 podanie).
+        title: "Sortowanie bąbelkowe"
+        description: "Sortowanie bąbelkowe ma wiele takich samych właściwości jak sortowanie
+          przez wstawianie, ale ma nieco wyższy koszt eksploatacji. W przypadku prawie posortowanych danych
+          sortowanie bąbelkowe zajmuje <span class=\"code-inline time\">O(n)</span>,
+          ale wymaga co najmniej dwukrotnego przekazania danych (podczas gdy sortowanie przez wstawianie
+          wymaga raczej jednego przekazu)."
       insertion_sort:
-        title: Sortowanie przez wstawianie
-        description: Chociaż jest to jeden z podstawowych algorytmów sortowania o najgorszym
-          możliwym czasie <span class="code-inline">O(n<sup>2</sup>)</span> , sortowanie
-          wtrąceniowe jest algorytmem z wyboru, gdy dane są prawie posortowane (ponieważ
+        title: "Sortowanie przez wstawianie"
+        description: "Chociaż jest to jeden z podstawowych algorytmów sortowania o najgorszym
+          możliwym czasie <span class=\"code-inline\">O(n<sup>2</sup>)</span>, sortowanie
+          przez wstawianie jest podstawowym wyborem, gdy dane są prawie posortowane (ponieważ
           są adaptacyjne) lub gdy rozmiar problemu jest mały (ponieważ ma niski narzut).
-          Z tych powodów, a także dlatego, że jest również stabilny, sortowanie wstawiania
+          Z tych powodów, a także dlatego, że jest również stabilny, sortowanie przez wstawianie
           jest często używane jako rekurencyjny podstawowy przypadek (gdy rozmiar problemu
-          jest mały) dla wyższych algorytmów sortowania dziel i przegrywaj, takich jak
-          sortowanie scalone lub sortowanie szybkie.
+          jest mały) dla wyższych algorytmów sortowania dziel i rządź, takich jak
+          sortowanie scalone lub sortowanie szybkie."
       selection_sort:
         title: Wybór Sortuj
         description: Z przedstawionego tu porównania można wyciągnąć wniosek, że nigdy
