@@ -1,10 +1,10 @@
 head:
   title: BetterDocs
   metatags:
-    description: Programare fundamentală cu exemple și referințe rubinice. Acesta
-      acoperă fire, principii SOLID, modele de design, structuri de date, algoritmi.
-    keywords: Docuri mai bune, Ruby, Fundamentele, fundamentele programării Ruby.
-      Ruby gotchas, programare funcțională, metaprogramare, fire, principii solide
+    description: Programare fundamentală cu exemple și referințe Ruby. Acesta
+      acoperă threaduri, principii SOLID, modele de design, structuri de date, algoritmi.
+    keywords: Documentație mai buna, Ruby, Fundamentele, fundamentele programării Ruby.
+      Ruby gotchas, programare funcțională, metaprogramare, fire, threaduri, principii solide
       Ruby cu exemple, modele de design Ruby cu exemple, algoritmi Ruby cu exemple,
       structuri de date Ruby cu exemple.
 
@@ -1160,16 +1160,16 @@ pages:
     example: Exemplu
     title: Subiecte
     description: 'Notă despre paralelism și concurrency: Principala diferență între
-      utilizarea proceselor versus firele este modul în care este gestionată memoria.
-      La un nivel ridicat, procesele de copiere a memoriei, în timp ce firele partajează
+      utilizarea proceselor si a threadurilor este modul în care este gestionată memoria.
+      La un nivel înalt, procesele copiază memoria, în timp ce threadurile partajează
       memoria. Acest lucru face ca procesul să se reproducă mai lent decât înfundarea
-      firelor și duce la procese care consumă mai multe resurse odată ce rulează. În
-      ansamblu, firele suportă mai puțin decît procesele. Acest API Thread este un API
-      Ruby. Am înțeles că diferitele implementări Ruby au diferite comportamente de
+      threadurile și duce la procese care consumă mai multe resurse. În
+      ansamblu, threadurile suportă mai puțin decît procesele. Acest API Thread este un API
+      Ruby. Diferitele implementări Ruby au diferite comportamente de
       filetare subiacente.'
     green:
-      title: Verde fire
-      description: Ruby 1.9 a înlocuit firele verzi cu fire autohtone. Cu toate acestea,
+      title: Threadurile Verzi
+      description: Ruby 1.9 a înlocuit threadurile verzi cu threadurile autohtone. Cu toate acestea,
         GIL continuă să împiedice paralelismul. Acestea fiind spuse, concurența a fost
         îmbunătățită printr-un program mai bun. Noul program face ca deciziile de comutare
         a contextului să devină mai eficiente, trecându-le, în esență, într-un fir nativ
@@ -1179,28 +1179,28 @@ pages:
       description: RMN are un blocaj de interpretare global (GIL). Este o blocare în
         jurul execuției codului Ruby. Acest lucru înseamnă că într-un context multi-threaded,
         numai un fir poate executa codul Ruby la un moment dat. Astfel, dacă aveți 8
-        fire care lucrează activ pe o mașină cu 8 nuclee, numai un fir și un nucleu
+        threadurile care lucrează activ pe o mașină cu 8 nuclee, numai un fir și un nucleu
         vor fi ocupate în orice moment . GIL există pentru a proteja internii Ruby de
         condițiile de rasă care ar putea corupe datele. Există avertismente și optimizări,
         dar acest lucru este esența.
-      example: Acest fapt simplu este ceea ce face firele atât de puternice și, de asemenea,
+      example: Acest fapt simplu este ceea ce face threadurile atât de puternice și, de asemenea,
         ceea ce le face dificil de a lucra cu. V-am dat deja o idee despre motivul pentru
-        care firele sunt bune; aici este un program simplu pentru a ilustra dificultatea
+        care threadurile sunt bune; aici este un program simplu pentru a ilustra dificultatea
         lor. Aici puteți vedea că avem <span class="code-inline">10 * 10000</span> elemente
         în matrice. Rețineți că rubinul diferit poate afișa un rezultat diferit. GIL
         există doar în rubinul RMN.
     mutex:
       title: Mutex - executare reciprocă
-      description: Mutexurile oferă un mecanism pentru fire multiple pentru a sincroniza
+      description: Mutexurile oferă un mecanism pentru threadurile multiple pentru a sincroniza
         accesul la o parte critică a codului. Cu alte cuvinte, ele ajută la aducerea
-        unei ordini și a unor garanții în lumea haosului cu mai multe fire. Numele &quot;mutex&quot;
+        unei ordini și a unor garanții în lumea haosului cu mai multe threadurile. Numele &quot;mutex&quot;
         este o stenotă pentru &quot;excluderea reciprocă&quot;. Dacă înfășurați o secțiune
-        a codului dvs. cu un mutex, vă garantați că nici două fire nu pot intra în acea
-        secțiune în același timp. Mutexurile oferă un mecanism pentru fire multiple
+        a codului dvs. cu un mutex, vă garantați că nici două threadurile nu pot intra în acea
+        secțiune în același timp. Mutexurile oferă un mecanism pentru threadurile multiple
         pentru a sincroniza accesul la o parte critică a codului. Ajută la aducerea
-        unei ordini și a unei garanții în fața haosului cu mai multe fire.
+        unei ordini și a unei garanții în fața haosului cu mai multe threadurile.
       example: În acest program, deoarece orice fir trebuie să blocheze mutexul înainte
-        de a putea împinge la matrice, există o garanție că nici două fire nu vor efectua
+        de a putea împinge la matrice, există o garanție că nici două threadurile nu vor efectua
         această operație în același timp. Cu alte cuvinte, această operațiune nu mai
         poate fi întreruptă înainte de a fi terminată. Odată ce un fir începe să se
         împingă la matrice, niciun alt fir nu va putea introduce acea porțiune de cod
@@ -1214,7 +1214,7 @@ pages:
       title: Heliu
       description: Fibrele sunt primitive pentru implementarea concurrencyului de cooperație
         cu greutate redusă în Ruby. Practic, ele reprezintă un mijloc de a crea blocuri
-        de cod care pot fi întrerupte și reluate, la fel ca și firele. Principala diferență
+        de cod care pot fi întrerupte și reluate, la fel ca și threadurile. Principala diferență
         este că acestea nu sunt niciodată preemptate și că planificarea trebuie făcută
         de programator și nu de VM. Spre deosebire de alte modele de concurență ușoare,
         fiecare fibră vine cu un mic set de 4KB. Acest lucru permite ca fibra să fie
@@ -1225,13 +1225,13 @@ pages:
         a spune cu certitudine absolută dacă o aplicație ca întreg este sigură în legătură
         cu firul.
       global_variables: Variabilele globale sunt globale. Aceasta înseamnă că acestea
-        sunt împărțite între fire. Dacă nu v-ați convins că nu utilizați variabile globale
+        sunt împărțite între threaduri. Dacă nu v-ați convins că nu utilizați variabile globale
         până acum, iată un alt motiv să nu le atingeți niciodată. Dacă într-adevăr doriți
         să împărtășiți ceva global la o aplicație, sunteți mai mult decât probabil mai
         bine serviți de o constantă (dar vedeți mai jos), oricum.
-      class_variables: Variabile de clasă. În scopul unei discuții despre fire, variabilele
+      class_variables: Variabile de clasă. În scopul unei discuții despre threaduri, variabilele
         de clasă nu sunt mult diferite de variabilele globale. Ele sunt împărțite între
-        fire în același mod. Problema nu este atât de folosirea variabilelor de clasă,
+        threaduri în același mod. Problema nu este atât de folosirea variabilelor de clasă,
         ci și despre mutarea acestora. Și dacă nu veți muta o variabilă de clasă, în
         multe cazuri o constantă este din nou o alegere mai bună.
       instance_variables: Clasificarea instanțelor de clasă. Dar poate ați citit că
@@ -1243,10 +1243,10 @@ pages:
         de instanță de clasă (vezi punctele anterioare). Operatorul <span class="code-inline">||
         =</span> este, de fapt, două operații, deci există un potențial comutator de
         context care se întâmplă în mijlocul acestuia, determinând o condiție de rasă
-        între fire. Deci, chiar dacă ați folosi numai variabile de instanță, s-ar putea
+        între threaduri. Deci, chiar dacă ați folosi numai variabile de instanță, s-ar putea
         să ajungeți la condițiile de rasă cu memoizare. Nu memorați variabilele de clasă
         sau variabilele de clasă. Dacă trebuie să memoriți ceva la nivel de clasă, utilizați
-        în schimb variabilele locale ale firelor (<span class="code-inline">Thread.current[:baz</span>). Fiți conștienți, totuși, că este încă un fel de variabilă globală.'
+        în schimb variabilele locale ale threaduri (<span class="code-inline">Thread.current[:baz</span>). Fiți conștienți, totuși, că este încă un fel de variabilă globală.'
     config:
       title: Configurați threadsafe !?
       description: Apelarea acestei metode stabilește patru opțiuni în configurația
@@ -1256,9 +1256,9 @@ pages:
         ceea ce se spune, forțează cadrele Rails să fie încărcate cu nerăbdare în boot.
         Când această opțiune nu este activată, clasele cadru sunt încărcate leneș prin
         intermediul autoload. În medii multi-threaded, framework-ul trebuie să fie încărcat
-        cu nerăbdare înainte ca orice fire să fie create din cauza problemelor de siguranță
+        cu nerăbdare înainte ca orice threaduri să fie create din cauza problemelor de siguranță
         a firului cu autoload. Știm că încărcarea cadrului nu este firewall, deci strategia
-        este de a încărca totul înainte ca toate firele să fie pregătite să facă față
+        este de a încărca totul înainte ca toate threadurile să fie pregătite să facă față
         cererilor.'
       cache: 'Clasele de cache: Opțiunea @cache_classes controlează dacă clasele se
         reîncarcă sau nu. Îți amintești când faci &quot;TDD&quot; în aplicația ta? Modificați
@@ -1282,13 +1282,13 @@ pages:
         toate constantele lipsă vor ridica doar o excepție, mai degrabă decât să încerce
         să introducă codul. Noi justificăm dezactivarea acestei opțiuni în producție,
         deoarece (așa cum sa menționat mai devreme) încărcarea codului nu este threadsafe,
-        și ne așteptăm să avem toate codurile încărcate înainte ca orice fire să poată
+        și ne așteptăm să avem toate codurile încărcate înainte ca orice thread să poată
         face față cererilor.'
       concurrency: 'Permiterea concurrency: opțiunea @allow_concurrency controlează
         dacă sau nu este utilizat în stackul dvs. middleware Rack :: Lock. Rack :: Lock
         blochează un mutex în jurul cererii dvs. Ideea este că, dacă aveți un cod care
-        nu este threadsafe, acest mutex va împiedica mai multe fire de la executarea
-        codului dvs. de controler în același timp. Atunci când vă asigurați fire! este
+        nu este threadsafe, acest mutex va împiedica mai multe threaduri de la executarea
+        codului dvs. de controler în același timp. Atunci când vă asigurați threaduri! este
         setat, acest middleware este eliminat, iar codul controlerului poate fi executat
         în paralel.'
     credits: 'Codul și articolele au fost luate din resurse:'
@@ -1308,7 +1308,7 @@ pages:
       title: Informatică fundamentală
       articles:
         - name: inside_machine
-          title: 'În interiorul mașinii: o introducere ilustrată a microprocesoarelor
+          title: "Inside the Machine: An Illustrated Introduction to Microprocessors and Computer Architecture"
             și a arhitecturii computerelor'
           description: Computerele îndeplinesc nenumărate sarcini, variind de la o afacere
             critică la cea de agrement, dar indiferent de cât de diferit ar putea să
@@ -1317,14 +1317,14 @@ pages:
             (CPU), veți avea o înțelegere fermă a conceptelor fundamentale, în centrul
             tuturor proceselor moderne de calcul.
         - name: code
-          title: 'Cod: Limbajul ascuns al calculatorului și al software-ului'
+          title: "Code: The Hidden Language of Computer Hardware and Software"
           description: Ce fac lanternele, invazia britanică, pisicile negre și balansoarul
             au de-a face cu calculatoarele? În CODE, ei ne arată modalitățile ingenioase
             pe care le manipulăm și inventăm mijloace noi de a comunica unul cu celălalt.
             Și prin COD, vedem cum această ingenuitate și constrângerea noastră foarte
             umană de a comunica au condus inovațiile tehnologice din ultimele două secole.
         - name: concrete_math
-          title: 'Materiale de beton: o fundație pentru informatică'
+          title: "Concrete Mathematics: A Foundation for Computer Science"
           description: Această carte prezintă matematica care susține programarea avansată
             a calculatorului și analiza algoritmilor. Scopul principal al autorilor
             săi este de a oferi o bază solidă și relevantă de abilități matematice -
@@ -1334,7 +1334,7 @@ pages:
             - autorii înșiși se bazează foarte mult pe el! - dar pentru utilizatorii
             serioși de matematică în aproape toate disciplinele.
         - name: sicp
-          title: Structura și interpretarea programelor de calculator
+          title: "Structure and Interpretation of Computer Programs"
           description: 'Structura și interpretarea programelor de calculator au avut
             un impact dramatic asupra programelor de informatică din ultimul deceniu.
             Această revizuire mult așteptată conține modificări în text. Există noi
@@ -1346,7 +1346,7 @@ pages:
             computationale: obiecte cu stare, programare concurentă, programare funcțională,
             evaluare leneșă și programare nedeterministă.'
         - name: design_programms
-          title: 'Cum se proiectează programe: o introducere în programare și computere'
+          title: "How to Design Programs: An Introduction to Programming and Computing"
           description: Această introducere în programare plasează știința informaticii
             în centrul unei educații artistice liberale. Spre deosebire de alte cărți
             introductive, se concentrează asupra procesului de proiectare a programului.
@@ -1359,7 +1359,7 @@ pages:
             să facem exemple; cum să dezvolte o schiță a soluției, bazată pe analiză;
             cum să terminați programul; și cum să încercați.
         - name: algorithm_manual
-          title: Manualul de proiectare al algoritmului
+          title: "The Algorithm Design Manual"
           description: Această nouă ediție recentă a celei mai bine vândute clasice
             continuă să preia &quot;misterul&quot; din proiectarea algoritmilor și analizarea
             eficacității și eficienței acestora. Extinzând prima ediție, cartea servește
@@ -1367,7 +1367,7 @@ pages:
             menținându-și în același timp statutul de ghid de referință practic al algoritmilor
             pentru programatori, cercetători și studenți.
         - name: cormen
-          title: Introducere în algoritmi, ediția a treia (The MIT Press)
+          title: "Introduction to Algorithms, 3rd Edition (The MIT Press)"
           description: Unele cărți despre algoritmi sunt riguroase, dar incomplete;
             altele acoperă mase de material, dar lipsesc rigoare. Introducerea în algoritmi
             combină în mod unic rigoarea și comprehensivitatea. Cartea acoperă o gamă
@@ -1378,7 +1378,7 @@ pages:
             oricine care a făcut o mică programare. Explicațiile au fost păstrate elementare
             fără a sacrifica adâncimea de acoperire sau rigoarea matematică.
         - name: compilers
-          title: 'Compilieri: principii, tehnici și instrumente (ediția a 2-a)'
+          title: "Compilers: Principles, Techniques, and Tools (2nd Edition)"
           description: 'Compilatorii: Principii, Tehnici și Instrumente, cunoscute de
             profesori, studenți și dezvoltatori din întreaga lume ca &quot;Cartea Dragon&quot;,
             sunt disponibile într-o ediție nouă. Fiecare capitol a fost complet revizuit
@@ -1389,7 +1389,7 @@ pages:
             setului mai larg de probleme cu care se confruntă proiectarea de software
             și dezvoltarea de software.'
         - name: c_lang
-          title: C Programming Language, ediția a 2-a
+          title: "C Programming Language, 2nd Edition"
           description: Autorii prezintă ghidul complet pentru programarea limbajului
             C standard ANSI. Scrisă de dezvoltatorii C, această nouă versiune ajută
             cititorii să țină pasul cu standardul ANSI finalizat pentru C, în timp ce
@@ -1407,7 +1407,7 @@ pages:
       title: Programarea orientată pe obiecte
       articles:
         - name: growing
-          title: Software orientat spre obiect, orientat pe teste
+          title: "Growing Object-Oriented Software, Guided by Tests"
           description: 'Dezvoltarea bazată pe dezvoltare (TDD) este acum o tehnică stabilită
             pentru furnizarea mai rapidă a unui software mai bun. TDD se bazează pe
             o idee simplă: Scrie teste pentru codul dvs. înainte de a scrie codul în
@@ -1418,7 +1418,7 @@ pages:
             lăsăm testele să ghideze dezvoltarea și să crească un software care să fie
             coerent, fiabil și ușor de întreținut.'
         - name: domain_driven
-          title: 'Design-ul bazat pe domenii: combaterea complexității în inima software-ului'
+          title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
           description: Aceasta este o carte serioasă despre modelarea domeniului în
             designul de software. Software-ul dezvoltării societății trăiește de la
             un val de hype la altul. OOP, modele, XP, TDD, CI / CD, BigData, DevOps
@@ -1428,17 +1428,17 @@ pages:
             carte explică modul de modelare a componentelor software de bază &quot;pe
             calea cea bună&quot;.
     ruby:
-      title: Cunoaște-ți lang
+      title: Cunoaște-ți limba
       articles:
         - name: well_grounded
-          title: Rubyistul bine întemeiat
-          description: Rubyistul bine pus la punct, Ediția a doua se adresează atât
+          title: "The Well-Grounded Rubyist"
+          description: "The Well-Grounded Rubyist", Ediția a doua se adresează atât
             nou-veniților programatorilor Ruby, cât și programatorilor Ruby care doresc
             să-și aprofundeze înțelegerea limbii. Această ediție frumoasă și complet
             revizuită include acoperirea caracteristicilor noi în Ruby 2.1, precum și
             o acoperire extinsă și actualizată a aspectelor limbii care s-au schimbat.
         - name: programming_ruby
-          title: 'Programarea Ruby: Ghidul programatorilor pragmatici, Ediția a II-a'
+          title: "Programming Ruby: The Pragmatic Programmers Guide, Second Edition"
           description: 'Ruby este un limbaj de programare dinamic din ce în ce mai popular,
             complet orientat spre obiect, apreciat de mulți practicieni drept cea mai
             bună și mai folositoare limbă disponibilă astăzi. Când Ruby a început să
@@ -1446,20 +1446,20 @@ pages:
             cu manualul de referință definitiv, Programarea Ruby: Ghidul programatorului
             pragmatic.'
         - name: ruby_programming
-          title: 'Limba de programare Ruby: Tot ce trebuie să știți'
+          title: "The Ruby Programming Language: Everything You Need to Know"
           description: 'Această carte începe cu un tutorial rapid de pornire a limbii
             și apoi explică limba în detaliu de jos în sus: de la structura lexicală
             și sintactică la tipurile de date la expresii și afirmații și prin metode,
             blocuri, lambda, închideri, clase și module. Cartea include, de asemenea,
             o introducere lungă și amănunțită a API-ului bogat al platformei Ruby, care
-            demonstrează - cu exemplul puternic codul - facilitățile Ruby pentru procesarea
+            demonstrează - cu multe amanunte in cod - facilitățile Ruby pentru procesarea
             textului, manipulare numerică, colecții, intrare / ieșire, rețea și concurrency.
             Un capitol întreg este dedicat capabilităților de metaprogramare ale lui
             Ruby.'
   interview_questions:
     title: Intrebari de interviu
     description: Această secțiune păstrează legăturile de resurse pentru a citi și a
-      pregăti interviul
+      pregăti un interviu
     list:
       - name: 'Toptal: Cum de a angaja un dezvoltator de Ruby Mare'
         link: "https://www.toptal.com/ruby#hiring-guide"
@@ -1477,15 +1477,14 @@ pages:
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
     title: Ce este Better Docs
-    description: Acest site web este adaptare web Github repository <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
-      care a adunat o mulțime de stele și a fost tradus în limba chineză. Documentele
-      mai bune vă permit să găsiți rapid o bună practică care a fost colectată într-un
-      depozit. Doar tu acest repo cum ar fi resursa de referință sau de pregătire pentru
+    description: Acest site web este o adaptare web Github repository <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
+      care a adunat o mulțime de stele și a fost tradus în limba chineză. Better Docs vă permite să găsiți rapid o un obicei bun care a fost colectat într-un
+      repo. Folosiți acest repo ca resursa de referință sau de pregătire pentru un
       interviu.
     oss:
-      title: Datorită Open Source
-      description: Documentele mai bune au fost create în timp ce lucrau și au descoperit
-        cele mai bune practici și cunoștințe despre rubin, o inginerie open source pentru
+      title: Mulțumită Open Source
+      description: Better Docs fost creat în timp ce oamenii au lucrat și au descoperit
+        cele mai bune practici și cunoștințe despre Ruby, o inginerie open source pentru
         aplicațiile de dezvoltare web scrise în Ruby.
       thanks: În cazul în care Better Docs v-a ajutat în vreun fel, gândiți-vă să ne
         dați o stea pe <a href="https://github.com/howtohireme/ruby.fundamental">Github</a>
