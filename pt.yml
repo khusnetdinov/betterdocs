@@ -1,4 +1,4 @@
-head:
+﻿head:
   title: BetterDocs
   metatags:
     description: Programação fundamental com exemplos e referências em Rubi. Abrange
@@ -36,21 +36,21 @@ sidebar:
       - key: axioms
         submenus:
           - fetch_store
-          - elementary_operations
-          - call_method
+          - elementary_operations ou funções elementares
+          - call_method ou método de chamada
           - calculating
           - object
           - example
       - key: implementations
         submenus:
           - stack
-          - queue
+          - queue ou fila
           - deque
           - singly_linked_list
           - doubly_linked_list
           - ordered_list
           - hash_table
-          - binary_tree
+          - binary_tree ou árvore binária
           - binary_search_tree
           - b_tree
           - binary_heap
@@ -61,7 +61,7 @@ sidebar:
       - key: creational
         submenus:
           - abstract_factory
-          - builder
+          - builder ou construtor
           - factory
           - prototype
           - singleton
@@ -158,7 +158,7 @@ pages:
     title: Página não encontrada :(
     description: A página solicitada não pôde ser encontrada.
   page500:
-    title: "Something was going wrong :("
+    title: "Something was going wrong :(" ou "Algo deu errado"
   algorithms:
     title: Algoritmos
     complexity:
