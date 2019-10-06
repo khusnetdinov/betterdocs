@@ -1448,7 +1448,7 @@ pages:
       articles:
         - name: well_grounded
           title: El Rubyist bien fundado
-          description: 'The Good-Grounded Rubyist, Second Edition' se dirige tanto a los
+          description: The Good-Grounded Rubyist, Second Edition se dirige tanto a los
             recién llegados a Ruby como a los programadores de Ruby que desean profundizar
             su comprensión del lenguaje. Esta segunda edición, hermosamente escrita
             y totalmente revisada, incluye cobertura de características que son nuevas
