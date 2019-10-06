@@ -1,7 +1,7 @@
 head:
   title: BetterDocs
   metatags:
-    description: Programación fundamental con ejemplos rubí y referencias. Cubre hilos,
+    description: Programación fundamental con ejemplos de Ruby y referencias. Cubre hilos,
       principios SÓLIDOS, patrones de diseño, estructuras de datos, algoritmos.
     keywords: Mejores documentos, Ruby, Fundamentos, Fundamentos de programación de
       Ruby. Ruby Gotchas, Programación funcional, Metaprogramación, Subprocesos, Principios
@@ -124,7 +124,7 @@ sidebar:
       - module
   - title: Preguntas de entrevista
     url: interview_questions
-  - title: Programación Meta
+  - title: Metaprogramación
     url: meta_programming
     submenus:
       - dynamic_dispatch
@@ -138,9 +138,9 @@ sidebar:
       - liskov
       - segregation
       - di
-  - title: Conviértete en Ruby Meister
+  - title: Conviértete en Maestro de Ruby
     url: ruby_meister
-  - title: Trapos
+  - title: Hilos
     url: threads
     submenus:
       - green
@@ -152,12 +152,12 @@ sidebar:
 
 pages:
   wiki: Leer wiki
-  credits: Creditos
+  credits: Créditos
   page404:
     title: Página no encontrada :(
     description: La página solicitada no pudo ser encontrada.
   page500:
-    title: "Something was going wrong :("
+    title: "Algo salió mal :("
   algorithms:
     title: Algoritmos
     complexity:
@@ -325,7 +325,7 @@ pages:
       description: El rendimiento en tiempo de ejecución del tiempo de ejecución de
         lenguaje común viene dado por un conjunto de axiomas que ahora postularemos.
       fetch_store:
-        title: Fetch y almacenar tiempo
+        title: Tiempo de obtención y almacenamiento
         description1: El tiempo requerido para obtener una referencia a un objeto de
           la memoria es una constante, <span class="code-inline">T_fetch</span> , y
           el tiempo requerido para almacenar una referencia a un objeto en la memoria
@@ -369,7 +369,7 @@ pages:
           f para la entrada x. El primero de los dos almacenes se debe al paso del parámetro
           x al método f; El segundo surge de la asignación a la variable y.
       calculating:
-        title: Tiempo de calculo
+        title: Tiempo de cálculo
         description1: El tiempo requerido para el cálculo de la dirección implícito
           en una operación de suscripción de matriz, por ejemplo, <span class="code-inline">a
           [i]</span> , es una constante, <span class="code-inline">T_[]</span> . Esta
@@ -396,7 +396,7 @@ pages:
     implementations:
       title: Implementación
       stack:
-        title: Apilar
+        title: Pila
         description: La pila es la hermana de la cola. Imita una pila de la vida real
           (por ejemplo, de papel). Es FILO (primero en entrar, último en salir), de
           modo que cuando los elementos se recuperan de la pila, se devuelven en el
@@ -431,7 +431,7 @@ pages:
           nodo en la línea de nodos. Las operaciones que se pueden realizar en listas
           enlazadas individualmente incluyen inserción, eliminación y recorrido.
       doubly_linked_list:
-        title: Lista doble enlace
+        title: Lista doblemente enlazada
         description: 'En una lista con doble enlace, cada elemento de la lista contiene
           dos referencias: una a su sucesor y otra a su predecesora.'
       ordered_list:
@@ -442,7 +442,7 @@ pages:
           los artículos y aún tener una lista ordenada válida.
         as_array: Lista ordenada como matriz
       hash_table:
-        title: Tabla de picadillo
+        title: Tabla Hash
         description: Una tabla hash es un contenedor de búsqueda. Como tal, proporciona
           métodos para colocar un objeto en el contenedor, buscar un objeto en el contenedor
           y eliminar un objeto del contenedor.
@@ -704,7 +704,7 @@ pages:
           sino que se comunican a través del mediador. Esto reduce las dependencias
           entre los objetos en comunicación, reduciendo así el acoplamiento.
       momento:
-        title: Momento de patron
+        title: Patrón de momento
         description: 'El patrón de momento se implementa con tres objetos: el creador,
           un cuidador y un momento. El originador es un objeto que tiene un estado interno.
           El cuidador va a hacer algo al autor, pero quiere poder deshacer el cambio.
@@ -771,7 +771,7 @@ pages:
         hierarchical: Visitante jerárquico
       credits: 'Código y artículos fueron tomados de los recursos:'
   functional_programming:
-    title: Programacion funcional
+    title: Programación funcional
     description: 'El uso de un idioma en un estilo funcional implica que tiene acceso
       a algunas de las funciones clave que se enumeran a continuación:'
     axioms:
@@ -829,7 +829,7 @@ pages:
   gotchas:
     title: Gotchas
     description1: La mayoría de los principiantes de Ruby on Rails se entusiasman con
-      el marco y comienzan a crear aplicaciones sin ningún conocimiento del idioma.
+      el framework y comienzan a crear aplicaciones sin ningún conocimiento del idioma.
       Y esa es la magia de RoR.
     description2: En algún momento las cosas empiezan a ponerse serias. Algunos toman
       tiempo y esfuerzo para explorar los secretos sucios de Ruby on Rails, mientras
@@ -873,7 +873,7 @@ pages:
       title: Cadena ... o nada!
     constants:
       title: Constantes no son
-      description: Mayúscula inicial significa constante, en rubí. Intenta cambiar una
+      description: Mayúscula inicial significa constante, en Ruby. Intenta cambiar una
         constante. Ooooh tienes una ADVERTENCIA! BFD. Incluso la congelación no funciona
         para Fixnums. Funciona para matrices (más o menos) y para la mayoría de los
         otros objetos ... dijo prefigurando.
@@ -1054,7 +1054,7 @@ pages:
         y buscará El alcance allí.
     credits: 'Código y artículos fueron tomados de los recursos:'
   meta_programming:
-    title: Metaprogramacion
+    title: Metaprogramación
     description: La metaprogramación es la escritura de programas de computadora que
       escriben o manipulan otros programas (o ellos mismos) como sus datos, o que hacen
       parte del trabajo en tiempo de compilación que de otra manera se haría en tiempo
@@ -1167,7 +1167,7 @@ pages:
         de inyección de dependencia), son conceptos completamente diferentes.
   threads:
     example: Ejemplo
-    title: Trapos
+    title: Hilos
     description: 'Nota sobre el paralelismo y la concurrencia: la principal diferencia
       entre el uso de procesos y subprocesos es la forma en que se maneja la memoria.
       En un nivel alto, procesa la memoria de copia, mientras que los hilos comparten
@@ -1197,7 +1197,7 @@ pages:
         qué los hilos son buenos; Aquí hay un programa simple para ilustrar su dificultad.
         Aquí puede ver que tenemos <span class="code-inline">10 * 10000</span> elementos
         en matriz. Tenga en cuenta que ruby diferente puede mostrar un resultado diferente.
-        GIL existe sólo en rubí MRI.
+        GIL existe sólo en Ruby MRI.
     mutex:
       title: Mutex - Ejecución Mutua
       description: Mutexes proporciona un mecanismo para que varios subprocesos sincronicen
@@ -1304,7 +1304,7 @@ pages:
         paralelo.'
     credits: 'Código y artículos fueron tomados de los recursos:'
   ruby_meister:
-    title: Conviértete en Ruby Meister
+    title: Conviértete en Maestro Ruby
     description: En esta charla, examinaremos el largo viaje desde ser un principiante
       en Ruby hasta lograr un verdadero dominio de Ruby e intentaremos acortarlo un
       poco para ti compartiendo algunas ideas importantes. Un maestro Rubyist tiene
@@ -1314,7 +1314,7 @@ pages:
       vago!&quot;, Pero si asiste a esta sesión, le prometo que estará iluminado, divertido
       y lo disfrutará totalmente. ¿Suena bien? Los grandes libros formarán parte de
       los recursos que sugeriría a las personas para mejorar sus habilidades.
-    video: El largo viaje a la maestría de rubíes por Bozhidar Batsov.
+    video: El largo viaje a la maestría de Rubyes por Bozhidar Batsov.
     computer_science_fundamentals:
       title: Fundamentos de Ciencias de la Computación
       articles:
@@ -1448,7 +1448,7 @@ pages:
       articles:
         - name: well_grounded
           title: El Rubyist bien fundado
-          description: The Good-Grounded Rubyist, Second Edition se dirige tanto a los
+          description: 'The Good-Grounded Rubyist, Second Edition' se dirige tanto a los
             recién llegados a Ruby como a los programadores de Ruby que desean profundizar
             su comprensión del lenguaje. Esta segunda edición, hermosamente escrita
             y totalmente revisada, incluye cobertura de características que son nuevas
@@ -1493,17 +1493,17 @@ pages:
       - name: 'Toptal: 9 preguntas esenciales de la entrevista de Ruby on Rails'
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
-    title: Que es mejor docs
+    title: Better Docs
     description: Este sitio web es el repositorio <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental
       de</a> Github de adaptación web que recogió muchas estrellas y se tradujo al idioma
-      chino. Better Docs le permite encontrar rápidamente muchas de las mejores prácticas
+      chino. Better Docs te permite encontrar rápidamente muchas de las mejores prácticas
       que se recopilaron en un repositorio. Solo te queda este repositorio como referencia
       o recurso de preparación de la entrevista.
     oss:
-      title: Gracias a Open Source
+      title: Gracias al Open Source
       description: Better Docs se creó al trabajar y conocer las mejores prácticas y
-        los conocimientos sobre ruby, una ingeniería de código abierto para las aplicaciones
+        los conocimientos sobre Ruby, una ingeniería de código abierto para las aplicaciones
         de desarrollo web escritas en Ruby.
-      thanks: Si Better Docs le ayudó de alguna manera, piense en darnos un Star en
+      thanks: Si Better Docs te ayudó de alguna manera, piensa en darnos una estrella en
         <a href="https://github.com/howtohireme/ruby.fundamental">Github</a> (nos ayuda
         a llegar a más desarrolladores) o contribuir a nuestros proyectos.
