@@ -135,7 +135,7 @@ sidebar:
       - liskov
       - segregation
       - di
-  - title: "Become Ruby Meister"
+  - title: "Become Ruby a Meister"
     url: ruby_meister
   - title: Threads
     url: threads
@@ -154,7 +154,7 @@ pages:
     title: "Page not found :("
     description: "The requested page could not be found."
   page500:
-    title: "Something was going wrong :("
+    title: "Something has gone wrong :("
   algorithms:
     title: "Algorithms"
     complexity:
@@ -204,7 +204,7 @@ pages:
     credits: "Code and articles were taken from resources:"
   data_structures:
     title: "Data structures"
-    description: "In computer science, big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large. In analytic number theory it is used to estimate the \"error committed\" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. A famous example is the problem of estimating the remainder term in the prime number theorem."
+    description: "In computer science, Big O notation is used to classify algorithms by how they respond to changes in input size, such as how the processing time of an algorithm changes as the problem size becomes extremely large. In analytic number theory it is used to estimate the \"error committed\" while replacing the asymptotic size of an arithmetical function by the value it takes at a large finite argument. A famous example is the problem of estimating the remainder term in the prime number theorem."
     axioms:
       title: "Basic axioms of data structures"
       description: "The running time performance of the common language runtime is given by a set of axioms which we shall now postulate."
@@ -267,7 +267,7 @@ pages:
         title: "Binary Tree"
         description: "A binary tree is a tree in which each node can have a maximum of two children. The children are designated left and right."
       binary_search_tree:
-        title: "Binary Search Tree<"
+        title: "Binary Search Tree"
         description: "In computer science, binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of containers: data structures that store \"items\" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name)"
       b_tree:
         title: "B-tree"
@@ -498,17 +498,17 @@ pages:
       description: "<span class=\"code-inline\">to_s</span> is defined on every object and will always return something. <span class=\"code-inline\">to_str</span> is only defined on objects that are string-like. For example, <span class=\"code-inline\">Symbol</span> has <span class=\"code-inline\">to_str</span> but <span class=\"code-inline\">Array</span> does not. Thus, you can use <span class=\"code-inline\">obj.respond_to?(:to_str)</span> instead of something like <span class=\"code-inline\">obj.is_a?(String)</span> if you want to take advantage of duck typing without worrying about whether the class you're working with is a subclass of <span class=\"code-inline\">String</span> or not."
     missing:
       title: "Need to coordinate method_missing and respond_to_missing?"
-      description: "When overriding <span class=\"code-inline\">method_missing</span>, remember to override <span class=\"code-inline\">respond_to_missing?</span> as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing?. If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:"
+      description: "When overriding <span class=\"code-inline\">method_missing</span>, remember to override <span class=\"code-inline\">respond_to_missing?</span> as well. When you use method_missing to have an object return something on a method call, always make sure you also redefine respond_to_missing? If you don't do it, nothing will break at a first glance, but you will run into trouble eventually. Consider this class:"
       respond_to: "Lots of code (gems or your own) relies on respond_to? (for a good reason). Do you need to patch respond_to_missing? as well:"
     exception:
       title: "rescue from a StandardError, not an Exception"
-      description: "Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want:"
+      description: "Don't rescue Exception, rescue StandardError Before Explicitly rescuing Exception will rescue even not normally recoverable errors such as SyntaxError, LoadError, and Interrupt. If you omit the Exception type qualifier, then Ruby will catch only StandardError, which is probably what  you want."
     private:
-      title: "Private data isn’t really, and not at all w/ class methods"
+      title: "Private data isn’t really, and not at all with class methods"
       description: "There’s a way to make class methods private in Ruby, you just gotta jump through some hoops. Err, I mean use the <span class=\"code-inline\">class << self</span> syntax. This oddity pushes an instance singleton onto the class effectively creating class methods."
     braces:
       title: "Braces vs. do-end"
-      description: "The general convention is to use <span class=\"code-inline\">do .. end</span> for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that <span class=\"code-inline\">{}</span> has a higher precedence than <span class=\"code-inline\">do .. end</span>, so keep that in mind when deciding what you want to use."
+      description: "The general convention is to use <span class=\"code-inline\">do .. end</span> for multi-line blocks and curly braces for single line blocks, but there is also a difference between the two that can be illustrated. This means that <span class=\"code-inline\">{}</span> has a higher precedence than <span class=\"code-inline\">do .. end</span>, so keep that in mind when deciding which you want to use."
     module:
       title: "class Foo::Bar, defined outside Module Foo, won’t see inside Foo"
       description: "You can think of each appearance of <span class=\"code-inline\">module Something</span>, <span class=\"code-inline\">class Something</span> or <span class=\"code-inline\">def something</span> as a \"gateway\" into a new scope. When Ruby is searching for the definition of a name that has been referenced it first looks in the current scope (the method, class or module), and if it isn’t found where it will go back through each containing \"gateway\" and search the scope there."
@@ -536,7 +536,7 @@ pages:
     description: "In computer programming, SOLID (single responsibility, Open-closed, Liskov substitution, interface segregation, and dependency inversion) is a mnemonic acronym introduced by Michael Feathers for the \"First Five Principles\" named by Robert C. Martin in the early 2000s that stands for five basic principles of object-oriented programming and design. The intention is that these principles, when applied together, will make it more likely that a programmer will create a system that is easy to maintain and extend over time. The principles of SOLID are guidelines that can be applied while working on software to remove code smells by causing the programmer to refactor the software's source code until it is both legible and extensible. It is part of an overall strategy of agile and Adaptive Software Development."
     single:
       title: "Single Responsibility Principle"
-      description: "The Single Responsibility Principle is the most abstract of the bunch. It helps keep classes and methods small and maintainable. In addition to keeping classes small and focused it also makes them easier to understand.An example of this might be adding support for sending an email summary of a specific person’s commissions after marking a deal processed. The fact that we can identify multiple reasons to change signals a violation of the Single Responsibility Principle."
+      description: "The Single Responsibility Principle is the most abstract of the bunch. It helps keep classes and methods small and maintainable. In addition to keeping classes small and focused it also makes them easier to understand. An example of this might be, adding support for sending an email summary of a specific person’s commissions after marking a deal processed. The fact that we can identify multiple reasons to change signals a violation of the Single Responsibility Principle."
     open_close:
       title: "Open / Closed Principle"
       description: "The Open / Closed Principle states that classes or methods should be open for extension, but closed for modification. This tells us we should strive for modular designs that make it possible for us to change the behavior of the system without making modifications to the classes themselves. This is generally achieved through the use of patterns such as the strategy pattern."
@@ -561,15 +561,15 @@ pages:
       description: "Ruby 1.9 replaced green threads with native threads. However, the GIL is still preventing parallelism. That being said, concurrency has been improved through better scheduling. The new schedule makes context-switch decisions more efficient, by essentially moving them to a separate native thread, known as the timer thread."
     gil:
       title: "GIL - Global Interpreter Lock"
-      description: "MRI has a global interpreter lock (GIL). It's a lock around the execution of Ruby code. This means that in a multi-threaded context, only one thread can execute Ruby code at any one time.So if you have 8 threads busily working on an 8-core machine, only one thread and one core will be busy at any given time. The GIL exists to protect Ruby internals from race conditions that could corrupt data. There are caveats and optimizations, but this is the gist."
+      description: "MRI has a global interpreter lock (GIL). It's a lock around the execution of Ruby code. This means that in a multi-threaded context, only one thread can execute Ruby code at any one time. So if you have 8 threads busily working on an 8-core machine, only one thread and one core will be busy at any given time. The GIL exists to protect Ruby internals from race conditions that could corrupt data. There are caveats and optimizations, but this is the gist."
       example: "This simple fact is what makes threads so powerful, and also what makes them difficult to work with. I've already given you an idea of why threads are good; here's a simple program to illustrate their difficulty. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in array. Note that different ruby can show a different result. GIL exist only in MRI ruby."
     mutex:
       title: "Mutex - Mutual Execution"
-      description: "Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. In other words, they help bring some order, and some guarantees, to the world of multi-threaded chaos.The name 'mutex' is shorthand for 'mutual exclusion.' If you wrap some section of your code with a mutex, you guarantee that no two threads can enter that section at the same time. Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. It helps bring some order and some guaranty to the world of multi-threaded chaos."
+      description: "Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. In other words, they help bring some order, and some guarantees, to the world of multi-threaded chaos.The name 'mutex' is shorthand for 'mutual exclusion.' If you wrap some section of your code with a mutex, you guarantee that no two threads can enter that section at the same time. Mutexes provide a mechanism for multiple threads to synchronize access to a critical portion of code. It helps bring some order and some guarantee to the world of multi-threaded chaos."
       example: "In this program, since any thread has to lock the mutex before it can push to the Array, there's a guarantee that no two threads will be performing this operation at the same time. In other words, this operation can no longer be interrupted before it's completed. Once one thread begins pushing to the Array, no other threads will be able to enter that portion of code until the first thread is finished. This operation is now thread-safe. Here you can see that we have <span class=\"code-inline\">10 * 10000</span> elements in array. Now all are same, because of the mutex. The mutex sets up the same boundaries for the thread. The first thread that hits this bit of code will lock the mutex. it then becomes the owner of that mutex. Until the owning thread unlocks the mutex, no other thread can lock it."
     fibers:
       title: "Fibers"
-      description: "Fibers are primitives for implementing light weight cooperative concurrency in Ruby. Basically, they are a means of creating code blocks that can be paused and resumed, much like threads. The main difference is that they are never preempted and that the scheduling must be done by the programmer and not the VM. As opposed to other stackless lightweight concurrency models, each fiber comes with a small 4KB stack. This enables the fiber to be paused from deeply nested function calls within the fiber block."
+      description: "Fibers are primitives for implementing light weight cooperative concurrency in Ruby. Basically, they are means of creating code blocks that can be paused and resumed, much like threads. The main difference is that they are never preempted and that the scheduling must be done by the programmer and not the VM. As opposed to other stackless lightweight concurrency models, each fiber comes with a small 4KB stack. This enables the fiber to be paused from deeply nested function calls within the fiber block."
     rails:
       title: "Rails thread-safety"
       description: "The problem with this is that there is no simple way to say with absolute certainty whether an app as a whole is thread-safe. "
