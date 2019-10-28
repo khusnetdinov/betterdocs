@@ -12,5 +12,4 @@ before_install:
   - npm install
 
 script:
-  - rake lint:styles
-  - rake lint:javascript
+  - rake lint
