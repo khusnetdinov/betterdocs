@@ -140,7 +140,7 @@ sidebar:
       - di
   - title: Become Ruby Meister
     url: ruby_meister
-  - title: Fäden
+  - title: Threads
     url: threads
     submenus:
       - green
@@ -1182,7 +1182,7 @@ pages:
         hat, sie völlig unterschiedliche Konzepte sind.
   threads:
     example: Beispiel
-    title: Fäden
+    title: Threads
     description: 'Hinweis zu Parallelität und Parallelität: Der Hauptunterschied zwischen
       der Verwendung von Prozessen und Threads besteht in der Art und Weise, wie mit
       dem Arbeitsspeicher umgegangen wird. Auf einer höheren Ebene werden Prozesse kopiert,
@@ -1192,7 +1192,7 @@ pages:
       Diese Thread-API ist eine Ruby-API. Ich habe angedeutet, dass die verschiedenen
       Ruby-Implementierungen unterschiedliche Threading-Verhalten haben.'
     green:
-      title: Grüne Fäden
+      title: Grüne Threads
       description: Ruby 1.9 ersetzte grüne Threads durch native Threads. Die GIL verhindert
         jedoch immer noch den Parallelismus. Die Parallelität wurde jedoch durch eine
         bessere Planung verbessert. Der neue Zeitplan macht Kontextwechselentscheidungen
@@ -1396,7 +1396,7 @@ pages:
             macht das Entwerfen von Algorithmen und die Analyse ihrer Wirksamkeit und
             Effizienz immer noch zu einem &quot;Rätsel&quot;. Das Buch ist auf die Erstausgabe
             erweitert und dient jetzt als erstes Lehrbuch für Algorithmenentwurfskurse,
-            während es als erster praktischer Nachschlagewerk für Algorithmen für Programmierer,
+            während es als erstes praktisches Nachschlagewerk für Algorithmen für Programmierer,
             Forscher und Studenten gilt.
         - name: cormen
           title: Einführung in Algorithmen, 3. Ausgabe (The MIT Press)
