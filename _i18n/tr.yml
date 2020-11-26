@@ -1,7 +1,7 @@
 head:
   title: BetterDocs
   metatags:
-    description: Ruby örnekleri ve referansları ile temel programlama. İplikleri,
+    description: Ruby örnekleri ve referansları ile temel programlama. İş parçacıklarını,
       SOLID ilkelerini, tasarım modellerini, veri yapılarını, algoritmaları kapsar.
     keywords: Daha iyi belgeler, Ruby, Temelleri, Ruby programlama esasları. Ruby
       getchas, İşlevsel programlama, Metaprogramlama, Konular, Örneklerle Ruby&#39;nin
@@ -85,7 +85,7 @@ sidebar:
           - strategy
           - template
           - visitor
-  - title: İşlevsel Programlama
+  - title: Fonksiyonel Programlama
     url: functional_programming
     submenus:
       - pure_functions
@@ -123,7 +123,7 @@ sidebar:
       - private
       - braces
       - module
-  - title: Görüşme soruları
+  - title: Mülakat soruları
     url: interview_questions
   - title: Meta Programlama
     url: meta_programming
@@ -158,7 +158,7 @@ pages:
     title: Sayfa bulunamadı :(
     description: İstenilen sayfa bulunamadı.
   page500:
-    title: "Something was going wrong :("
+    title: "Bir şeyler yanlış gitti :("
   algorithms:
     title: Algoritmalar
     complexity:
@@ -723,8 +723,8 @@ pages:
         hierarchical: Hiyerarşik ziyaretçi
       credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
   functional_programming:
-    title: İşlevsel programlama
-    description: 'Bir dili işlevsel bir tarzda kullanmak, aşağıda listelenen birkaç
+    title: Fonksiyonel programlama
+    description: 'Bir dili fonksiyonel bir tarzda kullanmak, aşağıda listelenen birkaç
       temel özelliğe erişiminiz olduğunu gösterir:'
     axioms:
       immutable: 'Değişmez değerler: Bir “değişken” ayarlandıktan sonra değiştirilemez.
@@ -1103,7 +1103,7 @@ pages:
     description: 'Paralellik ve eşzamanlılık hakkında not: İşlemleri iş parçacığına
       karşı kullanma arasındaki birincil fark, belleğin işlenme şeklidir. İş parçacığı
       belleği paylaşırken, yüksek düzeyde, kopya belleği işler. Bu, işlemin yumurtlamasını
-      iplik yumurtlamadan daha yavaş yapar ve bir kez çalıştırıldığında daha fazla kaynak
+      iş parçacığı yumurtlamadan daha yavaş yapar ve bir kez çalıştırıldığında daha fazla kaynak
       tüketen işlemlere yol açar. Genel olarak, dişler işlemlerden daha az ek yüke sahiptir.
       Bu Thread API&#39;sı Ruby API&#39;dir. Farklı Ruby uygulamalarının altta yatan
       farklı diş çekme davranışları olduğunu ima ettim.'
@@ -1147,7 +1147,7 @@ pages:
         <span class="code-inline">10 * 10000</span> elementin olduğunu görebilirsiniz.
         Şimdi hepsi muteks yüzünden aynı. Mutex, iş parçacığı için aynı sınırları belirler.
         Bu kod parçasına isabet eden ilk iş parçacığı muteks kilitler. o zaman bu muteksin
-        sahibi olur. Sahiplik dişi muteksin kilidini açana kadar, başka hiçbir iplik
+        sahibi olur. Sahiş parçacığı dişi muteksin kilidini açana kadar, başka hiçbir iş parçacığı
         onu kilitleyemez.
     fibers:
       title: Lifler
@@ -1159,10 +1159,10 @@ pages:
         küçük 4KB&#39;lık bir yığınla geliyor. Bu, elyafın blok içerisindeki derinlemesine
         yuvalanmış fonksiyon çağrılarından duraklatılmasını sağlar.
     rails:
-      title: Ray iplik güvenliği
+      title: Rails iş parçacığı güvenliği
       description: Bununla ilgili sorun, bir uygulamanın bir bütün olarak güvenli olup
         olmadığını kesin bir şekilde söylemenin basit bir yolu olmamasıdır.
-      global_variables: Global değişkenler globaldir. Bu, iplikler arasında paylaşıldıkları
+      global_variables: Global değişkenler globaldir. Bu, iş parçacıkları arasında paylaşıldıkları
         anlamına gelir. Şimdiye kadar global değişkenleri kullanmama konusunda ikna
         edilmediyseniz, bunlara asla dokunmamanın başka bir nedeni. Bir uygulamada küresel
         olarak bir şeyi gerçekten paylaşmak istiyorsanız, yine de bir sabit tarafından
@@ -1229,12 +1229,12 @@ pages:
     credits: 'Kod ve makaleler kaynaklardan alınmıştır:'
   ruby_meister:
     title: Ruby Meister ol
-    description: Bu konuşmada, bir Ruby acemi olmaktan gerçek Ruby ustalığına ulaşmaya
+    description: Bu konuşmada, bir Ruby acemisi olmaktan gerçek Ruby ustalığına ulaşmaya
       kadar olan uzun yolculuğu inceleyeceğiz ve bazı önemli bilgileri paylaşarak sizin
-      için biraz kısaltmaya çalışacağız. Bir Üstat Rubyist&#39;in teorik bir temeli
+      için süreci biraz kısaltmaya çalışacağız. Bir Üstat Rubyist&#39;in teorik bir temeli
       vardır, geniş bir araç kutusuna dayanır, Ruby&#39;nin temel değerlerini ve ilkelerini
       derinlemesine anlar ve her zaman yeteneklerini geliştirir. Belki de kendinize
-      “Vay, bu oldukça belirsiz!” Diyorsunuz, ancak bu oturuma katılırsanız aydınlanacağınız,
+      “Vay, bu oldukça belirsiz!” diyorsunuz, ancak bu oturuma katılırsanız aydınlanacağınız,
       eğleneceğiniz ve tamamen keyif alacağınıza söz veriyorum! Kulağa iyi geliyor?
       Harika kitaplar, insanlara becerilerini geliştirmek için önerdiğim kaynakların
       bir parçası olacak.
@@ -1360,14 +1360,14 @@ pages:
       title: Seni tanıyorsun
       articles:
         - name: well_grounded
-          title: Topraklı Yakut
+          title: Sağlam temelli Ruby
           description: Well-Grounded Rubyist, Second Edition hem Ruby&#39;yi hem de
             dil anlayışlarını derinleştirmek isteyen Ruby programcılarını ele alıyor.
             Bu güzel yazılmış ve tamamen revize edilmiş ikinci baskı, Ruby 2.1&#39;de
             yeni olan özelliklerin yanı sıra, değişen dilin genişletilmiş ve güncellenmiş
             içeriğini de içerir.
         - name: programming_ruby
-          title: 'Programlama Ruby: Pragmatik Programcılar Rehberi, İkinci Baskı'
+          title: 'Ruby Programlama: Pragmatik Programcılar Rehberi, İkinci Baskı'
           description: 'Ruby, günümüzde en iyi ve en kullanışlı dil olarak birçok uygulayıcı
             tarafından selamlanan, giderek daha popüler, tamamen nesne yönelimli bir
             dinamik programlama dilidir. Ruby, Batı dünyasındaki sahneye ilk çıktığında,
@@ -1384,34 +1384,34 @@ pages:
             koleksiyonlar, girdi / çıktı, ağ iletişimi ve eşzamanlılık özelliklerini
             gösterir. Ruby&#39;nin metaprogramlama yeteneklerine bir bölüm ayrılmıştır.'
   interview_questions:
-    title: Görüşme soruları
-    description: Bu bölüm okuma ve görüşme hazırlığı için kaynakları tutar.
+    title: Mülakat soruları
+    description: Bu bölüm okuma ve mülakat hazırlığı için kaynakları tutar.
     list:
       - name: 'Toptal: Harika bir Ruby Developer nasıl işe alınır'
         link: "https://www.toptal.com/ruby#hiring-guide"
-      - name: 'Toptal: 21 Temel Yakut Röportaj Soruları'
+      - name: 'Toptal: 21 Temel Ruby Mülakat Soruları'
         link: "https://www.toptal.com/ruby/interview-questions"
-      - name: 'Hookops: 35+ Ruby and Rails Röportaj Sorular ve Cevaplar'
+      - name: 'Hookops: 35+ Ruby and Rails Mülakat Sorular ve Cevaplar'
         link: "https://lab.hookops.com/ruby-interview-prep.html"
-      - name: 'Educba: 15 En Önemli Yakut Röportajı Soru Ve Cevap'
+      - name: 'Educba: 15 En Önemli Mülakat Röportajı Soru Ve Cevap'
         link: "https://www.educba.com/ruby-interview-questions/"
       - name: 'Ruby Garage: Ruby on Rails Geliştirici ile Nasıl Görüşme Yapılır'
         link: "https://rubygarage.org/blog/how-to-interview-your-ruby-on-rails-developer"
-      - name: 'RyanSobol: Yakut Görüşme Sırasında Sorulması Gereken 15 Soru'
+      - name: 'RyanSobol: Ruby Görüşme Sırasında Sorulması Gereken 15 Soru'
         link: "https://gist.github.com/ryansobol/5252653"
-      - name: 'Toptal: 9 Temel Ruby on Rails Röportaj Sorular'
+      - name: 'Toptal: 9 Temel Ruby on Rails Mülakat Sorular'
         link: "https://www.toptal.com/ruby-on-rails/interview-questions"
   index:
-    title: Daha İyi Belgeler Nedir?
+    title: Betterdocs Nedir?
     description: Bu web sitesi web uyarlaması olan Github deposu <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental</a>
       çok fazla yıldız topladı ve Çince&#39;ye çevrildi. Better Docs, tek bir havuzda
-      toplanan çok sayıda en iyi uygulamayı hızla bulmanızı sağlar. Referans veya röportaj
-      hazırlık kaynağı gibi sadece bu repo.
+      toplanan çok sayıda en iyi uygulamayı hızla bulmanızı sağlar. Bu repoyu referans veya mülakat
+      hazırlık kaynakları gibi kullanın.
     oss:
       title: Açık Kaynak sayesinde
       description: Ruby&#39;de yazılmış web geliştirme uygulamaları için açık kaynaklı
-        bir mühendislik olan yakutla ilgili en iyi uygulamalar ve bilgiler hakkında
-        çalışırken ve öğrenirken Daha İyi Dokümanlar oluşturuldu.
+        bir mühendislik olan Ruby ile ilgili en iyi uygulamalar ve bilgiler hakkında
+        çalışırken ve öğrenirken Betterdocs oluşturuldu.
       thanks: Better Docs size herhangi bir şekilde yardımcı olduysa, bize <a href="https://github.com/howtohireme/ruby.fundamental">Github&#39;ta</a>
-        bir Yıldız vermeyi (daha fazla geliştiriciye ulaşmamıza yardımcı olur) veya
+        bir yıldız vermeyi (daha fazla geliştiriciye ulaşmamıza yardımcı olur) veya
         projelerimize katkıda bulunmayı düşünün.
