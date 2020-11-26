@@ -1431,7 +1431,7 @@ pages:
       articles:
         - name: well_grounded
           title: "The Well-Grounded Rubyist"
-          description: "The Well-Grounded Rubyist", Ediția a doua se adresează atât
+          description: The Well-Grounded Rubyist, Ediția a doua se adresează atât
             nou-veniților programatorilor Ruby, cât și programatorilor Ruby care doresc
             să-și aprofundeze înțelegerea limbii. Această ediție frumoasă și complet
             revizuită include acoperirea caracteristicilor noi în Ruby 2.1, precum și
