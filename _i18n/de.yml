@@ -408,7 +408,7 @@ pages:
         title: Warteschlange
         description: Eine Warteschlange ist eine einfache auf Container basierende Struktur,
           die eine reale Warteschlange nachahmt (z. B. Warteschlange bei der Bank).
-          Es handelt sich um FIFO (first-in-first-out), dh wenn Sie Elemente aus der
+          Es handelt sich um FIFO (first-in-first-out), d.h. wenn Sie Elemente aus der
           Warteschlange abrufen, werden sie in der Reihenfolge zurückgegeben, in der
           sie eingegeben wurden. Ruby-Arrays stellen Methoden bereit, die die Implementierung
           von Warteschlangen trivial vereinfachen. Wenn sie jedoch entsprechend benannt
@@ -1480,7 +1480,7 @@ pages:
         - name:  ruby_programming
           title: 'Die Programmiersprache Ruby: Alles, was Sie wissen müssen'
           description: 'Dieses Buch beginnt mit einem Schnellstart-Tutorial für die
-            Sprache und erläutert anschließend die Sprache von unten nach unten im Detail:
+            Sprache und erläutert anschließend die Sprache von oben nach unten im Detail:
             von der lexikalischen und syntaktischen Struktur über Datentypen bis hin
             zu Ausdrücken und Anweisungen und über Methoden, Blöcke, Lambdas, Closures,
             Klassen und Module. Das Buch enthält außerdem eine lange und umfassende
@@ -1511,7 +1511,7 @@ pages:
   index:
     title: Was ist besser?
     description: Diese Website ist ein Github-Repository <a href="https://github.com/khusnetdinov/ruby.fundamental">Ruby.Fundamental,</a>
-      das viele Sterne sammelte und in die chinesische Sprache übersetzt wurde. Bessere
+      das viele Sterne erhalten hat und in die chinesische Sprache übersetzt wurde. Bessere
       Dokumente ermöglichen es Ihnen, schnell viele bewährte Methoden zu finden, die
       in einem Repository gesammelt wurden. Nur Sie können dieses Repo als Referenz-
       oder Interviewvorbereitungsressource nutzen.
