@@ -1424,7 +1424,7 @@ pages:
           title: C-Programmiersprache, 2. Ausgabe
           description: Die Autoren präsentieren das vollständige Handbuch zur Programmierung
             der ANSI-Standardsprache C. Diese neue Version wurde von den Entwicklern
-            von C geschrieben und hilft den Lesern dabei, mit dem endgültigen ANSI-Standard
+            von C geschrieben und hilft die Leser dabei, mit dem endgültigen ANSI-Standard
             für C Schritt zu halten, und zeigt, wie sie die zahlreichen Operatoren von
             C, die Ausdruckskraft, den verbesserten Kontrollfluss und die Datenstrukturen
             nutzen können. Das 2 / E wurde komplett mit zusätzlichen Beispielen und
@@ -1466,7 +1466,7 @@ pages:
           title: Der fundierte Rubyist
           description: Die Second Edition von The Rubyist Rubyist ist sowohl für Neueinsteiger
             als auch für Ruby-Programmierer gedacht, die ihr Sprachverständnis vertiefen
-            möchten. Diese wunderschön geschriebene und vollständig überarbeitete zweite
+            möchten. Dieses wunderschön geschriebene und vollständig überarbeitete zweite
             Ausgabe umfasst Funktionen, die in Ruby 2.1 neu sind, sowie erweiterte und
             aktualisierte Aspekte der geänderten Sprache.
         - name: programming_ruby
