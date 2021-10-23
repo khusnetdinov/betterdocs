@@ -4,9 +4,11 @@ source 'https://rubygems.org'
 
 ruby '2.5.5'
 
+gem 'addressable', '>= 2.8.0'
 gem 'jekyll', '>= 3.7.4'
 gem 'html-proofer', '>= 3.11.0'
-gem 'nokogiri', '>= 1.10.4'
+gem 'kramdown', '>= 2.3.1'
+gem 'nokogiri', '>= 1.12.5'
 gem 'rack', '>= 1.6.11'
 gem 'rack-jekyll'
 gem 'rake'
