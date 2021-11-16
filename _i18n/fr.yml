@@ -131,7 +131,7 @@ sidebar:
       - private
       - braces
       - module
-  - title: Questions entrevue
+  - title: Questions d'entretien
     url: interview_questions
   - title: Méta-programmation
     url: meta_programming
