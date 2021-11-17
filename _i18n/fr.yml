@@ -861,13 +861,13 @@ pages:
       n&#39;ayant pratiquement aucune connaissance de la langue.
     description3: Quoi qu&#39;il en soit, tôt ou tard, débutants ou programmeurs expérimentés,
       nous nous heurtons tous à ce qu&#39;on appelle Ruby Gotchas - ces petites subtilités
-      linguistiques qui se cachent sur notre site pendant des heures de débogage hardcore.
+      de langage qui se cachent sur notre site pendant des heures de débogage hardcore.
     description4: Voici une liste des pièges à Ruby populaires et des curiosités que
       les développeurs devraient connaître. Pour chaque cas, il y a un exemple de code
       source de confusion et / ou sujet aux erreurs.
     description5: Elles viennent avec de bonnes pratiques, qui vous empêcheront de commettre
       des erreurs simples (mais difficiles à trouver) et simplifieront votre vie (et
-      celle de votre mainteneur de code).
+      celle de votre responsable de code).
     surprising:
       title: Ruby peut être surprenant
       description: Bien que &quot;conçu pour maximiser le bonheur des programmeurs&quot;,
@@ -883,31 +883,31 @@ pages:
         . Comme dans la plupart des langues avec interpolation de chaîne. Pour l&#39;éviter,
         utilisez les doublons quand cela vous convient.
     twue:
-      title: C&#39;est twue! C&#39;est twue!
+      title: C&#39;est deux! C&#39;est deux!
       description: 'Seules deux choses sont fausses: <span class="code-inline">false</span>
         et <span class="code-inline">nil</span> . Tout le reste est la vérité, même
         <span class="code-inline">0</span> (faux en C), <span class="code-inline">&quot;&quot;</span>
-        (faux en JS), <span class="code-inline">[]</span> , etc. Fait trébucher les
+        (faux en JS), <span class="code-inline">[]</span> , etc. Cela fait trébucher les
         gens de C, JS, etc. où certains d&#39;entre eux sont faux.'
     symbols_and_strings:
       title: Accrochez-le en effigie ou accrochez-le symboliquement.
-      description: '<span class="code-inline">Symbol! = String</span> . Même si le
-        même lors de l&#39;impression. Rappelez-vous lequel utiliser pour les arguments.
+      description: '<span class="code-inline">Symbol! = String</span> . Même s&#39;il est identique à l&#39;impression. 
+        Rappelez-vous lequel utiliser pour les arguments.
         Dans l’idéal, prenez l’une ou l’autre et utilisez ce qu’une méthode attend:
         «Soyez libéral dans ce que vous acceptez et conservateur dans ce que vous envoyez.
         Loi de Postel.'
     string_or_nothing:
       title: String ... ou rien!
     constants:
-      title: Les constantes ne sont pas
-      description: Les majuscules initiales signifient constante, en ruby. Essayez de
+      title: Les constantes ne le sont pas
+      description: Les majuscules initiales signifient constante, en Ruby. Essayez de
         changer une constante. Ooooh vous obtenez un AVERTISSEMENT! BFD. Même le gel
         ne fonctionne pas pour Fixnums. Cela fonctionne pour les tableaux (en quelque
         sorte) et la plupart des autres objets ... dit-il préfigurant.
     equals:
       title: Certains sont plus égaux que d&#39;autres
       description: <span class="code-inline">==</span> est la même valeur habituelle,
-        <span class="code-inline">.eql?</span> est value et class (1 est Fixnum, 1.0
+        <span class="code-inline">.eql?</span> est la valeur et la classe (1 est Fixnum, 1.0
         est Float), <span class="code-inline">.equal?</span> est le même objet. C&#39;est
         en fait beaucoup plus poilu.
     operations:
@@ -919,33 +919,33 @@ pages:
         des personnes de langues où <span class="code-inline">===</span> est soit l&#39;identité
         de l&#39;objet, soit la même valeur et la même classe.
     priority:
-      title: and != &&, or  != ||
+      title: et != &&, ou  != ||
       description: '<span class="code-inline">&amp;&amp;</span> a une priorité supérieure
         à <span class="code-inline">=</span> , donc <span class="code-inline">x = true
         && false</span> signifie <span class="code-inline">x = (true &&
         false)</span> et a une priorité inférieure, donc <span class="code-inline">x
         = true and false</span> signifie <span class="code-inline">(x = true) and false</span>
-        . Ruby Style Guide: Utilisez <span class="code-inline">&amp;&amp;, ||</span>
+        . Guide de style Ruby: utilisez <span class="code-inline">&amp;&amp;, ||</span>
         pour les expressions booléennes, <span class="code-inline">and, or</span> pour
         le flux de contrôle.'
     sensitive:
       title: Ne soyez pas si sensible!
-      description: Espace insensible? PAS TOUJOURS! Parser pense que c&#39;est une expression,
-        comme on dit, mais <span class="code-inline">(1, 2)</span> n&#39;est pas une
+      description: Insensible aux espaces blancs ? PAS TOUJOURS! L&#39;analyseur pense que c&#39;est une expression,
+        comme on un seul argument, mais <span class="code-inline">(1, 2)</span> n&#39;est pas une
         expression Ruby valide! (Tout fonctionne bien avec 1 argument).
       usage: 'Avec plusieurs arguments: <br/> - Pas de parens, pas de problème. <br/>
-        - Parents sans espace, d&#39;accord. <br/> - Parens et espace, NON!'
+        - Parents sans espace, d&#39;accord. <br/> - Parents et espace, NON!'
       methods: '<span class="code-inline">method / num</span> est une expression rationnelle
         ou une chaîne non utilisée! Ruby pense que vous donnez un argument à la méthode.
         Principe général: utiliser des espaces équilibrés; des deux côtés ou ni l&#39;un
         ni l&#39;autre.'
-      arguments: '<span class="code-inline">one -2</span> fait penser à Ruby que vous
+      arguments: '<span class="code-inline">one -2</span> fait croire à Ruby que vous
         donnez un argument <span class="code-inline">-2</span> à la première méthode.
         Même chose pour <span class="code-inline">+2</span> ou même <span class="code-inline">*
-        2</span> . Encore une fois: utilisez les espaces BALANCED, des deux côtés ou
+        2</span> . Encore une fois: utilisez les espaces ÉQUILIBRÉ, des deux côtés ou
         aucun des deux.'
       stubby: "&quot;Stabby&quot; lambdas (1.9+) parenthèses optionnelle Espace avant
-        après dispute sans parents, OK. Espace après les parents, d&#39;accord. Encore
+        après les arguments sans parents, OK. Espace après les parents, d&#39;accord. Encore
         une fois, espace avant les parents, NON! MISE À JOUR: corrigé en 2.0!"
     onto:
       title: Le yer @ sur!
@@ -958,41 +958,41 @@ pages:
         Montoya.'
     variables:
       title: Attention, c&#39;est un @@!
-      description: Regarde ce que le remplissage du blanc? Nous n&#39;avons pas changé
+      description: Regarde ce que remplit le blanc? Nous n&#39;avons pas changé
         la <span class="code-inline">valeur @@</span> de Parent avant de la vérifier,
-        ni Child du tout! Ou avons-nous? <span class="code-inline">Les variables @@</span>
+        ni celle de l'enfant du tout! Ou l&#39;avons-nous fait ? <span class="code-inline">Les variables @@</span>
         sont partagées avec des sous-classes - pas seulement leur existence, mais les
         variables elles-mêmes! Déclarer la <span class="code-inline">valeur @@</span>
-        de Child modifiée a changé celui de Parent, et inclure celui de Parent, Child&#39;s.ut,
+        de l&#39;enfant a changé le Parent, et y compris le Parent a changé le, Child&#39;s.ut,
         c&#39;est un @@!
     initialize:
-      title: Avec init (ialize) ou sans
+      title: Avec init(ialize) ou sans
       description: L&#39;initialisation du parent ne s&#39;exécute automatiquement que
-        si un enfant n&#39;en a pas. Sinon, le parent doit être appelé à courir.
+        si un enfant n&#39;en a pas. Sinon, le parent doit être appelé pour s&#39;exécuter.
     superman:
       title: Superman contre l&#39;homme invisible
-      description: '<span class="code-inline">super</span> sans-arg liste envoie ce
-        que l&#39; appelant a <span class="code-inline">super</span> avec args explicites
-        envoie ces args pour envoyer NO args, utilisez parens vide: <span class="code-inline">super
+      description: '<span class="code-inline">super</span> avec un liste sans argument envoie ce
+        que l&#39; appelant a obtenu <span class="code-inline">super</span> avec arguments explicites
+        envoie ces arguments pour n&#39;envoyer AUCUN argument, utilisez parenthèses vides: <span class="code-inline">super
         ().</span>'
     regexp:
       title: Quand cela se finira-t-il? (Ou commencer?)
-      description: 'Dans les expressions rationnelles standard: <span class="code-inlne">^</span>
-        est start et <span class="code-inline">$</span> est la fin de la chaîne entière.
-        Les regexes de Ruby sont multilignes, donc: <span class="code-inline">^</span>
+      description: 'Dans les expressions régulières standard: <span class="code-inlne">^</span>
+        est le début et <span class="code-inline">$</span> est la fin de la chaîne entière.
+        Les expressions régulières de Ruby sont multilignes, donc: <span class="code-inline">^</span>
         est le début et <span class="code-inline">$</span> est la fin de la ligne! <span
         class="code-inline">\ A</span> est le début et <span class="code-inline">\ Z</span>
         est la fin de la chaîne entière. (Ou \ z pour inclure n&#39;importe quelle nouvelle
-        ligne… ce qui est un autre jeu d&#39;enfant!)'
+        ligne… ce qui est un autre piège!)'
     any:
-      title: obtenir.
+      title: Obtenir .any?
       description: '<span class="code-inline">.any?</span> ne veut pas dire &quot;aucun
-        élément?&quot;! Avec bloc: &quot;est-ce que le bloc est vrai?&quot;. Sans: &quot;y
+        élément?&quot;! Avec le bloc: &quot;est-ce que le bloc est vrai?&quot;. Sans: &quot;y
         a-t-il une vérité?&quot; A un bloc implicite: <span class="code-inline">{ |element| element }</span> .'
     undef:
       title: "(Un) Def Leppard"
       description: Les variables déclarées dans des blocs passés aux itérateurs (par
-        exemple, times ou chacun) ne sont pas définis au début de chaque itération!
+        exemple, les heures ou chacun) ne sont pas définis au début de chaque itération!
         Les itérateurs appellent le bloc à plusieurs reprises, de sorte que vars soit
         à nouveau hors de portée après chaque appel. Les constructions en boucle intégrées
         (par exemple, while ou for) sont acceptables. (Ou déclarer vars avant le bloc.)
