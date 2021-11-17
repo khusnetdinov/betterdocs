@@ -493,7 +493,7 @@ pages:
           petite clé est une opération triviale dans un tas binaire.
       credits: 'Le code et les articles ont été tirés des ressources:'
       source: Cette page contient le code Ruby du livre &quot;Structures de données
-        et algorithmes avec des motifs de conception orientés objet en Ruby&quot; de
+        et algorithmes avec des Modèles de conception orientés objet en Ruby&quot; de
         Bruno R. Preiss. Copyright (c) 2004 par Bruno R. Preiss, ing. Tous les droits
         sont réservés.
   design_patterns:
@@ -527,7 +527,7 @@ pages:
         description: Le modèle de construction est un modèle de conception de logiciel
           de création d’objet. Contrairement au modèle de fabrique abstraite et au modèle
           la fabrique dont le but est d&#39;activer le polymorphisme, le
-          modèle de constructeur a pour objectif de trouver une solution à l&#39;anti-motif
+          modèle de constructeur a pour objectif de trouver une solution à l&#39;anti-Modèle
           du constructeur télescopique [citation nécessaire]. L&#39;anti-modèle de constructeur
           télescopique se produit lorsque l&#39;augmentation de la combinaison de paramètres
           de constructeur d&#39;objet conduit à une liste exponentielle de constructeurs.
@@ -564,7 +564,7 @@ pages:
         pool: Ensemble d&#39;objets
         resource: L&#39;acquisition des ressources est une initialisation
     structural:
-      title: Motifs structurels
+      title: Modèles structurels
       description: En génie logiciel, les modèles de conception structurels sont des
         modèles de conception qui facilitent la conception en identifiant un moyen simple
         de créer des relations entre des entités.
@@ -634,7 +634,7 @@ pages:
           messagerie électronique publique, les réseaux sociaux, le stockage de données,
           etc. La direction estime qu&#39;il est préférable de bloquer certains contenus
           et fournir uniquement des pages Web relatives au travail. Le serveur proxy
-          fait ce travail. Ceci est un type de modèle de conception de proxy
+          fait ce travail. Ceci est un type de modèle de conception de proxy.
       virtual_proxy:
         title: Proxy virtuel
         description: Proxy virtuel. À la place d&#39;un objet complexe ou lourd, utilisez
@@ -654,7 +654,7 @@ pages:
           ATM, elle contiendra des objets proxy pour les informations bancaires existant
           sur le serveur distant.
       not_covered:
-        title: 'Motifs non couverts:'
+        title: 'Modèles non couverts:'
         callback: Rappel annoté
         bridge: Pont
         data_bus: Bus de données
@@ -671,7 +671,7 @@ pages:
           est un modèle de conception constitué d&#39;une source d&#39;objets de commande
           et d&#39;une série d&#39;objets de traitement. Chaque objet de traitement
           contient une logique qui définit les types d&#39;objets de commande qu&#39;il
-          peut gérer. le reste est transmis à l&#39;objet de traitement suivant de la
+          peut gérer, le reste est transmis à l&#39;objet de traitement suivant de la
           chaîne. Un mécanisme existe également pour ajouter de nouveaux objets de traitement
           à la fin de cette chaîne.
       command:
@@ -679,7 +679,7 @@ pages:
         description: Le modèle de commande est un modèle de conception de comportement
           utilisé pour stocker les informations nécessaires pour appeler des méthodes
           ultérieurement. La commande est simplement un ensemble d&#39;actions encapsulées
-          dans un objet. Avec ruby, nous pouvons utiliser Procs pour faire la même chose
+          dans un objet. Avec Ruby, nous pouvons utiliser Procs pour faire la même chose
           sans avoir à créer un objet séparé. C&#39;est une bonne option lorsque l&#39;action
           est simple et ne nécessite pas de sauvegarder les informations d&#39;état.
           Sinon, une classe de commande est la meilleure option.
@@ -692,14 +692,14 @@ pages:
           phrase dans le langage est une instance du modèle composite et est utilisé
           pour évaluer (interpréter) la phrase pour un client.
       iterator:
-        title: Motif d&#39;itérateur
-        description: Le modèle de conception d&#39;itérateur fournit un accès séquentiel
+        title: Modèle d&#39;itérateur
+        description: Le modèle d&#39;itérateur fournit un accès séquentiel
           aux éléments d&#39;un conteneur sans exposer la manière dont le conteneur
           représente réellement les éléments. L&#39;itérateur peut être considéré comme
           un pointeur mobile permettant d&#39;accéder aux éléments encapsulés dans un
           conteneur.
       external_iterator:
-        title: Motif itérateur externe
+        title: Modèle itérateur externe
         description: 'Itérateur externe: la logique d&#39;itération est contenue dans
           une classe séparée. La classe d&#39;itération peut être généralisée pour gérer
           plusieurs types d&#39;objet tant qu&#39;ils permettent l&#39;indexation. La
@@ -707,7 +707,7 @@ pages:
           dite, mais elles permettent une plus grande flexibilité, car vous pouvez contrôler
           l&#39;itération, les éléments itérés et dans quel ordre.'
       internal_iterator:
-        title: Motif itérateur interne
+        title: Modèle itérateur interne
         description: 'Itérateur interne: toute la logique d&#39;itération se produit
           à l&#39;intérieur de l&#39;objet agrégé. Utilisez un bloc de code pour transmettre
           votre logique à l&#39;agrégat, qui appelle ensuite le bloc pour chacun de
@@ -727,17 +727,17 @@ pages:
           Cela réduit les dépendances entre les objets en communication, réduisant ainsi
           le couplage.
       momento:
-        title: Moment de motif
-        description: 'Le modèle momento est mis en œuvre avec trois objets: l&#39;initiateur,
+        title: Modèle Mémento
+        description: 'Le modèle mémento est mis en œuvre avec trois objets: l&#39;initiateur,
           un gardien et un moment. L&#39;initiateur est un objet qui a un état interne.
           Le gardien va faire quelque chose à l&#39;initiateur, mais veut pouvoir annuler
-          le changement. Le gardien demande d&#39;abord à l&#39;auteur un objet momento.
+          le changement. Le gardien demande d&#39;abord à l&#39;auteur un objet mémento.
           Ensuite, il exécute l&#39;opération (ou la séquence d&#39;opérations) à exécuter.
-          Pour revenir à l&#39;état avant les opérations, il renvoie l&#39;objet momento
+          Pour revenir à l&#39;état avant les opérations, il renvoie l&#39;objet mémento
           à l&#39;expéditeur. L&#39;objet momento lui-même est un objet opaque (un objet
           que le gardien ne peut pas ou ne devrait pas changer). Lors de l&#39;utilisation
           de ce modèle, il convient de prendre des précautions si son auteur peut modifier
-          d&#39;autres objets ou ressources - le modèle Momento agit sur un seul objet.'
+          d&#39;autres objets ou ressources - le modèle Mémento agit sur un seul objet.'
       observer:
         title: Modèle d&#39;observateur
         description: Le modèle d&#39;observateur est un modèle de conception logicielle
@@ -745,7 +745,7 @@ pages:
           appelés observateurs, et les informe automatiquement de tout changement d&#39;état,
           généralement en appelant l&#39;une de leurs méthodes. Il est principalement
           utilisé pour mettre en œuvre des systèmes de gestion d&#39;événements distribués.
-          Le modèle Observer est également un élément clé du modèle architectural familier
+          Le modèle Observateur est également un élément clé du modèle architectural familier
           modèle-vue-contrôleur (MVC). Le modèle d&#39;observateur est implémenté dans
           de nombreuses bibliothèques et systèmes de programmation, y compris presque
           tous les kits d&#39;outils graphiques.
@@ -772,7 +772,7 @@ pages:
           peuvent être utilisées par d&#39;autres objets de validation situés dans différentes
           zones du système (ou même de systèmes différents) sans duplication de code.
       template:
-        title: Modèle de méthode modèle
+        title: Modèle du patron de méthode
         description: En programmation orientée objet, une classe est d&#39;abord créée
           pour fournir les étapes de base d&#39;une conception d&#39;algorithme. Ces
           étapes sont mises en œuvre à l&#39;aide de méthodes abstraites. Plus tard,
@@ -791,9 +791,9 @@ pages:
           modifier les classes elles-mêmes; au lieu de cela, on crée une classe de visiteur
           qui implémente toutes les spécialisations appropriées de la fonction virtuelle.
           Le visiteur prend en entrée la référence à l&#39;instance et implémente l&#39;objectif
-          par double dispatch.
+          via une double soumission.
       not_covered:
-        title: 'Motifs non couverts:'
+        title: 'Modèles non couverts:'
         hierarchical: Visiteur hiérarchique
       credits: 'Le code et les articles ont été tirés des ressources:'
   functional_programming:
@@ -807,17 +807,16 @@ pages:
       side_effects: 'Aucun effet secondaire: lorsqu&#39;une valeur donnée est transmise,
         une fonction doit toujours renvoyer le même résultat. Cela va de pair avec des
         valeurs immuables; une fonction ne peut jamais prendre une valeur et la modifier,
-        car cela provoquerait un effet secondaire tangent au résultat.'
+        car cela provoquerait un effet secondaire tangent au retour d&#39;résultat.'
       pure_functions: 'Fonctions d&#39;ordre supérieur: ce sont des fonctions qui autorisent
-        des fonctions en tant qu&#39;arguments ou qui utilisent des fonctions en tant
-        que valeur de retour. C&#39;est sans doute l&#39;une des caractéristiques les
-        plus critiques de tout langage fonctionnel.'
-      applying: 'Currying: activé par les fonctions d’ordre supérieur, le curry transforme
+        des fonctions comme arguments ou qui utilisent des fonctions comme valeur de retour. 
+        C&#39;est sans doute l&#39;une des caractéristiques les plus critiques de tout langage fonctionnel.'
+      applying: 'Currying: activé par des fonctions d’ordre supérieur, le currying transforme
         une fonction qui prend plusieurs arguments en une fonction qui prend un argument.
         Cela va de pair avec l&#39;application de fonction partielle, qui transforme
         une fonction multi-argument en une fonction qui prend moins d&#39;arguments
         qu&#39;elle ne le faisait à l&#39;origine.'
-      recursion: 'Récursion: boucler en appelant une fonction de l&#39;intérieur. Lorsque
+      recursion: 'Récursion: boucle en appelant une fonction depuis elle-même. Lorsque
         vous n&#39;avez pas accès à des données mutables, la récursivité est utilisée
         pour construire et chaîner la construction de données. En effet, le bouclage
         n’est pas un concept fonctionnel, car il nécessite le transfert de variables
@@ -826,31 +825,31 @@ pages:
         valeurs jusqu&#39;au moment où il est réellement nécessaire. Si, par exemple,
         vous avez un code générant une liste de nombres Fibonacci avec évaluation paresseuse
         activée, celui-ci ne sera en fait pas traité et calculé jusqu&#39;à ce que l&#39;une
-        des valeurs du résultat soit requise par une autre fonction, telle que put.'
+        des valeurs du résultat soit requise par une autre fonction, telle que des fonctions.'
     pure_functions:
       title: Fonctions pures
       description: Vous pouvez voir que cette fonction calcule le résultat uniquement
         en utilisant ses arguments.
     closures:
       title: Fermetures
-      description: Lambda impose également une fermeture et est donc capable de conserver
-        son contexte entre les objets.
+      description: Les Lambda appliquent également une fermeture et est donc capable de conserver
+        leur contexte entre les objets.
     applying:
-      title: Application et transport partiel
+      title: Application partielle et transport 
       description: Voyons d’abord ce que sont ces deux applications différentes des
         fonctions. Une application de fonction partielle appelle une fonction avec un
         certain nombre d&#39;arguments, afin d&#39;obtenir une fonction qui prendra
-        autant d&#39;arguments en moins. Currying prend une fonction qui prend n arguments,
+        autant d&#39;arguments en moins. Curry prend une fonction qui prend n arguments,
         et la divise en n fonctions qui prennent un argument.
       proc: Afin de vous donner une idée plus précise de ce que chacune de ces deux
         choses va faire, prenons un exemple avec Proc.
       partial: Une application partielle de cette fonction renverrait, si nous passions
         dans les deux premiers arguments, les Proc imbriqués suivants.
-      curry: <span class="code-inline">.curry</span> retourne un proc au curry. Si l&#39;argument
-        optionnel arity est donné, il détermine le nombre d&#39;arguments. Un proc au
-        curry reçoit des arguments. Si un nombre suffisant d&#39;arguments sont fournis,
+      curry: <span class="code-inline">.curry</span> retourne un proc au Curry. Si l&#39;argument
+        optionnel arity est donné, il détermine le nombre d&#39;arguments. Un proc
+        Curry reçoit des arguments. Si un nombre suffisant d&#39;arguments sont fournis,
         il les transmet au proc d&#39;origine et renvoie le résultat. Sinon, retourne
-        un autre proc curried qui prend le reste des arguments.
+        un autre proc Curry qui prend le reste des arguments.
   gotchas:
     title: Gotchas
     description1: La plupart des débutants de Ruby on Rails sont enthousiasmés par le
