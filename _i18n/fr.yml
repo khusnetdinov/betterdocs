@@ -1,7 +1,7 @@
 head:
   title: BetterDocs
   metatags:
-    description: Programmation fondamentale avec des exemples et des références ruby.
+    description: Programmation fondamentale avec des exemples et des références Ruby.
       Il couvre les threads, les principes SOLID, les modèles de conception, les structures
       de données, les algorithmes.
     keywords: Meilleurs documents, Ruby, Principes de base, Principes de base de la
@@ -164,7 +164,7 @@ pages:
   credits: Crédits
   page404:
     title: Page non trouvée :(
-    description: La page demandée n&#39;a pu être trouvée.
+    description: La page demandée n'&#39;'a pu être trouvée.
   page500:
     title: "Something was going wrong :("
   algorithms:
@@ -192,8 +192,8 @@ pages:
       insertion_sort:
         title: Tri par insertion
         description: Bien qu’il s’agisse de l’un des algorithmes de tri élémentaires
-          avec <span class="code-inline">O(n<sup>2</sup>)</span> lapire éventualité,
-          le tri par insertion est l’algorithme de choix soit lorsque les données sont
+          avec <span class="code-inline">O(n<sup>2</sup>)</span> le pire éventualité,
+          le tri par insertion est l’algorithme de choix, soit lorsque les données sont
           presque triées (car elles sont adaptatives), soit lorsque la taille du problème
           est petite (car a peu de frais généraux). Pour ces raisons, et parce qu&#39;il
           est également stable, le tri par insertion est souvent utilisé comme cas de
@@ -201,7 +201,7 @@ pages:
           de tri par division plus lourds, tels que le tri par fusion ou le tri rapide.
       selection_sort:
         title: Tri de sélection
-        description: De la comparaison présentée ici, on pourrait conclure que le tri
+        description: A partir de la comparaison présentée ici, on pourrait conclure que le tri
           par sélection ne devrait jamais être utilisé. Il ne s’adapte en aucune manière
           aux données (notez que les quatre animations ci-dessus s’exécutent de manière
           synchrone), son exécution est donc toujours quadratique. Cependant, le tri
@@ -209,7 +209,7 @@ pages:
           où le coût d’échange d’éléments est élevé, le choix de la sélection peut très
           bien être l’algorithme de choix.
       shell_sort:
-        title: Type de coquille
+        title: Tri de coquille
         description: La complexité temporelle du tri dans le pire des cas dépend de
           la séquence d&#39;incrémentation. Pour les incréments 1 4 13 40 121 ..., ce
           qui est utilisé ici, la complexité temporelle est <span class="code-inline">O
@@ -217,37 +217,37 @@ pages:
           la complexité temporelle est connue pour être <span class="code-inline">O
           (n <sup><sup>4</sup>⁄<sub>3</sub></sup> )</span> et même <span class="code-inline">O
           (n · lg <sub>2</sub> (n))</span> . Ni les limites supérieures strictes de
-          la complexité temporelle ni la meilleure séquence d&#39;incrémentation ne
-          sont connues. Comme le tri du shell est basé sur le tri par insertion, le
-          tri du shell hérite des propriétés adaptatives du tri par insertion. L&#39;adaptation
-          n&#39;est pas aussi spectaculaire car le tri dans le shell nécessite un seul
+          la complexité temporelle, ni la meilleure séquence d&#39;incrémentation ne
+          sont connues. Comme le tri de coquille est basé sur le tri par insertion, le
+          tri de coquille hérite des propriétés adaptatives du tri par insertion. L&#39;adaptation
+          n&#39;est pas aussi spectaculaire car le tri de coquille nécessite un seul
           passage dans les données pour chaque incrément, mais c&#39;est important.
           Pour la séquence d&#39;incrémentation indiquée ci-dessus, il existe des incréments <span class="code-inline">log<sub>3</sub>
           (n)</span> , de sorte que la complexité temporelle pour les données presque
           triées est <span class="code-inline">O(n·log<sub>3</sub>(n))</span> .
           En raison de son faible coût, de sa mise en œuvre relativement simple, de
           ses propriétés adaptatives et de sa complexité temporelle sous-quadratique,
-          le tri de shell peut être une alternative viable aux algorithmes de tri <span
+          le tri de coquille peut être une alternative viable aux algorithmes de tri <span
           class="code-inline">O(n·lg(n))</span> pour certaines applications lorsque
-          les données à trier sont pas très grand.
+          les données à trier sont pas très grandes.
       heap_sort:
-        title: Sorte de tas
-        description: Sorte de tas est simple à implémenter, effectue un tri sur place <span
+        title: Tri en tas
+        description: Le tri en tas est simple à implémenter, il effectue un tri sur place <span
           class="code-inline">O (n · lg (n))</span> , mais n&#39;est pas stable. La
-          première boucle, la phase h <span class="code-inline">Θ(n)</span> «heapify»,
+          première boucle, la phase <span class="code-inline">Θ(n)</span> «heapify»,
           place le tableau dans l’ordre du tas. La deuxième boucle, la phase de «tri
           vers le bas» <span class="code-inline">O(n·lg(n))</span>, extrait de
-          manière répétée le maximum et restaure l’ordre de tas. La fonction sink est
+          manière répétée le maximum et restaure l’ordre de tas. La fonction puit est
           écrite de manière récursive pour plus de clarté. Ainsi, comme indiqué, le
           code nécessite <span class="code-inline">Θ(lg(n)) d’</span> espace pour
-          la pile d’appels récursifs. Cependant, la récursion de la queue dans sink
+          la pile d’appels récursifs. Cependant, la récursivité de queue dans le puit
           () est facilement convertie en itération, ce qui donne la limite d&#39;espace
           <span class="code-inline">O(1)</span> . Les deux phases sont légèrement adaptatives,
           mais pas d&#39;une manière particulièrement utile. Dans le cas presque trié,
           la phase heapify détruit la commande initiale. Dans le cas inverse, la phase
           heapify est aussi rapide que possible puisque le tableau commence par ordre
           de tas, mais la phase de tri est typique. Dans le cas de quelques clés uniques,
-          il y a une certaine accélération, mais pas autant que dans le type shell ou
+          il y a une certaine accélération, mais pas autant que dans le tri en tas ou
           tri rapide.
       merge_sort:
         title: Tri par fusion
@@ -263,23 +263,23 @@ pages:
           fusion ne nécessite que <span class="code-inline">Θ(lg(n)</span> espace
           supplémentaire (pour la récursion). Le tri par fusion est l’algorithme de
           choix pour diverses situations: quand la stabilité est requise, lors du tri
-          des listes chaînées et quand aléatoire. l&#39;accès est beaucoup plus coûteux
-          que l&#39;accès séquentiel (par exemple, le tri externe sur bande). Il existe
+          des listes chaînées et l'accès aléatoire est beaucoup plus coûteux que l'accès séquentiel
+          (par exemple, le tri externe sur bande). Il existe
           des algorithmes de fusion temporelle linéaire en place pour la dernière étape
           de l&#39;algorithme, mais ils sont à la fois coûteux et complexes. La complexité
-          est justifiée pour les applications. tels que le tri externe lorsque <span
+          est justifiée pour les applications telles que le tri externe lorsque <span
           class="code-inline">(n)</span> l’espace supplémentaire n’est pas disponible.'
       quick_sort:
         title: Tri rapide
-        description: Lorsqu&#39;il est soigneusement mis en œuvre, quicksort est robuste
-          et génère peu de frais généraux. Si un tri stable n&#39;est pas nécessaire,
-          quicksort est un excellent tri à usage général - bien que la version de partitionnement
+        description: Lorsqu&#39;il est soigneusement mis en œuvre, le tri rapide est robuste
+          et a une faible surcharge. Si un tri stable n&#39;est pas nécessaire,
+          le tri rapide est un excellent tri à usage général - bien que la version de partitionnement
           à 3 voies devrait toujours être utilisée à la place. Le code de partitionnement
           bidirectionnel présenté ci-dessus est écrit pour plus de clarté plutôt que
-          pour des performances optimales. il présente une localisation médiocre et,
+          pour des performances optimales, il présente une localisation médiocre et,
           surtout, affiche un temps <span class="code-inline">O (n <sup>2</sup> )</span>
           lorsqu&#39;il existe peu de clés uniques. Une méthode de partitionnement à
-          2 voies plus efficace et plus robuste est décrite dans Quicksort est Optimal
+          2 voies plus efficace et plus robuste est décrite dans Quicksort is Optimal
           par Robert Sedgewick et Jon Bentley. La partition robuste génère une récursion
           équilibrée lorsqu&#39;il existe plusieurs valeurs égales au pivot, ce qui
           donne des garanties probabilistes de temps <span class="code-inline">O(n·lg(n))</span> et d&#39;espace <span class="code-inline">O(lg (n))</span>
@@ -288,7 +288,7 @@ pages:
           pour la pile de récursivité dans le pire des cas lorsque la récursivité n&#39;est
           pas équilibrée. Il est extrêmement peu probable que cela se produise, mais
           vous pouvez l&#39;éviter en triant d&#39;abord le plus petit sous-tableau
-          de manière récursive. le deuxième type de sous-tableau est un appel récursif
+          de manière récursive. Le deuxième type de sous-tableau est un appel récursif
           final, qui peut être effectué avec itération à la place. Avec cette optimisation,
           l&#39;algorithme utilise <span class="code-inline">O(lg(n))</span> espace
           supplémentaire dans le pire des cas.
@@ -301,15 +301,15 @@ pages:
         description: En informatique, la recherche binaire, également appelée recherche
           à demi-intervalle ou recherche logarithmique, est un algorithme de recherche
           qui trouve la position d&#39;une valeur cible dans un tableau trié. Il compare
-          la valeur cible à l&#39;élément central du tableau. si elles sont inégales,
+          la valeur cible à l&#39;élément central du tableau. Si elles sont inégales,
           la moitié dans laquelle la cible ne peut pas mentir est éliminée et la recherche
           se poursuit sur la moitié restante jusqu&#39;à ce qu&#39;elle réussisse.
       knuth_moriss_pratt_search:
-        title: Knuth-Morris-Pratt recherche
+        title: Recherche de Knuth-Morris-Pratt 
         description: En informatique, l&#39;algorithme de recherche de chaînes de Knuth
           – Morris – Pratt (ou algorithme KMP) recherche l&#39;occurrence d&#39;un «mot»
-          W dans une «chaîne de texte» S principale en observant qu&#39;en cas de disparité,
-          le mot lui-même représente suffisamment informations permettant de déterminer
+          W dans une «chaîne de texte» S en utilisant l'observation que lorsqu'une incompatibilité se produit,
+          le mot lui-même contient suffisamment d&#39;informations permettant de déterminer
           où la prochaine correspondance pourrait commencer, évitant ainsi le réexamen
           de caractères précédemment correspondants.
       other:
@@ -318,7 +318,7 @@ pages:
         kruskal: Algorithme de Kruskal
         longest: La plus longue sous-séquence croissante
         telephone_number: Numéro de téléphone aux mots
-    credits: 'Le code et les articles ont été tirés des ressources:'
+    credits: 'Le code et les articles ont été extraits des ressources:'
   data_structures:
     title: Structures de données
     description: En informatique, la notation Big O est utilisée pour classer les algorithmes
@@ -334,7 +334,7 @@ pages:
       description: La performance en temps d’exécution du Common Language Runtime est
         donnée par un ensemble d’axiomes que nous allons maintenant postuler.
       fetch_store:
-        title: Chercher et stocker le temps
+        title: Temps d'obtention et de stockage
         description1: Le temps requis pour extraire
           de la mémoire une référence à un objet est une constante, <span class="code-inline">T_fetch</span>
           , et le temps nécessaire pour stocker une référence à un objet en mémoire
@@ -345,7 +345,7 @@ pages:
           <span class="code-inline">T_fetch</span> et le temps nécessaire pour stocker
           cette référence d&#39;objet dans la variable y est <span class="code-inline">T_store</span>
           .
-        description3: A également le temps d&#39;exécution <span class="code-inline">T_fetch
+        description3: Il a également un temps d&#39;exécution <span class="code-inline">T_fetch
           + T_store</span> . Pour voir pourquoi cela devrait être le cas, considérons
           que la constante <span class="code-inline">1</span> nomme un objet Fixnum
           avec la valeur 1. Par conséquent, nous pouvons nous attendre à ce que le coût
@@ -361,7 +361,7 @@ pages:
           class="code-inline">2 * T_fetch + T_ + + T_store</span> . En effet, nous devons
           extraire deux références d&#39;objet à partir des variables y et 1; effectuer
           l&#39;addition en donnant un nouvel objet dont la valeur est la somme; et
-          stockez une référence au nouvel objet dans la variable y.
+          stocker une référence au nouvel objet dans la variable y.
         description3: Nous supposerons que la variante nécessite exactement le même
           temps d&#39;exécution que la déclaration d&#39;origine.
       call_method:
@@ -385,10 +385,10 @@ pages:
           opération d&#39;abonnement à un tableau, par exemple, <span class="code-inline">a[i]</span> , est une constante, <span class="code-inline">T_ []</span> . Ce
           temps n&#39;inclut pas le temps nécessaire pour calculer l&#39;expression
           en indice, ni le temps nécessaire pour accéder à l&#39;élément de tableau.
-        description2: 'C&#39;est <span class="code-inline">3 * T_fetch</span> . Trois
+        description2: 'Il s&#39;agit de <span class="code-inline">3 * T_fetch</span> . Trois
           opérations d’opérande sont requises: la première à extraire une référence
-          à l’objet tableau a; le second à rechercher une référence à l&#39;objet index
-          i; et le troisième pour extraire une référence à l&#39;élément de tableau
+          à l’objet tableau a; la seconde à rechercher une référence à l&#39;objet index
+          i; et la troisième pour extraire une référence à l&#39;élément de tableau
           <span class="code-inline">a[i]</span> .'
       object:
         title: Temps de création d&#39;objet
@@ -406,9 +406,9 @@ pages:
           d’exécution d’un programme, pour calculer la somme des séries arithmétiques
           simples suivantes.
     implementations:
-      title: la mise en oeuvre
+      title: Implémentation
       stack:
-        title: Empiler
+        title: Pile
         description: La pile est le frère de la file d&#39;attente. Il imite une pile
           de la vie réelle (par exemple de papier). Il s&#39;agit de FILO (premier entré,
           dernier sorti). Ainsi, lorsque des éléments sont extraits de la pile, ils
@@ -417,15 +417,15 @@ pages:
           avec la file d&#39;attente, il pourrait également être mis en œuvre à l&#39;aide
           d&#39;une liste chaînée.
         as_array: Empiler comme tableau
-        as_linked_list: Empiler sous forme de liste chaînée
+        as_linked_list: Empiler en tant que liste chaînée
       queue:
-        title: Queue
+        title: File d'attente
         description: Une file d&#39;attente est une structure simple basée sur un conteneur
           qui imite une file d&#39;attente réelle (par exemple, une file d&#39;attente
           à la banque). Il s&#39;agit de FIFO (premier entré, premier sorti), ce qui
           signifie que lorsque vous récupérez des éléments de la file d&#39;attente,
           ils sont renvoyés dans l&#39;ordre dans lequel ils ont été entrés. Les tableaux
-          Ruby fournissent des méthodes qui facilitent la mise en œuvre de Queue, mais
+          Ruby fournissent des méthodes qui facilitent la mise en œuvre de la file d'attente, mais
           il est utile de les nommer de manière appropriée et de les placer dans une
           classe de commodité, car d&#39;autres structures hériteront de celle-ci. Une
           autre implémentation pourrait être faite en utilisant une liste chaînée.
@@ -438,14 +438,14 @@ pages:
         as_array: Et comme un tableau
         as_linked_list: Deque comme liste chaînée
       singly_linked_list:
-        title: Liste des liens simples
+        title: Liste à liens simples
         description: Les listes à liens simples contiennent des nœuds comportant un
           champ de données ainsi qu&#39;un champ «suivant», qui pointe vers le nœud
           suivant dans la ligne des nœuds. Les opérations pouvant être effectuées sur
           des listes à liens simples incluent l&#39;insertion, la suppression et le
           parcours.
       doubly_linked_list:
-        title: Liste double liée
+        title: Liste doublement liée
         description: 'Dans une liste à double liaison, chaque élément de la liste contient
           deux références: une à son successeur et une à son prédécesseur.'
       ordered_list:
@@ -457,7 +457,7 @@ pages:
         as_array: Liste ordonnée sous forme de tableau
       hash_table:
         title: Table de hachage
-        description: Une table de hachage est un conteneur interrogeable. En tant que
+        description: Une table de hachage est un conteneur consultable. En tant que
           tel, il fournit des méthodes pour insérer un objet dans le conteneur, rechercher
           un objet dans le conteneur et supprimer un objet du conteneur.
       binary_tree:
@@ -465,33 +465,32 @@ pages:
         description: Un arbre binaire est un arbre dans lequel chaque nœud peut avoir
           un maximum de deux enfants. Les enfants sont désignés à gauche et à droite.
       binary_search_tree:
-        title: Arbre de recherche binaire &lt;
+        title: Arbre de recherche binaire
         description: 'En informatique, les arbres de recherche binaires (BST), parfois
           appelés arbres binaires ordonnés ou triés, constituent un type particulier
-          de conteneurs: structures de données stockant des &quot;éléments&quot; (tels
+          de conteneurs: des structures de données stockant des &quot;éléments&quot; (tels
           que des nombres, des noms, etc.) en mémoire. Ils permettent une recherche
           rapide, l&#39;ajout et la suppression d&#39;éléments et peuvent être utilisés
           pour implémenter des ensembles d&#39;éléments dynamiques ou des tables de
           recherche permettant de rechercher un élément à l&#39;aide de sa clé (par
           exemple, trouver le numéro de téléphone d&#39;une personne par son nom).'
       b_tree:
-        title: Arbre b
+        title: Arbre B
         description: En informatique, un arbre B est une structure de données auto-équilibrée
           qui maintient les données triées et permet les recherches, les accès séquentiels,
-          les insertions et les suppressions en temps logarithmique. Le B-tree est une
+          les insertions et les suppressions en temps logarithmique. L&#39;arbre B est une
           généralisation d&#39;un arbre de recherche binaire en ce sens qu&#39;un nœud
           peut avoir plus de deux enfants (contrairement aux arbres de recherche binaires
-          auto-équilibrés, le B-tree est optimisé pour les systèmes qui lisent et écrivent
+          auto-équilibrés, l&#39;arbre B est optimisé pour les systèmes qui lisent et écrivent
           des blocs de données volumineux. B- les arbres sont un bon exemple de structure
           de données pour la mémoire externe, couramment utilisée dans les bases de
           données et les systèmes de fichiers.
       binary_heap:
         title: Tas binaire
-        description: Un segment de mémoire binaire est un arbre binaire complet ordonné
-          par segment de mémoire qui est implémenté à l&#39;aide d&#39;un tableau. Dans
-          un segment, la plus petite clé se trouve à la racine et, comme la racine se
-          trouve toujours à la première position du tableau, la recherche de la plus
-          petite clé est une opération triviale dans un segment binaire.
+        description: Un tas binaire est un arbre binaire complet ordonné par tas qui est implémenté 
+          à l&#39;aide d&#39;un tableau. Dans un tas, la plus petite clé se trouve à la racine et, 
+          comme la racine se trouve toujours à la première position du tableau, la recherche de la plus
+          petite clé est une opération triviale dans un tas binaire.
       credits: 'Le code et les articles ont été tirés des ressources:'
       source: Cette page contient le code Ruby du livre &quot;Structures de données
         et algorithmes avec des motifs de conception orientés objet en Ruby&quot; de
@@ -511,7 +510,7 @@ pages:
         quelles classes concrètes le système utilise. Une autre cache comment les instances
         de ces classes concrètes sont créées et combinées.
       abstract_factory:
-        title: Modèle d&#39;usine abstraite
+        title: Modèle de fabrique abstraite
         description: Le modèle de fabrique abstraite fournit un moyen d&#39;encapsuler
           un groupe d&#39;usines individuelles ayant un thème commun sans spécifier
           leurs classes concrètes. En utilisation normale, le logiciel client crée une
@@ -524,11 +523,11 @@ pages:
           la composition d&#39;objet, car la création d&#39;objet est implémentée dans
           les méthodes exposées dans l&#39;interface d&#39;usine.
       builder:
-        title: Modèle de constructeur
-        description: Le modèle de générateur est un modèle de conception de logiciel
+        title: Modèle de construction
+        description: Le modèle de construction est un modèle de conception de logiciel
           de création d’objet. Contrairement au modèle de fabrique abstraite et au modèle
-          de méthode de fabrique dont le but est d&#39;activer le polymorphisme, le
-          motif de constructeur a pour objectif de trouver une solution à l&#39;anti-motif
+          la fabrique dont le but est d&#39;activer le polymorphisme, le
+          modèle de constructeur a pour objectif de trouver une solution à l&#39;anti-motif
           du constructeur télescopique [citation nécessaire]. L&#39;anti-modèle de constructeur
           télescopique se produit lorsque l&#39;augmentation de la combinaison de paramètres
           de constructeur d&#39;objet conduit à une liste exponentielle de constructeurs.
@@ -536,33 +535,33 @@ pages:
           utilise un autre objet, un générateur, qui reçoit chaque paramètre d&#39;initialisation
           pas à pas, puis renvoie immédiatement l&#39;objet construit ainsi obtenu.
       factory:
-        title: Modèle d&#39;usine
-        description: En programmation par classes, le modèle de méthode factory est
-          un modèle de création qui utilise des méthodes factory pour résoudre le problème
+        title: La fabrique
+        description: En programmation par classes, la fabrique est
+          un modèle de création qui utilise des méthodes d'usine pour résoudre le problème
           de la création d&#39;objets sans avoir à spécifier la classe exacte de l&#39;objet
-          à créer. Pour ce faire, vous devez créer des objets en appelant une méthode
+          à créer. Cela se fait en créant des objets en appelant une méthode
           de fabrique, spécifiée dans une interface et implémentée par des classes enfants,
           ou implémentée dans une classe de base et éventuellement remplacée par des
           classes dérivées, plutôt que d&#39;appeler un constructeur.
       prototype:
         title: Modèle de prototype
         description: Le modèle prototype est un modèle de création inspiré de l’usine.
-          Le truc avec le prototype est de créer de nouveaux objets en copiant un objet
+          L'astuce avec le prototype est de créer de nouveaux objets en copiant un objet
           maître. Modifiez cet objet principal et tous les objets que vous créez par
           la suite seront intégrés à la vie avec une copie de la modification.
       singleton:
-        title: Motif Singleton
+        title: Le Singleton
         description: Assurez-vous qu&#39;une classe n&#39;a qu&#39;une seule instance
           et fournissez un point d&#39;accès global à celle-ci. Ceci est utile lorsqu&#39;un
           seul objet est nécessaire pour coordonner les actions à travers le système.
-          Le concept est parfois généralisé aux systèmes qui fonctionnent plus efficacement
+          Le concept est parfois généralisé à des systèmes qui fonctionnent plus efficacement
           quand il n’existe qu’un seul objet ou qui limitent l’instanciation à un certain
           nombre d’objets.
       not_covered:
-        title: 'Motifs non couverts:'
+        title: 'Modèles non couverts:'
         lazy: Initialisation paresseuse
         multiton: Multiton
-        pool: Pool d&#39;objets
+        pool: Ensemble d&#39;objets
         resource: L&#39;acquisition des ressources est une initialisation
     structural:
       title: Motifs structurels
@@ -580,20 +579,20 @@ pages:
         title: Modèle composite
         description: Le modèle de conception composite est un modèle structurel utilisé
           pour représenter des objets ayant une structure arborescente hiérarchique.
-          Il permet le traitement uniforme des deux nœuds feuilles individuels et des
-          branches composées de nombreux nœuds.
+          Il permet le traitement uniforme à la fois des nœuds foliaires individuels 
+          et des branches composées de nombreux nœuds.
       decorator:
-        title: Motif décorateur
-        description: En programmation orientée objet, le motif décoratif (également
-          appelé Wrapper, une dénomination alternative partagée avec le motif Adaptateur)
-          est un motif de conception qui permet d&#39;ajouter un comportement à un objet
+        title: Modèle Décorateur
+        description: En programmation orientée objet, le modèle Décoratif (également
+          appelé Wrapper, une dénomination alternative partagée avec le modèle Adaptateur)
+          est un modèle de conception qui permet d&#39;ajouter un comportement à un objet
           individuel, de manière statique ou dynamique, sans affecter le comportement
-          des autres. objets de la même classe. Le motif de décorateur est souvent utile
+          des autres objets de la même classe. Le modèle de décorateur est souvent utile
           pour adhérer au principe de responsabilité unique, car il permet de diviser
           la fonctionnalité entre des classes ayant des domaines de préoccupation uniques.
       facade:
-        title: Modèle de façade
-        description: Le modèle de conception de façade est souvent utilisé lorsqu&#39;un
+        title: Modèle Façade
+        description: Le modèle de conception Façade est souvent utilisé lorsqu&#39;un
           système est très complexe ou difficile à comprendre, car il contient un grand
           nombre de classes interdépendantes ou son code source n&#39;est pas disponible.
           Ce modèle masque les complexités du système plus vaste et fournit une interface
@@ -602,9 +601,9 @@ pages:
           au système au nom du client de façade et cachent les détails de la mise en
           œuvre.
       flyweight:
-        title: Modèle de poids mouche
-        description: Dans la programmation informatique, flyweight est un modèle de
-          conception de logiciel. Un flyweight est un objet qui minimise l&#39;utilisation
+        title: Modèle Poids-mouche
+        description: Dans la programmation informatique, Poids-mouche est un modèle de
+          conception de logiciel. Un Poids-mouche est un objet qui minimise l&#39;utilisation
           de la mémoire en partageant autant de données que possible avec d&#39;autres
           objets similaires. c&#39;est une façon d&#39;utiliser des objets en grand
           nombre lorsqu&#39;une simple représentation répétée utiliserait une quantité
@@ -613,9 +612,9 @@ pages:
           de données externes et de les transmettre temporairement aux objets poids
           massique lorsqu&#39;ils sont utilisés.
       proxy:
-        title: Modèle de proxy
+        title: Modèle Proxy
         description: 'Un proxy, dans sa forme la plus générale, est une classe fonctionnant
-          comme une interface vers autre chose. Le proxy peut s’interfacer avec n&#39;importe
+          comme une interface avec autre chose. Le proxy peut s’interfacer avec n&#39;importe
           quoi: une connexion réseau, un objet volumineux en mémoire, un fichier ou
           toute autre ressource coûteuse ou impossible à dupliquer. En bref, un proxy
           est un objet wrapper ou agent appelé par le client pour accéder au véritable
