@@ -1044,7 +1044,7 @@ pages:
         vous travaillez est une sous-classe de <span class="code-inline">String</span>
         ou ne pas.'
     missing:
-      title: Besoin de coordonner method_missing et respond_to_missing?
+      title: Besoin de coordonner method_missing et respond_to_missing ?
       description: 'Lors de la substitution <span class="code-inline">method_missing,</span>
         souvenez - vous de passer outre <span class="code-inline">respond_to_missing?</span>
         ainsi que. Lorsque vous utilisez method_missing pour qu&#39;un objet retourne
