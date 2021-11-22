@@ -997,40 +997,40 @@ pages:
         à nouveau hors de portée après chaque appel. Les constructions en boucle intégrées
         (par exemple, while ou for) sont acceptables. (Ou déclarer vars avant le bloc.)
     freeze:
-      title: Rayon de congélation (ar)
+      title: Tableau gelé
       description: Le fait de geler un tableau (ou un hachage) le gèle, pas les éléments
         qu’il contient. Les chaînes peuvent être modifiées sur place. De cette façon,
         vous pouvez modifier un emplacement donné dans un tableau de chaînes gelé.
     one_is_one:
-      title: 1 est 1… et il en sera de plus en plus!
-      description: 'Changer Fixnum en nouvelle valeur signifie un nouvel objet. Ils
-        ne peuvent pas être modifiés sur place! Donc, vous ne pouvez pas modifier un
+      title: 1 est 1… et il en sera de plus en plus !
+      description: 'Changer Fixnum à une nouvelle valeur signifie un nouvel objet. Ils
+        ne peuvent pas être modifiés en place! Donc, vous ne pouvez pas modifier un
         tableau figé de Fixnums. (Les fixnums et les entiers n&#39;ont pas de méthode
-        de bang pour essayer avec). BTW: un <span class="code-inline">de object_id</span>
+        de bang les tester). Au fait : un <span class="code-inline">de object_id</span>
         de Fixnum est la <span class="code-inline">value * 2 + 1</span>'
     bang:
       title: "(to! ||! to!) ==?"
-      description: Bang marque la méthode comme dangereuse. Pourquoi? Souvent, peut
+      description: Bang marque la méthode comme dangereuse. Pourquoi? Souvent, on peut
         modifier le récepteur, vs non-modding version non-bang. NE VOUS FIEZ PAS SUR
-        LEUR RETOUR DE MÊME VALEUR QUE LA VERSION NON-BANG! Beaucoup retournent zéro
+        LEUR RETOUR DE MÊME VALEUR QUE LA VERSION NO BANG! Beaucoup reviennent à zéro
         si aucun changement n&#39;est nécessaire!
     array:
       title: Un tableau de nouveaux pièges
       description: La valeur par défaut donnée en tant qu&#39;objet est le même objet
-        pour chaque emplacement! Mutating on mutates default pour tous. La valeur initiale
+        pour chaque emplacement! La mutation d'un mute par défaut pour tous. La valeur initiale
         donnée sous forme de bloc est évaluée séparément pour chaque emplacement. Utilisez
-        ceci pour créer de nouveaux vars pour chacun.
+        ceci pour créer de nouvelles variables pour chacun.
     hash:
       title: En faire un hachage
       description: 'Généralement, le même problème (et la même solution) que les tableaux.
-        MORE GOTCHAS: crée un nouvel objet sur n’importe quel accès à un emplacement
-        vide! Peut créer un nombre excessif de nouveaux objets; ruines vérifiant le
+        Plus de pièges: crée un nouvel objet sur n’importe quel accès à un emplacement
+        vide! On peut créer un nombre excessif de nouveaux objets; ruines vérifiant le
         contenu ou le nombre &quot;réel&quot; (vérification de zéro, taille, etc.).'
     rescue:
-      title: Sauvez-moi, jetez une ligne, je vais essayer de l&#39;attraper!
-      description: En Ruby, lancer et attraper ne sont PAS des exceptions! Ils sont
-        avancés en contrôle de flux, pour sortir de la nidification en profondeur. Ruby
-        utilise raise et rescue pour les exceptions.
+      title: Sauve-moi, lance une ligne, j&#39;essayerai de l&#39;attraper!
+      description: En Ruby, le lancement et la capture ne sont PAS des exceptions! Ce sont
+        des contrôles de flux avancés, pour sortir de l&#39;imbrication profonde. Ruby
+        utilise le téléchargement et le sauvetage pour les exceptions.
     to_str:
       title: to_s VS to_str
       description: '<span class="code-inline">to_s</span> est défini sur chaque objet
@@ -1039,9 +1039,9 @@ pages:
         <span class="code-inline">Symbol</span> a <span class="code-inline">to_str</span>
         mais pas <span class="code-inline">Array</span> . Ainsi, vous pouvez utiliser
         <span class="code-inline">obj.respond_to?(:to_str)</span> au lieu de quelque
-        chose comme <span class="code-inline">obj.is_a? (String)</span> si vous souhaitez
-        tirer parti de la frappe avec le canard sans vous soucier de savoir si la classe
-        que vous utilisez est une sous-classe de <span class="code-inline">String</span>
+        chose comme <span class="code-inline">obj.is_a? (String)</span> si vous souhaitez 
+        profiter de la dactylographie sans vous soucier de savoir si la classe avec laquelle 
+        vous travaillez est une sous-classe de <span class="code-inline">String</span>
         ou ne pas.'
     missing:
       title: Besoin de coordonner method_missing et respond_to_missing?
