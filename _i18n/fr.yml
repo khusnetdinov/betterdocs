@@ -1045,26 +1045,26 @@ pages:
         ou ne pas.'
     missing:
       title: Besoin de coordonner method_missing et respond_to_missing ?
-      description: 'Lors de la substitution <span class="code-inline">method_missing,</span>
-        souvenez - vous de passer outre <span class="code-inline">respond_to_missing?</span>
+      description: 'Lorsque vous remplacez <span class="code-inline">method_missing,</span>
+        n&#39;oubliez pas de remplacer aussi <span class="code-inline">respond_to_missing?</span>
         ainsi que. Lorsque vous utilisez method_missing pour qu&#39;un objet retourne
         quelque chose sur un appel de méthode, veillez toujours à redéfinir également
         respond_to_missing ?. Si vous ne le faites pas, rien ne se cassera au premier
         abord, mais vous finirez par avoir des problèmes. Considérez cette classe:'
       respond_to: 'Beaucoup de code (gemmes ou votre propre) repose sur respond_to?
         (pour une bonne raison). Avez-vous besoin de mettre à jour le fichier respond_to_missing?
-        ainsi que:'
+        également:'
     exception:
       title: sauvetage d&#39;une erreur standard, pas d&#39;une exception
-      description: 'Ne sauvez pas Exception, sauvez StandardError Before Sauvant explicitement
-        Exception sauvera même les erreurs normalement non récupérables telles que SyntaxError,
+      description: 'Ne sauvez pas l&#39;exception, sauvez StandardError avant de sauver explicitement
+        l&#39;exception sauvera même les erreurs normalement non récupérables telles que SyntaxError,
         LoadError et Interrupt. Si vous omettez le qualificatif de type Exception, Ruby
         n&#39;attrapera que StandardError, ce qui est probablement ce que vous voulez:'
     private:
-      title: Les données privées ne sont pas vraiment, et pas du tout avec les méthodes
+      title: Les données privées ne le sont pas vraiment, et pas du tout avec les méthodes
         de classe
       description: Il y a un moyen de rendre les méthodes de classe privées en Ruby,
-        il suffit de sauter à travers des cerceaux. Euh, je veux dire utiliser la <span
+        il suffit de franchir quelques étapes. Euh, je veux dire utiliser la <span
         class="code-inline">class << self</span> syntaxe. Cette bizarrerie pousse
         un singleton d&#39;instance sur la classe en créant efficacement des méthodes
         de classe.
@@ -1085,7 +1085,7 @@ pages:
         vers une nouvelle portée. Lorsque Ruby recherche la définition d&#39;un nom
         qui a été référencé, il cherche d&#39;abord dans l&#39;étendue actuelle (la
         méthode, la classe ou le module) et, s&#39;il n&#39;est pas trouvé, il retournera
-        dans chaque &quot;passerelle&quot; et effectuera une recherche. la portée là.
+        dans chaque &quot;passerelle&quot; et effectuera une recherche de la portée là-bas.
     credits: 'Le code et les articles ont été tirés des ressources:'
   meta_programming:
     title: Métaprogrammation
@@ -1129,13 +1129,13 @@ pages:
     title: Principes solides
     description: En programmation informatique, SOLID (responsabilité unique, Open-Closed,
       substitution de Liskov, ségrégation d’interfaces et inversion de dépendance) est
-      un acronyme mnémonique introduit par Michael Feathers pour les &quot;Premiers
-      Principes&quot; nommés par Robert C. Martin au début des années 2000 et qui cinq
+      un acronyme mnémotechnique introduit par Michael Feathers pour les &quot;Premiers
+      Principes&quot; nommés par Robert C. Martin au début des années 2000 qui représente cinq
       principes de base de la programmation et de la conception orientées objet. L&#39;intention
       est que ces principes, lorsqu&#39;ils sont appliqués ensemble, augmenteront les
       chances qu&#39;un programmeur crée un système facile à maintenir et à étendre
       dans le temps. Les principes de SOLID sont des instructions qui peuvent être appliquées
-      lorsque vous travaillez sur un logiciel pour supprimer les odeurs de code en amenant
+      lorsque vous travaillez sur un logiciel pour supprimer les odeurs de code en obligeant
       le programmeur à reformuler le code source du logiciel jusqu&#39;à ce qu&#39;il
       soit à la fois lisible et extensible. Cela fait partie d&#39;une stratégie globale
       de développement logiciel agile et adaptatif.
@@ -1151,7 +1151,7 @@ pages:
         du principe de responsabilité unique.
     open_close:
       title: Principe Ouvert / Fermé
-      description: Le principe Open / Closed stipule que les classes ou les méthodes
+      description: Le principe Ouvert / Fermé stipule que les classes ou les méthodes
         doivent être ouvertes pour extension, mais fermées pour modification. Cela nous
         indique que nous devrions rechercher des conceptions modulaires nous permettant
         de modifier le comportement du système sans modifier les classes elles-mêmes.
@@ -1176,10 +1176,10 @@ pages:
         des classes d&#39;informatique, de programmeur et de technicien. Le programmeur
         et le technicien utilisent l&#39;ordinateur d&#39;une manière différente. Le
         programmeur utilise l&#39;ordinateur pour taper, mais le technicien sait comment
-        changer le disque dur de l&#39;ordinateur. Ce qu’est le principe ISP (Interface
-        Segregation Principle), c’est qu’une classe ne doit pas dépendre de méthodes
+        changer le disque dur de l&#39;ordinateur. Ce quz le principe ISP (Interface
+        Segregation Principle) impose, c’est qu’une classe ne doit pas dépendre de méthodes
         qu’elle n’utilise pas. Dans notre cas, le programmeur est inutilement couplé
-        à la méthode Computer # change_hard_drive car il ne l&#39;utilise pas, mais
+        à la méthode Computer#change_hard_drive car il ne l&#39;utilise pas, mais
         les modifications d&#39;état appliquées par cette méthode peuvent affecter le
         programmeur. Refactorisons le code pour obéir au LSP.'
       after: Après ce refactor, le technicien utilise un objet différent du type ComputerInternals,
@@ -1191,9 +1191,9 @@ pages:
       description: Le principe d&#39;inversion de dépendance concerne les objets de
         haut niveau (penser la logique métier) qui ne dépendent pas des détails d&#39;implémentation
         de bas niveau (penser à la base de données et IO). Ceci peut être réalisé avec
-        la frappe de canard et le principe d&#39;inversion de dépendance. Souvent, ce
+        le typage du canard et le principe d&#39;inversion de dépendance. Souvent, ce
         modèle est utilisé pour atteindre le principe ouvert / fermé que nous avons
-        discuté ci-dessus. En fait, nous pouvons même réutiliser ce même exemple comme
+        expliqué ci-dessus. En fait, nous pouvons même réutiliser ce même exemple comme
         démonstration de ce principe. Maintenant, il existe une classe de formatage,
         mais je l&#39;ai codée en dur sur la classe Report, créant ainsi une dépendance
         du rapport à JSONFormatter. Comme le rapport est un concept plus abstrait (de
@@ -1226,18 +1226,18 @@ pages:
         de changement de contexte plus efficaces, en les déplaçant essentiellement vers
         un thread natif distinct, appelé thread du minuteur.
     gil:
-      title: GIL - Global Interpreter Lock
+      title: GIL - Verrouillage de l&#39;interprète global
       description: L&#39;IRM a un verrou d&#39;interprète global (GIL). C&#39;est un
         verrou autour de l&#39;exécution du code Ruby. Cela signifie que dans un contexte
         multi-thread, un seul thread peut exécuter le code Ruby à la fois. Ainsi, si
         8 threads travaillent activement sur une machine à 8 cœurs, un seul thread et
-        un seul cœur seront occupés à la fois. . Le GIL existe pour protéger les composants
+        un seul cœur seront occupés à la fois. Le GIL existe pour protéger les composants
         internes de Ruby contre les conditions de concurrence susceptibles de corrompre
         les données. Il y a des mises en garde et des optimisations, mais c&#39;est
         l&#39;essentiel.
       example: Ce simple fait est ce qui rend les threads si puissants, et également
         ce qui les rend difficiles à utiliser. Je vous ai déjà donné une idée de la
-        raison pour laquelle les fils sont bons. voici un programme simple pour illustrer
+        raison pour laquelle les fils sont bons. Voici un programme simple pour illustrer
         leur difficulté. Ici vous pouvez voir que nous avons <span class="code-inline">10
         * 10000</span> éléments dans un tableau. Notez que différents rubis peuvent
         afficher un résultat différent. Les GIL n&#39;existent que dans les rubis IRM.
@@ -1279,7 +1279,7 @@ pages:
       description: Le problème, c&#39;est qu&#39;il n&#39;existe pas de moyen simple
         de dire avec une certitude absolue si une application dans son ensemble est
         thread-safe.
-      global_variables: Les variables globales sont globales. Cela signifie qu&#39;ils
+      global_variables: Les variables globales sont globales. Cela signifie qu&#39;elles
         sont partagés entre les threads. Si vous n’êtes pas convaincu de ne pas utiliser
         de variables globales, voici une autre raison de ne jamais les toucher. Si vous
         voulez vraiment partager quelque chose de manière globale sur une application,
@@ -1302,8 +1302,8 @@ pages:
         de contexte potentiel risque donc de se produire au milieu de celui-ci, provoquant
         une situation de concurrence critique entre les threads. Ainsi, même si vous
         utilisiez uniquement des variables d&#39;instance, vous pourriez vous retrouver
-        avec des conditions de concurrence avec mémoization. Ne mémoize pas pour les
-        variables de classe ou les variables d&#39;instance de classe. Si vous devez
+        avec des conditions de concurrence avec mémorisation. Ne mémorisez pas dans des
+        variables de classe ou des variables d&#39;instance de classe. Si vous devez
         mémoriser quelque chose au niveau de la classe, utilisez plutôt
         des variables locales du thread (<span class="code-inline">Thread.current[:
         baz]</span>). Soyez conscient, cependant, que c&#39;est toujours une sorte
@@ -1318,11 +1318,11 @@ pages:
         au démarrage. Lorsque cette option n&#39;est pas activée, les classes de structure
         sont chargées paresseusement via le chargement automatique. Dans les environnements
         multithreads, la structure doit être chargée avec impatience avant la création
-        de tout thread en raison de problèmes de sécurité des threads liés au chargement
+        de threads en raison de problèmes de sécurité des threads liés au chargement
         automatique. Nous savons que le chargement de la structure n&#39;est pas threadsafe,
         la stratégie consiste donc à tout charger avant que les threads ne soient prêts
         à traiter les demandes.'
-      cache: 'Caching classes: L&#39;option @cache_classes contrôle si les classes sont
+      cache: 'Classes en cache: L&#39;option @cache_classes contrôle si les classes sont
         rechargées ou non. Rappelez-vous quand vous faites &quot;TDD&quot; dans votre
         application? Vous modifiez un contrôleur, puis rechargez la page pour le &quot;tester&quot;
         et voir que les choses ont changé? Oui, c&#39;est ce que cette option contrôle.
@@ -1346,7 +1346,7 @@ pages:
         pas threadsafe, et nous nous attendons à ce que tout le code soit chargé avant
         que les threads puissent gérer les demandes.'
       concurrency: 'Autoriser la simultanéité: L&#39;option @allow_concurrency contrôle
-        si le middleware Rack :: Lock est utilisé ou non dans votre pile. Rack :: Lock
+        si le middleware Rack::Lock est utilisé ou non dans votre pile. Rack::Lock
         encapsule un mutex autour de votre requête. L&#39;idée étant que si vous avez
         du code qui n&#39;est pas threadsafe, ce mutex empêchera plusieurs threads d&#39;exécuter
         votre code de contrôleur en même temps. Quand threadsafe! est défini, ce middleware
@@ -1466,7 +1466,7 @@ pages:
             du C, des économies d&#39;expression, de l&#39;amélioration du flux de contrôle
             et des structures de données. Le 2 / E a été complètement réécrit avec des
             exemples supplémentaires et des ensembles de problèmes pour clarifier la
-            mise en œuvre de constructions de langage difficiles. Pendant des années,
+            mise en œuvre de constructions de langage difficile. Pendant des années,
             les programmeurs C ont laissé K &amp; R les guider dans la construction
             de programmes bien structurés et efficaces. Maintenant, cette même aide
             est disponible pour ceux qui travaillent avec des compilateurs ANSI. Inclut
